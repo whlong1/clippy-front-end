@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useAuth0 } from "@auth0/auth0-react"
 import NavBar from './components/NavBar/NavBar'
 import * as authService from './services/authService'
+import * as profileService from './services/profileService'
 import './App.css'
 
 import LoginButton from './components/LoginButton/LoginButton'
@@ -39,7 +40,7 @@ const App = () => {
       if (token) {
         const profileData = await authService.getUserMetadata(token)
         console.log('Profile Data', profileData)
-        setMsg('Welcome back to Clippy!')
+        setMsg(`Welcome back to Clippy`)
       } else {
         setMsg('New to Clippy? Click here to create an account.')
       }
@@ -47,11 +48,12 @@ const App = () => {
     getToken()
   }, [user, getAccessTokenSilently])
 
+
   return (
     <>
       <NavBar />
       <p>
-        {msg}
+        {msg} {user?.name}
       </p>
       <LoginButton />
       <LogoutButton />
