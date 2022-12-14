@@ -14,6 +14,8 @@ root.render(
       audience={process.env.REACT_APP_AUTH0_AUDIENCE}
       redirectUri={process.env.REACT_APP_AUTH0_CALLBACK_URL}
       scope="read:current_user update:current_user_metadata"
+
+      // screen_hint="signup" 
     >
       <Router>
         <App />

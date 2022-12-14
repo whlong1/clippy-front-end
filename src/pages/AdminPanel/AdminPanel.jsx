@@ -19,13 +19,28 @@ const AdminPanel = () => {
     getToken()
   }, [getAccessTokenSilently])
 
+  console.log("github|71990918")
+  console.log('users', users)
+
+
+
+  const handleDeleteUser = async (userId) => {
+    const token = await getAccessTokenSilently()
+    const res = await adminService.deleteUser(token, userId)
+    console.log(res)
+  }
+
   return (
     <main>
       <h1>Admin</h1>
       {users.map((u) => (
-        <div key={u.user_id}>
+        <div key={u.user_id} style={{ border: '1px solid black' }}>
           <p>{u.name}</p>
-          <img src={u.picture} alt={u.name} />
+          <p>{u.user_id}</p>
+          <img style={{ height: '20px' }} src={u.picture} alt={u.name} />
+          <button onClick={() => handleDeleteUser(u.user_id)}>
+            Delete
+          </button>
         </div>
       ))}
     </main>

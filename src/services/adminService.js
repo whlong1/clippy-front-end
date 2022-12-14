@@ -11,4 +11,21 @@ const getUsers = async (token) => {
   }
 }
 
-export { getUsers }
+const deleteUser = async (token, userId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/users/${userId}`,
+      {
+        method: 'DELETE',
+        headers: { Authorization: `Bearer ${token}` }
+      }
+    )
+    return await res.json()
+  } catch (err) {
+    throw err
+  }
+}
+
+export {
+  getUsers,
+  deleteUser,
+}
