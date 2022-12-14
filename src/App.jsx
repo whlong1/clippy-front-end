@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useAuth0 } from "@auth0/auth0-react"
 import NavBar from './components/NavBar/NavBar'
-import * as authService from './services/authService'
+import * as adminService from './services/adminService'
 import * as profileService from './services/profileService'
 import './App.css'
 
@@ -36,10 +36,9 @@ const App = () => {
   useEffect(() => {
     const getToken = async () => {
       const token = await getAccessTokenSilently()
-      console.log('Token:', token)
       if (token) {
-        const profileData = await authService.getUserMetadata(token)
-        console.log('Profile Data', profileData)
+        const userList = await adminService.getUsers(token)
+        console.log('User List', userList)
         setMsg(`Welcome back to Clippy`)
       } else {
         setMsg('New to Clippy? Click here to create an account.')
