@@ -11,6 +11,20 @@ const getUsers = async (token) => {
   }
 }
 
+const getUser = async (token, userId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/users/${userId}`,
+      {
+        method: 'GET',
+        headers: { Authorization: `Bearer ${token}` }
+      }
+    )
+    return await res.json()
+  } catch (err) {
+    throw err
+  }
+}
+
 const deleteUser = async (token, userId) => {
   try {
     const res = await fetch(`${BASE_URL}/users/${userId}`,
@@ -28,4 +42,5 @@ const deleteUser = async (token, userId) => {
 export {
   getUsers,
   deleteUser,
+  getUser,
 }

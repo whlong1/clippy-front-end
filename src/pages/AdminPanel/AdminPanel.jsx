@@ -19,11 +19,19 @@ const AdminPanel = () => {
     getToken()
   }, [getAccessTokenSilently])
 
+  const handleGetUser = async (userId) => {
+    const token = await getAccessTokenSilently()
+    const res = await adminService.getUser(token, userId)
+    console.log(res)
+  }
+
   const handleDeleteUser = async (userId) => {
     const token = await getAccessTokenSilently()
     await adminService.deleteUser(token, userId)
-    setUsers(users.filter((u)=> u.user_id !== userId ))
+    setUsers(users.filter((u) => u.user_id !== userId))
   }
+
+  console.log('Users Array:', users)
 
   return (
     <main>
@@ -33,6 +41,9 @@ const AdminPanel = () => {
           <p>{u.name}</p>
           <p>{u.user_id}</p>
           <img style={{ height: '20px' }} src={u.picture} alt={u.name} />
+          <button onClick={() => handleGetUser(u.user_id)}>
+            User Info
+          </button>
           <button onClick={() => handleDeleteUser(u.user_id)}>
             Delete
           </button>
