@@ -25,6 +25,23 @@ const getUser = async (token, userId) => {
   }
 }
 
+const updateUser = async (token, userId, data) => {
+  try {
+    const res = await fetch(`${BASE_URL}/users/${userId}`,
+      {
+        method: 'PATCH',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+    return res.json()
+  } catch (err) {
+    throw err
+  }
+}
+
 const deleteUser = async (token, userId) => {
   try {
     const res = await fetch(`${BASE_URL}/users/${userId}`,
@@ -43,4 +60,5 @@ export {
   getUsers,
   deleteUser,
   getUser,
+  updateUser,
 }

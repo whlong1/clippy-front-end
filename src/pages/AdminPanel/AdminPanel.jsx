@@ -19,6 +19,13 @@ const AdminPanel = () => {
     getToken()
   }, [getAccessTokenSilently])
 
+  const handleUpdateUser = async (userId) => {
+    const token = await getAccessTokenSilently()
+    const data = { user_metadata: { linkedin: "william-hunter-long" } }
+    const res = await adminService.updateUser(token, userId, data)
+    console.log('User Update:', res)
+  }
+
   const handleGetUser = async (userId) => {
     const token = await getAccessTokenSilently()
     const res = await adminService.getUser(token, userId)
@@ -41,6 +48,9 @@ const AdminPanel = () => {
           <p>{u.name}</p>
           <p>{u.user_id}</p>
           <img style={{ height: '20px' }} src={u.picture} alt={u.name} />
+          <button onClick={() => handleUpdateUser(u.user_id)}>
+            Update User
+          </button>
           <button onClick={() => handleGetUser(u.user_id)}>
             User Info
           </button>
