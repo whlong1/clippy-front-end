@@ -19,15 +19,10 @@ const AdminPanel = () => {
     getToken()
   }, [getAccessTokenSilently])
 
-  console.log("github|71990918")
-  console.log('users', users)
-
-
-
   const handleDeleteUser = async (userId) => {
     const token = await getAccessTokenSilently()
-    const res = await adminService.deleteUser(token, userId)
-    console.log(res)
+    await adminService.deleteUser(token, userId)
+    setUsers(users.filter((u)=> u.user_id !== userId ))
   }
 
   return (
