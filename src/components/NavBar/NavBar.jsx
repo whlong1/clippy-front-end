@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 
 import LoginButton from '../LoginButton/LoginButton'
 import LogoutButton from '../LogoutButton/LogoutButton'
+import SignupButton from '../SignupButton/SignupButton'
 
 const NavBar = () => {
 
@@ -21,6 +22,7 @@ const NavBar = () => {
     <ul>
       <li>
         <LoginButton />
+        <SignupButton/>
       </li>
     </ul>
   )
