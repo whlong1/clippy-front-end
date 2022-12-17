@@ -9,6 +9,8 @@ const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Landing />} />
+      <Route path="/callback" element={<h1>Welcome back</h1>} />
+      <Route path='/onboarding' element={<h1>Onboarding</h1>}/>
       <Route
         path="/admin"
         element={<AdminPanel />}

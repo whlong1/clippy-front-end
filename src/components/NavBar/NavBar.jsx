@@ -4,26 +4,20 @@ import LoginButton from '../LoginButton/LoginButton'
 import LogoutButton from '../LogoutButton/LogoutButton'
 import SignupButton from '../SignupButton/SignupButton'
 
-const NavBar = () => {
+const NavBar = (props) => {
+  console.log('NavBar', props.user)
 
   const protectedLinks = (
     <ul>
-      <li>Welcome</li>
-      <li><Link to="/profiles">Profiles</Link></li>
-      <li>
-        <LogoutButton />
-      </li>
-      <li><Link to="/changePassword">Change Password</Link></li>
+      <li><LogoutButton /></li>
       <li><Link to="/admin">Admin Panel</Link></li>
     </ul>
   )
 
   const publicLinks = (
     <ul>
-      <li>
-        <LoginButton />
-        <SignupButton/>
-      </li>
+      <li><LoginButton /></li>
+      <li><SignupButton /></li>
     </ul>
   )
 

@@ -1,14 +1,15 @@
 const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/auth`
 
-const getUserMetadata = async (token) => {
+const getUserDataFromToken = async (token) => {
   try {
-    const res = await fetch(`${BASE_URL}/verify`,
+    const res = await fetch(`${BASE_URL}/tokens`,
       { headers: { Authorization: `Bearer ${token}` } },
     )
     return await res.json()
-  } catch (err) {
-    throw err
+  } catch (error) {
+    console.log('HIT')
+    throw error
   }
 }
 
-export { getUserMetadata }
+export { getUserDataFromToken }
