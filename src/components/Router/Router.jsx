@@ -10,14 +10,15 @@ const Router = () => {
       <Route path="/" element={
         <Landing />
       } />
-      <Route path="/callback" element={
-        <h1>Welcome back</h1>
-      } />
       <Route path='/onboarding' element={
         <Onboarding />
       } />
       <Route path="/admin" element={
         <AdminPanel />
+      } />
+
+      <Route path="/*" element={
+        <h1>Error Page</h1>
       } />
     </Routes>
   )
