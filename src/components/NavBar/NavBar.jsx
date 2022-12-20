@@ -5,8 +5,6 @@ import LogoutButton from '../LogoutButton/LogoutButton'
 import SignupButton from '../SignupButton/SignupButton'
 
 const NavBar = (props) => {
-  console.log('NavBar', props.user)
-
   const protectedLinks = (
     <ul>
       <li><LogoutButton /></li>

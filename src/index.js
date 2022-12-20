@@ -10,10 +10,9 @@ root.render(
   <React.StrictMode>
     <Auth0Provider
       domain={process.env.REACT_APP_AUTH0_DOMAIN}
-      clientId={process.env.REACT_APP_AUTH0_CLIENT_ID}
       audience={process.env.REACT_APP_AUTH0_AUDIENCE}
+      clientId={process.env.REACT_APP_AUTH0_CLIENT_ID}
       redirectUri={process.env.REACT_APP_AUTH0_CALLBACK_URL}
-      scope="read:current_user update:current_user_metadata"
     >
       <Router>
         <App />

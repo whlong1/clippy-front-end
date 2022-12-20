@@ -8,19 +8,20 @@ import Router from './components/Router/Router'
 
 // Services
 import * as authService from './services/authService'
-import * as profileService from './services/profileService'
 
 const App = () => {
   const [profile, setProfile] = useState(null)
-  const { user, getAccessTokenSilently, signup } = useAuth0()
+  const { user, getAccessTokenSilently, isAuthenticated } = useAuth0()
 
   console.log('Current User', user)
   console.log('Profile', profile)
+  console.log('isAuthenticated', isAuthenticated)
 
   useEffect(() => {
     const fetchUserDataFromToken = async () => {
       try {
         const token = await getAccessTokenSilently()
+        console.log('Token', token)
         const res = await authService.getUserDataFromToken(token)
         if (res.error) throw Error(res.error)
         setProfile(res)
@@ -28,8 +29,8 @@ const App = () => {
         console.log(error)
       }
     }
-    fetchUserDataFromToken()
-  }, [getAccessTokenSilently])
+    if (user) fetchUserDataFromToken()
+  }, [user, getAccessTokenSilently])
 
 
   return (
