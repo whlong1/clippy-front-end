@@ -4,7 +4,7 @@ import './App.css'
 
 // Components
 import NavBar from './components/NavBar/NavBar'
-import Router from './components/Router/Router'
+import AppRouter from './components/Routes/AppRouter'
 
 // Services
 import * as authService from './services/authService'
@@ -36,7 +36,7 @@ const App = () => {
   return (
     <>
       <NavBar user={user} />
-      <Router />
+      <AppRouter />
     </>
   )
 }

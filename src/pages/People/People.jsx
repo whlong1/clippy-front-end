@@ -1,6 +1,6 @@
 const People = () => {
   return (
-    <main>People</main>
+    <section>People</section>
   )
 }
 

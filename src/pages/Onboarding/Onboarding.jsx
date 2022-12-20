@@ -19,9 +19,9 @@ const Onboarding = () => {
   // console.log('Onboarding User', user)
 
   return (
-    <main>
+    <section>
       Onboarding Page
-    </main>
+    </section>
   )
 }
 

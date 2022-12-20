@@ -7,7 +7,7 @@ import Onboarding from '../../pages/Onboarding/Onboarding'
 import Layout from '../../pages/Layout/Layout'
 import People from '../../pages/People/People'
 
-const Router = () => {
+const AppRouter = () => {
   return (
     <Routes>
       <Route path="/" element={
@@ -23,11 +23,14 @@ const Router = () => {
 
       <Route element={<Layout />}>
         <Route path='onboarding' element={<Onboarding />} />
-        <Route path='people' element={<People />} />
+        <Route path='people'>
+          <Route index element={<h1>People Landing</h1>} />
+          <Route path=':id' element={<h1>Person</h1>} />
+        </Route>
       </Route>
 
     </Routes>
   )
 }
 
-export default Router
+export default AppRouter
