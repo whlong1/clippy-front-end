@@ -4,7 +4,7 @@ import LoginButton from '../LoginButton/LoginButton'
 import LogoutButton from '../LogoutButton/LogoutButton'
 import SignupButton from '../SignupButton/SignupButton'
 
-const NavBar = (props) => {
+const Nav = (props) => {
   const protectedLinks = (
     <ul>
       <li><LogoutButton /></li>
@@ -30,4 +30,4 @@ const NavBar = (props) => {
   )
 }
 
-export default NavBar
+export default Nav

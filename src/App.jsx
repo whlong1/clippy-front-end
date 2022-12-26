@@ -3,8 +3,8 @@ import { useAuth0 } from "@auth0/auth0-react"
 import './App.css'
 
 // Components
-import NavBar from './components/NavBar/NavBar'
-import AppRouter from './components/Routes/AppRouter'
+import AppLayout from './layouts/AppLayout'
+import AppRouter from './routes/AppRouter'
 
 // Services
 import * as authService from './services/authService'
@@ -13,9 +13,11 @@ const App = () => {
   const [profile, setProfile] = useState(null)
   const { user, getAccessTokenSilently, isAuthenticated } = useAuth0()
 
-  console.log('Current User', user)
-  console.log('Profile', profile)
-  console.log('isAuthenticated', isAuthenticated)
+  // current user now has sei/roles property for admins:
+  console.log('Current User', user) 
+  
+  // console.log('Profile', profile)
+  // console.log('isAuthenticated', isAuthenticated)
 
   useEffect(() => {
     const fetchUserDataFromToken = async () => {
@@ -24,6 +26,7 @@ const App = () => {
         console.log('Token', token)
         const res = await authService.getUserDataFromToken(token)
         if (res.error) throw Error(res.error)
+        console.log('res',res)
         setProfile(res)
       } catch (error) {
         console.log(error)
@@ -34,10 +37,9 @@ const App = () => {
 
 
   return (
-    <>
-      <NavBar user={user} />
+    <AppLayout>
       <AppRouter />
-    </>
+    </AppLayout>
   )
 }
 
