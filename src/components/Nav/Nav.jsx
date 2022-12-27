@@ -10,8 +10,12 @@ const Nav = (props) => {
       <li><LogoutButton /></li>
       <li><Link to="/admin">Admin Panel</Link></li>
 
-      <li><Link to="/people">People</Link></li>
       <li><Link to="/onboarding">Onboarding</Link></li>
+
+      <li><Link to="/people">People</Link></li>
+      <li><Link to="/attendance">Attendance</Link></li>
+      <li><Link to="/deliverables">Deliverables</Link></li>
+
     </ul>
   )
 

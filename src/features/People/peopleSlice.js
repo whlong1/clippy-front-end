@@ -18,7 +18,5 @@ export const peopleSlice = createSlice({
   },
 })
 
-// Action creators are generated for each case reducer function
 export const { addOne, updateOne, deleteOne } = peopleSlice.actions
-
 export default peopleSlice.reducer
