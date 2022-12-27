@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
 
-import Menu from '../components/Menu/Menu'
 import Landing from '../pages/Landing/Landing'
 import AdminPanel from '../pages/AdminPanel/AdminPanel'
 import PeopleRouter from './PeopleRouter'
