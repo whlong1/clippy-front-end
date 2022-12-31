@@ -6,6 +6,9 @@ export const peopleSlice = createSlice({
   name: 'people',
   initialState,
   reducers: {
+    setPeople: (state, action) => {
+      return action.payload
+    },
     addOne: (state, action) => {
       return [...state, action.payload]
     },
@@ -16,7 +19,8 @@ export const peopleSlice = createSlice({
       return state.filter(el => el._id !== action.payload._id)
     },
   },
+
 })
 
-export const { addOne, updateOne, deleteOne } = peopleSlice.actions
+export const { setPeople, addOne, updateOne, deleteOne } = peopleSlice.actions
 export default peopleSlice.reducer
