@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+// import { useState, useEffect } from 'react'
 import { useAuth0 } from "@auth0/auth0-react"
 import './App.css'
 
@@ -7,10 +7,11 @@ import AppLayout from './layouts/AppLayout'
 import AppRouter from './routes/AppRouter'
 
 // Services
-import * as authService from './services/authService'
+// import * as profileService from './services/profileService'
 
 // Hooks
-import { useHandleToken } from './hooks/useHandleToken'
+import { useToken } from './hooks/useToken'
+import { useProfile } from './hooks/useProfile'
 
 const App = () => {
   const {
@@ -19,27 +20,28 @@ const App = () => {
     isAuthenticated,
   } = useAuth0()
 
-  const [profile, setProfile] = useState(null)
-  
-  useHandleToken(user)
-  
+  // const [profile, setProfile] = useState(null)
+
+  const profile = useProfile(user)
+  useToken(user)
+
   console.log('Profile', profile)
   console.log('Auth0 User', user)
   console.log('isAuthenticated', isAuthenticated)
 
-  useEffect(() => {
-    // This functionality can move into profile
-    const fetchUserDataFromToken = async () => {
-      try {
-        const res = await authService.getUserDataFromToken()
-        if (res.error) throw Error(res.error)
-        setProfile(res)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    if (user) fetchUserDataFromToken()
-  }, [user])
+  // useEffect(() => {
+  //   // This functionality can move into profile
+  //   const getProfile = async () => {
+  //     try {
+  //       const res = await profileService.getProfile()
+  //       if (res.error) throw Error(res.error)
+  //       setProfile(res)
+  //     } catch (error) {
+  //       console.log(error)
+  //     }
+  //   }
+  //   if (user) getProfile()
+  // }, [user])
 
   if (isLoading) return <h1>Authenticating...</h1>
 

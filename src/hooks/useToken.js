@@ -1,9 +1,8 @@
 import { useEffect } from 'react'
 import { useAuth0 } from "@auth0/auth0-react"
-
 import * as tokenService from '../services/tokenService'
 
-export const useHandleToken = (user) => {
+export const useToken = (user) => {
   const { getAccessTokenSilently } = useAuth0()
   useEffect(() => {
     const handleToken = async () => {
