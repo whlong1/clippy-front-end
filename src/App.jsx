@@ -19,9 +19,10 @@ const App = () => {
     isAuthenticated,
   } = useAuth0()
 
-  useHandleToken(user)
   const [profile, setProfile] = useState(null)
-
+  
+  useHandleToken(user)
+  
   console.log('Profile', profile)
   console.log('Auth0 User', user)
   console.log('isAuthenticated', isAuthenticated)

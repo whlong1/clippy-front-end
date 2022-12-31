@@ -15,5 +15,6 @@ export const useHandleToken = (user) => {
       }
     }
     if (user) handleToken()
+    // Add condition to clear token if user is null!
   }, [user, getAccessTokenSilently])
 }
