@@ -18,12 +18,14 @@ const App = () => {
 
   const profile = useProfile(user)
   const tokenError = useToken(user)
-
+  
   console.log('Profile', profile)
   console.log('Auth0 User', user)
   console.log('isAuthenticated', isAuthenticated)
-
+  
+  // isLoading only refers to auth0 user retrieval
   if (isLoading) return <h1>Authenticating...</h1>
+  // useToken returns null when the token is set successfully
   if (tokenError) return <h1>Oopsy Daisy! Error: {tokenError}</h1>
 
   return (

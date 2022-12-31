@@ -16,8 +16,13 @@ export const useToken = (user) => {
         setError("Error while setting token!")
       }
     }
-    // Add condition to clear token if user is null!
-    if (user) handleToken()
+
+    if (user) {
+      handleToken()
+    } else {
+      tokenService.removeToken()
+    }
+    
   }, [user, getAccessTokenSilently])
 
   return error
