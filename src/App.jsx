@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useAuth0 } from "@auth0/auth0-react"
 import './App.css'
 
@@ -9,32 +9,38 @@ import AppRouter from './routes/AppRouter'
 // Services
 import * as authService from './services/authService'
 
-import { useDispatch } from 'react-redux'
-import { authenticate } from './features/Auth/authSlice'
+// Hooks
+import { useHandleToken } from './hooks/useHandleToken'
 
 const App = () => {
-  const dispatch = useDispatch()
-  const { user, isAuthenticated, isLoading, getAccessTokenSilently } = useAuth0()
+  const {
+    user,
+    isLoading,
+    isAuthenticated,
+  } = useAuth0()
 
-  console.log('Current User', user)
+  useHandleToken(user)
+  const [profile, setProfile] = useState(null)
+
+  console.log('Profile', profile)
+  console.log('Auth0 User', user)
   console.log('isAuthenticated', isAuthenticated)
 
   useEffect(() => {
+    // This functionality can move into profile
     const fetchUserDataFromToken = async () => {
       try {
-        const token = await getAccessTokenSilently()
-        const res = await authService.getUserDataFromToken(token)
+        const res = await authService.getUserDataFromToken()
         if (res.error) throw Error(res.error)
-        res.isAdmin = user['sei/roles'].includes('Admin')
-        dispatch(authenticate({ token: token, profile: res }))
+        setProfile(res)
       } catch (error) {
         console.log(error)
       }
     }
     if (user) fetchUserDataFromToken()
-  }, [dispatch, user, isLoading, getAccessTokenSilently])
+  }, [user])
 
-  if (isLoading) return <h1>Loading</h1>
+  if (isLoading) return <h1>Authenticating...</h1>
 
   return (
     <AppLayout>
