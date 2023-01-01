@@ -7,8 +7,8 @@ const ProfileForm = () => {
     setFormData({ ...formData, [target.name]: target.value })
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault()
     // submit the form data
   }
 
