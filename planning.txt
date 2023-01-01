@@ -1,0 +1,16 @@
+Onboarding Approach 1:
+
+useEffect(() => {
+  const isNewUser = user?.is_new && !profile?.isOnboarded
+  if (isNewUser) navigate('/onboarding')
+}, [user, profile, navigate])
+
+
+
+Notes
+
+In the pages directory, all components have a <main> tag as their outermost wrapper element.
+These components are outside of our core app functionality and do not make use of wrapper layouts.
+
+
+

@@ -29,5 +29,5 @@ export const useAuth = () => {
     if (user) handleToken()
   }, [user, getAccessTokenSilently])
 
-  return { user, profile, isLoading, isAuthenticated, error }
+  return { user, profile, setProfile, isLoading, isAuthenticated, error }
 }

@@ -1,4 +1,5 @@
 const Loading = ({ msg }) => {
+  // Add indicator
   return (
     <main>
       <h1>{msg}</h1>
