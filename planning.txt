@@ -10,8 +10,10 @@ useEffect(() => {
 Notes
 
 In the pages directory, all components have a <main> tag as their outermost wrapper element.
-These components are outside of our core app functionality and do not make use of wrapper layouts.
+Features make use of the ContentLayout, which consists of a <main> tag and <nav>
 
+
+Should ErroMsg go outside of core app?
 
 
 
