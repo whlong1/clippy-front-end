@@ -23,7 +23,7 @@ export const useAuth = () => {
         console.log(res)
         setProfile(res)
       } catch (error) {
-        setError("Error while setting token!")
+        setError(error.message)
       }
     }
     if (user) handleToken()

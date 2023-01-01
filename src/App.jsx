@@ -31,7 +31,7 @@ const App = () => {
 
   // isLoading only refers to auth0 user retrieval
   if (isLoading) return <h1>Authenticating...</h1>
-  if (error) return <h1>Oopsy Daisy! Error: {error}</h1>
+  if (error) return <h1>Oopsy Daisy! {error}</h1>
 
   return (
     <AppLayout>
