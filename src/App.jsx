@@ -30,6 +30,7 @@ const App = () => {
   console.log('Profile', profile)
 
   if (!user && !isLoading) return <Landing />
+  // Need bespoke components for these:
   if (error) return <ErrorMsg error={error} />
   if (isLoading) return <Loading msg={'Authenticating...'} />
 

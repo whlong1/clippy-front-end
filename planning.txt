@@ -18,3 +18,14 @@ Might need to refactor use of ErrorMsg in App.jsx if that component is used else
 
 
 
+
+Onboarding flow
+  user signs up
+  user is directed to onboarding
+  user fills out profile info
+  profile is updated - isProfileComplete set to true
+
+  with profile fields filled out, user can join cohort
+  user recieves message to wait for admittance
+  when an instructor approves a student, set isOnboarded to true
+    * modify approveProfile controller function to toggle isOnboarded

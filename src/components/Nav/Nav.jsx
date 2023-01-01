@@ -1,6 +1,9 @@
 import { NavLink } from 'react-router-dom'
 import LogoutButton from '../LogoutButton/LogoutButton'
 
+// Users can only access this nav after logging in.
+// The only conditional rendering we need here is for admin access.
+
 const Nav = (props) => {
   const { isAdmin } = props.user
   return (
