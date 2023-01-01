@@ -42,9 +42,11 @@ const Form = ({ inputFields, handleSubmit }) => {
   // Note on the name property (type.name) used below:
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name
 
-  Object.keys(inputFields).map((key) => {
-    console.log('TYPE VALUE', typeLookup[inputFields[key].type.name])
-  })
+
+  const formatType = (key) => (
+    typeLookup[inputFields[key].type.name]
+  )
+
 
   return (
     <form onSubmit={handleSubmit}>
@@ -58,7 +60,7 @@ const Form = ({ inputFields, handleSubmit }) => {
             id={key}
             name={key}
             onChange={handleChange}
-            //? type={}
+            type={formatType(key)}
             //? required={}
             value={formData[key] || ''}
           />

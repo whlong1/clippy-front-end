@@ -44,6 +44,10 @@ const profileInputfields = {
     type: Boolean,
     default: false
   },
+  role: {
+    type: Number,
+    default: 0
+  },
 }
 
 const Onboarding = (props) => {
