@@ -1,9 +1,10 @@
 import Nav from '../components/Nav/Nav'
 
-const AppLayout = ({ children }) => {
+const AppLayout = (props) => {
+  const { children } = props
   return (
     <>
-      <Nav />
+      <Nav {...props} />
       {children}
       <footer></footer>
     </>

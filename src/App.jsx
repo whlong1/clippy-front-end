@@ -22,20 +22,24 @@ const App = () => {
     isAuthenticated,
   } = useAuth()
 
+  const authProps = {
+    user, profile, setProfile, isAuthenticated,
+  }
+
   console.log('Auth0 User', user)
   console.log('Profile', profile)
-  console.log('isAuthenticated', isAuthenticated)
 
   if (!user && !isLoading) return <Landing />
   if (error) return <ErrorMsg error={error} />
   if (isLoading) return <Loading msg={'Authenticating...'} />
+
   if (user?.is_new && !profile?.isOnboarded) {
     return <Onboarding profile={profile} setProfile={setProfile} />
   }
 
   return (
-    <AppLayout>
-      <AppRouter />
+    <AppLayout {...authProps}>
+      <AppRouter {...authProps} />
     </AppLayout>
   )
 }

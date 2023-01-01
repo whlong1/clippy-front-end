@@ -1,35 +1,20 @@
-import { Link } from 'react-router-dom'
-
-import LoginButton from '../LoginButton/LoginButton'
+import { NavLink } from 'react-router-dom'
 import LogoutButton from '../LogoutButton/LogoutButton'
-import SignupButton from '../SignupButton/SignupButton'
 
 const Nav = (props) => {
-  const protectedLinks = (
-    <ul>
-      <li><LogoutButton /></li>
-      <li><Link to="/admin">Admin Panel</Link></li>
-
-      <li><Link to="/onboarding">Onboarding</Link></li>
-
-      <li><Link to="/people">People</Link></li>
-      <li><Link to="/attendance">Attendance</Link></li>
-      <li><Link to="/deliverables">Deliverables</Link></li>
-
-    </ul>
-  )
-
-  const publicLinks = (
-    <ul>
-      <li><LoginButton /></li>
-      <li><SignupButton /></li>
-    </ul>
-  )
-
+  const { isAdmin } = props.user
   return (
     <nav>
-      {protectedLinks}
-      {publicLinks}
+      <ul>
+        {isAdmin && <li><NavLink to="/admin">Admin Panel</NavLink></li>}
+
+        <li><NavLink to="/people">People</NavLink></li>
+        <li><NavLink to="/attendance">Attendance</NavLink></li>
+        <li><NavLink to="/deliverables">Deliverables</NavLink></li>
+
+        <li><NavLink to="/profile">My Profile</NavLink></li>
+        <li><LogoutButton /></li>
+      </ul>
     </nav>
   )
 }

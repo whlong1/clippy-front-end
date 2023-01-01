@@ -13,7 +13,8 @@ In the pages directory, all components have a <main> tag as their outermost wrap
 Features make use of the ContentLayout, which consists of a <main> tag and <nav>
 
 
-Should ErroMsg go outside of core app?
+Should ErrorMsg go outside of core app?
+Might need to refactor use of ErrorMsg in App.jsx if that component is used elsewhere
 
 
 
