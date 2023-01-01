@@ -3,7 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react"
 import * as tokenService from '../services/tokenService'
 import * as profileService from '../services/profileService'
 
-export const useAuthenticate = () => {
+export const useAuth = () => {
   const {
     user,
     isLoading,

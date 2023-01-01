@@ -7,7 +7,7 @@ import AppLayout from './layouts/AppLayout'
 import AppRouter from './routes/AppRouter'
 
 // Hooks
-import { useAuthenticate } from './hooks/useAuthenticate'
+import { useAuth } from './hooks/useAuth'
 
 const App = () => {
   const {
@@ -16,7 +16,7 @@ const App = () => {
     profile,
     isLoading,
     isAuthenticated,
-  } = useAuthenticate()
+  } = useAuth()
 
   const navigate = useNavigate()
 
