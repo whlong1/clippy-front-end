@@ -29,6 +29,11 @@ const App = () => {
   console.log('Auth0 User', user)
   console.log('Profile', profile)
 
+  // TESTING
+  if (user) {
+    return <Onboarding profile={profile} setProfile={setProfile} />
+  }
+
   if (!user && !isLoading) return <Landing />
   // Need bespoke components for these:
   if (error) return <ErrorMsg error={error} />
