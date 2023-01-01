@@ -6,6 +6,9 @@ import './App.css'
 import AppLayout from './layouts/AppLayout'
 import AppRouter from './routes/AppRouter'
 
+import Loading from './pages/Loading/Loading'
+import ErrorMsg from './pages/ErrorMsg/ErrorMsg'
+
 // Hooks
 import { useAuth } from './hooks/useAuth'
 
@@ -29,9 +32,8 @@ const App = () => {
   console.log('Profile', profile)
   console.log('isAuthenticated', isAuthenticated)
 
-  // isLoading only refers to auth0 user retrieval
-  if (isLoading) return <h1>Authenticating...</h1>
-  if (error) return <h1>Oopsy Daisy! {error}</h1>
+  if (error) return <ErrorMsg error={error} />
+  if (isLoading) return <Loading msg={'Authenticating...'} />
 
   return (
     <AppLayout>

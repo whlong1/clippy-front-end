@@ -11,7 +11,7 @@ export const useAuth = () => {
     getAccessTokenSilently,
   } = useAuth0()
 
-  const [error, setError] = useState('')
+  const [error, setError] = useState(null)
   const [profile, setProfile] = useState(null)
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export const useAuth = () => {
         console.log(res)
         setProfile(res)
       } catch (error) {
-        setError(error.message)
+        setError(error)
       }
     }
     if (user) handleToken()
