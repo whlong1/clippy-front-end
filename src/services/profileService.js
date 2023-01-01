@@ -29,7 +29,6 @@ const updateProfile = async (data) => {
   }
 }
 
-
 async function getProfiles(token) {
   const res = await fetch(`${BASE_URL}`,
     { headers: { 'Authorization': `Bearer ${token}` } },
