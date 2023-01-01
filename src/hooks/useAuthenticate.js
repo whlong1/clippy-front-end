@@ -3,10 +3,16 @@ import { useAuth0 } from "@auth0/auth0-react"
 import * as tokenService from '../services/tokenService'
 import * as profileService from '../services/profileService'
 
-export const useAuthenticate = (user) => {
+export const useAuthenticate = () => {
+  const {
+    user,
+    isLoading,
+    isAuthenticated,
+    getAccessTokenSilently,
+  } = useAuth0()
+
   const [error, setError] = useState('')
   const [profile, setProfile] = useState(null)
-  const { getAccessTokenSilently } = useAuth0()
 
   useEffect(() => {
     const handleToken = async () => {
@@ -23,5 +29,5 @@ export const useAuthenticate = (user) => {
     if (user) handleToken()
   }, [user, getAccessTokenSilently])
 
-  return {profile, error}
+  return { user, profile, isLoading, isAuthenticated, error }
 }
