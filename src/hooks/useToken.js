@@ -4,21 +4,19 @@ import * as tokenService from '../services/tokenService'
 
 export const useToken = (user) => {
   const { getAccessTokenSilently } = useAuth0()
-  const [status, setStatus] = useState(null)
+  const [error, setError] = useState('')
 
   useEffect(() => {
     const handleToken = async () => {
       try {
         const token = await getAccessTokenSilently()
-        console.log(token)
         tokenService.setToken(token)
       } catch (error) {
-        console.log('Error', error)
-        setStatus("Error while setting token!")
+        setError("Error while setting token!")
       }
     }
     if (user) handleToken()
   }, [user, getAccessTokenSilently])
 
-  return status
+  return error
 }
