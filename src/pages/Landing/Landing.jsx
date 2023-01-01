@@ -1,9 +1,13 @@
-import styles from './Landing.module.css'
+import LoginButton from '../../components/LoginButton/LoginButton'
+import SignupButton from '../../components/SignupButton/SignupButton'
 
-const Landing = ({ user }) => {
+const Landing = () => {
+  // Add conditional messages based on user/profile
   return (
-    <main className={styles.container}>
-      <h1>hello, {user ? user.name : 'friend'}</h1>
+    <main>
+      <h1>Clippy</h1>
+      <LoginButton/>
+      <SignupButton/>
     </main>
   )
 }
