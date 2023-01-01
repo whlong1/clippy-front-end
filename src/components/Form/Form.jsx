@@ -15,18 +15,36 @@ const Form = ({ inputFields, handleSubmit }) => {
   // check for props like lowercase true
   // check for props like enum and default
   // could build different cb functions to produce different inputs types
+  // Need to pass down submit button text!
+  // If updating a resource, pass in initialState, access value in initialState with key, set placeholder
+
+  // How to catch default?
+  // How to catch lowercase?
+  // How to catch required?
 
   const test = Object.keys(inputFields)
   console.log('keys in inputFields object', test)
 
-  Object.keys(inputFields).map((key) => (
-    console.log(inputFields[key])
-  ))
 
+  // HELPERS
   const formatLabel = (key) => (
     // RegEx Source: https://tinyurl.com/2cyyreb4
     key.charAt(0).toUpperCase() + key.slice(1).replace(/[A-Z]/g, ' $&').trim()
   )
+
+  const typeLookup = {
+    Date: 'date',
+    String: 'text',
+    Number: 'number',
+    Boolean: 'checkbox',
+  }
+
+  // Note on the name property (type.name) used below:
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name
+
+  Object.keys(inputFields).map((key) => {
+    console.log('TYPE VALUE', typeLookup[inputFields[key].type.name])
+  })
 
   return (
     <form onSubmit={handleSubmit}>
