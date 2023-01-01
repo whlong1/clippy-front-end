@@ -8,7 +8,8 @@ import AppLayout from './layouts/AppLayout'
 import AppRouter from './routes/AppRouter'
 
 // Hooks
-import { useProfile } from './hooks/useProfile'
+// import { useProfile } from './hooks/useProfile'
+import { useAuthenticate } from './hooks/useAuthenticate'
 
 const App = () => {
   const {
@@ -18,12 +19,16 @@ const App = () => {
   } = useAuth0()
 
   const navigate = useNavigate()
-  const profile = useProfile(user)
+  // const profile = useProfile(user)
+  const { profile } = useAuthenticate(user)
 
   useEffect(() => {
     const isNewUser = user?.is_new && !profile?.isOnboarded
     if (isNewUser) navigate('/onboarding')
   }, [user, profile, navigate])
+
+  // Could have a useEffect that gets token and adds to local storage here
+  // Or move useAuth0 into useAuthenticate hook - return values as needed
 
   console.log('Auth0 User', user)
   console.log('Profile', profile)
