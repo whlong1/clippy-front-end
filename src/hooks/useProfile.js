@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
+import { useToken } from './useToken'
 import * as profileService from '../services/profileService'
 
 export const useProfile = (user) => {
   const navigate = useNavigate()
+  const tokenStatus = useToken(user)
   const [profile, setProfile] = useState(null)
 
   useEffect(() => {
@@ -17,17 +19,25 @@ export const useProfile = (user) => {
       }
     }
 
-    // Modify condition with prop based on profile
+    // if (user) {
+    //   getProfile()
+    // }
+
+    // Modify condition with prop based on profile?
+    // for is_new to be set to false, need user to log out and login
     if (user && user.is_new) {
       navigate('/onboarding')
       setProfile(null)
-    } 
-    if (user) {
+    } else if (user) {
       getProfile()
     }
 
-  }, [user, navigate])
+  }, [user, tokenStatus, navigate])
 
 
   return profile
 }
+
+// No issues when a non logged in user visits site
+// token is now available when fetching profile
+

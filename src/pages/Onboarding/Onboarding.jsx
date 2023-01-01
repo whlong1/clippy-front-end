@@ -1,27 +1,20 @@
-// import { useEffect } from "react"
-// import { useAuth0 } from "@auth0/auth0-react"
+import { useNavigate } from "react-router-dom"
 
 const Onboarding = () => {
-  // const { user, getAccessTokenSilently } = useAuth0()
+  const navigate = useNavigate()
 
-  // useEffect(() => {
-  //   const getToken = async () => {
-  //     try {
-  //       const token = await getAccessTokenSilently()
-  //       console.log('Onboarding Token', token)
-  //     } catch (error) {
-  //       console.log(error)
-  //     }
-  //   }
-  //   getToken()
-  // }, [getAccessTokenSilently])
-
-  // console.log('Onboarding User', user)
+  const handleOnboarding = async () => {
+    // Make request to update profile...
+    navigate('/')
+  }
 
   return (
-    <section>
-      Onboarding Page
-    </section>
+    <main>
+      <h1>Onboarding</h1>
+      <button onClick={handleOnboarding}>
+        Complete Onboarding
+      </button>
+    </main>
   )
 }
 
