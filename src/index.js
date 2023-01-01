@@ -18,6 +18,7 @@ root.render(
         audience={process.env.REACT_APP_AUTH0_AUDIENCE}
         clientId={process.env.REACT_APP_AUTH0_CLIENT_ID}
         redirectUri={process.env.REACT_APP_AUTH0_CALLBACK_URL}
+        // Look into this prop: cacheLocation="localstorage"
       >
         <Router>
           <App />

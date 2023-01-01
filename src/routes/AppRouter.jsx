@@ -11,6 +11,7 @@ const AppRouter = () => {
   return (
     <Routes>
       <Route path="/" element={<Landing />} />
+      <Route path="/onboarding" element={<h1>Onboarding</h1>} />
       <Route path="/admin" element={<AdminPanel />} />
       <Route path="/*" element={<h1>Error Page</h1>} />
       <Route path='/people/*' element={<PeopleRouter />} />

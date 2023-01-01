@@ -10,19 +10,14 @@ export const useToken = (user) => {
     const handleToken = async () => {
       try {
         const token = await getAccessTokenSilently()
+        console.log(token)
         tokenService.setToken(token)
       } catch (error) {
-        console.log(error)
+        console.log('Error', error)
         setError("Error while setting token!")
       }
     }
-
-    if (user) {
-      handleToken()
-    } else {
-      tokenService.removeToken()
-    }
-    
+    if (user) handleToken()
   }, [user, getAccessTokenSilently])
 
   return error

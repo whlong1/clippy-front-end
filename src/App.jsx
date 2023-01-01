@@ -28,6 +28,8 @@ const App = () => {
   // useToken returns null when the token is set successfully
   if (tokenError) return <h1>Oopsy Daisy! Error: {tokenError}</h1>
 
+  // If user is null handle redirect to a landing (outside of main app layout/router) here.
+  // If profile is missing fields should we redirect to onboarding?
   return (
     <AppLayout>
       <AppRouter />
