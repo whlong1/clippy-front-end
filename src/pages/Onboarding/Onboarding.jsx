@@ -4,60 +4,7 @@ import { useNavigate } from "react-router-dom"
 import * as profileService from '../../services/profileService'
 
 // Components
-import Form from "../../components/Form/Form"
 import ProfileForm from "./components/ProfileForm"
-
-const profileInputfields = {
-  name: {
-    type: String,
-    required: true,
-  },
-  firstName: {
-    type: String,
-    required: true
-  },
-  lastName: {
-    type: String,
-    required: true
-  },
-  preferredName: {
-    type: String
-  },
-  normalizedName: {
-    type: String,
-    lowercase: true
-  },
-  preferredPronouns: {
-    type: String,
-    lowercase: true
-  },
-  gitHubUserName: {
-    type: String
-  },
-  linkedInUserName: {
-    type: String
-  },
-  codeWarsUserName: {
-    type: String
-  },
-  isBoolean: {
-    type: Boolean,
-    default: false
-  },
-  role: {
-    type: Number,
-    default: 10
-  },
-  dueDate: {
-    type: Date,
-    required: true
-  },
-  status: {
-    type: String,
-    enum: ['assigned', 'complete', 'incomplete', 'missing', 'pendingAudit'],
-    default: 'assigned'
-  },
-}
 
 const Onboarding = (props) => {
   const navigate = useNavigate()
@@ -73,9 +20,7 @@ const Onboarding = (props) => {
   return (
     <main>
       <h1>Onboarding</h1>
-      <Form inputFields={profileInputfields} />
-      {/* <ProfileForm/> */}
-
+      <ProfileForm />
       <button onClick={handleOnboarding}>
         Complete Onboarding
       </button>

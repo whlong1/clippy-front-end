@@ -9,6 +9,11 @@ import {
 } from './helpers'
 
 const Form = ({ inputFields, handleSubmit }) => {
+  // TODO:
+  // Dynamically create select tag and options based on enum prop
+  // Handle updating an existing resource (see ./helpers)
+  // Handle default check value
+
   const [formData, setFormData] = useState(handleInitialState(inputFields))
 
   const handleChange = ({ target }) => {
