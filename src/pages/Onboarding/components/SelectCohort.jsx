@@ -8,8 +8,8 @@ const SelectCohort = ({ profile, setProfile }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setErrorMsg('')
     try {
+      setErrorMsg('')
       const res = await cohortService.addProfileToWaitlist(selectedCohortId, profile._id)
       setProfile(res)
     } catch (err) {

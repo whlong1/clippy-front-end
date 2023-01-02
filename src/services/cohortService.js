@@ -20,7 +20,6 @@ const addProfileToWaitlist = async (cohortId, profileId) => {
     if (!res.ok) throw await res.json()
     return await res.json()
   } catch (err) {
-    console.log(err)
     throw err
   }
 }
