@@ -14,6 +14,11 @@ const Form = ({ inputFields, handleSubmit }) => {
   // Handle updating an existing resource (see ./helpers)
   // Handle default check value
 
+  //? Alternate approach:
+  // Store collection of input components on same level as parent component.
+  // Pass down inputs, initial state, and handleSubmit
+  // Would we need to use cloneElement?
+
   const [formData, setFormData] = useState(handleInitialState(inputFields))
 
   const handleChange = ({ target }) => {

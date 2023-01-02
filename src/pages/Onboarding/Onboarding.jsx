@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+// import { useNavigate } from "react-router-dom"
 
 // Services
 import * as profileService from '../../services/profileService'
@@ -7,23 +7,28 @@ import * as profileService from '../../services/profileService'
 import ProfileForm from "./components/ProfileForm"
 
 const Onboarding = (props) => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
+  const { profile, setProfile } = props
 
-  const handleOnboarding = async () => {
+  console.log('profile', props.profile)
+
+  const handleOnboarding = async (e, formData) => {
+    e.preventDefault()
     // Make request to update profile...
-    const res = await profileService()
+    const res = await profileService.updateProfile(formData)
     console.log(res)
-    props.setProfile({ isOnboarded: true })
-    navigate('/')
+    setProfile(res)
+    // navigate('/')
   }
 
   return (
     <main>
       <h1>Onboarding</h1>
-      <ProfileForm />
-      <button onClick={handleOnboarding}>
-        Complete Onboarding
-      </button>
+
+      {!profile?.isProfileComplete
+        ? <ProfileForm btnText="Complete Onboarding" handleSubmit={handleOnboarding} />
+        : <h1>Step 2</h1>
+      }
 
     </main>
   )

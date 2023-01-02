@@ -1,19 +1,14 @@
 import { useState } from 'react'
 
-const ProfileForm = () => {
+const ProfileForm = ({ btnText, handleSubmit }) => {
   const [formData, setFormData] = useState({})
 
   const handleChange = ({ target }) => {
     setFormData({ ...formData, [target.name]: target.value })
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // submit the form data
-  }
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={(e) => handleSubmit(e, formData)}>
       <label htmlFor="name">Name:</label>
       <input
         required
@@ -23,7 +18,6 @@ const ProfileForm = () => {
         onChange={handleChange}
         value={formData.name || ''}
       />
-
       <label htmlFor="firstName">First Name:</label>
       <input
         required
@@ -33,7 +27,6 @@ const ProfileForm = () => {
         onChange={handleChange}
         value={formData.firstName || ''}
       />
-
       <label htmlFor="lastName">Last Name:</label>
       <input
         required
@@ -43,7 +36,6 @@ const ProfileForm = () => {
         onChange={handleChange}
         value={formData.lastName || ''}
       />
-
       <label htmlFor="preferredName">Preferred Name:</label>
       <input
         type="text"
@@ -52,16 +44,14 @@ const ProfileForm = () => {
         onChange={handleChange}
         value={formData.preferredName || ''}
       />
-
-      <label htmlFor="normalizedName">Normalized Name:</label>
+      {/* <label htmlFor="normalizedName">Normalized Name:</label>
       <input
         type="text"
         id="normalizedName"
         name="normalizedName"
         onChange={handleChange}
         value={formData.normalizedName || ''}
-      />
-
+      /> */}
       <label htmlFor="preferredPronouns">Preferred Pronouns:</label>
       <input
         type="text"
@@ -70,7 +60,6 @@ const ProfileForm = () => {
         onChange={handleChange}
         value={formData.preferredPronouns || ''}
       />
-
       <label htmlFor="gitHubUserName">GitHub User Name:</label>
       <input
         type="text"
@@ -79,7 +68,6 @@ const ProfileForm = () => {
         onChange={handleChange}
         value={formData.gitHubUserName || ''}
       />
-
       <label htmlFor="linkedInUserName">LinkedIn User Name:</label>
       <input
         type="text"
@@ -96,6 +84,7 @@ const ProfileForm = () => {
         onChange={handleChange}
         value={formData.codeWarsUserName || ''}
       />
+      <button type="submit">{btnText}</button>
     </form>
 
   )
