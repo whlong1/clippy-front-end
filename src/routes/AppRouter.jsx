@@ -7,11 +7,14 @@ import AttendanceRouter from './AttendanceRouter'
 import DeliverablesRouter from './DeliverablesRouter'
 
 // Hooks
-// import { useCohorts } from '../hooks/useCohorts'
+import { useCohorts } from '../hooks/useCohorts'
 
 const AppRouter = () => {
-  // const { data, status } = useCohorts()
-  // console.log(data, status)
+  const { cohorts, status } = useCohorts()
+  console.log(cohorts, status)
+
+  if (status === 'error') return <h1>Error</h1>
+  if (status === 'loading') return <h1>Loading...</h1>
 
   return (
     <Routes>

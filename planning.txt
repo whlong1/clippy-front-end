@@ -6,3 +6,10 @@ Features make use of the ContentLayout, which consists of a <main> tag and <nav>
 
 Should ErrorMsg go outside of core app?
 Might need to refactor use of ErrorMsg in App.jsx if that component is used elsewhere
+
+
+Home/Welcome component issue.
+In order to stick to current pattern, should be wrapped with
+ContentLayout (and given a corresponding menu)
+This seems like overkill. Consider redirecting to people automatically.
+
