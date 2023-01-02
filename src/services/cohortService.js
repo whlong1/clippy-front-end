@@ -8,6 +8,14 @@ const indexCohorts = async () => {
   return await res.json()
 }
 
+const getCohortPeople = async (cohortId) => {
+  const res = await fetch(`${BASE_URL}/${cohortId}/people`,
+    { headers: { 'Authorization': `Bearer ${tokenService.getToken()}` } },
+  )
+  return await res.json()
+}
+
+
 const addProfileToWaitlist = async (cohortId, profileId) => {
   try {
     const res = await fetch(`${BASE_URL}/${cohortId}/waitlist/${profileId}`,
@@ -27,5 +35,6 @@ const addProfileToWaitlist = async (cohortId, profileId) => {
 
 export {
   indexCohorts,
+  getCohortPeople,
   addProfileToWaitlist
 }
