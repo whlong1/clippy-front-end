@@ -6,6 +6,10 @@ import PeopleRouter from './PeopleRouter'
 import AttendanceRouter from './AttendanceRouter'
 import DeliverablesRouter from './DeliverablesRouter'
 
+// Services
+import * as cohortService from '../services/cohortService'
+
+
 const AppRouter = () => {
   return (
     <Routes>

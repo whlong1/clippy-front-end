@@ -12,6 +12,8 @@ import Onboarding from './pages/Onboarding/Onboarding'
 // Hooks
 import { useAuth } from './hooks/useAuth'
 
+// Reserve this component for auth related functionality
+
 const App = () => {
   const {
     user,
