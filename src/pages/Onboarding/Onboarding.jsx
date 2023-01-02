@@ -9,6 +9,8 @@ import ProfileForm from "./components/ProfileForm"
 const Onboarding = (props) => {
   // const navigate = useNavigate()
   const { profile, setProfile } = props
+  const { isProfileComplete, isApprovalPending } = profile
+
 
   console.log('profile', props.profile)
 
@@ -21,15 +23,27 @@ const Onboarding = (props) => {
     // navigate('/')
   }
 
+
+  // Profile form
+  // isProfileComplete
+  // Select cohort
+  // isApprovalPending
+  // Wait for an instructor message
+  // isOnboarded
+
+  // add isApprovalPending to profile
+  // update appropriate cohort controller
+
+  if (!isProfileComplete) {
+    return <ProfileForm btnText="Complete Onboarding" handleSubmit={handleOnboarding} />
+  }
+
+
   return (
     <main>
       <h1>Onboarding</h1>
 
-      {!profile?.isProfileComplete
-        ? <ProfileForm btnText="Complete Onboarding" handleSubmit={handleOnboarding} />
-        : <h1>Step 2</h1>
-      }
-
+   
     </main>
   )
 }
