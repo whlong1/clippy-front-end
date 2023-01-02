@@ -1,14 +1,21 @@
 import { useState } from 'react'
+import * as profileService from '../../../services/profileService'
 
-const ProfileForm = ({ btnText, handleSubmit }) => {
-  const [formData, setFormData] = useState({})
+const ProfileForm = ({ profile, setProfile }) => {
+  const [formData, setFormData] = useState(profile)
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const res = await profileService.updateProfile(formData)
+    setProfile(res)
+  }
 
   const handleChange = ({ target }) => {
     setFormData({ ...formData, [target.name]: target.value })
   }
 
   return (
-    <form onSubmit={(e) => handleSubmit(e, formData)}>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="name">Name:</label>
       <input
         required
@@ -76,7 +83,7 @@ const ProfileForm = ({ btnText, handleSubmit }) => {
         onChange={handleChange}
         value={formData.codeWarsUserName || ''}
       />
-      <button type="submit">{btnText}</button>
+      <button type="submit">Submit Profile</button>
     </form>
 
   )

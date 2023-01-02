@@ -17,14 +17,14 @@ const addProfileToWaitlist = async (cohortId, profileId) => {
           'Authorization': `Bearer ${tokenService.getToken()}`,
         }
       })
+    if (!res.ok) throw await res.json()
     return await res.json()
   } catch (err) {
+    console.log(err)
     throw err
   }
-
 }
 
-// router.post('/:cohortId/waitlist/:profileId', cohortsCtrl.addProfileToWaitlist)
 
 export {
   indexCohorts,

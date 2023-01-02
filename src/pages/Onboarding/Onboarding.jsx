@@ -1,6 +1,3 @@
-// Services
-import * as profileService from '../../services/profileService'
-
 // Components
 import ProfileForm from "./components/ProfileForm"
 import SelectCohort from './components/SelectCohort'
@@ -9,32 +6,31 @@ const Onboarding = (props) => {
   const { profile, setProfile } = props
   console.log('profile', profile)
 
-  // Rename function:
-  const handleOnboarding = async (e, formData) => {
-    e.preventDefault()
-    const res = await profileService.updateProfile(formData)
-    console.log(res)
-    setProfile(res)
-  }
+  const profileProps = { profile, setProfile }
 
   // Onboarding Stages:
 
   // Step 1: Profile is incomplete. User completes profile.
   const stepOne = (
     profile && !profile.isProfileComplete &&
-    <ProfileForm btnText="Complete Onboarding" handleSubmit={handleOnboarding} />
+    <ProfileForm {...profileProps} />
   )
 
   // Step 2: Profile has been completed. User selects cohort.
   const stepTwo = (
-    profile?.isProfileComplete &&
-    <SelectCohort profileId={profile._id} />
+    profile?.isProfileComplete && !profile.isApprovalPending &&
+    <SelectCohort {...profileProps} />
   )
 
   // Step 3: Profile has been added to waitlist. User awaits approval. 
   const stepThree = (
     profile?.isApprovalPending &&
-    <h1>Awaiting instructor approval.</h1>
+    <>
+      <h1>Awaiting instructor approval.</h1>
+      <p>Feel free to make any changes to your profile or select a different cohort.</p>
+      <SelectCohort {...profileProps} />
+      <ProfileForm {...profileProps} />
+    </>
   )
 
   return (
@@ -51,19 +47,13 @@ const Onboarding = (props) => {
 
 export default Onboarding
 
-// Create cohorts in Postman
-// Build out index cohorts service
-// Build out addProfileToWaitlist service
-
-// Rename existing onboarding functions 
-// Render select cohort component
-// Update cohort.approveProfile controller with isOnboarded
-
 // MyProfile needs to be a component that can fit inside
 // whatever Message component wrapper we use for step 3
 
 // User has access to the site once an instructor has made them a student
-// and isOnboarded is set to true.
+// and isOnboarded is set to true. cohorts.approveProfile
+// Update cohort.approveProfile controller with isOnboarded
 
 // Allow a user to go back to edit profile or select a different cohort?
 // Or just allow them to access the ProfileForm and SelectCohort components after completion
+// Should probably give them access to a dashboard page or some kind of redirect
