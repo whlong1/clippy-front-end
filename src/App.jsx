@@ -12,8 +12,7 @@ import Onboarding from './pages/Onboarding/Onboarding'
 // Hooks
 import { useAuth } from './hooks/useAuth'
 
-// Reserve this component for auth related functionality
-
+//* Reserve this component for auth related functionality
 const App = () => {
   const {
     user,
@@ -28,13 +27,10 @@ const App = () => {
     user, profile, setProfile, isAuthenticated,
   }
 
-  console.log('Auth0 User', user)
-  console.log('Profile', profile)
-
   if (!user && !isLoading) return <Landing />
-  // Need bespoke components for these:
+  // Need bespoke components for these 2:
   if (error) return <ErrorMsg error={error} />
-  if (isLoading) return <Loading msg={'Authenticating...'} />
+  if (isLoading || !profile) return <Loading msg={'Authenticating...'} />
 
   if (user?.is_new && !profile?.isOnboarded) {
     return <Onboarding profile={profile} setProfile={setProfile} />

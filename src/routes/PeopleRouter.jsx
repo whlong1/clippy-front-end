@@ -7,7 +7,7 @@ import PersonDetails from '../features/People/components/PersonDetails'
 const PeopleRouter = (props) => {
   return (
     <Routes>
-      <Route element={<ContentLayout menu={<PeopleMenu />} />}>
+      <Route element={<ContentLayout menu={<PeopleMenu {...props} />} />}>
         <Route index element={<h1>People Landing</h1>} />
         <Route path=':id' element={<PersonDetails />} />
       </Route>

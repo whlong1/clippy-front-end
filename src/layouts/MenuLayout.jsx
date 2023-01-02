@@ -1,10 +1,10 @@
 import SelectCohort from "../components/SelectCohort/SelectCohort"
 
-const MenuLayout = ({ user, children }) => {
+const MenuLayout = (props) => {
   return (
     <nav>
-      <SelectCohort />
-      {children}
+      <SelectCohort {...props} />
+      {props.children}
     </nav>
   )
 }

@@ -10,20 +10,19 @@ import AdminPanel from '../pages/AdminPanel/AdminPanel'
 import { useCohorts } from '../hooks/useCohorts'
 
 const AppRouter = (props) => {
-  const { profile: { cohort } } = props
+  const { user, profile } = props
   const { cohorts, status } = useCohorts()
-  const [cohortId, , setCohortId] = useState(cohort)
-
-  console.log(cohorts, status, cohort)
-
-  // current cohort: profile.cohort
-  // could conditionally render props
-  // 
+  const [cohortId, , setCohortId] = useState(profile.cohort)
 
   const appProps = {
     cohorts,
+    cohortId,
     ...props,
+    setCohortId,
   }
+  
+  console.log('Auth0 User', user)
+  console.log('Profile', profile)
 
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
@@ -43,3 +42,6 @@ const AppRouter = (props) => {
 }
 
 export default AppRouter
+
+// TODO
+// • Add protected route for AdminPanel with user.isAdmin
