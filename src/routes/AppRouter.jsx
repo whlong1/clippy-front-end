@@ -6,11 +6,13 @@ import PeopleRouter from './PeopleRouter'
 import AttendanceRouter from './AttendanceRouter'
 import DeliverablesRouter from './DeliverablesRouter'
 
-// Services
-import * as cohortService from '../services/cohortService'
-
+// Hooks
+// import { useCohorts } from '../hooks/useCohorts'
 
 const AppRouter = () => {
+  // const { data, status } = useCohorts()
+  // console.log(data, status)
+
   return (
     <Routes>
       <Route path="/" element={<h1>Welcome back</h1>} />
