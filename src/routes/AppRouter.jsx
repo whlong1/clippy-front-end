@@ -10,15 +10,19 @@ import AdminPanel from '../pages/AdminPanel/AdminPanel'
 import { useCohorts } from '../hooks/useCohorts'
 
 const AppRouter = (props) => {
+  const { profile: { cohort } } = props
   const { cohorts, status } = useCohorts()
-  const [currentCohort, setCurrentCohort] = useState()
-  console.log(cohorts, status)
+  const [cohortId, , setCohortId] = useState(cohort)
+
+  console.log(cohorts, status, cohort)
+
+  // current cohort: profile.cohort
+  // could conditionally render props
+  // 
 
   const appProps = {
     cohorts,
     ...props,
-    currentCohort,
-    setCurrentCohort,
   }
 
   if (status === 'error') return <h1>Error</h1>

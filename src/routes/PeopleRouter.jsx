@@ -4,7 +4,7 @@ import ContentLayout from '../layouts/ContentLayout.jsx'
 import PeopleMenu from '../features/People/components/PeopleMenu'
 import PersonDetails from '../features/People/components/PersonDetails'
 
-const PeopleRouter = () => {
+const PeopleRouter = (props) => {
   return (
     <Routes>
       <Route element={<ContentLayout menu={<PeopleMenu />} />}>

@@ -13,3 +13,7 @@ In order to stick to current pattern, should be wrapped with
 ContentLayout (and given a corresponding menu)
 This seems like overkill. Consider redirecting to people automatically.
 
+
+Might want to store current cohort on profile
+this would make indexing cohorts much faster
+for instructors to access full list, use isAdmin property of req.auth
