@@ -8,10 +8,11 @@ const SelectCohort = () => {
   }
 
   return (
-    <form onSubmit={(e) => handleSubmit(e, formData)}>
+    <form>
       <select name="" id="">
         <option value=""></option>
       </select>
+      <button></button>
     </form>
   )
 }
