@@ -7,8 +7,7 @@ import SelectCohort from './components/SelectCohort'
 
 const Onboarding = (props) => {
   const { profile, setProfile } = props
-
-  console.log('profile', props.profile)
+  console.log('profile', profile)
 
   // Rename function:
   const handleOnboarding = async (e, formData) => {
@@ -28,13 +27,13 @@ const Onboarding = (props) => {
 
   // Step 2: Profile has been completed. User selects cohort.
   const stepTwo = (
-    profile && profile.isProfileComplete &&
+    profile?.isProfileComplete &&
     <SelectCohort />
   )
 
   // Step 3: Profile has been added to waitlist. User awaits approval. 
   const stepThree = (
-    profile && profile.isApprovalPending &&
+    profile?.isApprovalPending &&
     <h1>Awaiting instructor approval.</h1>
   )
 
@@ -51,3 +50,16 @@ const Onboarding = (props) => {
 }
 
 export default Onboarding
+
+// Create cohorts in Postman
+// Build out addProfileToWaitlist service
+// Build out index cohorts service
+// Rename existing onboarding functions 
+// Render select cohort component
+// Update cohort.approveProfile controller with isOnboarded
+
+// MyProfile needs to be a component that can fit inside
+// whatever Message component wrapper we use for step 3
+
+// User has access to the site once an instructor has made them a student
+// and isOnboarded is set to true.
