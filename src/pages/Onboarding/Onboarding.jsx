@@ -64,3 +64,6 @@ export default Onboarding
 
 // User has access to the site once an instructor has made them a student
 // and isOnboarded is set to true.
+
+// Allow a user to go back to edit profile or select a different cohort?
+// Or just allow them to access the ProfileForm and SelectCohort components after completion

@@ -44,14 +44,6 @@ const ProfileForm = ({ btnText, handleSubmit }) => {
         onChange={handleChange}
         value={formData.preferredName || ''}
       />
-      {/* <label htmlFor="normalizedName">Normalized Name:</label>
-      <input
-        type="text"
-        id="normalizedName"
-        name="normalizedName"
-        onChange={handleChange}
-        value={formData.normalizedName || ''}
-      /> */}
       <label htmlFor="preferredPronouns">Preferred Pronouns:</label>
       <input
         type="text"
