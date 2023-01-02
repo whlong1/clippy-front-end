@@ -12,7 +12,7 @@ import { useCohorts } from '../hooks/useCohorts'
 const AppRouter = (props) => {
   const { user, profile } = props
   const { cohorts, status } = useCohorts()
-  const [cohortId, , setCohortId] = useState(profile.cohort)
+  const [cohortId, setCohortId] = useState(profile.cohort)
 
   const appProps = {
     cohorts,
@@ -20,9 +20,10 @@ const AppRouter = (props) => {
     ...props,
     setCohortId,
   }
-  
-  console.log('Auth0 User', user)
-  console.log('Profile', profile)
+
+  // console.log('Auth0 User', user)
+  // console.log('Profile', profile)
+  console.log('Current Cohort', cohortId)
 
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
