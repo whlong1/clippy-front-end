@@ -52,8 +52,9 @@ const Onboarding = (props) => {
 export default Onboarding
 
 // Create cohorts in Postman
-// Build out addProfileToWaitlist service
 // Build out index cohorts service
+
+// Build out addProfileToWaitlist service
 // Rename existing onboarding functions 
 // Render select cohort component
 // Update cohort.approveProfile controller with isOnboarded
