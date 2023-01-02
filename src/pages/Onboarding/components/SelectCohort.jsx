@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react'
 
 import * as cohortService from '../../../services/cohortService'
 
-const SelectCohort = () => {
+const SelectCohort = ({ profileId }) => {
   const [cohorts, setCohorts] = useState([])
-  // const [formData, setFormData] = useState({})
+  const [selectedCohortId, setSelectedCohortId] = useState('')
 
-  // const handleChange = ({ target }) => {
-  //   setFormData({ ...formData, [target.name]: target.value })
-  // }
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+  }
 
   useEffect(() => {
     const fetchCohorts = async () => {
@@ -19,12 +19,16 @@ const SelectCohort = () => {
   }, [])
 
   console.log(cohorts)
+  console.log(selectedCohortId)
+
   return (
-    <form>
-      <select name="" id="">
-        <option value=""></option>
+    <form onSubmit={handleSubmit}>
+      <select onChange={({ target }) => setSelectedCohortId(target.value)}>
+        {cohorts.map((c) => (
+          <option key={c._id} value={c._id}>{c.name}</option>
+        ))}
       </select>
-      <button></button>
+      <button type="submit">Join Cohort</button>
     </form>
   )
 }

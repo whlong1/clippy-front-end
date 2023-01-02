@@ -28,7 +28,7 @@ const Onboarding = (props) => {
   // Step 2: Profile has been completed. User selects cohort.
   const stepTwo = (
     profile?.isProfileComplete &&
-    <SelectCohort />
+    <SelectCohort profileId={profile._id} />
   )
 
   // Step 3: Profile has been added to waitlist. User awaits approval. 
@@ -53,8 +53,8 @@ export default Onboarding
 
 // Create cohorts in Postman
 // Build out index cohorts service
-
 // Build out addProfileToWaitlist service
+
 // Rename existing onboarding functions 
 // Render select cohort component
 // Update cohort.approveProfile controller with isOnboarded
