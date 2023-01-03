@@ -17,3 +17,8 @@ This seems like overkill. Consider redirecting to people automatically.
 Might want to store current cohort on profile
 this would make indexing cohorts much faster
 for instructors to access full list, use isAdmin property of req.auth
+
+
+Make sure to use preferredName consistently
+
+State for a given feature is held in that feature's router

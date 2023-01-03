@@ -12,7 +12,7 @@ body {
   align-items: center;
 }
 
-#root>nav {
+nav {
   display: flex;
   flex-direction: column;
   border-right: 1px solid black;

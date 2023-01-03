@@ -1,6 +1,9 @@
 import { useParams, useLocation } from "react-router-dom"
 import { useProfileDetails } from "../../../hooks/useProfileDetails"
 
+// Components
+import AdminPanel from "./AdminPanel"
+
 const PersonDetails = () => {
   const location = useLocation()
   const { profileId } = useParams()
@@ -27,6 +30,8 @@ const PersonDetails = () => {
       {profile.linkedInUserName}
       {profile.codeWarsUserName}
       {profile.preferredPronouns}
+
+      <AdminPanel />
     </section>
   )
 }

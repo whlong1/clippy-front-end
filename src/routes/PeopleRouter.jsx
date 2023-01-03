@@ -30,7 +30,3 @@ const PeopleRouter = (props) => {
 }
 
 export default PeopleRouter
-
-
-// TODO
-// • Add toggle functionality to each Role section

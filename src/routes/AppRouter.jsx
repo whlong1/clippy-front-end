@@ -44,5 +44,11 @@ const AppRouter = (props) => {
 
 export default AppRouter
 
-// TODO
-// • Add protected route for AdminPanel with user.isAdmin
+// TODO APP
+// • Add protected route for AdminPanel with user.isAdmin (AppRouter)
+// • When a user selects a new cohort from the select menu, redirect user to given base path (people, attendance, deliverables)
+//   this will clear out the right hand content panel
+
+// TODO PEOPLE
+// • Add toggle functionality to each Role section
+// • Create admin UI component and add to PersonDetails
