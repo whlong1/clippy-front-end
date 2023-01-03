@@ -2,6 +2,7 @@ const AdminPanel = (props) => {
   return (
     <>
       <button>Edit Profile</button>
+      <button>Admit to Cohort</button>
       <button>Remove from Cohort</button>
       <button>Change Role</button>
     </>

@@ -7,6 +7,7 @@ import AdminPanel from "./AdminPanel"
 const PersonDetails = () => {
   const location = useLocation()
   const { profileId } = useParams()
+  // Need to figure out how to set state with this (update role?)
   const { profile, status } = useProfileDetails(profileId)
   const cohortRole = location.search.slice(6, -1).toUpperCase()
 

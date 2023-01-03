@@ -15,7 +15,6 @@ const getCohortPeople = async (cohortId) => {
   return await res.json()
 }
 
-
 const addProfileToWaitlist = async (cohortId, profileId) => {
   try {
     const res = await fetch(`${BASE_URL}/${cohortId}/waitlist/${profileId}`,
@@ -32,9 +31,27 @@ const addProfileToWaitlist = async (cohortId, profileId) => {
   }
 }
 
+const approveProfile = async (cohortId, profileId, data) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${cohortId}/approve/${profileId}`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${tokenService.getToken()}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+    if (!res.ok) throw await res.json()
+    return await res.json()
+  } catch (err) {
+    throw err
+  }
+}
 
 export {
   indexCohorts,
+  approveProfile,
   getCohortPeople,
-  addProfileToWaitlist
+  addProfileToWaitlist,
 }

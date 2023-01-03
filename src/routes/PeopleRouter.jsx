@@ -9,6 +9,7 @@ import { usePeople } from '../hooks/usePeople.js'
 
 const PeopleRouter = (props) => {
   const { cohortId } = props
+  // Figure out how to update this state:
   const { people, status } = usePeople(cohortId)
 
   const menuProps = {
