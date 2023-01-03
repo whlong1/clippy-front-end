@@ -52,3 +52,4 @@ export default AppRouter
 // TODO PEOPLE
 // • Add toggle functionality to each Role section
 // • Create admin UI component and add to PersonDetails
+// • Figure out how to handle Role/Title in PersonDetails after changing role
