@@ -20,6 +20,9 @@ const PeopleRouter = (props) => {
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
 
+
+  console.log('PEOPLE STATE', people)
+
   return (
     <Routes>
       <Route element={<ContentLayout menu={<PeopleMenu {...menuProps} />} />}>

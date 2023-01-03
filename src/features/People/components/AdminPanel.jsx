@@ -1,18 +1,11 @@
-// import * as cohortService from '../../../services/cohortService'
 import { useApproveProfile } from "../../../hooks/useApproveProfile"
 
 const AdminPanel = ({ profile, cohortId }) => {
-  // Need { formerRole: "waitlist", newRole: "ias" }
-  const mutatation = useApproveProfile(cohortId, profile._id, { formerRole: "waitlist", newRole: "ias" })
+  // const approvalData = { formerRole: "waitlist", newRole: "students" }
+  const approvalData = { formerRole: "instructors", newRole: "students" }
 
-
-
-  console.log('Mutate', mutatation)
-
-  const handleApproveProfile = async () => {
-    // const res = useApproveProfile(cohortId, profile.id, { formerRole: "waitlist", newRole: "ias" })
-    // mutate()
-  }
+  const mutatation = useApproveProfile(cohortId, profile._id, approvalData)
+  // const handleApproveProfile = async () => { }
 
   return (
     <>
