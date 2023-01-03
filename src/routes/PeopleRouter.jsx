@@ -21,7 +21,7 @@ const PeopleRouter = (props) => {
   if (status === 'loading') return <h1>Loading...</h1>
 
 
-  console.log('PEOPLE STATE', people)
+  // console.log('PEOPLE STATE', people)
 
   return (
     <Routes>

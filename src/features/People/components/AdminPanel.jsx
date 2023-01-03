@@ -1,18 +1,27 @@
-import { useApproveProfile } from "../../../hooks/useApproveProfile"
+import { useManageRoles } from "../../../hooks/useManageRoles"
 
 const AdminPanel = ({ profile, cohortId }) => {
+
+  const mutation = useManageRoles(cohortId, profile._id)
+  const approvalData = { profile, formerRole: "instructors", newRole: "students" }
   // const approvalData = { formerRole: "waitlist", newRole: "students" }
-  const approvalData = { formerRole: "instructors", newRole: "students" }
 
-  const mutatation = useApproveProfile(cohortId, profile._id, approvalData)
-  // const handleApproveProfile = async () => { }
-
+  console.log(profile)
   return (
     <>
-      <button onClick={mutatation.mutate}>Admit to Cohort</button>
+      <button onClick={() => mutation.mutate({ type: 'approve', payload: approvalData })}>
+        Admit to Cohort
+      </button>
+      <button>
+        Deny Student
+      </button>
+      <button>
+        Remove from Cohort
+      </button>
+      <button>
+        Change Role
+      </button>
       <button>Edit Profile</button>
-      <button>Remove from Cohort</button>
-      <button>Change Role</button>
     </>
   )
 }

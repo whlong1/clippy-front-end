@@ -23,5 +23,7 @@ Make sure to use preferredName consistently
 
 State for a given feature is held in that feature's router
 
-Need to update React Query
-https://tanstack.com/query/v4/docs/react/guides/migrating-to-react-query-4#react-query-is-now-tanstackreact-query
+
+React Query Tips and Practices:
+https://tkdodo.eu/blog/effective-react-query-keys
+
