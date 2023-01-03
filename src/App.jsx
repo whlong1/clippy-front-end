@@ -26,7 +26,7 @@ const App = () => {
   const authProps = {
     user, profile, setProfile, isAuthenticated,
   }
-
+  
   if (!user && !isLoading) return <Landing />
   // Need bespoke components for these 2:
   if (error) return <ErrorMsg error={error} />

@@ -4,7 +4,7 @@ import './index.css'
 import App from './App'
 import { Auth0Provider } from "@auth0/auth0-react"
 import { BrowserRouter as Router } from 'react-router-dom'
-import { QueryClient, QueryClientProvider } from 'react-query'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 const queryClient = new QueryClient()
 const auth0Props = {
