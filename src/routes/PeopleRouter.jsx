@@ -11,8 +11,6 @@ const PeopleRouter = (props) => {
   const { cohortId } = props
   const { people, status } = usePeople(cohortId)
 
-  // console.log('People in selected cohort', people)
-
   const menuProps = {
     people,
     ...props,
@@ -32,3 +30,9 @@ const PeopleRouter = (props) => {
 }
 
 export default PeopleRouter
+
+
+// TODO
+// • Create PersonRow type component for PeopleList
+// • PersonRow should make use of a ProfileCard component that displays photo and name
+// • Add toggle functionality to each Role section

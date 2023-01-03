@@ -1,12 +1,16 @@
+import PeopleList from './PeopleList'
 import MenuLayout from '../../../layouts/MenuLayout'
 
 const PeopleMenu = (props) => {
   const { people } = props
-  console.log('People in selected cohort', people)
+  const roles = Object.keys(people).filter((k) => k !== '_id')
 
   return (
     <MenuLayout {...props}>
-      <p>People Menu</p>
+      <h1>People Menu</h1>
+      {roles.map((role) => (
+        <PeopleList key={role} role={role} people={people[role]} />
+      ))}
     </MenuLayout>
   )
 }
