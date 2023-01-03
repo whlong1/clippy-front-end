@@ -23,8 +23,10 @@ const PeopleRouter = (props) => {
   return (
     <Routes>
       <Route element={<ContentLayout menu={<PeopleMenu {...menuProps} />} />}>
+
         <Route index element={<h1>People Landing</h1>} />
-        <Route path=':profileId' element={<PersonDetails />} />
+        <Route path=':profileId' element={<PersonDetails cohortId={cohortId} />} />
+        
       </Route>
     </Routes>
   )

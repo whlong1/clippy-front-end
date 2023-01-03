@@ -20,7 +20,6 @@ export const useAuth = () => {
         const token = await getAccessTokenSilently()
         tokenService.setToken(token)
         const res = await profileService.getMyProfile()
-        console.log(res)
         setProfile(res)
       } catch (error) {
         setError(error)
