@@ -1,9 +1,20 @@
 import * as tokenService from '../services/tokenService'
 const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/profiles`
 
-const getProfile = async () => {
+const getMyProfile = async () => {
   try {
     const res = await fetch(`${BASE_URL}`,
+      { headers: { 'Authorization': `Bearer ${tokenService.getToken()}` } },
+    )
+    return await res.json()
+  } catch (error) {
+    throw error
+  }
+}
+
+const show = async (profileId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${profileId}`,
       { headers: { 'Authorization': `Bearer ${tokenService.getToken()}` } },
     )
     return await res.json()
@@ -31,6 +42,7 @@ const updateProfile = async (data) => {
 
 
 export {
-  getProfile,
+  show,
+  getMyProfile,
   updateProfile,
 }

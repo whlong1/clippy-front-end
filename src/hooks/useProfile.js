@@ -8,9 +8,9 @@ export const useProfile = (user) => {
   const [profile, setProfile] = useState(null)
 
   useEffect(() => {
-    const getProfile = async () => {
+    const getMyProfile = async () => {
       try {
-        const res = await profileService.getProfile()
+        const res = await profileService.getMyProfile()
         if (res.error) throw Error(res.error)
         setProfile(res)
       } catch (error) {
@@ -18,7 +18,7 @@ export const useProfile = (user) => {
       }
     }
 
-    if (user && !tokenError) getProfile()
+    if (user && !tokenError) getMyProfile()
 
   }, [user, tokenError])
 

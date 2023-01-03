@@ -1,7 +1,9 @@
 import { useQuery } from 'react-query'
-// import * as cohortService from '../services/cohortService'
+import * as profileService from '../services/profileService'
 
-export const useProfileDetails = () => {
-  // const { data: profile, status } = useQuery('cohorts', () => cohortService.indexCohorts())
-  // return { profile, status }
+export const useProfileDetails = (profileId) => {
+  const { data: profile, status } = useQuery(
+    ['profileDetails', profileId], () => profileService.show(profileId)
+  )
+  return { profile, status }
 }
