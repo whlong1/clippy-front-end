@@ -33,6 +33,4 @@ export default PeopleRouter
 
 
 // TODO
-// • Create PersonRow type component for PeopleList
-// • PersonRow should make use of a ProfileCard component that displays photo and name
 // • Add toggle functionality to each Role section
