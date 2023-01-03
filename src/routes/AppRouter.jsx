@@ -22,8 +22,8 @@ const AppRouter = (props) => {
   }
 
   console.log('Auth0 User', user.name)
-  console.log('Current Cohort', cohortId)
-  console.log('Profile', profile.firstName)
+  // console.log('Current Cohort', cohortId)
+  // console.log('Profile', profile.firstName)
 
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
