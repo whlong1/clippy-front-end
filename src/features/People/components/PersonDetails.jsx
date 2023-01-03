@@ -4,10 +4,12 @@ import { useProfileDetails } from "../../../hooks/useProfileDetails"
 // Components
 import AdminPanel from "./AdminPanel"
 
-const PersonDetails = ({ cohortId }) => {
+const PersonDetails = ({ user, cohortId }) => {
   const location = useLocation()
   const { profileId } = useParams()
-  // Need to figure out how to set state with this (update role?)
+
+  // Should we use a different variable for profile?
+  // Maybe use person in place of profile here to avoid confusion
   const { profile, status } = useProfileDetails(profileId)
   const cohortRole = location.search.slice(6, -1).toUpperCase()
 
@@ -32,7 +34,7 @@ const PersonDetails = ({ cohortId }) => {
       {profile.codeWarsUserName}
       {profile.preferredPronouns}
 
-      <AdminPanel profile={profile} cohortId={cohortId} />
+      {user.isAdmin && <AdminPanel profile={profile} cohortId={cohortId} />}
     </section>
   )
 }

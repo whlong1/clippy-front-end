@@ -32,7 +32,6 @@ const addProfileToWaitlist = async (cohortId, profileId) => {
 }
 
 const approveProfile = async (cohortId, profileId, data) => {
-  console.log('APPROVE SERVICE:::',cohortId)
   try {
     const res = await fetch(`${BASE_URL}/${cohortId}/approve/${profileId}`,
       {
@@ -51,7 +50,6 @@ const approveProfile = async (cohortId, profileId, data) => {
 }
 
 const denyProfile = async (cohortId, profileId, data) => {
-  console.log('DENY SERVICE:::',cohortId, profileId)
   try {
     const res = await fetch(`${BASE_URL}/${cohortId}/deny/${profileId}`,
       {
@@ -69,9 +67,29 @@ const denyProfile = async (cohortId, profileId, data) => {
   }
 }
 
+const removeProfile = async (cohortId, profileId, data) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${cohortId}/remove/${profileId}`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${tokenService.getToken()}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+    if (!res.ok) throw await res.json()
+    return await res.json()
+  } catch (err) {
+    throw err
+  }
+}
+
+
 export {
   denyProfile,
   indexCohorts,
+  removeProfile,
   approveProfile,
   getCohortPeople,
   addProfileToWaitlist,

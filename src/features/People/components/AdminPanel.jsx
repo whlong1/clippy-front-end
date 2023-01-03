@@ -1,10 +1,11 @@
 import { useManageRoles } from "../../../hooks/useManageRoles"
 
 const AdminPanel = ({ profile, cohortId }) => {
-
   const mutation = useManageRoles(cohortId, profile._id)
-  const approvalData = { profile, formerRole: "instructors", newRole: "students" }
-  // const approvalData = { formerRole: "waitlist", newRole: "students" }
+  
+  const denialData = { profile, formerRole: "waitlist", newRole: null }
+  const removalData = { profile, formerRole: "studens", newRole: "inactive" }
+  const approvalData = { profile, formerRole: "waitlist", newRole: "students" }
 
   console.log(profile)
   return (
@@ -12,12 +13,13 @@ const AdminPanel = ({ profile, cohortId }) => {
       <button onClick={() => mutation.mutate({ type: 'approve', payload: approvalData })}>
         Admit to Cohort
       </button>
-      <button>
+      <button onClick={() => mutation.mutate({ type: 'deny', payload: denialData })}>
         Deny Student
       </button>
-      <button>
+      <button onClick={() => mutation.mutate({ type: 'remove', payload: removalData })}>
         Remove from Cohort
       </button>
+
       <button>
         Change Role
       </button>
