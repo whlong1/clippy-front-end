@@ -1,10 +1,6 @@
+import { useProfileDetails } from "../../../hooks/useProfileDetails"
 
 const PersonDetails = () => {
-
-
-
-  // Rather than relying on state, fetch details here
-
   return (
     <section>
       People details
