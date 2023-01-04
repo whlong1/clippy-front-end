@@ -8,6 +8,14 @@ const indexAttendance = async (cohortId) => {
   return await res.json()
 }
 
+const showAttendance = async (attendanceId) => {
+  const res = await fetch(`${BASE_URL}/${attendanceId}`,
+    { headers: { 'Authorization': `Bearer ${tokenService.getToken()}` } },
+  )
+  return await res.json()
+}
+
+
 const createAttendance = async (data) => {
   try {
     const res = await fetch(`${BASE_URL}`,
@@ -60,6 +68,7 @@ const deleteAttendance = async (data) => {
 }
 
 export {
+  showAttendance,
   indexAttendance,
   createAttendance,
   updateAttendance,

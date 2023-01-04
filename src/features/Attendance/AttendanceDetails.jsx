@@ -1,7 +1,14 @@
-const AttendanceDetails = (props) => {
-  const { user, cohortId } = props
+import { useParams } from 'react-router-dom'
 
-  console.log(cohortId)
+// Hooks
+import { useAttendanceDetails } from '../../hooks/useAttendanceDetails'
+
+const AttendanceDetails = (props) => {
+  // const { user, cohortId } = props
+  const { attendanceId } = useParams()
+  const { attendanceDetails, status } = useAttendanceDetails(attendanceId)
+
+  console.log(attendanceDetails)
 
   return (
     <section>
