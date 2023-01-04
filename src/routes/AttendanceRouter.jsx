@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 
 // Components
 import ContentLayout from '../layouts/ContentLayout.jsx'
+import NewAttendance from '../features/Attendance/NewAttendance'
 import AttendanceMenu from '../features/Attendance/AttendanceMenu.jsx'
 
 // Hooks
@@ -21,7 +22,7 @@ const AttendanceRouter = (props) => {
     <Routes>
       <Route element={<ContentLayout menu={<AttendanceMenu {...menuProps} />} />}>
         <Route index element={<h1>Attendance Landing</h1>} />
-        <Route path='new' element={<h1>New Attendance</h1>} />
+        <Route path='new' element={<NewAttendance />} />
         <Route path=':attendanceId' element={<h1>Attendance Details</h1>} />
       </Route>
     </Routes>

@@ -7,17 +7,20 @@ const NewDeliverable = (props) => {
     dueDate: '',
     notionUrl: '',
 
-    hasQuiz: false,
-    hasMiscUrl: false,
-    hasGitHubUrl: false,
-    hasTrelloUrl: false,
-    hasDeploymentUrl: false,
-    hasCodeSandboxUrl: false,
+    hasQuiz: '',
+    hasMiscUrl: '',
+    hasGitHubUrl: '',
+    hasTrelloUrl: '',
+    hasDeploymentUrl: '',
+    hasCodeSandboxUrl: '',
   })
 
-
   const handleChange = ({ target }) => {
-    setAttendanceData({ ...deliverableData, [target.name]: target.value })
+    if (target.type === 'checkbox') {
+      setDeliverableData({ ...deliverableData, [target.name]: target.checked ? 'checked' : '' })
+    } else {
+      setDeliverableData({ ...deliverableData, [target.name]: target.value })
+    }
   }
 
   const handleSubmit = (e) => {
@@ -33,17 +36,20 @@ const NewDeliverable = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h1>New Deliverable</h1>
       <label htmlFor="name">Name:</label>
       <input
         required
         id="name"
         type="text"
+        name="name"
         onChange={handleChange}
         value={deliverableData.name}
       />
 
       <label htmlFor="dueDate">Due Date:</label>
       <input
+        required
         type="date"
         id="dueDate"
         name="dueDate"
@@ -53,6 +59,7 @@ const NewDeliverable = (props) => {
 
       <label htmlFor="notionUrl">Notion URL:</label>
       <input
+        required
         type="text"
         id="notionUrl"
         name="notionUrl"
@@ -68,7 +75,6 @@ const NewDeliverable = (props) => {
         id="hasQuiz"
         name="hasQuiz"
         onChange={handleChange}
-        value={deliverableData.hasQuiz}
         checked={deliverableData.hasQuiz}
       />
 
@@ -78,7 +84,6 @@ const NewDeliverable = (props) => {
         id="hasMiscUrl"
         name="hasMiscUrl"
         onChange={handleChange}
-        value={deliverableData.hasMiscUrl}
         checked={deliverableData.hasMiscUrl}
       />
 
@@ -88,7 +93,6 @@ const NewDeliverable = (props) => {
         id="hasGitHubUrl"
         name="hasGitHubUrl"
         onChange={handleChange}
-        value={deliverableData.hasGitHubUrl}
         checked={deliverableData.hasGitHubUrl}
       />
 
@@ -98,7 +102,6 @@ const NewDeliverable = (props) => {
         id="hasTrelloUrl"
         name="hasTrelloUrl"
         onChange={handleChange}
-        value={deliverableData.hasTrelloUrl}
         checked={deliverableData.hasTrelloUrl}
       />
 
@@ -108,7 +111,6 @@ const NewDeliverable = (props) => {
         id="hasDeploymentUrl"
         name="hasDeploymentUrl"
         onChange={handleChange}
-        value={deliverableData.hasDeploymentUrl}
         checked={deliverableData.hasDeploymentUrl}
       />
 
@@ -118,7 +120,6 @@ const NewDeliverable = (props) => {
         id="hasCodeSandboxUrl"
         name="hasCodeSandboxUrl"
         onChange={handleChange}
-        value={deliverableData.hasCodeSandboxUrl}
         checked={deliverableData.hasCodeSandboxUrl}
       />
 

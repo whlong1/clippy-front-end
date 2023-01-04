@@ -24,10 +24,12 @@ const NewAttendance = (props) => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h1>New Attendance</h1>
       <label htmlFor="date">Date:</label>
       <input
         required
         id="date"
+        name="date"
         type="date"
         onChange={handleChange}
         value={attendanceData.date}
@@ -35,6 +37,7 @@ const NewAttendance = (props) => {
       <label htmlFor="time">Time:</label>
       <select
         id="time"
+        name="time"
         onChange={handleChange}
         value={attendanceData.time}
       >
@@ -43,9 +46,9 @@ const NewAttendance = (props) => {
       </select>
       <label htmlFor="notes">Notes:</label>
       <input
-        required
         id="notes"
         type="text"
+        name="notes"
         onChange={handleChange}
         value={attendanceData.notes}
       />
