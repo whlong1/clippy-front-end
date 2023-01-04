@@ -71,3 +71,11 @@ export default AppRouter
 
 // TODO DELIVERABLES
 // • isAdmin check for create button link
+// • experiment with how moving around useFeature hooks impacts loading
+// • grading and submitting might need to update useManageDeliverableDetails
+// • From deliverable details, render list of students/studentDeliverables
+//   clicking on that should navigate you to StudentDeliverableDetails
+//   router.get('/:sdId/view', deliverablesCtrl.showStudentDeliverable)
+// • the list of deliverables a student sees will be different than an instructor
+//   pattern used should apply to attendance as well. conditionally render menu?
+
