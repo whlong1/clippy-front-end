@@ -1,6 +1,6 @@
 
 const buildStatusArray = (arr) => {
-  // if (!arr) return null
+  if (!arr) return null
 
   const { students, inactive } = arr
   const allStudents = [...students, ...inactive]
@@ -14,10 +14,7 @@ const buildStatusArray = (arr) => {
     }
   })
 
-
   return studentStatusArr.sort((a, b) => a.normalizedName < b.normalizedName ? -1 : 1)
-
-
 }
 
 export {
