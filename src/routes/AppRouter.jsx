@@ -51,6 +51,7 @@ export default AppRouter
 // • feature state doesn't need to be in router. would moving it to respective Menu components
 //   make rerenders more efficient?
 // • Make use of the action.type property in management hooks to target appropriate setter fn.
+// • Audit props being passed
 
 // TODO APP
 //   this will clear out the right hand content panel
@@ -75,8 +76,9 @@ export default AppRouter
 // • experiment with how moving around useFeature hooks impacts loading
 // • grading and submitting might need to update useManageDeliverableDetails
 // • From deliverable details, render list of students/studentDeliverables
-//   clicking on that should navigate you to StudentDeliverableDetails
+//   clicking on that should navigate instructors to GradeStudentDeliverable
 //   router.get('/:sdId/view', deliverablesCtrl.showStudentDeliverable)
 // • the list of deliverables a student sees will be different than an instructor
 //   pattern used should apply to attendance as well. conditionally render menu?
+//
 

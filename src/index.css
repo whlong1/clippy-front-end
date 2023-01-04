@@ -37,3 +37,9 @@ section {
   display: flex;
   flex-direction: column;
 }
+
+a {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

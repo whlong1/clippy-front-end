@@ -41,7 +41,11 @@ const DeliverableDetails = (props) => {
       </p>
 
       {deliverableDetails.students.map((student) => (
-        <StudentDeliverableRow key={student._id} student={student} />
+        <StudentDeliverableRow
+          key={student._id}
+          student={student}
+          deliverableId={deliverableId}
+        />
       ))}
     </section>
   )

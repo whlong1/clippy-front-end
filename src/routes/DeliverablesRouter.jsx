@@ -5,6 +5,7 @@ import ContentLayout from '../layouts/ContentLayout.jsx'
 import NewDeliverable from '../features/Deliverables/NewDeliverable'
 import DeliverablesMenu from '../features/Deliverables/DeliverablesMenu.jsx'
 import DeliverableDetails from '../features/Deliverables/DeliverableDetails.jsx'
+import GradeStudentDeliverable from '../features/Deliverables/GradeStudentDeliverable.jsx'
 
 // Hooks
 import { useDeliverables } from '../hooks/useDeliverables.js'
@@ -27,10 +28,12 @@ const DeliverablesRouter = (props) => {
         <Route index element={<h1>Deliverables Landing</h1>} />
         <Route path='new' element={<NewDeliverable cohortId={cohortId} />} />
         <Route path=':deliverableId' element={<DeliverableDetails user={user} cohortId={cohortId} />} />
+
+        {/* <Route path=':deliverableId/students/:sdId' element={<StudentDeliverable user={user} cohortId={cohortId} />} /> */}
+        <Route path=':deliverableId/students/:sdId/grade' element={<GradeStudentDeliverable user={user} cohortId={cohortId} />} />
       </Route>
     </Routes>
   )
 }
 
 export default DeliverablesRouter
-
