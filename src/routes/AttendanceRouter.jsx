@@ -17,6 +17,9 @@ const AttendanceRouter = (props) => {
     attendance,
   }
 
+  if (status === 'error') return <h1>Error</h1>
+  if (status === 'loading') return <h1>Loading...</h1>
+
   return (
     <Routes>
       <Route element={<ContentLayout menu={<AttendanceMenu {...menuProps} />} />}>

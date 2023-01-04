@@ -38,6 +38,7 @@ const NewAttendance = (props) => {
       students: [],
     }
     console.log('Attendance Form Data:', formData)
+    // REDUX PATTERN
     mutation.mutate({ type: 'create', payload: formData })
   }
 
