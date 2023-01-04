@@ -25,8 +25,63 @@ const createDeliverable = async (data) => {
   }
 }
 
+const deleteDeliverable = async (data) => {
+  const { deliverableId } = data
+  try {
+    const res = await fetch(`${BASE_URL}/${deliverableId}`,
+      {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${tokenService.getToken()}`,
+        },
+      })
+    return await res.json()
+  } catch (error) {
+    throw error
+  }
+}
+
+const gradeStudentDeliverable = async (data) => {
+  const { studentDeliverableId } = data
+  try {
+    const res = await fetch(`${BASE_URL}/${studentDeliverableId}/grade`,
+      {
+        method: 'PATCH',
+        headers: {
+          'Authorization': `Bearer ${tokenService.getToken()}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+    return await res.json()
+  } catch (error) {
+    throw error
+  }
+}
+
+const submitStudentDeliverable = async (data) => {
+  const { studentDeliverableId } = data
+  try {
+    const res = await fetch(`${BASE_URL}/${studentDeliverableId}/submit`,
+      {
+        method: 'PATCH',
+        headers: {
+          'Authorization': `Bearer ${tokenService.getToken()}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+    return await res.json()
+  } catch (error) {
+    throw error
+  }
+}
+
 
 export {
   indexDeliverables,
   createDeliverable,
+  deleteDeliverable,
+  gradeStudentDeliverable,
+  submitStudentDeliverable,
 }
