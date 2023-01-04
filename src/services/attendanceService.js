@@ -15,7 +15,6 @@ const showAttendance = async (attendanceId) => {
   return await res.json()
 }
 
-
 const createAttendance = async (data) => {
   try {
     const res = await fetch(`${BASE_URL}`,

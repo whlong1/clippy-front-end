@@ -19,10 +19,10 @@ export const useManageDeliverables = (cohortId) => {
       const queryKey = ['deliverables', cohortId]
 
       const updateState = (state) => {
-        return {
+        return [
           res,
           ...state,
-        }
+        ]
       }
 
       queryClient.setQueryData(queryKey, updateState)

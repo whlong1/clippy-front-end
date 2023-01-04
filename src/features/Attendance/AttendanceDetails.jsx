@@ -10,6 +10,9 @@ const AttendanceDetails = (props) => {
 
   console.log(attendanceDetails)
 
+  if (status === 'error') return <h1>Error</h1>
+  if (status === 'loading') return <h1>Loading...</h1>
+
   return (
     <section>
       Details

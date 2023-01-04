@@ -18,10 +18,11 @@ export const useManageAttendance = (cohortId) => {
       const queryKey = ['attendance', cohortId]
 
       const updateState = (state) => {
-        return {
+
+        return [
           res,
           ...state,
-        }
+        ]
       }
 
       queryClient.setQueryData(queryKey, updateState)
