@@ -15,7 +15,7 @@ const Nav = (props) => {
         <li><NavLink to="/attendance">Attendance</NavLink></li>
         <li><NavLink to="/deliverables">Deliverables</NavLink></li>
 
-        <li><NavLink to="/profile">My Profile</NavLink></li>
+        {/* <li><NavLink to="/profile">My Profile</NavLink></li> */}
         <li><LogoutButton /></li>
       </ul>
     </nav>
