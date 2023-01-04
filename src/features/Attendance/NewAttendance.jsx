@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 
 // Components
-import StudentStatusRow from "./StudentStatusRow"
+import StudentStatus from "./StudentStatus"
 
 // Hooks
 import { usePeople } from "../../hooks/usePeople"
@@ -19,24 +19,13 @@ const NewAttendance = (props) => {
     date: '', notes: '', time: 'AM',
   })
 
-  // console.log('people', people)
-  console.log('STUDENT STATUS ARR', studentData)
-
   useEffect(() => {
-    if (people) {
-      setStudentData(buildStatusArray(people))
-    }
+    if (people) { setStudentData(buildStatusArray(people)) }
   }, [cohortId, people])
 
 
   const handleChange = ({ target }) => {
     setAttendanceData({ ...attendanceData, [target.name]: target.value })
-  }
-
-  const handleChangeStatus = ({ target }, studentId) => {
-    setStudentData(studentData.map((s) => {
-      return s.studentId === studentId ? { ...s, status: target.value } : s
-    }))
   }
 
   const handleSubmit = (e) => {
@@ -50,8 +39,8 @@ const NewAttendance = (props) => {
     }
     console.log('Attendance Form Data:', formData)
     mutation.mutate({ type: 'create', payload: formData })
-    // ...
   }
+
 
   return (
     <form onSubmit={handleSubmit}>
@@ -84,25 +73,7 @@ const NewAttendance = (props) => {
         value={attendanceData.notes}
       />
 
-      {studentData.map((student) => (
-        <label key={student.studentId}>
-          <select
-            name="status"
-            defaultValue={student.status}
-            onChange={(e) => handleChangeStatus(e, student.studentId)}>
-            <option hidden disabled >{student.status}</option>
-            <option value="P">P</option>
-            <option value="H">H</option>
-            <option value="A">A</option>
-            <option value="L">L</option>
-            <option value="W">W</option>
-            <option value="EC">EC</option>
-            <option value="SC">SC</option>
-          </select>
-          {student.name}
-        </label>
-      ))}
-
+      <StudentStatus studentData={studentData} setStudentData={setStudentData} />
 
       <button type="submit">Submit Attendance</button>
     </form>
