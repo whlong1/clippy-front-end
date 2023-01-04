@@ -16,7 +16,10 @@ const DeliverablesRouter = (props) => {
     ...props,
     deliverables,
   }
-
+  
+  if (status === 'error') return <h1>Error</h1>
+  if (status === 'loading') return <h1>Loading...</h1>
+  
   return (
     <Routes>
       <Route element={<ContentLayout menu={<DeliverablesMenu {...menuProps} />} />}>

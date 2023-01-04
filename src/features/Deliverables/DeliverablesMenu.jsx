@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom'
+
+// Components
 import MenuLayout from '../../layouts/MenuLayout'
+import DeliverablesList from './DeliverablesList'
 
 const DeliverablesMenu = (props) => {
   const { deliverables } = props
@@ -12,6 +15,8 @@ const DeliverablesMenu = (props) => {
       <Link to='/deliverables/new'>
         <button>New Deliverable</button>
       </Link>
+
+      <DeliverablesList deliverables={deliverables} />
 
     </MenuLayout>
   )

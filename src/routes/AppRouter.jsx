@@ -48,6 +48,8 @@ export default AppRouter
 // TODO GENERAL
 // • We don't need a name property on profile (remove from schema and onboarding form)
 // • Create Admin feature and corresponding components?
+// • feature state doesn't need to be in router. would moving it to respective Menu components
+//   make rerenders more efficient?
 
 // TODO APP
 //   this will clear out the right hand content panel
