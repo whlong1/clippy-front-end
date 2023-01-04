@@ -12,7 +12,6 @@ const AttendanceRouter = (props) => {
   const { user, cohortId } = props
   const { attendance, status } = useAttendance(cohortId)
 
-
   const menuProps = {
     ...props,
     attendance,

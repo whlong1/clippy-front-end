@@ -1,7 +1,13 @@
 import { useState } from "react"
 import { formatDate } from './helpers/helpers'
 
+// Hooks
+import { useManageDeliverables } from '../../hooks/useManageDeliverables'
+
 const NewDeliverable = (props) => {
+  const { cohortId } = props
+  const mutation = useManageDeliverables(cohortId)
+
   const [deliverableData, setDeliverableData] = useState({
     name: '',
     dueDate: '',
@@ -15,14 +21,6 @@ const NewDeliverable = (props) => {
     hasCodeSandboxUrl: '',
   })
 
-  const handleChange = ({ target }) => {
-    if (target.type === 'checkbox') {
-      setDeliverableData({ ...deliverableData, [target.name]: target.checked ? 'checked' : '' })
-    } else {
-      setDeliverableData({ ...deliverableData, [target.name]: target.value })
-    }
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault()
     const formData = {
@@ -30,8 +28,16 @@ const NewDeliverable = (props) => {
       cohort: '************',
       dueDate: formatDate(deliverableData.dueDate),
     }
-    console.log('Deliverable Form Data:', formData)
-    // ...
+
+    mutation.mutate({ type: 'create', payload: { formData } })
+  }
+
+  const handleChange = ({ target }) => {
+    if (target.type === 'checkbox') {
+      setDeliverableData({ ...deliverableData, [target.name]: target.checked ? 'checked' : '' })
+    } else {
+      setDeliverableData({ ...deliverableData, [target.name]: target.value })
+    }
   }
 
   return (

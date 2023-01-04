@@ -25,7 +25,6 @@ const createAttendance = async (data) => {
   }
 }
 
-
 const updateAttendance = async (data) => {
   const { attendanceId } = data
   try {
@@ -44,8 +43,6 @@ const updateAttendance = async (data) => {
   }
 }
 
-
-
 const deleteAttendance = async (data) => {
   const { attendanceId } = data
   try {
@@ -61,9 +58,6 @@ const deleteAttendance = async (data) => {
     throw error
   }
 }
-
-
-
 
 export {
   indexAttendance,

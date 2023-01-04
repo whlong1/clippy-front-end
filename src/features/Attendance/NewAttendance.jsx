@@ -1,10 +1,13 @@
 import { useState } from "react"
 
+// Hooks
+import { useManageAttendance } from "../../hooks/useManageAttendance"
+
 const NewAttendance = (props) => {
+  const { cohortId } = props
+  const mutation = useManageAttendance(cohortId)
   const [attendanceData, setAttendanceData] = useState({
-    date: '',
-    notes: '',
-    time: 'AM',
+    date: '', notes: '', time: 'AM',
   })
 
   const handleChange = ({ target }) => {
@@ -19,6 +22,7 @@ const NewAttendance = (props) => {
       students: ['*******'],
     }
     console.log('Attendance Form Data:', formData)
+    mutation.mutate({ type: 'create', payload: { formData } })
     // ...
   }
 
