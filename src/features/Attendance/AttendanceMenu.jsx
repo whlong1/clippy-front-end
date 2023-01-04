@@ -1,8 +1,11 @@
 import MenuLayout from '../../layouts/MenuLayout'
 
-const AttendanceMenu = () => {
+const AttendanceMenu = (props) => {
+  const { attendance } = props
+  console.log('Attendance:', attendance)
+
   return (
-    <MenuLayout>
+    <MenuLayout {...props}>
       <p>Attendance Menu</p>
     </MenuLayout>
   )

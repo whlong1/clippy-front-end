@@ -45,19 +45,20 @@ const AppRouter = (props) => {
 
 export default AppRouter
 
-// TODO APP
-// • Add protected route for AdminPanel with user.isAdmin (AppRouter)
-// • When a user selects a new cohort from the select menu, redirect user to given base path (people, attendance, deliverables)
-//   this will clear out the right hand content panel
-// • Create a reusable feature landing wrapper component
-
-// TODO PEOPLE
-// • Add toggle functionality to each Role section
-// • Create admin UI component and add to PersonDetails
-// • Figure out how to handle Role/Title in PersonDetails after changing role
-// • Create a ProfilePiture component (can accept size prop: small/large)
-// • Clarify difference between user.profile and profile being viewed in people
-// • Edit profile functionality
-
 // TODO GENERAL
 // • We don't need a name property on profile (remove from schema and onboarding form)
+
+// TODO APP
+//   this will clear out the right hand content panel
+// • Create a reusable feature landing wrapper component
+// • Add protected route for AdminPanel with user.isAdmin (AppRouter)
+// • When a user selects a new cohort from the select menu, redirect user to given base path (people, attendance, deliverables)
+
+// TODO PEOPLE
+// • Add Edit profile functionality
+// • Add toggle functionality to each Role section
+// • Create admin UI component and add to PersonDetails
+// • Create a ProfilePiture component (can accept size prop: small/large)
+// • Figure out how to handle Role/Title in PersonDetails after changing role
+// • Clarify difference between user.profile and profile being viewed in people
+// • useManageRoles should probably be called useManagePeople if we want to stick with this pattern
