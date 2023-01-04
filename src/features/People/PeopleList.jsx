@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import ProfileInfo from '../../../components/ProfileInfo/ProfileInfo'
+import ProfileInfo from '../../components/ProfileInfo/ProfileInfo'
 
 const PeopleList = (props) => {
   const { role, people } = props

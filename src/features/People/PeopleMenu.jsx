@@ -1,5 +1,5 @@
 import PeopleList from './PeopleList'
-import MenuLayout from '../../../layouts/MenuLayout'
+import MenuLayout from '../../layouts/MenuLayout'
 
 const PeopleMenu = (props) => {
   const { people } = props

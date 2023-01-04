@@ -1,5 +1,5 @@
 import { useParams, useLocation } from "react-router-dom"
-import { useProfileDetails } from "../../../hooks/useProfileDetails"
+import { useProfileDetails } from "../../hooks/useProfileDetails"
 
 // Components
 import AdminPanel from "./AdminPanel"
@@ -18,11 +18,13 @@ const PersonDetails = ({ user, cohortId }) => {
 
   return (
     <section>
-      <img
-        alt="github-profile"
-        style={{ width: '50px' }}
-        src={`https://github.com/${profile.gitHubUserName}.png`}
-      />
+      {profile.gitHubUserName &&
+        <img
+          alt="github-profile"
+          style={{ width: '50px' }}
+          src={`https://github.com/${profile.gitHubUserName}.png`}
+        />
+      }
 
       {cohortRole}
       {profile.email}

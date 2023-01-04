@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
 
 import ContentLayout from '../layouts/ContentLayout.jsx'
-import PeopleMenu from '../features/People/components/PeopleMenu'
-import PersonDetails from '../features/People/components/PersonDetails'
+import PeopleMenu from '../features/People/PeopleMenu'
+import PersonDetails from '../features/People/PersonDetails'
 
 // Hooks
 import { usePeople } from '../hooks/usePeople.js'

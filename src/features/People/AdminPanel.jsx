@@ -1,4 +1,4 @@
-import { useManageRoles } from "../../../hooks/useManageRoles"
+import { useManageRoles } from "../../hooks/useManageRoles"
 
 const AdminPanel = ({ profile, cohortId }) => {
   const mutation = useManageRoles(cohortId, profile._id)

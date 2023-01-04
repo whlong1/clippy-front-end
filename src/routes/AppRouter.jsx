@@ -22,7 +22,7 @@ const AppRouter = (props) => {
     setCohortId,
   }
 
-  console.log('Auth0 User', user.name)
+  // console.log('Auth0 User', user.name)
   // console.log('Current Cohort', cohortId)
   // console.log('Profile', profile.firstName)
 
@@ -54,3 +54,8 @@ export default AppRouter
 // • Add toggle functionality to each Role section
 // • Create admin UI component and add to PersonDetails
 // • Figure out how to handle Role/Title in PersonDetails after changing role
+// • Create a ProfilePiture component (can accept size prop: small/large)
+// • Edit profile functionality
+
+// TODO GENERAL
+// • We don't need a name property on profile (remove from schema and onboarding form)
