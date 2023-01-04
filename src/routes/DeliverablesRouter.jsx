@@ -20,6 +20,7 @@ const DeliverablesRouter = (props) => {
     <Routes>
       <Route element={<ContentLayout menu={<DeliverablesMenu {...menuProps} />} />}>
         <Route index element={<h1>Deliverables Landing</h1>} />
+        <Route path='new' element={<h1>New Deliverable</h1>} />
         <Route path=':deliverableId' element={<h1>Deliverables Details</h1>} />
       </Route>
     </Routes>

@@ -47,6 +47,7 @@ export default AppRouter
 
 // TODO GENERAL
 // • We don't need a name property on profile (remove from schema and onboarding form)
+// • Create Admin feature and corresponding components?
 
 // TODO APP
 //   this will clear out the right hand content panel
