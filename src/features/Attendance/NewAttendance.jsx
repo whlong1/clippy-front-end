@@ -1,17 +1,24 @@
+import { useState } from "react"
+
 const NewAttendance = (props) => {
   const [attendanceData, setAttendanceData] = useState({
     date: '',
     notes: '',
     time: 'AM',
-    cohort: '*********',
-    takenBy: '********',
   })
 
   const handleChange = ({ target }) => {
-    setAttendanceData({ ...formData, [target.name]: target.value })
+    setAttendanceData({ ...attendanceData, [target.name]: target.value })
   }
   const handleSubmit = (e) => {
     e.preventDefault()
+    const formData = {
+      ...attendanceData,
+      cohort: '*********',
+      takenBy: '********',
+      students: ['*******'],
+    }
+    console.log('Attendance Form Data:', formData)
     // ...
   }
 
@@ -22,14 +29,14 @@ const NewAttendance = (props) => {
         required
         id="date"
         type="date"
-        value={attendanceData.date}
         onChange={handleChange}
+        value={attendanceData.date}
       />
       <label htmlFor="time">Time:</label>
       <select
         id="time"
-        value={attendanceData.time}
         onChange={handleChange}
+        value={attendanceData.time}
       >
         <option value="AM">AM</option>
         <option value="PM">PM</option>
@@ -37,12 +44,13 @@ const NewAttendance = (props) => {
       <label htmlFor="notes">Notes:</label>
       <input
         required
-        type="text"
         id="notes"
-        value={attendanceData.notes}
+        type="text"
         onChange={handleChange}
+        value={attendanceData.notes}
       />
-      <button type="submit">Submit</button>
+
+      <button type="submit">Submit Attendance</button>
     </form>
   )
 }
