@@ -13,11 +13,11 @@ export const useManageRoles = (cohortId, profileId) => {
   return useMutation({
     // Update with single arg/param pattern used for deliverables and attendance 
     mutationFn: (action) => types[action.type](cohortId, profileId, action.payload),
-    onSuccess: ({ res }, { payload }) => {
+    onSuccess: (res, { payload }) => {
       console.log('Server response:', res)
       const queryKey = ['people', cohortId]
       const { profile, formerRole, newRole } = payload
-      console.log('PROFILE ID',profileId)
+      console.log('PROFILE ID', profileId)
 
 
       const updateState = (state) => {

@@ -12,7 +12,7 @@ export const useManageAttendance = (cohortId) => {
 
   return useMutation({
     mutationFn: (action) => types[action.type](action.payload),
-    onSuccess: ({ res }, { payload }) => {
+    onSuccess: (res, { payload }) => {
       console.log('Payload:', payload)
       console.log('Server response:', res)
       const queryKey = ['attendance', cohortId]

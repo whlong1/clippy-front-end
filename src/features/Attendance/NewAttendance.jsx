@@ -41,7 +41,6 @@ const NewAttendance = (props) => {
     mutation.mutate({ type: 'create', payload: formData })
   }
 
-
   return (
     <form onSubmit={handleSubmit}>
       <h1>New Attendance</h1>

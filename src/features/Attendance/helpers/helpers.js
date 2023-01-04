@@ -1,4 +1,3 @@
-
 const buildStatusArray = (arr) => {
   if (!arr) return null
 
