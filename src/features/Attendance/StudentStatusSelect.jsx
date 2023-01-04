@@ -1,4 +1,4 @@
-const StudentStatus = ({ studentData, setStudentData }) => {
+const StudentStatusSelect = ({ studentData, setStudentData }) => {
 
   const handleChange = ({ target }) => {
     setStudentData(studentData.map((s) => {
@@ -27,4 +27,4 @@ const StudentStatus = ({ studentData, setStudentData }) => {
   )
 }
 
-export default StudentStatus
+export default StudentStatusSelect

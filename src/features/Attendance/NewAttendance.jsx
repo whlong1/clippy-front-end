@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 
 // Components
-import StudentStatus from "./StudentStatus"
+import StudentStatusSelect from "./StudentStatusSelect"
 
 // Hooks
 import { usePeople } from "../../hooks/usePeople"
@@ -35,7 +35,7 @@ const NewAttendance = (props) => {
       cohort: cohortId,
       // CHANGE THIS !!!!:::::
       takenBy: 'Hunter',
-      students: [],
+      students: studentData,
     }
     console.log('Attendance Form Data:', formData)
     // REDUX PATTERN
@@ -73,7 +73,7 @@ const NewAttendance = (props) => {
         value={attendanceData.notes}
       />
 
-      <StudentStatus studentData={studentData} setStudentData={setStudentData} />
+      <StudentStatusSelect studentData={studentData} setStudentData={setStudentData} />
 
       <button type="submit">Submit Attendance</button>
     </form>

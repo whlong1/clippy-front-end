@@ -50,6 +50,7 @@ export default AppRouter
 // • Create Admin feature and corresponding components?
 // • feature state doesn't need to be in router. would moving it to respective Menu components
 //   make rerenders more efficient?
+// • Make use of the action.type property in management hooks to target appropriate setter fn.
 
 // TODO APP
 //   this will clear out the right hand content panel
