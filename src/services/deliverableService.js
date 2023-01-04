@@ -8,6 +8,25 @@ const indexDeliverables = async (cohortId) => {
   return await res.json()
 }
 
+const createDeliverable = async (data) => {
+  try {
+    const res = await fetch(`${BASE_URL}`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${tokenService.getToken()}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+    return await res.json()
+  } catch (error) {
+    throw error
+  }
+}
+
+
 export {
   indexDeliverables,
+  createDeliverable,
 }
