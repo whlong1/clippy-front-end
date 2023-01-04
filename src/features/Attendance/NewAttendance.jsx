@@ -33,9 +33,8 @@ const NewAttendance = (props) => {
     const formData = {
       ...attendanceData,
       cohort: cohortId,
-      // CHANGE THIS !!!!:::::
-      takenBy: 'Hunter',
       students: studentData,
+      takenBy: 'You really need to update this value in NewAttendance.jsx',
     }
     console.log('Attendance Form Data:', formData)
     // REDUX PATTERN
