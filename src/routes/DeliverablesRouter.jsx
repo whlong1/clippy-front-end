@@ -1,13 +1,19 @@
 import { Routes, Route } from 'react-router-dom'
 
+// Components
 import ContentLayout from '../layouts/ContentLayout.jsx'
 import DeliverablesMenu from '../features/Deliverables/DeliverablesMenu.jsx'
 
+// Hooks
+import { useDeliverables } from '../hooks/useDeliverables.js'
+
 const DeliverablesRouter = (props) => {
   const { user, cohortId } = props
+  const { deliverables, status } = useDeliverables(cohortId)
 
   const menuProps = {
     ...props,
+    deliverables,
   }
 
   return (
