@@ -1,5 +1,8 @@
 import { useState } from "react"
 
+// Components
+import StudentStatus from "./StudentStatus"
+
 // Hooks
 import { useManageAttendance } from "../../hooks/useManageAttendance"
 

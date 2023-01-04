@@ -6,7 +6,6 @@ import { useManageDeliverables } from '../../hooks/useManageDeliverables'
 
 const NewDeliverable = (props) => {
   const { cohortId } = props
-  console.log(cohortId)
   const mutation = useManageDeliverables(cohortId)
 
   const [deliverableData, setDeliverableData] = useState({
