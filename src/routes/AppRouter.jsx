@@ -49,12 +49,14 @@ export default AppRouter
 // • Add protected route for AdminPanel with user.isAdmin (AppRouter)
 // • When a user selects a new cohort from the select menu, redirect user to given base path (people, attendance, deliverables)
 //   this will clear out the right hand content panel
+// • Create a reusable feature landing wrapper component
 
 // TODO PEOPLE
 // • Add toggle functionality to each Role section
 // • Create admin UI component and add to PersonDetails
 // • Figure out how to handle Role/Title in PersonDetails after changing role
 // • Create a ProfilePiture component (can accept size prop: small/large)
+// • Clarify difference between user.profile and profile being viewed in people
 // • Edit profile functionality
 
 // TODO GENERAL
