@@ -1,21 +1,38 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 // Components
 import StudentStatus from "./StudentStatus"
 
 // Hooks
+import { usePeople } from "../../hooks/usePeople"
 import { useManageAttendance } from "../../hooks/useManageAttendance"
+
+// Helpers
+import { buildStatusArray } from "./helpers/helpers"
 
 const NewAttendance = (props) => {
   const { cohortId } = props
+  const { people, status } = usePeople(cohortId)
   const mutation = useManageAttendance(cohortId)
+  const [studentData, setStudentData] = useState([])
   const [attendanceData, setAttendanceData] = useState({
     date: '', notes: '', time: 'AM',
   })
 
+  console.log('people', people)
+  console.log('STUDENT STATUS ARR', studentData)
+
+  useEffect(() => {
+    if (people) {
+      setStudentData(buildStatusArray(people))
+    }
+  }, [cohortId, people])
+
+
   const handleChange = ({ target }) => {
     setAttendanceData({ ...attendanceData, [target.name]: target.value })
   }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const formData = {
@@ -60,7 +77,6 @@ const NewAttendance = (props) => {
         onChange={handleChange}
         value={attendanceData.notes}
       />
-
       <button type="submit">Submit Attendance</button>
     </form>
   )

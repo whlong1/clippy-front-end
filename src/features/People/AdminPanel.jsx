@@ -4,7 +4,7 @@ const AdminPanel = ({ profile, cohortId }) => {
   const mutation = useManageRoles(cohortId, profile._id)
   
   const denialData = { profile, formerRole: "waitlist", newRole: null }
-  const removalData = { profile, formerRole: "studens", newRole: "inactive" }
+  const removalData = { profile, formerRole: "students", newRole: "inactive" }
   const approvalData = { profile, formerRole: "waitlist", newRole: "students" }
 
   console.log(profile)
