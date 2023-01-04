@@ -15,7 +15,9 @@ const DeliverableDetails = (props) => {
 
   return (
     <section>
-      Details
+      <h1>deliverable details</h1>
+
+      {deliverableDetails.name}
     </section>
   )
 }

@@ -8,6 +8,14 @@ const indexDeliverables = async (cohortId) => {
   return await res.json()
 }
 
+const showDeliverable = async (deliverableId) => {
+  const res = await fetch(`${BASE_URL}/${deliverableId}`,
+    { headers: { 'Authorization': `Bearer ${tokenService.getToken()}` } },
+  )
+  return await res.json()
+}
+
+
 const createDeliverable = async (data) => {
   try {
     const res = await fetch(`${BASE_URL}`,
@@ -78,6 +86,7 @@ const submitStudentDeliverable = async (data) => {
 }
 
 export {
+  showDeliverable,
   indexDeliverables,
   createDeliverable,
   deleteDeliverable,
