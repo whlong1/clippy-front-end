@@ -21,7 +21,7 @@ const AttendanceRouter = (props) => {
     <Routes>
       <Route element={<ContentLayout menu={<AttendanceMenu {...menuProps} />} />}>
         <Route index element={<h1>Attendance Landing</h1>} />
-        <Route path='new' element={<NewAttendance />} />
+        <Route path='new' element={<NewAttendance cohortId={cohortId} />} />
         <Route path=':attendanceId' element={<h1>Attendance Details</h1>} />
       </Route>
     </Routes>

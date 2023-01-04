@@ -17,12 +17,13 @@ const NewAttendance = (props) => {
     e.preventDefault()
     const formData = {
       ...attendanceData,
-      cohort: '*********',
-      takenBy: '********',
-      students: ['*******'],
+      cohort: cohortId,
+      // CHANGE THIS !!!!:::::
+      takenBy: 'Hunter',
+      students: [],
     }
     console.log('Attendance Form Data:', formData)
-    mutation.mutate({ type: 'create', payload: { formData } })
+    mutation.mutate({ type: 'create', payload: formData })
     // ...
   }
 

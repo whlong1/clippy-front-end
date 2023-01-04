@@ -6,6 +6,7 @@ import { useManageDeliverables } from '../../hooks/useManageDeliverables'
 
 const NewDeliverable = (props) => {
   const { cohortId } = props
+  console.log(cohortId)
   const mutation = useManageDeliverables(cohortId)
 
   const [deliverableData, setDeliverableData] = useState({
@@ -24,12 +25,12 @@ const NewDeliverable = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     const formData = {
+      cohort: cohortId,
       ...deliverableData,
-      cohort: '************',
       dueDate: formatDate(deliverableData.dueDate),
     }
 
-    mutation.mutate({ type: 'create', payload: { formData } })
+    mutation.mutate({ type: 'create', payload: formData })
   }
 
   const handleChange = ({ target }) => {

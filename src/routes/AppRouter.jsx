@@ -63,3 +63,9 @@ export default AppRouter
 // • Figure out how to handle Role/Title in PersonDetails after changing role
 // • Clarify difference between user.profile and profile being viewed in people
 // • useManageRoles should probably be called useManagePeople if we want to stick with this pattern
+
+// TODO ATTENDANCE
+// • isAdmin check for create button link
+
+// TODO DELIVERABLES
+// • isAdmin check for create button link
