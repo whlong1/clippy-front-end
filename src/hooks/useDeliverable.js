@@ -1,11 +1,11 @@
 import { useQuery } from '@tanstack/react-query'
-import * as cohortService from '../services/cohortService'
+import * as deliverableService from '../services/deliverableService'
 
-export const useCohorts = () => {
-  const { data: cohorts, status } = useQuery({
-    queryKey: ['cohorts'],
-    queryFn: cohortService.indexCohorts
+export const useDeliverables = (cohortId) => {
+  const { data: deliverables, status } = useQuery({
+    queryKey: ['deliverables', cohortId],
+    queryFn: deliverableService.indexDeliverables
   })
 
-  return { cohorts, status }
+  return { deliverables, status }
 }
