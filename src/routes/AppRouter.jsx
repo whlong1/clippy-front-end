@@ -6,17 +6,12 @@ import AttendanceRouter from './AttendanceRouter'
 import DeliverablesRouter from './DeliverablesRouter'
 import AdminPanel from '../pages/AdminPanel/AdminPanel'
 
-// Hooks
-import { useIndexCohorts } from '../hooks/useIndexCohorts'
-
 const AppRouter = (props) => {
   const { user, profile } = props
-  const { cohorts, status } = useIndexCohorts()
   const [cohortId, setCohortId] = useState(profile.cohort)
 
   const appProps = {
     user,
-    cohorts,
     cohortId,
     ...props,
     setCohortId,
@@ -25,9 +20,6 @@ const AppRouter = (props) => {
   // console.log('Auth0 User', user.name)
   // console.log('Current Cohort', cohortId)
   // console.log('Profile', profile.firstName)
-
-  if (status === 'error') return <h1>Error</h1>
-  if (status === 'loading') return <h1>Loading...</h1>
 
   return (
     <Routes>
@@ -54,7 +46,6 @@ export default AppRouter
 // • Audit props being passed
 // • Routing components are for routing, take state elswhere
 // • Details pages need to redirect if the selected cohort changes!
-// • instead of Details convention, could use index and show
 
 // TODO APP
 // • Create a reusable feature landing wrapper component

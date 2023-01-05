@@ -34,8 +34,6 @@ const ShowStudentDeliverable = (props) => {
       <p>feedback</p>
 
       <StudentSubmissionPanel />
-
-      <button>Update Deliverable</button>
     </section>
   )
 }
