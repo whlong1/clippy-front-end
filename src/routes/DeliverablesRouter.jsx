@@ -11,8 +11,7 @@ import GradeStudentDeliverable from '../features/Deliverables/GradeStudentDelive
 
 const DeliverablesRouter = (props) => {
   const { user, cohortId, profile } = props
-
-
+  
   console.log(user.email, profile.firstName)
 
   // Student Routes:

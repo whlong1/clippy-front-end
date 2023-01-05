@@ -1,5 +1,5 @@
 import { useParams, useLocation } from "react-router-dom"
-import { useShowProfile } from "../../hooks/useShowProfile"
+import { useShowPerson } from "../../hooks/useShowPerson"
 
 // Components
 import AdminPanel from "./AdminPanel"
@@ -8,9 +8,7 @@ const PersonDetails = ({ user, cohortId }) => {
   const location = useLocation()
   const { profileId } = useParams()
 
-  // Should we use a different variable for profile?
-  // Maybe use person in place of profile here to avoid confusion
-  const { profile, status } = useShowProfile(profileId)
+  const { person, status } = useShowPerson(profileId)
   const cohortRole = location.search.slice(6, -1).toUpperCase()
 
   if (status === 'error') return <h1>Error</h1>
@@ -18,25 +16,25 @@ const PersonDetails = ({ user, cohortId }) => {
 
   return (
     <section>
-      {profile.gitHubUserName &&
+      {person.gitHubUserName &&
         <img
           alt="github-profile"
           style={{ width: '50px' }}
-          src={`https://github.com/${profile.gitHubUserName}.png`}
+          src={`https://github.com/${person.gitHubUserName}.png`}
         />
       }
 
       {cohortRole}
-      {profile.email}
-      {profile.lastName}
-      {profile.firstName}
-      {profile.preferredName}
-      {profile.gitHubUserName}
-      {profile.linkedInUserName}
-      {profile.codeWarsUserName}
-      {profile.preferredPronouns}
+      {person.email}
+      {person.lastName}
+      {person.firstName}
+      {person.preferredName}
+      {person.gitHubUserName}
+      {person.linkedInUserName}
+      {person.codeWarsUserName}
+      {person.preferredPronouns}
 
-      {user.isAdmin && <AdminPanel profile={profile} cohortId={cohortId} />}
+      {user.isAdmin && <AdminPanel person={person} cohortId={cohortId} />}
     </section>
   )
 }
