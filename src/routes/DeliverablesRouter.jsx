@@ -30,7 +30,10 @@ const DeliverablesRouter = (props) => {
         <Route path=':deliverableId' element={<DeliverableDetails user={user} cohortId={cohortId} />} />
 
         {/* <Route path=':deliverableId/students/:sdId' element={<StudentDeliverable user={user} cohortId={cohortId} />} /> */}
-        <Route path=':deliverableId/students/:sdId/grade' element={<GradeStudentDeliverable user={user} cohortId={cohortId} />} />
+        <Route
+          path=':deliverableId/students/:studentDeliverableId/grade'
+          element={<GradeStudentDeliverable user={user} cohortId={cohortId} />}
+        />
       </Route>
     </Routes>
   )

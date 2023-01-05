@@ -1,4 +1,6 @@
 const StudentStatusSelect = ({ studentData, setStudentData }) => {
+  // Is this component name clear enough?
+  // This component creates a status select menu for each student
 
   const handleChange = ({ target }) => {
     setStudentData(studentData.map((s) => {

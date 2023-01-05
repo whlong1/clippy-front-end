@@ -52,6 +52,7 @@ export default AppRouter
 //   make rerenders more efficient?
 // • Make use of the action.type property in management hooks to target appropriate setter fn.
 // • Audit props being passed
+// • Routing components are for routing, take state elswhere
 
 // TODO APP
 //   this will clear out the right hand content panel

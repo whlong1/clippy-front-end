@@ -49,6 +49,13 @@ const deleteDeliverable = async (data) => {
   }
 }
 
+const showStudentDeliverable = async (studentDeliverableId) => {
+  const res = await fetch(`${BASE_URL}/${studentDeliverableId}/view`,
+    { headers: { 'Authorization': `Bearer ${tokenService.getToken()}` } },
+  )
+  return await res.json()
+}
+
 const gradeStudentDeliverable = async (data) => {
   const { studentDeliverableId } = data
   try {
@@ -90,6 +97,7 @@ export {
   indexDeliverables,
   createDeliverable,
   deleteDeliverable,
+  showStudentDeliverable,
   gradeStudentDeliverable,
   submitStudentDeliverable,
 }
