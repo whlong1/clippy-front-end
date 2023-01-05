@@ -12,11 +12,7 @@ const MyDeliverablesMenu = (props) => {
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
 
-
   console.log('My deliverables:', myDeliverables)
-
-
-  const studentDeliverableId = 300
 
   return (
     <MenuLayout {...props}>
@@ -25,7 +21,12 @@ const MyDeliverablesMenu = (props) => {
       <p>Upcoming Deliverables</p>
       <p>New Feedback</p>
 
-      <Link to={`/deliverables/${studentDeliverableId}`}>Link to specific deliverable</Link>
+
+      {myDeliverables.map((sd) => (
+        <Link key={sd._id} to={`/deliverables/${sd._id}`}>
+          {sd.name}
+        </Link>
+      ))}
 
 
     </MenuLayout>
