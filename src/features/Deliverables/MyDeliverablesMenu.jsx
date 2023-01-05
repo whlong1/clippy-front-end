@@ -21,13 +21,11 @@ const MyDeliverablesMenu = (props) => {
       <p>Upcoming Deliverables</p>
       <p>New Feedback</p>
 
-
       {myDeliverables.map((sd) => (
         <Link key={sd._id} to={`/deliverables/${sd._id}`}>
           {sd.name}
         </Link>
       ))}
-
 
     </MenuLayout>
   )
