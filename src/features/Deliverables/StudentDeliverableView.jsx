@@ -6,29 +6,29 @@ import RequirementsList from "./RequirementsList"
 // Hooks 
 import { useShowStudentDeliverable } from "../../hooks/useShowStudentDeliverable"
 
-const MyDeliverableDetails = (props) => {
+const StudentDeliverableView = (props) => {
   // conditionally render 2 views here (pre/post submit)
 
   const { studentDeliverableId } = useParams()
-  const { myDeliverableDetails, status } = useShowStudentDeliverable(studentDeliverableId)
+  const { studentDeliverable, status } = useShowStudentDeliverable(studentDeliverableId)
 
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
 
   return (
     <section>
-      <h1>{myDeliverableDetails.name}</h1>
+      <h1>{studentDeliverable.name}</h1>
       <p>My Deliverable Details (student view)</p>
 
       <h2>due date</h2>
-      {myDeliverableDetails.dueDate}
+      {studentDeliverable.dueDate}
       <h2>notion url:</h2>
-      {myDeliverableDetails.notionUrl}
+      {studentDeliverable.notionUrl}
       <p>requirements/urls</p>
       <h2>Requirements</h2>
-      <RequirementsList deliverable={myDeliverableDetails} />
+      <RequirementsList deliverable={studentDeliverable} />
       <p>status</p>
-      {myDeliverableDetails.status}
+      {studentDeliverable.status}
       <p>feedback</p>
       <p>submission materials</p>
       <button>Update Deliverable</button>
@@ -36,4 +36,4 @@ const MyDeliverableDetails = (props) => {
   )
 }
 
-export default MyDeliverableDetails
+export default StudentDeliverableView

@@ -6,7 +6,7 @@ import StudentStatusRow from './StudentStatusRow'
 // Hooks
 import { useShowAttendance } from '../../hooks/useShowAttendance'
 
-const AttendanceDetails = (props) => {
+const ShowAttendance = (props) => {
   // const { user, cohortId } = props
   const { attendanceId } = useParams()
   const { attendance, status } = useShowAttendance(attendanceId)
@@ -26,4 +26,4 @@ const AttendanceDetails = (props) => {
   )
 }
 
-export default AttendanceDetails
+export default ShowAttendance

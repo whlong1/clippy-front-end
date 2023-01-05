@@ -4,7 +4,7 @@ import { useShowPerson } from "../../hooks/useShowPerson"
 // Components
 import AdminPanel from "./AdminPanel"
 
-const PersonDetails = ({ user, cohortId }) => {
+const ShowPerson = ({ user, cohortId }) => {
   const location = useLocation()
   const { profileId } = useParams()
 
@@ -39,4 +39,4 @@ const PersonDetails = ({ user, cohortId }) => {
   )
 }
 
-export default PersonDetails 
+export default ShowPerson

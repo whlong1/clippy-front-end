@@ -8,6 +8,7 @@ import AdminPanel from '../pages/AdminPanel/AdminPanel'
 
 // Hooks
 import { useIndexCohorts } from '../hooks/useIndexCohorts'
+import { QueryClient } from '@tanstack/react-query'
 
 const AppRouter = (props) => {
   const { user, profile } = props
@@ -21,6 +22,10 @@ const AppRouter = (props) => {
     ...props,
     setCohortId,
   }
+
+  const queryClient = new QueryClient({})
+
+  console.log('Cache', queryClient.getQueryCache())
 
   // console.log('Auth0 User', user.name)
   // console.log('Current Cohort', cohortId)
@@ -52,6 +57,7 @@ export default AppRouter
 //   make rerenders more efficient?
 // • Make use of the action.type property in management hooks to target appropriate setter fn.
 // • Audit props being passed
+// • Audit query keys (myDeliverables)
 // • Routing components are for routing, take state elswhere
 // • Details pages need to redirect if the selected cohort changes!
 // • instead of Details convention, could use index and show

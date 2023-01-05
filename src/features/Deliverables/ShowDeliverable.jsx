@@ -1,17 +1,17 @@
 import { useParams } from 'react-router-dom'
 
 // Hooks
-import { useDeliverableDetails } from '../../hooks/useDeliverableDetails'
+import { useShowDeliverable } from '../../hooks/useShowDeliverable'
 
 // Components
 import StudentDeliverableRow from './StudentDeliverableRow'
 import RequirementsList from './RequirementsList'
 
-const DeliverableDetails = (props) => {
+const ShowDeliverable = (props) => {
   // const { user, cohortId } = props
   const { deliverableId } = useParams()
-  const { deliverableDetails, status } = useDeliverableDetails(deliverableId)
-  console.log('Deliverable Details:', deliverableDetails)
+  const { deliverable, status } = useShowDeliverable(deliverableId)
+  console.log('Deliverable Details:', deliverable)
 
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
@@ -19,25 +19,26 @@ const DeliverableDetails = (props) => {
   return (
     <section>
       <h1>
-        {deliverableDetails.name}
+        {deliverable.name}
       </h1>
 
-      {deliverableDetails.dueDate}
-      {deliverableDetails.dueDate}
+      {deliverable.dueDate}
+      {deliverable.dueDate}
 
       <h2>Requirements</h2>
-      <RequirementsList deliverable={deliverableDetails} />
+      <RequirementsList deliverable={deliverable} />
 
 
-      {deliverableDetails.students.map((student) => (
+      {deliverable.students.map((student) => (
         <StudentDeliverableRow
           key={student._id}
           student={student}
           deliverableId={deliverableId}
         />
       ))}
+
     </section>
   )
 }
 
-export default DeliverableDetails 
+export default ShowDeliverable

@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom'
 import MenuLayout from '../../layouts/MenuLayout'
 import { useIndexStudentDeliverables } from '../../hooks/useIndexStudentDeliverables'
 
-const MyDeliverablesMenu = (props) => {
+const StudentDeliverablesMenu = (props) => {
   // Student DeliverablesMenu View
   const { cohortId, profile } = props
-  const { myDeliverables, status } = useIndexStudentDeliverables(cohortId, profile._id)
+  const { studentDeliverables, status } = useIndexStudentDeliverables(cohortId, profile._id)
 
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
 
-  console.log('My deliverables:', myDeliverables)
+  console.log('Deliverables assigned to client student', studentDeliverables)
 
   return (
     <MenuLayout {...props}>
@@ -21,7 +21,7 @@ const MyDeliverablesMenu = (props) => {
       <p>Upcoming Deliverables</p>
       <p>New Feedback</p>
 
-      {myDeliverables.map((sd) => (
+      {studentDeliverables.map((sd) => (
         <Link key={sd._id} to={`/deliverables/${sd._id}`}>
           {sd.name}
         </Link>
@@ -31,4 +31,4 @@ const MyDeliverablesMenu = (props) => {
   )
 }
 
-export default MyDeliverablesMenu
+export default StudentDeliverablesMenu
