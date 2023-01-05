@@ -7,7 +7,6 @@ const AdminPanel = ({ person, cohortId }) => {
   const removalData = { person, formerRole: "students", newRole: "inactive" }
   const approvalData = { person, formerRole: "waitlist", newRole: "students" }
 
-  console.log(person)
   return (
     <>
       <button onClick={() => mutation.mutate({ type: 'approve', payload: approvalData })}>

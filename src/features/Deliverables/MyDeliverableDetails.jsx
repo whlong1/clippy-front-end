@@ -4,13 +4,13 @@ import { useParams } from "react-router-dom"
 import RequirementsList from "./RequirementsList"
 
 // Hooks 
-import { useMyDeliverableDetails } from "../../hooks/useMyDeliverableDetails"
+import { useShowStudentDeliverable } from "../../hooks/useShowStudentDeliverable"
 
 const MyDeliverableDetails = (props) => {
   // conditionally render 2 views here (pre/post submit)
 
   const { studentDeliverableId } = useParams()
-  const { myDeliverableDetails, status } = useMyDeliverableDetails(studentDeliverableId)
+  const { myDeliverableDetails, status } = useShowStudentDeliverable(studentDeliverableId)
 
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>

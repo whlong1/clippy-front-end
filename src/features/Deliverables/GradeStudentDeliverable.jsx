@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom"
 
 // Hooks
-import { useStudentDeliverable } from '../../hooks/useStudentDeliverable'
+import { useShowStudentDeliverable } from '../../hooks/useShowStudentDeliverable'
 
 const GradeStudentDeliverable = () => {
   // Instructor can make request to /:sdId/grade' from here
-  const { deliverableId, studentDeliverableId } = useParams()
-  const { studentDeliverable, status } = useStudentDeliverable(studentDeliverableId)
+  const { studentDeliverableId } = useParams()
+  const { studentDeliverable, status } = useShowStudentDeliverable(studentDeliverableId)
 
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
@@ -27,7 +27,7 @@ const GradeStudentDeliverable = () => {
 
   const studentName = `${preferredName} ${lastName}`
   const title = `Grade ${name} for ${studentName}`
- 
+
   return (
     <section>
 

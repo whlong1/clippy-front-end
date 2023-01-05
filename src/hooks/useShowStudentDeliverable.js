@@ -1,7 +1,8 @@
 import { useQuery } from '@tanstack/react-query'
 import * as deliverableService from '../services/deliverableService'
 
-export const useStudentDeliverable = (studentDeliverableId) => {
+// Both Instructors and Students will make use of this hook
+export const useShowStudentDeliverable = (studentDeliverableId) => {
   const { data: studentDeliverable, status } = useQuery({
     queryKey: ['studentDeliverable', studentDeliverableId],
     queryFn: () => deliverableService.showStudentDeliverable(studentDeliverableId)
@@ -9,3 +10,5 @@ export const useStudentDeliverable = (studentDeliverableId) => {
 
   return { studentDeliverable, status }
 }
+
+
