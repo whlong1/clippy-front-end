@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom'
 
 // Components
 import MenuLayout from '../../layouts/MenuLayout'
-import { useMyDeliverables } from '../../hooks/useMyDeliverables'
+import { useIndexStudentDeliverables } from '../../hooks/useIndexStudentDeliverables'
 
 const MyDeliverablesMenu = (props) => {
   // Student DeliverablesMenu View
   const { cohortId, profile } = props
-  const { myDeliverables, status } = useMyDeliverables(cohortId, profile._id)
+  const { myDeliverables, status } = useIndexStudentDeliverables(cohortId, profile._id)
 
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>

@@ -10,5 +10,3 @@ export const useShowStudentDeliverable = (studentDeliverableId) => {
 
   return { studentDeliverable, status }
 }
-
-
