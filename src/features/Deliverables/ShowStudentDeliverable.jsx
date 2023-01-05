@@ -2,11 +2,13 @@ import { useParams } from "react-router-dom"
 
 // Components
 import RequirementsList from "./RequirementsList"
+import StudentSubmissionPanel from './StudentSubmissionPanel'
 
 // Hooks 
 import { useShowStudentDeliverable } from "../../hooks/useShowStudentDeliverable"
 
-const StudentDeliverableView = (props) => {
+// Student Only View
+const ShowStudentDeliverable = (props) => {
   // conditionally render 2 views here (pre/post submit)
 
   const { studentDeliverableId } = useParams()
@@ -30,10 +32,12 @@ const StudentDeliverableView = (props) => {
       <p>status</p>
       {studentDeliverable.status}
       <p>feedback</p>
-      <p>submission materials</p>
+
+      <StudentSubmissionPanel />
+
       <button>Update Deliverable</button>
     </section>
   )
 }
 
-export default StudentDeliverableView
+export default ShowStudentDeliverable
