@@ -6,7 +6,7 @@ import * as deliverableService from '../services/deliverableService'
 // Student hook
 // Should we used multiple queryKeys?
 // cohortId might be necessary if students wish to switch cohorts
-export const usemyDeliverableDetails = (studentDeliverableId) => {
+export const useMyDeliverableDetails = (studentDeliverableId) => {
   const { data: myDeliverableDetails, status } = useQuery({
     queryKey: ['myDeliverableDetails', studentDeliverableId],
     queryFn: () => deliverableService.showStudentDeliverable(studentDeliverableId)
