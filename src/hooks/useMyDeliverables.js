@@ -1,13 +1,13 @@
 import { useQuery } from '@tanstack/react-query'
-import * as deliverableService from '../services/deliverableService'
+import * as profileService from '../services/profileService'
 
 // Student hook
-// What id should we used for the queryKey?
-// service uses cohortId as query string
-export const useMyDeliverables = (cohortId) => {
+// Should we used multiple queryKeys?
+// cohortId might be necessary if students wish to switch cohorts
+export const useMyDeliverables = (cohortId, profileId) => {
   const { data: myDeliverables, status } = useQuery({
     queryKey: ['myDeliverables', cohortId],
-    queryFn: () => deliverableService.indexDeliverables(cohortId)
+    queryFn: () => profileService.getAllMyDeliverables(cohortId, profileId)
   })
 
   return { myDeliverables, status }

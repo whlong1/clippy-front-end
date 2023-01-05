@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import ContentLayout from '../layouts/ContentLayout.jsx'
 import NewDeliverable from '../features/Deliverables/NewDeliverable'
 import DeliverablesMenu from '../features/Deliverables/DeliverablesMenu.jsx'
+import MyDeliverablesMenu from '../features/Deliverables/MyDeliverablesMenu.jsx'
 import DeliverableDetails from '../features/Deliverables/DeliverableDetails.jsx'
 import GradeStudentDeliverable from '../features/Deliverables/GradeStudentDeliverable.jsx'
 
@@ -11,11 +12,13 @@ import GradeStudentDeliverable from '../features/Deliverables/GradeStudentDelive
 import { useDeliverables } from '../hooks/useDeliverables.js'
 
 const DeliverablesRouter = (props) => {
-  const { user, cohortId } = props
+  const { user, cohortId, profile } = props
   const { deliverables, status } = useDeliverables(cohortId)
 
   const menuProps = {
     ...props,
+    profile,
+    cohortId,
     deliverables,
   }
 
@@ -25,8 +28,8 @@ const DeliverablesRouter = (props) => {
   // Student Routes:
   if (!user.isAdin) return (
     <Routes>
-      <Route element={<ContentLayout menu={<DeliverablesMenu {...menuProps} />} />}>
-        <Route index element={<h1>Deliverables Landing</h1>} />
+      <Route element={<ContentLayout menu={<MyDeliverablesMenu {...menuProps} />} />}>
+        <Route index element={<h1>My Deliverables Landing</h1>} />
       </Route>
     </Routes>
   )
