@@ -4,8 +4,16 @@ import { Link } from 'react-router-dom'
 import MenuLayout from '../../layouts/MenuLayout'
 import DeliverablesList from './DeliverablesList'
 
+// Hooks 
+import { useIndexDeliverables } from '../../hooks/useIndexDeliverables'
+
 const DeliverablesMenu = (props) => {
-  const { deliverables } = props
+  const { deliverables, status } = useIndexDeliverables(props.cohortId)
+
+  if (status === 'error') return <h1>Error</h1>
+  if (status === 'loading') return <h1>Loading...</h1>
+
+
   console.log('Deliverables:', deliverables)
 
   // Create instructor view & student view

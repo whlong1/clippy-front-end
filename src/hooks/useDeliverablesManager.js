@@ -1,13 +1,14 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import * as attendanceService from '../services/attendanceService'
+import * as deliverableService from '../services/deliverableService'
 
 const types = {
-  'create': attendanceService.createAttendance,
-  'update': attendanceService.updateAttendance,
-  'remove': attendanceService.deleteAttendance,
+  'create': deliverableService.createDeliverable,
+  'remove': deliverableService.deleteDeliverable,
+  'grade': deliverableService.gradeStudentDeliverable,
+  'submit': deliverableService.submitStudentDeliverable,
 }
 
-export const useManageAttendance = (cohortId) => {
+export const useDeliverablesManager = (cohortId) => {
   const queryClient = useQueryClient()
 
   return useMutation({
@@ -15,10 +16,9 @@ export const useManageAttendance = (cohortId) => {
     onSuccess: (res, { payload }) => {
       console.log('Payload:', payload)
       console.log('Server response:', res)
-      const queryKey = ['attendance', cohortId]
+      const queryKey = ['deliverables', cohortId]
 
       const updateState = (state) => {
-
         return [
           res,
           ...state,

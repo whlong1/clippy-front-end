@@ -4,14 +4,14 @@ import { useParams } from 'react-router-dom'
 import StudentStatusRow from './StudentStatusRow'
 
 // Hooks
-import { useAttendanceDetails } from '../../hooks/useAttendanceDetails'
+import { useShowAttendance } from '../../hooks/useShowAttendance'
 
 const AttendanceDetails = (props) => {
   // const { user, cohortId } = props
   const { attendanceId } = useParams()
-  const { attendanceDetails, status } = useAttendanceDetails(attendanceId)
+  const { attendance, status } = useShowAttendance(attendanceId)
 
-  console.log('Attendance DETAILS', attendanceDetails)
+  console.log('Attendance DETAILS', attendance)
 
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
@@ -19,7 +19,7 @@ const AttendanceDetails = (props) => {
   return (
     <section>
       <h1>Attendance Details</h1>
-      {attendanceDetails.students.map((student) => (
+      {attendance.students.map((student) => (
         <StudentStatusRow key={student._id} student={student} />
       ))}
     </section>

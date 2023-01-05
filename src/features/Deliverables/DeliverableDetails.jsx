@@ -5,6 +5,7 @@ import { useDeliverableDetails } from '../../hooks/useDeliverableDetails'
 
 // Components
 import StudentDeliverableRow from './StudentDeliverableRow'
+import RequirementsList from './RequirementsList'
 
 const DeliverableDetails = (props) => {
   // const { user, cohortId } = props
@@ -24,21 +25,9 @@ const DeliverableDetails = (props) => {
       {deliverableDetails.dueDate}
       {deliverableDetails.dueDate}
 
-      <p>
-        hasMiscUrl: {deliverableDetails.hasMiscUrl}
-      </p>
-      <p>
-        hasGitHubUrl:{deliverableDetails.hasGitHubUrl}
-      </p>
-      <p>
-        hasTrelloUrl: {deliverableDetails.hasTrelloUrl}
-      </p>
-      <p>
-        hasDeploymentUrl: {deliverableDetails.hasDeploymentUrl}
-      </p>
-      <p>
-        hasCodeSandboxUrl: {deliverableDetails.hasCodeSandboxUrl}
-      </p>
+      <h2>Requirements</h2>
+      <RequirementsList deliverable={deliverableDetails} />
+
 
       {deliverableDetails.students.map((student) => (
         <StudentDeliverableRow

@@ -1,4 +1,4 @@
-const Requirements = ({ deliverable }) => {
+const RequirementsList = ({ deliverable }) => {
   return (
     <div>
       <p>
@@ -20,4 +20,4 @@ const Requirements = ({ deliverable }) => {
   )
 }
 
-export default Requirements
+export default RequirementsList

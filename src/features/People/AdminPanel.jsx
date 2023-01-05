@@ -1,7 +1,7 @@
-import { useManageRoles } from "../../hooks/useManageRoles"
+import { useRoleManager } from "../../hooks/useRoleManager"
 
 const AdminPanel = ({ profile, cohortId }) => {
-  const mutation = useManageRoles(cohortId, profile._id)
+  const mutation = useRoleManager(cohortId, profile._id)
   
   const denialData = { profile, formerRole: "waitlist", newRole: null }
   const removalData = { profile, formerRole: "students", newRole: "inactive" }

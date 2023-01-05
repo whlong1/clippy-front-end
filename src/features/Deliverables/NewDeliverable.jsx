@@ -2,11 +2,11 @@ import { useState } from "react"
 import { formatDate } from './helpers/helpers'
 
 // Hooks
-import { useManageDeliverables } from '../../hooks/useManageDeliverables'
+import { useDeliverablesManager } from '../../hooks/useDeliverablesManager'
 
 const NewDeliverable = (props) => {
   const { cohortId } = props
-  const mutation = useManageDeliverables(cohortId)
+  const mutation = useDeliverablesManager(cohortId)
 
   const [deliverableData, setDeliverableData] = useState({
     name: '',

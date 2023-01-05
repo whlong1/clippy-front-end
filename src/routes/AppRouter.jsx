@@ -7,11 +7,11 @@ import DeliverablesRouter from './DeliverablesRouter'
 import AdminPanel from '../pages/AdminPanel/AdminPanel'
 
 // Hooks
-import { useCohorts } from '../hooks/useCohorts'
+import { useIndexCohorts } from '../hooks/useIndexCohorts'
 
 const AppRouter = (props) => {
   const { user, profile } = props
-  const { cohorts, status } = useCohorts()
+  const { cohorts, status } = useIndexCohorts()
   const [cohortId, setCohortId] = useState(profile.cohort)
 
   const appProps = {
@@ -54,6 +54,7 @@ export default AppRouter
 // • Audit props being passed
 // • Routing components are for routing, take state elswhere
 // • Details pages need to redirect if the selected cohort changes!
+// • instead of Details convention, could use index and show
 
 // TODO APP
 //   this will clear out the right hand content panel
@@ -68,7 +69,6 @@ export default AppRouter
 // • Create a ProfilePiture component (can accept size prop: small/large)
 // • Figure out how to handle Role/Title in PersonDetails after changing role
 // • Clarify difference between user.profile and profile being viewed in people
-// • useManageRoles should probably be called useManagePeople if we want to stick with this pattern
 
 // TODO ATTENDANCE
 // • isAdmin check for create button link
@@ -84,4 +84,4 @@ export default AppRouter
 //   pattern used should apply to attendance as well. conditionally render menu?
 // • Build out useManageStudentDeliverable hook
 // • If students see a different side menu, easier to control user journey (more reason to hold list state in menus)
-
+// • DeliverableInfo component could be shared MyDeliverableDetails and DeliverableDetails

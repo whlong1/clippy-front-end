@@ -4,16 +4,17 @@ import { useState, useEffect } from "react"
 import StudentStatusSelect from "./StudentStatusSelect"
 
 // Hooks
-import { usePeople } from "../../hooks/usePeople"
-import { useManageAttendance } from "../../hooks/useManageAttendance"
+import { useIndexPeople } from "../../hooks/useIndexPeople"
+import { useAttendanceManager} from "../../hooks/useAttendanceManager"
 
 // Helpers
 import { buildStatusArray } from "./helpers/helpers"
 
 const NewAttendance = (props) => {
   const { cohortId } = props
-  const { people, status } = usePeople(cohortId)
-  const mutation = useManageAttendance(cohortId)
+  const { people, status } = useIndexPeople(cohortId)
+
+  const mutation = useAttendanceManager(cohortId)
   const [studentData, setStudentData] = useState([])
   const [attendanceData, setAttendanceData] = useState({
     date: '', notes: '', time: 'AM',
@@ -23,6 +24,8 @@ const NewAttendance = (props) => {
     if (people) { setStudentData(buildStatusArray(people)) }
   }, [cohortId, people])
 
+  if (status === 'error') return <h1>Error</h1>
+  if (status === 'loading') return <h1>Loading...</h1>
 
   const handleChange = ({ target }) => {
     setAttendanceData({ ...attendanceData, [target.name]: target.value })

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 
 // Components
-import Requirements from "./Requirements"
+import RequirementsList from "./RequirementsList"
 
 // Hooks 
 import { useMyDeliverableDetails } from "../../hooks/useMyDeliverableDetails"
@@ -17,16 +17,16 @@ const MyDeliverableDetails = (props) => {
 
   return (
     <section>
-      <p>My Deliverable Details (student view)</p>
       <h1>{myDeliverableDetails.name}</h1>
+      <p>My Deliverable Details (student view)</p>
 
-      <p>due date</p>
+      <h2>due date</h2>
       {myDeliverableDetails.dueDate}
-      <p>notion url:</p>
+      <h2>notion url:</h2>
       {myDeliverableDetails.notionUrl}
       <p>requirements/urls</p>
       <h2>Requirements</h2>
-      <Requirements deliverable={myDeliverableDetails} />
+      <RequirementsList deliverable={myDeliverableDetails} />
       <p>status</p>
       {myDeliverableDetails.status}
       <p>feedback</p>

@@ -6,24 +6,12 @@ import NewAttendance from '../features/Attendance/NewAttendance'
 import AttendanceMenu from '../features/Attendance/AttendanceMenu.jsx'
 import AttendanceDetails from '../features/Attendance/AttendanceDetails.jsx'
 
-// Hooks
-import { useAttendance } from '../hooks/useAttendance.js'
-
 const AttendanceRouter = (props) => {
   const { user, cohortId } = props
-  const { attendance, status } = useAttendance(cohortId)
-
-  const menuProps = {
-    ...props,
-    attendance,
-  }
-
-  if (status === 'error') return <h1>Error</h1>
-  if (status === 'loading') return <h1>Loading...</h1>
 
   return (
     <Routes>
-      <Route element={<ContentLayout menu={<AttendanceMenu {...menuProps} />} />}>
+      <Route element={<ContentLayout menu={<AttendanceMenu {...props} />} />}>
         <Route index element={<h1>Attendance Landing</h1>} />
         <Route path='new' element={<NewAttendance cohortId={cohortId} />} />
         <Route path=':attendanceId' element={<AttendanceDetails user={user} cohortId={cohortId} />} />

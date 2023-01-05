@@ -7,7 +7,7 @@ const types = {
   'approve': cohortService.approveProfile,
 }
 
-export const useManageRoles = (cohortId, profileId) => {
+export const useRoleManager = (cohortId, profileId) => {
   const queryClient = useQueryClient()
 
   return useMutation({

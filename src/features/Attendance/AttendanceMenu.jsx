@@ -4,8 +4,13 @@ import { Link } from 'react-router-dom'
 import AttendanceList from './AttendanceList'
 import MenuLayout from '../../layouts/MenuLayout'
 
+import { useIndexAttendance } from '../../hooks/useIndexAttendance'
+
 const AttendanceMenu = (props) => {
-  const { attendance } = props
+  const { attendance, status } = useIndexAttendance(props.cohortId)
+
+  if (status === 'error') return <h1>Error</h1>
+  if (status === 'loading') return <h1>Loading...</h1>
 
   return (
     <MenuLayout {...props}>

@@ -1,8 +1,14 @@
 import PeopleList from './PeopleList'
 import MenuLayout from '../../layouts/MenuLayout'
 
+import { useIndexPeople } from '../../hooks/useIndexPeople'
+
 const PeopleMenu = (props) => {
-  const { people } = props
+  const { people, status } = useIndexPeople(props.cohortId)
+
+  if (status === 'error') return <h1>Error</h1>
+  if (status === 'loading') return <h1>Loading...</h1>
+
   const roles = Object.keys(people).filter((k) => k !== '_id')
 
   return (

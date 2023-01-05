@@ -9,30 +9,16 @@ import DeliverableDetails from '../features/Deliverables/DeliverableDetails.jsx'
 import MyDeliverableDetails from '../features/Deliverables/MyDeliverableDetails.jsx'
 import GradeStudentDeliverable from '../features/Deliverables/GradeStudentDeliverable.jsx'
 
-// Hooks
-import { useDeliverables } from '../hooks/useDeliverables.js'
-
 const DeliverablesRouter = (props) => {
   const { user, cohortId, profile } = props
-  // MOVE TO DeliverablesMenu
-  const { deliverables, status } = useDeliverables(cohortId)
 
-  const menuProps = {
-    ...props,
-    profile,
-    cohortId,
-    deliverables,
-  }
-  
-  if (status === 'error') return <h1>Error</h1>
-  if (status === 'loading') return <h1>Loading...</h1>
 
-  console.log(user)
-  
+  console.log(user.email, profile.firstName)
+
   // Student Routes:
   if (!user.isAdmin) return (
     <Routes>
-      <Route element={<ContentLayout menu={<MyDeliverablesMenu {...menuProps} />} />}>
+      <Route element={<ContentLayout menu={<MyDeliverablesMenu {...props} />} />}>
         <Route index element={<h1>My Deliverables Landing</h1>} />
         <Route path=':studentDeliverableId' element={<MyDeliverableDetails user={user} cohortId={cohortId} />} />
       </Route>
@@ -42,7 +28,7 @@ const DeliverablesRouter = (props) => {
   // Admin Routes:
   return (
     <Routes>
-      <Route element={<ContentLayout menu={<DeliverablesMenu {...menuProps} />} />}>
+      <Route element={<ContentLayout menu={<DeliverablesMenu {...props} />} />}>
         <Route index element={<h1>Deliverables Landing</h1>} />
         <Route path='new' element={<NewDeliverable cohortId={cohortId} />} />
         <Route path=':deliverableId' element={<DeliverableDetails user={user} cohortId={cohortId} />} />

@@ -1,5 +1,5 @@
 import { useParams, useLocation } from "react-router-dom"
-import { useProfileDetails } from "../../hooks/useProfileDetails"
+import { useShowProfile } from "../../hooks/useShowProfile"
 
 // Components
 import AdminPanel from "./AdminPanel"
@@ -10,7 +10,7 @@ const PersonDetails = ({ user, cohortId }) => {
 
   // Should we use a different variable for profile?
   // Maybe use person in place of profile here to avoid confusion
-  const { profile, status } = useProfileDetails(profileId)
+  const { profile, status } = useShowProfile(profileId)
   const cohortRole = location.search.slice(6, -1).toUpperCase()
 
   if (status === 'error') return <h1>Error</h1>
