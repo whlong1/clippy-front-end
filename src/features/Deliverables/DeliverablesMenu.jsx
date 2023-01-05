@@ -8,6 +8,8 @@ const DeliverablesMenu = (props) => {
   const { deliverables } = props
   console.log('Deliverables:', deliverables)
 
+  // Create instructor view & student view
+
   return (
     <MenuLayout {...props}>
       <p>Deliverables Menu</p>

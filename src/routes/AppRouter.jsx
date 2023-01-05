@@ -53,6 +53,7 @@ export default AppRouter
 // • Make use of the action.type property in management hooks to target appropriate setter fn.
 // • Audit props being passed
 // • Routing components are for routing, take state elswhere
+// • Details pages need to redirect if the selected cohort changes!
 
 // TODO APP
 //   this will clear out the right hand content panel
@@ -81,5 +82,6 @@ export default AppRouter
 //   router.get('/:sdId/view', deliverablesCtrl.showStudentDeliverable)
 // • the list of deliverables a student sees will be different than an instructor
 //   pattern used should apply to attendance as well. conditionally render menu?
-//
+// • Build out useManageStudentDeliverable hook
+// • If students see a different side menu, easier to control user journey (more reason to hold list state in menus)
 

@@ -12,6 +12,31 @@ const getMyProfile = async () => {
   }
 }
 
+const getAllMyAttendance = async (cohortId, profileId) => {
+  try {
+    const path = `${BASE_URL}/${profileId}/attendance?cohortId=${cohortId}`
+    const res = await fetch(path,
+      { headers: { 'Authorization': `Bearer ${tokenService.getToken()}` } },
+    )
+    return await res.json()
+  } catch (error) {
+    throw error
+  }
+}
+
+const getAllMyDeliverables = async (cohortId, profileId) => {
+  try {
+    const path = `${BASE_URL}/${profileId}/deliverables?cohortId=${cohortId}`
+    const res = await fetch(path,
+      { headers: { 'Authorization': `Bearer ${tokenService.getToken()}` } },
+    )
+    return await res.json()
+  } catch (error) {
+    throw error
+  }
+}
+
+
 const show = async (profileId) => {
   try {
     const res = await fetch(`${BASE_URL}/${profileId}`,
@@ -45,4 +70,6 @@ export {
   show,
   getMyProfile,
   updateProfile,
+  getAllMyAttendance,
+  getAllMyDeliverables
 }
