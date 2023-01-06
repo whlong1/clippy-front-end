@@ -37,7 +37,6 @@ const ShowDeliverable = (props) => {
       <h2>Requirements</h2>
       <RequirementsList deliverable={deliverable} />
 
-
       {deliverable.students.map((student) => (
         <StudentDeliverableRow
           key={student._id}

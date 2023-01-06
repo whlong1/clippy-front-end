@@ -31,15 +31,20 @@ export const useDeliverablesManager = (cohortId) => {
       const listQueryKey = ['studentDeliverables', cohortId]
       const detailsQueryKey = ['studentDeliverable', res._id]
 
-      // submitStudentDeliverable ctrl response does not contain everything...
-      const updatedSd = { ...payload, ...res }
-
       const updateListState = (prev) => prev.map((sd) => {
         return sd._id === res._id ? { ...sd, ...res } : sd
       })
 
-      queryClient.setQueryData(detailsQueryKey, updatedSd)
+      // Go with this approach to avoid confusion over additional properties.
+      // Copy everything from the response, bring over fields from payload (formdata) as needed
+      const updatedSd = {
+        ...res,
+        name: payload.name
+        // ...
+      }
+
       queryClient.setQueryData(listQueryKey, updateListState)
+      queryClient.setQueryData(detailsQueryKey, { ...payload, ...res })
     },
   }
 
@@ -49,3 +54,8 @@ export const useDeliverablesManager = (cohortId) => {
     onError: (error) => console.log('Error!'),
   })
 }
+
+
+// Audit keys
+// Figure out async
+// compare properties available in ShowDeliverable to properties in res
