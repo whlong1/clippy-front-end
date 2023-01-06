@@ -28,7 +28,6 @@ const GradeStudentDeliverable = ({ cohortId }) => {
 
 
   const handleGrade = () => {
-    // const { sdId } = req.params
     const formData = {
       ...studentDeliverable,
       status: "complete",

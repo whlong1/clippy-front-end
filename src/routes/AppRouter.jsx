@@ -47,6 +47,7 @@ export default AppRouter
 // • Routing components are for routing, take state elswhere
 // • Details pages need to redirect if the selected cohort changes!
 // • On delete, navigate to base path
+// • Audit keys (need consistent key pattern for all resources)
 
 // TODO APP
 // • Create a reusable feature landing wrapper component
