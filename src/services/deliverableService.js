@@ -74,7 +74,7 @@ const gradeStudentDeliverable = async (data) => {
 }
 
 const submitStudentDeliverable = async (data) => {
-  const { studentDeliverableId } = data
+  const { _id: studentDeliverableId } = data
   try {
     const res = await fetch(`${BASE_URL}/${studentDeliverableId}/submit`,
       {

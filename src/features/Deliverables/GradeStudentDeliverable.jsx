@@ -25,6 +25,11 @@ const GradeStudentDeliverable = () => {
   // ^^ Additional props here after student submits deliverable
 
 
+
+  // gradeStudentDeliverable
+  // hasNewStatus: true
+
+
   const studentName = `${preferredName} ${lastName}`
   const title = `Grade ${name} for ${studentName}`
 

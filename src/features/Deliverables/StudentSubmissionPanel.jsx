@@ -10,6 +10,10 @@ const StudentSubmissionPanel = (props) => {
     mutation.mutate({ type: 'submit', payload: deliverableData })
   }
 
+  const markFeedbackAsRead = () => {
+    mutation.mutate({ type: 'submit', payload: { ...deliverableData, hasNewStatus: false } })
+  }
+
   const handleChange = ({ target }) => {
     setDeliverableData({ ...deliverableData, [target.name]: target.value })
   }
@@ -27,9 +31,11 @@ const StudentSubmissionPanel = (props) => {
       />
 
       <button onClick={submitDeliverable}>Submit Deliverable</button>
+      
+      <button onClick={markFeedbackAsRead}>Mark Feedback as Read</button>
 
       <button>Update Deliverable</button>
-      <button>Mark Feedback as Read</button>
+
     </div>
   )
 }

@@ -26,6 +26,8 @@ export const useDeliverablesManager = (cohortId) => {
     grade: (payload, res) => {
       // const { studentDeliverableId } = payload
       // const queryKey = ['studentDeliverable', studentDeliverableId]
+      // const listQueryKey = ['studentDeliverables', cohortId]
+      // const detailsQueryKey = ['studentDeliverable', res._id]
     },
     submit: (payload, res) => {
       const listQueryKey = ['studentDeliverables', cohortId]
@@ -34,14 +36,6 @@ export const useDeliverablesManager = (cohortId) => {
       const updateListState = (prev) => prev.map((sd) => {
         return sd._id === res._id ? { ...sd, ...res } : sd
       })
-
-      // Go with this approach to avoid confusion over additional properties.
-      // Copy everything from the response, bring over fields from payload (formdata) as needed
-      const updatedSd = {
-        ...res,
-        name: payload.name
-        // ...
-      }
 
       queryClient.setQueryData(listQueryKey, updateListState)
       queryClient.setQueryData(detailsQueryKey, { ...payload, ...res })
@@ -58,4 +52,3 @@ export const useDeliverablesManager = (cohortId) => {
 
 // Audit keys
 // Figure out async
-// compare properties available in ShowDeliverable to properties in res
