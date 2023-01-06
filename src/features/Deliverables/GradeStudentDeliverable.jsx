@@ -2,10 +2,12 @@ import { useParams } from "react-router-dom"
 
 // Hooks
 import { useShowStudentDeliverable } from '../../hooks/useShowStudentDeliverable'
+import { useDeliverablesManager } from "../../hooks/useDeliverablesManager"
 
-const GradeStudentDeliverable = () => {
+const GradeStudentDeliverable = ({ cohortId }) => {
   // Instructor can make request to /:sdId/grade' from here
   const { studentDeliverableId } = useParams()
+  const mutation = useDeliverablesManager(cohortId)
   const { studentDeliverable, status } = useShowStudentDeliverable(studentDeliverableId)
 
   if (status === 'error') return <h1>Error</h1>
@@ -25,11 +27,21 @@ const GradeStudentDeliverable = () => {
   // ^^ Additional props here after student submits deliverable
 
 
+  const handleGrade = () => {
+    // const { sdId } = req.params
+    const formData = {
+      ...studentDeliverable,
+      status: "complete",
+      hasNewStatus: true,
+      codeblock: "test",
+      gradedBy: "Hunter",
+      gradingNotes: "Good job!!!",
+    }
+    mutation.mutate({ type: 'grade', payload: formData })
+  }
 
-  // gradeStudentDeliverable
-  // hasNewStatus: true
 
-
+  console.log('GRAAAADE')
   const studentName = `${preferredName} ${lastName}`
   const title = `Grade ${name} for ${studentName}`
 
@@ -51,7 +63,8 @@ const GradeStudentDeliverable = () => {
       <textarea></textarea>
       <pre>Code Editor Placeholder</pre>
 
-      STATUS:::
+      STATUS::: {studentDeliverable.status}
+
       <select>
         <option value='assigned'>Assigned</option>
         <option value='complete'>Pending Audit</option>
@@ -60,7 +73,7 @@ const GradeStudentDeliverable = () => {
         <option value='pendingAudit'>Missing</option>
       </select>
 
-      <button>Submit Grade</button>
+      <button onClick={handleGrade}>Submit Grade</button>
     </section>
   )
 }

@@ -24,10 +24,10 @@ export const useDeliverablesManager = (cohortId) => {
       queryClient.setQueryData(queryKey, updateState)
     },
     grade: (payload, res) => {
-      // const { studentDeliverableId } = payload
-      // const queryKey = ['studentDeliverable', studentDeliverableId]
-      // const listQueryKey = ['studentDeliverables', cohortId]
-      // const detailsQueryKey = ['studentDeliverable', res._id]
+      console.log('RES', res)
+      console.log('PAYLOAD', payload)
+      const detailsQueryKey = ['studentDeliverable', res._id]
+      queryClient.setQueryData(detailsQueryKey, { ...payload, ...res, profile: payload.profile })
     },
     submit: (payload, res) => {
       const listQueryKey = ['studentDeliverables', cohortId]
@@ -50,5 +50,5 @@ export const useDeliverablesManager = (cohortId) => {
 }
 
 
-// Audit keys
 // Figure out async
+// Audit keys (need consistent key pattern for all resources)
