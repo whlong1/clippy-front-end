@@ -28,8 +28,18 @@ export const useDeliverablesManager = (cohortId) => {
       // const queryKey = ['studentDeliverable', studentDeliverableId]
     },
     submit: (payload, res) => {
-      // const { studentDeliverableId } = payload
-      // const queryKey = ['studentDeliverable', studentDeliverableId]
+      const listQueryKey = ['studentDeliverables', cohortId]
+      const detailsQueryKey = ['studentDeliverable', res._id]
+
+      // submitStudentDeliverable ctrl response does not contain everything...
+      const updatedSd = { ...payload, ...res }
+
+      const updateListState = (prev) => prev.map((sd) => {
+        return sd._id === res._id ? { ...sd, ...res } : sd
+      })
+
+      queryClient.setQueryData(detailsQueryKey, updatedSd)
+      queryClient.setQueryData(listQueryKey, updateListState)
     },
   }
 
@@ -39,22 +49,3 @@ export const useDeliverablesManager = (cohortId) => {
     onError: (error) => console.log('Error!'),
   })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-// It seems like [deliverables + cohortId] can be used as a queryKey for both instructors and students. 
-// This would make it easier for students to use the useDeliverablesManager.
-// When a student submits a deliverable, need to update the show view they are on. 
-// we also need to update the list of studentDeliverables show in their side panel.
-// Both instructors and students make use of the useShowStudentDeliverable hook
-
-

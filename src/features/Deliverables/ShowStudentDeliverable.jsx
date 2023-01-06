@@ -8,9 +8,8 @@ import StudentSubmissionPanel from './StudentSubmissionPanel'
 import { useShowStudentDeliverable } from "../../hooks/useShowStudentDeliverable"
 
 // Student Only View
-const ShowStudentDeliverable = (props) => {
+const ShowStudentDeliverable = ({ cohortId }) => {
   // conditionally render 2 views here (pre/post submit)
-
   const { studentDeliverableId } = useParams()
   const { studentDeliverable, status } = useShowStudentDeliverable(studentDeliverableId)
 
@@ -33,7 +32,11 @@ const ShowStudentDeliverable = (props) => {
       {studentDeliverable.status}
       <p>feedback</p>
 
-      <StudentSubmissionPanel />
+      <StudentSubmissionPanel
+        cohortId={cohortId}
+        studentDeliverable={studentDeliverable}
+      />
+
     </section>
   )
 }

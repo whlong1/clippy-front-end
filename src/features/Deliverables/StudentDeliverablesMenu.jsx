@@ -24,6 +24,7 @@ const StudentDeliverablesMenu = (props) => {
       {studentDeliverables.map((sd) => (
         <Link key={sd._id} to={`/deliverables/${sd._id}`}>
           {sd.name}
+          {sd.status}
         </Link>
       ))}
 

@@ -1,10 +1,42 @@
+import { useState } from "react"
+import { useDeliverablesManager } from "../../hooks/useDeliverablesManager"
+
 const StudentSubmissionPanel = (props) => {
+  const { cohortId, studentDeliverable } = props
+
+  const [deliverableData, setDeliverableData] = useState(studentDeliverable)
+
+  const mutation = useDeliverablesManager(cohortId)
+
+  const submitDeliverable = () => {
+    const formData = {
+      ...deliverableData,
+      studentDeliverableId: studentDeliverable._id
+    }
+    // pass in studentDeliverableId
+    mutation.mutate({ type: 'submit', payload: formData })
+  }
+
+  const handleChange = ({ target }) => {
+    console.log(target)
+    setDeliverableData({ ...deliverableData, [target.name]: target.value })
+  }
+
   return (
     <div>
-      <label htmlFor="">Submission Link Example:</label>
-      <input type="text" />
+      <label htmlFor="gitHubUrl">Submission Link Example:</label>
 
-      <button>Submit Deliverable</button>
+      <input
+        type="text"
+        id="gitHubUrl"
+        name="gitHubUrl"
+        onChange={handleChange}
+        value={deliverableData.gitHubUrl || ''}
+      />
+
+      <button onClick={submitDeliverable}>Submit Deliverable</button>
+
+
       <button>Update Deliverable</button>
       <button>Mark Feedback as Read</button>
     </div>
@@ -12,8 +44,3 @@ const StudentSubmissionPanel = (props) => {
 }
 
 export default StudentSubmissionPanel
-
-// What should I name this component?
-// Sometimes it is used to submit the urls
-// it can also be used to update the link
-// and it can be used to mark feedback as read

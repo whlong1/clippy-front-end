@@ -36,3 +36,7 @@ HOW TO HANDLER QUERY KEYS FROM THE TANSTACK BLOG
 ['todos', 'list', { filters: 'done' }]
 ['todos', 'detail', 1]
 ['todos', 'detail', 2]
+
+
+Optimistic Updates:
+https://tanstack.com/query/v4/docs/react/guides/optimistic-updates

@@ -15,7 +15,6 @@ const showDeliverable = async (deliverableId) => {
   return await res.json()
 }
 
-
 const createDeliverable = async (data) => {
   try {
     const res = await fetch(`${BASE_URL}`,
