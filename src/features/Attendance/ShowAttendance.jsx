@@ -11,11 +11,11 @@ const ShowAttendance = (props) => {
   const { attendanceId } = useParams()
   const { attendance, status } = useShowAttendance(attendanceId)
 
-  console.log('Attendance DETAILS', attendance)
-
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
-
+  
+  console.log('Attendance DETAILS', attendance)
+  
   return (
     <section>
       <h1>Attendance Details</h1>

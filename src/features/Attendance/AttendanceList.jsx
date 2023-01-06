@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-const AttendanceList = ({attendance}) => {
+const AttendanceList = ({ attendance }) => {
   return (
     attendance.map((a) => (
       <Link key={a._id} to={`/attendance/${a._id}`}>

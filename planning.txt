@@ -27,3 +27,12 @@ State for a given feature is held in that feature's router
 React Query Tips and Practices:
 https://tkdodo.eu/blog/effective-react-query-keys
 
+
+React Query Keys (great example of updating cache)
+https://tkdodo.eu/blog/effective-react-query-keys
+
+HOW TO HANDLER QUERY KEYS FROM THE TANSTACK BLOG
+['todos', 'list', { filters: 'all' }]
+['todos', 'list', { filters: 'done' }]
+['todos', 'detail', 1]
+['todos', 'detail', 2]

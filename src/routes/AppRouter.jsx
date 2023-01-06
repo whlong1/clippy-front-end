@@ -46,6 +46,7 @@ export default AppRouter
 // • Audit props being passed
 // • Routing components are for routing, take state elswhere
 // • Details pages need to redirect if the selected cohort changes!
+// • On delete, navigate to base path
 
 // TODO APP
 // • Create a reusable feature landing wrapper component

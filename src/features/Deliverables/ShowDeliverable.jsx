@@ -1,20 +1,29 @@
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 // Hooks
 import { useShowDeliverable } from '../../hooks/useShowDeliverable'
+import { useDeliverablesManager } from '../../hooks/useDeliverablesManager'
 
 // Components
 import StudentDeliverableRow from './StudentDeliverableRow'
 import RequirementsList from './RequirementsList'
 
 const ShowDeliverable = (props) => {
-  // const { user, cohortId } = props
+  const { cohortId } = props
+  const navigate = useNavigate()
   const { deliverableId } = useParams()
+  const mutation = useDeliverablesManager(cohortId)
   const { deliverable, status } = useShowDeliverable(deliverableId)
+
   console.log('Deliverable Details:', deliverable)
 
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
+
+  const handleDelete = () => {
+    mutation.mutate({ type: 'remove', payload: { deliverableId: deliverableId } })
+    navigate('/deliverables')
+  }
 
   return (
     <section>
@@ -36,6 +45,8 @@ const ShowDeliverable = (props) => {
           deliverableId={deliverableId}
         />
       ))}
+
+      <button onClick={handleDelete}>Delete</button>
 
     </section>
   )
