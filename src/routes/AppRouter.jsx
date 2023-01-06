@@ -48,6 +48,7 @@ export default AppRouter
 // • Details pages need to redirect if the selected cohort changes!
 // • On delete, navigate to base path
 // • Audit keys (need consistent key pattern for all resources)
+// • Check off user stories in README
 
 // TODO APP
 // • Create a reusable feature landing wrapper component
@@ -64,6 +65,9 @@ export default AppRouter
 
 // TODO ATTENDANCE
 // • isAdmin check for create button link
+// • Delete attendance
+// • refactor manager
+// • update attendance
 
 // TODO DELIVERABLES
 // • isAdmin check for create button link

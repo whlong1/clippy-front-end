@@ -1,42 +1,34 @@
+import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
+
+// Components
+import RequirementsList from "./RequirementsList"
 
 // Hooks
 import { useShowStudentDeliverable } from '../../hooks/useShowStudentDeliverable'
 import { useDeliverablesManager } from "../../hooks/useDeliverablesManager"
 
 const GradeStudentDeliverable = ({ cohortId }) => {
-  // Instructor can make request to /:sdId/grade' from here
   const { studentDeliverableId } = useParams()
+  const [formData, setFormData] = useState({})
   const mutation = useDeliverablesManager(cohortId)
   const { studentDeliverable, status } = useShowStudentDeliverable(studentDeliverableId)
-  // create studentDeliverableData state
+
+  useEffect(() => {
+    setFormData(studentDeliverable)
+  }, [studentDeliverable])
 
   if (status === 'error') return <h1>Error</h1>
-  if (status === 'loading') return <h1>Loading...</h1>
+  if (status === 'loading' || !formData) return <h1>Loading...</h1>
 
-  const {
-    name,
-    dueDate,
-    hasMiscUrl,
-    hasNewStatus,
-    hasTrelloUrl,
-    hasGitHubUrl,
-    hasDeploymentUrl,
-    hasCodeSandboxUrl,
-    profile: { preferredName, lastName },
-  } = studentDeliverable
-  // ^^ Additional props here after student submits deliverable
+  const { name, dueDate, profile: { preferredName, lastName } } = formData
+
+  const handleChange = ({ target }) => {
+    setFormData({ ...formData, [target.name]: target.value })
+  }
 
   const handleGrade = () => {
-    const formData = {
-      ...studentDeliverable,
-      status: "complete",
-      hasNewStatus: true,
-      codeblock: "test",
-      gradedBy: "Hunter",
-      gradingNotes: "Good job!!!",
-    }
-    mutation.mutate({ type: 'grade', payload: formData })
+    mutation.mutate({ type: 'grade', payload: { ...formData, gradedBy: "Hunter" } })
   }
 
   const studentName = `${preferredName} ${lastName}`
@@ -44,30 +36,29 @@ const GradeStudentDeliverable = ({ cohortId }) => {
 
   return (
     <section>
-
       <h1>{title}</h1>
       <p>{dueDate}</p>
 
       <p>URLS:</p>
-
-      hasMiscUrl {hasMiscUrl}
-      hasNewStatus {hasNewStatus}
-      hasTrelloUrl {hasTrelloUrl}
-      hasGitHubUrl {hasGitHubUrl}
-      hasDeploymentUrl {hasDeploymentUrl}
-      hasCodeSandboxUrl {hasCodeSandboxUrl}
+      <RequirementsList deliverable={formData} />
 
       <textarea></textarea>
       <pre>Code Editor Placeholder</pre>
 
-      STATUS::: {studentDeliverable.status}
+      <h3>
+        Status: {formData.status}
+      </h3>
 
-      <select>
+      <select
+        name="status"
+        onChange={handleChange}
+        defaultValue={formData.status}
+      >
         <option value='assigned'>Assigned</option>
-        <option value='complete'>Pending Audit</option>
-        <option value='incomplete'>Complete</option>
-        <option value='missing'>Incomplete</option>
-        <option value='pendingAudit'>Missing</option>
+        <option value='pendingAudit'>Pending Audit</option>
+        <option value='complete'>Complete</option>
+        <option value='incomplete'>Incomplete</option>
+        <option value='missing'>Missing</option>
       </select>
 
       <button onClick={handleGrade}>Submit Grade</button>

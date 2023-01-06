@@ -27,7 +27,7 @@ export const useDeliverablesManager = (cohortId) => {
       handleCache: (payload, res) => {
         // Double check that list is updated correctly.
         const detailsQueryKey = ['studentDeliverable', res._id]
-        queryClient.setQueryData(detailsQueryKey, { ...payload, ...res, profile: payload.profile })
+        queryClient.setQueryData(detailsQueryKey, { ...payload, ...res })
       },
     },
     submit: {
