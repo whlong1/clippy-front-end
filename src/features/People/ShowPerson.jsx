@@ -3,6 +3,7 @@ import { useShowPerson } from "../../hooks/useShowPerson"
 
 // Components
 import AdminPanel from "./AdminPanel"
+import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
 
 const ShowPerson = ({ user, cohortId }) => {
   const location = useLocation()
@@ -16,13 +17,7 @@ const ShowPerson = ({ user, cohortId }) => {
 
   return (
     <section>
-      {person.gitHubUserName &&
-        <img
-          alt="github-profile"
-          style={{ width: '50px' }}
-          src={`https://github.com/${person.gitHubUserName}.png`}
-        />
-      }
+      <ProfilePicture gitHubUserName={person.gitHubUserName} size='100px' />
 
       {cohortRole}
       {person.email}

@@ -7,7 +7,7 @@ const ProfileInfo = ({ profile }) => {
   return (
     <div>
       <p>{userName}</p>
-      <ProfilePicture gitHubUserName={gitHubUserName} />
+      <ProfilePicture gitHubUserName={gitHubUserName} size='20px' />
     </div>
   )
 }

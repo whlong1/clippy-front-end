@@ -10,15 +10,17 @@ import StudentDeliverablesMenu from '../features/Deliverables/StudentDeliverable
 import GradeStudentDeliverable from '../features/Deliverables/GradeStudentDeliverable.jsx'
 
 const DeliverablesRouter = (props) => {
-  const { user, cohortId, profile } = props
-  console.log(user.email, profile.firstName)
+  const { user, cohortId } = props
 
   // Student Routes:
   if (!user.isAdmin) return (
     <Routes>
       <Route element={<ContentLayout menu={<StudentDeliverablesMenu {...props} />} />}>
         <Route index element={<h1>My Deliverables Landing</h1>} />
-        <Route path=':studentDeliverableId' element={<ShowStudentDeliverable user={user} cohortId={cohortId} />} />
+        <Route
+          path=':studentDeliverableId'
+          element={<ShowStudentDeliverable user={user} cohortId={cohortId} />}
+        />
       </Route>
     </Routes>
   )
