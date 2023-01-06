@@ -1,42 +1,56 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import * as cohortService from '../services/cohortService'
 
-const types = {
-  'deny': cohortService.denyProfile,
-  'remove': cohortService.removeProfile,
-  'approve': cohortService.approveProfile,
-}
-
 export const useRoleManager = (cohortId, profileId) => {
   const queryClient = useQueryClient()
 
-  return useMutation({
-    // Update with single arg/param pattern used for deliverables and attendance 
-    mutationFn: (action) => types[action.type](cohortId, profileId, action.payload),
-    onSuccess: (res, { payload }) => {
-      console.log('Server response:', res)
-      const queryKey = ['people', cohortId]
-      const { profile, formerRole, newRole } = payload
-      console.log('PERSONS PROFILE ID', profileId)
-
-
-      const updateState = (state) => {
-        if (!newRole) {
+  const types = {
+    deny: {
+      service: cohortService.denyProfile,
+      handleCache: (res, payload) => {
+        const queryKey = ['people', cohortId]
+        const { formerRole } = payload
+        const updateState = (state) => {
+          return { ...state, [formerRole]: state[formerRole].filter((p) => p._id !== profileId) }
+        }
+        queryClient.setQueryData(queryKey, updateState)
+      },
+    },
+    remove: {
+      service: cohortService.removeProfile,
+      handleCache: (res, payload) => {
+        const queryKey = ['people', cohortId]
+        const { profile, formerRole, newRole } = payload
+        const updateState = (state) => {
           return {
             ...state,
+            [newRole]: [...state[newRole], profile],
             [formerRole]: state[formerRole].filter((p) => p._id !== profileId),
           }
         }
-
-        return {
-          ...state,
-          [newRole]: [...state[newRole], profile],
-          [formerRole]: state[formerRole].filter((p) => p._id !== profileId),
-        }
+        queryClient.setQueryData(queryKey, updateState)
       }
-
-      queryClient.setQueryData(queryKey, updateState)
     },
+    approve: {
+      service: cohortService.approveProfile,
+      handleCache: (res, payload) => {
+        const queryKey = ['people', cohortId]
+        const { profile, formerRole, newRole } = payload
+        const updateState = (state) => {
+          return {
+            ...state,
+            [newRole]: [...state[newRole], profile],
+            [formerRole]: state[formerRole].filter((p) => p._id !== profileId),
+          }
+        }
+        queryClient.setQueryData(queryKey, updateState)
+      }
+    },
+  }
+
+  return useMutation({
+    mutationFn: (action) => types[action.type].service(action.payload),
+    onSuccess: (res, action) => types[action.type].handleCache(res, action.payload),
     onError: (error) => console.log('Error!'),
   })
 }
