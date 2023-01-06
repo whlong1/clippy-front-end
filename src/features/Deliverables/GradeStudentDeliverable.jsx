@@ -10,10 +10,9 @@ import { useDeliverablesManager } from "../../hooks/useDeliverablesManager"
 
 const GradeStudentDeliverable = ({ cohortId }) => {
   const navigate = useNavigate()
-  const { deliverableId, studentDeliverableId } = useParams()
   const [formData, setFormData] = useState(null)
   const mutation = useDeliverablesManager(cohortId)
-  console.log(deliverableId, studentDeliverableId)
+  const { deliverableId, studentDeliverableId } = useParams()
   const { studentDeliverable, status } = useShowStudentDeliverable(studentDeliverableId)
 
   useEffect(() => {
@@ -24,25 +23,22 @@ const GradeStudentDeliverable = ({ cohortId }) => {
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading' || !formData) return <h1>Loading...</h1>
 
-
-  const { name, dueDate, profile: { preferredName, lastName } } = formData
-
   const handleChange = ({ target }) => {
     setFormData({ ...formData, [target.name]: target.value })
   }
 
   const handleGrade = () => {
     mutation.mutate({ type: 'grade', payload: { ...formData, gradedBy: "Hunter" } })
-    // navigate(`/deliverables/${deliverableId}`)
+    navigate(`/deliverables/${deliverableId}`)
   }
 
-  const studentName = `${preferredName} ${lastName}`
-  const title = `Grade ${name} for ${studentName}`
+  const { profile: { preferredName, lastName } } = formData
+  const title = `Grade ${formData.name} for ${preferredName} ${lastName}`
 
   return (
     <section>
       <h1>{title}</h1>
-      <p>{dueDate}</p>
+      <p>{formData.dueDate}</p>
 
       <p>URLS:</p>
       <RequirementsList deliverable={formData} />
