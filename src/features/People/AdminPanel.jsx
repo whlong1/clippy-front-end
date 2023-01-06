@@ -2,7 +2,7 @@ import { useRoleManager } from "../../hooks/useRoleManager"
 
 const AdminPanel = ({ person, cohortId }) => {
   const mutation = useRoleManager(cohortId, person._id)
-  
+
   const denialData = { person, formerRole: "waitlist", newRole: null }
   const removalData = { person, formerRole: "students", newRole: "inactive" }
   const approvalData = { person, formerRole: "waitlist", newRole: "students" }

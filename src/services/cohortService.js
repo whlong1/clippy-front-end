@@ -68,6 +68,9 @@ const denyProfile = async (cohortId, profileId, data) => {
 }
 
 const removeProfile = async (cohortId, profileId, data) => {
+
+
+
   try {
     const res = await fetch(`${BASE_URL}/${cohortId}/remove/${profileId}`,
       {

@@ -62,6 +62,7 @@ export default AppRouter
 // • Create a ProfilePiture component (can accept size prop: small/large)
 // • Figure out how to handle Role/Title in PersonDetails after changing role
 // • Clarify difference between user.profile and profile being viewed in people
+// • Add changeRole functionality
 
 // TODO ATTENDANCE
 // • isAdmin check for create button link
