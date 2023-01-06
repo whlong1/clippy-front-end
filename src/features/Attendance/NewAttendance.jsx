@@ -40,7 +40,6 @@ const NewAttendance = (props) => {
       takenBy: 'You really need to update this value in NewAttendance.jsx',
     }
     console.log('Attendance Form Data:', formData)
-    // REDUX PATTERN
     mutation.mutate({ type: 'create', payload: formData })
   }
 

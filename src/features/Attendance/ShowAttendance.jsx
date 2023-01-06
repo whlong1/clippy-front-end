@@ -7,7 +7,6 @@ import StudentStatusRow from './StudentStatusRow'
 import { useShowAttendance } from '../../hooks/useShowAttendance'
 
 const ShowAttendance = (props) => {
-  // const { user, cohortId } = props
   const { attendanceId } = useParams()
   const { attendance, status } = useShowAttendance(attendanceId)
 

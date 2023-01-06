@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-
 import ProfileInfo from "../../components/ProfileInfo/ProfileInfo"
 
 const StudentDeliverableRow = ({ deliverableId, student }) => {

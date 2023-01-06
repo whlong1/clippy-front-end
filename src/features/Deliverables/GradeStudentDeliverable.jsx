@@ -9,6 +9,7 @@ const GradeStudentDeliverable = ({ cohortId }) => {
   const { studentDeliverableId } = useParams()
   const mutation = useDeliverablesManager(cohortId)
   const { studentDeliverable, status } = useShowStudentDeliverable(studentDeliverableId)
+  // create studentDeliverableData state
 
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
@@ -26,7 +27,6 @@ const GradeStudentDeliverable = ({ cohortId }) => {
   } = studentDeliverable
   // ^^ Additional props here after student submits deliverable
 
-
   const handleGrade = () => {
     const formData = {
       ...studentDeliverable,
@@ -39,8 +39,6 @@ const GradeStudentDeliverable = ({ cohortId }) => {
     mutation.mutate({ type: 'grade', payload: formData })
   }
 
-
-  console.log('GRAAAADE')
   const studentName = `${preferredName} ${lastName}`
   const title = `Grade ${name} for ${studentName}`
 

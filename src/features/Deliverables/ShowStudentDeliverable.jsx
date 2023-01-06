@@ -9,7 +9,6 @@ import { useShowStudentDeliverable } from "../../hooks/useShowStudentDeliverable
 
 // Student Only View
 const ShowStudentDeliverable = ({ cohortId }) => {
-  // conditionally render 2 views here (pre/post submit)
   const { studentDeliverableId } = useParams()
   const { studentDeliverable, status } = useShowStudentDeliverable(studentDeliverableId)
 

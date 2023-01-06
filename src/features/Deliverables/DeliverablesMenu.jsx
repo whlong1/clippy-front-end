@@ -13,11 +13,6 @@ const DeliverablesMenu = (props) => {
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
 
-
-  console.log('Deliverables:', deliverables)
-
-  // Create instructor view & student view
-
   return (
     <MenuLayout {...props}>
       <p>Deliverables Menu</p>
