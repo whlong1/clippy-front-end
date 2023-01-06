@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 
 // Components
 import RequirementsList from "./RequirementsList"
@@ -9,17 +9,21 @@ import { useShowStudentDeliverable } from '../../hooks/useShowStudentDeliverable
 import { useDeliverablesManager } from "../../hooks/useDeliverablesManager"
 
 const GradeStudentDeliverable = ({ cohortId }) => {
-  const { studentDeliverableId } = useParams()
-  const [formData, setFormData] = useState({})
+  const navigate = useNavigate()
+  const { deliverableId, studentDeliverableId } = useParams()
+  const [formData, setFormData] = useState(null)
   const mutation = useDeliverablesManager(cohortId)
+  console.log(deliverableId, studentDeliverableId)
   const { studentDeliverable, status } = useShowStudentDeliverable(studentDeliverableId)
 
   useEffect(() => {
     setFormData(studentDeliverable)
-  }, [studentDeliverable])
+  }, [deliverableId, studentDeliverable])
+
 
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading' || !formData) return <h1>Loading...</h1>
+
 
   const { name, dueDate, profile: { preferredName, lastName } } = formData
 
@@ -29,6 +33,7 @@ const GradeStudentDeliverable = ({ cohortId }) => {
 
   const handleGrade = () => {
     mutation.mutate({ type: 'grade', payload: { ...formData, gradedBy: "Hunter" } })
+    // navigate(`/deliverables/${deliverableId}`)
   }
 
   const studentName = `${preferredName} ${lastName}`

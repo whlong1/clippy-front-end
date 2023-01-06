@@ -25,9 +25,17 @@ export const useDeliverablesManager = (cohortId) => {
     grade: {
       service: deliverableService.gradeStudentDeliverable,
       handleCache: (res, payload) => {
+        console.log('PAYLOAD', payload)
+        const { deliverableId } = payload
         // Double check that list is updated correctly.
+        // Update this deliverable: queryKey: ['deliverable', deliverableId]
         const detailsQueryKey = ['studentDeliverable', res._id]
         queryClient.setQueryData(detailsQueryKey, { ...payload, ...res })
+
+        // Test
+        queryClient.setQueryData(['deliverable', deliverableId], (state) => {
+          console.log('STATE', state)
+        })
       },
     },
     submit: {

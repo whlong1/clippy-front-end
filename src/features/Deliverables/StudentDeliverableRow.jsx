@@ -5,6 +5,7 @@ const StudentDeliverableRow = ({ deliverableId, student }) => {
   const { _id: studentDeliverableId } = student
   const path = `/deliverables/${deliverableId}/students/${studentDeliverableId}/grade`
 
+  // console.log(student)
   return (
     <Link to={path}>
       <p>Status: {student.status}</p>
