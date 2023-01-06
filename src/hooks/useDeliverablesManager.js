@@ -7,7 +7,7 @@ export const useDeliverablesManager = (cohortId) => {
   const types = {
     create: {
       service: deliverableService.createDeliverable,
-      handleCache: (payload, res) => {
+      handleCache: (res, payload) => {
         const queryKey = ['deliverables', cohortId]
         const updateState = (state) => [res, ...state]
         queryClient.setQueryData(queryKey, updateState)
@@ -15,7 +15,7 @@ export const useDeliverablesManager = (cohortId) => {
     },
     remove: {
       service: deliverableService.deleteDeliverable,
-      handleCache: (payload, res) => {
+      handleCache: (res, payload) => {
         const { deliverableId } = payload
         const queryKey = ['deliverables', cohortId]
         const updateState = (state) => state.filter((d) => d._id !== deliverableId)
@@ -24,7 +24,7 @@ export const useDeliverablesManager = (cohortId) => {
     },
     grade: {
       service: deliverableService.gradeStudentDeliverable,
-      handleCache: (payload, res) => {
+      handleCache: (res, payload) => {
         // Double check that list is updated correctly.
         const detailsQueryKey = ['studentDeliverable', res._id]
         queryClient.setQueryData(detailsQueryKey, { ...payload, ...res })
@@ -32,7 +32,7 @@ export const useDeliverablesManager = (cohortId) => {
     },
     submit: {
       service: deliverableService.submitStudentDeliverable,
-      handleCache: (payload, res) => {
+      handleCache: (res, payload) => {
         const listQueryKey = ['studentDeliverables', cohortId]
         const detailsQueryKey = ['studentDeliverable', res._id]
 
@@ -48,7 +48,7 @@ export const useDeliverablesManager = (cohortId) => {
 
   return useMutation({
     mutationFn: (action) => types[action.type].service(action.payload),
-    onSuccess: (res, action) => types[action.type].handleCache(action.payload, res),
+    onSuccess: (res, action) => types[action.type].handleCache(res, action.payload),
     onError: (error) => console.log('Error!'),
   })
 }
