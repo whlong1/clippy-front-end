@@ -16,8 +16,6 @@ const ShowAttendance = ({ cohortId }) => {
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
 
-  console.log('Attendance DETAILS', attendance)
-
   const handleDelete = () => {
     mutation.mutate({ type: 'remove', payload: { attendanceId } })
     navigate('/attendance')
@@ -26,7 +24,28 @@ const ShowAttendance = ({ cohortId }) => {
   return (
     <section>
       <h1>Attendance Details</h1>
+
+      <p>
+        Taken by:
+        {attendance.takenBy}
+      </p>
+
+      <p>
+        Time:
+        {attendance.time}
+      </p>
+
+      <p>
+        Notes:
+        {attendance.notes}
+      </p>
+
+      <button onClick={() => navigate(`/attendance/${attendanceId}/edit`)}>
+        Edit
+      </button>
+
       <button onClick={handleDelete}>Delete</button>
+
       {attendance.students.map((student) => (
         <StudentStatusRow key={student._id} student={student} />
       ))}

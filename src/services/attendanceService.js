@@ -33,7 +33,7 @@ const createAttendance = async (data) => {
 }
 
 const updateAttendance = async (data) => {
-  const { attendanceId } = data
+  const { _id: attendanceId } = data
   try {
     const res = await fetch(`${BASE_URL}/${attendanceId}`,
       {

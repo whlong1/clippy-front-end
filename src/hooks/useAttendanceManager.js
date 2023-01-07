@@ -15,10 +15,8 @@ export const useAttendanceManager = (cohortId) => {
       service: attendanceService.updateAttendance,
       handleCache: (res, payload) => {
         const queryKey = ['attendance', cohortId]
-        const updateListState = (state) => state.map((a) => {
-          return a._id === res._id ? res : a
-        })
-        queryClient.setQueryData(queryKey, updateListState)
+        // No direct cache handling necessary at the moment
+        queryClient.setQueryData(queryKey, state => state)
       }
     },
     remove: {

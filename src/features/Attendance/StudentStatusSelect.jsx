@@ -13,7 +13,7 @@ const StudentStatusSelect = ({ studentData, setStudentData }) => {
   return (
     studentData.map((s) => (
       <div key={s.studentId}>
-        <label>{s.name}</label>
+        <label>{s.preferredName + s.lastName}</label>
         <select name="status" id={s.studentId} defaultValue={s.status} onChange={handleChange}>
           <option hidden disabled >{s.status}</option>
           <option value="P">P</option>
