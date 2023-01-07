@@ -65,11 +65,8 @@ export default AppRouter
 // • Clarify difference between user.profile and profile being viewed in people
 
 // TODO ATTENDANCE
-// • isAdmin check for create button link
 // • Figure out Attendance views for students
 
 // TODO DELIVERABLES
-// • isAdmin check for create button link
-// • submitting might need to update useManageDeliverableDetails
 // • Verify student functionality
-// • DeliverableInfo component could be shared MyDeliverableDetails and DeliverableDetails
+// • submitting might need to update useManageDeliverableDetails
