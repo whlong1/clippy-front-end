@@ -26,14 +26,18 @@ export const useDeliverablesManager = (cohortId) => {
       service: deliverableService.gradeStudentDeliverable,
       handleCache: (res, payload) => {
         const { deliverableId } = payload
+
+        const handleNestedStudents = (data) => data.students.map((s) => {
+          return s._id === res._id ? { ...s, ...res } : s
+        })
+
+        queryClient.setQueryData(['deliverables', cohortId], (state) => state.map((d) => {
+          return d._id === deliverableId ? { ...d, students: handleNestedStudents(d) } : d
+        }))
+
         queryClient.setQueryData(['studentDeliverable', res._id], { ...payload, ...res })
         queryClient.setQueryData(['deliverable', deliverableId], (state) => {
-          return {
-            ...state,
-            students: state.students.map((s) => {
-              return s._id === res._id ? { ...s, ...res } : s
-            })
-          }
+          return { ...state, students: handleNestedStudents(state) }
         })
       },
     },

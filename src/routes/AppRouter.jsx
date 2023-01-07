@@ -70,3 +70,4 @@ export default AppRouter
 // TODO DELIVERABLES
 // • Verify student functionality
 // • submitting might need to update useManageDeliverableDetails
+// • Marking a deliverable as complete does not update the status count in DeliverablesMenu
