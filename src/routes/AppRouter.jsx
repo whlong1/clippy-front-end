@@ -38,18 +38,17 @@ const AppRouter = (props) => {
 export default AppRouter
 
 // TODO GENERAL
-// • We don't need a name property on profile (remove from schema and onboarding form)
-// • Create Admin feature and corresponding components?
-// • feature state doesn't need to be in router. would moving it to respective Menu components
-//   make rerenders more efficient?
-// • Make use of the action.type property in management hooks to target appropriate setter fn.
 // • Audit props being passed
-// • Routing components are for routing, take state elswhere
-// • Details pages need to redirect if the selected cohort changes!
 // • On delete, navigate to base path
-// • Audit keys (need consistent key pattern for all resources)
 // • Check off user stories in README
+// • Create Admin feature and corresponding components?
+// • Routing components are for routing, take state elswhere
+// • Audit keys (need consistent key pattern for all resources)
+// • Details pages need to redirect if the selected cohort changes!
 // • Make sure student deliverable status auto fills as missing for withdrawals
+// • We don't need a name property on profile (remove from schema and onboarding form)
+// • Make use of the action.type property in management hooks to target appropriate setter fn.
+// • DeliverableStatusSelect and StudentStatusSelect can be renamed BlankStatus and display the value as well.
 
 // TODO APP
 // • Create a reusable feature landing wrapper component
@@ -57,19 +56,19 @@ export default AppRouter
 // • When a user selects a new cohort from the select menu, redirect user to given base path (people, attendance, deliverables)
 
 // TODO PEOPLE
+// • Add changeRole functionality
 // • Add Edit profile functionality
 // • Add toggle functionality to each Role section
 // • Create admin UI component and add to PersonDetails
 // • Create a ProfilePiture component (can accept size prop: small/large)
 // • Figure out how to handle Role/Title in PersonDetails after changing role
 // • Clarify difference between user.profile and profile being viewed in people
-// • Add changeRole functionality
 
 // TODO ATTENDANCE
-// • isAdmin check for create button link
 // • Delete attendance
 // • refactor manager
 // • update attendance
+// • isAdmin check for create button link
 
 // TODO DELIVERABLES
 // • isAdmin check for create button link
@@ -80,6 +79,5 @@ export default AppRouter
 //   router.get('/:sdId/view', deliverablesCtrl.showStudentDeliverable)
 // • the list of deliverables a student sees will be different than an instructor
 //   pattern used should apply to attendance as well. conditionally render menu?
-// • Build out useManageStudentDeliverable hook
 // • If students see a different side menu, easier to control user journey (more reason to hold list state in menus)
 // • DeliverableInfo component could be shared MyDeliverableDetails and DeliverableDetails

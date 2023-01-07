@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom"
 
 // Components
 import RequirementsList from "./RequirementsList"
+import DeliverableStatusSelect from "./DeliverableStatusSelect"
 
 // Hooks
 import { useShowStudentDeliverable } from '../../hooks/useShowStudentDeliverable'
@@ -18,7 +19,6 @@ const GradeStudentDeliverable = ({ cohortId }) => {
   useEffect(() => {
     setFormData(studentDeliverable)
   }, [deliverableId, studentDeliverable])
-
 
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading' || !formData) return <h1>Loading...</h1>
@@ -46,21 +46,8 @@ const GradeStudentDeliverable = ({ cohortId }) => {
       <textarea></textarea>
       <pre>Code Editor Placeholder</pre>
 
-      <h3>
-        Status: {formData.status}
-      </h3>
-
-      <select
-        name="status"
-        onChange={handleChange}
-        defaultValue={formData.status}
-      >
-        <option value='assigned'>Assigned</option>
-        <option value='pendingAudit'>Pending Audit</option>
-        <option value='complete'>Complete</option>
-        <option value='incomplete'>Incomplete</option>
-        <option value='missing'>Missing</option>
-      </select>
+      <h3>Status: {formData.status}</h3>
+      <DeliverableStatusSelect formData={formData} handleChange={handleChange} />
 
       <button onClick={handleGrade}>Submit Grade</button>
     </section>
