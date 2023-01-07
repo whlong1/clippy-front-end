@@ -39,6 +39,7 @@ const AppRouter = (props) => {
 export default AppRouter
 
 // TODO GENERAL
+// • Add protectedRoutes!
 // • Audit props being passed
 // • Check off user stories in README
 // • Create Admin feature and corresponding components?
@@ -64,8 +65,8 @@ export default AppRouter
 // • Clarify difference between user.profile and profile being viewed in people
 
 // TODO ATTENDANCE
-// • update attendance
 // • isAdmin check for create button link
+// • Figure out Attendance views for students
 
 // TODO DELIVERABLES
 // • isAdmin check for create button link

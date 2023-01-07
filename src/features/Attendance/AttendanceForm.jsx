@@ -27,7 +27,7 @@ const AttendanceForm = ({ cohortId, submitFn, prevAttendance }) => {
       // if (people) ?
       setStudentData(buildStatusArray(people))
     }
-  }, [cohortId, attendanceId, people])
+  }, [cohortId, attendanceId, people, prevAttendance])
 
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>

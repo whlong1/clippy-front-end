@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 
 // Components
 import StudentStatusRow from './StudentStatusRow'
@@ -7,7 +7,7 @@ import StudentStatusRow from './StudentStatusRow'
 import { useShowAttendance } from '../../hooks/useShowAttendance'
 import { useAttendanceManager } from '../../hooks/useAttendanceManager'
 
-const ShowAttendance = ({ cohortId }) => {
+const ShowAttendance = ({ user, cohortId }) => {
   const navigate = useNavigate()
   const { attendanceId } = useParams()
   const mutation = useAttendanceManager(cohortId)
@@ -40,9 +40,11 @@ const ShowAttendance = ({ cohortId }) => {
         {attendance.notes}
       </p>
 
-      <button onClick={() => navigate(`/attendance/${attendanceId}/edit`)}>
-        Edit
-      </button>
+      {user.isAdmin &&
+        <Link to={`/attendance/${attendanceId}/edit`}>
+          <button>Edit Attendance</button>
+        </Link>
+      }
 
       <button onClick={handleDelete}>Delete</button>
 

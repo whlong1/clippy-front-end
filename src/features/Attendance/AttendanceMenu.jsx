@@ -16,9 +16,11 @@ const AttendanceMenu = (props) => {
     <MenuLayout {...props}>
       <p>Attendance Menu</p>
 
-      <Link to='/attendance/new'>
-        <button>New Attendance</button>
-      </Link>
+      {props.user.isAdmin &&
+        <Link to='/attendance/new'>
+          <button>New Attendance</button>
+        </Link>
+      }
 
       <AttendanceList attendance={attendance} />
     </MenuLayout>
