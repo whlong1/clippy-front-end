@@ -15,8 +15,6 @@ const ShowDeliverable = (props) => {
   const mutation = useDeliverablesManager(cohortId)
   const { deliverable, status } = useShowDeliverable(deliverableId)
 
-  console.log('Deliverable Details:', deliverable)
-
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
 

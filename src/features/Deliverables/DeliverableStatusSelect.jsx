@@ -13,7 +13,6 @@ const DeliverableStatusSelect = ({ formData, handleChange }) => {
       <option value='missing'>Missing</option>
     </select>
   )
-
 }
 
 export default DeliverableStatusSelect
