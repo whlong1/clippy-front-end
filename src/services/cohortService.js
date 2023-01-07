@@ -86,7 +86,6 @@ const removeProfile = async (cohortId, profileId, data) => {
 }
 
 const changeRole = async (cohortId, profileId, data) => {
-  console.log(cohortId, profileId, data)
   try {
     const res = await fetch(`${BASE_URL}/${cohortId}/people/${profileId}`,
       {
