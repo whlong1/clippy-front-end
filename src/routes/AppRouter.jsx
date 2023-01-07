@@ -16,9 +16,10 @@ const AppRouter = (props) => {
     ...props,
     setCohortId,
   }
+  
 
   // console.log('Auth0 User', user.name)
-  // console.log('Current Cohort', cohortId)
+  console.log('Current Cohort', cohortId)
   // console.log('Profile', profile.firstName)
 
   return (
@@ -39,11 +40,15 @@ const AppRouter = (props) => {
 export default AppRouter
 
 // TODO GENERAL
+// • Logo
+// • Mockups
 // • Audit props being passed
 // • Check off user stories in README
 // • Create Admin feature and corresponding components?
 // • Audit keys (need consistent key pattern for all resources)
-// • We don't need a name property on profile (remove from schema and onboarding form)
+// • Figure out if background refetching is functioning correctly
+// • Review access to admin functionality (front end and backend)
+// • Research addition methods for cancelling queries, refetching, etc
 // • DeliverableStatusSelect and StudentStatusSelect can be renamed BlankStatus and display the value as well.
 // • If I'm looking at a particular deliverable and switch the cohort id, it should navigate me away. However,
 //   hitting the back button will take me back to that deliverable view. Need additional redirect. Can we create
@@ -69,4 +74,5 @@ export default AppRouter
 // TODO DELIVERABLES
 // • isAdmin check for create button link
 // • submitting might need to update useManageDeliverableDetails
+// • Verify student functionality
 // • DeliverableInfo component could be shared MyDeliverableDetails and DeliverableDetails

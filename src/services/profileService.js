@@ -37,9 +37,9 @@ const getAllMyDeliverables = async (cohortId, profileId) => {
 }
 
 
-const show = async (profileId) => {
+const show = async (cohortId, profileId)  => {
   try {
-    const res = await fetch(`${BASE_URL}/${profileId}`,
+    const res = await fetch(`${BASE_URL}/${profileId}?cohortId=${cohortId}`,
       { headers: { 'Authorization': `Bearer ${tokenService.getToken()}` } },
     )
     return await res.json()

@@ -6,11 +6,11 @@ import AdminPanel from "./AdminPanel"
 import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
 
 const ShowPerson = ({ user, cohortId }) => {
-  const location = useLocation()
+  // const location = useLocation()
   const { profileId } = useParams()
 
-  const { person, status } = useShowPerson(profileId)
-  const cohortRole = location.search.slice(6, -1).toUpperCase()
+  const { person, status } = useShowPerson(cohortId, profileId)
+  // const cohortRole = location.search.slice(6, -1).toUpperCase()
 
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
@@ -19,7 +19,7 @@ const ShowPerson = ({ user, cohortId }) => {
     <section>
       <ProfilePicture gitHubUserName={person.gitHubUserName} size='100px' />
 
-      {cohortRole}
+      {person.role}
       {person.email}
       {person.lastName}
       {person.firstName}

@@ -46,6 +46,22 @@ export const useRoleManager = (cohortId, personId) => {
         queryClient.setQueryData(queryKey, updateState)
       }
     },
+    change: {
+      // Need to update profile id cache as well
+      service: cohortService.changeRole,
+      handleCache: (res, payload) => {
+        const queryKey = ['people', cohortId]
+        const { person, formerRole, newRole } = payload
+        const updateState = (state) => {
+          return {
+            ...state,
+            [newRole]: [...state[newRole], person],
+            [formerRole]: state[formerRole].filter((p) => p._id !== personId),
+          }
+        }
+        queryClient.setQueryData(queryKey, updateState)
+      }
+    },
   }
 
   return useMutation({

@@ -68,9 +68,6 @@ const denyProfile = async (cohortId, profileId, data) => {
 }
 
 const removeProfile = async (cohortId, profileId, data) => {
-
-
-
   try {
     const res = await fetch(`${BASE_URL}/${cohortId}/remove/${profileId}`,
       {
@@ -88,8 +85,28 @@ const removeProfile = async (cohortId, profileId, data) => {
   }
 }
 
+const changeRole = async (cohortId, profileId, data) => {
+  console.log(cohortId, profileId, data)
+  try {
+    const res = await fetch(`${BASE_URL}/${cohortId}/people/${profileId}`,
+      {
+        method: 'PATCH',
+        headers: {
+          'Authorization': `Bearer ${tokenService.getToken()}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+    if (!res.ok) throw await res.json()
+    return await res.json()
+  } catch (err) {
+    throw err
+  }
+}
+
 
 export {
+  changeRole,
   denyProfile,
   indexCohorts,
   removeProfile,

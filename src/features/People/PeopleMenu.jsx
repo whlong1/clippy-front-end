@@ -6,6 +6,8 @@ import { useIndexPeople } from '../../hooks/useIndexPeople'
 const PeopleMenu = (props) => {
   const { people, status } = useIndexPeople(props.cohortId)
 
+  // console.log('people', people)
+
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
 
