@@ -6,6 +6,11 @@ const DeliverablesList = (props) => {
     deliverables.map((d) => (
       <Link key={d._id} to={`/deliverables/${d._id}`}>
         <p>{d.name}</p>
+        <p>
+          {d.students.filter((s) => s.status !== 'assigned').length}
+          /
+          {d.students.length}
+        </p>
       </Link>
     ))
   )
