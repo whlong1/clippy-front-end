@@ -47,7 +47,7 @@ export const useRoleManager = (cohortId, personId) => {
       }
     },
     change: {
-      // Need to update profile id cache as well
+      // Might need to update profile by id cache as well?
       service: cohortService.changeRole,
       handleCache: (res, payload) => {
         const queryKey = ['people', cohortId]

@@ -1,4 +1,4 @@
-import { useParams, useLocation } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { useShowPerson } from "../../hooks/useShowPerson"
 
 // Components
@@ -6,11 +6,8 @@ import AdminPanel from "./AdminPanel"
 import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
 
 const ShowPerson = ({ user, cohortId }) => {
-  // const location = useLocation()
   const { profileId } = useParams()
-
   const { person, status } = useShowPerson(cohortId, profileId)
-  // const cohortRole = location.search.slice(6, -1).toUpperCase()
 
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>

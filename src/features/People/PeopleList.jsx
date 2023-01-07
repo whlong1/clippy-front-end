@@ -8,7 +8,7 @@ const PeopleList = (props) => {
       <h3>{role}</h3>
       <p>{people.length}</p>
       {people.map((profile) => (
-        <Link key={profile._id} to={`/people/${profile._id}?role=${role}`}>
+        <Link key={profile._id} to={`/people/${profile._id}`}>
           <ProfileInfo profile={profile} />
         </Link>
       ))}
