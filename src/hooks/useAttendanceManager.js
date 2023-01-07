@@ -34,7 +34,7 @@ export const useAttendanceManager = (cohortId) => {
   }
 
   return useMutation({
-    mutationFn: (action) => types[action.type](action.payload),
+    mutationFn: (action) => types[action.type].service(action.payload),
     onSuccess: (res, action) => types[action.type].handleCache(res, action.payload),
     onError: (error) => console.log('Error!'),
   })

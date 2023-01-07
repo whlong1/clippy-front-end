@@ -23,6 +23,7 @@ const AppRouter = (props) => {
 
   return (
     <Routes>
+      
       <Route path="/" element={<h1>Welcome back</h1>} />
       <Route path="/admin" element={<AdminPanel />} />
       <Route path="/*" element={<h1>Error Page</h1>} />
@@ -51,7 +52,8 @@ export default AppRouter
 // • DeliverableStatusSelect and StudentStatusSelect can be renamed BlankStatus and display the value as well.
 // • If I'm looking at a particular deliverable and switch the cohort id, it should navigate me away. However,
 //   hitting the back button will take me back to that deliverable view. Need additional redirect. Can we create
-//   some kind of reusable route wrapper component for this?
+//   some kind of reusable route wrapper component for this? Might need to add cohortId to paths. We can catch
+//   this value in select cohort and update the selected cohort if there is an issue.
 
 // TODO APP
 // • Create a reusable feature landing wrapper component
