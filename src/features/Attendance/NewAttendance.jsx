@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 
 // Components
 import StudentStatusSelect from "./StudentStatusSelect"
@@ -10,12 +11,11 @@ import { useAttendanceManager} from "../../hooks/useAttendanceManager"
 // Helpers
 import { buildStatusArray } from "./helpers/helpers"
 
-const NewAttendance = (props) => {
-  const { cohortId } = props
-  const { people, status } = useIndexPeople(cohortId)
-
+const NewAttendance = ({ cohortId } ) => {
+  const navigate = useNavigate()
   const mutation = useAttendanceManager(cohortId)
   const [studentData, setStudentData] = useState([])
+  const { people, status } = useIndexPeople(cohortId)
   const [attendanceData, setAttendanceData] = useState({
     date: '', notes: '', time: 'AM',
   })
@@ -39,8 +39,8 @@ const NewAttendance = (props) => {
       students: studentData,
       takenBy: 'You really need to update this value in NewAttendance.jsx',
     }
-    console.log('Attendance Form Data:', formData)
     mutation.mutate({ type: 'create', payload: formData })
+    navigate('/attendance')
   }
 
   return (
