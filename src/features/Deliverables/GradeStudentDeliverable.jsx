@@ -6,8 +6,8 @@ import RequirementsList from "./RequirementsList"
 import DeliverableStatusSelect from "./DeliverableStatusSelect"
 
 // Hooks
-import { useShowStudentDeliverable } from '../../hooks/useShowStudentDeliverable'
 import { useDeliverablesManager } from "../../hooks/useDeliverablesManager"
+import { useShowStudentDeliverable } from '../../hooks/useShowStudentDeliverable'
 
 const GradeStudentDeliverable = ({ cohortId }) => {
   const navigate = useNavigate()

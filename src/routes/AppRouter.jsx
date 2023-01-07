@@ -49,6 +49,9 @@ export default AppRouter
 // • We don't need a name property on profile (remove from schema and onboarding form)
 // • Make use of the action.type property in management hooks to target appropriate setter fn.
 // • DeliverableStatusSelect and StudentStatusSelect can be renamed BlankStatus and display the value as well.
+// • If I'm looking at a particular deliverable and switch the cohort id, it should navigate me away. However,
+//   hitting the back button will take me back to that deliverable view. Need additional redirect. Can we create
+//   some kind of reusable route wrapper component for this?
 
 // TODO APP
 // • Create a reusable feature landing wrapper component
