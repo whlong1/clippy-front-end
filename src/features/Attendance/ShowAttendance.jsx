@@ -19,7 +19,6 @@ const ShowAttendance = ({ cohortId }) => {
   console.log('Attendance DETAILS', attendance)
 
   const handleDelete = () => {
-    // mutation.mutate({ type: 'create', payload: formData })
     mutation.mutate({ type: 'remove', payload: { attendanceId } })
     navigate('/attendance')
   }

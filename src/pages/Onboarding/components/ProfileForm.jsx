@@ -16,15 +16,6 @@ const ProfileForm = ({ profile, setProfile }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Name:</label>
-      <input
-        required
-        type="text"
-        id="name"
-        name="name"
-        onChange={handleChange}
-        value={formData.name || ''}
-      />
       <label htmlFor="firstName">First Name:</label>
       <input
         required

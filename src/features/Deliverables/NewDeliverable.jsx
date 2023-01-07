@@ -1,11 +1,12 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { formatDate } from './helpers/helpers'
 
 // Hooks
 import { useDeliverablesManager } from '../../hooks/useDeliverablesManager'
 
-const NewDeliverable = (props) => {
-  const { cohortId } = props
+const NewDeliverable = ({ cohortId }) => {
+  const navigate = useNavigate()
   const mutation = useDeliverablesManager(cohortId)
 
   const [deliverableData, setDeliverableData] = useState({
@@ -30,6 +31,7 @@ const NewDeliverable = (props) => {
     }
 
     mutation.mutate({ type: 'create', payload: formData })
+    navigate('/deliverables')
   }
 
   const handleChange = ({ target }) => {
