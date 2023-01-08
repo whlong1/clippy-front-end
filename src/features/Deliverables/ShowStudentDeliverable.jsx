@@ -15,12 +15,11 @@ const ShowStudentDeliverable = ({ cohortId }) => {
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
 
-  console.log('DEETS',studentDeliverable)
+  console.log('DEETS', studentDeliverable)
 
   return (
     <section>
-      <h1>{studentDeliverable.name}</h1>
-      <p>My Deliverable Details (student view)</p>
+      <h1>{studentDeliverable.name} (student view)</h1>
 
       <h2>due date</h2>
       {studentDeliverable.dueDate}
@@ -29,8 +28,9 @@ const ShowStudentDeliverable = ({ cohortId }) => {
       <p>requirements/urls</p>
       <h2>Requirements</h2>
       <RequirementsList deliverable={studentDeliverable} />
-      <p>status</p>
-      {studentDeliverable.status}
+
+      <h3>Status::: {studentDeliverable.status}</h3>
+
 
       {studentDeliverable.hasNewStatus && <h3>New Feedback!</h3>}
 

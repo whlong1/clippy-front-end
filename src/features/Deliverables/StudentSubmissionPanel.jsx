@@ -1,13 +1,17 @@
 import { useState } from "react"
 import { useDeliverablesManager } from "../../hooks/useDeliverablesManager"
 
+// This component needs a better name...
 const StudentSubmissionPanel = (props) => {
   const { cohortId, studentDeliverable } = props
   const mutation = useDeliverablesManager(cohortId)
+  const isNewDeliverable = studentDeliverable.status === 'assigned'
+  const [isFormActive, setIsFormActive] = useState(isNewDeliverable)
   const [deliverableData, setDeliverableData] = useState(studentDeliverable)
 
   const submitDeliverable = () => {
     mutation.mutate({ type: 'submit', payload: deliverableData })
+    setIsFormActive(false)
   }
 
   const markFeedbackAsRead = () => {
@@ -21,21 +25,23 @@ const StudentSubmissionPanel = (props) => {
   return (
     <div>
       <label htmlFor="gitHubUrl">Submission Link Example:</label>
-
       <input
         type="text"
         id="gitHubUrl"
         name="gitHubUrl"
         onChange={handleChange}
+        disabled={!isFormActive}
         value={deliverableData.gitHubUrl || ''}
       />
 
-      <button onClick={submitDeliverable}>Submit Deliverable</button>
-      
-      <button onClick={markFeedbackAsRead}>Mark Feedback as Read</button>
+      {isFormActive
+        ? <button onClick={submitDeliverable}>Submit Deliverable</button>
+        : <button onClick={() => setIsFormActive(true)}>Update Materials</button>
+      }
 
-      <button>Update Deliverable</button>
-
+      {deliverableData.hasNewStatus &&
+        <button onClick={markFeedbackAsRead}>Mark Feedback as Read</button>
+      }
     </div>
   )
 }
