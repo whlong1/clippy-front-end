@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 
 // Components
 import ContentLayout from '../layouts/ContentLayout.jsx'
@@ -16,6 +16,7 @@ const AttendanceRouter = (props) => {
     <Routes>
       <Route element={<ContentLayout menu={<StudentAttendanceMenu {...props} />} />}>
         <Route index element={<h1>My Attendance Landing</h1>} />
+        <Route path="/*" element={<Navigate to='/attendance' />} />
       </Route>
     </Routes>
   )

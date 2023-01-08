@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 
 // Components
 import ContentLayout from '../layouts/ContentLayout.jsx'
@@ -17,6 +17,7 @@ const DeliverablesRouter = (props) => {
     <Routes>
       <Route element={<ContentLayout menu={<StudentDeliverablesMenu {...props} />} />}>
         <Route index element={<h1>My Deliverables Landing</h1>} />
+        <Route path="/*" element={<Navigate to='/deliverables' />} />
         <Route
           path=':studentDeliverableId'
           element={<ShowStudentDeliverable user={user} cohortId={cohortId} />}

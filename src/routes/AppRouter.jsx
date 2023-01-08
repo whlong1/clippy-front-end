@@ -18,13 +18,12 @@ const AppRouter = (props) => {
     setCohortId,
   }
 
-  // console.log('Auth0 User', user.name)
+  console.log('Auth0 User', user.name)
   // console.log('Current Cohort', cohortId)
   // console.log('Profile', profile.firstName)
 
   return (
     <Routes>
-
       <Route path="/" element={<h1>Welcome back</h1>} />
       <Route path="/*" element={<h1>Error Handler</h1>} />
       <Route path='/profile' element={<h1>My Profile</h1>} />
