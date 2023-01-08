@@ -38,35 +38,15 @@ const AppRouter = (props) => {
 
 export default AppRouter
 
-// TODO GENERAL
+// TODO
 // • Add protectedRoutes!
 // • Audit props being passed
-// • Check off user stories in README
-// • Create Admin feature and corresponding components?
+// • Add Edit profile functionality
+// • Research cancelling queries, refetching, etc
+// • Create Admin feature and corresponding components
+// • Create a reusable feature landing wrapper component
 // • Audit keys (need consistent key pattern for all resources)
 // • Figure out if background refetching is functioning correctly
 // • Review access to admin functionality (front end and backend)
-// • Research additional methods for cancelling queries, refetching, etc
+// • Add toggle down functionality to each Role section on PeopleMenu
 // • DeliverableStatusSelect and StudentStatusSelect can be renamed BlankStatus and display the value as well.
-// • If I'm looking at a particular deliverable and switch the cohort id, it should navigate me away. However,
-//   hitting the back button will take me back to that deliverable view. Need additional redirect. Can we create
-//   some kind of reusable route wrapper component for this? Might need to add cohortId to paths. We can catch
-//   this value in select cohort and update the selected cohort if there is an issue.
-
-// TODO APP
-// • Create a reusable feature landing wrapper component
-// • Add protected route for AdminPanel with user.isAdmin (AppRouter)
-// • When a user selects a new cohort from the select menu, redirect user to given base path (people, attendance, deliverables)
-
-// TODO PEOPLE
-// • Add Edit profile functionality
-// • Add toggle down functionality to each Role section
-// • Figure out how to handle Role/Title in PersonDetails after changing role
-// • Clarify difference between user.profile and profile being viewed in people
-
-// TODO ATTENDANCE
-// • Figure out Attendance views for students
-
-// TODO DELIVERABLES
-// • Verify student functionality
-// • submitting might need to update useManageDeliverableDetails
