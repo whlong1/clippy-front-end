@@ -41,7 +41,7 @@ const AppRouter = (props) => {
 export default AppRouter
 
 // TODO
-// • Add protectedRoutes!
+// • Add protectedRoutes?
 // • Audit props being passed
 // • Add Edit profile functionality
 // • Research cancelling queries, refetching, etc

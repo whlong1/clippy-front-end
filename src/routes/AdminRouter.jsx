@@ -1,10 +1,13 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 
 // Components
 import ContentLayout from '../layouts/ContentLayout.jsx'
 import AdminMenu from '../features/Admin/AdminMenu.jsx'
 
 const AdminRouter = (props) => {
+  const { user } = props
+
+  if (!user.isAdmin) { return <Navigate to="/" /> }
 
   // Admin Routes:
   return (
