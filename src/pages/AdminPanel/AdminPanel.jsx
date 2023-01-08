@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { useAuth0 } from "@auth0/auth0-react"
 import * as adminService from '../../services/adminService'
 
+// OLD
+
 const AdminPanel = () => {
   const [users, setUsers] = useState([])
   const { getAccessTokenSilently } = useAuth0()

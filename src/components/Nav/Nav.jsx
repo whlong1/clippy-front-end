@@ -9,13 +9,13 @@ const Nav = (props) => {
   return (
     <nav>
       <ul>
-        {isAdmin && <li><NavLink to="/admin">Admin Panel</NavLink></li>}
+        {isAdmin && <li><NavLink to="/admin">Admin</NavLink></li>}
 
         <li><NavLink to="/people">People</NavLink></li>
         <li><NavLink to="/attendance">Attendance</NavLink></li>
         <li><NavLink to="/deliverables">Deliverables</NavLink></li>
 
-        {/* <li><NavLink to="/profile">My Profile</NavLink></li> */}
+        <li><NavLink to="/profile">My Profile</NavLink></li>
         <li><LogoutButton /></li>
       </ul>
     </nav>
