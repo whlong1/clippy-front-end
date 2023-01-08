@@ -11,7 +11,6 @@ import StudentAttendanceMenu from '../features/Attendance/StudentAttendanceMenu.
 const AttendanceRouter = (props) => {
   const { user, cohortId } = props
 
-
   // Student Routes:
   if (!user.isAdmin) return (
     <Routes>
@@ -21,7 +20,7 @@ const AttendanceRouter = (props) => {
     </Routes>
   )
 
-
+  // Admin Routes:
   return (
     <Routes>
       <Route element={<ContentLayout menu={<AttendanceMenu {...props} />} />}>
