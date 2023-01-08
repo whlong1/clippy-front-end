@@ -5,7 +5,6 @@ import AdminRouter from './AdminRouter'
 import PeopleRouter from './PeopleRouter'
 import AttendanceRouter from './AttendanceRouter'
 import DeliverablesRouter from './DeliverablesRouter'
-// import AdminPanel from '../pages/AdminPanel/AdminPanel'
 
 const AppRouter = (props) => {
   const { user, profile } = props
@@ -18,9 +17,8 @@ const AppRouter = (props) => {
     setCohortId,
   }
 
-  console.log('Auth0 User', user.name)
-  // console.log('Current Cohort', cohortId)
-  // console.log('Profile', profile.firstName)
+  console.log('Current Cohort:', cohortId)
+  console.log('Auth:', user.name, profile.email)
 
   return (
     <Routes>
@@ -38,16 +36,3 @@ const AppRouter = (props) => {
 }
 
 export default AppRouter
-
-// TODO
-// • Add protectedRoutes?
-// • Audit props being passed
-// • Add Edit profile functionality
-// • Research cancelling queries, refetching, etc
-// • Build out AdminRouter components and functionality
-// • Create a reusable feature landing wrapper component
-// • Audit keys (need consistent key pattern for all resources)
-// • Figure out if background refetching is functioning correctly
-// • Review access to admin functionality (front end and backend)
-// • Add toggle down functionality to each Role section on PeopleMenu
-// • DeliverableStatusSelect and StudentStatusSelect can be renamed BlankStatus and display the value as well.

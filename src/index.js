@@ -12,7 +12,6 @@ const auth0Props = {
   audience: process.env.REACT_APP_AUTH0_AUDIENCE,
   clientId: process.env.REACT_APP_AUTH0_CLIENT_ID,
   redirectUri: process.env.REACT_APP_AUTH0_CALLBACK_URL,
-  // cacheLocation: 'localstorage',
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'))

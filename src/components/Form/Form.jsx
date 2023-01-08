@@ -8,6 +8,7 @@ import {
   handleInitialState,
 } from './helpers'
 
+// NOT IN USE
 const Form = ({ inputFields, handleSubmit }) => {
   // TODO:
   // Dynamically create select tag and options based on enum prop
