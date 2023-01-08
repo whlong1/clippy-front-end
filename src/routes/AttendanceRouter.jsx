@@ -6,9 +6,21 @@ import NewAttendance from '../features/Attendance/NewAttendance'
 import EditAttendance from '../features/Attendance/EditAttendance.jsx'
 import AttendanceMenu from '../features/Attendance/AttendanceMenu.jsx'
 import ShowAttendance from '../features/Attendance/ShowAttendance.jsx'
+import StudentAttendanceMenu from '../features/Attendance/StudentAttendanceMenu.jsx'
 
 const AttendanceRouter = (props) => {
   const { user, cohortId } = props
+
+
+  // Student Routes:
+  if (!user.isAdmin) return (
+    <Routes>
+      <Route element={<ContentLayout menu={<StudentAttendanceMenu {...props} />} />}>
+        <Route index element={<h1>My Attendance Landing</h1>} />
+      </Route>
+    </Routes>
+  )
+
 
   return (
     <Routes>
