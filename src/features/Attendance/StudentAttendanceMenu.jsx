@@ -21,7 +21,7 @@ const StudentAttendanceMenu = (props) => {
 
   // Needs refactor with icons etc...
   const myAttendance = attendance.map((a) => (
-    <p>{a.date} ::::{a.students[0].status}</p>
+    <p key={a._id}>{a.date} ::::{a.students[0].status}</p>
   ))
 
   return (
