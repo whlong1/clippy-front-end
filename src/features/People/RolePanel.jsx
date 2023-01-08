@@ -4,7 +4,7 @@ import { useRoleManager } from "../../hooks/useRoleManager"
 // Components
 import SelectRole from './SelectRole'
 
-const AdminPanel = ({ person, cohortId }) => {
+const RolePanel = ({ person, cohortId }) => {
   const { isApprovalPending } = person
   const mutation = useRoleManager(cohortId, person._id)
 
@@ -43,4 +43,4 @@ const AdminPanel = ({ person, cohortId }) => {
   )
 }
 
-export default AdminPanel
+export default RolePanel

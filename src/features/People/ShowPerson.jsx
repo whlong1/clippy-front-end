@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom"
 import { useShowPerson } from "../../hooks/useShowPerson"
 
 // Components
-import AdminPanel from "./AdminPanel"
+import RolePanel from "./RolePanel"
 import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
 
 const ShowPerson = ({ user, cohortId }) => {
@@ -26,7 +26,7 @@ const ShowPerson = ({ user, cohortId }) => {
       {person.codeWarsUserName}
       {person.preferredPronouns}
 
-      {user.isAdmin && <AdminPanel person={person} cohortId={cohortId} />}
+      {user.isAdmin && <RolePanel person={person} cohortId={cohortId} />}
     </section>
   )
 }
