@@ -6,7 +6,7 @@ const AdminPanel = ({ person, cohortId }) => {
   const denialData = { person, formerRole: "waitlist", newRole: null }
   const removalData = { person, formerRole: "students", newRole: "inactive" }
   const approvalData = { person, formerRole: "waitlist", newRole: "students" }
-  
+
   const [changeRoleData, setChangeRoleData] = useState({
     person, formerRole: person.role, newRole: ""
   })
@@ -15,24 +15,30 @@ const AdminPanel = ({ person, cohortId }) => {
     setChangeRoleData({ ...changeRoleData, [target.name]: target.value })
   }
 
+  console.log(person)
+
   return (
     <>
       <button>Edit Profile</button>
 
       <h3>Manage Roles</h3>
 
-      <button onClick={() => mutation.mutate({ type: 'approve', payload: approvalData })}>
-        Admit to Cohort
-      </button>
       <button onClick={() => mutation.mutate({ type: 'deny', payload: denialData })}>
         Deny Student
       </button>
+
+      <button onClick={() => mutation.mutate({ type: 'approve', payload: approvalData })}>
+        Admit to Cohort
+      </button>
+
       <button onClick={() => mutation.mutate({ type: 'remove', payload: removalData })}>
         Remove from Cohort
       </button>
 
       <h3>Change Role:</h3>
-      <select name="newRole" onChange={handleChange} defaultValue={changeRoleData.formerRole}>
+      <select name="newRole" onChange={handleChange}
+        defaultValue={person.role}
+      >
         <option value="students">Student</option>
         <option value="inactive">Withdrawn</option>
         <option value="instructors">Instructor</option>

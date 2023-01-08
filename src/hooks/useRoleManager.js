@@ -29,6 +29,7 @@ export const useRoleManager = (cohortId, personId) => {
           }
         }
         queryClient.setQueryData(queryKey, updateState)
+        queryClient.setQueryData(['person', person._id], (state) => ({ ...state, role: newRole }))
       }
     },
     approve: {
@@ -44,6 +45,7 @@ export const useRoleManager = (cohortId, personId) => {
           }
         }
         queryClient.setQueryData(queryKey, updateState)
+        queryClient.setQueryData(['person', person._id], (state) => ({ ...state, role: newRole }))
       }
     },
     change: {
@@ -60,6 +62,7 @@ export const useRoleManager = (cohortId, personId) => {
           }
         }
         queryClient.setQueryData(queryKey, updateState)
+        queryClient.setQueryData(['person', person._id], (state) => ({ ...state, role: newRole }))
       }
     },
   }
