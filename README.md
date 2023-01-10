@@ -7,11 +7,14 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
+
 • Audit props being passed
 
 • Add Edit profile functionality
 
 • Research cancelling queries, refetching, etc
+
+• Check for validity of URLs in ExternalUrls.jsx (flag bad links/autocorrect?)
 
 • Build out AdminRouter components and functionality
 
