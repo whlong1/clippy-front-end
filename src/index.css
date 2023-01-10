@@ -28,6 +28,11 @@ main {
   align-items: center;
 }
 
+div {
+  display: flex;
+  align-items: center;
+}
+
 form {
   display: flex;
   flex-direction: column;
