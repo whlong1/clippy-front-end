@@ -17,8 +17,9 @@ const StudentDeliverableRow = ({ deliverableId, student }) => {
         <p>{student.lastName}</p>
       </Link>
 
-      <ExternalUrls student={student}/>
-      
+      External link:
+      <ExternalUrls student={student} />
+
     </div>
   )
 }

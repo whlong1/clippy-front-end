@@ -22,7 +22,7 @@ const GradeStudentDeliverable = ({ cohortId }) => {
   }, [deliverableId, studentDeliverable])
 
   if (status === 'error') return <ContentStatus status={status} />
-  if (status === 'loading') return <ContentStatus status={status} />
+  if (status === 'loading' || !formData) return <ContentStatus status={status} />
 
   const handleChange = ({ target }) => {
     setFormData({ ...formData, [target.name]: target.value })
