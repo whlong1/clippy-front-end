@@ -5,6 +5,7 @@ import ContentLayout from '../layouts/ContentLayout.jsx'
 import NewDeliverable from '../features/Deliverables/NewDeliverable'
 import ShowDeliverable from '../features/Deliverables/ShowDeliverable.jsx'
 import DeliverablesMenu from '../features/Deliverables/DeliverablesMenu.jsx'
+import FeatureLanding from '../components/FeatureLanding/FeatureLanding.jsx'
 import ShowStudentDeliverable from '../features/Deliverables/ShowStudentDeliverable.jsx'
 import StudentDeliverablesMenu from '../features/Deliverables/StudentDeliverablesMenu.jsx'
 import GradeStudentDeliverable from '../features/Deliverables/GradeStudentDeliverable.jsx'
@@ -16,7 +17,7 @@ const DeliverablesRouter = (props) => {
   if (!user.isAdmin) return (
     <Routes>
       <Route element={<ContentLayout menu={<StudentDeliverablesMenu {...props} />} />}>
-        <Route index element={<h1>My Deliverables Landing</h1>} />
+        <Route index element={<FeatureLanding title="My Deliverables" />} />
         <Route path="/*" element={<Navigate to='/deliverables' />} />
         <Route
           path=':studentDeliverableId'
@@ -30,7 +31,7 @@ const DeliverablesRouter = (props) => {
   return (
     <Routes>
       <Route element={<ContentLayout menu={<DeliverablesMenu {...props} />} />}>
-        <Route index element={<section>Deliverables Landing</section>} />
+        <Route index element={<FeatureLanding title="Deliverables" />} />
         <Route path='new' element={<NewDeliverable cohortId={cohortId} />} />
         <Route path=':deliverableId' element={<ShowDeliverable user={user} cohortId={cohortId} />} />
         <Route
