@@ -1,10 +1,16 @@
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
+// Routers
 import AdminRouter from './AdminRouter'
 import PeopleRouter from './PeopleRouter'
 import AttendanceRouter from './AttendanceRouter'
 import DeliverablesRouter from './DeliverablesRouter'
+
+// Pages
+import MyProfile from '../pages/MyProfile/MyProfile'
+import PageNotFound from '../pages/PageNotFound/PageNotFound'
+import CohortLanding from '../pages/CohortLanding/CohortLanding'
 
 const AppRouter = (props) => {
   const { user, profile } = props
@@ -22,9 +28,9 @@ const AppRouter = (props) => {
 
   return (
     <Routes>
-      <Route path="/" element={<h1>Welcome back</h1>} />
-      <Route path="/*" element={<h1>Error Handler</h1>} />
-      <Route path='/profile' element={<h1>My Profile</h1>} />
+      <Route path="/*" element={<PageNotFound />} />
+      <Route path="/" element={<CohortLanding {...appProps} />} />
+      <Route path='/profile' element={<MyProfile {...appProps} />} />
 
       <Route path='/admin/*' element={<AdminRouter {...appProps} />} />
       <Route path='/people/*' element={<PeopleRouter {...appProps} />} />

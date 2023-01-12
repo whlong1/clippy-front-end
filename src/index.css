@@ -61,6 +61,10 @@ main>nav {
   width: 312px;
 }
 
+.page {
+  padding: 24px;
+}
+
 
 ul {
   margin: 0;

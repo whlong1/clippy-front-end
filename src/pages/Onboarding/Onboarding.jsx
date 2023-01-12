@@ -39,7 +39,7 @@ const Onboarding = (props) => {
   )
 
   return (
-    <main>
+    <main className="page">
       <h1>Onboarding</h1>
       <section>
         {stepOne}
