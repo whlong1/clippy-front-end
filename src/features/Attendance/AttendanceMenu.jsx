@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 // Components
 import AttendanceList from './AttendanceList'
 import MenuLayout from '../../layouts/MenuLayout'
+import MenuStatus from '../../components/MenuStatus/MenuStatus'
 
 // Hooks
 import { useIndexAttendance } from '../../hooks/useIndexAttendance'
@@ -10,8 +11,8 @@ import { useIndexAttendance } from '../../hooks/useIndexAttendance'
 const AttendanceMenu = (props) => {
   const { attendance, status } = useIndexAttendance(props.cohortId)
 
-  if (status === 'error') return <h1>Error</h1>
-  if (status === 'loading') return <h1>Loading...</h1>
+  if (status === 'error') return <MenuStatus {...props} status={status} />
+  if (status === 'loading') return <MenuStatus {...props} status={status} />
 
   return (
     <MenuLayout {...props}>

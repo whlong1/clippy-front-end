@@ -24,11 +24,13 @@ const AttendanceForm = ({ cohortId, submitFn, prevAttendance }) => {
       setAttendanceData({ ...prevAttendance, date: formattedDate })
       setStudentData(prevAttendance.students)
     } else {
-      // if (people) ?
       setStudentData(buildStatusArray(people))
     }
   }, [cohortId, attendanceId, people, prevAttendance])
 
+
+  // No need for ContentStatus component here
+  // Form is already wrapped with a <section> tag through New/EditAttendance
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
 

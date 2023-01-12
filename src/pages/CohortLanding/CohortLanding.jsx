@@ -1,6 +1,7 @@
 import SelectCohort from "../../components/SelectCohort/SelectCohort"
 
 const CohortLanding = (props) => {
+  // Could include MenuLayout in here if we like the way that looks.
 
   return (
     <main className="page">

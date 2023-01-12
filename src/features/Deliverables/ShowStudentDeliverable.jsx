@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 // Components
 import RequirementsList from "./RequirementsList"
 import StudentSubmissionPanel from './StudentSubmissionPanel'
+import ContentStatus from "../../components/ContentStatus/ContentStatus"
 
 // Hooks 
 import { useShowStudentDeliverable } from "../../hooks/useShowStudentDeliverable"
@@ -12,8 +13,8 @@ const ShowStudentDeliverable = ({ cohortId }) => {
   const { studentDeliverableId } = useParams()
   const { studentDeliverable, status } = useShowStudentDeliverable(studentDeliverableId)
 
-  if (status === 'error') return <h1>Error</h1>
-  if (status === 'loading') return <h1>Loading...</h1>
+  if (status === 'error') return <ContentStatus status={status} />
+  if (status === 'loading') return <ContentStatus status={status} />
 
   return (
     <section>

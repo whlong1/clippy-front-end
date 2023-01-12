@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom"
 // Components
 import RequirementsList from "./RequirementsList"
 import DeliverableStatusSelect from "./DeliverableStatusSelect"
+import ContentStatus from "../../components/ContentStatus/ContentStatus"
 
 // Hooks
 import { useDeliverablesManager } from "../../hooks/useDeliverablesManager"
@@ -20,8 +21,8 @@ const GradeStudentDeliverable = ({ cohortId }) => {
     setFormData(studentDeliverable)
   }, [deliverableId, studentDeliverable])
 
-  if (status === 'error') return <h1>Error</h1>
-  if (status === 'loading' || !formData) return <h1>Loading...</h1>
+  if (status === 'error') return <ContentStatus status={status} />
+  if (status === 'loading') return <ContentStatus status={status} />
 
   const handleChange = ({ target }) => {
     setFormData({ ...formData, [target.name]: target.value })

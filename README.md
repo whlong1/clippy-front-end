@@ -16,7 +16,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • Check for validity of URLs in ExternalUrls.jsx (flag bad links/autocorrect?)
 
-• Build out AdminRouter components and functionality
+• Build out features/Admin components and functionality (cohorts, squads, profiles)
 
 • Create a reusable feature landing wrapper component
 

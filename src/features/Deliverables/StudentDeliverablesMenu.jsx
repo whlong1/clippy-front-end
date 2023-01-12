@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 // Components
 import MenuLayout from '../../layouts/MenuLayout'
 import CompletionTracker from './CompletionTracker'
+import MenuStatus from '../../components/MenuStatus/MenuStatus'
 import { useIndexStudentDeliverables } from '../../hooks/useIndexStudentDeliverables'
 
 const StudentDeliverablesMenu = (props) => {
@@ -10,9 +11,8 @@ const StudentDeliverablesMenu = (props) => {
   const { cohortId, profile } = props
   const { studentDeliverables, status } = useIndexStudentDeliverables(cohortId, profile._id)
 
-  if (status === 'error') return <h1>Error</h1>
-  if (status === 'loading') return <h1>Loading...</h1>
-
+  if (status === 'error') return <MenuStatus {...props} status={status} />
+  if (status === 'loading') return <MenuStatus {...props} status={status} />
 
   return (
     <MenuLayout {...props}>

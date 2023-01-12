@@ -12,11 +12,10 @@ const Nav = (props) => {
   return (
     <nav>
       <ul>
-        <li>🦩</li>
+        <li><NavLink to="/">🦩</NavLink></li>
         <li><NavLink to="/people">😆</NavLink></li>
         <li><NavLink to="/attendance">📅</NavLink></li>
         <li><NavLink to="/deliverables">📝</NavLink></li>
-
 
         {isAdmin && <li><NavLink to="/admin">🎟️</NavLink></li>}
         <li><NavLink to="/profile">👤</NavLink></li>

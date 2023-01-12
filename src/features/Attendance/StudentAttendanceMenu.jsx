@@ -1,5 +1,6 @@
 // Components
 import MenuLayout from '../../layouts/MenuLayout'
+import MenuStatus from '../../components/MenuStatus/MenuStatus'
 
 // Hooks
 import { useIndexStudentAttendance } from '../../hooks/useIndexStudentAttendance'
@@ -8,8 +9,8 @@ const StudentAttendanceMenu = (props) => {
   const { profile, cohortId } = props
   const { attendance, status } = useIndexStudentAttendance(cohortId, profile._id)
 
-  if (status === 'error') return <h1>Error</h1>
-  if (status === 'loading') return <h1>Loading...</h1>
+  if (status === 'error') return <MenuStatus {...props} status={status} />
+  if (status === 'loading') return <MenuStatus {...props} status={status} />
 
   // Would be great to put this data in a chart
   const statusArr = ['P', 'A', 'L', 'W', 'EC', 'SC', 'H']

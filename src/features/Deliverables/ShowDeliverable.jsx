@@ -5,8 +5,9 @@ import { useShowDeliverable } from '../../hooks/useShowDeliverable'
 import { useDeliverablesManager } from '../../hooks/useDeliverablesManager'
 
 // Components
-import StudentDeliverableRow from './StudentDeliverableRow'
 import RequirementsList from './RequirementsList'
+import StudentDeliverableRow from './StudentDeliverableRow'
+import ContentStatus from '../../components/ContentStatus/ContentStatus'
 
 const ShowDeliverable = (props) => {
   const { cohortId } = props
@@ -15,8 +16,8 @@ const ShowDeliverable = (props) => {
   const mutation = useDeliverablesManager(cohortId)
   const { deliverable, status } = useShowDeliverable(deliverableId)
 
-  if (status === 'error') return <h1>Error</h1>
-  if (status === 'loading') return <h1>Loading...</h1>
+  if (status === 'error') return <ContentStatus status={status} />
+  if (status === 'loading') return <ContentStatus status={status} />
 
   const handleDelete = () => {
     mutation.mutate({ type: 'remove', payload: { deliverableId: deliverableId } })

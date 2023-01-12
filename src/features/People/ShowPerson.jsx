@@ -3,14 +3,15 @@ import { useShowPerson } from "../../hooks/useShowPerson"
 
 // Components
 import RolePanel from "./RolePanel"
+import ContentStatus from "../../components/ContentStatus/ContentStatus"
 import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
 
 const ShowPerson = ({ user, cohortId }) => {
   const { profileId } = useParams()
   const { person, status } = useShowPerson(cohortId, profileId)
 
-  if (status === 'error') return <h1>Error</h1>
-  if (status === 'loading') return <h1>Loading...</h1>
+  if (status === 'error') return <ContentStatus status={status} />
+  if (status === 'loading') return <ContentStatus status={status} />
 
   return (
     <section>
