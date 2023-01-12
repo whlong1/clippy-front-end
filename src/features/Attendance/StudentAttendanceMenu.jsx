@@ -27,7 +27,7 @@ const StudentAttendanceMenu = (props) => {
 
   return (
     <MenuLayout {...props}>
-      <p>My Attendance</p>
+      <h1>My Attendance</h1>
       <p>Present: {attendanceTable.p}</p>
       <p>Absent: {attendanceTable.a}</p>
       <p>Late: {attendanceTable.l}</p>

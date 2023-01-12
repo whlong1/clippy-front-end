@@ -26,9 +26,7 @@ const ShowDeliverable = (props) => {
 
   return (
     <section>
-      <h1>
-        {deliverable.name}
-      </h1>
+      <h1>{deliverable.name}</h1>
 
       {deliverable.dueDate}
       {deliverable.dueDate}

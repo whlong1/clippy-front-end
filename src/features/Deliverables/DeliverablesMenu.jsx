@@ -16,7 +16,7 @@ const DeliverablesMenu = (props) => {
 
   return (
     <MenuLayout {...props}>
-      <p>Deliverables Menu</p>
+      <h1>Deliverables Menu</h1>
 
       <Link to='/deliverables/new'>
         <button>New Deliverable</button>

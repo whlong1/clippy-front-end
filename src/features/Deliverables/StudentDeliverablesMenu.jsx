@@ -20,7 +20,7 @@ const StudentDeliverablesMenu = (props) => {
 
       <CompletionTracker studentDeliverables={studentDeliverables} />
 
-      <h3>My Deliverables</h3>
+      <h2>My Deliverables</h2>
 
       {studentDeliverables.map((sd) => (
         <Link key={sd._id} to={`/deliverables/${sd._id}`}>

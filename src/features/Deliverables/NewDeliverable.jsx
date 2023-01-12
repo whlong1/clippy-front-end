@@ -44,8 +44,8 @@ const NewDeliverable = ({ cohortId }) => {
 
   return (
     <section>
+      <h1>New Deliverable</h1>
       <form onSubmit={handleSubmit}>
-        <h1>New Deliverable</h1>
         <label htmlFor="name">Name:</label>
         <input
           required

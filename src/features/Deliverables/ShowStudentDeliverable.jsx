@@ -19,11 +19,11 @@ const ShowStudentDeliverable = ({ cohortId }) => {
   return (
     <section>
       <h1>{studentDeliverable.name} (student view)</h1>
-
       <h2>due date</h2>
       {studentDeliverable.dueDate}
       <h2>notion url:</h2>
       {studentDeliverable.notionUrl}
+
       <p>requirements/urls</p>
       <h2>Requirements</h2>
       <RequirementsList deliverable={studentDeliverable} />

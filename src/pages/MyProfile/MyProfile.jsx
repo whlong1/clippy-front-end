@@ -1,5 +1,6 @@
 const MyProfile = (props) => {
-
+  // Could refactor this to include side menu (MenuLayout)
+  
   return (
     <main className="page">
       <h1>My Profile</h1>

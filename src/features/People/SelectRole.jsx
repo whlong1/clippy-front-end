@@ -15,7 +15,7 @@ const SelectRole = ({ mutation, person }) => {
 
   return (
     <>
-      <h3>Change Role:</h3>
+      <h2>Change Role:</h2>
       <select name="newRole" onChange={handleChange} defaultValue={person.role}>
         <option value="students">Student</option>
         <option value="inactive">Withdrawn</option>

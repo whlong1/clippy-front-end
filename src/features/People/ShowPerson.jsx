@@ -13,19 +13,20 @@ const ShowPerson = ({ user, cohortId }) => {
   if (status === 'error') return <ContentStatus status={status} />
   if (status === 'loading') return <ContentStatus status={status} />
 
+  const fullName = `${person.preferredName} ${person.lastName}`
+
   return (
     <section>
       <ProfilePicture gitHubUserName={person.gitHubUserName} size='100px' />
-
       {person.role}
+      <h1>{fullName}</h1>
+      {person.preferredPronouns}
+
       {person.email}
-      {person.lastName}
       {person.firstName}
-      {person.preferredName}
       {person.gitHubUserName}
       {person.linkedInUserName}
       {person.codeWarsUserName}
-      {person.preferredPronouns}
 
       {user.isAdmin && <RolePanel person={person} cohortId={cohortId} />}
     </section>

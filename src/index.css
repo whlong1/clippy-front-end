@@ -18,6 +18,7 @@ body {
 
   /* CSS VARIABLES */
   --border-color: #3a3a3a;
+  --nav-background: #1a1a1f;
   --body-text-color: #a0a0a0;
   --header-text-color: white;
   --subheader-text-color: white;
@@ -30,7 +31,7 @@ nav {
   width: 72px;
   padding: 24px;
   height: 100vh;
-  background: #1a1a1f;
+  background: var(--nav-background);
   border-right: 1px solid var(--border-color);
 }
 
@@ -89,6 +90,16 @@ div {
 form {
   display: flex;
   flex-direction: column;
+}
+
+select, button {
+  color: white;
+  background: var(--nav-background);
+  border: 1px solid var(--border-color);
+}
+
+img {
+  border-radius: 50%;
 }
 
 a {

@@ -15,7 +15,7 @@ const RolePanel = ({ person, cohortId }) => {
   return (
     <>
       <button>Edit Profile</button>
-      <h3>Manage Roles</h3>
+      <h2>Manage Roles</h2>
 
       {isApprovalPending &&
         <button onClick={() => mutation.mutate({ type: 'deny', payload: denialData })}>

@@ -5,7 +5,7 @@ const PeopleList = (props) => {
   const { role, people } = props
   return (
     <>
-      <h3>{role}</h3>
+      <h2>{role}</h2>
       <p>{people.length}</p>
       {people.map((profile) => (
         <Link key={profile._id} to={`/people/${profile._id}`}>
