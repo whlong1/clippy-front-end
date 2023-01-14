@@ -18,21 +18,13 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • Build out features/Admin components and functionality (cohorts, squads, profiles)
 
-• Create a reusable feature landing wrapper component
-
 • Audit keys (need consistent key pattern for all resources)
-
-• Figure out if background refetching is functioning correctly
 
 • Review access to admin functionality (front end and backend)
 
 • Add toggle down functionality to each Role section on PeopleMenu
 
 • For security, might be worth refactoring how admin and student routes are handled
-
-• DeliverableStatusSelect and StudentStatusSelect can be renamed BlankStatus and display the value as well.
-
-• In order to stick to current pattern, Home/Welcome component issue should be wrapped with ContentLayout (and given a corresponding menu) or redirect to people automatically.
 
 • REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
 
