@@ -24,8 +24,13 @@ body {
   --subheader-text-color: white;
   --content-background: #101115;
 
+  --font-l: 24px;
+  --font-reg: 16px;
+
   background-color: var(--content-background)
 }
+
+
 
 nav {
   width: 72px;
@@ -92,7 +97,8 @@ form {
   flex-direction: column;
 }
 
-select, button {
+select,
+button {
   color: white;
   background: var(--nav-background);
   border: 1px solid var(--border-color);

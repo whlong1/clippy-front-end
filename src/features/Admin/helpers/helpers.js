@@ -7,6 +7,17 @@ const formatDate = (dueDate) => {
   return formattedTime
 }
 
+const handleDate = (date) => {
+  if (date) {
+    const newDate = new Date(date)
+    return newDate.toISOString().slice(0, 10)
+  } else {
+    const newDate = new Date()
+    return newDate.toISOString().slice(0, 10)
+  }
+}
+
 export {
-  formatDate
+  handleDate,
+  formatDate,
 }

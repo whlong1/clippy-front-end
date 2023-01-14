@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 
 // Components
 import ContentStatus from '../../components/ContentStatus/ContentStatus'
@@ -18,6 +19,7 @@ const Cohorts = () => {
       <h2>Cohort List</h2>
       {cohorts.map((c) => <p key={c._id}>{c.name}</p>)}
 
+      <Link to="/admin/cohorts/new">New Cohort</Link>
 
     </section>
   )
