@@ -7,6 +7,8 @@ const DeliverablesList = ({ deliverables }) => {
     const completed = d.students.filter((s) => s.status !== 'assigned').length
     return completed + '/' + total
   }
+
+  // Need visual indicator for missing, complet etc
   
   return (
     deliverables.map((d) => (

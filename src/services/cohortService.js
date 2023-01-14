@@ -1,6 +1,21 @@
 import * as tokenService from '../services/tokenService'
 const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/cohorts`
 
+const create = async (data) => {
+  try {
+    const res = await fetch(BASE_URL,
+      {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+        body: JSON.stringify(data)
+      })
+    return await res.json()
+  } catch (err) {
+    throw err
+  }
+}
+
+
 const indexCohorts = async () => {
   const res = await fetch(`${BASE_URL}`,
     { headers: { 'Authorization': `Bearer ${tokenService.getToken()}` } },
@@ -105,6 +120,7 @@ const changeRole = async (cohortId, profileId, data) => {
 
 
 export {
+  create,
   changeRole,
   denyProfile,
   indexCohorts,
