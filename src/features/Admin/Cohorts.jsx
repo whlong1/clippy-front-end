@@ -1,0 +1,26 @@
+
+// Components
+import ContentStatus from '../../components/ContentStatus/ContentStatus'
+
+// Hooks
+import { useIndexCohorts } from "../../hooks/useIndexCohorts"
+
+const Cohorts = () => {
+  const { cohorts, status } = useIndexCohorts()
+
+  if (status === 'error') return <ContentStatus status={status} />
+  if (status === 'loading') return <ContentStatus status={status} />
+
+  return (
+    <section>
+      <h1>Cohorts</h1>
+
+      <h2>Cohort List</h2>
+      {cohorts.map((c) => <p key={c._id}>{c.name}</p>)}
+
+
+    </section>
+  )
+}
+
+export default Cohorts

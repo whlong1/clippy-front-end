@@ -15,7 +15,6 @@ const create = async (data) => {
   }
 }
 
-
 const indexCohorts = async () => {
   const res = await fetch(`${BASE_URL}`,
     { headers: { 'Authorization': `Bearer ${tokenService.getToken()}` } },
