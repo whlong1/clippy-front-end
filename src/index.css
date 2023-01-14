@@ -30,6 +30,13 @@ body {
   background-color: var(--content-background)
 }
 
+h1 {
+  font-size: var(--font-l);
+}
+
+h2 {
+  font-size: var(--font-reg);
+}
 
 
 nav {
