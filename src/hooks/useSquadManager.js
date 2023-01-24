@@ -21,3 +21,21 @@ export const useSquadManager = () => {
     onError: (error) => console.log('Error!'),
   })
 }
+
+
+// create squad
+
+// index all squads
+
+// add squad member
+//    update profile
+//    update squad
+
+// removeSquadMember
+//    update profile
+//    update squad
+
+
+
+
+// should we add a squad property to profile?
