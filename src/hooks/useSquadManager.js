@@ -17,7 +17,6 @@ export const useSquadManager = () => {
 
   return useMutation({
     mutationFn: (action) => types[action.type].service(),
-
     onSuccess: (res, action) => types[action.type].handleCache(res, action.payload),
     onError: (error) => console.log('Error!'),
   })
