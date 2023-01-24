@@ -9,6 +9,11 @@ html {
   box-sizing: inherit;
 }
 
+#root {
+  display: flex;
+  align-items: center;
+}
+
 body {
   margin: 0;
   color: var(--body-text-color);
@@ -56,21 +61,21 @@ main {
   align-items: center;
 }
 
-main>nav,
-main>section {
+main > nav,
+main > section {
   height: 100vh;
   display: flex;
   overflow-y: scroll;
   flex-direction: column;
 }
 
-main>section {
+main > section {
   width: 100%;
   padding: 24px;
   background: #101115;
 }
 
-main>nav {
+main > nav {
   width: 312px;
 }
 
@@ -94,11 +99,6 @@ li {
   border: 1px solid var(--border-color);
 }
 
-div {
-  display: flex;
-  align-items: center;
-}
-
 form {
   display: flex;
   flex-direction: column;
@@ -116,9 +116,15 @@ img {
 }
 
 a {
-  width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 /* Hide default scrollbar */

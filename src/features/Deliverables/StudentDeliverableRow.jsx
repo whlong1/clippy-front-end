@@ -14,13 +14,37 @@ const StudentDeliverableRow = ({ deliverableId, student }) => {
   console.log(student)
 
   const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
+    { value: 'red', label: 'Red' },
+    { value: 'blue', label: 'Blue' },
+    { value: 'green', label: 'Green' },
   ]
 
+  const colourStyles = {
+    option: (styles, { data }) => {
+      const color = data.value;
+      return {
+        ...styles,
+        backgroundColor: color,
+        color: 'white',
+      };
+    },
+    control: (styles, data) => {
+      console.log('Selected', data.selectedOption)
+      // const color = data.value;
+      return {
+        ...styles,
+        backgroundColor: 'red',
+        color: 'white',
+      };
+    },
+  };
+
+  const handleChange = (selectedOption) => {
+    console.log('option', selectedOption)
+  }
+
   return (
-    <div>
+    <div className="row">
       <Link to={path}>
         <p>Status: {student.status}</p>
         <ProfileInfo profile={student} />
@@ -29,15 +53,12 @@ const StudentDeliverableRow = ({ deliverableId, student }) => {
       </Link>
 
       <Select
+        onChange={handleChange}
         options={options}
-        styles={{
-          control: (baseStyles, state) => ({
-            ...baseStyles,
-            borderColor: 'red',
-            height: '20px',
-          }),
-        }}
+        styles={colourStyles}
+        defaultValue={options[0]}
       />
+
 
       External link:
       <ExternalUrls student={student} />
