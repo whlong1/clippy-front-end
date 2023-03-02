@@ -1,0 +1,5 @@
+src/features/Deliverables/ShowDeliverable.jsx
+&
+src/features/Deliverables/GradeStudentDeliverable.jsx
+
+if (deliverable.cohort !== cohortId) return <Navigate to='/deliverables' />

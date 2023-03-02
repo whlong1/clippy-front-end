@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Navigate } from 'react-router-dom'
 
 // Hooks
 import { useShowDeliverable } from '../../hooks/useShowDeliverable'
@@ -18,6 +18,7 @@ const ShowDeliverable = (props) => {
 
   if (status === 'error') return <ContentStatus status={status} />
   if (status === 'loading') return <ContentStatus status={status} />
+  if (deliverable.cohort !== cohortId) return <Navigate to='/deliverables' />
 
   const handleDelete = () => {
     mutation.mutate({ type: 'remove', payload: { deliverableId: deliverableId } })
