@@ -12,6 +12,8 @@ const ShowPerson = ({ user, cohortId }) => {
 
   if (status === 'error') return <ContentStatus status={status} />
   if (status === 'loading') return <ContentStatus status={status} />
+  
+  console.log(person)
 
   const fullName = `${person.preferredName} ${person.lastName}`
 
