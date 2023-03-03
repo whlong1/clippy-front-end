@@ -51,6 +51,14 @@ nav {
   border-right: 1px solid var(--border-color);
 }
 
+/* Leftmost App Nav */
+#root>nav li,
+#root>nav button {
+  border: none;
+  display: flex;
+  justify-content: center;
+}
+
 main {
   width: 100%;
   height: 100vh;
@@ -67,8 +75,6 @@ main>section {
   overflow-y: scroll;
   flex-direction: column;
 }
-
-
 
 main>section {
   width: 100%;
@@ -116,16 +122,20 @@ img {
 }
 
 a {
+  height: 24px;
+  margin: 16px 0;
   display: flex;
+  color: white;
+  text-decoration: none;
   justify-content: space-between;
 }
 
-.row {
+/* .row {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-}
+  justify-content: space-between;
+} */
 
 /* Hide default scrollbar */
 
@@ -134,8 +144,20 @@ a {
   background-color: transparent;
 }
 
+/* Fix cursor on text */
+h1,
+h2,
+h3,
+p {
+  cursor: default;
+}
 
-/* People CSS */
+a * {
+  cursor: pointer;
+}
+
+
+/* PeopleList CSS */
 
 header {
   width: 100%;
@@ -157,12 +179,17 @@ header button img {
   width: 12px;
 }
 
+/* All row style elements */
 div {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 }
 
-h1, h2, h3, p {
-  cursor: default;
+
+/* ProfileInfo CSS */
+
+div>img {
+  margin-right: 12px;
 }
