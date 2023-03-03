@@ -6,8 +6,8 @@ const ProfileInfo = ({ profile }) => {
 
   return (
     <div>
-      <p>{userName}</p>
       <ProfilePicture gitHubUserName={gitHubUserName} size='20px' />
+      <p>{userName}</p>
     </div>
   )
 }

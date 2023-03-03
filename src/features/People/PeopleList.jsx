@@ -1,6 +1,13 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+
+// Components
 import ProfileInfo from '../../components/ProfileInfo/ProfileInfo'
+
+// Assets
+import arrow from '../../assets/arrow.svg'
+import downArrow from '../../assets/downArrow.svg'
+
 
 const PeopleList = (props) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -15,7 +22,7 @@ const PeopleList = (props) => {
         <h2>{roleHeader}</h2>
         <p>{people.length}</p>
         <button onClick={() => setIsOpen(!isOpen)}>
-          X
+          <img src={isOpen ? downArrow : arrow} alt="An arrow" />
         </button>
       </header>
 

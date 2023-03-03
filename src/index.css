@@ -43,7 +43,6 @@ h2 {
   font-size: var(--font-reg);
 }
 
-
 nav {
   width: 72px;
   padding: 24px;
@@ -65,7 +64,7 @@ main>nav,
 main>section {
   height: 100vh;
   display: flex;
-  overflow-y: scroll;  
+  overflow-y: scroll;
   flex-direction: column;
 }
 
@@ -139,9 +138,31 @@ a {
 /* People CSS */
 
 header {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
 }
 
+header p {
+  margin-left: 10px;
+  margin-right: auto;
+}
+
+header button {
+  border: none;
+}
+
+header button img {
+  width: 12px;
+}
+
+div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+h1, h2, h3, p {
+  cursor: default;
+}
