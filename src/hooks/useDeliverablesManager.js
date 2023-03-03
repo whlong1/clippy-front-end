@@ -48,6 +48,7 @@ export const useDeliverablesManager = (cohortId) => {
     submit: {
       service: deliverableService.submitStudentDeliverable,
       handleCache: (res, payload) => {
+        // Double check these keys, is the first one necessary?
         const listQueryKey = ['studentDeliverables', cohortId]
         const detailsQueryKey = ['studentDeliverable', res._id]
 
@@ -61,19 +62,25 @@ export const useDeliverablesManager = (cohortId) => {
     },
 
     updateStudentSquad: {
-      // action.payload = {profileId, data}
       service: profileService.updateStudentSquad,
       handleCache: (res, payload) => {
-        console.log(res, payload)
-        // const listQueryKey = ['studentDeliverables', cohortId]
-        // const detailsQueryKey = ['studentDeliverable', res._id]
+        const { profileId } = payload
+        const queryKey = ['deliverables', cohortId]
 
-        // const updateListState = (prev) => prev.map((sd) => {
-        //   return sd._id === res._id ? { ...sd, ...res } : sd
-        // })
+        const updateState = (state) => {
 
-        // queryClient.setQueryData(listQueryKey, updateListState)
-        // queryClient.setQueryData(detailsQueryKey, { ...payload, ...res })
+          const handleStudentsArr = (d) => d.students.map((s) =>
+            s.profileId === profileId ? { ...s, squad: res.squad } : s
+          )
+
+          const updatedDeliverables = state.map((d) => {
+            return { ...d, students: handleStudentsArr(d) }
+          })
+
+          return updatedDeliverables
+        }
+
+        queryClient.setQueryData(queryKey, updateState)
       },
     },
 
