@@ -26,7 +26,6 @@ const ShowDeliverable = (props) => {
   }
 
   const handleSquad = (profileId, squadData) => {
-    console.log(profileId, squadData)
     mutation.mutate({
       type: 'updateStudentSquad',
       payload: { profileId: profileId, squadData: squadData, deliverableId }

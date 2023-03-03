@@ -25,6 +25,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • For security, might be worth refactoring how admin and student routes are handled
 
+• Code editor
+
 • REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
 
 
