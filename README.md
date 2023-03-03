@@ -7,7 +7,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
-
 • Audit props being passed
 
 • Add Edit profile functionality
