@@ -1,0 +1,7 @@
+issue with profile picture on refresh
+GET https://github.com/none.png 404
+
+
+src/features/People/ShowPerson.jsx
+This might cause an issue if people belong to multiple cohorts. Needs testing:
+if (person.cohort !== cohortId && person.role === 'students') return <Navigate to='/people' />

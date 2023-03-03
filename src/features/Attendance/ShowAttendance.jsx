@@ -1,4 +1,4 @@
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams, useNavigate, Link, Navigate } from 'react-router-dom'
 
 // Components
 import StudentStatusRow from './StudentStatusRow'
@@ -14,8 +14,9 @@ const ShowAttendance = ({ user, cohortId }) => {
   const mutation = useAttendanceManager(cohortId)
   const { attendance, status } = useShowAttendance(attendanceId)
 
-  if (status === 'error') return <ContentStatus status={status}/>
-  if (status === 'loading') return <ContentStatus status={status}/>
+  if (status === 'error') return <ContentStatus status={status} />
+  if (status === 'loading') return <ContentStatus status={status} />
+  if (attendance.cohort !== cohortId) return <Navigate to="/attendance" />
 
   const handleDelete = () => {
     mutation.mutate({ type: 'remove', payload: { attendanceId } })
