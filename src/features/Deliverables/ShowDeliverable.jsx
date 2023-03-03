@@ -7,6 +7,7 @@ import { useDeliverablesManager } from '../../hooks/useDeliverablesManager'
 // Components
 import RequirementsList from './RequirementsList'
 import StudentDeliverableRow from './StudentDeliverableRow'
+import DateDisplay from '../../components/DateDisplay/DateDisplay'
 import ContentStatus from '../../components/ContentStatus/ContentStatus'
 
 const ShowDeliverable = (props) => {
@@ -34,10 +35,11 @@ const ShowDeliverable = (props) => {
 
   return (
     <section>
-      <h1>{deliverable.name}</h1>
+      <header>
+        <h1>{deliverable.name}</h1>
+        <DateDisplay date={deliverable.dueDate} />
+      </header>
 
-      {deliverable.dueDate}
-      {deliverable.dueDate}
 
       <h2>Requirements</h2>
       <RequirementsList deliverable={deliverable} />

@@ -21,11 +21,23 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • Review access to admin functionality (front end and backend)
 
-• Add toggle down functionality to each Role section on PeopleMenu
-
 • For security, might be worth refactoring how admin and student routes are handled
 
 • Code editor
+
+• create css variables for fonts
+
+• organize attendance by month
+
+• on hover effect for links
+
+• tags for deliverable show
+
+• bulk mark complete
+
+• format dates
+
+• side menu icons
 
 • REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
 

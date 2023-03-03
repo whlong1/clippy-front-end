@@ -59,9 +59,9 @@ const NewDeliverable = ({ cohortId }) => {
         <label htmlFor="dueDate">Due Date:</label>
         <input
           required
-          type="date"
           id="dueDate"
           name="dueDate"
+          type="datetime-local"
           onChange={handleChange}
           value={deliverableData.dueDate}
         />

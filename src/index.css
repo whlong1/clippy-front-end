@@ -130,15 +130,7 @@ a {
   justify-content: space-between;
 }
 
-/* .row {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-} */
-
 /* Hide default scrollbar */
-
 ::-webkit-scrollbar {
   width: 0;
   background-color: transparent;
@@ -156,26 +148,25 @@ a * {
   cursor: pointer;
 }
 
-
 /* PeopleList CSS */
 
-header {
+nav section header {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-header p {
+nav section header p {
   margin-left: 10px;
   margin-right: auto;
 }
 
-header button {
+nav section header button {
   border: none;
 }
 
-header button img {
+nav section header button img {
   width: 12px;
 }
 
@@ -187,9 +178,10 @@ div {
   justify-content: space-between;
 }
 
-
 /* ProfileInfo CSS */
 
 div>img {
   margin-right: 12px;
 }
+
+
