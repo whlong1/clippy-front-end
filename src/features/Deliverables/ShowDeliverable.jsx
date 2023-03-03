@@ -25,6 +25,14 @@ const ShowDeliverable = (props) => {
     navigate('/deliverables')
   }
 
+  const handleSquad = (profileId, squadData) => {
+    console.log(profileId, squadData)
+    mutation.mutate({
+      type: 'updateStudentSquad',
+      payload: { profileId: profileId, squadData: squadData, deliverableId }
+    })
+  }
+
   return (
     <section>
       <h1>{deliverable.name}</h1>
@@ -39,6 +47,7 @@ const ShowDeliverable = (props) => {
         <StudentDeliverableRow
           key={student._id}
           student={student}
+          handleSquad={handleSquad}
           deliverableId={deliverableId}
         />
       ))}

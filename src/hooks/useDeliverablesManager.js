@@ -1,4 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
+
+import * as profileService from '../services/profileService'
 import * as deliverableService from '../services/deliverableService'
 
 export const useDeliverablesManager = (cohortId) => {
@@ -46,6 +48,7 @@ export const useDeliverablesManager = (cohortId) => {
     submit: {
       service: deliverableService.submitStudentDeliverable,
       handleCache: (res, payload) => {
+        // Double check these keys, is the first one necessary?
         const listQueryKey = ['studentDeliverables', cohortId]
         const detailsQueryKey = ['studentDeliverable', res._id]
 
@@ -57,11 +60,39 @@ export const useDeliverablesManager = (cohortId) => {
         queryClient.setQueryData(detailsQueryKey, { ...payload, ...res })
       },
     },
+
+    updateStudentSquad: {
+      service: profileService.updateStudentSquad,
+      handleCache: (res, payload) => {
+        const { profileId, deliverableId } = payload
+        const listQueryKey = ['deliverables', cohortId]
+        const detailsQueryKey = ['deliverable', deliverableId]
+
+        const handleStudentsArr = (d) => d.students.map((s) =>
+          s.profileId === profileId ? { ...s, squad: res.squad } : s
+        )
+
+        const updateListState = (state) => {
+          const updatedDeliverables = state.map((d) => {
+            return { ...d, students: handleStudentsArr(d) }
+          })
+          return updatedDeliverables
+        }
+
+        const updateDetailsState = (state) => {
+          return { ...state, students: handleStudentsArr(state) }
+        }
+
+        queryClient.setQueryData(listQueryKey, updateListState)
+        queryClient.setQueryData(detailsQueryKey, updateDetailsState)
+      },
+    },
+
   }
 
   return useMutation({
     mutationFn: (action) => types[action.type].service(action.payload),
     onSuccess: (res, action) => types[action.type].handleCache(res, action.payload),
-    onError: (error) => console.log('Error!'),
+    onError: (error) => console.log(error),
   })
 }

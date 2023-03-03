@@ -37,7 +37,7 @@ const getAllMyDeliverables = async (cohortId, profileId) => {
 }
 
 
-const show = async (cohortId, profileId)  => {
+const show = async (cohortId, profileId) => {
   try {
     const res = await fetch(`${BASE_URL}/${profileId}?cohortId=${cohortId}`,
       { headers: { 'Authorization': `Bearer ${tokenService.getToken()}` } },
@@ -65,11 +65,29 @@ const updateProfile = async (data) => {
   }
 }
 
+const updateStudentSquad = async ({ profileId, squadData }) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${profileId}`,
+      {
+        method: 'PATCH',
+        headers: {
+          'Authorization': `Bearer ${tokenService.getToken()}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(squadData)
+      })
+    return await res.json()
+  } catch (error) {
+    throw error
+  }
+}
+
 
 export {
   show,
   getMyProfile,
   updateProfile,
   getAllMyAttendance,
-  getAllMyDeliverables
+  updateStudentSquad,
+  getAllMyDeliverables,
 }

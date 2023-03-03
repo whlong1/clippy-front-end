@@ -91,11 +91,30 @@ const submitStudentDeliverable = async (data) => {
   }
 }
 
+// const updateStudentSquad = async (data) => {
+//   const { _id: studentDeliverableId } = data
+//   try {
+//     const res = await fetch(`${BASE_URL}/${studentDeliverableId}/submit`,
+//       {
+//         method: 'PATCH',
+//         headers: {
+//           'Authorization': `Bearer ${tokenService.getToken()}`,
+//           'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify(data)
+//       })
+//     return await res.json()
+//   } catch (error) {
+//     throw error
+//   }
+// }
+
 export {
   showDeliverable,
   indexDeliverables,
   createDeliverable,
   deleteDeliverable,
+  // updateStudentSquad,
   showStudentDeliverable,
   gradeStudentDeliverable,
   submitStudentDeliverable,
