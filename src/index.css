@@ -61,28 +61,29 @@ main {
   align-items: center;
 }
 
-main > nav,
-main > section {
+main>nav,
+main>section {
   height: 100vh;
   display: flex;
-  overflow-y: scroll;
+  overflow-y: scroll;  
   flex-direction: column;
 }
 
-main > section {
+
+
+main>section {
   width: 100%;
   padding: 24px;
   background: #101115;
 }
 
-main > nav {
+main>nav {
   width: 312px;
 }
 
 .page {
   padding: 24px;
 }
-
 
 ul {
   margin: 0;
@@ -128,6 +129,19 @@ a {
 }
 
 /* Hide default scrollbar */
+
 ::-webkit-scrollbar {
+  width: 0;
   background-color: transparent;
 }
+
+
+/* People CSS */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
