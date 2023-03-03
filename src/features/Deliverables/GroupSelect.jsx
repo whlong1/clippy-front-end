@@ -8,13 +8,6 @@ const GroupSelect = ({ student, handleSquad }) => {
     { value: 'black', label: 'Black' },
   ]
 
-  // default value check options[0]
-  // after change, do all sds update?
-  // how to handle state
-
-  // need to update a profile
-  // need to update deliverables with new studentdeliverable
-
   const colourStyles = {
     // Styles options inside the select
     option: (styles, state) => {

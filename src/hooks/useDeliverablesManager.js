@@ -64,23 +64,27 @@ export const useDeliverablesManager = (cohortId) => {
     updateStudentSquad: {
       service: profileService.updateStudentSquad,
       handleCache: (res, payload) => {
-        const { profileId } = payload
-        const queryKey = ['deliverables', cohortId]
+        const { profileId, deliverableId } = payload
+        const listQueryKey = ['deliverables', cohortId]
+        const detailsQueryKey = ['deliverable', deliverableId]
 
-        const updateState = (state) => {
+        const handleStudentsArr = (d) => d.students.map((s) =>
+          s.profileId === profileId ? { ...s, squad: res.squad } : s
+        )
 
-          const handleStudentsArr = (d) => d.students.map((s) =>
-            s.profileId === profileId ? { ...s, squad: res.squad } : s
-          )
-
+        const updateListState = (state) => {
           const updatedDeliverables = state.map((d) => {
             return { ...d, students: handleStudentsArr(d) }
           })
-
           return updatedDeliverables
         }
 
-        queryClient.setQueryData(queryKey, updateState)
+        const updateDetailsState = (state) => {
+          return { ...state, students: handleStudentsArr(state) }
+        }
+
+        queryClient.setQueryData(listQueryKey, updateListState)
+        queryClient.setQueryData(detailsQueryKey, updateDetailsState)
       },
     },
 
