@@ -5,7 +5,7 @@ import GroupSelect from "./GroupSelect"
 import ExternalUrls from "./ExternalUrls"
 import ProfileInfo from "../../components/ProfileInfo/ProfileInfo"
 
-const StudentDeliverableRow = ({ deliverableId, student }) => {
+const StudentDeliverableRow = ({ deliverableId, student, handleSquad }) => {
   const { _id: studentDeliverableId } = student
   const path = `/deliverables/${deliverableId}/students/${studentDeliverableId}/grade`
 
@@ -13,7 +13,7 @@ const StudentDeliverableRow = ({ deliverableId, student }) => {
     <div className="row">
 
       <ProfileInfo profile={student} />
-      <GroupSelect squad={student.squad} />
+      <GroupSelect student={student} handleSquad={handleSquad} />
 
       <Link to={path}>
         <p>Status: {student.status}</p>

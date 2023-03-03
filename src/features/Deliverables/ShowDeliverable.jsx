@@ -20,9 +20,19 @@ const ShowDeliverable = (props) => {
   if (status === 'loading') return <ContentStatus status={status} />
   if (deliverable.cohort !== cohortId) return <Navigate to='/deliverables' />
 
+  console.log(deliverable)
+
   const handleDelete = () => {
     mutation.mutate({ type: 'remove', payload: { deliverableId: deliverableId } })
     navigate('/deliverables')
+  }
+
+  const handleSquad = (profileId, squadData) => {
+    console.log(profileId, squadData)
+    mutation.mutate({
+      type: 'updateStudentSquad',
+      payload: { profileId: profileId, squadData: squadData }
+    })
   }
 
   return (
@@ -39,6 +49,7 @@ const ShowDeliverable = (props) => {
         <StudentDeliverableRow
           key={student._id}
           student={student}
+          handleSquad={handleSquad}
           deliverableId={deliverableId}
         />
       ))}

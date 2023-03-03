@@ -1,6 +1,6 @@
 import Select from 'react-select'
 
-const GroupSelect = ({ squad }) => {
+const GroupSelect = ({ student, handleSquad }) => {
   const options = [
     { value: 'red', label: 'Red' },
     { value: 'blue', label: 'Blue' },
@@ -11,6 +11,9 @@ const GroupSelect = ({ squad }) => {
   // default value check options[0]
   // after change, do all sds update?
   // how to handle state
+
+  // need to update a profile
+  // need to update deliverables with new studentdeliverable
 
   const colourStyles = {
     // Styles options inside the select
@@ -35,6 +38,7 @@ const GroupSelect = ({ squad }) => {
   const handleChange = (option) => {
     console.log('change')
     console.log('Option Object', option)
+    handleSquad(student.profileId, { squad: option.value })
   }
 
   return (
@@ -42,7 +46,7 @@ const GroupSelect = ({ squad }) => {
       options={options}
       styles={colourStyles}
       onChange={handleChange}
-      defaultValue={options.find((o) => o.value === squad)}
+      defaultValue={options.find((o) => o.value === student.squad)}
     />
   )
 }

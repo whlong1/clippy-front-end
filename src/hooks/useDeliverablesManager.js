@@ -1,4 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
+
+import * as profileService from '../services/profileService'
 import * as deliverableService from '../services/deliverableService'
 
 export const useDeliverablesManager = (cohortId) => {
@@ -57,11 +59,29 @@ export const useDeliverablesManager = (cohortId) => {
         queryClient.setQueryData(detailsQueryKey, { ...payload, ...res })
       },
     },
+
+    updateStudentSquad: {
+      // action.payload = {profileId, data}
+      service: profileService.updateStudentSquad,
+      handleCache: (res, payload) => {
+        console.log(res, payload)
+        // const listQueryKey = ['studentDeliverables', cohortId]
+        // const detailsQueryKey = ['studentDeliverable', res._id]
+
+        // const updateListState = (prev) => prev.map((sd) => {
+        //   return sd._id === res._id ? { ...sd, ...res } : sd
+        // })
+
+        // queryClient.setQueryData(listQueryKey, updateListState)
+        // queryClient.setQueryData(detailsQueryKey, { ...payload, ...res })
+      },
+    },
+
   }
 
   return useMutation({
     mutationFn: (action) => types[action.type].service(action.payload),
     onSuccess: (res, action) => types[action.type].handleCache(res, action.payload),
-    onError: (error) => console.log('Error!'),
+    onError: (error) => console.log(error),
   })
 }
