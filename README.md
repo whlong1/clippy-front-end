@@ -27,8 +27,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • create css variables for fonts
 
-• organize attendance by month
-
 • on hover effect for links
 
 • tags for deliverable show
@@ -38,8 +36,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • format dates (FormatDate)
 
 • side menu icons
-
-• deliverable header
 
 • address date issues from previous iteration
 
@@ -53,6 +49,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • delete deliverable button should redirect to confirmation page
   bulk complete and delete should go in dropdown (...)
+
+• attendance list might need a condition for 0 attendance
 
 • REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
 
