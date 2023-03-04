@@ -36,9 +36,6 @@ const ShowDeliverable = (props) => {
     return a.normalizedName > b.normalizedName ? 1 : -1
   })
 
-  console.log('deliverable', deliverable)
-  console.log(sortedStudents)
-
   return (
     <section>
       <DeliverableHeader
