@@ -34,8 +34,10 @@ const ShowDeliverable = (props) => {
 
   return (
     <section>
-      <DeliverableHeader deliverable={deliverable} handleDelete={handleDelete} />
-
+      <DeliverableHeader
+        deliverable={deliverable}
+        handleDelete={handleDelete}
+      />
       {deliverable.students.map((student) => (
         <StudentDeliverableRow
           key={student._id}
@@ -44,9 +46,6 @@ const ShowDeliverable = (props) => {
           deliverableId={deliverableId}
         />
       ))}
-
-    
-
     </section>
   )
 }

@@ -45,6 +45,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • hasQuiz missing on backend
 
+• copy deliverable stats button
+
 • REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
 
 

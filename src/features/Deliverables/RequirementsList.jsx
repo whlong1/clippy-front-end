@@ -15,7 +15,7 @@ const RequirementsList = ({ deliverable }) => {
     <div>
       <h4>Tags / Requirements</h4>
       {requirementTags.map((r) => (
-        <p style={{ background: r.color }}>
+        <p key={r.text} style={{ background: r.color }}>
           {r.text}
         </p>
       ))}

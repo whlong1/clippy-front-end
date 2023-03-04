@@ -9,7 +9,7 @@ const DeliverablesList = ({ deliverables }) => {
   }
 
   // Need visual indicator for missing, complet etc
-  
+
   return (
     deliverables.map((d) => (
       <Link key={d._id} to={`/deliverables/${d._id}`}>
