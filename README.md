@@ -37,6 +37,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • side menu icons
 
+• make sure deliverables and people are sorted correctly
+
 • address date issues from previous iteration
 
 • hasQuiz missing on backend

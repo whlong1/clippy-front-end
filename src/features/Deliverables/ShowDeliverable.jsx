@@ -32,6 +32,8 @@ const ShowDeliverable = (props) => {
     })
   }
 
+  console.log('deliverable', deliverable)
+
   return (
     <section>
       <DeliverableHeader
