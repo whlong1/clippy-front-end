@@ -1,12 +1,20 @@
+import { useState } from 'react'
+import defaultPhoto from '../../assets/defaultPhoto.svg'
+
 const ProfilePicture = ({ gitHubUserName, size }) => {
-  const defaultImg = 'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
-  const pictureURL = gitHubUserName ? `https://github.com/${gitHubUserName}.png` : defaultImg
+  const [isLoading, setIsLoading] = useState(true)
+
+  const [photo, setPhoto] = useState(
+    gitHubUserName ? `https://github.com/${gitHubUserName}.png` : defaultPhoto
+  )
 
   return (
     <img
       alt="github-profile"
       style={{ width: size }}
-      src={pictureURL}
+      onLoad={() => setIsLoading(false)}
+      onError={() => setPhoto(defaultPhoto)}
+      src={isLoading ? defaultPhoto : photo}
     />
   )
 }

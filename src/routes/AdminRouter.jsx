@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
 
 // Components
-import Squads from '../features/Admin/Squads.jsx'
+import Profiles from '../features/Admin/Profiles.jsx'
 import Cohorts from '../features/Admin/Cohorts.jsx'
 import NewCohort from '../features/Admin/NewCohort.jsx'
 import ContentLayout from '../layouts/ContentLayout.jsx'
@@ -17,10 +17,9 @@ const AdminRouter = (props) => {
     <Routes>
       <Route element={<ContentLayout menu={<AdminMenu {...props} />} />}>
         <Route index element={<FeatureLanding title="Admin" />} />
+        <Route path='profiles' element={<Profiles />} />
         <Route path='cohorts' element={<Cohorts {...props} />} />
         <Route path='cohorts/new' element={<NewCohort {...props} />} />
-        <Route path='squads' element={<Squads />} />
-        <Route path='profiles' element={<section>Profile List</section>} />
       </Route>
     </Routes>
   )

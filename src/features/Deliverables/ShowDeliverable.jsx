@@ -5,7 +5,7 @@ import { useShowDeliverable } from '../../hooks/useShowDeliverable'
 import { useDeliverablesManager } from '../../hooks/useDeliverablesManager'
 
 // Components
-import RequirementsList from './RequirementsList'
+import DeliverableHeader from './DeliverableHeader'
 import StudentDeliverableRow from './StudentDeliverableRow'
 import ContentStatus from '../../components/ContentStatus/ContentStatus'
 
@@ -26,7 +26,6 @@ const ShowDeliverable = (props) => {
   }
 
   const handleSquad = (profileId, squadData) => {
-    console.log(profileId, squadData)
     mutation.mutate({
       type: 'updateStudentSquad',
       payload: { profileId: profileId, squadData: squadData, deliverableId }
@@ -35,14 +34,10 @@ const ShowDeliverable = (props) => {
 
   return (
     <section>
-      <h1>{deliverable.name}</h1>
-
-      {deliverable.dueDate}
-      {deliverable.dueDate}
-
-      <h2>Requirements</h2>
-      <RequirementsList deliverable={deliverable} />
-
+      <DeliverableHeader
+        deliverable={deliverable}
+        handleDelete={handleDelete}
+      />
       {deliverable.students.map((student) => (
         <StudentDeliverableRow
           key={student._id}
@@ -51,9 +46,6 @@ const ShowDeliverable = (props) => {
           deliverableId={deliverableId}
         />
       ))}
-
-      <button onClick={handleDelete}>Delete</button>
-
     </section>
   )
 }

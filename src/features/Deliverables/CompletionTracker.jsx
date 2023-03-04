@@ -1,3 +1,4 @@
+// STUDENT ONLY
 const CompletionTracker = ({ studentDeliverables }) => {
   const deliverableCount = studentDeliverables.length
   const completedCount = studentDeliverables.filter((d) => d.status === 'complete').length
@@ -5,7 +6,7 @@ const CompletionTracker = ({ studentDeliverables }) => {
 
   return (
     <div>
-      <p>Completion rate:</p>
+      <h4>Completion rate:</h4>
       {percentComplete}% Complete
     </div>
   )

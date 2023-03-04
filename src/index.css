@@ -43,13 +43,20 @@ h2 {
   font-size: var(--font-reg);
 }
 
-
 nav {
   width: 72px;
   padding: 24px;
   height: 100vh;
   background: var(--nav-background);
   border-right: 1px solid var(--border-color);
+}
+
+/* Leftmost App Nav */
+#root>nav li,
+#root>nav button {
+  border: none;
+  display: flex;
+  justify-content: center;
 }
 
 main {
@@ -61,28 +68,27 @@ main {
   align-items: center;
 }
 
-main > nav,
-main > section {
+main>nav,
+main>section {
   height: 100vh;
   display: flex;
   overflow-y: scroll;
   flex-direction: column;
 }
 
-main > section {
+main>section {
   width: 100%;
   padding: 24px;
   background: #101115;
 }
 
-main > nav {
+main>nav {
   width: 312px;
 }
 
 .page {
   padding: 24px;
 }
-
 
 ul {
   margin: 0;
@@ -91,11 +97,9 @@ ul {
   display: flex;
   list-style: none;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 li {
-  border-radius: 50%;
   border: 1px solid var(--border-color);
 }
 
@@ -116,18 +120,89 @@ img {
 }
 
 a {
+  height: 24px;
+  margin: 16px 0;
   display: flex;
-  justify-content: space-between;
-}
-
-.row {
-  width: 100%;
-  display: flex;
+  color: white;
   align-items: center;
-  justify-content: space-around;
+  text-decoration: none;
+  justify-content: space-between;
+  
 }
 
 /* Hide default scrollbar */
 ::-webkit-scrollbar {
+  width: 0;
   background-color: transparent;
+}
+
+/* Fix cursor on text */
+h1,
+h2,
+h3,
+p {
+  cursor: default;
+}
+
+a * {
+  cursor: pointer;
+}
+
+/* PeopleList CSS */
+
+nav section header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav section header p {
+  margin-left: 10px;
+  margin-right: auto;
+}
+
+nav section header button {
+  border: none;
+}
+
+nav section header button img {
+  width: 12px;
+}
+
+/* All row style elements */
+div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ProfileInfo CSS */
+
+div>img {
+  margin-right: 12px;
+}
+
+/* Show Deliverable  */
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.header section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header section div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.header section div * {
+  margin: 0;
 }

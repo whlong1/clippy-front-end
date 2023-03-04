@@ -1,21 +1,24 @@
 const RequirementsList = ({ deliverable }) => {
+  const requirements = {
+    hasQuiz: { color: 'red', text: 'Quiz' },
+    hasMiscUrl: { color: 'blue', text: 'Misc' },
+    hasGitHubUrl: { color: 'green', text: 'Github' },
+    hasTrelloUrl: { color: 'purple', text: 'Trello' },
+    hasDeploymentUrl: { color: 'orange', text: 'Deployment' },
+    hasCodeSandboxUrl: { color: 'yellow', text: 'Code Sandbox' },
+  }
+
+  const activeReqs = Object.entries(requirements).filter((obj) => deliverable[obj[0]])
+  const requirementTags = activeReqs.map((r) => requirements[r[0]])
+
   return (
     <div>
-      <p>
-        hasMiscUrl: {deliverable.hasMiscUrl}
-      </p>
-      <p>
-        hasGitHubUrl:{deliverable.hasGitHubUrl}
-      </p>
-      <p>
-        hasTrelloUrl: {deliverable.hasTrelloUrl}
-      </p>
-      <p>
-        hasDeploymentUrl: {deliverable.hasDeploymentUrl}
-      </p>
-      <p>
-        hasCodeSandboxUrl: {deliverable.hasCodeSandboxUrl}
-      </p>
+      <h4>Tags / Requirements</h4>
+      {requirementTags.map((r) => (
+        <p key={r.text} style={{ background: r.color }}>
+          {r.text}
+        </p>
+      ))}
     </div>
   )
 }

@@ -13,7 +13,7 @@ const ShowPerson = ({ user, cohortId }) => {
   if (status === 'error') return <ContentStatus status={status} />
   if (status === 'loading') return <ContentStatus status={status} />
   // This might cause an issue if people belong to multiple cohorts.
-  if (person.cohort !== cohortId && person.role === 'students') return <Navigate to='/people' />
+  // if (person.cohort !== cohortId && person.role === 'students') return <Navigate to='/people' />
 
   const fullName = `${person.preferredName} ${person.lastName}`
 
