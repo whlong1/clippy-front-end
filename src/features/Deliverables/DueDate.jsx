@@ -1,4 +1,4 @@
-const FormatDate = ({ date }) => {
+const DueDate = ({ date }) => {
   const options = {
     hour12: true,
     month: 'long',
@@ -22,4 +22,4 @@ const FormatDate = ({ date }) => {
   )
 }
 
-export default FormatDate
+export default DueDate

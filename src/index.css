@@ -126,8 +126,10 @@ a {
   margin: 16px 0;
   display: flex;
   color: white;
+  align-items: center;
   text-decoration: none;
   justify-content: space-between;
+  
 }
 
 /* Hide default scrollbar */
@@ -199,5 +201,10 @@ div>img {
 
 .header section div {
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.header section div * {
+  margin: 0;
 }

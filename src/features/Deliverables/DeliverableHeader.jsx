@@ -1,6 +1,6 @@
 import RequirementsList from './RequirementsList'
 import SubmissionTracker from './SubmissionTracker'
-import FormatDate from '../../components/FormatDate/FormatDate'
+import DueDate from './DueDate'
 
 const DeliverableHeader = ({ deliverable, handleDelete }) => {
 
@@ -14,7 +14,7 @@ const DeliverableHeader = ({ deliverable, handleDelete }) => {
       </section>
 
       <section>
-        <FormatDate date={deliverable.dueDate} />
+        <DueDate date={deliverable.dueDate} />
         <RequirementsList deliverable={deliverable} />
         <SubmissionTracker deliverable={deliverable} />
       </section>

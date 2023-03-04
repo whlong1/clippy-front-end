@@ -10,10 +10,10 @@ const StudentDeliverableRow = ({ deliverableId, student, handleSquad }) => {
   const path = `/deliverables/${deliverableId}/students/${studentDeliverableId}/grade`
 
   return (
-    <div className="row">
+    <div>
 
       <ProfileInfo profile={student} />
-      <GroupSelect student={student} handleSquad={handleSquad} />
+      {/* <GroupSelect student={student} handleSquad={handleSquad} /> */}
 
       <Link to={path}>
         <p>Status: {student.status}</p>
