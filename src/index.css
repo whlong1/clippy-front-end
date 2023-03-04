@@ -97,7 +97,6 @@ ul {
   display: flex;
   list-style: none;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 li {

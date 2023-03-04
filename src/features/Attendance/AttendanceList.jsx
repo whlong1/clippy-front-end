@@ -1,6 +1,10 @@
 import { useState } from 'react'
 import { Link } from "react-router-dom"
 
+// Assets
+import arrow from '../../assets/arrow.svg'
+import downArrow from '../../assets/downArrow.svg'
+
 const AttendanceList = ({ attendance }) => {
   const [selectedMonth, setSelectedMonth] = useState("")
 
@@ -56,10 +60,17 @@ const AttendanceList = ({ attendance }) => {
   return (
     months.map((month) => (
       <section key={month.num}>
+
         {monthlyAttendance[month.num]?.length > 0 &&
-          <h4 key={month.num} onClick={() => handleSelect(month)}>
-            {month.long}
-          </h4>
+          <header key={month.num}>
+            <h2>{month.long}</h2>
+            <button onClick={() => handleSelect(month)}>
+              <img
+                src={selectedMonth === month.num ? downArrow : arrow}
+                alt="An arrow"
+              />
+            </button>
+          </header>
         }
 
         {selectedMonth === month.num &&
