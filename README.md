@@ -47,6 +47,13 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • copy deliverable stats button
 
+• group show deliverable and related components into new directory
+
+• date, requirements, completion, share/copy icons
+
+• delete deliverable button should redirect to confirmation page
+  bulk complete and delete should go in dropdown (...)
+
 • REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
 
 

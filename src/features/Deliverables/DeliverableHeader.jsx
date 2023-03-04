@@ -9,8 +9,8 @@ const DeliverableHeader = ({ deliverable, handleDelete }) => {
 
       <section>
         <h1>{deliverable.name}</h1>
-        <button>Copy</button>
         <button onClick={handleDelete}>Delete</button>
+        <button>Copy</button>
       </section>
 
       <section>

@@ -13,7 +13,7 @@ const StudentDeliverableRow = ({ deliverableId, student, handleSquad }) => {
     <div>
 
       <ProfileInfo profile={student} />
-      {/* <GroupSelect student={student} handleSquad={handleSquad} /> */}
+      <GroupSelect student={student} handleSquad={handleSquad} />
 
       <Link to={path}>
         <p>Status: {student.status}</p>
