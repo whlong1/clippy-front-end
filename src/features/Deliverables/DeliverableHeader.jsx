@@ -5,6 +5,9 @@ import DueDate from './DueDate'
 import RequirementsList from './RequirementsList'
 import SubmissionTracker from './SubmissionTracker'
 
+// Temporary
+import * as deliverableService from '../../services/deliverableService'
+
 const DeliverableHeader = ({ deliverable, handleDelete }) => {
   const [copied, setCopied] = useState(false)
 
@@ -30,6 +33,11 @@ const DeliverableHeader = ({ deliverable, handleDelete }) => {
     navigator.clipboard.writeText(deliverableRecord)
   }
 
+  const markAllComplete = async () => {
+    const data = await deliverableService.markAllDeliverablesComplete(deliverable._id)
+    console.log(data)
+  }
+
   return (
     <header className="header">
 
@@ -38,6 +46,9 @@ const DeliverableHeader = ({ deliverable, handleDelete }) => {
         <button onClick={handleDelete}>Delete</button>
         <button onClick={handleCopy}>
           {copied ? "Copied!" : "Copy"}
+        </button>
+        <button onClick={markAllComplete}>
+          Mark all complete
         </button>
       </section>
 
