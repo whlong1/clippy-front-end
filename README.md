@@ -35,9 +35,15 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • bulk mark complete
 
-• format dates
+• format dates (FormatDate)
 
 • side menu icons
+
+• deliverable header
+
+• address date issues from previous iteration
+
+• hasQuiz missing on backend
 
 • REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
 

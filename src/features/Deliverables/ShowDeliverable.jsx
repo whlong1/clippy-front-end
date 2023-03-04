@@ -5,9 +5,8 @@ import { useShowDeliverable } from '../../hooks/useShowDeliverable'
 import { useDeliverablesManager } from '../../hooks/useDeliverablesManager'
 
 // Components
-import RequirementsList from './RequirementsList'
+import DeliverableHeader from './DeliverableHeader'
 import StudentDeliverableRow from './StudentDeliverableRow'
-import DateDisplay from '../../components/DateDisplay/DateDisplay'
 import ContentStatus from '../../components/ContentStatus/ContentStatus'
 
 const ShowDeliverable = (props) => {
@@ -35,14 +34,7 @@ const ShowDeliverable = (props) => {
 
   return (
     <section>
-      <header>
-        <h1>{deliverable.name}</h1>
-        <DateDisplay date={deliverable.dueDate} />
-      </header>
-
-
-      <h2>Requirements</h2>
-      <RequirementsList deliverable={deliverable} />
+      <DeliverableHeader deliverable={deliverable} handleDelete={handleDelete} />
 
       {deliverable.students.map((student) => (
         <StudentDeliverableRow
@@ -53,7 +45,7 @@ const ShowDeliverable = (props) => {
         />
       ))}
 
-      <button onClick={handleDelete}>Delete</button>
+    
 
     </section>
   )

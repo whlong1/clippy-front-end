@@ -1,4 +1,4 @@
-const DateDisplay = ({ date }) => {
+const FormatDate = ({ date }) => {
   const options = {
     hour12: true,
     month: 'long',
@@ -13,10 +13,13 @@ const DateDisplay = ({ date }) => {
   const formattedDate = dateObj.toLocaleDateString('en-US', options)
 
   return (
-    <p>
-      {formattedDate}
-    </p>
+    <div>
+      <h4>Date</h4>
+      <p>
+        {formattedDate}
+      </p>
+    </div>
   )
 }
 
-export default DateDisplay
+export default FormatDate

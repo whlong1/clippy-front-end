@@ -184,4 +184,20 @@ div>img {
   margin-right: 12px;
 }
 
+/* Show Deliverable  */
 
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.header section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header section div {
+  display: flex;
+  flex-direction: column
+}
