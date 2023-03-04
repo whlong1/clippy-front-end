@@ -43,8 +43,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • hasQuiz missing on backend
 
-• copy deliverable stats button
-
 • group show deliverable and related components into new directory
 
 • date, requirements, completion, share/copy icons

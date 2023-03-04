@@ -32,7 +32,12 @@ const ShowDeliverable = (props) => {
     })
   }
 
+  const sortedStudents = deliverable.students.sort((a, b) => {
+    return a.normalizedName > b.normalizedName ? 1 : -1
+  })
+
   console.log('deliverable', deliverable)
+  console.log(sortedStudents)
 
   return (
     <section>
@@ -40,7 +45,7 @@ const ShowDeliverable = (props) => {
         deliverable={deliverable}
         handleDelete={handleDelete}
       />
-      {deliverable.students.map((student) => (
+      {sortedStudents.map((student) => (
         <StudentDeliverableRow
           key={student._id}
           student={student}
