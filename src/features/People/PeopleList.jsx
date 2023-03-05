@@ -15,6 +15,10 @@ const PeopleList = (props) => {
   const { role, people } = props
   const roleHeader = role[0].toUpperCase() + role.slice(1)
 
+  const sortedByNormalizedName = props.people.sort((a, b) => {
+    return a.normalizedName > b.normalizedName ? 1 : -1
+  })
+
   return (
     <section>
       <header>
@@ -25,7 +29,7 @@ const PeopleList = (props) => {
         </button>
       </header>
 
-      {isOpen && people.map((profile) => (
+      {isOpen && sortedByNormalizedName.map((profile) => (
         <Link key={profile._id} to={`/people/${profile._id}`}>
           <ProfileInfo profile={profile} />
         </Link>

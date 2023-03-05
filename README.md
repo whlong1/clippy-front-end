@@ -33,7 +33,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • side menu icons
 
-• make sure people are sorted correctly
+• make sure people are sorted correctly *****
 
 • address date issues from previous iteration
 

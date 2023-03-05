@@ -44,7 +44,7 @@ const ShowDeliverable = (props) => {
     })
   }
 
-  const sortedStudents = deliverable.students.sort((a, b) => {
+  const sortedByNormalizedName = deliverable.students.sort((a, b) => {
     return a.normalizedName > b.normalizedName ? 1 : -1
   })
 
@@ -55,7 +55,7 @@ const ShowDeliverable = (props) => {
         handleDelete={handleDelete}
         markAllComplete={markAllComplete}
       />
-      {sortedStudents.map((student) => (
+      {sortedByNormalizedName.map((student) => (
         <StudentDeliverableRow
           key={student._id}
           student={student}
