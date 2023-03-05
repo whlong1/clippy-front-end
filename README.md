@@ -33,7 +33,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • side menu icons
 
-• error in ProfilePicture ******
+• animated transitions/loading
 
 • address date issues from previous iteration
 
@@ -60,3 +60,5 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • Optimistic Updates: https://tanstack.com/query/v4/docs/react/guides/optimistic-updates
 
 • Invalidating Queries: https://www.codemzy.com/blog/invalidatequeries-react-query
+
+• Querey Key Factories: https://tkdodo.eu/blog/effective-react-query-keys#use-query-key-factories
