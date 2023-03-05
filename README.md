@@ -11,8 +11,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • Add Edit profile functionality
 
-• Research cancelling queries, refetching, etc
-
 • Check for validity of URLs in ExternalUrls.jsx (flag bad links/autocorrect?)
 
 • Build out features/Admin components and functionality (cohorts, squads, profiles)
@@ -50,11 +48,10 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • attendance list might need a condition for 0 attendance
 
-• figure out redirect on reload GradeStudentDeliverable + ...
+• figure out redirect on reload GradeStudentDeliverable + ShowPerson
 
-• src/features/Deliverables/GradeStudentDeliverable.jsx 
-  src/features/Deliverables/ShowDeliverable.jsx
-  update gradedBy
+• cached deliverable details get out of sync when a student squad is assigned
+  might stem from query keys
 
 • REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
 
