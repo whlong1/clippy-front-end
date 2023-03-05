@@ -1,11 +1,10 @@
 const DueDate = ({ date }) => {
   const options = {
     hour12: true,
-    month: 'long',
+    month: 'short',
     day: 'numeric',
-    hour: 'numeric',
     year: 'numeric',
-    weekday: 'long',
+    hour: 'numeric',
     minute: 'numeric',
   }
 
@@ -15,9 +14,7 @@ const DueDate = ({ date }) => {
   return (
     <div>
       <h4>Date</h4>
-      <p>
-        {formattedDate}
-      </p>
+      <p>{formattedDate}</p>
     </div>
   )
 }

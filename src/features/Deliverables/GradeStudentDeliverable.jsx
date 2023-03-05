@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams, useNavigate, Navigate } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 
 // Components
 import RequirementsList from "./RequirementsList"
@@ -10,7 +10,8 @@ import ContentStatus from "../../components/ContentStatus/ContentStatus"
 import { useDeliverablesManager } from "../../hooks/useDeliverablesManager"
 import { useShowStudentDeliverable } from '../../hooks/useShowStudentDeliverable'
 
-const GradeStudentDeliverable = ({ cohortId }) => {
+const GradeStudentDeliverable = (props) => {
+  const { cohortId } = props
   const navigate = useNavigate()
   const [formData, setFormData] = useState(null)
   const mutation = useDeliverablesManager(cohortId)
@@ -23,17 +24,21 @@ const GradeStudentDeliverable = ({ cohortId }) => {
 
   if (status === 'error') return <ContentStatus status={status} />
   if (status === 'loading' || !formData) return <ContentStatus status={status} />
-  if (studentDeliverable.profile.cohort !== cohortId) return <Navigate to='/deliverables' />
+  // if (studentDeliverable.profile.cohort !== cohortId) return <Navigate to='/deliverables' />
 
   const handleChange = ({ target }) => {
     setFormData({ ...formData, [target.name]: target.value })
   }
 
   const handleGrade = () => {
-    mutation.mutate({ type: 'grade', payload: { ...formData, gradedBy: "Hunter" } })
+    mutation.mutate({
+      type: 'grade',
+      payload: { ...formData, gradedBy: props.profile.name }
+    })
     navigate(`/deliverables/${deliverableId}`)
   }
 
+  // Would be nice to have some clarity between 'profile' (student) and 'profile' (current user)
   const { profile: { preferredName, lastName } } = formData
   const title = `Grade ${formData.name} for ${preferredName} ${lastName}`
 

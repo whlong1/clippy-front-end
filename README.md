@@ -11,8 +11,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • Add Edit profile functionality
 
-• Research cancelling queries, refetching, etc
-
 • Check for validity of URLs in ExternalUrls.jsx (flag bad links/autocorrect?)
 
 • Build out features/Admin components and functionality (cohorts, squads, profiles)
@@ -31,17 +29,15 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • tags for deliverable show
 
-• bulk mark complete
-
 • format dates (FormatDate)
 
 • side menu icons
 
+• make sure people are sorted correctly
+
 • address date issues from previous iteration
 
 • hasQuiz missing on backend
-
-• copy deliverable stats button
 
 • group show deliverable and related components into new directory
 
@@ -51,6 +47,11 @@ https://auth0.com/docs/quickstart/spa/react/interactive
   bulk complete and delete should go in dropdown (...)
 
 • attendance list might need a condition for 0 attendance
+
+• figure out redirect on reload GradeStudentDeliverable + ShowPerson
+
+• cached deliverable details get out of sync when a student squad is assigned
+  might stem from query keys
 
 • REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
 
