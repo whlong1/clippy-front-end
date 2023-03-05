@@ -1,13 +1,15 @@
 import ProfilePicture from "../ProfilePicture/ProfilePicture"
 
 const ProfileInfo = ({ profile }) => {
-  const { preferredName, firstName, lastName, gitHubUserName } = profile
-  const userName = `${preferredName ? preferredName : firstName} ${lastName}`
+  const { preferredName, lastName, gitHubUserName } = profile
+  
+  const last = lastName[0].toUpperCase() + lastName.slice(1)
+  const first = preferredName[0].toUpperCase() + preferredName.slice(1)
 
   return (
     <div>
       <ProfilePicture gitHubUserName={gitHubUserName} size='20px' />
-      <p>{userName}</p>
+      <p>{first} {last}</p>
     </div>
   )
 }
