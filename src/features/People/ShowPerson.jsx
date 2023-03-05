@@ -15,7 +15,9 @@ const ShowPerson = ({ user, cohortId }) => {
   // This might cause an issue if people belong to multiple cohorts.
   // if (person.cohort !== cohortId && person.role === 'students') return <Navigate to='/people' />
 
-  const fullName = `${person.preferredName} ${person.lastName}`
+  const last = person.lastName[0].toUpperCase() + person.lastName.slice(1)
+  const first = person.preferredName[0].toUpperCase() + person.preferredName.slice(1)
+  const fullName = first + " " + last
 
   return (
     <section>
