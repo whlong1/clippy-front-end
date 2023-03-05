@@ -64,26 +64,21 @@ export const useDeliverablesManager = (cohortId) => {
       service: profileService.updateStudentSquad,
       handleCache: (res, payload) => {
         const { profileId, deliverableId } = payload
-        const listQueryKey = ['deliverables', cohortId]
-        const detailsQueryKey = ['deliverable', deliverableId]
+        const queryKey = ['deliverable', deliverableId]
 
-        const handleStudentsArr = (d) => d.students.map((s) =>
+        const handleNestedStudents = (d) => d.students.map((s) =>
           s.profileId === profileId ? { ...s, squad: res.squad } : s
         )
 
-        const updateListState = (state) => {
-          const updatedDeliverables = state.map((d) => {
-            return { ...d, students: handleStudentsArr(d) }
-          })
-          return updatedDeliverables
+        const updateState = (state) => {
+          return { ...state, students: handleNestedStudents(state) }
         }
 
-        const updateDetailsState = (state) => {
-          return { ...state, students: handleStudentsArr(state) }
-        }
+        queryClient.setQueryData(queryKey, updateState)
 
-        queryClient.setQueryData(listQueryKey, updateListState)
-        queryClient.setQueryData(detailsQueryKey, updateDetailsState)
+        // Triggers refetch for inactive deliverable queries (might not be necessary)
+        // type: 'all' invalidates all deliverable queries (active & inactive)
+        queryClient.invalidateQueries({ queryKey: ['deliverable'], type: 'inactive' })
       },
     },
     markAllComplete: {

@@ -37,7 +37,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • address date issues from previous iteration
 
-• hasQuiz missing on backend
+• update how we handle quiz deliverables
 
 • group show deliverable and related components into new directory
 
@@ -49,9 +49,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • attendance list might need a condition for 0 attendance
 
 • figure out redirect on reload GradeStudentDeliverable + ShowPerson
-
-• cached deliverable details get out of sync when a student squad is assigned
-  might stem from query keys
 
 • REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
 

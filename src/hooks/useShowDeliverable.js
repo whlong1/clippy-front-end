@@ -4,7 +4,7 @@ import * as deliverableService from '../services/deliverableService'
 export const useShowDeliverable = (deliverableId) => {
   const { data: deliverable, status } = useQuery({
     queryKey: ['deliverable', deliverableId],
-    queryFn: () => deliverableService.showDeliverable(deliverableId)
+    queryFn: () => deliverableService.showDeliverable(deliverableId),
   })
   return { deliverable, status }
 }
