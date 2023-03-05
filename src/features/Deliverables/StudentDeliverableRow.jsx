@@ -15,15 +15,12 @@ const StudentDeliverableRow = ({ deliverableId, student, handleSquad }) => {
       <ProfileInfo profile={student} />
       <GroupSelect student={student} handleSquad={handleSquad} />
 
-      <Link to={path}>
-        <p>Status: {student.status}</p>
-        <p>{student.preferredName}</p>
-        <p>{student.lastName}</p>
-      </Link>
+      <p>Status: {student.status}</p>
 
       External link:
       <ExternalUrls student={student} />
 
+      <Link to={path}>View</Link>
     </div>
   )
 }
