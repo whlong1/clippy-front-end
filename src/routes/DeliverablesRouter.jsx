@@ -11,7 +11,7 @@ import StudentDeliverablesMenu from '../features/Deliverables/StudentDeliverable
 import GradeStudentDeliverable from '../features/Deliverables/GradeStudentDeliverable.jsx'
 
 const DeliverablesRouter = (props) => {
-  const { user, cohortId } = props
+  const { user, profile, cohortId } = props
 
   // Student Routes:
   if (!user.isAdmin) return (
@@ -33,10 +33,13 @@ const DeliverablesRouter = (props) => {
       <Route element={<ContentLayout menu={<DeliverablesMenu {...props} />} />}>
         <Route index element={<FeatureLanding title="Deliverables" />} />
         <Route path='new' element={<NewDeliverable cohortId={cohortId} />} />
-        <Route path=':deliverableId' element={<ShowDeliverable user={user} cohortId={cohortId} />} />
+        <Route
+          path=':deliverableId'
+          element={<ShowDeliverable user={user} profile={profile} cohortId={cohortId} />}
+        />
         <Route
           path=':deliverableId/students/:studentDeliverableId/grade'
-          element={<GradeStudentDeliverable user={user} cohortId={cohortId} />}
+          element={<GradeStudentDeliverable user={user} profile={profile} cohortId={cohortId} />}
         />
       </Route>
     </Routes>

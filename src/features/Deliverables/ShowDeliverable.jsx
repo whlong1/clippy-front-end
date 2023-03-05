@@ -21,15 +21,19 @@ const ShowDeliverable = (props) => {
   if (deliverable.cohort !== cohortId) return <Navigate to='/deliverables' />
 
   const handleDelete = () => {
-    mutation.mutate({ type: 'remove', payload: { deliverableId: deliverableId } })
+    mutation.mutate({
+      type: 'remove', payload: { deliverableId: deliverableId }
+    })
     navigate('/deliverables')
   }
 
+  // Bulk update on associated studentDeliverables:
   const markAllComplete = () => {
-    const formData = { gradedBy: "Hunter", status: "complete" }
+    const formData = {
+      status: "complete", gradedBy: props.profile.name,
+    }
     mutation.mutate({
-      type: 'markAllComplete',
-      payload: { deliverableId, formData }
+      type: 'markAllComplete', payload: { deliverableId, formData }
     })
   }
 
