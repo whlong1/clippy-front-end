@@ -52,6 +52,12 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • attendance list might need a condition for 0 attendance
 
+• src/features/Deliverables/GradeStudentDeliverable.jsx 
+  src/features/Deliverables/DeliverableHeader.jsx
+  update gradedBy
+
+• when a deliverable is created, if status is not present on student, mark as assigned
+
 • REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
 
 

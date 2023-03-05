@@ -25,6 +25,14 @@ const ShowDeliverable = (props) => {
     navigate('/deliverables')
   }
 
+  const markAllComplete = () => {
+    const formData = { gradedBy: "Hunter", status: "complete" }
+    mutation.mutate({
+      type: 'markAllComplete',
+      payload: { deliverableId, formData }
+    })
+  }
+
   const handleSquad = (profileId, squadData) => {
     mutation.mutate({
       type: 'updateStudentSquad',
@@ -41,6 +49,7 @@ const ShowDeliverable = (props) => {
       <DeliverableHeader
         deliverable={deliverable}
         handleDelete={handleDelete}
+        markAllComplete={markAllComplete}
       />
       {sortedStudents.map((student) => (
         <StudentDeliverableRow

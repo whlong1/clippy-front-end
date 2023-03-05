@@ -60,7 +60,6 @@ export const useDeliverablesManager = (cohortId) => {
         queryClient.setQueryData(detailsQueryKey, { ...payload, ...res })
       },
     },
-
     updateStudentSquad: {
       service: profileService.updateStudentSquad,
       handleCache: (res, payload) => {
@@ -87,7 +86,20 @@ export const useDeliverablesManager = (cohortId) => {
         queryClient.setQueryData(detailsQueryKey, updateDetailsState)
       },
     },
-
+    markAllComplete: {
+      service: deliverableService.markAllDeliverablesComplete,
+      handleCache: (res, payload) => {
+        const { deliverableId } = payload
+        const listQueryKey = ['deliverables', cohortId]
+        const detailsQueryKey = ['deliverable', deliverableId]
+        queryClient.setQueryData(listQueryKey, (state) => {
+          return state.map((d) => d._id === deliverableId ? res : d)
+        })
+        queryClient.setQueryData(detailsQueryKey, (state) => {
+          return { ...state, students: res.students }
+        })
+      },
+    },
   }
 
   return useMutation({

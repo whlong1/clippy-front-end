@@ -91,7 +91,7 @@ const submitStudentDeliverable = async (data) => {
   }
 }
 
-const markAllDeliverablesComplete = async (deliverableId) => {
+const markAllDeliverablesComplete = async ({ deliverableId, formData }) => {
   try {
     const res = await fetch(`${BASE_URL}/${deliverableId}/mark-complete`,
       {
@@ -100,7 +100,7 @@ const markAllDeliverablesComplete = async (deliverableId) => {
           'Authorization': `Bearer ${tokenService.getToken()}`,
           'Content-Type': 'application/json'
         },
-        // body: JSON.stringify(data)
+        body: JSON.stringify(formData)
       })
     return await res.json()
   } catch (error) {

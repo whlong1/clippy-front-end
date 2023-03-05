@@ -5,10 +5,7 @@ import DueDate from './DueDate'
 import RequirementsList from './RequirementsList'
 import SubmissionTracker from './SubmissionTracker'
 
-// Temporary
-import * as deliverableService from '../../services/deliverableService'
-
-const DeliverableHeader = ({ deliverable, handleDelete }) => {
+const DeliverableHeader = ({ deliverable, handleDelete, markAllComplete }) => {
   const [copied, setCopied] = useState(false)
 
   const statusTable = {
@@ -19,7 +16,7 @@ const DeliverableHeader = ({ deliverable, handleDelete }) => {
 
   const deliverableRecord = deliverable.students.map((s) =>
     statusTable[s.status] ? statusTable[s.status] + "\n" : "\n"
-  ).join("")
+  )
 
   useEffect(() => {
     const resetCopy = () => {
@@ -30,12 +27,7 @@ const DeliverableHeader = ({ deliverable, handleDelete }) => {
 
   const handleCopy = () => {
     setCopied(true)
-    navigator.clipboard.writeText(deliverableRecord)
-  }
-
-  const markAllComplete = async () => {
-    const data = await deliverableService.markAllDeliverablesComplete(deliverable._id)
-    console.log(data)
+    navigator.clipboard.writeText(deliverableRecord.join(""))
   }
 
   return (
@@ -43,7 +35,9 @@ const DeliverableHeader = ({ deliverable, handleDelete }) => {
 
       <section>
         <h1>{deliverable.name}</h1>
-        <button onClick={handleDelete}>Delete</button>
+        <button onClick={handleDelete}>
+          Delete
+        </button>
         <button onClick={handleCopy}>
           {copied ? "Copied!" : "Copy"}
         </button>
