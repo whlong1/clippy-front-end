@@ -1,10 +1,11 @@
 import { Navigate, useParams } from "react-router-dom"
 import { useShowPerson } from "../../hooks/useShowPerson"
 
+import defaultPhoto from '../../assets/defaultPhoto.svg'
+
 // Components
 import RolePanel from "./RolePanel"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
-import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
 
 const ShowPerson = ({ user, cohortId }) => {
   const { profileId } = useParams()
@@ -15,12 +16,24 @@ const ShowPerson = ({ user, cohortId }) => {
   // This might cause an issue if people belong to multiple cohorts.
   // if (person.cohort !== cohortId && person.role === 'students') return <Navigate to='/people' />
 
-  const fullName = `${person.preferredName} ${person.lastName}`
+  const formattedRole = person.role.at(-1) === 's'
+    ? person.role[0].toUpperCase() + person.role.slice(1, -1)
+    : person.role[0].toUpperCase() + person.role.slice(1)
+
+  const last = person.lastName[0].toUpperCase() + person.lastName.slice(1)
+  const first = person.preferredName[0].toUpperCase() + person.preferredName.slice(1)
+  const fullName = first + " " + last
 
   return (
     <section>
-      <ProfilePicture gitHubUserName={person.gitHubUserName} size='100px' />
-      {person.role}
+      <img
+        alt="github-profile"
+        style={{ width: '100px' }}
+        src={`https://github.com/${person.gitHubUserName}.png`}
+        onError={({ target }) => { target.onerror = null; target.src = defaultPhoto }}
+      />
+
+      {formattedRole}
       <h1>{fullName}</h1>
       {person.preferredPronouns}
 

@@ -33,7 +33,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • side menu icons
 
-• make sure people are sorted correctly
+• animated transitions/loading
 
 • address date issues from previous iteration
 
@@ -58,3 +58,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • React Query Keys: https://tkdodo.eu/blog/effective-react-query-keys
 
 • Optimistic Updates: https://tanstack.com/query/v4/docs/react/guides/optimistic-updates
+
+• Invalidating Queries: https://www.codemzy.com/blog/invalidatequeries-react-query
+
+• Querey Key Factories: https://tkdodo.eu/blog/effective-react-query-keys#use-query-key-factories
