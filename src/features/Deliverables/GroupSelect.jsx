@@ -29,8 +29,6 @@ const GroupSelect = ({ student, handleSquad }) => {
   }
 
   const handleChange = (option) => {
-    console.log('change')
-    console.log('Option Object', option)
     handleSquad(student.profileId, { squad: option.value })
   }
 

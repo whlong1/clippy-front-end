@@ -25,7 +25,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • create css variables for fonts
 
-• default date on new deliverable - 2 days from now, 9 AM
 
 • on hover effect for links
 
@@ -37,7 +36,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • animated transitions/loading
 
-• address date issues from previous iteration
+• address date issues from previous iteration on deployment
 
 • update how we handle quiz deliverables
 

@@ -6,6 +6,7 @@ const DueDate = ({ date }) => {
     year: 'numeric',
     hour: 'numeric',
     minute: 'numeric',
+    timeZone: 'America/New_York'
   }
 
   const dateObj = new Date(date)
