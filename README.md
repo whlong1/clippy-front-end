@@ -21,10 +21,9 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • For security, might be worth refactoring how admin and student routes are handled
 
-• Code editor
+• formate date on grade deliverable
 
 • create css variables for fonts
-
 
 • on hover effect for links
 
@@ -63,3 +62,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • Invalidating Queries: https://www.codemzy.com/blog/invalidatequeries-react-query
 
 • Querey Key Factories: https://tkdodo.eu/blog/effective-react-query-keys#use-query-key-factories
+
+
+## Tech
+
+• https://github.com/uiwjs/react-codemirror

@@ -1,0 +1,46 @@
+.cm-editor {
+  border-radius: 4px;
+}
+
+.cm-scroller {
+  width: 100%;
+  padding: 2px 2.25px;
+}
+
+.cm-content {
+  padding-left: 2.5px !important;
+}
+
+.cm-line {
+  padding-bottom: 1px !important;
+}
+
+.cm-gutter {
+  padding-right: 2.5px;
+  border-right: .5px solid rgb(60, 60, 60);
+}
+
+.cm-gutterElement {
+  margin-top: 0px !important;
+}
+
+.cm-gutters * {
+  justify-content: flex-start;
+}
+
+.cm-activeLine {
+  background: none !important;
+}
+
+.cm-foldGutter {
+  width: 0;
+  border: none;
+}
+
+.cm-gutterElement {
+  background: none !important;
+}
+
+.cm-gutterElement span {
+  display: none;
+}

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 
 // Components
+import CodeEditor from "./CodeEditor"
 import RequirementsList from "./RequirementsList"
 import DeliverableStatusSelect from "./DeliverableStatusSelect"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
@@ -50,8 +51,10 @@ const GradeStudentDeliverable = (props) => {
       <p>URLS:</p>
       <RequirementsList deliverable={formData} />
 
-      <textarea></textarea>
-      <pre>Code Editor Placeholder</pre>
+      <CodeEditor
+        formData={formData}
+        setFormData={setFormData}
+      />
 
       <h3>Status: {formData.status}</h3>
       <DeliverableStatusSelect formData={formData} handleChange={handleChange} />
