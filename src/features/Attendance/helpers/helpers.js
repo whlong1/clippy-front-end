@@ -13,7 +13,6 @@ const buildStatusArray = (arr) => {
       status: students.some((el) => el._id === s._id) ? 'P' : 'W',
     }
   })
-
   return studentStatusArr.sort((a, b) => a.normalizedName < b.normalizedName ? -1 : 1)
 }
 
@@ -23,7 +22,8 @@ const handleDate = (date) => {
     return newDate.toISOString().slice(0, 10)
   } else {
     const newDate = new Date()
-    return newDate.toISOString().slice(0, 10)
+    const offset = newDate.getTimezoneOffset()
+    return new Date(newDate.getTime() - (offset * 60000)).toISOString().slice(0, 10)
   }
 }
 

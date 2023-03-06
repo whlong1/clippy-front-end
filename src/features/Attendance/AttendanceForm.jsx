@@ -10,7 +10,7 @@ import { useIndexPeople } from "../../hooks/useIndexPeople"
 // Helpers
 import { buildStatusArray, handleDate } from "./helpers/helpers"
 
-const AttendanceForm = ({ cohortId, submitFn, prevAttendance }) => {
+const AttendanceForm = ({ cohortId, profile, submitFn, prevAttendance }) => {
   const { attendanceId } = useParams()
   const [studentData, setStudentData] = useState([])
   const { people, status } = useIndexPeople(cohortId)
@@ -28,7 +28,6 @@ const AttendanceForm = ({ cohortId, submitFn, prevAttendance }) => {
     }
   }, [cohortId, attendanceId, people, prevAttendance])
 
-
   // No need for ContentStatus component here
   // Form is already wrapped with a <section> tag through New/EditAttendance
   if (status === 'error') return <h1>Error</h1>
@@ -44,7 +43,7 @@ const AttendanceForm = ({ cohortId, submitFn, prevAttendance }) => {
       ...attendanceData,
       cohort: cohortId,
       students: studentData,
-      takenBy: 'You really need to update this value in NewAttendance.jsx',
+      takenBy: profile.name,
     }
     submitFn(formData)
   }
