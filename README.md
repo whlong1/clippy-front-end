@@ -21,15 +21,11 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • For security, might be worth refactoring how admin and student routes are handled
 
-• formate date on grade deliverable
-
 • create css variables for fonts
 
 • on hover effect for links
 
 • tags for deliverable show
-
-• format dates (FormatDate)
 
 • side menu icons
 
