@@ -1,15 +1,19 @@
+.cm-editor {
+  border-radius: 4px;
+}
+
 .cm-scroller {
   width: 100%;
-  padding: 2px 4px;
+  padding: 2px 2.25px;
 }
 
 .cm-content {
-  padding-left: 2px !important;
+  padding-left: 2.5px !important;
 }
 
 .cm-gutter {
-  padding-right: 2px;
-  border-right: .5px solid rgb(80, 80, 80);
+  padding-right: 2.5px;
+  border-right: .5px solid rgb(70, 70, 70);
 }
 
 .cm-gutters * {
