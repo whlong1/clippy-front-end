@@ -10,7 +10,7 @@ import FeatureLanding from '../components/FeatureLanding/FeatureLanding.jsx'
 import StudentAttendanceMenu from '../features/Attendance/StudentAttendanceMenu.jsx'
 
 const AttendanceRouter = (props) => {
-  const { user, cohortId } = props
+  const { user, cohortId, profile } = props
 
   // Student Routes:
   if (!user.isAdmin) return (
@@ -27,9 +27,9 @@ const AttendanceRouter = (props) => {
     <Routes>
       <Route element={<ContentLayout menu={<AttendanceMenu {...props} />} />}>
         <Route index element={<FeatureLanding title="Attendance" />} />
-        <Route path='new' element={<NewAttendance cohortId={cohortId} />} />
-        <Route path=':attendanceId/edit' element={<EditAttendance cohortId={cohortId} />} />
+        <Route path='new' element={<NewAttendance cohortId={cohortId} profile={profile} />} />
         <Route path=':attendanceId' element={<ShowAttendance user={user} cohortId={cohortId} />} />
+        <Route path=':attendanceId/edit' element={<EditAttendance cohortId={cohortId} profile={profile} />} />
       </Route>
     </Routes>
   )

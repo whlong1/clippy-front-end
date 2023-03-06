@@ -17,9 +17,8 @@ const AppRouter = (props) => {
   const [cohortId, setCohortId] = useState(profile.cohort)
 
   const appProps = {
-    user,
-    cohortId,
     ...props,
+    cohortId,
     setCohortId,
   }
 

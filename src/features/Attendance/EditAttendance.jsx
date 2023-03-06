@@ -8,14 +8,14 @@ import ContentStatus from "../../components/ContentStatus/ContentStatus"
 import { useAttendanceManager } from "../../hooks/useAttendanceManager"
 import { useShowAttendance } from '../../hooks/useShowAttendance'
 
-const EditAttendance = ({ cohortId }) => {
+const EditAttendance = ({ cohortId, profile }) => {
   const navigate = useNavigate()
   const { attendanceId } = useParams()
   const mutation = useAttendanceManager(cohortId)
   const { attendance, status } = useShowAttendance(attendanceId)
 
-  if (status === 'error') return <ContentStatus status={status}/>
-  if (status === 'loading') return <ContentStatus status={status}/>
+  if (status === 'error') return <ContentStatus status={status} />
+  if (status === 'loading') return <ContentStatus status={status} />
 
   const handleUpdate = (formData) => {
     mutation.mutate({ type: 'update', payload: formData })
@@ -26,6 +26,7 @@ const EditAttendance = ({ cohortId }) => {
     <section>
       <h1>Edit Attendance</h1>
       <AttendanceForm
+        profile={profile}
         cohortId={cohortId}
         submitFn={handleUpdate}
         prevAttendance={attendance}

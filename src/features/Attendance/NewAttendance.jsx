@@ -6,7 +6,7 @@ import AttendanceForm from "./AttendanceForm"
 // Hooks
 import { useAttendanceManager } from "../../hooks/useAttendanceManager"
 
-const NewAttendance = ({ cohortId }) => {
+const NewAttendance = ({ cohortId, profile }) => {
   const navigate = useNavigate()
   const mutation = useAttendanceManager(cohortId)
 
@@ -18,7 +18,11 @@ const NewAttendance = ({ cohortId }) => {
   return (
     <section>
       <h1>New Attendance</h1>
-      <AttendanceForm cohortId={cohortId} submitFn={handleCreate} />
+      <AttendanceForm
+        profile={profile}
+        cohortId={cohortId}
+        submitFn={handleCreate}
+      />
     </section>
   )
 }
