@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom"
 
 // Components
 import CodeEditor from "./CodeEditor"
+import GradingNotes from "./GradingNotes"
 import DeliverableStatusSelect from "./DeliverableStatusSelect"
 import StudentDeliverableHeader from "./StudentDeliverableHeader"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
@@ -27,8 +28,6 @@ const GradeStudentDeliverable = (props) => {
   if (status === 'loading' || !formData) return <ContentStatus status={status} />
   // if (studentDeliverable.profile.cohort !== cohortId) return <Navigate to='/deliverables' />
 
-  console.log(studentDeliverable)
-
   const handleChange = ({ target }) => {
     setFormData({ ...formData, [target.name]: target.value })
   }
@@ -49,13 +48,17 @@ const GradeStudentDeliverable = (props) => {
     <section>
       <StudentDeliverableHeader
         title={title}
+        handleChange={handleChange}
         deliverable={studentDeliverable}
+      />
+      <GradingNotes
+        handleChange={handleChange}
+        gradingNotes={formData.gradingNotes}
       />
       <CodeEditor
         formData={formData}
         setFormData={setFormData}
       />
-      <h3>Status: {formData.status}</h3>
       <DeliverableStatusSelect formData={formData} handleChange={handleChange} />
 
       <button onClick={handleGrade}>Submit Grade</button>

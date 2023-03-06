@@ -4,7 +4,6 @@ import { javascript } from '@codemirror/lang-javascript'
 import './CodeEditor.css'
 
 const CodeEditor = ({ formData, setFormData }) => {
-
   return (
     <CodeMirror
       width='100%'
