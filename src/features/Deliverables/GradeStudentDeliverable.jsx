@@ -2,12 +2,9 @@ import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 
 // Components
-import DueDate from "./DueDate"
-import StudentDeliverableHeader from "./StudentDeliverableHeader"
 import CodeEditor from "./CodeEditor"
-import RequirementsList from "./RequirementsList"
-// import DeliverableHeader from "./DeliverableHeader"
 import DeliverableStatusSelect from "./DeliverableStatusSelect"
+import StudentDeliverableHeader from "./StudentDeliverableHeader"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
 
 // Hooks
@@ -50,14 +47,14 @@ const GradeStudentDeliverable = (props) => {
 
   return (
     <section>
-      {/* <h1>{title}</h1> */}
-      <StudentDeliverableHeader deliverable={studentDeliverable} />
-
+      <StudentDeliverableHeader
+        title={title}
+        deliverable={studentDeliverable}
+      />
       <CodeEditor
         formData={formData}
         setFormData={setFormData}
       />
-
       <h3>Status: {formData.status}</h3>
       <DeliverableStatusSelect formData={formData} handleChange={handleChange} />
 
