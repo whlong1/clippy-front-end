@@ -18,15 +18,19 @@ const ShowAttendance = ({ user, cohortId }) => {
   if (status === 'loading') return <ContentStatus status={status} />
   if (attendance.cohort !== cohortId) return <Navigate to="/attendance" />
 
+  // ==== Move to helper ====
   const options = {
     hour12: true,
     month: 'short',
     day: 'numeric',
+    weekday: 'long',
     year: 'numeric',
   }
-
-  const dateObj = new Date(attendance.date)
-  const formattedDate = dateObj.toLocaleDateString('en-US', options)
+  const time = new Date(attendance.date).getTime()
+  const timeDifference = new Date().getTimezoneOffset() * 60000
+  const date = new Date(time + timeDifference)
+  const formattedDate = date.toLocaleString("en-us", options)
+  // ====                 ====
 
   const handleDelete = () => {
     mutation.mutate({ type: 'remove', payload: { attendanceId } })
@@ -36,7 +40,7 @@ const ShowAttendance = ({ user, cohortId }) => {
   return (
     <section>
       <header>
-        <h1>Attendance Details  {formattedDate}</h1>
+        <h1>{formattedDate}</h1>
         {attendance.time}
       </header>
 
