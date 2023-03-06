@@ -62,3 +62,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • Invalidating Queries: https://www.codemzy.com/blog/invalidatequeries-react-query
 
 • Querey Key Factories: https://tkdodo.eu/blog/effective-react-query-keys#use-query-key-factories
+
+
+## Tech
+
+• https://github.com/uiwjs/react-codemirror

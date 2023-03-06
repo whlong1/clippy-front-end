@@ -1,0 +1,34 @@
+.cm-scroller {
+  width: 100%;
+  padding: 2px 4px;
+}
+
+.cm-content {
+  padding-left: 2px !important;
+}
+
+.cm-gutter {
+  padding-right: 2px;
+  border-right: .5px solid rgb(80, 80, 80);
+}
+
+.cm-gutters * {
+  justify-content: flex-start;
+}
+
+.cm-activeLine {
+  background: none !important;
+}
+
+.cm-foldGutter {
+  width: 0;
+  border: none;
+}
+
+.cm-gutterElement {
+  background: none !important;
+}
+
+.cm-gutterElement span {
+  display: none;
+}
