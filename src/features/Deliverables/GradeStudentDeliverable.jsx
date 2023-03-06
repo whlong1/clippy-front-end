@@ -2,8 +2,11 @@ import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 
 // Components
+import DueDate from "./DueDate"
+import StudentDeliverableHeader from "./StudentDeliverableHeader"
 import CodeEditor from "./CodeEditor"
 import RequirementsList from "./RequirementsList"
+// import DeliverableHeader from "./DeliverableHeader"
 import DeliverableStatusSelect from "./DeliverableStatusSelect"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
 
@@ -27,6 +30,8 @@ const GradeStudentDeliverable = (props) => {
   if (status === 'loading' || !formData) return <ContentStatus status={status} />
   // if (studentDeliverable.profile.cohort !== cohortId) return <Navigate to='/deliverables' />
 
+  console.log(studentDeliverable)
+
   const handleChange = ({ target }) => {
     setFormData({ ...formData, [target.name]: target.value })
   }
@@ -45,11 +50,8 @@ const GradeStudentDeliverable = (props) => {
 
   return (
     <section>
-      <h1>{title}</h1>
-      <p>{formData.dueDate}</p>
-
-      <p>URLS:</p>
-      <RequirementsList deliverable={formData} />
+      {/* <h1>{title}</h1> */}
+      <StudentDeliverableHeader deliverable={studentDeliverable} />
 
       <CodeEditor
         formData={formData}
