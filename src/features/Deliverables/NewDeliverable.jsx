@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { formatDate, getDefaultDate } from './helpers/helpers'
+import { getDefaultDate } from './helpers/helpers'
 
 // Hooks
 import { useDeliverablesManager } from '../../hooks/useDeliverablesManager'
@@ -27,7 +27,7 @@ const NewDeliverable = ({ cohortId }) => {
     const formData = {
       cohort: cohortId,
       ...deliverableData,
-      dueDate: formatDate(deliverableData.dueDate),
+      dueDate: deliverableData.dueDate
     }
 
     mutation.mutate({ type: 'create', payload: formData })

@@ -1,4 +1,5 @@
 const formatDate = (dueDate) => {
+  console.log(dueDate)
   const date = new Date(dueDate)
   const difference = new Date().getUTCHours() - new Date().getHours()
   date.setHours(date.getHours() + difference)
