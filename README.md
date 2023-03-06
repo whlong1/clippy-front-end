@@ -52,6 +52,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • figure out redirect on reload GradeStudentDeliverable + ShowPerson
 
+• deploy to test dates
+
 • REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
 
 
