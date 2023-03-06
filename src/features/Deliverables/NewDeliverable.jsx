@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { formatDate } from './helpers/helpers'
+import { formatDate, getDefaultDate } from './helpers/helpers'
 
 // Hooks
 import { useDeliverablesManager } from '../../hooks/useDeliverablesManager'
@@ -11,7 +11,7 @@ const NewDeliverable = ({ cohortId }) => {
 
   const [deliverableData, setDeliverableData] = useState({
     name: '',
-    dueDate: '',
+    dueDate: getDefaultDate(),
     notionUrl: '',
 
     hasQuiz: '',
@@ -62,6 +62,7 @@ const NewDeliverable = ({ cohortId }) => {
           id="dueDate"
           name="dueDate"
           type="datetime-local"
+          timezone="US/Eastern"
           onChange={handleChange}
           value={deliverableData.dueDate}
         />
