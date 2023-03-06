@@ -11,9 +11,17 @@
   padding-left: 2.5px !important;
 }
 
+.cm-line {
+  padding-bottom: 1px !important;
+}
+
 .cm-gutter {
   padding-right: 2.5px;
-  border-right: .5px solid rgb(70, 70, 70);
+  border-right: .5px solid rgb(60, 60, 60);
+}
+
+.cm-gutterElement {
+  margin-top: 0px !important;
 }
 
 .cm-gutters * {

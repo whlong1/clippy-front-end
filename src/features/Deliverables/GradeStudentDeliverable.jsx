@@ -50,8 +50,11 @@ const GradeStudentDeliverable = (props) => {
 
       <p>URLS:</p>
       <RequirementsList deliverable={formData} />
-      
-      <CodeEditor />
+
+      <CodeEditor
+        formData={formData}
+        setFormData={setFormData}
+      />
 
       <h3>Status: {formData.status}</h3>
       <DeliverableStatusSelect formData={formData} handleChange={handleChange} />
