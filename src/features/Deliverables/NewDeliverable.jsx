@@ -27,6 +27,7 @@ const NewDeliverable = ({ cohortId }) => {
     const formData = {
       cohort: cohortId,
       ...deliverableData,
+      // Might need to adjust this after deployment:
       dueDate: deliverableData.dueDate
     }
 
