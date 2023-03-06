@@ -18,6 +18,16 @@ const ShowAttendance = ({ user, cohortId }) => {
   if (status === 'loading') return <ContentStatus status={status} />
   if (attendance.cohort !== cohortId) return <Navigate to="/attendance" />
 
+  const options = {
+    hour12: true,
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  }
+
+  const dateObj = new Date(attendance.date)
+  const formattedDate = dateObj.toLocaleDateString('en-US', options)
+
   const handleDelete = () => {
     mutation.mutate({ type: 'remove', payload: { attendanceId } })
     navigate('/attendance')
@@ -25,22 +35,13 @@ const ShowAttendance = ({ user, cohortId }) => {
 
   return (
     <section>
-      <h1>Attendance Details</h1>
-
-      <p>
-        Taken by:
-        {attendance.takenBy}
-      </p>
-
-      <p>
-        Time:
+      <header>
+        <h1>Attendance Details  {formattedDate}</h1>
         {attendance.time}
-      </p>
+      </header>
 
-      <p>
-        Notes:
-        {attendance.notes}
-      </p>
+      <p>Taken by: {attendance.takenBy}</p>
+      <p>Notes:{attendance.notes}</p>
 
       {user.isAdmin &&
         <Link to={`/attendance/${attendanceId}/edit`}>
