@@ -51,11 +51,13 @@ const AttendanceList = ({ attendance }) => {
     return date.toLocaleString("en-us", { weekday: "long", day: "numeric" })
   }
 
-  const monthlyAttendance = attendance.reduce((acc, attRecord) => {
-    const month = attRecord.date.substring(5, 7)
-    attRecord.friendlyDate = formatDate(attRecord.date)
-    return { ...acc, [month]: [...acc[month], attRecord] }
-  }, attendanceObj)
+  const monthlyAttendance = attendance
+    .map((record) => ({ ...record, friendlyDate: formatDate(record.date) }))
+    .sort((a, b) => new Date(a.date) - new Date(b.date))
+    .reduce((acc, record) => {
+      const month = record.date.substring(5, 7);
+      return { ...acc, [month]: [...acc[month], record] }
+    }, attendanceObj)
 
   return (
     months.map((month) => (
