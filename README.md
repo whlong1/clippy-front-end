@@ -25,6 +25,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • create css variables for fonts
 
+• default date on new deliverable - 2 days from now, 9 AM
+
 • on hover effect for links
 
 • tags for deliverable show
