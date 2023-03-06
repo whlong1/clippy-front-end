@@ -25,7 +25,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • create css variables for fonts
 
-
 • on hover effect for links
 
 • tags for deliverable show
