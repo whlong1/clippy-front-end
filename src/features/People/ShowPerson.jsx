@@ -1,11 +1,11 @@
 import { Navigate, useParams } from "react-router-dom"
 import { useShowPerson } from "../../hooks/useShowPerson"
 
-import defaultPhoto from '../../assets/defaultPhoto.svg'
 
 // Components
 import RolePanel from "./RolePanel"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
+import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
 
 const ShowPerson = ({ user, cohortId }) => {
   const { profileId } = useParams()
@@ -26,12 +26,7 @@ const ShowPerson = ({ user, cohortId }) => {
 
   return (
     <section>
-      <img
-        alt="github-profile"
-        style={{ width: '100px' }}
-        src={`https://github.com/${person.gitHubUserName}.png`}
-        onError={({ target }) => { target.onerror = null; target.src = defaultPhoto }}
-      />
+      <ProfilePicture gitHubUserName={person.gitHubUserName} size="100px" />
 
       {formattedRole}
       <h1>{fullName}</h1>
