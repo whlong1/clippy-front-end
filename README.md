@@ -7,13 +7,22 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
-• Audit props being passed
 
 • Add Edit profile functionality
 
+• delete deliverable button should redirect to confirmation page
+  bulk complete and delete should go in dropdown (...)
+
+• Build out features/Admin components and functionality (cohorts, profiles)
+
+• update how we handle quiz deliverables
+
+• update/delete cohort?
+
+• Audit props being passed
+
 • Check for validity of URLs in ExternalUrls.jsx (flag bad links/autocorrect?)
 
-• Build out features/Admin components and functionality (cohorts, squads, profiles)
 
 • Audit keys (need consistent key pattern for all resources)
 
@@ -33,14 +42,9 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • address date issues from previous iteration on deployment
 
-• update how we handle quiz deliverables
-
 • group show deliverable and related components into new directory
 
 • date, requirements, completion, share/copy icons
-
-• delete deliverable button should redirect to confirmation page
-  bulk complete and delete should go in dropdown (...)
 
 • attendance list might need a condition for 0 attendance
 
