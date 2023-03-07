@@ -127,7 +127,7 @@ a {
   align-items: center;
   text-decoration: none;
   justify-content: space-between;
-  
+
 }
 
 /* Hide default scrollbar */
@@ -175,7 +175,7 @@ div {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 /* ProfileInfo CSS */
