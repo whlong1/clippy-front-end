@@ -10,12 +10,18 @@ const ExternalUrls = ({ student }) => {
 
   const filteredUrls = Object.keys(urlTable).filter((url) => student.hasOwnProperty(url))
 
+  // Add visual indicator to link if URL is invalid
+  const isValidUrl = (url) => {
+    const regex = /^(http|https):\/\//
+    return regex.test(url)
+  }
+
   if (!filteredUrls.length) return <p>N/A</p>
 
   return (
     filteredUrls.map((url, idx) => (
       <a key={idx} target="_blank" rel="noreferrer" href={urlTable[url].link}>
-        {console.log(urlTable[url])}
+        {!isValidUrl(urlTable[url].link) ? 'X' : ''}
         {urlTable[url].text}
       </a>
     ))
