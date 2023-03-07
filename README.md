@@ -20,8 +20,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • Audit props being passed
 
-• Check for validity of URLs in ExternalUrls.jsx (flag bad links/autocorrect?)
-
 • Audit keys (need consistent key pattern for all resources)
 
 • Review access to admin functionality (front end and backend)
