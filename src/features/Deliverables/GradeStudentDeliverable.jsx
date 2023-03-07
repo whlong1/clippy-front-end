@@ -2,8 +2,8 @@ import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 
 // Components
-import CodeEditor from "./CodeEditor"
 import GradingNotes from "./GradingNotes"
+import CodeEditor from "./CodeEditor/CodeEditor"
 import DeliverableStatusSelect from "./DeliverableStatusSelect"
 import StudentDeliverableHeader from "./StudentDeliverableHeader"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
