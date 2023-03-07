@@ -175,7 +175,7 @@ div {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 /* ProfileInfo CSS */
@@ -206,8 +206,3 @@ div>img {
 .header section div * {
   margin: 0;
 }
-
-/* Group Select */
-/* .row>div:nth-child(2) * {} */
-
-/* .test {} */

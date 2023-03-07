@@ -68,7 +68,7 @@ const GroupSelect = ({ student, handleSquad }) => {
       alignItems: 'center',
       flexDirection: 'column',
       justifyContent: 'center',
-      border: '.75px solid blue',
+      border: '.75px solid red',
     }),
     dropdownIndicator: () => ({ display: 'none' }),
     indicatorSeparator: () => ({ display: 'none' }),

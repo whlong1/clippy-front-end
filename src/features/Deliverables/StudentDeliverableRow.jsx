@@ -11,15 +11,10 @@ const StudentDeliverableRow = ({ deliverableId, student, handleSquad }) => {
 
   return (
     <div className="row">
-
-      <ProfileInfo profile={student} />
+      <input type="checkbox" checked={student.status} />
       <GroupSelect student={student} handleSquad={handleSquad} />
-
-      <p>Status: {student.status}</p>
-
-      External link:
+      <ProfileInfo profile={student} />
       <ExternalUrls student={student} />
-
       <Link to={path}>View</Link>
     </div>
   )
