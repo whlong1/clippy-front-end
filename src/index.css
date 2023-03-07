@@ -127,7 +127,7 @@ a {
   align-items: center;
   text-decoration: none;
   justify-content: space-between;
-  
+
 }
 
 /* Hide default scrollbar */
@@ -206,3 +206,6 @@ div>img {
 .header section div * {
   margin: 0;
 }
+
+/* Group Select */
+/* .row>div:nth-child(2) * {} */

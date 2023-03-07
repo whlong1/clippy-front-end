@@ -10,7 +10,7 @@ const StudentDeliverableRow = ({ deliverableId, student, handleSquad }) => {
   const path = `/deliverables/${deliverableId}/students/${studentDeliverableId}/grade`
 
   return (
-    <div>
+    <div className="row">
 
       <ProfileInfo profile={student} />
       <GroupSelect student={student} handleSquad={handleSquad} />

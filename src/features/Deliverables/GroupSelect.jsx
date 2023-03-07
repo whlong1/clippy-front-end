@@ -26,6 +26,10 @@ const GroupSelect = ({ student, handleSquad }) => {
         backgroundColor: state.data.value,
       }
     },
+    menuList: (state) => ({
+      ...state,
+      flexDirection: 'column',
+    })
   }
 
   const handleChange = (option) => {
@@ -34,6 +38,7 @@ const GroupSelect = ({ student, handleSquad }) => {
 
   return (
     <Select
+      unstyled={true}
       options={options}
       styles={colourStyles}
       onChange={handleChange}
