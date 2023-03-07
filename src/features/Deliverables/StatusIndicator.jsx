@@ -1,6 +1,6 @@
 const StatusIndicator = ({status}) => {
   return (
-    <input type="checkbox" checked={status} />
+    <input type="checkbox" checked={status} readOnly />
   )
 }
 

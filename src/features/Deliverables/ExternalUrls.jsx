@@ -15,6 +15,7 @@ const ExternalUrls = ({ student }) => {
   return (
     filteredUrls.map((url, idx) => (
       <a key={idx} target="_blank" rel="noreferrer" href={urlTable[url].link}>
+        {console.log(urlTable[url])}
         {urlTable[url].text}
       </a>
     ))

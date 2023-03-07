@@ -7,7 +7,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
-
 • Add Edit profile functionality
 
 • delete deliverable button should redirect to confirmation page
@@ -22,7 +21,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • Audit props being passed
 
 • Check for validity of URLs in ExternalUrls.jsx (flag bad links/autocorrect?)
-
 
 • Audit keys (need consistent key pattern for all resources)
 
