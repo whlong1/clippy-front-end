@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import * as cohortService from '../../../services/cohortService'
+import * as cohortService from '../../services/cohortService'
 
-const SelectCohort = ({ profile, setProfile }) => {
+const JoinCohort = ({ profile, setProfile }) => {
   const [cohorts, setCohorts] = useState([])
   const [errorMsg, setErrorMsg] = useState('')
   const [selectedCohortId, setSelectedCohortId] = useState('')
@@ -39,4 +39,4 @@ const SelectCohort = ({ profile, setProfile }) => {
   )
 }
 
-export default SelectCohort
+export default JoinCohort

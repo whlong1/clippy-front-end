@@ -1,3 +1,5 @@
+import ProfileForm from "../../components/ProfileForm/ProfileForm"
+
 const MyProfile = (props) => {
   // Could refactor this to include side menu (MenuLayout)
   

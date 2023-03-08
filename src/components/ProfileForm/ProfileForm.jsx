@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import * as profileService from '../../../services/profileService'
+import * as profileService from '../../services/profileService'
 
 const ProfileForm = ({ profile, setProfile }) => {
   const [formData, setFormData] = useState(profile)

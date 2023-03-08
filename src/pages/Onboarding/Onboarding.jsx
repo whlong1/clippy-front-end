@@ -1,6 +1,6 @@
 // Components
-import ProfileForm from "./components/ProfileForm"
-import SelectCohort from './components/SelectCohort'
+import ProfileForm from "../../components/ProfileForm/ProfileForm"
+import JoinCohort from '../../components/JoinCohort/JoinCohort'
 
 const Onboarding = (props) => {
   const { profile, setProfile } = props
@@ -22,7 +22,7 @@ const Onboarding = (props) => {
     profile?.isProfileComplete && !profile.isApprovalPending &&
     <>
       <h2>Select the cohort you want to join</h2>
-      <SelectCohort {...profileProps} />
+      <JoinCohort {...profileProps} />
     </>
   )
 
@@ -33,7 +33,7 @@ const Onboarding = (props) => {
       <h2>Awaiting instructor approval.</h2>
       <p>After being admitted into a cohort, you'll need to refresh your browser.</p>
       <p>Feel free to make any changes to your profile or select a different cohort.</p>
-      <SelectCohort {...profileProps} />
+      <JoinCohort {...profileProps} />
       <ProfileForm {...profileProps} />
     </>
   )
