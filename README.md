@@ -7,7 +7,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
-• Add Edit profile functionality
+• formatName should be a global helper (show person, my profile, profile info)
 
 • delete deliverable button should redirect to confirmation page
   bulk complete and delete should go in dropdown (...)
