@@ -5,8 +5,8 @@ const SubmissionTracker = ({ deliverable }) => {
   
   return (
     <div>
-      <h4>Completion rate:</h4>
-      {percentComplete}% Submitted
+      <h3>Completion</h3>
+      <p>{percentComplete}% Submitted</p>
     </div>
   )
 }

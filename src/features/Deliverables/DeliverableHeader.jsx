@@ -36,14 +36,14 @@ const DeliverableHeader = ({ deliverable, handleDelete, markAllComplete }) => {
       <section>
         <h1>{deliverable.name}</h1>
         <button onClick={handleDelete}>
-          Delete
+          DELETE
         </button>
         <button onClick={handleCopy}>
-          {copied ? "Copied!" : "Copy"}
+          {copied ? "COPIED" : "COPY"}
         </button>
-        <button onClick={markAllComplete}>
+        {/* <button onClick={markAllComplete}>
           Mark all complete
-        </button>
+        </button> */}
       </section>
 
       <section>

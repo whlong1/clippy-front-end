@@ -44,7 +44,6 @@ h1 {
   margin: 0;
   line-height: 1;
   font-weight: 500;
-  /* margin-bottom: 22px; */
   height: var(--font-l);
   font-size: var(--font-l);
 }
@@ -69,10 +68,6 @@ nav {
   height: 100vh;
   background: var(--nav-background);
   border-right: 1px solid var(--border-color);
-}
-
-span {
-  margin-bottom: 22px;
 }
 
 /* Leftmost App Nav */
@@ -107,7 +102,9 @@ main>section {
 }
 
 main>nav {
-  width: 312px;
+  min-width: 320px;
+  min-width: 346px;
+  /* alt width 360? */
 }
 
 .page {
@@ -212,10 +209,47 @@ div>img {
   flex-direction: column;
 }
 
+.header section > div > * {
+  /* subheaders in show views */
+  margin: 0;
+  width: 140px;
+  margin-right: 32px;
+}
+
 .header section {
   display: flex;
+  margin-bottom: 32px;
   flex-direction: row;
-  justify-content: space-between;
+}
+
+.header button {
+  /* margin-top: 2px !important; */
+  width: 80px;
+  height: 24px;
+  margin-top: 0;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 14px;
+  margin-left: 24px;
+  border-radius: 5px;
+}
+
+.header section h1 {
+  margin-right: auto;
+  line-height: .95;
+}
+
+.header section h3 {
+  opacity: .5;
+  line-height: .85;
+  font-weight: 400;
+  margin-bottom: 8px;
+  font-size: var(--font-subheader);
+}
+
+.header section p {
+  opacity: 1;
+  font-size: var(--font-subheader);
 }
 
 .header section div {
@@ -224,12 +258,44 @@ div>img {
   align-items: flex-start;
 }
 
-.header section div * {
+.tag {
+  display: flex;
+  height: 16px;
+  max-width: 64px;
+  border-radius: 5px;
+  align-items: center;
+  padding: 0px 0px 1px;
+  justify-content: center;
+  margin-top: 2px !important;
+}
+
+.tag p {
   margin: 0;
+  height: 14px;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
 
 /* menu header */
+
+span {
+  width: 100%;
+  display: flex;
+  margin-bottom: 22px;
+  justify-content: space-between;
+}
+
+.menu span button {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 5px;
+}
 
 .menu header {
   height: 16px;
@@ -266,6 +332,16 @@ div>img {
   margin: 16px 0;
 }
 
+.menu a p:first-child {
+  width: 224px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+}
+
 .menu span {
   display: flex;
   align-items: center;
@@ -274,7 +350,6 @@ div>img {
 .menu span a {
   margin: 0;
 }
-
 
 .appNav li {
   opacity: .2;

@@ -18,7 +18,7 @@ const AttendanceMenu = (props) => {
     <MenuLayout {...props}>
       <span>
         <h1>Attendance</h1>
-        <Link to='/attendance/new'><button>New</button></Link>
+        <Link to='/attendance/new'><button>NEW</button></Link>
       </span>
       <AttendanceList attendance={attendance} />
     </MenuLayout>

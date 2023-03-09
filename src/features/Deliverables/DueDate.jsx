@@ -14,7 +14,7 @@ const DueDate = ({ date }) => {
 
   return (
     <div>
-      <h4>Date</h4>
+      <h3>Date</h3>
       <p>{formattedDate}</p>
     </div>
   )
