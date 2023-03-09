@@ -16,8 +16,10 @@ const AttendanceMenu = (props) => {
 
   return (
     <MenuLayout {...props}>
-      <h1>Attendance</h1>
-      <Link to='/attendance/new'><button>New Attendance</button></Link>
+      <span>
+        <h1>Attendance</h1>
+        <Link to='/attendance/new'><button>New</button></Link>
+      </span>
       <AttendanceList attendance={attendance} />
     </MenuLayout>
   )

@@ -12,8 +12,7 @@ import downArrow from '../../assets/downArrow.svg'
 const PeopleList = (props) => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const { role, people } = props
-  const roleHeader = role[0].toUpperCase() + role.slice(1)
+  const roleHeader = props.role[0].toUpperCase() + props.role.slice(1)
 
   const sortedByNormalizedName = props.people.sort((a, b) => {
     return a.normalizedName > b.normalizedName ? 1 : -1
@@ -23,7 +22,6 @@ const PeopleList = (props) => {
     <section>
       <header>
         <h2>{roleHeader}</h2>
-        {/* <p>{people.length}</p> */}
         <button onClick={() => setIsOpen(!isOpen)}>
           <img src={isOpen ? downArrow : arrow} alt="An arrow" />
         </button>

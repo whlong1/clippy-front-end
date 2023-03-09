@@ -44,7 +44,7 @@ h1 {
   margin: 0;
   line-height: 1;
   font-weight: 500;
-  margin-bottom: 22px;
+  /* margin-bottom: 22px; */
   height: var(--font-l);
   font-size: var(--font-l);
 }
@@ -69,6 +69,10 @@ nav {
   height: 100vh;
   background: var(--nav-background);
   border-right: 1px solid var(--border-color);
+}
+
+span {
+  margin-bottom: 22px;
 }
 
 /* Leftmost App Nav */
@@ -260,6 +264,15 @@ div>img {
 
 .menu a {
   margin: 16px 0;
+}
+
+.menu span {
+  display: flex;
+  align-items: center;
+}
+
+.menu span a {
+  margin: 0;
 }
 
 

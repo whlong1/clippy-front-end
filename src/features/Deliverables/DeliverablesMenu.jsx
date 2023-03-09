@@ -16,11 +16,13 @@ const DeliverablesMenu = (props) => {
 
   return (
     <MenuLayout {...props}>
-      <h1>Deliverables</h1>
+      <span>
+        <h1>Deliverables</h1>
+        <Link to='/deliverables/new'>
+          <button>New</button>
+        </Link>
+      </span>
 
-      <Link to='/deliverables/new'>
-        <button>New Deliverable</button>
-      </Link>
 
       <DeliverablesList deliverables={deliverables} />
 

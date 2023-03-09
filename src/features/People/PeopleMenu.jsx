@@ -16,7 +16,7 @@ const PeopleMenu = (props) => {
 
   return (
     <MenuLayout {...props}>
-      <h1>People</h1>
+      <span><h1>People</h1></span>
       {roles.map((role) => (
         <PeopleList key={role} role={role} people={people[role]} />
       ))}
