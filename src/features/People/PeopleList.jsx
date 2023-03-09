@@ -23,7 +23,7 @@ const PeopleList = (props) => {
     <section>
       <header>
         <h2>{roleHeader}</h2>
-        <p>{people.length}</p>
+        {/* <p>{people.length}</p> */}
         <button onClick={() => setIsOpen(!isOpen)}>
           <img src={isOpen ? downArrow : arrow} alt="An arrow" />
         </button>

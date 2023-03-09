@@ -40,19 +40,25 @@ body {
 }
 
 h1 {
-  font-size: var(--font-l);
+  margin: 0;
   font-weight: 500;
+  margin-bottom: 28px;
+  height: var(--font-l);
+  font-size: var(--font-l);
 }
 
 h2 {
-  font-size: var(--font-reg);
+  margin: 0;
   font-weight: 400;
+  font-size: var(--font-reg);
 }
 
 p {
-  font-size: var(--font-reg);
+  margin: 0;
+  opacity: .7;
   font-weight: 400;
-  opacity: .75;
+  letter-spacing: .25px;
+  font-size: var(--font-reg);
 }
 
 nav {
@@ -191,7 +197,6 @@ div {
 }
 
 /* ProfileInfo CSS */
-
 div>img {
   margin-right: 16px;
 }
@@ -218,3 +223,43 @@ div>img {
 .header section div * {
   margin: 0;
 }
+
+
+/* menu header */
+
+.menu header {
+  height: 16px;
+  display: flex;
+  align-items: center;
+  margin: 16px 0px 24px;
+}
+
+.menu select {
+  padding: 0;
+  opacity: .5;
+  border: none;
+  display: flex;
+  font-size: 14px;
+  appearance: none;
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: right 5px center;
+  background-image: url("assets/arrow.svg");
+  margin-bottom: 28px;
+  /* border: 1px solid red; */
+}
+
+.menu header button {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  margin-top: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu a {
+  margin: 16px 0;
+}
+
+/* subheader 24 px bottom */

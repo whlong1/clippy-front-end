@@ -10,7 +10,6 @@ const AdminMenu = (props) => {
       <h1>Admin</h1>
       <Link to='/admin/cohorts'><button>Cohorts</button></Link>
       <Link to='/admin/profiles'><button>Profiles</button></Link>
-      {/* <Link to='/admin/squads'><button>Squads</button></Link> */}
     </MenuLayout>
   )
 }

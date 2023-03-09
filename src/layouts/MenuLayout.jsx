@@ -2,7 +2,7 @@ import SelectCohort from "../components/SelectCohort/SelectCohort"
 
 const MenuLayout = (props) => {
   return (
-    <nav>
+    <nav className="menu">
       <SelectCohort {...props} />
       {props.children}
     </nav>
