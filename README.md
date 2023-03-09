@@ -9,6 +9,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • formatName should be a global helper (show person, my profile, profile info)
 
+• premade tags with inline styles
+
 • delete deliverable button should redirect to confirmation page
   bulk complete and delete should go in dropdown (...)
 

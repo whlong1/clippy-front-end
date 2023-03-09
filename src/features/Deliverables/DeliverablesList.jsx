@@ -9,6 +9,7 @@ const DeliverablesList = ({ deliverables }) => {
   }
 
   // Need visual indicator for missing, complet etc
+  // maybe a due tag on day of?
 
   return (
     deliverables.map((d) => (
