@@ -44,7 +44,6 @@ h1 {
   margin: 0;
   line-height: 1;
   font-weight: 500;
-  /* margin-bottom: 22px; */
   height: var(--font-l);
   font-size: var(--font-l);
 }
@@ -69,10 +68,6 @@ nav {
   height: 100vh;
   background: var(--nav-background);
   border-right: 1px solid var(--border-color);
-}
-
-span {
-  margin-bottom: 22px;
 }
 
 /* Leftmost App Nav */
@@ -231,6 +226,17 @@ div>img {
 
 /* menu header */
 
+span {
+  width: 100%;  
+  display: flex;
+  margin-bottom: 22px;
+  justify-content: space-between;
+}
+
+.menu span button {
+  margin-top: 4px;
+}
+
 .menu header {
   height: 16px;
   display: flex;
@@ -274,7 +280,6 @@ div>img {
 .menu span a {
   margin: 0;
 }
-
 
 .appNav li {
   opacity: .2;
