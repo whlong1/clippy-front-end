@@ -207,6 +207,7 @@ div>img {
 .header {
   display: flex;
   flex-direction: column;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .header section > div > * {
@@ -359,4 +360,13 @@ span {
   border-radius: 50%;
   margin-bottom: 48px;
   border: 1px solid rgb(255, 255, 255) !important;
+}
+
+
+/* DELIVERABLE ROW */
+
+.deliverableRow {
+  height: 48px;
+  /* margin: 50px; */
+  border-bottom: 1px solid var(--border-color);
 }
