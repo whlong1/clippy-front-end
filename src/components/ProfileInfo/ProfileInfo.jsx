@@ -9,7 +9,7 @@ const ProfileInfo = ({ profile }) => {
 
   return (
     <div>
-      <ProfilePicture gitHubUserName={gitHubUserName} size='20px' />
+      <ProfilePicture gitHubUserName={gitHubUserName} size='24px' />
       <p>{fullName}</p>
     </div>
   )

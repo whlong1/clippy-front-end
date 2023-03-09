@@ -10,15 +10,15 @@ import LogoutButton from '../LogoutButton/LogoutButton'
 const Nav = (props) => {
   const { isAdmin } = props.user
   return (
-    <nav>
+    <nav className='appNav'>
       <ul>
-        <li><NavLink to="/">🦩</NavLink></li>
-        <li><NavLink to="/people">😆</NavLink></li>
-        <li><NavLink to="/attendance">📅</NavLink></li>
-        <li><NavLink to="/deliverables">📝</NavLink></li>
+        <li><NavLink to="/"></NavLink></li>
+        <li><NavLink to="/people">P</NavLink></li>
+        <li><NavLink to="/attendance">A</NavLink></li>
+        <li><NavLink to="/deliverables">D</NavLink></li>
 
-        {isAdmin && <li><NavLink to="/admin">🎟️</NavLink></li>}
-        <li><NavLink to="/profile">👤</NavLink></li>
+        {isAdmin && <li><NavLink to="/admin">*</NavLink></li>}
+        <li><NavLink to="/profile">U</NavLink></li>
         <li><LogoutButton /></li>
       </ul>
     </nav>
