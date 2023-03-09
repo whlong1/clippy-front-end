@@ -19,7 +19,7 @@ const DeliverablesMenu = (props) => {
       <span>
         <h1>Deliverables</h1>
         <Link to='/deliverables/new'>
-          <button>New</button>
+          <button>NEW</button>
         </Link>
       </span>
 

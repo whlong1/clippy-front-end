@@ -102,7 +102,7 @@ main>section {
 }
 
 main>nav {
-  width: 312px;
+  width: 360px;
 }
 
 .page {
@@ -235,6 +235,10 @@ span {
 
 .menu span button {
   margin-top: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 5px;
 }
 
 .menu header {
