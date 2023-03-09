@@ -23,7 +23,8 @@ body {
   /* CSS VARIABLES */
   --border-color: #3a3a3a;
   --nav-background: #1a1a1f;
-  --body-text-color: #a0a0a0;
+  --body-text-color: white;
+  /* --body-text-color: #a0a0a0; */
   --header-text-color: white;
   --subheader-text-color: white;
   --content-background: #101115;
@@ -45,6 +46,13 @@ h1 {
 
 h2 {
   font-size: var(--font-reg);
+  font-weight: 400;
+}
+
+p {
+  font-size: var(--font-reg);
+  font-weight: 400;
+  opacity: .75;
 }
 
 nav {
@@ -185,7 +193,7 @@ div {
 /* ProfileInfo CSS */
 
 div>img {
-  margin-right: 12px;
+  margin-right: 16px;
 }
 
 /* Show Deliverable  */
