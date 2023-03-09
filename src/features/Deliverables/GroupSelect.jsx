@@ -1,27 +1,40 @@
 import Select from 'react-select'
 
 const GroupSelect = ({ student, handleSquad }) => {
-  const options = [
-    { value: '#B22222', label: 'red' },
-    { value: '#1E90FF', label: 'blue' },
-    { value: '#006400', label: 'green' },
-    { value: '#808080', label: 'black' },
-    { value: '#FF69B4', label: 'pink' },
-    {value: '#FFD700', label: 'yellow'},
-    {value: '#800080', label: 'purple'},
+  const delonge = [
+    { value: '#9c1b1b', label: 'red' },
+    { value: '#f57f17', label: 'orange' },
+    { value: '#fdd835', label: 'yellow' },
+    { value: '#2e7d32', label: 'green' },
+    { value: '#0a4c8c', label: 'blue' },
+    { value: '#8e24aa', label: 'purple' },
+    { value: '#f48fb1', label: 'pink' },
+    { value: '#424242', label: 'black' },
   ]
 
+  const ikea = [
+    { value: '#DB4C4C', label: 'red' },
+    { value: '#FFA036', label: 'orange' },
+    { value: '#FEE635', label: 'yellow' },
+    { value: '#70C760', label: 'green' },
+    { value: '#5B8FD8', label: 'blue' },
+    { value: '#B790CA', label: 'purple' },
+    { value: '#FFA5C0', label: 'pink' },
+    { value: '#5E5E5E', label: 'black' },
+  ]
 
-  /*
-  Red: #FF7F7F(lighter shade), #B22222(darker shade)
-  Blue: #ADD8E6(lighter shade), #1E90FF(darker shade)
-  Yellow: #FFFF99(lighter shade), #FFD700(darker shade)
-  Green: #90EE90(lighter shade), #006400(darker shade)
-  Orange: #FFA07A(lighter shade), #FF8C00(darker shade)
-  Purple: #D8BFD8(lighter shade), #800080(darker shade)
-  Pink: #FFC0CB(lighter shade), #FF69B4(darker shade)
-  Grey: #D3D3D3(lighter shade), #808080(darker shade)
-  */
+  const skittles = [
+    { value: '#CC0000', label: 'red' },
+    { value: '#FF6600', label: 'orange' },
+    { value: '#F9A602', label: 'yellow' },
+    { value: '#56A64B', label: 'green' },
+    { value: '#0077C9', label: 'blue' },
+    { value: '#A971B1', label: 'purple' },
+    { value: '#FF6B9E', label: 'pink' },
+    { value: '#404040', label: 'black' },
+  ]
+
+  const options = skittles
 
   const styles = {
     // Styles options inside the select
