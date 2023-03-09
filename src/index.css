@@ -33,18 +33,22 @@ body {
   --font-reg: 16px;
   --font-subheader: 14px;
   
+  /* breaks titles/select from content  */
+  --section-gap: 28px;
+  
   font-style: normal;
   font-family: halyard-display, sans-serif;
 
-  background-color: var(--content-background)
+  background-color: var(--content-background);
+
 }
 
 h1 {
   margin: 0;
   font-weight: 500;
-  margin-bottom: 28px;
   height: var(--font-l);
   font-size: var(--font-l);
+  margin-bottom: var(--section-gap);
 }
 
 h2 {
@@ -243,23 +247,20 @@ div>img {
   appearance: none;
   background-size: 12px;
   background-repeat: no-repeat;
-  background-position: right 5px center;
+  margin-bottom: var(--section-gap);
+  background-position: right 0px center;
   background-image: url("assets/arrow.svg");
-  margin-bottom: 28px;
-  /* border: 1px solid red; */
 }
 
 .menu header button {
   margin: 0;
+  padding: 0;
   height: 100%;
   display: flex;
-  margin-top: 4px;
-  align-items: center;
-  justify-content: center;
+  margin-top: 6.5px;
+  justify-content: flex-end;
 }
 
 .menu a {
   margin: 16px 0;
 }
-
-/* subheader 24 px bottom */
