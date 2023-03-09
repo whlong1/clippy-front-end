@@ -19,7 +19,7 @@ body {
   color: var(--body-text-color);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  
+
   /* CSS VARIABLES */
   --border-color: #3a3a3a;
   --nav-background: #1a1a1f;
@@ -28,14 +28,11 @@ body {
   --header-text-color: white;
   --subheader-text-color: white;
   --content-background: #101115;
-  
+
   --font-l: 24px;
   --font-reg: 16px;
   --font-subheader: 14px;
-  
-  /* breaks titles/select from content  */
-  --section-gap: 28px;
-  
+
   font-style: normal;
   font-family: halyard-display, sans-serif;
 
@@ -45,10 +42,11 @@ body {
 
 h1 {
   margin: 0;
+  line-height: 1;
   font-weight: 500;
+  margin-bottom: 22px;
   height: var(--font-l);
   font-size: var(--font-l);
-  margin-bottom: var(--section-gap);
 }
 
 h2 {
@@ -143,13 +141,11 @@ img {
 
 a {
   height: 24px;
-  margin: 16px 0;
   display: flex;
   color: white;
   align-items: center;
   text-decoration: none;
   justify-content: space-between;
-
 }
 
 /* Hide default scrollbar */
@@ -243,11 +239,12 @@ div>img {
   opacity: .5;
   border: none;
   display: flex;
+  margin-top: 5px;
   font-size: 14px;
   appearance: none;
+  margin-bottom: 28px;
   background-size: 12px;
   background-repeat: no-repeat;
-  margin-bottom: var(--section-gap);
   background-position: right 0px center;
   background-image: url("assets/arrow.svg");
 }
@@ -263,4 +260,15 @@ div>img {
 
 .menu a {
   margin: 16px 0;
+}
+
+
+.appNav li {
+  opacity: .2;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-bottom: 48px;
+  border: 1px solid rgb(255, 255, 255) !important;
 }
