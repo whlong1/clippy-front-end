@@ -19,8 +19,7 @@ body {
   color: var(--body-text-color);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto';
-
+  
   /* CSS VARIABLES */
   --border-color: #3a3a3a;
   --nav-background: #1a1a1f;
@@ -28,15 +27,20 @@ body {
   --header-text-color: white;
   --subheader-text-color: white;
   --content-background: #101115;
-
+  
   --font-l: 24px;
   --font-reg: 16px;
+  --font-subheader: 14px;
+  
+  font-style: normal;
+  font-family: halyard-display, sans-serif;
 
   background-color: var(--content-background)
 }
 
 h1 {
   font-size: var(--font-l);
+  font-weight: 500;
 }
 
 h2 {
