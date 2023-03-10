@@ -5,15 +5,18 @@ import './CodeEditor.css'
 
 const CodeEditor = ({ formData, setFormData }) => {
   return (
-    <CodeMirror
-      width='100%'
-      theme={dracula}
-      name="codeblock"
-      minHeight="100px"
-      value={formData.codeblock}
-      extensions={[javascript({ jsx: true })]}
-      onChange={(value) => setFormData({ ...formData, codeblock: value })}
-    />
+    <section>
+      <h2>Codeblock</h2>
+      <CodeMirror
+        width='100%'
+        theme={dracula}
+        name="codeblock"
+        minHeight="100px"
+        value={formData.codeblock}
+        extensions={[javascript({ jsx: true })]}
+        onChange={(value) => setFormData({ ...formData, codeblock: value })}
+      />
+    </section>
   )
 }
 

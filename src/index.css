@@ -432,3 +432,8 @@ span {
   margin: 24px 8px 0px;
   padding: 6px 0px 18px;
 }
+
+/* GRADE STUDENT DELIVERABLE */
+textarea {
+  width: 100%;
+}
