@@ -11,7 +11,7 @@ const StudentDeliverableRow = ({ deliverableId, student, handleSquad }) => {
   const path = `/deliverables/${deliverableId}/students/${studentDeliverableId}/grade`
 
   return (
-    <div>
+    <div className="deliverableRow">
       <StatusIndicator status={student.status} />
       <GroupSelect student={student} handleSquad={handleSquad} />
       <ProfileInfo profile={student} />

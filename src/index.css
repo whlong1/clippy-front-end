@@ -24,10 +24,10 @@ body {
   --border-color: #3a3a3a;
   --nav-background: #1a1a1f;
   --body-text-color: white;
-  /* --body-text-color: #a0a0a0; */
   --header-text-color: white;
   --subheader-text-color: white;
   --content-background: #101115;
+  /* --body-text-color: #a0a0a0; */
 
   --font-l: 24px;
   --font-reg: 16px;
@@ -207,6 +207,7 @@ div>img {
 .header {
   display: flex;
   flex-direction: column;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .header section > div > * {
@@ -223,15 +224,14 @@ div>img {
 }
 
 .header button {
-  /* margin-top: 2px !important; */
   width: 80px;
   height: 24px;
   margin-top: 0;
   font-size: 12px;
   font-weight: 600;
-  padding: 5px 14px;
   margin-left: 24px;
   border-radius: 5px;
+  padding: 5px 14px 18px;
 }
 
 .header section h1 {
@@ -359,4 +359,32 @@ span {
   border-radius: 50%;
   margin-bottom: 48px;
   border: 1px solid rgb(255, 255, 255) !important;
+}
+
+
+/* DELIVERABLE ROW */
+
+.deliverableRow {
+  padding: 0px 14px;
+  height: 48px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.deliverableRow > * {
+  margin-right: 32px;
+}
+
+/*todo status indicator element will change */
+.deliverableRow input {
+  margin-left: 0;
+}
+
+.deliverableRow a {
+  margin: 0;
+}
+
+.externalUrls {
+  margin: 0;
+  margin-left: auto;
+  margin-right: 32px;
 }

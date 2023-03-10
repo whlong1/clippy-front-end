@@ -1,13 +1,40 @@
 import Select from 'react-select'
 
 const GroupSelect = ({ student, handleSquad }) => {
-  const options = [
-    { value: 'red', label: 'Red' },
-    { value: 'blue', label: 'Blue' },
-    { value: 'green', label: 'Green' },
-    { value: 'grey', label: 'Black' },
-    { value: 'pink', label: 'Pink' },
+  const delonge = [
+    { value: '#9c1b1b', label: 'red' },
+    { value: '#f57f17', label: 'orange' },
+    { value: '#fdd835', label: 'yellow' },
+    { value: '#2e7d32', label: 'green' },
+    { value: '#0a4c8c', label: 'blue' },
+    { value: '#8e24aa', label: 'purple' },
+    { value: '#f48fb1', label: 'pink' },
+    { value: '#424242', label: 'black' },
   ]
+
+  const ikea = [
+    { value: '#DB4C4C', label: 'red' },
+    { value: '#FFA036', label: 'orange' },
+    { value: '#FEE635', label: 'yellow' },
+    { value: '#70C760', label: 'green' },
+    { value: '#5B8FD8', label: 'blue' },
+    { value: '#B790CA', label: 'purple' },
+    { value: '#FFA5C0', label: 'pink' },
+    { value: '#5E5E5E', label: 'black' },
+  ]
+
+  const skittles = [
+    { value: '#CC0000', label: 'red' },
+    { value: '#FF6600', label: 'orange' },
+    { value: '#F9A602', label: 'yellow' },
+    { value: '#56A64B', label: 'green' },
+    { value: '#0077C9', label: 'blue' },
+    { value: '#A971B1', label: 'purple' },
+    { value: '#FF6B9E', label: 'pink' },
+    { value: '#404040', label: 'black' },
+  ]
+
+  const options = skittles
 
   const styles = {
     // Styles options inside the select
@@ -38,9 +65,10 @@ const GroupSelect = ({ student, handleSquad }) => {
       width: '20px',
       margin: '4px 0',
       borderRadius: '14px',
+      background: '#101115',
       padding: '2px 11px 0px',
       flexDirection: 'column',
-      border: '1px solid blue',
+      border: '1px solid #3a3a3a',
     }),
     menuList: (state) => ({
       ...state,
@@ -68,14 +96,14 @@ const GroupSelect = ({ student, handleSquad }) => {
       alignItems: 'center',
       flexDirection: 'column',
       justifyContent: 'center',
-      border: '.75px solid red',
+      border: '.75px solid #3a3a3a',
     }),
     dropdownIndicator: () => ({ display: 'none' }),
     indicatorSeparator: () => ({ display: 'none' }),
   }
 
   const handleChange = (option) => {
-    handleSquad(student.profileId, { squad: option.value })
+    handleSquad(student.profileId, { squad: option.label })
   }
 
   return (
@@ -86,7 +114,7 @@ const GroupSelect = ({ student, handleSquad }) => {
       // menuIsOpen={true}
       isSearchable={false}
       onChange={handleChange}
-      defaultValue={options.find((o) => o.value === student.squad)}
+      defaultValue={options.find((o) => o.label === student.squad)}
     />
   )
 }
