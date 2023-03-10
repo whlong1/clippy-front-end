@@ -7,9 +7,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
-• delete deliverable button should redirect to confirmation page
-  bulk complete and delete should go in dropdown (...)
-
 • format jsx on other components to use show header where appropriate
 
 • Build out features/Admin components and functionality (cohorts, profiles)
