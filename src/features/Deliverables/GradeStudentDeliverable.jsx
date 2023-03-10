@@ -4,7 +4,6 @@ import { useParams, useNavigate } from "react-router-dom"
 // Components
 import GradingNotes from "./GradingNotes"
 import CodeEditor from "./CodeEditor/CodeEditor"
-import DeliverableStatusSelect from "./DeliverableStatusSelect"
 import StudentDeliverableHeader from "./StudentDeliverableHeader"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
 
@@ -40,17 +39,14 @@ const GradeStudentDeliverable = (props) => {
     navigate(`/deliverables/${deliverableId}`)
   }
 
-  // Would be nice to have some clarity between 'profile' (student) and 'profile' (current user)
-  const { profile: { preferredName, lastName } } = formData
-  const title = `Grade ${formData.name} for ${preferredName} ${lastName}`
 
   return (
     <section>
       <StudentDeliverableHeader
-        title={title}
         formData={formData}
         handleGrade={handleGrade}
         handleChange={handleChange}
+        title={`Grade ${formData.name}`}
         deliverable={studentDeliverable}
       />
       <GradingNotes
@@ -61,7 +57,6 @@ const GradeStudentDeliverable = (props) => {
         formData={formData}
         setFormData={setFormData}
       />
-
     </section>
   )
 }

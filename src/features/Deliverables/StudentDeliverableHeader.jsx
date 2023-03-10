@@ -1,12 +1,13 @@
 // Components
 import DueDate from './DueDate'
+import StudentDisplay from './StudentDisplay'
 import RequirementsList from './RequirementsList'
 import DeliverableStatusSelect from './DeliverableStatusSelect'
 import StudentDeliverableStatus from './StudentDeliverableStatus'
 
 const StudentDeliverableHeader = (props) => {
   const { title, deliverable, formData, handleChange, handleGrade } = props
-  
+
   return (
     <header className="header">
       <section>
@@ -22,6 +23,7 @@ const StudentDeliverableHeader = (props) => {
         <DueDate date={deliverable.dueDate} />
         <RequirementsList deliverable={deliverable} />
         <StudentDeliverableStatus deliverable={deliverable} />
+        <StudentDisplay profile={deliverable.profile} />
       </section>
     </header>
   )
