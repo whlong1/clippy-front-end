@@ -281,7 +281,7 @@ div>img {
 
 /* menu header */
 
-span {
+.menu span {
   width: 100%;
   display: flex;
   margin-bottom: 22px;
@@ -435,5 +435,9 @@ span {
 
 /* GRADE STUDENT DELIVERABLE */
 textarea {
-  width: 100%;
+  width: 100%; 
+  max-width: 100%;
+  border-radius: 5px;
+  background-color: #080b0d;
+  border: 1px solid var(--border-color);
 }
