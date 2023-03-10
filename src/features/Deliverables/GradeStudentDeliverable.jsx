@@ -48,6 +48,8 @@ const GradeStudentDeliverable = (props) => {
     <section>
       <StudentDeliverableHeader
         title={title}
+        formData={formData}
+        handleGrade={handleGrade}
         handleChange={handleChange}
         deliverable={studentDeliverable}
       />
@@ -59,12 +61,7 @@ const GradeStudentDeliverable = (props) => {
         formData={formData}
         setFormData={setFormData}
       />
-      <DeliverableStatusSelect
-        formData={formData}
-        handleChange={handleChange}
-      />
 
-      <button onClick={handleGrade}>Submit Grade</button>
     </section>
   )
 }

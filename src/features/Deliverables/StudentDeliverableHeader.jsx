@@ -1,14 +1,21 @@
 // Components
 import DueDate from './DueDate'
 import RequirementsList from './RequirementsList'
+import DeliverableStatusSelect from './DeliverableStatusSelect'
 import StudentDeliverableStatus from './StudentDeliverableStatus'
 
-const StudentDeliverableHeader = ({ title, deliverable }) => {
-
+const StudentDeliverableHeader = (props) => {
+  const { title, deliverable, formData, handleChange, handleGrade } = props
+  
   return (
     <header className="header">
       <section>
         <h1>{title}</h1>
+        <DeliverableStatusSelect
+          formData={formData}
+          handleChange={handleChange}
+        />
+        <button onClick={handleGrade}>SUBMIT</button>
       </section>
 
       <section>
