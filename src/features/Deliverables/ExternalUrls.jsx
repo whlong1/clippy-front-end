@@ -16,15 +16,17 @@ const ExternalUrls = ({ student }) => {
     return regex.test(url)
   }
 
-  if (!filteredUrls.length) return <p>N/A</p>
+  const urlLinks = filteredUrls.map((url, idx) => (
+    <a className="externalUrl" key={idx} target="_blank" rel="noreferrer" href={urlTable[url].link}>
+      {!isValidUrl(urlTable[url].link) ? 'X' : ''}
+      {urlTable[url].text}
+    </a>
+  ))
 
   return (
-    filteredUrls.map((url, idx) => (
-      <a key={idx} target="_blank" rel="noreferrer" href={urlTable[url].link}>
-        {!isValidUrl(urlTable[url].link) ? 'X' : ''}
-        {urlTable[url].text}
-      </a>
-    ))
+    <div className="externalUrls">
+      {!filteredUrls.length ? <p>N/A</p> : { urlLinks }}
+    </div>
   )
 }
 

@@ -365,6 +365,7 @@ span {
 /* DELIVERABLE ROW */
 
 .deliverableRow {
+  padding: 0px 14px;
   height: 48px;
   border-bottom: 1px solid var(--border-color);
 }
@@ -376,4 +377,14 @@ span {
 /*todo status indicator element will change */
 .deliverableRow input {
   margin-left: 0;
+}
+
+.deliverableRow a {
+  margin: 0;
+}
+
+.externalUrls {
+  margin: 0;
+  margin-left: auto;
+  margin-right: 32px;
 }
