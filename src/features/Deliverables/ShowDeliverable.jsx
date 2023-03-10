@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useParams, useNavigate, Navigate } from 'react-router-dom'
 
 // Hooks
@@ -7,12 +8,15 @@ import { useDeliverablesManager } from '../../hooks/useDeliverablesManager'
 // Components
 import DeliverableHeader from './DeliverableHeader'
 import StudentDeliverableRow from './StudentDeliverableRow'
+import DeleteConfirmation from './DeleteConfirmation'
 import ContentStatus from '../../components/ContentStatus/ContentStatus'
 
 const ShowDeliverable = (props) => {
   const { cohortId } = props
   const navigate = useNavigate()
   const { deliverableId } = useParams()
+  const [isOpen, setIsOpen] = useState(false)
+
   const mutation = useDeliverablesManager(cohortId)
   const { deliverable, status } = useShowDeliverable(deliverableId)
 
@@ -50,11 +54,15 @@ const ShowDeliverable = (props) => {
 
   return (
     <section>
+      {isOpen && <DeleteConfirmation />}
+
       <DeliverableHeader
+        setIsOpen={setIsOpen}
         deliverable={deliverable}
         handleDelete={handleDelete}
         markAllComplete={markAllComplete}
       />
+
       {sortedByNormalizedName.map((student) => (
         <StudentDeliverableRow
           key={student._id}

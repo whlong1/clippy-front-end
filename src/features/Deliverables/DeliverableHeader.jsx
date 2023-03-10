@@ -5,7 +5,14 @@ import DueDate from './DueDate'
 import RequirementsList from './RequirementsList'
 import SubmissionTracker from './SubmissionTracker'
 
-const DeliverableHeader = ({ deliverable, handleDelete, markAllComplete }) => {
+const DeliverableHeader = (props) => {
+  const {
+    setIsOpen,
+    deliverable,
+    handleDelete,
+    markAllComplete
+  } = props
+
   const [copied, setCopied] = useState(false)
 
   const statusTable = {
@@ -38,7 +45,7 @@ const DeliverableHeader = ({ deliverable, handleDelete, markAllComplete }) => {
         <button onClick={markAllComplete}>
           RESOLVE
         </button>
-        <button onClick={handleDelete}>
+        <button onClick={() => setIsOpen((prev) => !prev)}>
           DELETE
         </button>
         <button onClick={handleCopy}>
