@@ -9,7 +9,6 @@ const DeliverableHeader = (props) => {
   const {
     setIsOpen,
     deliverable,
-    handleDelete,
     markAllComplete
   } = props
 
