@@ -7,18 +7,18 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
-• formatName should be a global helper (show person, my profile, profile info)
-
-• premade tags with inline styles
-
-• delete deliverable button should redirect to confirmation page
-  bulk complete and delete should go in dropdown (...)
+• format jsx on other components to use show header where appropriate
 
 • Build out features/Admin components and functionality (cohorts, profiles)
+  update/delete cohort?
 
 • update how we handle quiz deliverables
 
-• update/delete cohort?
+• tags for deliverable show, premade constants
+
+• side menu icons, date, requirements, completion, share/copy icons
+
+• figure out redirect on reload GradeStudentDeliverable + ShowPerson
 
 • Audit props being passed
 
@@ -28,25 +28,15 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • For security, might be worth refactoring how admin and student routes are handled
 
-• create css variables for fonts
-
 • on hover effect for links
-
-• tags for deliverable show
-
-• side menu icons
 
 • animated transitions/loading
 
 • address date issues from previous iteration on deployment
 
-• group show deliverable and related components into new directory
-
-• date, requirements, completion, share/copy icons
+• formatName should be a global helper (show person, my profile, profile info)
 
 • attendance list might need a condition for 0 attendance
-
-• figure out redirect on reload GradeStudentDeliverable + ShowPerson
 
 • REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
 
