@@ -1,6 +1,7 @@
 import Select from 'react-select'
 
 const GroupSelect = ({ student, handleSquad }) => {
+  // eslint-disable-next-line
   const delonge = [
     { value: '#9c1b1b', label: 'red' },
     { value: '#f57f17', label: 'orange' },
@@ -12,6 +13,7 @@ const GroupSelect = ({ student, handleSquad }) => {
     { value: '#424242', label: 'black' },
   ]
 
+  // eslint-disable-next-line
   const ikea = [
     { value: '#DB4C4C', label: 'red' },
     { value: '#FFA036', label: 'orange' },
