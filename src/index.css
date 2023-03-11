@@ -443,12 +443,33 @@ div>img {
 }
 
 /* GRADE STUDENT DELIVERABLE */
+.grade header {
+  margin-bottom: 32px;
+}
+
+.grade h2 {
+  margin-bottom: 16px;
+}
+
+.grade select {
+  display: flex;
+  appearance: none;
+  border-radius: 5px;
+  background-size: 12px;
+  align-items: flex-start;
+  padding: 4px 28px 0px 14px;
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  background-image: url("assets/arrow.svg");
+}
+
 textarea {
   width: 100%;
   max-width: 100%;
   border-radius: 5px;
   background-color: #080b0d;
   border: 1px solid var(--border-color);
+  margin-bottom: 24px;
 }
 
 
@@ -482,7 +503,8 @@ textarea {
   border-right: .5px solid var(--border-color);
 }
 
-.person h1, .person h3 {
+.person h1,
+.person h3 {
   margin: 0;
   margin-bottom: 10px;
 }
@@ -492,7 +514,7 @@ textarea {
   align-items: flex-start;
 }
 
-.person section:nth-child(2) > * {
+.person section:nth-child(2)>* {
   margin-bottom: 32px;
 }
 

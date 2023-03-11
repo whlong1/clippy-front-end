@@ -18,7 +18,7 @@ const SubmittedMaterials = ({ deliverable }) => {
 
   return (
     <div>
-      <h3>Submitted</h3>
+      <h3>Submitted Materials</h3>
       <p>{urlLinks}</p>
     </div>
   )
