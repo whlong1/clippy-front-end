@@ -78,7 +78,8 @@ const AttendanceList = ({ attendance }) => {
         {selectedMonth === month.num &&
           monthlyAttendance[month.num].map((attendance) => (
             <Link key={attendance._id} to={`/attendance/${attendance._id}`}>
-              {attendance.friendlyDate} - {attendance.time}
+              <p>{attendance.friendlyDate}</p>
+              <p>{attendance.time}</p>
             </Link>
           ))
         }
