@@ -29,37 +29,38 @@ const ShowPerson = ({ user, cohortId }) => {
     <section className="person">
 
       <section>
-        <ProfilePicture gitHubUserName={person.gitHubUserName} size="80px" />
-        <div>
+        <ProfilePicture gitHubUserName={person.gitHubUserName} size="128px" />
+        <span>
           <h3>{formattedRole}</h3>
-          <span>
-            <h1>{fullName}</h1>
-            <p>{person.preferredPronouns}</p>
-          </span>
-        </div>
+          <h1>{fullName}</h1>
+          <p>{person.preferredPronouns}</p>
+        </span>
+        <span>
+          o o o
+        </span>
+        {user.isAdmin && <RolePanel person={person} cohortId={cohortId} />}
       </section>
 
-      <section className="info">
-        <h2>Contact Information</h2>
+      <section>
+        <h1>Contact Information</h1>
         <div>
-          <h3>Email</h3>
+          <h3>[ ] Email</h3>
           <p>{checkProp(person.email)}</p>
         </div>
         <div>
-          <h3>Github</h3>
+          <h3>[ ] Github</h3>
           <p>{checkProp(person.gitHubUserName)}</p>
         </div>
         <div>
-          <h3>LinkedIn</h3>
+          <h3>[ ] LinkedIn</h3>
           <p>{checkProp(person.linkedInUserName)}</p>
         </div>
         <div>
-          <h3>Codewars</h3>
+          <h3>[ ] Codewars</h3>
           <p>{checkProp(person.codeWarsUserName)}</p>
         </div>
       </section>
 
-      {user.isAdmin && <RolePanel person={person} cohortId={cohortId} />}
     </section>
   )
 }
