@@ -359,6 +359,8 @@ div>img {
   margin: 0;
 }
 
+/* APP NAV */
+
 .appNav li {
   opacity: .2;
   width: 24px;
@@ -369,7 +371,6 @@ div>img {
   border: 1px solid rgb(255, 255, 255) !important;
 }
 
-/* DELIVERABLE ROW */
 /* ALL ROW ELEMENTS */
 
 .row {

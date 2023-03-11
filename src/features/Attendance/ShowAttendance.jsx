@@ -54,12 +54,7 @@ const ShowAttendance = ({ user, cohortId }) => {
             <h3>Taken By</h3>
             <p>{attendance.takenBy.slice(0, 20)}</p>
           </div>
-          <div>
-            <h3>Notes</h3>
-            <p>{attendance.notes}</p>
-          </div>
         </section>
-
       </header>
 
       {attendance.students.map((student) => (
