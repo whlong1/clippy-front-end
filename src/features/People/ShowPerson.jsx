@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useShowPerson } from "../../hooks/useShowPerson"
 
-
 // Components
 import RolePanel from "./RolePanel"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
@@ -24,45 +23,41 @@ const ShowPerson = ({ user, cohortId }) => {
   const first = person.preferredName[0].toUpperCase() + person.preferredName.slice(1)
   const fullName = first + " " + last
 
-  const checkProp = (prop) => {
-    return prop ? prop : 'Not Available'
-  }
+  const checkProp = (prop) => prop ? prop : 'Not Available'
 
   return (
     <section className="person">
-      
+
       <section>
-        <ProfilePicture gitHubUserName={person.gitHubUserName} size="100px" />
+        <ProfilePicture gitHubUserName={person.gitHubUserName} size="80px" />
         <div>
           <h3>{formattedRole}</h3>
-          <h1>{fullName}</h1>
-          <p>{person.preferredPronouns}</p>
+          <span>
+            <h1>{fullName}</h1>
+            <p>{person.preferredPronouns}</p>
+          </span>
         </div>
       </section>
 
-
-      <div>
-        <h3>Email</h3>
-        <p>{checkProp(person.email)}</p>
-      </div>
-
-      <div>
-        <h3>Github</h3>
-        <p>{checkProp(person.gitHubUserName)}</p>
-      </div>
-
-      <div>
-        <h3>LinkedIn</h3>
-        <p>{checkProp(person.linkedInUserName)}</p>
-      </div>
-
-
-      <div>
-        <h3>Codewars</h3>
-        <p>{checkProp(person.codeWarsUserName)}</p>
-      </div>
-
-
+      <section className="info">
+        <h2>Contact Information</h2>
+        <div>
+          <h3>Email</h3>
+          <p>{checkProp(person.email)}</p>
+        </div>
+        <div>
+          <h3>Github</h3>
+          <p>{checkProp(person.gitHubUserName)}</p>
+        </div>
+        <div>
+          <h3>LinkedIn</h3>
+          <p>{checkProp(person.linkedInUserName)}</p>
+        </div>
+        <div>
+          <h3>Codewars</h3>
+          <p>{checkProp(person.codeWarsUserName)}</p>
+        </div>
+      </section>
 
       {user.isAdmin && <RolePanel person={person} cohortId={cohortId} />}
     </section>
