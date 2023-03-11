@@ -8,7 +8,7 @@ const ProfileInfo = ({ profile }) => {
   const fullName = first + " " + last
 
   return (
-    <div>
+    <div style={{flexDirection: 'row', alignItems: 'center'}}>
       <ProfilePicture gitHubUserName={gitHubUserName} size='24px' />
       <p>{fullName}</p>
     </div>

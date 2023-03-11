@@ -13,25 +13,24 @@ const RolePanel = ({ person, cohortId }) => {
   const approvalData = { person, formerRole: "waitlist", newRole: "students" }
 
   return (
-    <>
-      <button>Edit Profile</button>
-      <h2>Manage Roles</h2>
+    <section className="actions">
+      {/* <button>EDIT PROFILE</button> */}
 
       {isApprovalPending &&
         <button onClick={() => mutation.mutate({ type: 'deny', payload: denialData })}>
-          Deny Student
+          DENY STUDENT
         </button>
       }
 
       {isApprovalPending &&
         <button onClick={() => mutation.mutate({ type: 'approve', payload: approvalData })}>
-          Admit to Cohort
+          ADMIT TO COHORT
         </button>
       }
 
       {person.role !== 'inactive' &&
         <button onClick={() => mutation.mutate({ type: 'remove', payload: removalData })}>
-          Remove from Cohort
+          REMOVE FROM COHORT
         </button>
       }
 
@@ -39,7 +38,7 @@ const RolePanel = ({ person, cohortId }) => {
         <SelectRole mutation={mutation} person={person} />
       }
 
-    </>
+    </section>
   )
 }
 

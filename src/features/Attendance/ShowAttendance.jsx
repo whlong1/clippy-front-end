@@ -1,4 +1,4 @@
-import { useParams, useNavigate, Link, Navigate } from 'react-router-dom'
+import { useParams, useNavigate, Navigate } from 'react-router-dom'
 
 // Components
 import StudentStatusRow from './StudentStatusRow'
@@ -32,6 +32,8 @@ const ShowAttendance = ({ user, cohortId }) => {
   const formattedDate = date.toLocaleString("en-us", options)
   // ====                 ====
 
+  const handleRedirect = () => navigate(`/attendance/${attendanceId}/edit`)
+
   const handleDelete = () => {
     mutation.mutate({ type: 'remove', payload: { attendanceId } })
     navigate('/attendance')
@@ -39,21 +41,26 @@ const ShowAttendance = ({ user, cohortId }) => {
 
   return (
     <section>
-      <header>
-        <h1>{formattedDate}</h1>
-        {attendance.time}
+      <header className='header'>
+
+        <section>
+          <h1>{formattedDate} {attendance.time}</h1>
+          {user.isAdmin && <button onClick={handleDelete}>Delete</button>}
+          {user.isAdmin && <button onClick={handleRedirect}>Edit</button>}
+        </section>
+
+        <section>
+          <div>
+            <h3>Taken By</h3>
+            <p>{attendance.takenBy.slice(0, 20)}</p>
+          </div>
+          <div>
+            <h3>Notes</h3>
+            <p>{attendance.notes}</p>
+          </div>
+        </section>
+
       </header>
-
-      <p>Taken by: {attendance.takenBy}</p>
-      <p>Notes:{attendance.notes}</p>
-
-      {user.isAdmin &&
-        <Link to={`/attendance/${attendanceId}/edit`}>
-          <button>Edit Attendance</button>
-        </Link>
-      }
-
-      <button onClick={handleDelete}>Delete</button>
 
       {attendance.students.map((student) => (
         <StudentStatusRow key={student._id} student={student} />

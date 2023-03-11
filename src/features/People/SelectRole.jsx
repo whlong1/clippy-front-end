@@ -14,7 +14,7 @@ const SelectRole = ({ mutation, person }) => {
   }
 
   return (
-    <>
+    <div>
       <h2>Change Role:</h2>
       <select name="newRole" onChange={handleChange} defaultValue={person.role}>
         <option value="students">Student</option>
@@ -25,9 +25,9 @@ const SelectRole = ({ mutation, person }) => {
       </select>
 
       <button disabled={!changeRoleData.newRole} onClick={handleMutate}>
-        Change Role
+        CHANGE ROLE
       </button>
-    </>
+    </div>
   )
 }
 

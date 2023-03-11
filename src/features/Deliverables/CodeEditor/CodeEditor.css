@@ -1,5 +1,7 @@
 .cm-editor {
-  border-radius: 4px;
+  border-radius: 5px;
+  background-color: #080b0d;
+  border: 1px solid var(--border-color);
 }
 
 .cm-scroller {
@@ -22,6 +24,10 @@
 
 .cm-gutterElement {
   margin-top: 0px !important;
+}
+
+.cm-gutters {
+  background-color: #080b0d !important;
 }
 
 .cm-gutters * {

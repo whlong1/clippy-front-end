@@ -1,10 +1,13 @@
 const GradingNotes = ({ gradingNotes, handleChange }) => {
   return (
-    <textarea
-      name="gradingNotes"
-      value={gradingNotes}
-      onChange={handleChange}
-    />
+    <section>
+      <h2>Grading Notes</h2>
+      <textarea
+        name="gradingNotes"
+        value={gradingNotes}
+        onChange={handleChange}
+      />
+    </section>
   )
 }
 
