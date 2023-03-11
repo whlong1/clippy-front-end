@@ -199,12 +199,12 @@ nav section header button img {
 }
 
 /* All row style elements */
-div {
+/* div {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-}
+} */
 
 /* ProfileInfo CSS */
 div>img {
@@ -371,7 +371,14 @@ div>img {
   border: 1px solid rgb(255, 255, 255) !important;
 }
 
-/* ALL ROW ELEMENTS */
+/* ROW ELEMENTS */
+
+div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
 
 .row {
   padding: 0px 14px;
