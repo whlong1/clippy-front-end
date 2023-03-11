@@ -4,7 +4,6 @@ import { useParams, useNavigate } from "react-router-dom"
 // Components
 import GradingNotes from "./GradingNotes"
 import CodeEditor from "./CodeEditor/CodeEditor"
-import SubmissionMaterials from "./SubmissionMaterials"
 import StudentDeliverableHeader from "./StudentDeliverableHeader"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
 
@@ -49,7 +48,6 @@ const GradeStudentDeliverable = (props) => {
         title={`Grade ${formData.name}`}
         deliverable={studentDeliverable}
       />
-      <SubmissionMaterials deliverable={studentDeliverable} />
       <GradingNotes
         handleChange={handleChange}
         gradingNotes={formData.gradingNotes}

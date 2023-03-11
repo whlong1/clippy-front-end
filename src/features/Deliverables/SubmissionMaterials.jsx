@@ -1,4 +1,3 @@
-import axios from "axios"
 
 const SubmissionMaterials = ({ deliverable }) => {
   // Reused in ExternalUrls, would be nice to make this a helper
@@ -17,13 +16,11 @@ const SubmissionMaterials = ({ deliverable }) => {
     </a>
   ))
 
-  console.log(filteredUrls)
-
   return (
-    <section>
-      <h2>Submission Materials</h2>
-      {urlLinks}
-    </section>
+    <div>
+      <h3>Submitted</h3>
+      <p>{urlLinks}</p>
+    </div>
   )
 }
 

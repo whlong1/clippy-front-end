@@ -2,8 +2,9 @@
 import DueDate from './DueDate'
 import StudentDisplay from './StudentDisplay'
 import RequirementsList from './RequirementsList'
+import SubmissionMaterials from './SubmissionMaterials'
 import DeliverableStatusSelect from './DeliverableStatusSelect'
-import StudentDeliverableStatus from './StudentDeliverableStatus'
+// import StudentDeliverableStatus from './StudentDeliverableStatus'
 
 const StudentDeliverableHeader = (props) => {
   const { title, deliverable, formData, handleChange, handleGrade } = props
@@ -20,10 +21,11 @@ const StudentDeliverableHeader = (props) => {
       </section>
 
       <section>
+        <StudentDisplay profile={deliverable.profile} />
         <DueDate date={deliverable.dueDate} />
         <RequirementsList deliverable={deliverable} />
-        <StudentDeliverableStatus deliverable={deliverable} />
-        <StudentDisplay profile={deliverable.profile} />
+        <SubmissionMaterials deliverable={deliverable}/>
+        {/* <StudentDeliverableStatus deliverable={deliverable} /> */}
       </section>
     </header>
   )
