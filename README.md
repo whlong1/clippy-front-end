@@ -10,7 +10,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • Student tag should go inside submission materials on grading page
   display student who is being graded alongside the link
 
-• useRedirectOnRefresh
+• figure out redirect on reload GradeStudentDeliverable + ShowPerson
+  useRedirectOnRefresh
 
 • deliverable row indicator
 
@@ -34,8 +35,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • tags for deliverable show, premade constants
 
 • side menu icons, date, requirements, completion, share/copy icons
-
-• figure out redirect on reload GradeStudentDeliverable + ShowPerson
 
 • Audit props being passed
 

@@ -33,9 +33,9 @@ const RolePanel = ({ person, cohortId }) => {
         </button>
       }
 
-      {/* {!isApprovalPending &&
+      {!isApprovalPending &&
         <SelectRole mutation={mutation} person={person} />
-      } */}
+      }
 
     </section>
   )
