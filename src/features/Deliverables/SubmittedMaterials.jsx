@@ -1,5 +1,5 @@
 
-const SubmissionMaterials = ({ deliverable }) => {
+const SubmittedMaterials = ({ deliverable }) => {
   // Reused in ExternalUrls, would be nice to make this a helper
   const urlTable = {
     miscUrl: { text: 'Misc URL', link: deliverable.miscUrl },
@@ -24,4 +24,4 @@ const SubmissionMaterials = ({ deliverable }) => {
   )
 }
 
-export default SubmissionMaterials
+export default SubmittedMaterials
