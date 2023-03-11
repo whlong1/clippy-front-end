@@ -370,23 +370,24 @@ div>img {
 }
 
 /* DELIVERABLE ROW */
+/* ALL ROW ELEMENTS */
 
-.deliverableRow {
+.row {
   padding: 0px 14px;
   height: 48px;
   border-bottom: 1px solid var(--border-color);
 }
 
-.deliverableRow>* {
+.row>* {
   margin-right: 32px;
 }
 
 /*todo status indicator element will change */
-.deliverableRow input {
+.row input {
   margin-left: 0;
 }
 
-.deliverableRow a {
+.row a {
   margin: 0;
 }
 
@@ -475,7 +476,6 @@ textarea {
   background-color: #080b0d;
   border: 1px solid var(--border-color);
 }
-
 
 /* SHOW PERSON */
 
