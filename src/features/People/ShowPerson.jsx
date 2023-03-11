@@ -24,10 +24,13 @@ const ShowPerson = ({ user, cohortId }) => {
   const first = person.preferredName[0].toUpperCase() + person.preferredName.slice(1)
   const fullName = first + " " + last
 
-  
+  const checkProp = (prop) => {
+    return prop ? prop : 'Not Available'
+  }
 
   return (
     <section className="person">
+      
       <section>
         <ProfilePicture gitHubUserName={person.gitHubUserName} size="100px" />
         <div>
@@ -40,23 +43,23 @@ const ShowPerson = ({ user, cohortId }) => {
 
       <div>
         <h3>Email</h3>
-        <p>{person.email}</p>
+        <p>{checkProp(person.email)}</p>
       </div>
 
       <div>
         <h3>Github</h3>
-        <p>{person.gitHubUserName}</p>
+        <p>{checkProp(person.gitHubUserName)}</p>
       </div>
 
       <div>
         <h3>LinkedIn</h3>
-        <p>{person.linkedInUserName}</p>
+        <p>{checkProp(person.linkedInUserName)}</p>
       </div>
 
 
       <div>
         <h3>Codewars</h3>
-        <p>{person.codeWarsUserName}</p>
+        <p>{checkProp(person.codeWarsUserName)}</p>
       </div>
 
 
