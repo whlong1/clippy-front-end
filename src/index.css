@@ -465,11 +465,15 @@ div>img {
 
 textarea {
   width: 100%;
+  padding: 8px;
+  color: white;
+  resize: vertical;
   max-width: 100%;
+  min-height: 140px;
   border-radius: 5px;
+  margin-bottom: 24px;
   background-color: #080b0d;
   border: 1px solid var(--border-color);
-  margin-bottom: 24px;
 }
 
 
