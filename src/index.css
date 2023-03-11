@@ -50,8 +50,17 @@ h1 {
 
 h2 {
   margin: 0;
+  line-height: 1;
   font-weight: 400;
   font-size: var(--font-reg);
+}
+
+h3 {
+  opacity: .5;
+  line-height: .85;
+  font-weight: 400;
+  margin-bottom: 8px;
+  font-size: var(--font-subheader);
 }
 
 p {
@@ -103,7 +112,7 @@ main>section {
 
 main>nav {
   min-width: 320px;
-  min-width: 346px;
+  /* min-width: 346px; */
   /* alt width 360? */
 }
 
@@ -441,3 +450,18 @@ textarea {
   background-color: #080b0d;
   border: 1px solid var(--border-color);
 }
+
+
+/* PERSON */
+
+.person section {
+  display: flex;
+  align-items: center;
+}
+
+.person div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+

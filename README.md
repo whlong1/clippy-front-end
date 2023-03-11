@@ -7,6 +7,11 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
+• Student tag should go inside submission materials on grading page
+  display student who is being graded alongside the link
+
+• Students should see there stats on MyProfile page
+
 • format jsx on other components to use show header where appropriate
 
 • Build out features/Admin components and functionality (cohorts, profiles)

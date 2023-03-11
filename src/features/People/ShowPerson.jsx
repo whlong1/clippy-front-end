@@ -1,4 +1,4 @@
-import { Navigate, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { useShowPerson } from "../../hooks/useShowPerson"
 
 
@@ -24,19 +24,42 @@ const ShowPerson = ({ user, cohortId }) => {
   const first = person.preferredName[0].toUpperCase() + person.preferredName.slice(1)
   const fullName = first + " " + last
 
+  
+
   return (
-    <section>
-      <ProfilePicture gitHubUserName={person.gitHubUserName} size="100px" />
+    <section className="person">
+      <section>
+        <ProfilePicture gitHubUserName={person.gitHubUserName} size="100px" />
+        <div>
+          <h3>{formattedRole}</h3>
+          <h1>{fullName}</h1>
+          <p>{person.preferredPronouns}</p>
+        </div>
+      </section>
 
-      {formattedRole}
-      <h1>{fullName}</h1>
-      {person.preferredPronouns}
 
-      {person.email}
-      {person.firstName}
-      {person.gitHubUserName}
-      {person.linkedInUserName}
-      {person.codeWarsUserName}
+      <div>
+        <h3>Email</h3>
+        <p>{person.email}</p>
+      </div>
+
+      <div>
+        <h3>Github</h3>
+        <p>{person.gitHubUserName}</p>
+      </div>
+
+      <div>
+        <h3>LinkedIn</h3>
+        <p>{person.linkedInUserName}</p>
+      </div>
+
+
+      <div>
+        <h3>Codewars</h3>
+        <p>{person.codeWarsUserName}</p>
+      </div>
+
+
 
       {user.isAdmin && <RolePanel person={person} cohortId={cohortId} />}
     </section>
