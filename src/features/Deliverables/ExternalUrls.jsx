@@ -10,22 +10,21 @@ const ExternalUrls = ({ student }) => {
 
   const filteredUrls = Object.keys(urlTable).filter((url) => student.hasOwnProperty(url))
 
-  // Add visual indicator to link if URL is invalid
-  const isValidUrl = (url) => {
-    const regex = /^(http|https):\/\//
-    return regex.test(url)
-  }
+  // Add visual indicator to link if URL is invalid?
+  // const isValidUrl = (url) => {
+  //   const regex = /^(http|https):\/\//
+  //   return regex.test(url)
+  // }
 
   const urlLinks = filteredUrls.map((url, idx) => (
     <a className="externalUrl" key={idx} target="_blank" rel="noreferrer" href={urlTable[url].link}>
-      {!isValidUrl(urlTable[url].link) ? 'X' : ''}
       {urlTable[url].text}
     </a>
   ))
 
   return (
     <div className="externalUrls">
-      {!filteredUrls.length ? <p>N/A</p> : { urlLinks }}
+      {urlLinks}
     </div>
   )
 }
