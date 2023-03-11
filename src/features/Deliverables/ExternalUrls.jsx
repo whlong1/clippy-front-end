@@ -1,5 +1,5 @@
 const ExternalUrls = ({ student }) => {
-  // Might be worth handling bad links in here
+    // Reused in SubmissionMaterials, would be nice to make this a helper
   const urlTable = {
     miscUrl: { text: 'Misc URL', link: student.miscUrl },
     trelloUrl: { text: 'Trello', link: student.trelloUrl },
