@@ -3,6 +3,7 @@ import { useParams, useNavigate, Navigate } from 'react-router-dom'
 
 // Components
 import Popup from '../../layouts/Popup'
+import AttendanceHeader from './AttendanceHeader'
 import StudentStatusRow from './StudentStatusRow'
 import ContentStatus from '../../components/ContentStatus/ContentStatus'
 import DeleteConfirmation from '../../components/DeleteConfirmation/DeleteConfirmation'
@@ -52,20 +53,16 @@ const ShowAttendance = ({ user, cohortId }) => {
           handleDelete={handleDelete}
         />
       </Popup>
-      <header className='header'>
-        <section>
-          <h1>{formattedDate} {attendance.time}</h1>
-          {user.isAdmin && <button onClick={handleRedirect}>Edit</button>}
-          {user.isAdmin && <button onClick={() => setIsOpen(!isOpen)}>Delete</button>}
-        </section>
-        <section>
-          <div>
-            <h3>Taken By</h3>
-            <p>{attendance.takenBy.slice(0, 20)}</p>
-          </div>
-        </section>
-      </header>
 
+      <AttendanceHeader
+        user={user}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        attendance={attendance}
+        formattedDate={formattedDate}
+        handleRedirect={handleRedirect}
+      />
+      
       {attendance.students.map((student) => (
         <StudentStatusRow key={student._id} student={student} />
       ))}
