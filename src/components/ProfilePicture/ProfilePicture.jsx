@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import defaultPhoto from '../../assets/defaultPhoto.svg'
+import defaultPhoto from '../../assets/icons/defaultPhoto.svg'
 
 const ProfilePicture = ({ gitHubUserName, size }) => {
   const [photo, setPhoto] = useState(defaultPhoto)

@@ -1,0 +1,37 @@
+ul {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+}
+
+li {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 48px;
+  border-radius: 100px;
+  background-color: #2f2e37;
+}
+
+.appNav a img {
+  width: 20px;
+  opacity: .6;
+}
+
+.appNav ul > button {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  padding-top: 2px;
+  align-items: center;
+  margin-bottom: 48px;
+  border-radius: 100px;
+  background-color: #2f2e37;
+}
+
+.appNav ul > button img {
+  width: 22px;
+  opacity: .6;
+}

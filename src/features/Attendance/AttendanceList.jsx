@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { Link } from "react-router-dom"
 
 // Assets
-import arrow from '../../assets/arrow.svg'
-import downArrow from '../../assets/downArrow.svg'
+import arrow from '../../assets/icons/arrow.svg'
+import downArrow from '../../assets/icons/downArrow.svg'
 
 const AttendanceList = ({ attendance }) => {
   const [selectedMonth, setSelectedMonth] = useState("")

@@ -5,8 +5,8 @@ import { Link } from "react-router-dom"
 import ProfileInfo from '../../components/ProfileInfo/ProfileInfo'
 
 // Assets
-import arrow from '../../assets/arrow.svg'
-import downArrow from '../../assets/downArrow.svg'
+import arrow from '../../assets/icons/arrow.svg'
+import downArrow from '../../assets/icons/downArrow.svg'
 
 
 const PeopleList = (props) => {

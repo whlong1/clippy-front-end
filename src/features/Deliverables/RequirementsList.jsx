@@ -1,3 +1,6 @@
+// Assets
+import tag from '../../assets/icons/headers/tag.svg'
+
 const RequirementsList = ({ deliverable }) => {
   const requirements = {
     hasQuiz: { color: 'red', text: 'Quiz' },
@@ -12,8 +15,11 @@ const RequirementsList = ({ deliverable }) => {
   const requirementTags = activeReqs.map((r) => requirements[r[0]])
 
   return (
-    <div>
-      <h3>Requirements</h3>
+    <div className="subheader">
+      <h3>
+        <img src={tag} alt="requirements tag" />
+        Requirements
+      </h3>
       {requirementTags.map((r) => (
         <div key={r.text} className="tag" style={{ background: r.color }}>
           <p>{r.text}</p>

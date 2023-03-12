@@ -112,26 +112,12 @@ main>section {
 }
 
 main>nav {
-  min-width: 320px;
-  /* min-width: 346px; */
-  /* alt width 360? */
+  min-width: 300px;
+  /* min-width: 320px; */
 }
 
 .page {
   padding: 24px;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  display: flex;
-  list-style: none;
-  flex-direction: column;
-}
-
-li {
-  border: 1px solid var(--border-color);
 }
 
 form {
@@ -199,14 +185,6 @@ nav section header button img {
   width: 12px;
 }
 
-/* All row style elements */
-/* div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-} */
-
 /* ProfileInfo CSS */
 div>img {
   margin-right: 16px;
@@ -218,6 +196,14 @@ div>img {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid var(--border-color);
+}
+
+.header h1 img {
+  opacity: .5;
+  width: 16px;
+  border-radius: 0;
+  margin-left: 8px;
+  padding-top: 4px;
 }
 
 .header section>div>* {
@@ -276,7 +262,7 @@ div>img {
   align-items: center;
   padding: 0px 0px 1px;
   justify-content: center;
-  margin-top: 2px !important;
+  margin-top: 4px !important;
 }
 
 .tag p {
@@ -287,6 +273,19 @@ div>img {
   text-align: center;
   align-items: center;
   justify-content: center;
+}
+
+.header h3 {
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+}
+
+.header h3 img {
+  width: 12px;
+  height: 16px;
+  border-radius: 0;
+  margin-right: 6px;
 }
 
 /* menu header */
@@ -325,7 +324,7 @@ div>img {
   background-size: 12px;
   background-repeat: no-repeat;
   background-position: right 0px center;
-  background-image: url("assets/arrow.svg");
+  background-image: url("assets/icons/arrow.svg");
 }
 
 .menu header button {
@@ -360,18 +359,6 @@ div>img {
   margin: 0;
 }
 
-/* APP NAV */
-
-.appNav li {
-  opacity: .2;
-  width: 24px;
-  height: 24px;
-  overflow: hidden;
-  border-radius: 50%;
-  margin-bottom: 48px;
-  border: 1px solid rgb(255, 255, 255) !important;
-}
-
 /* ROW ELEMENTS */
 
 div {
@@ -400,11 +387,25 @@ div {
   margin: 0;
 }
 
-.externalUrls {
+.externalUrlsContainer {
   margin: 0;
+  opacity: .5;
   margin-left: auto;
   margin-right: 32px;
 }
+
+.externalLink img {
+  width: 14px;
+  border-radius: 0;
+  padding-top: 1px;
+  margin-left: 4px;
+}
+
+.externalLink p img {
+  width: 12px;
+  opacity: .75;
+}
+
 
 
 /* GRADE STUDENT DELIVERABLE */
@@ -425,7 +426,7 @@ div {
   padding: 4px 28px 0px 14px;
   background-repeat: no-repeat;
   background-position: right 6px center;
-  background-image: url("assets/arrow.svg");
+  background-image: url("assets/icons/arrow.svg");
 }
 
 textarea {
@@ -468,6 +469,7 @@ textarea {
 .person section:first-child {
   padding-left: 12px;
   padding-right: 32px;
+  width: 280px;
   border-right: .5px solid var(--border-color);
 }
 
@@ -513,6 +515,35 @@ textarea {
 .person img {
   margin-bottom: 40px;
   border: 1px solid var(--border-color);
+}
+
+.person h3 {
+  display: flex;
+  align-items: center;
+}
+
+.person h3 img {
+  margin: 0;
+  width: 16px;
+  border: none;
+  border-radius: 0;
+  margin-right: 8px;
+}
+
+.personLinks {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row !important;
+}
+
+.personLinks img {
+  width: 20px;
+  margin: 0;
+  opacity: .7;
+  border-radius: 0;
+  border: none;
 }
 
 
@@ -576,7 +607,7 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   background-repeat: no-repeat;
   margin-bottom: 0;
   background-position: right 8px center;
-  background-image: url("assets/downArrow.svg");
+  background-image: url("assets/icons/downArrow.svg");
 }
 
 .formContainer div div {
@@ -592,4 +623,11 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 .formContainer h1 {
   margin-right: auto;
   line-height: .95;
+}
+
+
+/* .subheader {} */
+
+.subheader p {
+  height: 20px;
 }

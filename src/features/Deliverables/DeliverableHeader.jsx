@@ -4,6 +4,10 @@ import { useState, useEffect } from 'react'
 import DueDate from './DueDate'
 import RequirementsList from './RequirementsList'
 import SubmissionTracker from './SubmissionTracker'
+import ExternalLink from '../../components/ExternalLink/ExternalLink'
+
+// Assets
+import share from '../../assets/icons/share.svg'
 
 const DeliverableHeader = (props) => {
   const {
@@ -35,12 +39,18 @@ const DeliverableHeader = (props) => {
     setCopied(true)
     navigator.clipboard.writeText(deliverableRecord.join(""))
   }
+  console.log(deliverable.notionUrl)
 
   return (
     <header className="header">
 
       <section>
-        <h1>{deliverable.name}</h1>
+        <h1>
+          <ExternalLink urlString={deliverable.notionUrl}>
+            {deliverable.name}
+            <img src={share} alt="share icon" />
+          </ExternalLink>
+        </h1>
         <button onClick={markAllComplete}>
           RESOLVE
         </button>
