@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import DueDate from './DueDate'
 import RequirementsList from './RequirementsList'
 import SubmissionTracker from './SubmissionTracker'
+import ExternalLink from '../../components/ExternalLink/ExternalLink'
 
 // Assets
 import share from '../../assets/icons/share.svg'
@@ -45,10 +46,10 @@ const DeliverableHeader = (props) => {
 
       <section>
         <h1>
-          <a className="externalUrl" target="_blank" rel="noreferrer" href={deliverable.notionUrl}>
+          <ExternalLink urlString={deliverable.notionUrl}>
             {deliverable.name}
             <img src={share} alt="share icon" />
-          </a>
+          </ExternalLink>
         </h1>
         <button onClick={markAllComplete}>
           RESOLVE
