@@ -10,7 +10,7 @@ import { useIndexPeople } from "../../hooks/useIndexPeople"
 // Helpers
 import { buildStatusArray, handleDate } from "./helpers/helpers"
 
-const AttendanceForm = ({ cohortId, profile, submitFn, prevAttendance }) => {
+const AttendanceForm = ({ cohortId, profile, submitFn, prevAttendance, title }) => {
   const { attendanceId } = useParams()
   const [studentData, setStudentData] = useState([])
   const { people, status } = useIndexPeople(cohortId)
@@ -50,7 +50,11 @@ const AttendanceForm = ({ cohortId, profile, submitFn, prevAttendance }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="date">Date:</label>
+      <header className="header">
+        <h1>{title}</h1>
+        <button type="submit">Submit</button>
+      </header>
+      <label htmlFor="date">Date</label>
       <input
         required
         id="date"
@@ -59,7 +63,7 @@ const AttendanceForm = ({ cohortId, profile, submitFn, prevAttendance }) => {
         onChange={handleChange}
         value={attendanceData.date}
       />
-      <label htmlFor="time">Time:</label>
+      <label htmlFor="time">Time</label>
       <select
         id="time"
         name="time"
@@ -69,7 +73,7 @@ const AttendanceForm = ({ cohortId, profile, submitFn, prevAttendance }) => {
         <option value="AM">AM</option>
         <option value="PM">PM</option>
       </select>
-      <label htmlFor="notes">Notes:</label>
+      <label htmlFor="notes">Notes</label>
       <input
         id="notes"
         type="text"
@@ -78,9 +82,8 @@ const AttendanceForm = ({ cohortId, profile, submitFn, prevAttendance }) => {
         value={attendanceData.notes}
       />
 
+      <h2>Students</h2>
       <StudentStatusSelect studentData={studentData} setStudentData={setStudentData} />
-
-      <button type="submit">Submit Attendance</button>
     </form>
   )
 }

@@ -24,9 +24,12 @@ const NewCohort = () => {
   }
 
   return (
-    <section>
-      <h1>New Cohort</h1>
+    <section className="formContainer">
       <form onSubmit={handleSubmit}>
+        <header className="header">
+          <h1>New Cohort</h1>
+          <button type="submit">Submit</button>
+        </header>
         <label htmlFor="name">
           Name:
         </label>
@@ -60,7 +63,6 @@ const NewCohort = () => {
           value={formData.endDate}
           onChange={handleChange}
         />
-        <button type="submit">Submit</button>
       </form>
     </section>
   )

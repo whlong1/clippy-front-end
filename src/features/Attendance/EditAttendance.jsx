@@ -23,12 +23,12 @@ const EditAttendance = ({ cohortId, profile }) => {
   }
 
   return (
-    <section>
-      <h1>Edit Attendance</h1>
+    <section className="formContainer">
       <AttendanceForm
         profile={profile}
         cohortId={cohortId}
         submitFn={handleUpdate}
+        title="Edit Attendance"
         prevAttendance={attendance}
       />
     </section>

@@ -27,6 +27,7 @@ body {
   --header-text-color: white;
   --subheader-text-color: white;
   --content-background: #101115;
+  --input-background: #080b0d;
   /* --body-text-color: #a0a0a0; */
 
   --font-l: 24px;
@@ -436,8 +437,8 @@ textarea {
   min-height: 140px;
   border-radius: 5px;
   margin-bottom: 24px;
-  background-color: #080b0d;
   border: 1px solid var(--border-color);
+  background-color: var(--input-background);
 }
 
 /* SHOW PERSON */
@@ -512,4 +513,83 @@ textarea {
 .person img {
   margin-bottom: 40px;
   border: 1px solid var(--border-color);
+}
+
+
+/* FORMS */
+
+.formContainer h1 {
+  margin-bottom: 32px;
+}
+
+.formContainer input,
+.formContainer select {
+  padding: 8px;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  background: var(--input-background);
+  margin-bottom: 24px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.formContainer label,
+.formContainer h2 {
+  margin: 0;
+  line-height: 1;
+  font-weight: 400;
+  margin-bottom: 16px;
+  font-size: var(--font-reg);
+}
+
+.formContainer section div * {
+  margin: 0;
+}
+
+.formContainer div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.formContainer div input {
+  margin-right: 16px;
+}
+
+.formContainer div label {
+  padding-bottom: 2px;
+}
+
+.formContainer div select {
+  margin-left: auto;
+  display: flex;
+  appearance: none;
+  border-radius: 5px;
+  background-size: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 24px 8px 12px;
+  background-repeat: no-repeat;
+  margin-bottom: 0;
+  background-position: right 8px center;
+  background-image: url("assets/downArrow.svg");
+}
+
+.formContainer div div {
+  margin-bottom: 4px;
+}
+
+.formContainer header {
+  display: flex;
+  margin-bottom: 32px;
+  flex-direction: row;
+}
+
+.formContainer h1 {
+  margin-right: auto;
+  line-height: .95;
 }
