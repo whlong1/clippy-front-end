@@ -8,7 +8,14 @@ const AttendanceHeader = (props) => {
     handleRedirect,
   } = props
 
-  console.log(attendance)
+  const studentCount = attendance.students.length
+  const percentPresent = attendance.students.reduce((acc, student) => {
+    if (student.status === 'A') acc = acc - 1
+    if (student.status === 'L') acc = acc - .5
+    return acc
+  }, studentCount)
+
+  const attendanceRate = (percentPresent / studentCount) * 100
 
   return (
     <header className='header'>
@@ -21,6 +28,10 @@ const AttendanceHeader = (props) => {
         <div>
           <h3>Taken By</h3>
           <p>{attendance.takenBy.slice(0, 20)}</p>
+        </div>
+        <div>
+          <h3>Attendance Rate</h3>
+          <p>{attendanceRate}% Attendance</p>
         </div>
         <div>
           <h3>Notes</h3>
