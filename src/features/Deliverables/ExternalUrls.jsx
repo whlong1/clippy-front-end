@@ -1,4 +1,8 @@
+// Assets
 import share from '../../assets/icons/share.svg'
+
+// Components
+import ExternalLink from '../../components/ExternalLink/ExternalLink'
 
 const ExternalUrls = ({ student }) => {
     // Reused in SubmissionMaterials, would be nice to make this a helper
@@ -19,9 +23,9 @@ const ExternalUrls = ({ student }) => {
   // }
 
   const urlLinks = filteredUrls.map((url, idx) => (
-    <a className="externalUrl" key={idx} target="_blank" rel="noreferrer" href={urlTable[url].link}>
+    <ExternalLink key={idx} urlString={urlTable[url].link}>
       {urlTable[url].text} <img src={share} alt="share" />
-    </a>
+    </ExternalLink>
   ))
 
   return (
