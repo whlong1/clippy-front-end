@@ -434,6 +434,7 @@ textarea {
 .person section:first-child {
   padding-left: 12px;
   padding-right: 32px;
+  width: 280px;
   border-right: .5px solid var(--border-color);
 }
 
@@ -479,6 +480,36 @@ textarea {
 .person img {
   margin-bottom: 40px;
   border: 1px solid var(--border-color);
+}
+
+.person h3 {
+  display: flex;
+  align-items: center;
+}
+
+.person h3 img {
+  margin: 0;
+  width: 16px;
+  border: none;
+  border-radius: 0;
+  margin-right: 8px;
+}
+
+.personLinks {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* border: 1px solid red; */
+  flex-direction: row !important;
+}
+
+.personLinks img {
+  width: 20px;
+  margin: 0;
+  opacity: .7;
+  border-radius: 0;
+  border: none;
 }
 
 

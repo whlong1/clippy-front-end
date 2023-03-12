@@ -6,6 +6,12 @@ import RolePanel from "./RolePanel"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
 import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
 
+// Assets
+import email from '../../assets/icons/profile/email.svg'
+import github from '../../assets/icons/profile/github.svg'
+import linkedin from '../../assets/icons/profile/linkedin.svg'
+import codewars from '../../assets/icons/profile/codewars.svg'
+
 const ShowPerson = ({ user, cohortId }) => {
   const { profileId } = useParams()
   const { person, status } = useShowPerson(cohortId, profileId)
@@ -35,8 +41,16 @@ const ShowPerson = ({ user, cohortId }) => {
           <h1>{fullName}</h1>
           <p>{person.preferredPronouns}</p>
         </span>
-        <span>
-          o o o
+        <span className="personLinks">
+          <a target="_blank" rel="noreferrer" href={`https://github.com/${person.gitHubUserName}`}>
+            <img src={github} alt="github" />
+          </a>
+          <a target="_blank" rel="noreferrer" href={`https://www.linkedin.com/in/${person.linkedInUserName}`}>
+            <img src={linkedin} alt="linkedin" />
+          </a>
+          <a target="_blank" rel="noreferrer" href={`https://www.codewars.com/users/${person.codeWarsUserName}`}>
+            <img src={codewars} alt="codewars" />
+          </a>
         </span>
         {user.isAdmin && <RolePanel person={person} cohortId={cohortId} />}
       </section>
@@ -44,19 +58,31 @@ const ShowPerson = ({ user, cohortId }) => {
       <section>
         <h1>Contact Information</h1>
         <div>
-          <h3>[ ] Email</h3>
+          <h3>
+            <img src={email} alt="email" />
+            Email
+          </h3>
           <p>{checkProp(person.email)}</p>
         </div>
         <div>
-          <h3>[ ] Github</h3>
+          <h3>
+            <img src={github} alt="github" />
+            Github
+          </h3>
           <p>{checkProp(person.gitHubUserName)}</p>
         </div>
         <div>
-          <h3>[ ] LinkedIn</h3>
+          <h3>
+            <img src={linkedin} alt="linkedin" />
+            LinkedIn
+          </h3>
           <p>{checkProp(person.linkedInUserName)}</p>
         </div>
         <div>
-          <h3>[ ] Codewars</h3>
+          <h3>
+            <img src={codewars} alt="codewars" />
+            Codewars
+          </h3>
           <p>{checkProp(person.codeWarsUserName)}</p>
         </div>
       </section>
