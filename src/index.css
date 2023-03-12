@@ -257,15 +257,20 @@ div>img {
 .tag {
   display: flex;
   height: 16px;
-  max-width: 64px;
   border-radius: 5px;
   align-items: center;
-  padding: 0px 0px 1px;
+  padding: 0px 16px 1px;
   justify-content: center;
+  width: auto !important;
   margin-top: 4px !important;
 }
 
 .tag p {
+  width: max-content;
+  text-align: center;
+}
+
+/* .tag p {
   margin: 0;
   height: 14px;
   width: 100%;
@@ -273,10 +278,9 @@ div>img {
   text-align: center;
   align-items: center;
   justify-content: center;
-}
+} */
 
 .header h3 {
-  /* border: 1px solid red; */
   display: flex;
   align-items: center;
 }
