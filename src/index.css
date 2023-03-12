@@ -27,6 +27,7 @@ body {
   --header-text-color: white;
   --subheader-text-color: white;
   --content-background: #101115;
+  --input-background: #080b0d;
   /* --body-text-color: #a0a0a0; */
 
   --font-l: 24px;
@@ -436,8 +437,8 @@ textarea {
   min-height: 140px;
   border-radius: 5px;
   margin-bottom: 24px;
-  background-color: #080b0d;
   border: 1px solid var(--border-color);
+  background-color: var(--input-background);
 }
 
 /* SHOW PERSON */
@@ -512,4 +513,24 @@ textarea {
 .person img {
   margin-bottom: 40px;
   border: 1px solid var(--border-color);
+}
+
+
+/* FORMS */
+
+.formContainer h1 {
+  margin-bottom: 32px;
+}
+
+.formContainer input,
+.formContainer select {
+  padding: 8px;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  background: var(--input-background);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
 }

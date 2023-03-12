@@ -16,7 +16,7 @@ const NewAttendance = ({ cohortId, profile }) => {
   }
 
   return (
-    <section>
+    <section className="formContainer">
       <h1>New Attendance</h1>
       <AttendanceForm
         profile={profile}
