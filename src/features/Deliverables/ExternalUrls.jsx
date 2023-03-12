@@ -21,7 +21,7 @@ const ExternalUrls = ({ student }) => {
   //   const regex = /^(http|https):\/\//
   //   return regex.test(url)
   // }
-
+  
   const urlLinks = filteredUrls.map((url, idx) => (
     <ExternalLink key={idx} urlString={urlTable[url].link}>
       {urlTable[url].text} <img src={share} alt="share" />
@@ -29,7 +29,7 @@ const ExternalUrls = ({ student }) => {
   ))
 
   return (
-    <div className="externalUrls">
+    <div className="externalUrlsContainer">
       {urlLinks}
     </div>
   )

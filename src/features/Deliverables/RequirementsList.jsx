@@ -15,7 +15,7 @@ const RequirementsList = ({ deliverable }) => {
   const requirementTags = activeReqs.map((r) => requirements[r[0]])
 
   return (
-    <div>
+    <div className="subheader">
       <h3>
         <img src={tag} alt="requirements tag" />
         Requirements

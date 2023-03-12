@@ -262,7 +262,7 @@ div>img {
   align-items: center;
   padding: 0px 0px 1px;
   justify-content: center;
-  margin-top: 2px !important;
+  margin-top: 4px !important;
 }
 
 .tag p {
@@ -387,19 +387,25 @@ div {
   margin: 0;
 }
 
-.externalUrls {
+.externalUrlsContainer {
   margin: 0;
   opacity: .5;
   margin-left: auto;
   margin-right: 32px;
 }
 
-.externalUrls img {
+.externalLink img {
   width: 14px;
   border-radius: 0;
   padding-top: 1px;
   margin-left: 4px;
 }
+
+.externalLink p img {
+  width: 12px;
+  opacity: .75;
+}
+
 
 
 /* GRADE STUDENT DELIVERABLE */
@@ -529,7 +535,6 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  /* border: 1px solid red; */
   flex-direction: row !important;
 }
 
@@ -618,4 +623,11 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 .formContainer h1 {
   margin-right: auto;
   line-height: .95;
+}
+
+
+/* .subheader {} */
+
+.subheader p {
+  height: 20px;
 }

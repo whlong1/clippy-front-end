@@ -16,12 +16,12 @@ const DueDate = ({ date }) => {
   const formattedDate = dateObj.toLocaleDateString('en-US', options)
 
   return (
-    <div>
+    <div className="subheader">
       <h3>
         <img src={dateIcon} alt="date" />
         Date
       </h3>
-      <p>{formattedDate}</p>
+      <p style={{marginTop: '2px'}}>{formattedDate}</p>
     </div>
   )
 }
