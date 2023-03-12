@@ -53,6 +53,8 @@ const ShowDeliverable = (props) => {
     return a.normalizedName > b.normalizedName ? 1 : -1
   })
 
+  console.log(deliverable)
+
   return (
     <section style={{ position: 'relative' }}>
       <Popup isOpen={isOpen}>
