@@ -10,8 +10,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • Student tag should go inside submission materials on grading page
   display student who is being graded alongside the link
 
-• JSX for attendance notes has been removed from header. Do we need it elswhere?
-
 • figure out redirect on reload GradeStudentDeliverable + ShowPerson
   useRedirectOnRefresh
 
@@ -20,7 +18,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • style onboarding pages
 
 • remove notes from attendance header- replace with % indicator
-  style attendance row
 
 • assigned indicator could be the select menu
   probably want the student indicator first on that screen

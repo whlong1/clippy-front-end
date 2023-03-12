@@ -8,6 +8,8 @@ const AttendanceHeader = (props) => {
     handleRedirect,
   } = props
 
+  console.log(attendance)
+
   return (
     <header className='header'>
       <section>
@@ -19,6 +21,10 @@ const AttendanceHeader = (props) => {
         <div>
           <h3>Taken By</h3>
           <p>{attendance.takenBy.slice(0, 20)}</p>
+        </div>
+        <div>
+          <h3>Notes</h3>
+          <p>{attendance.notes ? attendance.notes : 'Not Available'}</p>
         </div>
       </section>
     </header>
