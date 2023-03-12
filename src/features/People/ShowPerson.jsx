@@ -3,6 +3,7 @@ import { useShowPerson } from "../../hooks/useShowPerson"
 
 // Components
 import RolePanel from "./RolePanel"
+import ExternalLink from "../../components/ExternalLink/ExternalLink"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
 import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
 
@@ -42,15 +43,15 @@ const ShowPerson = ({ user, cohortId }) => {
           <p>{person.preferredPronouns}</p>
         </span>
         <span className="personLinks">
-          <a target="_blank" rel="noreferrer" href={`https://github.com/${person.gitHubUserName}`}>
+          <ExternalLink urlString={`https://github.com/${person.gitHubUserName}`}>
             <img src={github} alt="github" />
-          </a>
-          <a target="_blank" rel="noreferrer" href={`https://www.linkedin.com/in/${person.linkedInUserName}`}>
+          </ExternalLink>
+          <ExternalLink urlString={`https://www.linkedin.com/in/${person.linkedInUserName}`}>
             <img src={linkedin} alt="linkedin" />
-          </a>
-          <a target="_blank" rel="noreferrer" href={`https://www.codewars.com/users/${person.codeWarsUserName}`}>
+          </ExternalLink>
+          <ExternalLink urlString={`https://www.codewars.com/users/${person.codeWarsUserName}`}>
             <img src={codewars} alt="codewars" />
-          </a>
+          </ExternalLink>
         </span>
         {user.isAdmin && <RolePanel person={person} cohortId={cohortId} />}
       </section>
