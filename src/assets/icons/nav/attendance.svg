@@ -1,0 +1,21 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g>
+    <polygon class="cls-1" points="7.583 4.744 7.583 8.53 8.845 8.53 8.845 7.268 15.155 7.268 15.155 6.006 8.845 6.006 8.845 4.744 7.583 4.744"/>
+    <rect class="cls-1" x="7.5832" y="12.3155" width="1.2619" height="1.2619"/>
+    <rect class="cls-1" x="10.1071" y="12.3155" width="1.2619" height="1.2619"/>
+    <rect class="cls-1" x="12.631" y="12.3155" width="1.2619" height="1.2619"/>
+    <rect class="cls-1" x="15.1548" y="12.3155" width="1.2619" height="1.2619"/>
+    <rect class="cls-1" x="7.5832" y="14.8393" width="1.2619" height="1.2619"/>
+    <rect class="cls-1" x="10.1071" y="14.8393" width="1.2619" height="1.2619"/>
+    <rect class="cls-1" x="12.631" y="14.8393" width="1.2619" height="1.2619"/>
+    <rect class="cls-1" x="15.1548" y="14.8393" width="1.2619" height="1.2619"/>
+    <path class="cls-1" d="M18.9406,10.4226V6.0058H17.0477V4.7439H15.7858V8.53h1.2619V7.2678h.631V9.1607H6.3213V7.2678h.631V6.0058H5.0594v13.25H18.9406Zm-1.2619,7.5716H6.3213V10.4226H17.6787Z"/>
+  </g>
+</svg>

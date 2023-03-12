@@ -121,26 +121,6 @@ main>nav {
   padding: 24px;
 }
 
-/* APP NAV ITEMS */
-ul {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  display: flex;
-  list-style: none;
-  flex-direction: column;
-}
-
-li {
-  opacity: .2;
-  width: 24px;
-  height: 24px;
-  overflow: hidden;
-  border-radius: 50%;
-  margin-bottom: 48px;
-  background-color: #505050;
-}
-
 form {
   display: flex;
   flex-direction: column;
@@ -205,14 +185,6 @@ nav section header button {
 nav section header button img {
   width: 12px;
 }
-
-/* All row style elements */
-/* div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-} */
 
 /* ProfileInfo CSS */
 div>img {
