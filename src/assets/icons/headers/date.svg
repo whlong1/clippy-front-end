@@ -1,0 +1,21 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g>
+    <polygon class="cls-1" points="4 0 4 6 6 6 6 4 16 4 16 2 6 2 6 0 4 0"/>
+    <rect class="cls-1" x="4" y="12" width="2" height="2"/>
+    <rect class="cls-1" x="8" y="12" width="2" height="2"/>
+    <rect class="cls-1" x="12" y="12" width="2" height="2"/>
+    <rect class="cls-1" x="16" y="12" width="2" height="2"/>
+    <rect class="cls-1" x="4" y="16" width="2" height="2"/>
+    <rect class="cls-1" x="8" y="16" width="2" height="2"/>
+    <rect class="cls-1" x="12" y="16" width="2" height="2"/>
+    <rect class="cls-1" x="16" y="16" width="2" height="2"/>
+    <path class="cls-1" d="M22,9V2H19V0H17V6h2V4h1V7H2V4H3V2H0V23H22ZM20,21H2V9H20Z"/>
+  </g>
+</svg>
