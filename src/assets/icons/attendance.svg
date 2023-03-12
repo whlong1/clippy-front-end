@@ -1,0 +1,14 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g>
+    <polygon points="13 8.5 13 14.5 15 14.5 15 12.5 25 12.5 25 10.5 15 10.5 15 8.5 13 8.5"/>
+    <rect x="13" y="20.5" width="2" height="2"/>
+    <rect x="17" y="20.5" width="2" height="2"/>
+    <rect x="21" y="20.5" width="2" height="2"/>
+    <rect x="25" y="20.5" width="2" height="2"/>
+    <rect x="13" y="24.5" width="2" height="2"/>
+    <rect x="17" y="24.5" width="2" height="2"/>
+    <rect x="21" y="24.5" width="2" height="2"/>
+    <rect x="25" y="24.5" width="2" height="2"/>
+    <path d="M31,17.5v-7H28v-2H26v6h2v-2h1v3H11v-3h1v-2H9v21H31Zm-2,12H11v-12H29Z"/>
+  </g>
+</svg>

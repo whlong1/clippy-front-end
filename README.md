@@ -9,6 +9,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • distinguish between h2 and labels
 
+• style admin menu and components, add update cohort functionality
+
 • Student tag should go inside submission materials on grading page
   display student who is being graded alongside the link
 
@@ -19,15 +21,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • style onboarding pages
 
-• assigned indicator could be the select menu
-  probably want the student indicator first on that screen
-
 • Students should see there stats on MyProfile page
-
-• format jsx on other components to use show header where appropriate
-
-• Build out features/Admin components and functionality (cohorts, profiles)
-  update/delete cohort?
 
 • update how we handle quiz deliverables
 
@@ -45,13 +39,11 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • on hover effect for links
 
-• animated transitions/loading
-
 • address date issues from previous iteration on deployment
 
-• formatName should be a global helper (show person, my profile, profile info)
-
 • attendance list might need a condition for 0 attendance
+
+• formatName should be a global helper (show person, my profile, profile info)
 
 • REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
 
