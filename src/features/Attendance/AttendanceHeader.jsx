@@ -1,3 +1,8 @@
+// Assets
+import notesIcon from '../../assets/icons/headers/notes.svg'
+import takenIcon from '../../assets/icons/headers/takenby.svg'
+import completionIcon from '../../assets/icons/headers/completion.svg'
+
 const AttendanceHeader = (props) => {
   const {
     user,
@@ -25,16 +30,25 @@ const AttendanceHeader = (props) => {
         {user.isAdmin && <button onClick={() => setIsOpen(!isOpen)}>Delete</button>}
       </section>
       <section>
-        <div>
-          <h3>Taken By</h3>
+        <div className="subheader">
+          <h3>
+            <img src={takenIcon} alt="writing" />
+            Taken By
+          </h3>
           <p>{attendance.takenBy.slice(0, 20)}</p>
         </div>
-        <div>
-          <h3>Attendance Rate</h3>
+        <div className="subheader">
+          <h3>
+            <img src={completionIcon} alt="completion circle" />
+            Attendance Rate
+          </h3>
           <p>{attendanceRate}% Attendance</p>
         </div>
-        <div>
-          <h3>Notes</h3>
+        <div className="subheader">
+          <h3>
+            <img src={notesIcon} alt="notes" />
+            Notes
+          </h3>
           <p>{attendance.notes ? attendance.notes : 'Not Available'}</p>
         </div>
       </section>
