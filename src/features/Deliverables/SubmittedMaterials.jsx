@@ -17,7 +17,7 @@ const SubmittedMaterials = ({ deliverable }) => {
   const filteredUrls = Object.keys(urlTable).filter((url) => deliverable.hasOwnProperty(url))
 
   const urlLinks = filteredUrls.map((url, idx) => (
-    <ExternalLink urlString={urlTable[url].link}>
+    <ExternalLink key={idx} urlString={urlTable[url].link}>
       <p>
         {urlTable[url].text}
         <img src={share} alt="share" />
@@ -31,7 +31,7 @@ const SubmittedMaterials = ({ deliverable }) => {
         <img src={submittedIcon} alt="submitted" />
         Submitted Materials
       </h3>
-      <p>{urlLinks}</p>
+      <div>{urlLinks}</div>
     </div>
   )
 }

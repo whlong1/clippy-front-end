@@ -7,16 +7,13 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
+• tags for deliverable show, premade constants
+
 • style admin menu and components + update cohort form
 
 • could add icons to forms?
 
-• Student tag should go inside submission materials on grading page
-  display student who is being graded alongside the link
-
 • GradeStudentDeliverable + ShowPerson useRedirectOnRefresh
-
-• deliverable row indicator
 
 • style onboarding pages
 
@@ -24,7 +21,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • update how we handle quiz deliverables?
 
-• tags for deliverable show, premade constants
+• style and refactor role select form
 
 • Audit keys (need consistent key pattern for all resources)
 
@@ -65,3 +62,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • on new attendance, if no date is selected manually and the default is used, the date is one day behind
   works if the date is selected manually.
+
+• bug: change a students role, then immediately change it again, no update occurs. 
+  after refreshing or navigating to a new student and back,role can be changed again correctly
+  issue seems to stem from the select menu not refreshing. value out of sync.
