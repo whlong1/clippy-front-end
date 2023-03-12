@@ -1,8 +1,11 @@
+import { useState } from 'react'
 import { useParams, useNavigate, Navigate } from 'react-router-dom'
 
 // Components
+import Popup from '../../layouts/Popup'
 import StudentStatusRow from './StudentStatusRow'
 import ContentStatus from '../../components/ContentStatus/ContentStatus'
+import DeleteConfirmation from '../../components/DeleteConfirmation/DeleteConfirmation'
 
 // Hooks
 import { useShowAttendance } from '../../hooks/useShowAttendance'
@@ -11,6 +14,7 @@ import { useAttendanceManager } from '../../hooks/useAttendanceManager'
 const ShowAttendance = ({ user, cohortId }) => {
   const navigate = useNavigate()
   const { attendanceId } = useParams()
+  const [isOpen, setIsOpen] = useState(false)
   const mutation = useAttendanceManager(cohortId)
   const { attendance, status } = useShowAttendance(attendanceId)
 
@@ -40,15 +44,20 @@ const ShowAttendance = ({ user, cohortId }) => {
   }
 
   return (
-    <section>
+    <section style={{ position: 'relative' }}>
+      <Popup isOpen={isOpen}>
+        <DeleteConfirmation
+          setIsOpen={setIsOpen}
+          title="Delete Attendance"
+          handleDelete={handleDelete}
+        />
+      </Popup>
       <header className='header'>
-
         <section>
           <h1>{formattedDate} {attendance.time}</h1>
-          {user.isAdmin && <button onClick={handleDelete}>Delete</button>}
           {user.isAdmin && <button onClick={handleRedirect}>Edit</button>}
+          {user.isAdmin && <button onClick={() => setIsOpen(!isOpen)}>Delete</button>}
         </section>
-
         <section>
           <div>
             <h3>Taken By</h3>

@@ -1,8 +1,10 @@
-const DeleteConfirmation = ({ setIsOpen, handleDelete }) => {
+import './DeleteConfirmation.css'
+
+const DeleteConfirmation = ({ title, setIsOpen, handleDelete }) => {
 
   return (
     <div className="confirmation">
-      <h1>Delete Deliverable</h1>
+      <h1>{title}</h1>
       <p>
         Are you sure?
         This action cannot be undone.
