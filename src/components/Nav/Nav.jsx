@@ -19,38 +19,42 @@ const Nav = (props) => {
   return (
     <nav className='appNav'>
       <ul>
-        <li><NavLink to="/"></NavLink></li>
+        <li>
+          <NavLink to="/">
+            <img src="" alt="" />
+          </NavLink>
+        </li>
 
         <li>
           <NavLink to="/people">
-            <img src={people} alt="" />
+            <img src={people} alt="people" />
           </NavLink>
         </li>
 
         <li>
           <NavLink to="/attendance">
-            <img src={attendance} alt="" />
+            <img src={attendance} alt="attendance" />
           </NavLink>
         </li>
 
 
         <li>
           <NavLink to="/deliverables">
-            <img src={deliverables} alt="" />
+            <img src={deliverables} alt="deliverables" />
           </NavLink>
         </li>
 
         {isAdmin &&
           <li>
             <NavLink to="/admin">
-              <img src={admin} alt="" />
+              <img src={admin} alt="admin" />
             </NavLink>
           </li>
         }
 
         <li>
           <NavLink to="/profile">
-            <img src={profile} alt="" />
+            <img src={profile} alt="profile" />
           </NavLink>
         </li>
 
