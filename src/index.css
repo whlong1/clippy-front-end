@@ -112,9 +112,8 @@ main>section {
 }
 
 main>nav {
-  min-width: 320px;
-  /* min-width: 346px; */
-  /* alt width 360? */
+  min-width: 300px;
+  /* min-width: 320px; */
 }
 
 .page {
