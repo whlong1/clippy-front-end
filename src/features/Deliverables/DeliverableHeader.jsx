@@ -5,6 +5,9 @@ import DueDate from './DueDate'
 import RequirementsList from './RequirementsList'
 import SubmissionTracker from './SubmissionTracker'
 
+// Assets
+import share from '../../assets/icons/share.svg'
+
 const DeliverableHeader = (props) => {
   const {
     setIsOpen,
@@ -35,12 +38,18 @@ const DeliverableHeader = (props) => {
     setCopied(true)
     navigator.clipboard.writeText(deliverableRecord.join(""))
   }
+  console.log(deliverable.notionUrl)
 
   return (
     <header className="header">
 
       <section>
-        <h1>{deliverable.name}</h1>
+        <h1>
+          <a className="externalUrl" target="_blank" rel="noreferrer" href={deliverable.notionUrl}>
+            {deliverable.name}
+            <img src={share} alt="share icon" />
+          </a>
+        </h1>
         <button onClick={markAllComplete}>
           RESOLVE
         </button>

@@ -198,6 +198,14 @@ div>img {
   border-bottom: 1px solid var(--border-color);
 }
 
+.header h1 img {
+  opacity: .5;
+  width: 16px;
+  border-radius: 0;
+  margin-left: 8px;
+  padding-top: 2px;
+}
+
 .header section>div>* {
   /* subheaders in show views */
   margin: 0;
@@ -381,8 +389,16 @@ div {
 
 .externalUrls {
   margin: 0;
+  opacity: .5;
   margin-left: auto;
   margin-right: 32px;
+}
+
+.externalUrls img {
+  width: 14px;
+  border-radius: 0;
+  padding-top: 1px;
+  margin-left: 4px;
 }
 
 
