@@ -17,10 +17,10 @@ const NewAttendance = ({ cohortId, profile }) => {
 
   return (
     <section className="formContainer">
-      <h1>New Attendance</h1>
       <AttendanceForm
         profile={profile}
         cohortId={cohortId}
+        title="New Attendance"
         submitFn={handleCreate}
       />
     </section>

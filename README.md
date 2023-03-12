@@ -7,6 +7,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
+• distinguish between h2 and labels
+
 • Student tag should go inside submission materials on grading page
   display student who is being graded alongside the link
 

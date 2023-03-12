@@ -45,8 +45,11 @@ const NewDeliverable = ({ cohortId }) => {
 
   return (
     <section className="formContainer">
-      <h1>New Deliverable</h1>
       <form onSubmit={handleSubmit}>
+        <header className="header">
+          <h1>New Deliverable</h1>
+          <button type="submit">Submit</button>
+        </header>
         <label htmlFor="name">Name</label>
         <input
           required
@@ -79,74 +82,74 @@ const NewDeliverable = ({ cohortId }) => {
         />
 
         <h2>Deliverable Requirements</h2>
+        <section>
 
-        <div>
-          <input
-            type="checkbox"
-            id="hasQuiz"
-            name="hasQuiz"
-            onChange={handleChange}
-            checked={deliverableData.hasQuiz}
-          />
-          <label htmlFor="hasQuiz">Quiz</label>
-        </div>
+          <div>
+            <input
+              type="checkbox"
+              id="hasQuiz"
+              name="hasQuiz"
+              onChange={handleChange}
+              checked={deliverableData.hasQuiz}
+            />
+            <label htmlFor="hasQuiz">Quiz</label>
+          </div>
 
-        <div>
-          <input
-            type="checkbox"
-            id="hasMiscUrl"
-            name="hasMiscUrl"
-            onChange={handleChange}
-            checked={deliverableData.hasMiscUrl}
-          />
-          <label htmlFor="hasMiscUrl">Misc URL</label>
-        </div>
+          <div>
+            <input
+              type="checkbox"
+              id="hasMiscUrl"
+              name="hasMiscUrl"
+              onChange={handleChange}
+              checked={deliverableData.hasMiscUrl}
+            />
+            <label htmlFor="hasMiscUrl">Misc URL</label>
+          </div>
 
-        <div>
-          <input
-            type="checkbox"
-            id="hasGitHubUrl"
-            name="hasGitHubUrl"
-            onChange={handleChange}
-            checked={deliverableData.hasGitHubUrl}
-          />
-          <label htmlFor="hasGitHubUrl">GitHub URL</label>
-        </div>
+          <div>
+            <input
+              type="checkbox"
+              id="hasGitHubUrl"
+              name="hasGitHubUrl"
+              onChange={handleChange}
+              checked={deliverableData.hasGitHubUrl}
+            />
+            <label htmlFor="hasGitHubUrl">GitHub URL</label>
+          </div>
 
-        <div>
-          <input
-            type="checkbox"
-            id="hasTrelloUrl"
-            name="hasTrelloUrl"
-            onChange={handleChange}
-            checked={deliverableData.hasTrelloUrl}
-          />
-          <label htmlFor="hasTrelloUrl">Trello URL</label>
-        </div>
+          <div>
+            <input
+              type="checkbox"
+              id="hasTrelloUrl"
+              name="hasTrelloUrl"
+              onChange={handleChange}
+              checked={deliverableData.hasTrelloUrl}
+            />
+            <label htmlFor="hasTrelloUrl">Trello URL</label>
+          </div>
 
-        <div>
-          <input
-            type="checkbox"
-            id="hasDeploymentUrl"
-            name="hasDeploymentUrl"
-            onChange={handleChange}
-            checked={deliverableData.hasDeploymentUrl}
-          />
-          <label htmlFor="hasDeploymentUrl">Deployment</label>
-        </div>
+          <div>
+            <input
+              type="checkbox"
+              id="hasDeploymentUrl"
+              name="hasDeploymentUrl"
+              onChange={handleChange}
+              checked={deliverableData.hasDeploymentUrl}
+            />
+            <label htmlFor="hasDeploymentUrl">Deployment</label>
+          </div>
 
-        <div>
-          <input
-            type="checkbox"
-            id="hasCodeSandboxUrl"
-            name="hasCodeSandboxUrl"
-            onChange={handleChange}
-            checked={deliverableData.hasCodeSandboxUrl}
-          />
-          <label htmlFor="hasCodeSandboxUrl">CodeSandbox</label>
-        </div>
-
-        <button type="submit">Create Deliverable</button>
+          <div>
+            <input
+              type="checkbox"
+              id="hasCodeSandboxUrl"
+              name="hasCodeSandboxUrl"
+              onChange={handleChange}
+              checked={deliverableData.hasCodeSandboxUrl}
+            />
+            <label htmlFor="hasCodeSandboxUrl">CodeSandbox</label>
+          </div>
+        </section>
       </form>
     </section>
   )
