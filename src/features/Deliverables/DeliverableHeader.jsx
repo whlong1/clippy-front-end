@@ -39,7 +39,6 @@ const DeliverableHeader = (props) => {
     setCopied(true)
     navigator.clipboard.writeText(deliverableRecord.join(""))
   }
-  console.log(deliverable.notionUrl)
 
   return (
     <header className="header">

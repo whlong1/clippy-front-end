@@ -10,9 +10,9 @@ const SubmissionTracker = ({ deliverable }) => {
     <div>
       <h3>
         <img src={completionIcon} alt="completion circle" />
-        Completion
+        Submitted
       </h3>
-      <p style={{marginTop: '2px'}}>{percentComplete}% Submitted</p>
+      <p style={{ marginTop: '2px' }}>{percentComplete}% Submitted</p>
     </div>
   )
 }

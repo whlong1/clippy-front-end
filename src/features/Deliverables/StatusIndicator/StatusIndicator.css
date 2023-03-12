@@ -1,0 +1,17 @@
+.status {
+  width: 16px;
+  height: 16px;
+  padding: 8px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3px 32px 3px 0px;
+}
+
+.status img {
+  margin: 0;
+  opacity: .5;
+  width: 16px;
+  border-radius: 0;
+}

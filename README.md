@@ -58,3 +58,5 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • SubmissionTracker and DueDate p tags require 2px margin-top to bring them inline with other subheaders. Investigate cause.
 
 • width of subheader class should scale based on content.
+
+• autocomplete in code editor is too narrow, some bit of css is impacting this. resolve
