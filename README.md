@@ -7,15 +7,12 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
-• distinguish between h2 and labels
-
-• style admin menu and components, add update cohort functionality
+• style admin menu and components + update cohort form
 
 • Student tag should go inside submission materials on grading page
   display student who is being graded alongside the link
 
-• figure out redirect on reload GradeStudentDeliverable + ShowPerson
-  useRedirectOnRefresh
+• GradeStudentDeliverable + ShowPerson useRedirectOnRefresh
 
 • deliverable row indicator
 
@@ -23,27 +20,19 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • Students should see there stats on MyProfile page
 
-• update how we handle quiz deliverables
+• update how we handle quiz deliverables?
 
 • tags for deliverable show, premade constants
 
-• side menu icons, date, requirements, completion, share/copy icons
-
-• Audit props being passed
-
 • Audit keys (need consistent key pattern for all resources)
-
-• Review access to admin functionality (front end and backend)
 
 • For security, might be worth refactoring how admin and student routes are handled
 
 • on hover effect for links
 
-• address date issues from previous iteration on deployment
+• make sure date issues from previous iteration are resolved on deploy
 
-• attendance list might need a condition for 0 attendance
-
-• formatName should be a global helper (show person, my profile, profile info)
+• attendance list might need a condition for 0 attendance?
 
 • REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
 
