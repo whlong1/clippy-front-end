@@ -9,6 +9,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • style admin menu and components + update cohort form
 
+• could add icons to forms?
+
 • Student tag should go inside submission materials on grading page
   display student who is being graded alongside the link
 
