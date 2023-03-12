@@ -9,6 +9,7 @@ const buildStatusArray = (arr) => {
       studentId: s._id,
       lastName: s.lastName,
       preferredName: s.preferredName,
+      gitHubUserName: s.gitHubUserName,
       normalizedName: s.normalizedName,
       status: students.some((el) => el._id === s._id) ? 'P' : 'W',
     }

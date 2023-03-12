@@ -78,6 +78,7 @@ const AttendanceForm = ({ cohortId, profile, submitFn, prevAttendance }) => {
         value={attendanceData.notes}
       />
 
+      <h2>Students</h2>
       <StudentStatusSelect studentData={studentData} setStudentData={setStudentData} />
 
       <button type="submit">Submit Attendance</button>

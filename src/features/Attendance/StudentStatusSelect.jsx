@@ -1,3 +1,5 @@
+import ProfileInfo from "../../components/ProfileInfo/ProfileInfo"
+
 const StudentStatusSelect = ({ studentData, setStudentData }) => {
   // Is this component name clear enough?
   // This component creates a status select menu for each student
@@ -10,10 +12,12 @@ const StudentStatusSelect = ({ studentData, setStudentData }) => {
 
   if (!studentData.length) return <h1>Oopsy Daisy! No students!</h1>
 
+  console.log('studentData', studentData)
+
   return (
     studentData.map((s) => (
       <div key={s.studentId}>
-        <label>{s.preferredName + s.lastName}</label>
+        <ProfileInfo profile={s} />
         <select name="status" id={s.studentId} defaultValue={s.status} onChange={handleChange}>
           <option hidden disabled >{s.status}</option>
           <option value="P">P</option>
