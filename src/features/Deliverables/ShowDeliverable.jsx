@@ -9,8 +9,8 @@ import { useDeliverablesManager } from '../../hooks/useDeliverablesManager'
 import Popup from '../../layouts/Popup'
 import DeliverableHeader from './DeliverableHeader'
 import StudentDeliverableRow from './StudentDeliverableRow'
-import DeleteConfirmation from './DeleteConfirmation'
 import ContentStatus from '../../components/ContentStatus/ContentStatus'
+import DeleteConfirmation from '../../components/DeleteConfirmation/DeleteConfirmation'
 
 const ShowDeliverable = (props) => {
   const { cohortId } = props
@@ -58,6 +58,7 @@ const ShowDeliverable = (props) => {
       <Popup isOpen={isOpen}>
         <DeleteConfirmation
           setIsOpen={setIsOpen}
+          title="Delete Deliverable"
           handleDelete={handleDelete}
         />
       </Popup>

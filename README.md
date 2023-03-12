@@ -17,9 +17,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • style onboarding pages
 
-• remove notes from attendance header- replace with % indicator
-  style attendance row
-
 • assigned indicator could be the select menu
   probably want the student indicator first on that screen
 

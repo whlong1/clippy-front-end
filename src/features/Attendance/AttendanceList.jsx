@@ -76,15 +76,12 @@ const AttendanceList = ({ attendance }) => {
         }
 
         {selectedMonth === month.num &&
-          <ul>
-            {monthlyAttendance[month.num].map((attendance) => (
-              <li key={attendance._id}>
-                <Link key={attendance._id} to={`/attendance/${attendance._id}`}>
-                  {attendance.friendlyDate} - {attendance.time}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          monthlyAttendance[month.num].map((attendance) => (
+            <Link key={attendance._id} to={`/attendance/${attendance._id}`}>
+              <p>{attendance.friendlyDate}</p>
+              <p>{attendance.time}</p>
+            </Link>
+          ))
         }
       </section>
     ))

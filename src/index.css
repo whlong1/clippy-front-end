@@ -199,12 +199,12 @@ nav section header button img {
 }
 
 /* All row style elements */
-div {
+/* div {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-}
+} */
 
 /* ProfileInfo CSS */
 div>img {
@@ -359,6 +359,8 @@ div>img {
   margin: 0;
 }
 
+/* APP NAV */
+
 .appNav li {
   opacity: .2;
   width: 24px;
@@ -369,24 +371,31 @@ div>img {
   border: 1px solid rgb(255, 255, 255) !important;
 }
 
-/* DELIVERABLE ROW */
+/* ROW ELEMENTS */
 
-.deliverableRow {
+div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.row {
   padding: 0px 14px;
   height: 48px;
   border-bottom: 1px solid var(--border-color);
 }
 
-.deliverableRow>* {
+.row>* {
   margin-right: 32px;
 }
 
 /*todo status indicator element will change */
-.deliverableRow input {
+.row input {
   margin-left: 0;
 }
 
-.deliverableRow a {
+.row a {
   margin: 0;
 }
 
@@ -396,51 +405,6 @@ div>img {
   margin-right: 32px;
 }
 
-
-/* CONFIRMATION */
-
-.confirmation {
-  top: 50%;
-  left: 50%;
-  z-index: 2;
-  padding: 24px;
-  display: flex;
-  min-width: 380px;
-  position: absolute;
-  border-radius: 5px;
-  flex-direction: column;
-  transform: translate(-50%, -50%);
-  border: 1px solid var(--border-color);
-  background-color: var(--content-background);
-  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.75);
-}
-
-.confirmation * {
-  margin: 0;
-  line-height: 1;
-}
-
-.confirmation h1 {
-  margin-bottom: 14px;
-}
-
-.confirmation p {
-  font-weight: 300;
-  text-align: center;
-  letter-spacing: .75px;
-}
-
-.confirmation button {
-  width: 80px;
-  height: 24px;
-  font-size: 12px;
-  font-weight: 600;
-  border-radius: 5px;
-  margin: 24px 8px 0px;
-  padding: 6px 0px 18px;
-}
 
 /* GRADE STUDENT DELIVERABLE */
 .grade header {
@@ -475,7 +439,6 @@ textarea {
   background-color: #080b0d;
   border: 1px solid var(--border-color);
 }
-
 
 /* SHOW PERSON */
 
