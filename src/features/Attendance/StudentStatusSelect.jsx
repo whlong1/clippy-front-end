@@ -12,8 +12,6 @@ const StudentStatusSelect = ({ studentData, setStudentData }) => {
 
   if (!studentData.length) return <h1>Oopsy Daisy! No students!</h1>
 
-  console.log('studentData', studentData)
-
   return (
     studentData.map((s) => (
       <div key={s.studentId}>

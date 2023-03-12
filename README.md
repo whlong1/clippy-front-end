@@ -9,6 +9,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • style admin menu and components + update cohort form
 
+• could add icons to forms?
+
 • Student tag should go inside submission materials on grading page
   display student who is being graded alongside the link
 
@@ -60,3 +62,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • width of subheader class should scale based on content.
 
 • autocomplete in code editor is too narrow, some bit of css is impacting this. resolve
+
+• on new attendance, if no date is selected manually and the default is used, the date is one day behind
+  works if the date is selected manually.

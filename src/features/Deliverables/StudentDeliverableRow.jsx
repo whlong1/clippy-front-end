@@ -3,8 +3,8 @@ import { Link } from "react-router-dom"
 // Components
 import GroupSelect from "./GroupSelect"
 import ExternalUrls from "./ExternalUrls"
-import StatusIndicator from "./StatusIndicator/StatusIndicator"
 import ProfileInfo from "../../components/ProfileInfo/ProfileInfo"
+import StatusIndicator from "../../components/StatusIndicator/StatusIndicator"
 
 const StudentDeliverableRow = ({ deliverableId, student, handleSquad }) => {
   const { _id: studentDeliverableId } = student
