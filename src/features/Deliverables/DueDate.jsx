@@ -1,3 +1,6 @@
+// Assets
+import dateIcon from '../../assets/icons/headers/date.svg'
+
 const DueDate = ({ date }) => {
   const options = {
     hour12: true,
@@ -14,7 +17,10 @@ const DueDate = ({ date }) => {
 
   return (
     <div>
-      <h3>Date</h3>
+      <h3>
+        <img src={dateIcon} alt="date" />
+        Date
+      </h3>
       <p>{formattedDate}</p>
     </div>
   )

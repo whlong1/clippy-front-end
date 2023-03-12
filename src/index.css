@@ -267,6 +267,19 @@ div>img {
   justify-content: center;
 }
 
+.header h3 {
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+}
+
+.header h3 img {
+  width: 12px;
+  height: 16px;
+  border-radius: 0;
+  margin-right: 6px;
+}
+
 /* menu header */
 
 .menu span {
