@@ -2,7 +2,7 @@
 import pendingAudit from '../../assets/icons/status/pending.svg'
 
 const StudentStatus = ({ status }) => {
-  
+
   const formattedStatus = status === 'pendingAudit'
     ? 'Pending Audit'
     : status[0].toUpperCase() + status.slice(1)
@@ -13,7 +13,7 @@ const StudentStatus = ({ status }) => {
         <img src={pendingAudit} alt="status" />
         Status
       </h3>
-      <p>{formattedStatus}</p>
+      <p style={{ marginTop: '2px' }}>{formattedStatus}</p>
     </div>
   )
 }

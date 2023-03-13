@@ -15,7 +15,9 @@ const CodeEditor = ({ formData, setFormData }) => {
         readOnly={!setFormData}
         value={formData.codeblock}
         extensions={[javascript({ jsx: true })]}
-        onChange={(value) => setFormData({ ...formData, codeblock: value })}
+        onChange={(value) => {
+          if (setFormData) setFormData({ ...formData, codeblock: value })
+        }}
       />
     </section>
   )

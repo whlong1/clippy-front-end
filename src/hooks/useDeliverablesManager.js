@@ -56,6 +56,9 @@ export const useDeliverablesManager = (cohortId) => {
           return sd._id === res._id ? { ...sd, ...res } : sd
         })
 
+        console.log('res', res)
+        console.log('pay', payload)
+
         queryClient.setQueryData(listQueryKey, updateListState)
         queryClient.setQueryData(detailsQueryKey, { ...payload, ...res })
       },

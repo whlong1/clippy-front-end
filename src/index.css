@@ -423,6 +423,28 @@ div {
   background-color: var(--input-background);
 }
 
+.submissionPanel div {
+  display: flex;
+  flex-direction: column;
+}
+
+.submissionPanel span {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+
+.submissionPanel button{
+  height: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: auto;
+  padding: 0px 16px;
+  border-radius: 5px;
+  margin-bottom: 14px;
+}
+
 /* SHOW PERSON */
 
 .person {

@@ -21,7 +21,7 @@ const DueDate = ({ date }) => {
         <img src={dateIcon} alt="date" />
         Date
       </h3>
-      <p style={{marginTop: '2px'}}>{formattedDate}</p>
+      <p style={{ marginTop: '2px' }}>{formattedDate}</p>
     </div>
   )
 }
