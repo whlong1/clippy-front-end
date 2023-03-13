@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom"
 
 // Components
-import RequirementsList from "./RequirementsList"
 import StudentSubmissionPanel from './StudentSubmissionPanel'
+import RequirementTags from "./RequirementTags/RequirementTags"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
 
 // Hooks 
@@ -24,9 +24,7 @@ const ShowStudentDeliverable = ({ cohortId }) => {
       <h2>notion url:</h2>
       {studentDeliverable.notionUrl}
 
-      <p>requirements/urls</p>
-      <h2>Requirements</h2>
-      <RequirementsList deliverable={studentDeliverable} />
+      <RequirementTags deliverable={studentDeliverable} />
 
       <h3>Status::: {studentDeliverable.status}</h3>
 

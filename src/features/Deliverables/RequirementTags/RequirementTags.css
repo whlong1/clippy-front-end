@@ -1,0 +1,15 @@
+.tag {
+  display: flex;
+  height: 16px;
+  border-radius: 5px;
+  align-items: center;
+  padding: 0px 16px 1px;
+  justify-content: center;
+  width: auto !important;
+  margin-top: 4px !important;
+}
+
+.tag p {
+  width: max-content;
+  text-align: center;
+}

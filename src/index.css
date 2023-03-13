@@ -254,29 +254,7 @@ div>img {
   align-items: flex-start;
 }
 
-.tag {
-  display: flex;
-  height: 16px;
-  max-width: 64px;
-  border-radius: 5px;
-  align-items: center;
-  padding: 0px 0px 1px;
-  justify-content: center;
-  margin-top: 4px !important;
-}
-
-.tag p {
-  margin: 0;
-  height: 14px;
-  width: 100%;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-
 .header h3 {
-  /* border: 1px solid red; */
   display: flex;
   align-items: center;
 }
@@ -378,11 +356,6 @@ div {
   margin-right: 32px;
 }
 
-/*todo status indicator element will change */
-.row input {
-  margin-left: 0;
-}
-
 .row a {
   margin: 0;
 }
@@ -405,8 +378,6 @@ div {
   width: 12px;
   opacity: .75;
 }
-
-
 
 /* GRADE STUDENT DELIVERABLE */
 .grade header {
@@ -624,7 +595,6 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   margin-right: auto;
   line-height: .95;
 }
-
 
 /* .subheader {} */
 

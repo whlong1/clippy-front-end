@@ -1,14 +1,16 @@
-// Assets
-import tag from '../../assets/icons/headers/tag.svg'
+import './RequirementTags.css'
 
-const RequirementsList = ({ deliverable }) => {
+// Assets
+import tag from '../../../assets/icons/headers/tag.svg'
+
+const RequirementTags = ({ deliverable }) => {
   const requirements = {
-    hasQuiz: { color: 'red', text: 'Quiz' },
-    hasMiscUrl: { color: 'blue', text: 'Misc' },
-    hasGitHubUrl: { color: 'green', text: 'Github' },
-    hasTrelloUrl: { color: 'purple', text: 'Trello' },
-    hasDeploymentUrl: { color: 'orange', text: 'Deployment' },
-    hasCodeSandboxUrl: { color: 'yellow', text: 'Code Sandbox' },
+    hasQuiz: { color: '#FF6B9E', text: 'Quiz' },
+    hasMiscUrl: { color: '#404040', text: 'Misc' },
+    hasGitHubUrl: { color: '#56A64B', text: 'Github' },
+    hasTrelloUrl: { color: '#A971B1', text: 'Trello' },
+    hasDeploymentUrl: { color: '#0077C9', text: 'Deployment' },
+    hasCodeSandboxUrl: { color: '#404040', text: 'Code Sandbox' },
   }
 
   const activeReqs = Object.entries(requirements).filter((obj) => deliverable[obj[0]])
@@ -29,4 +31,4 @@ const RequirementsList = ({ deliverable }) => {
   )
 }
 
-export default RequirementsList
+export default RequirementTags
