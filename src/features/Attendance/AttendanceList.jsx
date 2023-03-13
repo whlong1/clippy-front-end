@@ -59,9 +59,6 @@ const AttendanceList = ({ attendance, isAdmin }) => {
       return { ...acc, [month]: [...acc[month], record] }
     }, attendanceObj)
 
-  
-  console.log(months)
-
   if (!isAdmin) {
     return (
       months.map((month) => (
