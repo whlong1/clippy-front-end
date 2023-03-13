@@ -59,13 +59,15 @@ const AttendanceList = ({ attendance, isAdmin }) => {
       return { ...acc, [month]: [...acc[month], record] }
     }, attendanceObj)
 
+  
+  console.log(months)
 
   if (!isAdmin) {
     return (
       months.map((month) => (
         <section key={month.num}>
           <header>
-            <Link to={`/attendance/${month.long.toLocaleLowerCase()}`}>
+            <Link state={monthlyAttendance[month.num]} to={`/attendance/${month.long.toLocaleLowerCase()}`}>
               <h2>{month.long}</h2>
             </Link>
           </header>
