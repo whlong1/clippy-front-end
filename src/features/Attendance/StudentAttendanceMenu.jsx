@@ -1,4 +1,5 @@
 // Components
+import AttendanceList from './AttendanceList'
 import MenuLayout from '../../layouts/MenuLayout'
 import MenuStatus from '../../components/MenuStatus/MenuStatus'
 
@@ -13,25 +14,27 @@ const StudentAttendanceMenu = (props) => {
   if (status === 'loading') return <MenuStatus {...props} status={status} />
 
   // Would be great to put this data in a chart
-  const statusArr = ['P', 'A', 'L', 'W', 'EC', 'SC', 'H']
-  const attendanceTable = statusArr.reduce((table, val) => {
-    const tableKey = val.toLocaleLowerCase()
-    table[tableKey] = attendance.filter((a) => a.students[0].status === val).length
-    return table
-  }, {})
+  // const statusArr = ['P', 'A', 'L', 'W', 'EC', 'SC', 'H']
+  // const attendanceTable = statusArr.reduce((table, val) => {
+  //   const tableKey = val.toLocaleLowerCase()
+  //   table[tableKey] = attendance.filter((a) => a.students[0].status === val).length
+  //   return table
+  // }, {})
 
-  // Needs refactor with icons etc...
-  const myAttendance = attendance.map((a) => (
-    <p key={a._id}>{a.date} ::::{a.students[0].status}</p>
-  ))
+  console.log(attendance)
 
   return (
     <MenuLayout {...props}>
-      <h1>My Attendance</h1>
-      <p>Present: {attendanceTable.p}</p>
-      <p>Absent: {attendanceTable.a}</p>
-      <p>Late: {attendanceTable.l}</p>
-      {myAttendance}
+      <span>
+        <h1>My Attendance</h1>
+      </span>
+
+      {/* <section>
+        <h2>Total Absences</h2>
+      </section> */}
+
+      <AttendanceList attendance={attendance} />
+
     </MenuLayout>
   )
 }
