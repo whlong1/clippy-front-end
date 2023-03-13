@@ -17,6 +17,7 @@ const AttendanceRouter = (props) => {
     <Routes>
       <Route element={<ContentLayout menu={<StudentAttendanceMenu {...props} />} />}>
         <Route index element={<FeatureLanding title="My Attendance" />} />
+        <Route path="/:month" element={<h1>Month</h1>} />
         <Route path="/*" element={<Navigate to='/attendance' />} />
       </Route>
     </Routes>

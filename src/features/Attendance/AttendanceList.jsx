@@ -65,7 +65,7 @@ const AttendanceList = ({ attendance, isAdmin }) => {
       months.map((month) => (
         <section key={month.num}>
           <header>
-            <Link>
+            <Link to={`/attendance/${month.long.toLocaleLowerCase()}`}>
               <h2>{month.long}</h2>
             </Link>
           </header>
