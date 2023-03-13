@@ -1,10 +1,12 @@
-import { useLocation } from 'react-router-dom'
+import { useLocation, Navigate } from 'react-router-dom'
 
 // Assets 
 import completionIcon from '../../assets/icons/headers/completion.svg'
 
 const AttendanceByMonth = () => {
   const { state } = useLocation()
+
+  if (!state) return <Navigate to="/attendance" />
 
   const lookup = {
     L: 'Late',
@@ -23,7 +25,7 @@ const AttendanceByMonth = () => {
     return acc
   }, totalDays)
 
-  const attendanceRate = (presentCount / totalDays) * 100
+  const attendanceRate = totalDays ? (presentCount / totalDays) * 100 : 0
 
   return (
     <section>
