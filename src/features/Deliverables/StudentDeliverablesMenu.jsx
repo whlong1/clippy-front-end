@@ -16,17 +16,16 @@ const StudentDeliverablesMenu = (props) => {
 
   return (
     <MenuLayout {...props}>
-      <h1>My Deliverables Menu</h1>
+      <span>
+        <h1>My Deliverables</h1>
+      </span>
 
       <CompletionTracker studentDeliverables={studentDeliverables} />
 
-      <h2>My Deliverables</h2>
-
       {studentDeliverables.map((sd) => (
         <Link key={sd._id} to={`/deliverables/${sd._id}`}>
-          {sd.name}
-          ------
-          {sd.status}
+          <p>{sd.name}</p>
+          <p>{sd.status[0].toUpperCase() + sd.status.slice(1)}</p>
         </Link>
       ))}
 

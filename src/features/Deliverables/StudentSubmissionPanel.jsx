@@ -54,8 +54,6 @@ const StudentSubmissionPanel = (props) => {
     </div>
   )
 
-
-
   return (
     <section className="submissionPanel">
       {deliverableData.hasNewStatus ? newFeedback : submissionForm}

@@ -25,8 +25,6 @@ const ShowStudentDeliverable = ({ cohortId }) => {
   if (status === 'error') return <ContentStatus status={status} />
   if (status === 'loading') return <ContentStatus status={status} />
 
-  console.log(studentDeliverable.name, studentDeliverable.hasNewStatus, studentDeliverable._id)
-
   return (
     <section className="studentDeliverable">
       <header className="header">
