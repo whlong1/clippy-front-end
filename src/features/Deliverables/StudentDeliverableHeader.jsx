@@ -1,7 +1,7 @@
 // Components
 import DueDate from './DueDate'
 import StudentDisplay from './StudentDisplay'
-import RequirementsList from './RequirementsList'
+import RequirementTags from './RequirementTags/RequirementTags'
 import SubmittedMaterials from './SubmittedMaterials'
 import DeliverableStatusSelect from './DeliverableStatusSelect'
 
@@ -22,7 +22,7 @@ const StudentDeliverableHeader = (props) => {
       <section>
         <StudentDisplay profile={deliverable.profile} />
         <DueDate date={deliverable.dueDate} />
-        <RequirementsList deliverable={deliverable} />
+        <RequirementTags deliverable={deliverable} />
         <SubmittedMaterials deliverable={deliverable}/>
       </section>
     </header>

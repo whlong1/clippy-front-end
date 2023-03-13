@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 
 // Components
 import DueDate from './DueDate'
-import RequirementsList from './RequirementsList'
 import SubmissionTracker from './SubmissionTracker'
+import RequirementTags from './RequirementTags/RequirementTags'
 import ExternalLink from '../../components/ExternalLink/ExternalLink'
 
 // Assets
@@ -63,7 +63,7 @@ const DeliverableHeader = (props) => {
 
       <section>
         <DueDate date={deliverable.dueDate} />
-        <RequirementsList deliverable={deliverable} />
+        <RequirementTags deliverable={deliverable} />
         <SubmissionTracker deliverable={deliverable} />
       </section>
 

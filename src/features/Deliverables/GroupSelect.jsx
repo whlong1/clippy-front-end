@@ -1,17 +1,6 @@
 import Select from 'react-select'
 
 const GroupSelect = ({ student, handleSquad }) => {
-  // eslint-disable-next-line
-  const delonge = [
-    { value: '#9c1b1b', label: 'red' },
-    { value: '#f57f17', label: 'orange' },
-    { value: '#fdd835', label: 'yellow' },
-    { value: '#2e7d32', label: 'green' },
-    { value: '#0a4c8c', label: 'blue' },
-    { value: '#8e24aa', label: 'purple' },
-    { value: '#f48fb1', label: 'pink' },
-    { value: '#424242', label: 'black' },
-  ]
 
   // eslint-disable-next-line
   const ikea = [
@@ -25,6 +14,7 @@ const GroupSelect = ({ student, handleSquad }) => {
     { value: '#5E5E5E', label: 'black' },
   ]
 
+  // eslint-disable-next-line
   const skittles = [
     { value: '#CC0000', label: 'red' },
     { value: '#FF6600', label: 'orange' },
@@ -36,7 +26,7 @@ const GroupSelect = ({ student, handleSquad }) => {
     { value: '#404040', label: 'black' },
   ]
 
-  const options = skittles
+  const options = ikea
 
   const styles = {
     // Styles options inside the select
