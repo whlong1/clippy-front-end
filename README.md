@@ -7,7 +7,10 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
-• tags for deliverable show, premade constants
+• Upcoming deliverables, past deliverables, and new feedback needed for Student D Menu
+
+• form on student submssion panel only has input for github url
+  get rid of useEffect, find a way to rely on studentDeliverable variable for rendering
 
 • style admin menu and components + update cohort form
 

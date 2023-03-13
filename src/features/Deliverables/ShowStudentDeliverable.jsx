@@ -1,8 +1,17 @@
 import { useParams } from "react-router-dom"
 
+// Assets
+import share from '../../assets/icons/share.svg'
+
 // Components
+import DueDate from './DueDate'
+import GradingNotes from "./GradingNotes"
+import StudentStatus from "./StudentStatus"
+import CodeEditor from "./CodeEditor/CodeEditor"
+// import SubmittedMaterials from './SubmittedMaterials'
 import StudentSubmissionPanel from './StudentSubmissionPanel'
 import RequirementTags from "./RequirementTags/RequirementTags"
+import ExternalLink from "../../components/ExternalLink/ExternalLink"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
 
 // Hooks 
@@ -17,23 +26,38 @@ const ShowStudentDeliverable = ({ cohortId }) => {
   if (status === 'loading') return <ContentStatus status={status} />
 
   return (
-    <section>
-      <h1>{studentDeliverable.name} (student view)</h1>
-      <h2>due date</h2>
-      {studentDeliverable.dueDate}
-      <h2>notion url:</h2>
-      {studentDeliverable.notionUrl}
-
-      <RequirementTags deliverable={studentDeliverable} />
-
-      <h3>Status::: {studentDeliverable.status}</h3>
-
-      {studentDeliverable.hasNewStatus && <h3>New Feedback!</h3>}
+    <section className="studentDeliverable">
+      <header className="header">
+        <section>
+          <h1>
+            <ExternalLink urlString={studentDeliverable.notionUrl}>
+              {studentDeliverable.name}
+              <img src={share} alt="share icon" />
+            </ExternalLink>
+          </h1>
+        </section>
+        <section>
+          <DueDate date={studentDeliverable.dueDate} />
+          <RequirementTags deliverable={studentDeliverable} />
+          <StudentStatus status={studentDeliverable.status} />
+          {/* <SubmittedMaterials deliverable={studentDeliverable} /> */}
+        </section>
+      </header>
 
       <StudentSubmissionPanel
         cohortId={cohortId}
         studentDeliverable={studentDeliverable}
       />
+      {studentDeliverable.gradingNotes &&
+        <GradingNotes
+          gradingNotes={studentDeliverable.gradingNotes}
+        />
+      }
+      {studentDeliverable.codeblock &&
+        <CodeEditor
+          formData={studentDeliverable}
+        />
+      }
 
     </section>
   )

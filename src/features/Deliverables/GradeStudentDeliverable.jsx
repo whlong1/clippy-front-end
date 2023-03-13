@@ -40,7 +40,7 @@ const GradeStudentDeliverable = (props) => {
   }
 
   return (
-    <section className="grade">
+    <section className="studentDeliverable">
       <StudentDeliverableHeader
         formData={formData}
         handleGrade={handleGrade}

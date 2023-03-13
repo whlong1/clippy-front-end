@@ -6,6 +6,7 @@ import NewAttendance from '../features/Attendance/NewAttendance'
 import EditAttendance from '../features/Attendance/EditAttendance.jsx'
 import AttendanceMenu from '../features/Attendance/AttendanceMenu.jsx'
 import ShowAttendance from '../features/Attendance/ShowAttendance.jsx'
+import AttendanceByMonth from '../features/Attendance/AttendanceByMonth.jsx'
 import FeatureLanding from '../components/FeatureLanding/FeatureLanding.jsx'
 import StudentAttendanceMenu from '../features/Attendance/StudentAttendanceMenu.jsx'
 
@@ -17,6 +18,7 @@ const AttendanceRouter = (props) => {
     <Routes>
       <Route element={<ContentLayout menu={<StudentAttendanceMenu {...props} />} />}>
         <Route index element={<FeatureLanding title="My Attendance" />} />
+        <Route path="/:month" element={<AttendanceByMonth {...props} />} />
         <Route path="/*" element={<Navigate to='/attendance' />} />
       </Route>
     </Routes>

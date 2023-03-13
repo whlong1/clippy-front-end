@@ -1,12 +1,11 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useDeliverablesManager } from "../../hooks/useDeliverablesManager"
 
 // This component needs a better name...
 const StudentSubmissionPanel = (props) => {
   const { cohortId, studentDeliverable } = props
   const mutation = useDeliverablesManager(cohortId)
-  const isNewDeliverable = studentDeliverable.status === 'assigned'
-  const [isFormActive, setIsFormActive] = useState(isNewDeliverable)
+  const [isFormActive, setIsFormActive] = useState(studentDeliverable)
   const [deliverableData, setDeliverableData] = useState(studentDeliverable)
 
   const submitDeliverable = () => {
@@ -22,9 +21,19 @@ const StudentSubmissionPanel = (props) => {
     setDeliverableData({ ...deliverableData, [target.name]: target.value })
   }
 
-  return (
+  useEffect(()=> {
+    setDeliverableData(studentDeliverable)
+  }, [studentDeliverable, setDeliverableData])
+
+  const submissionForm = (
     <div>
-      <label htmlFor="gitHubUrl">Submission Link Example:</label>
+      <span>
+        <h2>Submision</h2>
+        {isFormActive
+          ? <button onClick={submitDeliverable}>SUBMIT</button>
+          : <button onClick={() => setIsFormActive(true)}>UPDATE</button>
+        }
+      </span>
       <input
         type="text"
         id="gitHubUrl"
@@ -33,16 +42,22 @@ const StudentSubmissionPanel = (props) => {
         disabled={!isFormActive}
         value={deliverableData.gitHubUrl || ''}
       />
-
-      {isFormActive
-        ? <button onClick={submitDeliverable}>Submit Deliverable</button>
-        : <button onClick={() => setIsFormActive(true)}>Update Materials</button>
-      }
-
-      {deliverableData.hasNewStatus &&
-        <button onClick={markFeedbackAsRead}>Mark Feedback as Read</button>
-      }
     </div>
+  )
+
+  const newFeedback = (
+    <div>
+      <span>
+        <h2>New Feedback</h2>
+        <button onClick={markFeedbackAsRead}>MARK READ</button>
+      </span>
+    </div>
+  )
+
+  return (
+    <section className="submissionPanel">
+      {deliverableData.hasNewStatus ? newFeedback : submissionForm}
+    </section>
   )
 }
 

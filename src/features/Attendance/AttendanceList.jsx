@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import arrow from '../../assets/icons/arrow.svg'
 import downArrow from '../../assets/icons/downArrow.svg'
 
-const AttendanceList = ({ attendance }) => {
+const AttendanceList = ({ attendance, isAdmin }) => {
   const [selectedMonth, setSelectedMonth] = useState("")
 
   const months = [
@@ -59,6 +59,23 @@ const AttendanceList = ({ attendance }) => {
       return { ...acc, [month]: [...acc[month], record] }
     }, attendanceObj)
 
+
+  // Student View:
+  if (!isAdmin) {
+    return (
+      months.map((month) => (
+        <section key={month.num}>
+          <header>
+            <Link state={monthlyAttendance[month.num]} to={`/attendance/${month.long.toLocaleLowerCase()}`}>
+              <h2>{month.long}</h2>
+            </Link>
+          </header>
+        </section>
+      ))
+    )
+  }
+
+  // Instructor View
   return (
     months.map((month) => (
       <section key={month.num}>
