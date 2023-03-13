@@ -24,10 +24,6 @@ const DeliverableHeader = (props) => {
     incomplete: "Incomplete",
   }
 
-  const deliverableRecord = deliverable.students.map((s) =>
-    statusTable[s.status] ? statusTable[s.status] + "\n" : "\n"
-  )
-
   useEffect(() => {
     const resetCopy = () => {
       setTimeout(() => setCopied(false), 2000)
@@ -36,8 +32,11 @@ const DeliverableHeader = (props) => {
   }, [copied])
 
   const handleCopy = () => {
-    setCopied(true)
+    const deliverableRecord = deliverable.students.map((s) =>
+      statusTable[s.status] ? statusTable[s.status] + "\n" : "\n"
+    )
     navigator.clipboard.writeText(deliverableRecord.join(""))
+    setCopied(true)
   }
 
   return (
@@ -50,6 +49,7 @@ const DeliverableHeader = (props) => {
             <img src={share} alt="share icon" />
           </ExternalLink>
         </h1>
+
         <button onClick={markAllComplete}>
           RESOLVE
         </button>
@@ -59,6 +59,7 @@ const DeliverableHeader = (props) => {
         <button onClick={handleCopy}>
           {copied ? "COPIED" : "COPY"}
         </button>
+
       </section>
 
       <section>

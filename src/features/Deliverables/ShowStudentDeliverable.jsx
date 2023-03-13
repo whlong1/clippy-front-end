@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom"
 
 // Components
+
+import DueDate from './DueDate'
 import StudentSubmissionPanel from './StudentSubmissionPanel'
 import RequirementTags from "./RequirementTags/RequirementTags"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
@@ -16,8 +18,33 @@ const ShowStudentDeliverable = ({ cohortId }) => {
   if (status === 'error') return <ContentStatus status={status} />
   if (status === 'loading') return <ContentStatus status={status} />
 
+  console.log(studentDeliverable)
+
   return (
     <section>
+      {/* <StudentDeliverableHeader deliverable={studentDeliverable} /> */}
+      <header className="header">
+        <section>
+          <h1>{studentDeliverable.name}</h1>
+          {/* <DeliverableStatusSelect
+            formData={formData}
+            handleChange={handleChange}
+          /> */}
+          {/* <button onClick={handleGrade}>SUBMIT</button> */}
+        </section>
+
+        <section>
+        <DueDate date={studentDeliverable.dueDate} />
+        <RequirementTags deliverable={studentDeliverable} />
+          {/* <StudentDisplay profile={deliverable.profile} /> */}
+          {/* <DueDate date={studentDeliverable.dueDate} />
+          <RequirementTags deliverable={studentDeliverable} />
+          <SubmittedMaterials deliverable={studentDeliverable} /> */}
+        </section>
+
+      </header>
+
+
       <h1>{studentDeliverable.name} (student view)</h1>
       <h2>due date</h2>
       {studentDeliverable.dueDate}

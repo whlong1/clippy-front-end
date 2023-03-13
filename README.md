@@ -7,8 +7,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
-• tags for deliverable show, premade constants
-
 • style admin menu and components + update cohort form
 
 • could add icons to forms?

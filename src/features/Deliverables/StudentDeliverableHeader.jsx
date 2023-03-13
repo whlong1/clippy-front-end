@@ -25,6 +25,7 @@ const StudentDeliverableHeader = (props) => {
         <RequirementTags deliverable={deliverable} />
         <SubmittedMaterials deliverable={deliverable}/>
       </section>
+      
     </header>
   )
 }
