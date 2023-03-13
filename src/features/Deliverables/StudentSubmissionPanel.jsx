@@ -23,8 +23,10 @@ const StudentSubmissionPanel = (props) => {
   }
 
   return (
-    <div>
-      <label htmlFor="gitHubUrl">Submission Link Example:</label>
+    <section>
+      <h2>Submit</h2>
+      {/* <label htmlFor="gitHubUrl">Submission Link Example:</label> */}
+      
       <input
         type="text"
         id="gitHubUrl"
@@ -34,15 +36,15 @@ const StudentSubmissionPanel = (props) => {
         value={deliverableData.gitHubUrl || ''}
       />
 
-      {isFormActive
+      {/* {isFormActive
         ? <button onClick={submitDeliverable}>Submit Deliverable</button>
         : <button onClick={() => setIsFormActive(true)}>Update Materials</button>
-      }
+      } */}
 
       {deliverableData.hasNewStatus &&
         <button onClick={markFeedbackAsRead}>Mark Feedback as Read</button>
       }
-    </div>
+    </section>
   )
 }
 

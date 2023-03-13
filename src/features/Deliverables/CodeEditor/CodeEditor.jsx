@@ -12,6 +12,7 @@ const CodeEditor = ({ formData, setFormData }) => {
         theme={dracula}
         name="codeblock"
         minHeight="100px"
+        readOnly={!setFormData}
         value={formData.codeblock}
         extensions={[javascript({ jsx: true })]}
         onChange={(value) => setFormData({ ...formData, codeblock: value })}

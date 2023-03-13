@@ -379,16 +379,16 @@ div {
   opacity: .75;
 }
 
-/* GRADE STUDENT DELIVERABLE */
-.grade header {
+/* GRADE AND VIEW STUDENT DELIVERABLE */
+.studentDeliverable header {
   margin-bottom: 32px;
 }
 
-.grade h2 {
+.studentDeliverable h2 {
   margin-bottom: 16px;
 }
 
-.grade select {
+.studentDeliverable select {
   display: flex;
   appearance: none;
   border-radius: 5px;
@@ -400,7 +400,17 @@ div {
   background-image: url("assets/icons/arrow.svg");
 }
 
-textarea {
+.studentDeliverable input {
+  width: 100%;
+  padding: 8px;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border-color);
+  background-color: var(--input-background);
+}
+
+.studentDeliverable textarea {
   width: 100%;
   padding: 8px;
   color: white;

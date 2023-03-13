@@ -6,6 +6,7 @@ const GradingNotes = ({ gradingNotes, handleChange }) => {
         name="gradingNotes"
         value={gradingNotes}
         onChange={handleChange}
+        disabled={!handleChange}
       />
     </section>
   )
