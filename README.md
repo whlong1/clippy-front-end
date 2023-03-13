@@ -7,9 +7,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
-• Arrange my attendance by month, click on month should pull up list from that month, might need getattendancebymonth controller?
-
-
 • Upcoming deliverables, past deliverables, and new feedback needed for Student D Menu
 
 • form on student submssion panel only has input for github url

@@ -59,6 +59,8 @@ const AttendanceList = ({ attendance, isAdmin }) => {
       return { ...acc, [month]: [...acc[month], record] }
     }, attendanceObj)
 
+
+  // Student View:
   if (!isAdmin) {
     return (
       months.map((month) => (
@@ -73,6 +75,7 @@ const AttendanceList = ({ attendance, isAdmin }) => {
     )
   }
 
+  // Instructor View
   return (
     months.map((month) => (
       <section key={month.num}>
