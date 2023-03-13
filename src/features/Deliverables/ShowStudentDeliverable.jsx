@@ -1,11 +1,16 @@
 import { useParams } from "react-router-dom"
 
 // Components
-
 import DueDate from './DueDate'
+import StudentStatus from "./StudentStatus"
+import SubmittedMaterials from './SubmittedMaterials'
 import StudentSubmissionPanel from './StudentSubmissionPanel'
 import RequirementTags from "./RequirementTags/RequirementTags"
+import ExternalLink from "../../components/ExternalLink/ExternalLink"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
+
+// Assets
+import share from '../../assets/icons/share.svg'
 
 // Hooks 
 import { useShowStudentDeliverable } from "../../hooks/useShowStudentDeliverable"
@@ -22,38 +27,22 @@ const ShowStudentDeliverable = ({ cohortId }) => {
 
   return (
     <section>
-      {/* <StudentDeliverableHeader deliverable={studentDeliverable} /> */}
       <header className="header">
         <section>
-          <h1>{studentDeliverable.name}</h1>
-          {/* <DeliverableStatusSelect
-            formData={formData}
-            handleChange={handleChange}
-          /> */}
-          {/* <button onClick={handleGrade}>SUBMIT</button> */}
+          <h1>
+            <ExternalLink urlString={studentDeliverable.notionUrl}>
+              {studentDeliverable.name}
+              <img src={share} alt="share icon" />
+            </ExternalLink>
+          </h1>
         </section>
-
         <section>
-        <DueDate date={studentDeliverable.dueDate} />
-        <RequirementTags deliverable={studentDeliverable} />
-          {/* <StudentDisplay profile={deliverable.profile} /> */}
-          {/* <DueDate date={studentDeliverable.dueDate} />
+          <DueDate date={studentDeliverable.dueDate} />
           <RequirementTags deliverable={studentDeliverable} />
-          <SubmittedMaterials deliverable={studentDeliverable} /> */}
+          <StudentStatus status={studentDeliverable.status} />
+          <SubmittedMaterials deliverable={studentDeliverable} />
         </section>
-
       </header>
-
-
-      <h1>{studentDeliverable.name} (student view)</h1>
-      <h2>due date</h2>
-      {studentDeliverable.dueDate}
-      <h2>notion url:</h2>
-      {studentDeliverable.notionUrl}
-
-      <RequirementTags deliverable={studentDeliverable} />
-
-      <h3>Status::: {studentDeliverable.status}</h3>
 
       {studentDeliverable.hasNewStatus && <h3>New Feedback!</h3>}
 

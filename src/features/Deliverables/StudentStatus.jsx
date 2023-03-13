@@ -1,14 +1,19 @@
 // Assets
-
+import pendingAudit from '../../assets/icons/status/pending.svg'
 
 const StudentStatus = ({ status }) => {
+  
+  const formattedStatus = status === 'pendingAudit'
+    ? 'Pending Audit'
+    : status[0].toUpperCase() + status.slice(1)
+
   return (
     <div className="subheader">
       <h3>
-        <img src={studentIcon} alt="student" />
+        <img src={pendingAudit} alt="status" />
         Status
       </h3>
-      <p></p>
+      <p>{formattedStatus}</p>
     </div>
   )
 }
