@@ -1,3 +1,5 @@
+import './RequirementTags.css'
+
 // Assets
 import tag from '../../../assets/icons/headers/tag.svg'
 
