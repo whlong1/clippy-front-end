@@ -5,7 +5,8 @@ const CompletionTracker = ({ studentDeliverables }) => {
     if (!studentDeliverables.length) return 0
     const deliverableCount = studentDeliverables.length
     const completedCount = studentDeliverables.filter((d) => d.status === 'complete').length
-    return (completedCount / deliverableCount) * 100
+    const percentComplete = (completedCount / deliverableCount) * 100
+    return percentComplete.toFixed()
   }
 
   return (
