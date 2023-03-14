@@ -7,9 +7,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
-• GradeStudentDeliverable - useRedirectOnRefresh
-  Show person resolved. 
-
 • order deliverables correctly
 
 • style and refactor role select form
@@ -27,9 +24,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • on hover effect for links
 
 • make sure date issues from previous iteration are resolved on deploy
-
-• attendance list might need a condition for 0 attendance?
-
 
 ## Notes
 

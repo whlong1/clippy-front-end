@@ -20,7 +20,9 @@ const StudentDeliverablesMenu = (props) => {
   if (status === 'error') return <MenuStatus {...props} status={status} />
   if (status === 'loading') return <MenuStatus {...props} status={status} />
 
-  const newFeedback = studentDeliverables.length ? studentDeliverables.filter((sd) => sd.hasNewStatus) : []
+  const newFeedback = studentDeliverables.length
+    ? studentDeliverables.filter((sd) => sd.hasNewStatus)
+    : []
 
   return (
     <MenuLayout {...props}>
