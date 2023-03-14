@@ -22,11 +22,17 @@ const StudentAttendanceMenu = (props) => {
     return table
   }, {})
 
-  console.log('attendance table', attendanceTable)
-
+  //! Code assumes the following:
+  // 1 late = .33
+  // 1 absence = .5
   // 3 Lates  =  1 absence
-  // 1 absence = -.5
-  // 1 late = -.33
+
+  const lateScore = Math.ceil(attendanceTable.l * 0.33)
+  const absentScore = Math.ceil(attendanceTable.a * 0.5)
+
+  const totalDays = attendance.length
+  const daysAttended = totalDays - absentScore - lateScore
+  const attendancePercentage = (daysAttended / totalDays) * 100
 
   return (
     <MenuLayout {...props}>
@@ -34,9 +40,11 @@ const StudentAttendanceMenu = (props) => {
         <h1>My Attendance</h1>
       </span>
 
-      {/* <section>
-        <h2>Total Absences</h2>
-      </section> */}
+      <section>
+        <h2>Attendance Rate {attendancePercentage.toFixed(2)}%</h2>
+        <h2>Absences: {absentScore}</h2>
+        <h2>Tardies: {lateScore}</h2>
+      </section>
 
       <AttendanceList attendance={attendance} />
 
