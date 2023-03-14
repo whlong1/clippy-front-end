@@ -1,5 +1,6 @@
 import { useParams, Navigate } from "react-router-dom"
 import { useShowPerson } from "../../hooks/useShowPerson"
+import './styles/ShowPerson.css'
 
 // Components
 import RolePanel from "./RolePanel"

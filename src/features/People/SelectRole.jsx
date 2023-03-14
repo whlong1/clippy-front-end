@@ -16,7 +16,10 @@ const SelectRole = ({ mutation, person, setIsOpen }) => {
 
   return (
     <div className="roleConfirmation">
-      <h2>Change Role</h2>
+      <header>
+        <h1>Change Role</h1>
+        <p>Please select a role from the menu below.</p>
+      </header>
       <select name="newRole" onChange={handleChange} defaultValue={person.role}>
         <option value="students">Student</option>
         <option value="inactive">Withdrawn</option>
@@ -25,12 +28,14 @@ const SelectRole = ({ mutation, person, setIsOpen }) => {
         <option value="ias">Instructional Associate</option>
       </select>
 
-      <button disabled={!changeRoleData.newRole} onClick={handleMutate}>
-        CONFIRM
-      </button>
-      <button onClick={() => setIsOpen((prev) => !prev)}>
-        CANCEL
-      </button>
+      <section>
+        <button disabled={!changeRoleData.newRole} onClick={handleMutate}>
+          CONFIRM
+        </button>
+        <button onClick={() => setIsOpen((prev) => !prev)}>
+          CANCEL
+        </button>
+      </section>
     </div>
   )
 }
