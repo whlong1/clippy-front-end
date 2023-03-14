@@ -9,6 +9,7 @@ import GradingNotes from "./GradingNotes"
 import StudentStatus from "./StudentStatus"
 import CodeEditor from "./CodeEditor/CodeEditor"
 // import SubmittedMaterials from './SubmittedMaterials'
+import SubmisionAndFeedback from "./SubmissionAndFeedback"
 import StudentSubmissionPanel from './StudentSubmissionPanel'
 import RequirementTags from "./RequirementTags/RequirementTags"
 import ExternalLink from "../../components/ExternalLink/ExternalLink"
@@ -44,20 +45,12 @@ const ShowStudentDeliverable = ({ cohortId }) => {
         </section>
       </header>
 
-      <StudentSubmissionPanel
+
+      <SubmisionAndFeedback
         cohortId={cohortId}
         studentDeliverable={studentDeliverable}
       />
-      {studentDeliverable.gradingNotes &&
-        <GradingNotes
-          gradingNotes={studentDeliverable.gradingNotes}
-        />
-      }
-      {studentDeliverable.codeblock &&
-        <CodeEditor
-          formData={studentDeliverable}
-        />
-      }
+
 
     </section>
   )

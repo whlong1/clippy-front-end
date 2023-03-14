@@ -9,7 +9,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • update how we handle quiz deliverables?
 
-• how can an instructor make a new cohort and join it? missing onboarding process for first user
+• test scenario when no cohorts or profiles or attendance exist for an administrator
 
 • when awaiting instructor approval during onboarding, should have message that says waiting to join x cohort
 
@@ -25,7 +25,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • style onboarding pages
 
-• Students should see there stats on MyProfile page
+• Students should see there stats on MyProfile page?
 
 • style and refactor role select form
 
