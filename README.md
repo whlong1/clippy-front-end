@@ -9,6 +9,12 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • arrange deliverables most recent at top
 
+• hide arrow in cohort select from students
+
+• how can an instructor make a new cohort and join it?
+
+• when awaiting instructor approval during onboarding, should have message that says waiting to join x cohort
+
 • Upcoming deliverables, past deliverables, and new feedback needed for Student D Menu
 
 • form on student submssion panel only has input for github url
@@ -19,6 +25,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • could add icons to forms?
 
 • GradeStudentDeliverable + ShowPerson useRedirectOnRefresh
+  Show person resolved. 
 
 • style onboarding pages
 
