@@ -61,7 +61,7 @@ const SubmisionAndFeedback = ({ cohortId, studentDeliverable }) => {
         <header>
           <h2>Feedback</h2>
           <h3>Graded by {studentDeliverable.gradedBy}</h3>
-          {!studentDeliverable.hasNewStatus &&
+          {studentDeliverable.hasNewStatus &&
             <button onClick={markFeedbackAsRead}>MARK READ</button>
           }
         </header>
