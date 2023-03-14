@@ -19,8 +19,8 @@ const SubmisionAndFeedback = ({ cohortId, studentDeliverable }) => {
     mutation.mutate({ type: 'submit', payload: deliverableData })
   }
 
-  const markFeedbackAsRead = (deliverableData) => {
-    mutation.mutate({ type: 'submit', payload: { ...deliverableData, hasNewStatus: false } })
+  const markFeedbackAsRead = () => {
+    mutation.mutate({ type: 'submit', payload: { ...studentDeliverable, hasNewStatus: false } })
   }
 
   const urlTable = {
