@@ -13,15 +13,20 @@ const StudentAttendanceMenu = (props) => {
   if (status === 'error') return <MenuStatus {...props} status={status} />
   if (status === 'loading') return <MenuStatus {...props} status={status} />
 
-  // Would be great to put this data in a chart
-  // const statusArr = ['P', 'A', 'L', 'W', 'EC', 'SC', 'H']
-  // const attendanceTable = statusArr.reduce((table, val) => {
-  //   const tableKey = val.toLocaleLowerCase()
-  //   table[tableKey] = attendance.filter((a) => a.students[0].status === val).length
-  //   return table
-  // }, {})
+  const statusArr = ['P', 'A', 'L', 'W', 'EC', 'SC', 'H']
+  const attendanceTable = statusArr.reduce((table, val) => {
+    const tableKey = val.toLocaleLowerCase()
+    table[tableKey] = attendance.filter((a) => (
+      a.students.length ? a.students[0].status === val : false
+    )).length
+    return table
+  }, {})
 
-  console.log(attendance)
+  console.log('attendance table', attendanceTable)
+
+  // 3 Lates  =  1 absence
+  // 1 absence = -.5
+  // 1 late = -.33
 
   return (
     <MenuLayout {...props}>
