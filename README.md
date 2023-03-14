@@ -9,14 +9,9 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • order deliverables correctly
 
-• update how we handle quiz deliverables?
-
 • test scenario when no cohorts or profiles or attendance exist for an administrator
 
 • when awaiting instructor approval during onboarding, should have message that says waiting to join x cohort
-
-• form on student submssion panel only has input for github url
-  get rid of useEffect, find a way to rely on studentDeliverable variable for rendering
 
 • style admin menu and components + update cohort form
 
