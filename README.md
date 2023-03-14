@@ -7,6 +7,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
+• arrange deliverables most recent at top
+
 • Upcoming deliverables, past deliverables, and new feedback needed for Student D Menu
 
 • form on student submssion panel only has input for github url

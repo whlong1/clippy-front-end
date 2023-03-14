@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useParams, Navigate } from "react-router-dom"
 import { useShowPerson } from "../../hooks/useShowPerson"
 
 // Components
@@ -17,10 +17,18 @@ const ShowPerson = ({ user, cohortId }) => {
   const { profileId } = useParams()
   const { person, status } = useShowPerson(cohortId, profileId)
 
+  console.log('PERSON', person)
+  console.log('COHORT', cohortId) //2263
+
+
   if (status === 'error') return <ContentStatus status={status} />
   if (status === 'loading') return <ContentStatus status={status} />
+
   // This might cause an issue if people belong to multiple cohorts.
-  // if (person.cohort !== cohortId && person.role === 'students') return <Navigate to='/people' />
+  if (person.cohort !== cohortId && !person.role) return <Navigate to='/people' />
+
+
+
 
   const formattedRole = person.role.at(-1) === 's'
     ? person.role[0].toUpperCase() + person.role.slice(1, -1)
