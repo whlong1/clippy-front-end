@@ -10,38 +10,39 @@ import SubmissionPanel from './StudentView/SubmissionPanel'
 
 const SubmisionAndFeedback = (props) => {
   const { cohortId, studentDeliverable } = props
-  const [isOpen, setIsOpen] = useState(false)
-
-
   const mutation = useDeliverablesManager(cohortId)
-  const [isFormActive, setIsFormActive] = useState(studentDeliverable)
-  const [deliverableData, setDeliverableData] = useState(studentDeliverable)
+
+  const [isOpen, setIsOpen] = useState(false)
+  
+  // const [isFormActive, setIsFormActive] = useState(studentDeliverable)
+  // const [deliverableData, setDeliverableData] = useState(studentDeliverable)
 
   const submitDeliverable = () => {
-    mutation.mutate({ type: 'submit', payload: deliverableData })
-    setIsFormActive(false)
+    // mutation.mutate({ type: 'submit', payload: deliverableData })
+    // setIsFormActive(false)
   }
 
   const markFeedbackAsRead = () => {
-    mutation.mutate({ type: 'submit', payload: { ...deliverableData, hasNewStatus: false } })
+    // mutation.mutate({ type: 'submit', payload: { ...deliverableData, hasNewStatus: false } })
   }
 
   const handleChange = ({ target }) => {
-    setDeliverableData({ ...deliverableData, [target.name]: target.value })
+    // setDeliverableData({ ...deliverableData, [target.name]: target.value })
   }
 
-  useEffect(() => {
-    setDeliverableData(studentDeliverable)
-  }, [studentDeliverable, setDeliverableData])
+  // useEffect(() => {
+  //   setDeliverableData(studentDeliverable)
+  // }, [studentDeliverable, setDeliverableData])
 
 
   return (
     <section>
       <Popup isOpen={isOpen}>
-        <SubmissionPanel 
-        cohortId={cohortId} studentDeliverable={studentDeliverable}
-        setIsOpen={setIsOpen}
-         />
+        <SubmissionPanel
+          cohortId={cohortId}
+          setIsOpen={setIsOpen}
+          studentDeliverable={studentDeliverable}
+        />
       </Popup>
 
       <header>
@@ -53,11 +54,10 @@ const SubmisionAndFeedback = (props) => {
       <header>
         <h2>Feedback</h2>
         <h3>By Joe Malatesta</h3>
-        {/* <button onClick={markFeedbackAsRead}>MARK READ</button> */}
-        <button>MARK READ</button>
+        <button onClick={markFeedbackAsRead}>MARK READ</button>
       </header>
 
-      <Feedback studentDeliverable={studentDeliverable}/>
+      <Feedback studentDeliverable={studentDeliverable} />
 
     </section>
   )
