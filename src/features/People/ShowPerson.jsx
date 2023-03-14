@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useParams, Navigate } from "react-router-dom"
 import { useShowPerson } from "../../hooks/useShowPerson"
 
 // Components
@@ -19,8 +19,15 @@ const ShowPerson = ({ user, cohortId }) => {
 
   if (status === 'error') return <ContentStatus status={status} />
   if (status === 'loading') return <ContentStatus status={status} />
-  // This might cause an issue if people belong to multiple cohorts.
-  // if (person.cohort !== cohortId && person.role === 'students') return <Navigate to='/people' />
+  if (person.cohort !== cohortId && !person.role) return <Navigate to='/people' />
+  // ^^ When viewing a person, if we refresh the page, the cohortId defaults
+  // to our current cohort, but the person we were viewing will still be displayed,
+  // even if they are not in that cohort. This check will catch that, and redirect.
+  // The show person functionality uses a person's cohortId to find their associated role.
+  // If no role is present, the redirect should occur. If there is a role, we might be looking 
+  // at someone in multiple cohorts (instructor, ta), in which case the redirect should not occur.
+
+
 
   const formattedRole = person.role.at(-1) === 's'
     ? person.role[0].toUpperCase() + person.role.slice(1, -1)

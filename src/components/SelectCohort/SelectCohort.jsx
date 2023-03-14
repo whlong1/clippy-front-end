@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom'
+import './SelectCohort.css'
 
 // Hooks
 import { useIndexCohorts } from '../../hooks/useIndexCohorts'
@@ -16,6 +17,8 @@ const SelectCohort = (props) => {
 
   const currentCohort = cohorts.find((c) => c._id === cohortId)
 
+  const menuStyleClass = user.isAdmin ? 'cohortSelect' : 'cohortDisplay'
+
   const optionsArr = user.isAdmin
     ? [currentCohort, ...cohorts.filter((c) => c._id !== cohortId)]
     : [currentCohort]
@@ -26,7 +29,7 @@ const SelectCohort = (props) => {
   }
 
   return (
-    <select onChange={handleChange} disabled={!user.isAdmin}>
+    <select className={menuStyleClass} onChange={handleChange} disabled={!user.isAdmin}>
       {optionsArr.map((c) => (
         <option key={c._id} value={c._id}>{c.name}</option>
       ))}

@@ -7,7 +7,11 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
-• Upcoming deliverables, past deliverables, and new feedback needed for Student D Menu
+• update how we handle quiz deliverables?
+
+• how can an instructor make a new cohort and join it? missing onboarding process for first user
+
+• when awaiting instructor approval during onboarding, should have message that says waiting to join x cohort
 
 • form on student submssion panel only has input for github url
   get rid of useEffect, find a way to rely on studentDeliverable variable for rendering
@@ -16,13 +20,12 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • could add icons to forms?
 
-• GradeStudentDeliverable + ShowPerson useRedirectOnRefresh
+• GradeStudentDeliverable - useRedirectOnRefresh
+  Show person resolved. 
 
 • style onboarding pages
 
 • Students should see there stats on MyProfile page
-
-• update how we handle quiz deliverables?
 
 • style and refactor role select form
 

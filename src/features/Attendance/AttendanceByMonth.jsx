@@ -7,6 +7,7 @@ const AttendanceByMonth = () => {
   const { state } = useLocation()
 
   if (!state) return <Navigate to="/attendance" />
+  if (!state[0].students.length) return <Navigate to="/attendance" />
 
   const lookup = {
     L: 'Late',
