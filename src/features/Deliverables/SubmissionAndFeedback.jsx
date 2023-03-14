@@ -5,6 +5,7 @@ import { useDeliverablesManager } from "../../hooks/useDeliverablesManager"
 import Popup from '../../layouts/Popup'
 import GradingNotes from "./GradingNotes"
 import CodeEditor from "./CodeEditor/CodeEditor"
+import Feedback from "./StudentView/Feedback"
 import SubmissionPanel from './StudentView/SubmissionPanel'
 
 const SubmisionAndFeedback = (props) => {
@@ -37,7 +38,10 @@ const SubmisionAndFeedback = (props) => {
   return (
     <section>
       <Popup isOpen={isOpen}>
-        <SubmissionPanel cohortId={cohortId} studentDeliverable={studentDeliverable} />
+        <SubmissionPanel 
+        cohortId={cohortId} studentDeliverable={studentDeliverable}
+        setIsOpen={setIsOpen}
+         />
       </Popup>
 
       <header>
@@ -49,8 +53,11 @@ const SubmisionAndFeedback = (props) => {
       <header>
         <h2>Feedback</h2>
         <h3>By Joe Malatesta</h3>
+        {/* <button onClick={markFeedbackAsRead}>MARK READ</button> */}
         <button>MARK READ</button>
       </header>
+
+      <Feedback studentDeliverable={studentDeliverable}/>
 
     </section>
   )
