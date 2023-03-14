@@ -57,7 +57,7 @@ const SubmisionAndFeedback = ({ cohortId, studentDeliverable }) => {
         <button onClick={() => setIsOpen((prev) => !prev)}>ADD</button>
       </header>
 
-      {studentDeliverable.gradedBy &&
+      {studentDeliverable.gradedBy && studentDeliverable.gradingNotes &&
         <header>
           <h2>Feedback</h2>
           <h3>Graded by {studentDeliverable.gradedBy}</h3>
