@@ -32,12 +32,26 @@ const SubmisionAndFeedback = (props) => {
 
   return (
     <section>
-      s+f
+
+      <div>
+        <h2>Submitted Materials</h2>
+        <h3>No materials submitted</h3>
+        <button>ADD</button>
+      </div>
+
+      <div>
+        <h2>Feedback</h2>
+        <h3>By Joe Malatesta</h3>
+        <button>MARK READ</button>
+      </div>
+
     </section>
   )
 }
 
 export default SubmisionAndFeedback
+
+
 
 {/* <StudentSubmissionPanel
 cohortId={cohortId}
