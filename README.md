@@ -11,7 +11,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • hide arrow in cohort select from students
 
-• how can an instructor make a new cohort and join it?
+• how can an instructor make a new cohort and join it? missing onboarding process for first user
 
 • when awaiting instructor approval during onboarding, should have message that says waiting to join x cohort
 
@@ -24,7 +24,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • could add icons to forms?
 
-• GradeStudentDeliverable + ShowPerson useRedirectOnRefresh
+• GradeStudentDeliverable - useRedirectOnRefresh
   Show person resolved. 
 
 • style onboarding pages
