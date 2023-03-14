@@ -6,7 +6,7 @@ import './CodeEditor.css'
 const CodeEditor = ({ formData, setFormData }) => {
   return (
     <section>
-      <h2>Codeblock</h2>
+      {/* <h2>Codeblock</h2> */}
       <CodeMirror
         width='100%'
         theme={dracula}

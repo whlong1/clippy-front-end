@@ -7,14 +7,11 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
-• update how we handle quiz deliverables?
+• order deliverables correctly
 
-• how can an instructor make a new cohort and join it? missing onboarding process for first user
+• test scenario when no cohorts or profiles or attendance exist for an administrator
 
 • when awaiting instructor approval during onboarding, should have message that says waiting to join x cohort
-
-• form on student submssion panel only has input for github url
-  get rid of useEffect, find a way to rely on studentDeliverable variable for rendering
 
 • style admin menu and components + update cohort form
 
@@ -25,7 +22,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • style onboarding pages
 
-• Students should see there stats on MyProfile page
+• Students should see there stats on MyProfile page?
 
 • style and refactor role select form
 

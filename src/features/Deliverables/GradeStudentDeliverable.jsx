@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom"
 // Components
 import GradingNotes from "./GradingNotes"
 import CodeEditor from "./CodeEditor/CodeEditor"
-import StudentDeliverableHeader from "./StudentDeliverableHeader"
+import GradeDeliverableHeader from "./GradeDeliverableHeader"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
 
 // Hooks
@@ -41,7 +41,7 @@ const GradeStudentDeliverable = (props) => {
 
   return (
     <section className="studentDeliverable">
-      <StudentDeliverableHeader
+      <GradeDeliverableHeader
         formData={formData}
         handleGrade={handleGrade}
         handleChange={handleChange}

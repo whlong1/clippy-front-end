@@ -14,6 +14,7 @@ const SubmittedMaterials = ({ deliverable }) => {
     deploymentUrl: { text: 'Deployment', link: deliverable.deploymentUrl },
     codeSandboxUrl: { text: 'Code Sandbox', link: deliverable.codeSandboxUrl },
   }
+  
   const filteredUrls = Object.keys(urlTable).filter((url) => deliverable.hasOwnProperty(url))
 
   const urlLinks = filteredUrls.map((url, idx) => (

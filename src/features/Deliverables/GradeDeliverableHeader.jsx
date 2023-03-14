@@ -5,7 +5,7 @@ import RequirementTags from './RequirementTags/RequirementTags'
 import SubmittedMaterials from './SubmittedMaterials'
 import DeliverableStatusSelect from './DeliverableStatusSelect'
 
-const StudentDeliverableHeader = (props) => {
+const GradeDeliverableHeader = (props) => {
   const { title, deliverable, formData, handleChange, handleGrade } = props
 
   return (
@@ -30,4 +30,4 @@ const StudentDeliverableHeader = (props) => {
   )
 }
 
-export default StudentDeliverableHeader
+export default GradeDeliverableHeader

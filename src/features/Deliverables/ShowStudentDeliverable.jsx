@@ -5,11 +5,8 @@ import share from '../../assets/icons/share.svg'
 
 // Components
 import DueDate from './DueDate'
-import GradingNotes from "./GradingNotes"
 import StudentStatus from "./StudentStatus"
-import CodeEditor from "./CodeEditor/CodeEditor"
-// import SubmittedMaterials from './SubmittedMaterials'
-import StudentSubmissionPanel from './StudentSubmissionPanel'
+import SubmisionAndFeedback from "./StudentView/SubmissionAndFeedback"
 import RequirementTags from "./RequirementTags/RequirementTags"
 import ExternalLink from "../../components/ExternalLink/ExternalLink"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
@@ -26,7 +23,7 @@ const ShowStudentDeliverable = ({ cohortId }) => {
   if (status === 'loading') return <ContentStatus status={status} />
 
   return (
-    <section className="studentDeliverable">
+    <section className="studentDeliverable" style={{ position: 'relative' }}>
       <header className="header">
         <section>
           <h1>
@@ -40,25 +37,15 @@ const ShowStudentDeliverable = ({ cohortId }) => {
           <DueDate date={studentDeliverable.dueDate} />
           <RequirementTags deliverable={studentDeliverable} />
           <StudentStatus status={studentDeliverable.status} />
-          {/* <SubmittedMaterials deliverable={studentDeliverable} /> */}
         </section>
       </header>
 
-      <StudentSubmissionPanel
-        cohortId={cohortId}
-        studentDeliverable={studentDeliverable}
-      />
-      {studentDeliverable.gradingNotes &&
-        <GradingNotes
-          gradingNotes={studentDeliverable.gradingNotes}
+      {!studentDeliverable.hasQuiz &&
+        <SubmisionAndFeedback
+          cohortId={cohortId}
+          studentDeliverable={studentDeliverable}
         />
       }
-      {studentDeliverable.codeblock &&
-        <CodeEditor
-          formData={studentDeliverable}
-        />
-      }
-
     </section>
   )
 }
