@@ -10,7 +10,7 @@ import StudentStatus from "./StudentStatus"
 import CodeEditor from "./CodeEditor/CodeEditor"
 // import SubmittedMaterials from './SubmittedMaterials'
 import SubmisionAndFeedback from "./SubmissionAndFeedback"
-import StudentSubmissionPanel from './StudentSubmissionPanel'
+import StudentSubmissionPanel from './StudentView/SubmissionPanel'
 import RequirementTags from "./RequirementTags/RequirementTags"
 import ExternalLink from "../../components/ExternalLink/ExternalLink"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
@@ -27,7 +27,7 @@ const ShowStudentDeliverable = ({ cohortId }) => {
   if (status === 'loading') return <ContentStatus status={status} />
 
   return (
-    <section className="studentDeliverable">
+    <section className="studentDeliverable" style={{ position: 'relative' }}>
       <header className="header">
         <section>
           <h1>
