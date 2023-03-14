@@ -14,7 +14,6 @@ const AttendanceMenu = (props) => {
   if (status === 'error') return <MenuStatus {...props} status={status} />
   if (status === 'loading') return <MenuStatus {...props} status={status} />
 
-  console.log(attendance)
   return (
     <MenuLayout {...props}>
       <span>

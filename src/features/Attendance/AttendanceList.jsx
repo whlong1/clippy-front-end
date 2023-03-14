@@ -59,11 +59,12 @@ const AttendanceList = ({ attendance, isAdmin }) => {
       return { ...acc, [month]: [...acc[month], record] }
     }, attendanceObj)
 
+  const filteredMonths = months.filter((month) => monthlyAttendance[month.num].length)
 
   // Student View:
   if (!isAdmin) {
     return (
-      months.map((month) => (
+      filteredMonths.map((month) => (
         <section key={month.num}>
           <header>
             <Link state={monthlyAttendance[month.num]} to={`/attendance/${month.long.toLocaleLowerCase()}`}>
