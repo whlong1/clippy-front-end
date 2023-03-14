@@ -22,11 +22,13 @@ const RequirementTags = ({ deliverable }) => {
         <img src={tag} alt="requirements tag" />
         Requirements
       </h3>
-      {requirementTags.map((r) => (
-        <div key={r.text} className="tag" style={{ background: r.color }}>
-          <p>{r.text}</p>
-        </div>
-      ))}
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
+        {requirementTags.map((r) => (
+          <div key={r.text} className="tag" style={{ background: r.color, marginRight: '8px' }}>
+            <p>{r.text}</p>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

@@ -29,7 +29,7 @@ const SubmissionPanel = (props) => {
     <div className="confirmation">
       <header>
         <h1>Submit Materials</h1>
-        <p>Text</p>
+        <p>Please include any required links below.</p>
       </header>
       {activeRequirements.map((r, idx) => (
         <div key={idx}>

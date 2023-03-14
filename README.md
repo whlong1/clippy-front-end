@@ -7,6 +7,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
+• order deliverables correctly
+
 • update how we handle quiz deliverables?
 
 • test scenario when no cohorts or profiles or attendance exist for an administrator
