@@ -38,7 +38,7 @@ const ShowPerson = ({ user, cohortId }) => {
   const checkProp = (prop) => prop ? prop : 'Not Available'
 
   return (
-    <section className="person">
+    <section className="person" style={{ position: 'relative' }}>
 
       <section>
         <ProfilePicture gitHubUserName={person.gitHubUserName} size="128px" />

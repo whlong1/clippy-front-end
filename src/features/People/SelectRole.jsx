@@ -15,8 +15,8 @@ const SelectRole = ({ mutation, person, setIsOpen }) => {
   }
 
   return (
-    <div>
-      <h2>Change Role:</h2>
+    <div className="roleConfirmation">
+      <h2>Change Role</h2>
       <select name="newRole" onChange={handleChange} defaultValue={person.role}>
         <option value="students">Student</option>
         <option value="inactive">Withdrawn</option>

@@ -5,6 +5,7 @@ import { useRoleManager } from "../../hooks/useRoleManager"
 
 // Components
 import SelectRole from './SelectRole'
+import Popup from "../../layouts/Popup"
 
 const RolePanel = ({ person, cohortId }) => {
   const { isApprovalPending } = person
@@ -42,12 +43,14 @@ const RolePanel = ({ person, cohortId }) => {
         </button>
       }
 
-      {!isApprovalPending && isOpen &&
-        <SelectRole
-          setIsOpen={setIsOpen}
-          person={person}
-          mutation={mutation}
-        />
+      {!isApprovalPending &&
+        <Popup isOpen={isOpen}>
+          <SelectRole
+            person={person}
+            mutation={mutation}
+            setIsOpen={setIsOpen}
+          />
+        </Popup>
       }
 
     </section>

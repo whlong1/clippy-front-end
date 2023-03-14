@@ -624,3 +624,48 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 .subheader p {
   height: 20px;
 }
+
+
+/* .selectRole h2 {
+  margin-bottom: 8px;
+}
+
+.selectRole button {
+  margin-bottom: 8px;
+}
+
+.selectRole select {
+  padding: 0;
+  width: 100%;
+  opacity: .5;
+  display: flex;
+  margin-top: 5px;
+  font-size: 14px;
+  appearance: none;
+  padding: 5px 8px;
+  border-radius: 5px;
+  margin-bottom: 24px;
+  background-size: 12px;
+  background-repeat: no-repeat;
+  border: 1px solid var(--border-color);
+  background-position: right 5px center;
+  background-image: url("./assets/icons/arrow.svg");
+} */
+
+.roleConfirmation {
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  padding: 24px;
+  display: flex;
+  min-width: 420px;
+  position: absolute;
+  border-radius: 5px;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--border-color);
+  background-color: var(--content-background);
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.75);
+}
