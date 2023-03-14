@@ -27,8 +27,6 @@ const ShowPerson = ({ user, cohortId }) => {
   // If no role is present, the redirect should occur. If there is a role, we might be looking 
   // at someone in multiple cohorts (instructor, ta), in which case the redirect should not occur.
 
-
-
   const formattedRole = person.role.at(-1) === 's'
     ? person.role[0].toUpperCase() + person.role.slice(1, -1)
     : person.role[0].toUpperCase() + person.role.slice(1)

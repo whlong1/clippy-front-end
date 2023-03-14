@@ -7,6 +7,10 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
+• bug: change a students role, then immediately change it again, no update occurs. 
+  after refreshing or navigating to a new student and back,role can be changed again correctly
+  issue seems to stem from the select menu not refreshing. value out of sync.
+
 • order deliverables correctly
 
 • style and refactor role select form
@@ -52,10 +56,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • on new attendance, if no date is selected manually and the default is used, the date is one day behind
   works if the date is selected manually.
   Default date works with new deliverable!
-
-• bug: change a students role, then immediately change it again, no update occurs. 
-  after refreshing or navigating to a new student and back,role can be changed again correctly
-  issue seems to stem from the select menu not refreshing. value out of sync.
 
 
 ## Stretch Goals

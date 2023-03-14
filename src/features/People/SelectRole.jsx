@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const SelectRole = ({ mutation, person }) => {
+const SelectRole = ({ mutation, person, setIsOpen }) => {
   const [changeRoleData, setChangeRoleData] = useState({
     person, formerRole: person.role, newRole: ""
   })
@@ -14,7 +14,7 @@ const SelectRole = ({ mutation, person }) => {
   }
 
   return (
-    <>
+    <div>
       <h2>Change Role:</h2>
       <select name="newRole" onChange={handleChange} defaultValue={person.role}>
         <option value="students">Student</option>
@@ -25,9 +25,12 @@ const SelectRole = ({ mutation, person }) => {
       </select>
 
       <button disabled={!changeRoleData.newRole} onClick={handleMutate}>
-        CHANGE ROLE
+        CONFIRM
       </button>
-    </>
+      <button onClick={() => setIsOpen((prev) => !prev)}>
+        CANCEL
+      </button>
+    </div>
   )
 }
 

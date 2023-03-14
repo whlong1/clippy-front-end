@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 // Hooks
 import { useRoleManager } from "../../hooks/useRoleManager"
 
@@ -6,6 +8,7 @@ import SelectRole from './SelectRole'
 
 const RolePanel = ({ person, cohortId }) => {
   const { isApprovalPending } = person
+  const [isOpen, setIsOpen] = useState(false)
   const mutation = useRoleManager(cohortId, person._id)
 
   const denialData = { person, formerRole: "waitlist", newRole: null }
@@ -33,8 +36,19 @@ const RolePanel = ({ person, cohortId }) => {
         </button>
       }
 
-      {!isApprovalPending &&
-        <SelectRole mutation={mutation} person={person} />
+      {!isApprovalPending && !isOpen &&
+
+        <button onClick={() => setIsOpen(!isOpen)}>
+          CHANGE ROLE
+        </button>
+      }
+
+      {!isApprovalPending && isOpen &&
+        <SelectRole
+          setIsOpen={setIsOpen}
+          person={person}
+          mutation={mutation}
+        />
       }
 
     </section>
