@@ -305,7 +305,6 @@ div>img {
 }
 
 .menu a p:first-child {
-  width: 224px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -518,4 +517,5 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 
 .subheader p {
   height: 20px;
+  text-align: left;
 }

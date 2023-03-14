@@ -13,6 +13,7 @@ const PeopleMenu = (props) => {
   if (status === 'loading') return <MenuStatus {...props} status={status} />
 
   const roles = Object.keys(people).filter((k) => k !== '_id')
+  // Expected: ['instructors', 'ias', 'tas', 'students', 'waitlist', 'inactive']
 
   return (
     <MenuLayout {...props}>

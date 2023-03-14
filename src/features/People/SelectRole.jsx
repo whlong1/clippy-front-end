@@ -1,18 +1,19 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
-const SelectRole = ({ mutation, person, setIsOpen }) => {
-  const [changeRoleData, setChangeRoleData] = useState({
-    person, formerRole: person.role, newRole: ""
-  })
+const SelectRole = ({ person, setIsOpen, handleMutate }) => {
+  const [changeRoleData, setChangeRoleData] = useState({})
 
-  const handleMutate = () => {
-    setIsOpen((prev) => !prev)
-    mutation.mutate({ type: 'change', payload: changeRoleData })
+  const handleSubmit = () => {
+    handleMutate(changeRoleData)
   }
 
   const handleChange = ({ target }) => {
-    setChangeRoleData({ ...changeRoleData, [target.name]: target.value })
+    setChangeRoleData({ ...changeRoleData, newRole: target.value })
   }
+
+  useEffect(() => {
+    setChangeRoleData({ person, formerRole: person.role, newRole: "" })
+  }, [person])
 
   return (
     <div className="roleConfirmation">
@@ -29,7 +30,7 @@ const SelectRole = ({ mutation, person, setIsOpen }) => {
       </select>
 
       <section>
-        <button disabled={!changeRoleData.newRole} onClick={handleMutate}>
+        <button disabled={!changeRoleData.newRole} onClick={handleSubmit}>
           CONFIRM
         </button>
         <button onClick={() => setIsOpen((prev) => !prev)}>

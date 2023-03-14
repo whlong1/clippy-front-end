@@ -55,7 +55,6 @@ export const useRoleManager = (cohortId, personId) => {
         const { person, newRole } = payload
         queryClient.invalidateQueries({ queryKey: queryKey, type: 'all' })
         queryClient.setQueryData(['person', person._id], (state) => ({ ...state, role: newRole }))
-
       }
     },
   }
