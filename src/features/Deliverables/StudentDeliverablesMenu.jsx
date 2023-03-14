@@ -22,7 +22,7 @@ const StudentDeliverablesMenu = (props) => {
         <h1>My Deliverables</h1>
       </span>
 
-      {/* <CompletionTracker studentDeliverables={studentDeliverables} /> */}
+      <CompletionTracker studentDeliverables={studentDeliverables} />
 
       {studentDeliverables.length && studentDeliverables.map((sd) => (
         <Link key={sd._id} to={`/deliverables/${sd._id}`}>
@@ -30,6 +30,8 @@ const StudentDeliverablesMenu = (props) => {
           <p>{sd.status[0].toUpperCase() + sd.status.slice(1)}</p>
         </Link>
       ))}
+
+      {!studentDeliverables.length && <p>No Deliverables</p>}
 
     </MenuLayout>
   )
