@@ -14,12 +14,12 @@ const SubmittedMaterials = ({ deliverable }) => {
     deploymentUrl: { text: 'Deployment', link: deliverable.deploymentUrl },
     codeSandboxUrl: { text: 'Code Sandbox', link: deliverable.codeSandboxUrl },
   }
-  
+
   const filteredUrls = Object.keys(urlTable).filter((url) => deliverable.hasOwnProperty(url))
 
   const urlLinks = filteredUrls.map((url, idx) => (
     <ExternalLink key={idx} urlString={urlTable[url].link}>
-      <p>
+      <p style={{ marginRight: '12px' }}>
         {urlTable[url].text}
         <img src={share} alt="share" />
       </p>
@@ -32,7 +32,9 @@ const SubmittedMaterials = ({ deliverable }) => {
         <img src={submittedIcon} alt="submitted" />
         Submitted Materials
       </h3>
-      <div>{urlLinks}</div>
+      <div style={{ flexDirection: 'row', width: '100%' }}>
+        {filteredUrls.length ? urlLinks : <p>No materials</p>}
+      </div>
     </div>
   )
 }

@@ -16,7 +16,7 @@ const StudentDeliverableRow = ({ deliverableId, student, handleSquad }) => {
       <GroupSelect student={student} handleSquad={handleSquad} />
       <ProfileInfo profile={student} />
       <ExternalUrls student={student} />
-      <Link to={path}>View</Link>
+      <Link style={{ fontSize: '14px' }} to={path}>View</Link>
     </div>
   )
 }

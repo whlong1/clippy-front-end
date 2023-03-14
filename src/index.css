@@ -353,8 +353,13 @@ div {
   margin-right: 32px;
 }
 
+.externalUrlsContainer .externalLink {
+  font-size: 14px;
+  margin-left: 24px !important;
+}
+
 .externalLink img {
-  width: 14px;
+  width: 12px;
   border-radius: 0;
   padding-top: 1px;
   margin-left: 4px;

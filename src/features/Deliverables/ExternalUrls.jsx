@@ -5,7 +5,6 @@ import share from '../../assets/icons/share.svg'
 import ExternalLink from '../../components/ExternalLink/ExternalLink'
 
 const ExternalUrls = ({ student }) => {
-    // Reused in SubmissionMaterials, would be nice to make this a helper
   const urlTable = {
     miscUrl: { text: 'Misc URL', link: student.miscUrl },
     trelloUrl: { text: 'Trello', link: student.trelloUrl },
@@ -30,7 +29,7 @@ const ExternalUrls = ({ student }) => {
 
   return (
     <div className="externalUrlsContainer">
-      {urlLinks}
+      {filteredUrls.length ? urlLinks : <p style={{fontSize: '14px'}}>Not Available</p>}
     </div>
   )
 }

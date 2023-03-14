@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useDeliverablesManager } from "../../../hooks/useDeliverablesManager"
-import "./StudentView.css"
+import "./styles/StudentView.css"
 
 // Assets
 import share from '../../../assets/icons/share.svg'

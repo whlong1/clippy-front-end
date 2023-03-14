@@ -7,7 +7,12 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
+• GradeStudentDeliverable - useRedirectOnRefresh
+  Show person resolved. 
+
 • order deliverables correctly
+
+• style and refactor role select form
 
 • test scenario when no cohorts or profiles or attendance exist for an administrator
 
@@ -15,28 +20,15 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • style admin menu and components + update cohort form
 
-• could add icons to forms?
-
-• GradeStudentDeliverable - useRedirectOnRefresh
-  Show person resolved. 
-
 • style onboarding pages
 
 • Students should see there stats on MyProfile page?
-
-• style and refactor role select form
-
-• Audit keys (need consistent key pattern for all resources)
-
-• For security, might be worth refactoring how admin and student routes are handled
 
 • on hover effect for links
 
 • make sure date issues from previous iteration are resolved on deploy
 
 • attendance list might need a condition for 0 attendance?
-
-• REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
 
 
 ## Notes
@@ -70,3 +62,14 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • bug: change a students role, then immediately change it again, no update occurs. 
   after refreshing or navigating to a new student and back,role can be changed again correctly
   issue seems to stem from the select menu not refreshing. value out of sync.
+
+
+## Stretch Goals
+
+• could add icons to forms
+
+• Audit keys (need consistent key pattern for all resources)
+
+• For security, might be worth refactoring how admin and student routes are handled
+
+• REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
