@@ -40,11 +40,12 @@ const ShowStudentDeliverable = ({ cohortId }) => {
         </section>
       </header>
 
-      <SubmisionAndFeedback
-        cohortId={cohortId}
-        studentDeliverable={studentDeliverable}
-      />
-
+      {!studentDeliverable.hasQuiz &&
+        <SubmisionAndFeedback
+          cohortId={cohortId}
+          studentDeliverable={studentDeliverable}
+        />
+      }
     </section>
   )
 }
