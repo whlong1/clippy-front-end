@@ -27,12 +27,6 @@ const StudentDeliverablesMenu = (props) => {
   const newFeedback = studentDeliverables.length
     ? studentDeliverables.filter((sd) => sd.hasNewStatus) : []
 
-
-  // const newDate = new Date(studentDeliverables[0].dueDate)
-  const formattedDate = getLocaleDateString(studentDeliverables[0].dueDate)
-
-  console.log(formattedDate)
-
   return (
     <MenuLayout {...props}>
       <span>
@@ -50,7 +44,7 @@ const StudentDeliverablesMenu = (props) => {
           <Link key={sd._id} to={`/deliverables/${sd._id}`}>
             <StatusIndicator status={sd.status} />
             <p>{sd.name}</p>
-            {/* <p>{sd.status[0].toUpperCase() + sd.status.slice(1)}</p> */}
+            <p>{getLocaleDateString(sd.dueDate)}</p>
           </Link>
         ))}
       </section>
