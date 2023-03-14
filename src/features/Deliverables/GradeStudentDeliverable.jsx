@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate, Navigate } from "react-router-dom"
 
 // Components
 import GradingNotes from "./GradingNotes"
@@ -25,7 +25,7 @@ const GradeStudentDeliverable = (props) => {
 
   if (status === 'error') return <ContentStatus status={status} />
   if (status === 'loading' || !formData) return <ContentStatus status={status} />
-  // if (studentDeliverable.profile.cohort !== cohortId) return <Navigate to='/deliverables' />
+  if (studentDeliverable.cohort !== cohortId) return <Navigate to='/deliverables' />
 
   const handleChange = ({ target }) => {
     setFormData({ ...formData, [target.name]: target.value })
