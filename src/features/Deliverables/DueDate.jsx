@@ -1,13 +1,11 @@
 // Helpers
-import { dateOptions } from './helpers/helpers'
+import { getLocaleDateString } from './helpers/helpers'
 
 // Assets
 import dateIcon from '../../assets/icons/headers/date.svg'
 
 const DueDate = ({ date }) => {
-
-  const dateObj = new Date(date)
-  const formattedDate = dateObj.toLocaleDateString('en-US', dateOptions)
+  const formattedDate = getLocaleDateString(date)
 
   return (
     <div className="subheader">

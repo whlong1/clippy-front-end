@@ -6,7 +6,7 @@ import arrow from '../../assets/icons/arrow.svg'
 import downArrow from '../../assets/icons/downArrow.svg'
 
 // Helpers
-import { dateOptions } from './helpers/helpers'
+import { getLocaleDateString } from './helpers/helpers'
 
 // Components
 import MenuLayout from '../../layouts/MenuLayout'
@@ -28,9 +28,8 @@ const StudentDeliverablesMenu = (props) => {
     ? studentDeliverables.filter((sd) => sd.hasNewStatus) : []
 
 
-
-  const newDate = new Date(studentDeliverables[0].dueDate)
-  const formattedDate = newDate.toLocaleDateString('en-US', dateOptions)
+  // const newDate = new Date(studentDeliverables[0].dueDate)
+  const formattedDate = getLocaleDateString(studentDeliverables[0].dueDate)
 
   console.log(formattedDate)
 

@@ -36,8 +36,15 @@ const dateOptions = {
   timeZone: 'America/New_York'
 }
 
+const getLocaleDateString = (date) => {
+  const dateObj = new Date(date)
+  return dateObj.toLocaleDateString('en-US', dateOptions)
+}
+
+
+
 export {
   formatDate,
-  dateOptions,
   getDefaultDate,
+  getLocaleDateString,
 }
