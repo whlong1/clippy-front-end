@@ -32,14 +32,18 @@ const SubmisionAndFeedback = ({ cohortId, studentDeliverable }) => {
   }
 
   const filteredUrls = Object.keys(urlTable).filter((url) => studentDeliverable.hasOwnProperty(url))
-  const urlLinks = filteredUrls.map((url, idx) => (
-    <ExternalLink key={idx} urlString={urlTable[url].link}>
-      <p>
-        {urlTable[url].text}
-        <img src={share} alt="share" />
-      </p>
-    </ExternalLink>
-  ))
+  const urlLinks = (
+    <div>
+      {filteredUrls.map((url, idx) => (
+        <ExternalLink key={idx} urlString={urlTable[url].link}>
+          <p style={{ fontSize: '14px', marginRight: '8px' }}>
+            {urlTable[url].text}
+            <img src={share} alt="share" />
+          </p>
+        </ExternalLink>
+      ))}
+    </div>
+  )
 
   return (
     <section>
@@ -53,7 +57,7 @@ const SubmisionAndFeedback = ({ cohortId, studentDeliverable }) => {
 
       <header>
         <h2>Submitted Materials</h2>
-        <h3>{urlLinks.length ? urlLinks : 'No materials submitted'}</h3>
+        <h3>{filteredUrls.length ? urlLinks : 'No materials submitted'}</h3>
         <button onClick={() => setIsOpen((prev) => !prev)}>ADD</button>
       </header>
 
