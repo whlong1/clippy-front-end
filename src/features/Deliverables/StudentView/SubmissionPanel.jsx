@@ -1,3 +1,4 @@
+import { useState } from "react"
 import "./StudentView.css"
 
 const SubmissionPanel = (props) => {
@@ -8,6 +9,15 @@ const SubmissionPanel = (props) => {
     studentDeliverable,
   } = props
 
+  const [deliverableData, setDeliverableData] = useState(studentDeliverable)
+
+  const handleChange = ({ target }) => {
+    setDeliverableData({ ...deliverableData, [target.name]: target.value })
+  }
+
+  // useEffect(() => {
+  //   setDeliverableData(studentDeliverable)
+  // }, [studentDeliverable, setDeliverableData])
 
   const requirements = {
     hasMiscUrl: { name: 'miscUrl', label: 'Misc URL' },
@@ -16,32 +26,29 @@ const SubmissionPanel = (props) => {
     hasDeploymentUrl: { name: 'deploymentUrl', label: 'Deployment URL' },
     hasCodeSandboxUrl: { name: 'codeSandboxUrl', label: 'Code Sandbox URL' },
   }
-  console.log('sd', studentDeliverable)
 
   const activeRequirements = Object.entries(requirements)
-    .filter((obj) => studentDeliverable[obj[0]])
-    .map((obj) => obj[1])
+    .filter((obj) => studentDeliverable[obj[0]]).map((obj) => obj[1])
 
-
-  console.log('active', activeRequirements)
 
   const requirementInputs = (
-    activeRequirements.map((r) => (
-      <>
+    activeRequirements.map((r, idx) => (
+      <div key={idx}>
         <label htmlFor={r.name}>{r.label}</label>
         <input
           type="text"
           id={r.name}
           name={r.name}
+          onChange={handleChange}
+          value={deliverableData[r.name] || ''}
           placeholder={`Please enter your ${r.label} here`}
-        // onChange={handleChange}
-        // value={deliverableData.gitHubUrl || ''}
         />
-      </>
+      </div>
     ))
   )
 
-  console.log(requirementInputs)
+  // console.log(requirementInputs)
+  // console.log('Deliverable Data', deliverableData)
 
   return (
     <div className="confirmation">
@@ -51,7 +58,7 @@ const SubmissionPanel = (props) => {
       </header>
       {requirementInputs}
       <section>
-        <button onClick={submitDeliverable}>SUBMIT</button>
+        <button onClick={() => submitDeliverable(deliverableData)}>SUBMIT</button>
         <button onClick={() => setIsOpen((prev) => !prev)}>CANCEL</button>
       </section>
     </div>
@@ -59,11 +66,3 @@ const SubmissionPanel = (props) => {
 }
 
 export default SubmissionPanel
-
-{/* <span>
-<h2>Submit Materials</h2>
-{isFormActive
-  ? <button onClick={submitDeliverable}>SUBMIT</button>
-  : <button onClick={() => setIsFormActive(true)}>UPDATE</button>
-}
-</span> */}
