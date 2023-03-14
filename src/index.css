@@ -290,21 +290,6 @@ div>img {
   margin: 16px 0px 24px;
 }
 
-.menu select {
-  padding: 0;
-  opacity: .5;
-  border: none;
-  display: flex;
-  margin-top: 5px;
-  font-size: 14px;
-  appearance: none;
-  margin-bottom: 28px;
-  background-size: 12px;
-  background-repeat: no-repeat;
-  background-position: right 0px center;
-  background-image: url("assets/icons/arrow.svg");
-}
-
 .menu header button {
   margin: 0;
   padding: 0;
