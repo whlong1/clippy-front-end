@@ -5,10 +5,14 @@ import { Link } from 'react-router-dom'
 import arrow from '../../assets/icons/arrow.svg'
 import downArrow from '../../assets/icons/downArrow.svg'
 
+// Helpers
+import { dateOptions } from './helpers/helpers'
+
 // Components
 import MenuLayout from '../../layouts/MenuLayout'
 import CompletionTracker from './CompletionTracker'
 import MenuStatus from '../../components/MenuStatus/MenuStatus'
+import StatusIndicator from '../../components/StatusIndicator/StatusIndicator'
 import { useIndexStudentDeliverables } from '../../hooks/useIndexStudentDeliverables'
 
 const StudentDeliverablesMenu = (props) => {
@@ -21,8 +25,14 @@ const StudentDeliverablesMenu = (props) => {
   if (status === 'loading') return <MenuStatus {...props} status={status} />
 
   const newFeedback = studentDeliverables.length
-    ? studentDeliverables.filter((sd) => sd.hasNewStatus)
-    : []
+    ? studentDeliverables.filter((sd) => sd.hasNewStatus) : []
+
+
+
+  const newDate = new Date(studentDeliverables[0].dueDate)
+  const formattedDate = newDate.toLocaleDateString('en-US', dateOptions)
+
+  console.log(formattedDate)
 
   return (
     <MenuLayout {...props}>
@@ -39,8 +49,9 @@ const StudentDeliverablesMenu = (props) => {
         </header>
         {studentDeliverables.length && studentDeliverables.map((sd) => (
           <Link key={sd._id} to={`/deliverables/${sd._id}`}>
+            <StatusIndicator status={sd.status} />
             <p>{sd.name}</p>
-            <p>{sd.status[0].toUpperCase() + sd.status.slice(1)}</p>
+            {/* <p>{sd.status[0].toUpperCase() + sd.status.slice(1)}</p> */}
           </Link>
         ))}
       </section>

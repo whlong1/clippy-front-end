@@ -26,7 +26,18 @@ const getDefaultDate = () => {
   return formattedTime
 }
 
+const dateOptions = {
+  hour12: true,
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+  timeZone: 'America/New_York'
+}
+
 export {
   formatDate,
-  getDefaultDate
+  dateOptions,
+  getDefaultDate,
 }

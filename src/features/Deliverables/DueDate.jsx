@@ -1,19 +1,13 @@
+// Helpers
+import { dateOptions } from './helpers/helpers'
+
 // Assets
 import dateIcon from '../../assets/icons/headers/date.svg'
 
 const DueDate = ({ date }) => {
-  const options = {
-    hour12: true,
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    timeZone: 'America/New_York'
-  }
 
   const dateObj = new Date(date)
-  const formattedDate = dateObj.toLocaleDateString('en-US', options)
+  const formattedDate = dateObj.toLocaleDateString('en-US', dateOptions)
 
   return (
     <div className="subheader">
