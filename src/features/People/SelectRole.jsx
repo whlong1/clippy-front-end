@@ -6,6 +6,7 @@ const SelectRole = ({ mutation, person, setIsOpen }) => {
   })
 
   const handleMutate = () => {
+    setIsOpen((prev) => !prev)
     mutation.mutate({ type: 'change', payload: changeRoleData })
   }
 

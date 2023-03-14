@@ -26,6 +26,7 @@ const App = () => {
   }
 
   // if user isAdmin & first user - render admin onboarding page
+  // or just allow admins to skip onboarding!
   // finish profile, create and join cohort
   // admins need ability to join other cohorts from myProfile
   // test what happens if an admin joins without selecting a cohort

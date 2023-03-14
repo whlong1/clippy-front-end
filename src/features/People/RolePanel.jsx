@@ -37,7 +37,6 @@ const RolePanel = ({ person, cohortId }) => {
       }
 
       {!isApprovalPending && !isOpen &&
-
         <button onClick={() => setIsOpen(!isOpen)}>
           CHANGE ROLE
         </button>
