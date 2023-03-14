@@ -37,17 +37,14 @@ const ShowStudentDeliverable = ({ cohortId }) => {
           <DueDate date={studentDeliverable.dueDate} />
           <RequirementTags deliverable={studentDeliverable} />
           <StudentStatus status={studentDeliverable.status} />
-          {/* <SubmittedMaterials deliverable={studentDeliverable} /> */}
         </section>
       </header>
-
 
       <SubmisionAndFeedback
         cohortId={cohortId}
         studentDeliverable={studentDeliverable}
       />
-
-
+      
     </section>
   )
 }

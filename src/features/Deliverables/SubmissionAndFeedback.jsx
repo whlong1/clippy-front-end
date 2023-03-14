@@ -57,63 +57,18 @@ const SubmisionAndFeedback = ({ cohortId, studentDeliverable }) => {
         <button onClick={() => setIsOpen((prev) => !prev)}>ADD</button>
       </header>
 
-      <header>
-        <h2>Feedback</h2>
-        <h3>By Joe Malatesta</h3>
-        <button onClick={markFeedbackAsRead}>MARK READ</button>
-      </header>
-
+      {studentDeliverable.gradedBy &&
+        <header>
+          <h2>Feedback</h2>
+          <h3>Graded by {studentDeliverable.gradedBy}</h3>
+          {!studentDeliverable.hasNewStatus &&
+            <button onClick={markFeedbackAsRead}>MARK READ</button>
+          }
+        </header>
+      }
       <Feedback studentDeliverable={studentDeliverable} />
-
     </section>
   )
 }
 
 export default SubmisionAndFeedback
-
-
-
-{/* <StudentSubmissionPanel
-cohortId={cohortId}
-studentDeliverable={studentDeliverable}
-/>
-{studentDeliverable.gradingNotes &&
-<GradingNotes
-  gradingNotes={studentDeliverable.gradingNotes}
-/>
-}
-{studentDeliverable.codeblock &&
-<CodeEditor
-  formData={studentDeliverable}
-/>
-} */}
-
-
-// const submissionForm = (
-//   <div>
-//     <span>
-//       <h2>Submision</h2>
-//       {isFormActive
-//         ? <button onClick={submitDeliverable}>SUBMIT</button>
-//         : <button onClick={() => setIsFormActive(true)}>UPDATE</button>
-//       }
-//     </span>
-//     <input
-//       type="text"
-//       id="gitHubUrl"
-//       name="gitHubUrl"
-//       onChange={handleChange}
-//       disabled={!isFormActive}
-//       value={deliverableData.gitHubUrl || ''}
-//     />
-//   </div>
-// )
-
-// const newFeedback = (
-//   <div>
-//     <span>
-//       <h2>New Feedback</h2>
-//       <button onClick={markFeedbackAsRead}>MARK READ</button>
-//     </span>
-//   </div>
-// )
