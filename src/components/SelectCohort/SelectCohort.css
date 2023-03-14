@@ -1,5 +1,6 @@
 .cohortSelect {
   padding: 0;
+  width: 100%;
   opacity: .5;
   border: none;
   display: flex;
