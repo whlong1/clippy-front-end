@@ -6,7 +6,7 @@ import share from '../../assets/icons/share.svg'
 // Components
 import DueDate from './DueDate'
 import StudentStatus from "./StudentStatus"
-import SubmisionAndFeedback from "./SubmissionAndFeedback"
+import SubmisionAndFeedback from "./StudentView/SubmissionAndFeedback"
 import RequirementTags from "./RequirementTags/RequirementTags"
 import ExternalLink from "../../components/ExternalLink/ExternalLink"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
@@ -44,7 +44,7 @@ const ShowStudentDeliverable = ({ cohortId }) => {
         cohortId={cohortId}
         studentDeliverable={studentDeliverable}
       />
-      
+
     </section>
   )
 }

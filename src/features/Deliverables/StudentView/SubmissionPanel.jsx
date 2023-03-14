@@ -1,5 +1,4 @@
 import { useState } from "react"
-import "./StudentView.css"
 
 const SubmissionPanel = (props) => {
   const {

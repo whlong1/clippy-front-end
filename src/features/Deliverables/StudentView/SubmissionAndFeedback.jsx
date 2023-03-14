@@ -1,14 +1,15 @@
 import { useState } from "react"
-import { useDeliverablesManager } from "../../hooks/useDeliverablesManager"
+import { useDeliverablesManager } from "../../../hooks/useDeliverablesManager"
+import "./StudentView.css"
 
 // Assets
-import share from '../../assets/icons/share.svg'
+import share from '../../../assets/icons/share.svg'
 
 // Components
-import Popup from '../../layouts/Popup'
-import Feedback from "./StudentView/Feedback"
-import SubmissionPanel from './StudentView/SubmissionPanel'
-import ExternalLink from "../../components/ExternalLink/ExternalLink"
+import Popup from '../../../layouts/Popup'
+import Feedback from "./Feedback"
+import SubmissionPanel from './SubmissionPanel'
+import ExternalLink from "../../../components/ExternalLink/ExternalLink"
 
 const SubmisionAndFeedback = ({ cohortId, studentDeliverable }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -46,7 +47,7 @@ const SubmisionAndFeedback = ({ cohortId, studentDeliverable }) => {
   )
 
   return (
-    <section>
+    <section className="submissionAndFeedback">
       <Popup isOpen={isOpen}>
         <SubmissionPanel
           setIsOpen={setIsOpen}
@@ -56,15 +57,19 @@ const SubmisionAndFeedback = ({ cohortId, studentDeliverable }) => {
       </Popup>
 
       <header>
-        <h2>Submitted Materials</h2>
-        <h3>{filteredUrls.length ? urlLinks : 'No materials submitted'}</h3>
-        <button onClick={() => setIsOpen((prev) => !prev)}>ADD</button>
+        <span>
+          <h2>Submitted Materials</h2>
+          <h3>{filteredUrls.length ? urlLinks : 'No materials submitted'}</h3>
+        </span>
+        <button onClick={() => setIsOpen((prev) => !prev)}>ADD LINKS</button>
       </header>
 
       {studentDeliverable.gradedBy && studentDeliverable.gradingNotes &&
         <header>
-          <h2>Feedback</h2>
-          <h3>Graded by {studentDeliverable.gradedBy}</h3>
+          <span>
+            <h2>Feedback</h2>
+            <h3>Graded by {studentDeliverable.gradedBy}</h3>
+          </span>
           {studentDeliverable.hasNewStatus &&
             <button onClick={markFeedbackAsRead}>MARK READ</button>
           }
