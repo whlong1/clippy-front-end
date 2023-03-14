@@ -33,7 +33,7 @@ const SubmittedMaterials = ({ deliverable }) => {
         Submitted Materials
       </h3>
       <div style={{ flexDirection: 'row', width: '100%' }}>
-        {filteredUrls.length ? urlLinks : <p>No materials</p>}
+        {filteredUrls.length ? urlLinks : <p style={{ marginTop: '2px' }}>No materials</p>}
       </div>
     </div>
   )

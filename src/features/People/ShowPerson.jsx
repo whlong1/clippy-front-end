@@ -1,5 +1,6 @@
 import { useParams, Navigate } from "react-router-dom"
 import { useShowPerson } from "../../hooks/useShowPerson"
+import './styles/ShowPerson.css'
 
 // Components
 import RolePanel from "./RolePanel"
@@ -27,8 +28,6 @@ const ShowPerson = ({ user, cohortId }) => {
   // If no role is present, the redirect should occur. If there is a role, we might be looking 
   // at someone in multiple cohorts (instructor, ta), in which case the redirect should not occur.
 
-
-
   const formattedRole = person.role.at(-1) === 's'
     ? person.role[0].toUpperCase() + person.role.slice(1, -1)
     : person.role[0].toUpperCase() + person.role.slice(1)
@@ -40,7 +39,7 @@ const ShowPerson = ({ user, cohortId }) => {
   const checkProp = (prop) => prop ? prop : 'Not Available'
 
   return (
-    <section className="person">
+    <section className="person" style={{ position: 'relative' }}>
 
       <section>
         <ProfilePicture gitHubUserName={person.gitHubUserName} size="128px" />

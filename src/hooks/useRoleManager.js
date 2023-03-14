@@ -49,19 +49,11 @@ export const useRoleManager = (cohortId, personId) => {
       }
     },
     change: {
-      // Might need to update profile by id cache as well?
       service: cohortService.changeRole,
       handleCache: (res, payload) => {
         const queryKey = ['people', cohortId]
-        const { person, formerRole, newRole } = payload
-        const updateState = (state) => {
-          return {
-            ...state,
-            [newRole]: [...state[newRole], person],
-            [formerRole]: state[formerRole].filter((p) => p._id !== personId),
-          }
-        }
-        queryClient.setQueryData(queryKey, updateState)
+        const { person, newRole } = payload
+        queryClient.invalidateQueries({ queryKey: queryKey, type: 'all' })
         queryClient.setQueryData(['person', person._id], (state) => ({ ...state, role: newRole }))
       }
     },

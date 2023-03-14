@@ -1,21 +1,26 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
-const SelectRole = ({ mutation, person }) => {
-  const [changeRoleData, setChangeRoleData] = useState({
-    person, formerRole: person.role, newRole: ""
-  })
+const SelectRole = ({ person, setIsOpen, handleMutate }) => {
+  const [changeRoleData, setChangeRoleData] = useState({})
 
-  const handleMutate = () => {
-    mutation.mutate({ type: 'change', payload: changeRoleData })
+  const handleSubmit = () => {
+    handleMutate(changeRoleData)
   }
 
   const handleChange = ({ target }) => {
-    setChangeRoleData({ ...changeRoleData, [target.name]: target.value })
+    setChangeRoleData({ ...changeRoleData, newRole: target.value })
   }
 
+  useEffect(() => {
+    setChangeRoleData({ person, formerRole: person.role, newRole: "" })
+  }, [person])
+
   return (
-    <>
-      <h2>Change Role:</h2>
+    <div className="roleConfirmation">
+      <header>
+        <h1>Change Role</h1>
+        <p>Please select a role from the menu below.</p>
+      </header>
       <select name="newRole" onChange={handleChange} defaultValue={person.role}>
         <option value="students">Student</option>
         <option value="inactive">Withdrawn</option>
@@ -24,10 +29,15 @@ const SelectRole = ({ mutation, person }) => {
         <option value="ias">Instructional Associate</option>
       </select>
 
-      <button disabled={!changeRoleData.newRole} onClick={handleMutate}>
-        CHANGE ROLE
-      </button>
-    </>
+      <section>
+        <button disabled={!changeRoleData.newRole} onClick={handleSubmit}>
+          CONFIRM
+        </button>
+        <button onClick={() => setIsOpen((prev) => !prev)}>
+          CANCEL
+        </button>
+      </section>
+    </div>
   )
 }
 

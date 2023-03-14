@@ -1,0 +1,166 @@
+/* SHOW PERSON */
+
+.person {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.person span {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.person section {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.person section:first-child {
+  padding-left: 12px;
+  padding-right: 32px;
+  width: 280px;
+  border-right: .5px solid var(--border-color);
+}
+
+.person h1,
+.person h3 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.person section:nth-child(2) {
+  padding-left: 24px;
+  align-items: flex-start;
+}
+
+.person section:nth-child(2)>* {
+  margin-bottom: 32px;
+}
+
+.person p {
+  line-height: 1;
+}
+
+.person div {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.person div h3 {
+  margin-bottom: 14px;
+}
+
+.person button {
+  width: 180px;
+  height: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 5px;
+  margin-bottom: 24px;
+  padding: 5px 0px 18px;
+}
+
+.person img {
+  margin-bottom: 40px;
+  border: 1px solid var(--border-color);
+}
+
+.person h3 {
+  display: flex;
+  align-items: center;
+}
+
+.person h3 img {
+  margin: 0;
+  width: 16px;
+  border: none;
+  border-radius: 0;
+  margin-right: 8px;
+}
+
+.personLinks {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row !important;
+}
+
+.personLinks img {
+  width: 20px;
+  margin: 0;
+  opacity: .7;
+  border-radius: 0;
+  border: none;
+}
+
+
+
+.roleConfirmation {
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  padding: 24px;
+  display: flex;
+  min-width: 420px;
+  position: absolute;
+  border-radius: 5px;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--border-color);
+  background-color: var(--content-background);
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.75);
+}
+
+.roleConfirmation h1, p {
+  text-align: center;
+}
+
+.roleConfirmation header {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.roleConfirmation select {
+  padding: 0;
+  width: 100%;
+  opacity: .5;
+  display: flex;
+  margin-top: 5px;
+  font-size: 14px;
+  appearance: none;
+  padding: 5px 8px;
+  border-radius: 5px;
+  margin-bottom: 0px;
+  background-size: 12px;
+  background-repeat: no-repeat;
+  border: 1px solid var(--border-color);
+  background-position: right 5px center;
+  background-image: url("../../../assets/icons/arrow.svg");
+}
+
+.roleConfirmation section {
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.roleConfirmation button {
+  width: 80px;
+  height: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 5px;
+  margin: 24px 8px 0px;
+  padding: 6px 0px 18px;
+}

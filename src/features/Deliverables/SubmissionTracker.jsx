@@ -7,7 +7,7 @@ const SubmissionTracker = ({ deliverable }) => {
   const percentComplete = (completedCount / deliverableCount) * 100
 
   return (
-    <div>
+    <div className="subheader">
       <h3>
         <img src={completionIcon} alt="completion circle" />
         Submitted

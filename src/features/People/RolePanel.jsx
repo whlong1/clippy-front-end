@@ -1,16 +1,25 @@
+import { useState } from "react"
+
 // Hooks
 import { useRoleManager } from "../../hooks/useRoleManager"
 
 // Components
 import SelectRole from './SelectRole'
+import Popup from "../../layouts/Popup"
 
 const RolePanel = ({ person, cohortId }) => {
   const { isApprovalPending } = person
+  const [isOpen, setIsOpen] = useState(false)
   const mutation = useRoleManager(cohortId, person._id)
 
+  const handleMutate = (changeRoleData) => {
+    setIsOpen(!isOpen)
+    mutation.mutate({ type: 'change', payload: changeRoleData })
+  }
+
   const denialData = { person, formerRole: "waitlist", newRole: null }
-  const removalData = { person, formerRole: "students", newRole: "inactive" }
   const approvalData = { person, formerRole: "waitlist", newRole: "students" }
+  const removalData = { person, formerRole: person.role, newRole: "inactive" }
 
   return (
     <section>
@@ -33,9 +42,20 @@ const RolePanel = ({ person, cohortId }) => {
         </button>
       }
 
-      {!isApprovalPending &&
-        <SelectRole mutation={mutation} person={person} />
+      {!isApprovalPending && !isOpen &&
+        <button onClick={() => setIsOpen(!isOpen)}>
+          CHANGE ROLE
+        </button>
       }
+
+      <Popup isOpen={isOpen}>
+        <SelectRole
+          person={person}
+          setIsOpen={setIsOpen}
+          handleMutate={handleMutate}
+        />
+      </Popup>
+
 
     </section>
   )

@@ -305,7 +305,6 @@ div>img {
 }
 
 .menu a p:first-child {
-  width: 224px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -425,7 +424,6 @@ div {
   align-items: center;
 }
 
-
 .submissionPanel button{
   height: 24px;
   font-size: 12px;
@@ -434,110 +432,6 @@ div {
   padding: 0px 16px;
   border-radius: 5px;
   margin-bottom: 14px;
-}
-
-/* SHOW PERSON */
-
-.person {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-.person span {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 40px;
-}
-
-.person section {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.person section:first-child {
-  padding-left: 12px;
-  padding-right: 32px;
-  width: 280px;
-  border-right: .5px solid var(--border-color);
-}
-
-.person h1,
-.person h3 {
-  margin: 0;
-  margin-bottom: 10px;
-}
-
-.person section:nth-child(2) {
-  padding-left: 24px;
-  align-items: flex-start;
-}
-
-.person section:nth-child(2)>* {
-  margin-bottom: 32px;
-}
-
-.person p {
-  line-height: 1;
-}
-
-.person div {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-}
-
-.person div h3 {
-  margin-bottom: 14px;
-}
-
-.person button {
-  width: 180px;
-  height: 24px;
-  font-size: 12px;
-  font-weight: 600;
-  border-radius: 5px;
-  margin-bottom: 24px;
-  padding: 5px 0px 18px;
-}
-
-.person img {
-  margin-bottom: 40px;
-  border: 1px solid var(--border-color);
-}
-
-.person h3 {
-  display: flex;
-  align-items: center;
-}
-
-.person h3 img {
-  margin: 0;
-  width: 16px;
-  border: none;
-  border-radius: 0;
-  margin-right: 8px;
-}
-
-.personLinks {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: row !important;
-}
-
-.personLinks img {
-  width: 20px;
-  margin: 0;
-  opacity: .7;
-  border-radius: 0;
-  border: none;
 }
 
 
@@ -623,4 +517,5 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 
 .subheader p {
   height: 20px;
+  text-align: left;
 }
