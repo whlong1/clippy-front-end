@@ -1,7 +1,7 @@
 import GradingNotes from "../GradingNotes"
 import CodeEditor from "../CodeEditor/CodeEditor"
 
-const Feedback = ({ studentDeliverable, formData }) => {
+const Feedback = ({ studentDeliverable }) => {
   return (
     <>
       {studentDeliverable.gradingNotes &&

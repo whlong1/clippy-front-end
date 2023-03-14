@@ -3,7 +3,6 @@ import "./StudentView.css"
 
 const SubmissionPanel = (props) => {
   const {
-    cohortId,
     setIsOpen,
     submitDeliverable,
     studentDeliverable,
@@ -14,10 +13,6 @@ const SubmissionPanel = (props) => {
   const handleChange = ({ target }) => {
     setDeliverableData({ ...deliverableData, [target.name]: target.value })
   }
-
-  // useEffect(() => {
-  //   setDeliverableData(studentDeliverable)
-  // }, [studentDeliverable, setDeliverableData])
 
   const requirements = {
     hasMiscUrl: { name: 'miscUrl', label: 'Misc URL' },
@@ -30,33 +25,25 @@ const SubmissionPanel = (props) => {
   const activeRequirements = Object.entries(requirements)
     .filter((obj) => studentDeliverable[obj[0]]).map((obj) => obj[1])
 
-
-  const requirementInputs = (
-    activeRequirements.map((r, idx) => (
-      <div key={idx}>
-        <label htmlFor={r.name}>{r.label}</label>
-        <input
-          type="text"
-          id={r.name}
-          name={r.name}
-          onChange={handleChange}
-          value={deliverableData[r.name] || ''}
-          placeholder={`Please enter your ${r.label} here`}
-        />
-      </div>
-    ))
-  )
-
-  // console.log(requirementInputs)
-  // console.log('Deliverable Data', deliverableData)
-
   return (
     <div className="confirmation">
       <header>
         <h1>Submit Materials</h1>
         <p>Text</p>
       </header>
-      {requirementInputs}
+      {activeRequirements.map((r, idx) => (
+        <div key={idx}>
+          <label htmlFor={r.name}>{r.label}</label>
+          <input
+            type="text"
+            id={r.name}
+            name={r.name}
+            onChange={handleChange}
+            value={deliverableData[r.name] || ''}
+            placeholder={`Please enter your ${r.label} here`}
+          />
+        </div>
+      ))}
       <section>
         <button onClick={() => submitDeliverable(deliverableData)}>SUBMIT</button>
         <button onClick={() => setIsOpen((prev) => !prev)}>CANCEL</button>

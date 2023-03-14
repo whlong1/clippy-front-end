@@ -5,12 +5,8 @@ import share from '../../assets/icons/share.svg'
 
 // Components
 import DueDate from './DueDate'
-import GradingNotes from "./GradingNotes"
 import StudentStatus from "./StudentStatus"
-import CodeEditor from "./CodeEditor/CodeEditor"
-// import SubmittedMaterials from './SubmittedMaterials'
 import SubmisionAndFeedback from "./SubmissionAndFeedback"
-import StudentSubmissionPanel from './StudentView/SubmissionPanel'
 import RequirementTags from "./RequirementTags/RequirementTags"
 import ExternalLink from "../../components/ExternalLink/ExternalLink"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
