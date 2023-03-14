@@ -1,4 +1,9 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+
+// Assets
+import arrow from '../../assets/icons/arrow.svg'
+import downArrow from '../../assets/icons/downArrow.svg'
 
 // Components
 import MenuLayout from '../../layouts/MenuLayout'
@@ -9,9 +14,8 @@ import { useIndexStudentDeliverables } from '../../hooks/useIndexStudentDelivera
 const StudentDeliverablesMenu = (props) => {
   // Student DeliverablesMenu View
   const { cohortId, profile } = props
+  const [isOpen, setIsOpen] = useState(false)
   const { studentDeliverables, status } = useIndexStudentDeliverables(cohortId, profile._id)
-
-  console.log(studentDeliverables)
 
   if (status === 'error') return <MenuStatus {...props} status={status} />
   if (status === 'loading') return <MenuStatus {...props} status={status} />
@@ -23,6 +27,17 @@ const StudentDeliverablesMenu = (props) => {
       </span>
 
       <CompletionTracker studentDeliverables={studentDeliverables} />
+
+      <section>
+        <header>
+          <h2>Upcoming Deliverables</h2>
+          <button onClick={() => setIsOpen(!isOpen)}>
+            <img src={isOpen ? downArrow : arrow} alt="An arrow" />
+          </button>
+        </header>
+
+
+      </section>
 
       {studentDeliverables.length && studentDeliverables.map((sd) => (
         <Link key={sd._id} to={`/deliverables/${sd._id}`}>

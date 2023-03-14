@@ -9,7 +9,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • arrange deliverables most recent at top
 
-• hide arrow in cohort select from students
+• update how we handle quiz deliverables?
 
 • how can an instructor make a new cohort and join it? missing onboarding process for first user
 
@@ -30,8 +30,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • style onboarding pages
 
 • Students should see there stats on MyProfile page
-
-• update how we handle quiz deliverables?
 
 • style and refactor role select form
 

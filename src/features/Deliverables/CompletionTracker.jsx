@@ -9,12 +9,14 @@ const CompletionTracker = ({ studentDeliverables }) => {
   }
 
   return (
-    <div>
-      <h2>Completion Rate:</h2>
-      <p style={{ marginLeft: 'auto' }}>
-        {getPercentComplete()}% Complete
-      </p>
-    </div>
+    <section>
+      <header>
+        <h2>Completion Rate</h2>
+        <p style={{ margin: 0, marginLeft: 'auto' }}>
+          {getPercentComplete()}%
+        </p>
+      </header>
+    </section>
   )
 }
 
