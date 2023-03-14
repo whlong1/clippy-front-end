@@ -5,8 +5,10 @@ import completionIcon from '../../assets/icons/headers/completion.svg'
 
 const AttendanceByMonth = () => {
   const { state } = useLocation()
+  console.log('state', state)
 
   if (!state) return <Navigate to="/attendance" />
+  if (!state[0].students.length) return <Navigate to="/attendance" />
 
   const lookup = {
     L: 'Late',
