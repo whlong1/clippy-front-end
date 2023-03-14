@@ -49,11 +49,13 @@ const GradeStudentDeliverable = (props) => {
         deliverable={studentDeliverable}
       />
       <GradingNotes
+        instructorView={true}
         handleChange={handleChange}
         gradingNotes={formData.gradingNotes}
       />
       <CodeEditor
         formData={formData}
+        instructorView={true}
         setFormData={setFormData}
       />
     </section>

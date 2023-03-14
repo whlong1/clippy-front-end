@@ -1,7 +1,7 @@
-const GradingNotes = ({ gradingNotes, handleChange }) => {
+const GradingNotes = ({ instructorView, gradingNotes, handleChange }) => {
   return (
     <section>
-      {/* <h2>Grading Notes</h2> */}
+      {instructorView && <h2>Grading Notes</h2>}
       <textarea
         name="gradingNotes"
         value={gradingNotes}
