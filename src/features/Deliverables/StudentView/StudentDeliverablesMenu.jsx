@@ -39,7 +39,7 @@ const StudentDeliverablesMenu = (props) => {
 
       <section>
         <header>
-          <h2>Upcoming Deliverables</h2>
+          <h2>Deliverables</h2>
         </header>
         {studentDeliverables.length && studentDeliverables.map((sd) => (
           <Link className='sdRow' key={sd._id} to={`/deliverables/${sd._id}`}>
@@ -59,7 +59,7 @@ const StudentDeliverablesMenu = (props) => {
             </button>
           </header>
           {isOpen && newFeedback.map((sd) => (
-            <Link key={sd._id} to={`/deliverables/${sd._id}`}>
+            <Link className='sdRow' key={sd._id} to={`/deliverables/${sd._id}`}>
               <StatusIndicator status={sd.status} />
               <p>{sd.name}</p>
               <p>{getLocaleDateString(sd.dueDate)}</p>

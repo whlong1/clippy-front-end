@@ -107,7 +107,6 @@
   padding: 6px 0px 18px;
 }
 
-
 .sdRow {
   align-items: flex-end;
   justify-content: flex-start;
@@ -125,9 +124,10 @@
 
 .sdRow p:nth-child(2) {
   font-size: 15px;
-  margin-bottom: .5px;
   max-width: 160px;
+  text-align: left;
   overflow: hidden;
+  margin-bottom: .5px;
   display: -webkit-box;
   word-break: break-all;
   text-align-last: left;
