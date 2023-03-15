@@ -18,9 +18,9 @@ const Cohorts = () => {
 
       <h2>Cohort List</h2>
       {cohorts.map((c) => (
-        <div>
-          <p key={c._id}>{c.name}</p>
-          <Link to="/admin/cohorts/edit" >
+        <div key={c._id}>
+          <p>{c.name}</p>
+          <Link to="/admin/cohorts/edit" state={c} >
             <button>Edit</button>
           </Link>
         </div>

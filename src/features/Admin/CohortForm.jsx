@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 
 // Hooks
@@ -7,7 +7,6 @@ import { useCohortManager } from '../../hooks/useCohortManager'
 const CohortForm = () => {
   const navigate = useNavigate()
   const location = useLocation()
-  console.log(location.pathname.replace('/admin/cohorts/', ''))
   const mutation = useCohortManager()
 
   const [formData, setFormData] = useState({
@@ -15,6 +14,14 @@ const CohortForm = () => {
     startDate: '',
     endDate: '',
   })
+
+  useEffect(() => {
+    setFormData({
+      name: location.state.name,
+      endDate: location.state.endDate.slice(0, 10),
+      startDate: location.state.startDate.slice(0, 10),
+    })
+  }, [location])
 
   const title = location.pathname.replace('/admin/cohorts/', '')
   const formattedTitle = title[0].toUpperCase() + title.slice(1)
