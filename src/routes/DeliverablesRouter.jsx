@@ -7,8 +7,8 @@ import ShowDeliverable from '../features/Deliverables/ShowDeliverable.jsx'
 import DeliverablesMenu from '../features/Deliverables/DeliverablesMenu.jsx'
 import FeatureLanding from '../components/FeatureLanding/FeatureLanding.jsx'
 import ShowStudentDeliverable from '../features/Deliverables/ShowStudentDeliverable.jsx'
-import StudentDeliverablesMenu from '../features/Deliverables/StudentDeliverablesMenu.jsx'
 import GradeStudentDeliverable from '../features/Deliverables/GradeStudentDeliverable.jsx'
+import StudentDeliverablesMenu from '../features/Deliverables/StudentView/StudentDeliverablesMenu.jsx'
 
 const DeliverablesRouter = (props) => {
   const { user, profile, cohortId } = props

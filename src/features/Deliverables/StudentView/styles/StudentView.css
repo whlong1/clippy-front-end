@@ -10,7 +10,8 @@
 }
 
 .submissionAndFeedback header button {
-  height: 32px; /* ALT HEIGHT 24px */
+  height: 32px;
+  /* ALT HEIGHT 24px */
   margin-top: 0;
   font-size: 12px;
   font-weight: 600;
@@ -104,4 +105,40 @@
   border-radius: 5px;
   margin: 24px 8px 0px;
   padding: 6px 0px 18px;
+}
+
+.sdRow {
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.sdRow * {
+  line-height: 1;
+}
+
+.sdRow div {
+  margin: 0;
+  margin-top: 1px;
+  margin-right: 10px;
+}
+
+.sdRow p:nth-child(2) {
+  font-size: 15px;
+  max-width: 160px;
+  text-align: left;
+  overflow: hidden;
+  margin-bottom: .5px;
+  display: -webkit-box;
+  word-break: break-all;
+  text-align-last: left;
+  -webkit-line-clamp: 1;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+}
+
+.sdRow p:nth-child(3) {
+  font-size: 14px;
+  margin-left: auto;
+  letter-spacing: .1px;
+  margin-bottom: .5px;
 }

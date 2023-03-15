@@ -9,7 +9,11 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • order deliverables correctly
 
-• style and refactor role select form
+• need to require requirement select on new deliverable
+
+• fix styling on delete deliverable popup
+
+• move contact information into left column on show person
 
 • test scenario when no cohorts or profiles or attendance exist for an administrator
 

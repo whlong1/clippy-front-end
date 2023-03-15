@@ -26,7 +26,26 @@ const getDefaultDate = () => {
   return formattedTime
 }
 
+const dateOptions = {
+  hour12: true,
+  month: 'short',
+  day: 'numeric',
+  hour: 'numeric',
+  minute: 'numeric',
+  timeZone: 'America/New_York'
+  // year: 'numeric', Is the year value necessary?
+
+}
+
+const getLocaleDateString = (date) => {
+  const dateObj = new Date(date)
+  return dateObj.toLocaleDateString('en-US', dateOptions)
+}
+
+
+
 export {
   formatDate,
-  getDefaultDate
+  getDefaultDate,
+  getLocaleDateString,
 }

@@ -1,15 +1,20 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import './styles/StudentView.css'
 
 // Assets
-import arrow from '../../assets/icons/arrow.svg'
-import downArrow from '../../assets/icons/downArrow.svg'
+import arrow from '../../../assets/icons/arrow.svg'
+import downArrow from '../../../assets/icons/downArrow.svg'
+
+// Helpers
+import { getLocaleDateString } from '../helpers/helpers'
 
 // Components
-import MenuLayout from '../../layouts/MenuLayout'
-import CompletionTracker from './CompletionTracker'
-import MenuStatus from '../../components/MenuStatus/MenuStatus'
-import { useIndexStudentDeliverables } from '../../hooks/useIndexStudentDeliverables'
+import MenuLayout from '../../../layouts/MenuLayout'
+import CompletionTracker from '../CompletionTracker'
+import MenuStatus from '../../../components/MenuStatus/MenuStatus'
+import StatusIndicator from '../../../components/StatusIndicator/StatusIndicator'
+import { useIndexStudentDeliverables } from '../../../hooks/useIndexStudentDeliverables'
 
 const StudentDeliverablesMenu = (props) => {
   // Student DeliverablesMenu View
@@ -21,8 +26,7 @@ const StudentDeliverablesMenu = (props) => {
   if (status === 'loading') return <MenuStatus {...props} status={status} />
 
   const newFeedback = studentDeliverables.length
-    ? studentDeliverables.filter((sd) => sd.hasNewStatus)
-    : []
+    ? studentDeliverables.filter((sd) => sd.hasNewStatus) : []
 
   return (
     <MenuLayout {...props}>
@@ -35,12 +39,13 @@ const StudentDeliverablesMenu = (props) => {
 
       <section>
         <header>
-          <h2>Upcoming Deliverables</h2>
+          <h2>Deliverables</h2>
         </header>
         {studentDeliverables.length && studentDeliverables.map((sd) => (
-          <Link key={sd._id} to={`/deliverables/${sd._id}`}>
+          <Link className='sdRow' key={sd._id} to={`/deliverables/${sd._id}`}>
+            <StatusIndicator status={sd.status} />
             <p>{sd.name}</p>
-            <p>{sd.status[0].toUpperCase() + sd.status.slice(1)}</p>
+            <p>{getLocaleDateString(sd.dueDate)}</p>
           </Link>
         ))}
       </section>
@@ -54,9 +59,10 @@ const StudentDeliverablesMenu = (props) => {
             </button>
           </header>
           {isOpen && newFeedback.map((sd) => (
-            <Link key={sd._id} to={`/deliverables/${sd._id}`}>
+            <Link className='sdRow' key={sd._id} to={`/deliverables/${sd._id}`}>
+              <StatusIndicator status={sd.status} />
               <p>{sd.name}</p>
-              <p>{sd.status[0].toUpperCase() + sd.status.slice(1)}</p>
+              <p>{getLocaleDateString(sd.dueDate)}</p>
             </Link>
           ))}
         </section>
