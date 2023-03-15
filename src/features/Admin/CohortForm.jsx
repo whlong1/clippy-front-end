@@ -35,7 +35,11 @@ const CohortForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    mutation.mutate({ type: 'create', payload: { ...formData } })
+
+    title === 'new'
+      ? mutation.mutate({ type: 'create', payload: { ...formData } })
+      : mutation.mutate({ type: 'update', payload: { ...formData, cohortId: location.state._id } })
+
     navigate('/admin/cohorts')
   }
 

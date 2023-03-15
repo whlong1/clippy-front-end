@@ -18,8 +18,9 @@ const create = async (data) => {
   }
 }
 
-const update = async (cohortId, data) => {
+const update = async (data) => {
   try {
+    const { cohortId } = data
     const res = await fetch(`${BASE_URL}/${cohortId}`,
       {
         method: 'PATCH',
