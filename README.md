@@ -19,7 +19,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • when awaiting instructor approval during onboarding, should have message that says waiting to join x cohort
 
-• style admin menu and components + update cohort form
+• style admin menu and components
 
 • style onboarding pages
 
