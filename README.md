@@ -9,6 +9,10 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • style my profile page
 
+• my profile - edit should use profile form as a popup
+
+• update default cohort for admins in my profile
+
 • style onboarding pages
 
 • order deliverables correctly
@@ -46,8 +50,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 ## Issues
 
 • width of subheader class should scale based on content.
-
-• autocomplete in code editor is too narrow, some bit of css is impacting this. resolve
 
 • on new attendance, if no date is selected manually and the default is used, the date is one day behind
   works if the date is selected manually.

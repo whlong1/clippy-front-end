@@ -2,24 +2,31 @@
 import ProfileForm from "../../components/ProfileForm/ProfileForm"
 import JoinCohort from '../../components/JoinCohort/JoinCohort'
 
+// Styles
+import './Onboarding.css'
+
 const Onboarding = (props) => {
   const { profile, setProfile } = props
   const profileProps = { profile, setProfile }
+
+  const isStepOne = profile && !profile.isProfileComplete
+  const isStepTwo = profile?.isProfileComplete && !profile.isApprovalPending
+  const isStepThree = profile?.isApprovalPending
 
   // Onboarding Stages
 
   // Step 1: Profile is incomplete. User completes profile.
   const stepOne = (
-    profile && !profile.isProfileComplete &&
+    isStepOne &&
     <>
-      <h2>Complete your profile</h2>
+      <h2>Please enter your profile information below</h2>
       <ProfileForm {...profileProps} />
     </>
   )
 
   // Step 2: Profile has been completed. User selects cohort.
   const stepTwo = (
-    profile?.isProfileComplete && !profile.isApprovalPending &&
+    isStepTwo &&
     <>
       <h2>Select the cohort you want to join</h2>
       <JoinCohort {...profileProps} />
@@ -28,7 +35,7 @@ const Onboarding = (props) => {
 
   // Step 3: Profile has been added to waitlist. User awaits approval. 
   const stepThree = (
-    profile?.isApprovalPending &&
+    isStepThree &&
     <>
       <h2>Awaiting instructor approval.</h2>
       <p>After being admitted into a cohort, you'll need to refresh your browser.</p>
@@ -39,9 +46,14 @@ const Onboarding = (props) => {
   )
 
   return (
-    <main className="page">
-      <h1>Onboarding</h1>
+    <main className="onboarding">
       <section>
+        <header>
+          <h1>Onboarding</h1>
+          {isStepOne && <p>Step 1</p>}
+          {isStepTwo && <p>Step 2</p>}
+          {isStepThree && <p>Step 3</p>}
+        </header>
         {stepOne}
         {stepTwo}
         {stepThree}
@@ -51,9 +63,3 @@ const Onboarding = (props) => {
 }
 
 export default Onboarding
-
-// MyProfile needs to be a component that can fit inside
-// whatever Message component wrapper we use for step 3
-// Allow a user to go back to edit profile or select a different cohort?
-// Or just allow them to access the ProfileForm and SelectCohort components after completion
-// Should probably give them access to a dashboard page or some kind of redirect
