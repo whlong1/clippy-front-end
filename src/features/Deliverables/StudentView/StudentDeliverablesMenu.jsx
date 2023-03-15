@@ -43,7 +43,7 @@ const StudentDeliverablesMenu = (props) => {
         {studentDeliverables.length && studentDeliverables.map((sd) => (
           <Link className='sdRow' key={sd._id} to={`/deliverables/${sd._id}`}>
             <StatusIndicator status={sd.status} />
-            <p>{sd.name}</p>
+            <h2>{sd.name}</h2>
             <p>{getLocaleDateString(sd.dueDate)}</p>
           </Link>
         ))}
@@ -60,7 +60,7 @@ const StudentDeliverablesMenu = (props) => {
           {isOpen && newFeedback.map((sd) => (
             <Link className='sdRow' key={sd._id} to={`/deliverables/${sd._id}`}>
               <StatusIndicator status={sd.status} />
-              <p>{sd.name}</p>
+              <h2>{sd.name}</h2>
               <p>{getLocaleDateString(sd.dueDate)}</p>
             </Link>
           ))}

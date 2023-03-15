@@ -10,7 +10,7 @@ const CompletionTracker = ({ studentDeliverables }) => {
   }
 
   return (
-    <section>
+    <section className="completionTracker">
       <header>
         <h2>Completion Rate</h2>
         <p style={{ margin: 0, marginLeft: 'auto' }}>

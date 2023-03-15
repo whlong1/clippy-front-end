@@ -513,7 +513,7 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   line-height: .95;
 }
 
-/* .subheader {} */
+/* SUBHEADER */
 
 .subheader p {
   height: 20px;

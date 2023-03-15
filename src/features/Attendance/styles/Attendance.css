@@ -22,9 +22,16 @@
   line-height: 1;
 }
 
+.attendanceStats p {
+  font-size: 14px;
+}
 
 .attendanceByMonth section * {
   margin: 0;
+}
+
+.attendanceByMonth header h2 {
+  font-size: 15px;
 }
 
 .attendanceByMonth section  {
