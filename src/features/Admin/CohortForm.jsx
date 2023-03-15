@@ -15,16 +15,19 @@ const CohortForm = () => {
     endDate: '',
   })
 
-  useEffect(() => {
-    setFormData({
-      name: location.state.name,
-      endDate: location.state.endDate.slice(0, 10),
-      startDate: location.state.startDate.slice(0, 10),
-    })
-  }, [location])
-
   const title = location.pathname.replace('/admin/cohorts/', '')
   const formattedTitle = title[0].toUpperCase() + title.slice(1)
+
+  useEffect(() => {
+    if (title === 'edit') {
+      setFormData({
+        name: location.state.name,
+        endDate: location.state.endDate.slice(0, 10),
+        startDate: location.state.startDate.slice(0, 10),
+      })
+    }
+  }, [title, location])
+
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
