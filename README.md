@@ -23,8 +23,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • style onboarding pages
 
-• Students should see there stats on MyProfile page?
-
 • on hover effect for links
 
 • make sure date issues from previous iteration are resolved on deploy
@@ -47,8 +45,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Issues
 
-• SubmissionTracker and DueDate p tags require 2px margin-top to bring them inline with other subheaders. Investigate cause.
-
 • width of subheader class should scale based on content.
 
 • autocomplete in code editor is too narrow, some bit of css is impacting this. resolve
@@ -61,6 +57,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 ## Stretch Goals
 
 • could add icons to forms
+
+• Students should see there stats on MyProfile page
 
 • Audit keys (need consistent key pattern for all resources)
 

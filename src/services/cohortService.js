@@ -18,6 +18,24 @@ const create = async (data) => {
   }
 }
 
+const update = async (cohortId, data) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${cohortId}`,
+      {
+        method: 'PATCH',
+        headers: {
+          'Authorization': `Bearer ${tokenService.getToken()}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+    return await res.json()
+  } catch (err) {
+    throw err
+  }
+}
+
+
 const indexCohorts = async () => {
   const res = await fetch(`${BASE_URL}`,
     { headers: { 'Authorization': `Bearer ${tokenService.getToken()}` } },
@@ -123,6 +141,7 @@ const changeRole = async (cohortId, profileId, data) => {
 
 export {
   create,
+  update,
   changeRole,
   denyProfile,
   indexCohorts,
