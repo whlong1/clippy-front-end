@@ -48,7 +48,7 @@ const CohortForm = () => {
       <form onSubmit={handleSubmit}>
         <header className="header">
           <h1>{formattedTitle} Cohort</h1>
-          <button type="submit">Submit</button>
+          <button type="submit">SUBMIT</button>
         </header>
         <label htmlFor="name">
           Name:

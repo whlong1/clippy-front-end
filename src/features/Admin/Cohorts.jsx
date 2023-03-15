@@ -20,7 +20,7 @@ const Cohorts = () => {
           <h1>Cohorts</h1>
           <Link to="/admin/cohorts/new">
             <button>
-              New Cohort
+              NEW
             </button>
           </Link>
         </section>
@@ -31,8 +31,8 @@ const Cohorts = () => {
           <div className="row" key={c._id}>
             <p>{c.name}</p>
             <p>{c.startDate.slice(0, 10)} - {c.endDate.slice(0, 10)}</p>
-            <Link to="/admin/cohorts/edit" state={c} >
-              <button>Edit</button>
+            <Link style={{ fontSize: '14px' }} to="/admin/cohorts/edit" state={c} >
+              Edit
             </Link>
           </div>
         ))}

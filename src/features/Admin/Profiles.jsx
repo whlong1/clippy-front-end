@@ -10,9 +10,15 @@ const Profiles = () => {
 
   return (
     <section>
-      <h1>Profiles</h1>
+      <header className="header">
+        <section>
+          <h1>Profiles</h1>
+        </section>
+      </header>
       {profiles.map((p) => (
-        <ProfileInfo key={p._id} profile={p} />
+        <div key={p._id} className="row">
+          <ProfileInfo key={p._id} profile={p} />
+        </div>
       ))}
     </section>
   )
