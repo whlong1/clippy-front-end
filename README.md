@@ -17,13 +17,11 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • test scenario when no cohorts or profiles or attendance exist for an administrator
 
-• when awaiting instructor approval during onboarding, should have message that says waiting to join x cohort
-
-• style admin menu and components
-
 • style onboarding pages
 
 • on hover effect for links
+
+• when awaiting instructor approval during onboarding, should have message that says waiting to join x cohort
 
 • make sure date issues from previous iteration are resolved on deploy
 
