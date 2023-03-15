@@ -126,7 +126,7 @@
 .sdRow p:nth-child(2) {
   font-size: 15px;
   margin-bottom: .5px;
-  max-width: 140px;
+  max-width: 160px;
   overflow: hidden;
   display: -webkit-box;
   word-break: break-all;
@@ -140,4 +140,5 @@
   font-size: 14px;
   margin-left: auto;
   letter-spacing: .1px;
+  margin-bottom: .5px;
 }
