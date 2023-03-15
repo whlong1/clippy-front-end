@@ -11,7 +11,15 @@ export const useCohortManager = () => {
         const queryKey = ['cohorts']
         queryClient.setQueryData(queryKey, (state) => [res, ...state])
       }
+    },
+    update: {
+      service: cohortService.update,
+      handleCache: (res, payload) => {
+        const queryKey = ['cohorts']
+        queryClient.invalidateQueries({ queryKey: queryKey, type: 'all' })
+      }
     }
+
   }
 
   return useMutation({

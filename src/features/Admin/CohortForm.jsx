@@ -1,10 +1,12 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 
+// Hooks
 import { useCohortManager } from '../../hooks/useCohortManager'
 
-const NewCohort = () => {
+const CohortForm = () => {
   const navigate = useNavigate()
+  const location = useLocation()
   const mutation = useCohortManager()
 
   const [formData, setFormData] = useState({
@@ -13,13 +15,31 @@ const NewCohort = () => {
     endDate: '',
   })
 
+  const title = location.pathname.replace('/admin/cohorts/', '')
+  const formattedTitle = title[0].toUpperCase() + title.slice(1)
+
+  useEffect(() => {
+    if (title === 'edit') {
+      setFormData({
+        name: location.state.name,
+        endDate: location.state.endDate.slice(0, 10),
+        startDate: location.state.startDate.slice(0, 10),
+      })
+    }
+  }, [title, location])
+
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    mutation.mutate({ type: 'create', payload: { ...formData } })
+
+    title === 'new'
+      ? mutation.mutate({ type: 'create', payload: { ...formData } })
+      : mutation.mutate({ type: 'update', payload: { ...formData, cohortId: location.state._id } })
+
     navigate('/admin/cohorts')
   }
 
@@ -27,8 +47,8 @@ const NewCohort = () => {
     <section className="formContainer">
       <form onSubmit={handleSubmit}>
         <header className="header">
-          <h1>New Cohort</h1>
-          <button type="submit">Submit</button>
+          <h1>{formattedTitle} Cohort</h1>
+          <button type="submit">SUBMIT</button>
         </header>
         <label htmlFor="name">
           Name:
@@ -68,4 +88,4 @@ const NewCohort = () => {
   )
 }
 
-export default NewCohort
+export default CohortForm

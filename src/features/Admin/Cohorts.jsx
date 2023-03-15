@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import './styles/Admin.css'
 
 // Components
 import ContentStatus from '../../components/ContentStatus/ContentStatus'
@@ -13,14 +14,29 @@ const Cohorts = () => {
   if (status === 'loading') return <ContentStatus status={status} />
 
   return (
-    <section>
-      <h1>Cohorts</h1>
+    <section className="cohorts">
+      <header className="header">
+        <section>
+          <h1>Cohorts</h1>
+          <Link to="/admin/cohorts/new">
+            <button>
+              NEW
+            </button>
+          </Link>
+        </section>
+      </header>
 
-      <h2>Cohort List</h2>
-      {cohorts.map((c) => <p key={c._id}>{c.name}</p>)}
-
-      <Link to="/admin/cohorts/new">New Cohort</Link>
-
+      <section>
+        {cohorts.map((c) => (
+          <div className="row" key={c._id}>
+            <p>{c.name}</p>
+            <p>{c.startDate.slice(0, 10)} - {c.endDate.slice(0, 10)}</p>
+            <Link style={{ fontSize: '14px' }} to="/admin/cohorts/edit" state={c} >
+              Edit
+            </Link>
+          </div>
+        ))}
+      </section>
     </section>
   )
 }

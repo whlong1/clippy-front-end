@@ -7,9 +7,9 @@ const AdminMenu = (props) => {
 
   return (
     <MenuLayout {...props}>
-      <h1>Admin</h1>
-      <Link to='/admin/cohorts'><button>Cohorts</button></Link>
-      <Link to='/admin/profiles'><button>Profiles</button></Link>
+      <span><h1>Admin</h1></span>
+      <Link to='/admin/cohorts'>Cohorts</Link>
+      <Link to='/admin/profiles'>Profiles</Link>
     </MenuLayout>
   )
 }
