@@ -11,13 +11,12 @@ import { getLocaleDateString } from '../helpers/helpers'
 
 // Components
 import MenuLayout from '../../../layouts/MenuLayout'
-import CompletionTracker from '../CompletionTracker'
+import CompletionTracker from './CompletionTracker'
 import MenuStatus from '../../../components/MenuStatus/MenuStatus'
 import StatusIndicator from '../../../components/StatusIndicator/StatusIndicator'
 import { useIndexStudentDeliverables } from '../../../hooks/useIndexStudentDeliverables'
 
 const StudentDeliverablesMenu = (props) => {
-  // Student DeliverablesMenu View
   const { cohortId, profile } = props
   const [isOpen, setIsOpen] = useState(false)
   const { studentDeliverables, status } = useIndexStudentDeliverables(cohortId, profile._id)
@@ -44,7 +43,7 @@ const StudentDeliverablesMenu = (props) => {
         {studentDeliverables.length && studentDeliverables.map((sd) => (
           <Link className='sdRow' key={sd._id} to={`/deliverables/${sd._id}`}>
             <StatusIndicator status={sd.status} />
-            <p>{sd.name}</p>
+            <h2>{sd.name}</h2>
             <p>{getLocaleDateString(sd.dueDate)}</p>
           </Link>
         ))}
@@ -61,7 +60,7 @@ const StudentDeliverablesMenu = (props) => {
           {isOpen && newFeedback.map((sd) => (
             <Link className='sdRow' key={sd._id} to={`/deliverables/${sd._id}`}>
               <StatusIndicator status={sd.status} />
-              <p>{sd.name}</p>
+              <h2>{sd.name}</h2>
               <p>{getLocaleDateString(sd.dueDate)}</p>
             </Link>
           ))}

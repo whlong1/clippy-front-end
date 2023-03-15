@@ -1,0 +1,41 @@
+.attendanceStats header {
+  height: auto;
+  margin-bottom: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.attendanceStats header div {
+  width: 100%;
+}
+
+.attendanceStats header div p {
+  margin: 0;
+  margin-left: auto;
+}
+
+.attendanceStats header div:nth-child(2) {
+  margin-top: 16px;
+}
+
+.attendanceStats header div * {
+  line-height: 1;
+}
+
+.attendanceStats p {
+  font-size: 14px;
+}
+
+.attendanceByMonth section * {
+  margin: 0;
+}
+
+.attendanceByMonth header h2 {
+  font-size: 15px;
+}
+
+.attendanceByMonth section  {
+  opacity: .7;
+  height: 24px;
+  margin-bottom: 16px;
+}
