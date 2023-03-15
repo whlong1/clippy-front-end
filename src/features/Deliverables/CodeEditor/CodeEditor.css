@@ -4,6 +4,10 @@
   border: 1px solid var(--border-color);
 }
 
+.cm-tooltip-autocomplete {
+  display: none;
+}
+
 .cm-scroller {
   width: 100%;
   padding: 2px 2.25px;

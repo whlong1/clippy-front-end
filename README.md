@@ -7,6 +7,10 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
+• style my profile page
+
+• style onboarding pages
+
 • order deliverables correctly
 
 • need to require requirement select on new deliverable
@@ -16,8 +20,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • move contact information into left column on show person
 
 • test scenario when no cohorts or profiles or attendance exist for an administrator
-
-• style onboarding pages
 
 • on hover effect for links
 
