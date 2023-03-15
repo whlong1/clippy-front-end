@@ -66,11 +66,17 @@ const AttendanceList = ({ attendance, isAdmin }) => {
     return (
       filteredMonths.map((month) => (
         <section key={month.num}>
-          <header>
-            <Link state={monthlyAttendance[month.num]} to={`/attendance/${month.long.toLocaleLowerCase()}`}>
+          <Link state={monthlyAttendance[month.num]} to={`/attendance/${month.long.toLocaleLowerCase()}`}>
+            <header>
               <h2>{month.long}</h2>
-            </Link>
-          </header>
+              <button>
+                <img
+                  src={selectedMonth === month.num ? downArrow : arrow}
+                  alt="An arrow"
+                />
+              </button>
+            </header>
+          </Link>
         </section>
       ))
     )

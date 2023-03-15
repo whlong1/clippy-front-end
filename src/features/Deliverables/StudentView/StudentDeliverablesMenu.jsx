@@ -11,13 +11,12 @@ import { getLocaleDateString } from '../helpers/helpers'
 
 // Components
 import MenuLayout from '../../../layouts/MenuLayout'
-import CompletionTracker from '../CompletionTracker'
+import CompletionTracker from './CompletionTracker'
 import MenuStatus from '../../../components/MenuStatus/MenuStatus'
 import StatusIndicator from '../../../components/StatusIndicator/StatusIndicator'
 import { useIndexStudentDeliverables } from '../../../hooks/useIndexStudentDeliverables'
 
 const StudentDeliverablesMenu = (props) => {
-  // Student DeliverablesMenu View
   const { cohortId, profile } = props
   const [isOpen, setIsOpen] = useState(false)
   const { studentDeliverables, status } = useIndexStudentDeliverables(cohortId, profile._id)

@@ -1,3 +1,5 @@
+import './styles/Attendance.css'
+
 // Components
 import AttendanceList from './AttendanceList'
 import MenuLayout from '../../layouts/MenuLayout'
@@ -27,13 +29,15 @@ const StudentAttendanceMenu = (props) => {
   // 1 absence = .5
   // 3 Lates  =  1 absence
 
-  const lateScore = Math.ceil(attendanceTable.l * 0.33)
-  const absentScore = Math.ceil(attendanceTable.a * 0.5)
+  const lateScore = attendanceTable.l * 0.33
+  const absentScore = attendanceTable.a * 0.5
 
   const totalDays = attendance.length
+  const totalAbsences = (absentScore + lateScore)
   const daysAttended = totalDays - absentScore - lateScore
   const percentage = (daysAttended / totalDays) * 100
   const attendanceRate = !isNaN(percentage) ? percentage.toFixed(2) : 0
+
 
   return (
     <MenuLayout {...props}>
@@ -41,14 +45,25 @@ const StudentAttendanceMenu = (props) => {
         <h1>My Attendance</h1>
       </span>
 
-      <section>
-        <h2>Attendance Rate {attendanceRate}%</h2>
-        <h2>Absences: {absentScore}</h2>
-        <h2>Tardies: {lateScore}</h2>
+      <section className='attendanceStats'>
+        <header>
+          <div>
+            <h2>Attendance Rate</h2>
+            <p>{attendanceRate}%</p>
+          </div>
+          <div>
+            <h2>Total Absences</h2>
+            <p>{totalAbsences.toFixed(2)}</p>
+          </div>
+        </header>
       </section>
 
-      <AttendanceList attendance={attendance} />
-
+      <section className='attendanceByMonth'>
+        <header>
+          <h2>Attendance By Month</h2>
+        </header>
+        <AttendanceList attendance={attendance} />
+      </section>
     </MenuLayout>
   )
 }
