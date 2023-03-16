@@ -11,6 +11,10 @@ const Popup = ({ isOpen, children }) => {
     position: 'absolute',
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
     display: isOpen ? 'flex' : 'none',
+
+    // border: '1px solid blue', // For testing
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 
   return (

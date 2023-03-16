@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import * as profileService from '../../services/profileService'
 
-const ProfileForm = ({ profile, setProfile }) => {
+const ProfileForm = ({ profile, setProfile, setIsEditOpen }) => {
   const [formData, setFormData] = useState(profile)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     const res = await profileService.updateProfile(formData)
+    if (setIsEditOpen) setIsEditOpen(false)
     setProfile(res)
   }
 
@@ -22,6 +23,7 @@ const ProfileForm = ({ profile, setProfile }) => {
         type="text"
         id="firstName"
         name="firstName"
+        placeholder="First Name"
         onChange={handleChange}
         value={formData.firstName || ''}
       />
@@ -31,6 +33,7 @@ const ProfileForm = ({ profile, setProfile }) => {
         type="text"
         id="lastName"
         name="lastName"
+        placeholder="Last Name"
         onChange={handleChange}
         value={formData.lastName || ''}
       />
@@ -39,14 +42,17 @@ const ProfileForm = ({ profile, setProfile }) => {
         type="text"
         id="preferredName"
         name="preferredName"
+        placeholder="Preferred Name"
         onChange={handleChange}
         value={formData.preferredName || ''}
       />
       <label htmlFor="preferredPronouns">Preferred Pronouns:</label>
       <input
+        required
         type="text"
         id="preferredPronouns"
         name="preferredPronouns"
+        placeholder="Preferred Pronouns"
         onChange={handleChange}
         value={formData.preferredPronouns || ''}
       />
@@ -55,6 +61,7 @@ const ProfileForm = ({ profile, setProfile }) => {
         type="text"
         id="gitHubUserName"
         name="gitHubUserName"
+        placeholder="GitHub User Name"
         onChange={handleChange}
         value={formData.gitHubUserName || ''}
       />
@@ -63,6 +70,7 @@ const ProfileForm = ({ profile, setProfile }) => {
         type="text"
         id="linkedInUserName"
         name="linkedInUserName"
+        placeholder="LinkedIn User Name"
         onChange={handleChange}
         value={formData.linkedInUserName || ''}
       />
@@ -71,10 +79,11 @@ const ProfileForm = ({ profile, setProfile }) => {
         type="text"
         id="codeWarsUserName"
         name="codeWarsUserName"
+        placeholder="Code Wars User Name"
         onChange={handleChange}
         value={formData.codeWarsUserName || ''}
       />
-      <button type="submit">Submit Profile</button>
+      <button type="submit">SUBMIT PROFILE</button>
     </form>
 
   )

@@ -116,10 +116,7 @@ main>nav {
   min-width: 360px;
 }
 
-.page {
-  padding: 24px;
-  width: 100%;
-}
+/* .page { } */
 
 form {
   display: flex;

@@ -1,0 +1,118 @@
+.onboarding {
+  width: 100%;
+  display: flex;
+  padding: 0px 80px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.onboarding section {
+  max-width: 600px;
+}
+
+.onboarding header {
+  display: flex;
+  flex-direction: row;
+  padding: 0px 0px 32px;
+  align-items: flex-end;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.onboarding header p {
+  opacity: .5;
+  font-size: 14px;
+  margin-left: auto;
+}
+
+.onboarding h2 {
+  opacity: .85;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 24px 0px;
+}
+
+.onboarding input {
+  width: 100%;
+  padding: 8px;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border-color);
+  background-color: var(--input-background);
+}
+
+.onboarding label {
+  opacity: .5;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.onboarding button {
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+
+.onboarding select {
+  width: 100%;
+  opacity: .5;
+  display: flex;
+  font-size: 14px;
+  appearance: none;
+  background: var(--input-background);
+
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 24px;
+  background-size: 12px;
+  background-repeat: no-repeat;
+  border: 1px solid var(--border-color);
+  background-position: right 8px center;
+  background-image: url("../../assets/icons/arrow.svg");
+}
+
+.onboarding .message {
+  display: flex;
+  margin-bottom: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+
+.onboarding .message p {
+  opacity: .5;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.onboarding .options button {
+  margin-right: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.onboarding .shell {
+  width: 100%;
+  padding-top: 24px;
+  border-radius: 5px;
+  background: #101115;
+  padding: 24px 16px 16px;
+  border: 1px solid var(--border-color);
+}
+
+.onboarding .shell  header button {
+  margin-left: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.onboarding .shell  header {
+  align-items: center;
+}
+
+.onboarding .shell  header h1 {
+  margin: 0;
+}

@@ -34,11 +34,10 @@ const StudentDeliverablesMenu = (props) => {
       </span>
 
       <CompletionTracker studentDeliverables={studentDeliverables} />
-      {!studentDeliverables.length && <p>No Deliverables</p>}
 
       <section>
         <header>
-          <h2>Deliverables</h2>
+          <h2>{studentDeliverables.length ? 'Deliverables' : 'No Deliverables Assigned'}</h2>
         </header>
         {studentDeliverables.length && studentDeliverables.map((sd) => (
           <Link className='sdRow' key={sd._id} to={`/deliverables/${sd._id}`}>
