@@ -39,13 +39,10 @@ const ShowStudentDeliverable = ({ cohortId }) => {
           <StudentStatus status={studentDeliverable.status} />
         </section>
       </header>
-
-      {!studentDeliverable.hasQuiz &&
-        <SubmisionAndFeedback
-          cohortId={cohortId}
-          studentDeliverable={studentDeliverable}
-        />
-      }
+      <SubmisionAndFeedback
+        cohortId={cohortId}
+        studentDeliverable={studentDeliverable}
+      />
     </section>
   )
 }

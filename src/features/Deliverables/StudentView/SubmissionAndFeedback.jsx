@@ -56,15 +56,17 @@ const SubmisionAndFeedback = ({ cohortId, studentDeliverable }) => {
         />
       </Popup>
 
-      <header>
-        <span>
-          <h2>Submitted Materials</h2>
-          <h3>{filteredUrls.length ? urlLinks : 'No materials submitted'}</h3>
-        </span>
-        <button onClick={() => setIsOpen((prev) => !prev)}>ADD LINKS</button>
-      </header>
+      {!studentDeliverable.hasQuiz &&
+        <header>
+          <span>
+            <h2>Submitted Materials</h2>
+            <h3>{filteredUrls.length ? urlLinks : 'No materials submitted'}</h3>
+          </span>
+          <button onClick={() => setIsOpen((prev) => !prev)}>ADD LINKS</button>
+        </header>
+      }
 
-      {studentDeliverable.gradedBy && 
+      {studentDeliverable.gradedBy &&
         <header>
           <span>
             <h2>Feedback</h2>
