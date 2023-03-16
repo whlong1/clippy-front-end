@@ -1,4 +1,7 @@
+import { useState } from "react"
+
 // Components
+import Popup from '../../layouts/Popup.jsx'
 import ProfileForm from "../../components/ProfileForm/ProfileForm"
 import JoinCohort from '../../components/JoinCohort/JoinCohort'
 
@@ -8,6 +11,9 @@ import './Onboarding.css'
 const Onboarding = (props) => {
   const { profile, setProfile } = props
   const profileProps = { profile, setProfile }
+
+  const [isJoinOpen, setIsJoinOpen] = useState(false)
+  const [isEditOpen, setIsEditOpen] = useState(false)
 
   const isStepOne = profile && !profile.isProfileComplete
   const isStepTwo = profile?.isProfileComplete && !profile.isApprovalPending
@@ -28,7 +34,7 @@ const Onboarding = (props) => {
   const stepTwo = (
     isStepTwo &&
     <>
-      <h2>Select the cohort you want to join</h2>
+      <h2>Select the cohort you wish to join</h2>
       <JoinCohort {...profileProps} />
     </>
   )
@@ -38,15 +44,44 @@ const Onboarding = (props) => {
     isStepThree &&
     <>
       <h2>Awaiting instructor approval.</h2>
-      <p>After being admitted into a cohort, you'll need to refresh your browser.</p>
-      <p>Feel free to make any changes to your profile or select a different cohort.</p>
-      <JoinCohort {...profileProps} />
-      <ProfileForm {...profileProps} />
+
+      <div className="message">
+        <p>After being admitted into a cohort, you'll need to refresh your browser.</p>
+        <p>Feel free to make any changes to your profile or select a different cohort.</p>
+      </div>
+
+      <div className="options" >
+        <button onClick={() => setIsEditOpen(true)}>EDIT PROFILE</button>
+        <button onClick={() => setIsJoinOpen(true)}>SELECT NEW COHORT</button>
+      </div>
+
+      <section>
+        <Popup isOpen={isJoinOpen}>
+          <section className="shell">
+            <header>
+              <h1>Select A Cohort</h1>
+              <button onClick={() => setIsJoinOpen(false)}>CANCEL</button>
+            </header>
+            <h2>Select the cohort you wish to join</h2>
+            <JoinCohort {...profileProps} setIsJoinOpen={setIsJoinOpen} />
+          </section>
+        </Popup>
+        <Popup isOpen={isEditOpen}>
+          <section className="shell">
+            <header>
+              <h1>Edit Profile</h1>
+              <button onClick={() => setIsEditOpen(false)}>CANCEL</button>
+            </header>
+            <h2>Please enter your profile information below</h2>
+            <ProfileForm {...profileProps} setIsEditOpen={setIsEditOpen} />
+          </section>
+        </Popup>
+      </section>
     </>
   )
 
   return (
-    <main className="onboarding">
+    <main className="onboarding" style={{ position: 'relative' }}>
       <section>
         <header>
           <h1>Onboarding</h1>

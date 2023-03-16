@@ -9,6 +9,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • style my profile page
 
+• instructors should be able to submit materials for students
+
 • my profile - edit should use profile form as a popup
 
 • update default cohort for admins in my profile

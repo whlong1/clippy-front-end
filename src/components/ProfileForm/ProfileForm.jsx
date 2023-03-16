@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import * as profileService from '../../services/profileService'
 
-const ProfileForm = ({ profile, setProfile }) => {
+const ProfileForm = ({ profile, setProfile, setIsEditOpen }) => {
   const [formData, setFormData] = useState(profile)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     const res = await profileService.updateProfile(formData)
+    if (setIsEditOpen) setIsEditOpen(false)
     setProfile(res)
   }
 
