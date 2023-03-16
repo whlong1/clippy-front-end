@@ -29,6 +29,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • on hover effect for links
 
+• if github username is missing, other users photo appears in show person
+
 • when awaiting instructor approval during onboarding, should have message that says waiting to join x cohort
 
 • make sure date issues from previous iteration are resolved on deploy
