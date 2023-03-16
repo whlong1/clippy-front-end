@@ -15,8 +15,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • update default cohort for admins in my profile
 
-• style onboarding pages
-
 • order deliverables correctly
 
 • need to require requirement select on new deliverable
