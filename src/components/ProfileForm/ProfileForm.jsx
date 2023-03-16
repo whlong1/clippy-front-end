@@ -47,6 +47,7 @@ const ProfileForm = ({ profile, setProfile }) => {
       />
       <label htmlFor="preferredPronouns">Preferred Pronouns:</label>
       <input
+        required
         type="text"
         id="preferredPronouns"
         name="preferredPronouns"

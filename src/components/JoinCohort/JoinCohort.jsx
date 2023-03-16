@@ -34,7 +34,7 @@ const JoinCohort = ({ profile, setProfile }) => {
           <option key={c._id} value={c._id}>{c.name}</option>
         ))}
       </select>
-      <button type="submit">Join Cohort</button>
+      <button type="submit">JOIN COHORT</button>
     </form>
   )
 }

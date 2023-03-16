@@ -52,3 +52,22 @@
   font-weight: 600;
   border-radius: 5px;
 }
+
+
+.onboarding select {
+  width: 100%;
+  opacity: .5;
+  display: flex;
+  font-size: 14px;
+  appearance: none;
+  background: var(--input-background);
+  
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 24px;
+  background-size: 12px;
+  background-repeat: no-repeat;
+  border: 1px solid var(--border-color);
+  background-position: right 8px center;
+  background-image: url("../../assets/icons/arrow.svg");
+}
