@@ -116,3 +116,10 @@
 .onboarding .shell  header h1 {
   margin: 0;
 }
+
+
+
+
+.adminOnboard form button {
+  width: 100%;
+}

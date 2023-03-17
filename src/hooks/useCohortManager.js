@@ -3,7 +3,7 @@ import * as cohortService from '../services/cohortService'
 
 export const useCohortManager = () => {
   const queryClient = useQueryClient()
-  
+
   const types = {
     create: {
       service: cohortService.create,
@@ -18,8 +18,7 @@ export const useCohortManager = () => {
         const queryKey = ['cohorts']
         queryClient.invalidateQueries({ queryKey: queryKey, type: 'all' })
       }
-    }
-
+    },
   }
 
   return useMutation({

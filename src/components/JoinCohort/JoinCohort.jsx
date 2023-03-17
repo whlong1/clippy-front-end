@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+
+// Services
 import * as cohortService from '../../services/cohortService'
 
 const JoinCohort = ({ profile, setProfile, setIsJoinOpen }) => {
