@@ -99,10 +99,16 @@ main {
 
 main>nav,
 main>section {
-  height: 100vh;
+  min-height: 100vh; /* old: height: 100vh; */
   display: flex;
   overflow-y: scroll;
   flex-direction: column;
+}
+
+/* https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
+main>section  {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 main>section {
