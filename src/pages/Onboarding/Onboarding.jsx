@@ -9,7 +9,7 @@ import JoinCohort from '../../components/JoinCohort/JoinCohort'
 import './Onboarding.css'
 
 const Onboarding = (props) => {
-  const { profile, setProfile } = props
+  const { user, profile, setProfile } = props
   const profileProps = { profile, setProfile }
 
   const [isJoinOpen, setIsJoinOpen] = useState(false)
@@ -18,6 +18,8 @@ const Onboarding = (props) => {
   const isStepOne = profile && !profile.isProfileComplete
   const isStepTwo = profile?.isProfileComplete && !profile.isApprovalPending
   const isStepThree = profile?.isApprovalPending
+
+  console.log(user, profile)
 
   // Onboarding Stages
 
@@ -34,8 +36,10 @@ const Onboarding = (props) => {
   const stepTwo = (
     isStepTwo &&
     <>
-      <h2>Select the cohort you wish to join</h2>
-      <JoinCohort {...profileProps} />
+      <section>
+        <h2>Select the cohort you wish to join</h2>
+        <JoinCohort {...profileProps} />
+      </section>
     </>
   )
 

@@ -7,6 +7,10 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
+• weird loading is caused by key on popup, see if a useeffect will work instead
+
+• add start time to cohort model and form
+
 • style my profile page
 
 • instructors should be able to submit materials for students
@@ -69,3 +73,20 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • For security, might be worth refactoring how admin and student routes are handled
 
 • REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
+
+
+## Site Admin Onboarding
+
+• Create your account in Auth0.
+
+• Click on the User Management tab in the Auth0 dashboard, and select Roles.
+
+• Create a new role called Admin. Grant the Admin role whatever permissions you deem necessary.
+
+• Assign the role of Admin to your account.
+
+• Login to Clippy. After logging in you should be directed to onboarding. 
+
+• Complete your profile information.
+
+

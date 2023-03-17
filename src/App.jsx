@@ -36,7 +36,7 @@ const App = () => {
   if (isLoading || !profile) return <StatusPage status={'Authenticating...'} />
 
   if (user?.is_new && !profile?.isOnboarded) {
-    return <Onboarding profile={profile} setProfile={setProfile} />
+    return <Onboarding user={user} profile={profile} setProfile={setProfile} />
   }
 
   return (
