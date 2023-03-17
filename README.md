@@ -7,19 +7,19 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
+• scroll issue on edit profile onboarding
+
 • daylight savings issue in new deliverable
 
 • set default cohort in my profile
 
-• Attendance form takenBy: profile.name, // <==
+<!-- • Attendance form takenBy: profile.name, // <== -->
 
 • names don't show up on attendance studentStatusrow
 
 • show grading notes and code block for student quiz
 
-• remove from cohort button issue - could just use change role
-
-• scroll issue on edit profile onboarding
+<!-- • remove from cohort button issue - could just use change role -->
 
 <!-- • give the onboarding container main a min height -->
 
