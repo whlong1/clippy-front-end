@@ -11,7 +11,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • daylight savings issue in new deliverable
 
-• set default cohort in my profile
+<!-- • set default cohort in my profile -->
 
 <!-- • Attendance form takenBy: profile.name, // <== -->
 
@@ -41,7 +41,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • my profile - edit should use profile form as a popup
 
-• update default cohort for admins in my profile
+<!-- • update default cohort for admins in my profile -->
 
 • order deliverables correctly
 
