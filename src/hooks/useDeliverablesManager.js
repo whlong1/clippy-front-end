@@ -34,10 +34,13 @@ export const useDeliverablesManager = (cohortId) => {
         })
         // Update studentDeliverable detail
         queryClient.setQueryData(['studentDeliverable', res._id], { ...payload, ...res })
+        // queryClient.invalidateQueries({ queryKey: ['studentDeliverable', res._id], type: 'active' })
+
         // Update deliverable detail
         queryClient.setQueryData(['deliverable', deliverableId], (state) => {
           return { ...state, students: handleNestedStudents(state) }
         })
+
         // Update deliverables list
         queryClient.setQueryData(['deliverables', cohortId], (state) => state.map((d) => {
           return d._id === deliverableId ? { ...d, students: handleNestedStudents(d) } : d
@@ -52,12 +55,19 @@ export const useDeliverablesManager = (cohortId) => {
         const listQueryKey = ['studentDeliverables', cohortId]
         const detailsQueryKey = ['studentDeliverable', res._id]
 
-        const updateListState = (prev) => prev.map((sd) => {
-          return sd._id === res._id ? { ...sd, ...res } : sd
-        })
+        // const updateListState = (prev) => prev.map((sd) => {
+        //   return sd._id === res._id ? { ...sd, ...res } : sd
+        // })
 
-        queryClient.setQueryData(listQueryKey, updateListState)
-        queryClient.setQueryData(detailsQueryKey, { ...payload, ...res })
+        //1
+        // queryClient.setQueryData(listQueryKey, updateListState)
+        //2
+        // ['deliverables', cohortId]
+        queryClient.invalidateQueries({ queryKey: listQueryKey, type: 'all' })
+        queryClient.invalidateQueries({ queryKey: ['deliverables', cohortId], type: 'all' })
+
+        // queryClient.setQueryData(detailsQueryKey, { ...payload, ...res })
+        queryClient.invalidateQueries({ queryKey: detailsQueryKey, type: 'all' })
       },
     },
     updateStudentSquad: {

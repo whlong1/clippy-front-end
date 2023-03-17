@@ -11,7 +11,7 @@ import Feedback from "./Feedback"
 import SubmissionPanel from './SubmissionPanel'
 import ExternalLink from "../../../components/ExternalLink/ExternalLink"
 
-const SubmisionAndFeedback = ({ cohortId, studentDeliverable }) => {
+const SubmisionAndFeedback = ({ cohortId, studentDeliverable, adminView }) => {
   const [isOpen, setIsOpen] = useState(false)
   const mutation = useDeliverablesManager(cohortId)
 
@@ -66,18 +66,16 @@ const SubmisionAndFeedback = ({ cohortId, studentDeliverable }) => {
         </header>
       }
 
-      {studentDeliverable.gradedBy &&
-        <header>
-          <span>
-            <h2>Feedback</h2>
-            <h3>Graded by {studentDeliverable.gradedBy}</h3>
-          </span>
-          {studentDeliverable.hasNewStatus &&
-            <button onClick={markFeedbackAsRead}>MARK READ</button>
-          }
-        </header>
-      }
-      <Feedback studentDeliverable={studentDeliverable} />
+      <header>
+        <span>
+          <h2>Feedback</h2>
+          {studentDeliverable.gradedBy ? <h3>Graded by {studentDeliverable.gradedBy}</h3> : <h3>Pending</h3>}
+        </span>
+        {studentDeliverable.hasNewStatus && <button onClick={markFeedbackAsRead}>MARK READ</button>}
+      </header>
+
+       {!adminView && <Feedback studentDeliverable={studentDeliverable} /> } 
+
     </section>
   )
 }

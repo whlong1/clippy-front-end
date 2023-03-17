@@ -43,7 +43,7 @@ const AttendanceForm = ({ cohortId, profile, submitFn, prevAttendance, title }) 
       ...attendanceData,
       cohort: cohortId,
       students: studentData,
-      takenBy: profile.name,
+      takenBy: profile.firstName, // <==
     }
     submitFn(formData)
   }
@@ -52,7 +52,7 @@ const AttendanceForm = ({ cohortId, profile, submitFn, prevAttendance, title }) 
     <form onSubmit={handleSubmit}>
       <header className="header">
         <h1>{title}</h1>
-        <button type="submit">Submit</button>
+        <button type="submit">SUBMIT</button>
       </header>
       <label htmlFor="date">Date</label>
       <input

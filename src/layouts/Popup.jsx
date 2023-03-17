@@ -14,7 +14,10 @@ const Popup = ({ isOpen, children }) => {
 
     // border: '1px solid blue', // For testing
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+
+    overflowY: 'scroll',
+    minHeight: '100vh'
   }
 
   return (

@@ -26,8 +26,8 @@ const AttendanceHeader = (props) => {
     <header className='header'>
       <section>
         <h1>{formattedDate} {attendance.time}</h1>
-        {user.isAdmin && <button onClick={handleRedirect}>Edit</button>}
-        {user.isAdmin && <button onClick={() => setIsOpen(!isOpen)}>Delete</button>}
+        {user.isAdmin && <button onClick={handleRedirect}>EDIT</button>}
+        {user.isAdmin && <button onClick={() => setIsOpen(!isOpen)}>DELETE</button>}
       </section>
       <section>
         <div className="subheader">

@@ -10,7 +10,7 @@ import { useIndexAttendance } from '../../hooks/useIndexAttendance'
 
 const AttendanceMenu = (props) => {
   const { attendance, status } = useIndexAttendance(props.cohortId)
-  
+
   if (status === 'error') return <MenuStatus {...props} status={status} />
   if (status === 'loading') return <MenuStatus {...props} status={status} />
 

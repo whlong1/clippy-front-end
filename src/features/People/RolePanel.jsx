@@ -24,7 +24,7 @@ const RolePanel = ({ person, cohortId }) => {
 
   const denialData = { person, formerRole: "waitlist", newRole: null }
   const approvalData = { person, formerRole: "waitlist", newRole: "students" }
-  const removalData = { person, formerRole: person.role, newRole: "inactive" }
+  // const removalData = { person, formerRole: person.role, newRole: "inactive" }
 
   const isWaitlisted = cohorts.find((c) => c._id === cohortId).waitlist.includes(person._id)
 
@@ -43,11 +43,11 @@ const RolePanel = ({ person, cohortId }) => {
         </button>
       }
 
-      {!isWaitlisted && person.role !== 'inactive' &&
+      {/* {!isWaitlisted && person.role !== 'inactive' &&
         <button onClick={() => mutation.mutate({ type: 'remove', payload: removalData })}>
           REMOVE FROM COHORT
         </button>
-      }
+      } */}
 
       {!isWaitlisted && !isOpen &&
         <button onClick={() => setIsOpen(!isOpen)}>

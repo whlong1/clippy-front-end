@@ -7,8 +7,27 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
-• is_new prop on user (auth 0) Onboarding Redirect rule should be camelcased
-  update condition in app
+• scroll issue on edit profile onboarding
+
+• daylight savings issue in new deliverable
+
+<!-- • set default cohort in my profile -->
+
+<!-- • Attendance form takenBy: profile.name, // <== -->
+
+<!-- • names don't show up on attendance studentStatusrow -->
+
+<!-- • show grading notes and code block for student quiz -->
+
+<!-- • remove from cohort button issue - could just use change role -->
+
+<!-- • give the onboarding container main a min height -->
+
+<!-- • preferred first name -->
+
+
+<!-- • is_new prop on user (auth 0) Onboarding Redirect rule should be camelcased
+  update condition in app -->
 
 • join cohorts should use indexCohorts hook
 
@@ -18,11 +37,11 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • style my profile page
 
-• instructors should be able to submit materials for students
+<!-- • instructors should be able to submit materials for students -->
 
 • my profile - edit should use profile form as a popup
 
-• update default cohort for admins in my profile
+<!-- • update default cohort for admins in my profile -->
 
 • order deliverables correctly
 

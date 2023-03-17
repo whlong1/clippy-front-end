@@ -5,7 +5,7 @@ const ProfileInfo = ({ profile }) => {
 
   const getFullName = () => {
     // Check for users who have no finished onboarding:
-    if (!profile.firstName) return profile.email
+    if (!profile.lastName) return profile.email
 
     const last = lastName[0].toUpperCase() + lastName.slice(1)
     const first = preferredName[0].toUpperCase() + preferredName.slice(1)

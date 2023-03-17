@@ -8,17 +8,19 @@ const SelectCohort = (props) => {
   const navigate = useNavigate()
   const location = useLocation()
   const basePath = location.pathname.split('/')[1]
-
   const { cohorts, status } = useIndexCohorts()
   const { user, cohortId, setCohortId } = props
+  const menuStyleClass = user.isAdmin ? 'cohortSelect' : 'cohortDisplay'
 
   if (status === 'error') return <h1>Error</h1>
   if (status === 'loading') return <h1>Loading...</h1>
+  if (!cohorts.length) return (
+    <select className={menuStyleClass} disabled={true}>
+      <option>No Cohorts</option>
+    </select>
+  )
 
   const currentCohort = cohorts.find((c) => c._id === cohortId)
-
-  const menuStyleClass = user.isAdmin ? 'cohortSelect' : 'cohortDisplay'
-
   const optionsArr = user.isAdmin
     ? [currentCohort, ...cohorts.filter((c) => c._id !== cohortId)]
     : [currentCohort]

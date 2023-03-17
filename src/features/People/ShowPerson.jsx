@@ -18,6 +18,7 @@ const ShowPerson = ({ user, cohortId }) => {
   const { profileId } = useParams()
   const { person, status } = useShowPerson(cohortId, profileId)
 
+
   if (status === 'error') return <ContentStatus status={status} />
   if (status === 'loading') return <ContentStatus status={status} />
   if (person.cohort !== cohortId && !person.role) return <Navigate to='/people' />
@@ -28,7 +29,7 @@ const ShowPerson = ({ user, cohortId }) => {
   // If no role is present, the redirect should occur. If there is a role, we might be looking 
   // at someone in multiple cohorts (instructor, ta), in which case the redirect should not occur.
 
-  const formattedRole = !person.role ? 'Pending' : person.role.at(-1) === 's'
+  const formattedRole = !person.role ? 'Pending' : person.role[person.role.length - 1] === 's'
     ? person.role[0].toUpperCase() + person.role.slice(1, -1)
     : person.role[0].toUpperCase() + person.role.slice(1)
 

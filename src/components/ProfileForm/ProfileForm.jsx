@@ -2,7 +2,15 @@ import { useState } from 'react'
 import * as profileService from '../../services/profileService'
 
 const ProfileForm = ({ profile, setProfile, setIsEditOpen }) => {
-  const [formData, setFormData] = useState(profile)
+  const [formData, setFormData] = useState({
+    firstName: profile.firstName,
+    lastName: profile.lastName,
+    preferredName: profile.preferredName,
+    preferredPronouns: profile.preferredPronouns,
+    gitHubUserName: profile.gitHubUserName,
+    linkedInUserName: profile.linkedInUserName,
+    codeWarsUserName: profile.codeWarsUserName,
+  })
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -37,22 +45,22 @@ const ProfileForm = ({ profile, setProfile, setIsEditOpen }) => {
         onChange={handleChange}
         value={formData.lastName || ''}
       />
-      <label htmlFor="preferredName">Preferred Name:</label>
+      <label htmlFor="preferredName">Preferred First Name:</label>
       <input
         type="text"
         id="preferredName"
         name="preferredName"
-        placeholder="Preferred Name"
+        placeholder="Preferred First Name"
         onChange={handleChange}
         value={formData.preferredName || ''}
       />
-      <label htmlFor="preferredPronouns">Preferred Pronouns:</label>
+      <label htmlFor="preferredPronouns">Pronouns:</label>
       <input
         required
         type="text"
         id="preferredPronouns"
         name="preferredPronouns"
-        placeholder="Preferred Pronouns"
+        placeholder="Pronouns"
         onChange={handleChange}
         value={formData.preferredPronouns || ''}
       />
