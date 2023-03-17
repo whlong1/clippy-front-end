@@ -3,9 +3,6 @@ import { useState, useEffect } from 'react'
 // Services
 import * as cohortService from '../../services/cohortService'
 
-// Components
-import CohortForm from '../../features/Admin/CohortForm'
-
 const JoinCohort = ({ profile, setProfile, setIsJoinOpen }) => {
   const [cohorts, setCohorts] = useState([])
   const [errorMsg, setErrorMsg] = useState('')
@@ -31,10 +28,6 @@ const JoinCohort = ({ profile, setProfile, setIsJoinOpen }) => {
     }
     fetchCohorts()
   }, [])
-
-  if (!cohorts.length) return (
-    <CohortForm/>
-  )
 
   return (
     <form onSubmit={handleSubmit}>

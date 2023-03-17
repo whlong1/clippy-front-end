@@ -1,9 +1,14 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 // Components
 import Popup from '../../layouts/Popup.jsx'
-import ProfileForm from "../../components/ProfileForm/ProfileForm"
+import CohortForm from "../../features/Admin/CohortForm.jsx"
 import JoinCohort from '../../components/JoinCohort/JoinCohort'
+import ProfileForm from "../../components/ProfileForm/ProfileForm"
+
+
+// Services
+import * as cohortService from '../../services/cohortService'
 
 // Styles
 import './Onboarding.css'
@@ -14,12 +19,22 @@ const Onboarding = (props) => {
 
   const [isJoinOpen, setIsJoinOpen] = useState(false)
   const [isEditOpen, setIsEditOpen] = useState(false)
+  const [isNewWorkspace, setIsNewWorkspace] = useState(false)
 
   const isStepOne = profile && !profile.isProfileComplete
   const isStepTwo = profile?.isProfileComplete && !profile.isApprovalPending
   const isStepThree = profile?.isApprovalPending
 
   console.log(user, profile)
+
+  useEffect(() => {
+    const fetchCohorts = async () => {
+      const res = await cohortService.indexCohorts()
+      if (!res.length) setIsNewWorkspace(true)
+    }
+    fetchCohorts()
+  }, [])
+
 
   // Onboarding Stages
 
@@ -36,10 +51,18 @@ const Onboarding = (props) => {
   const stepTwo = (
     isStepTwo &&
     <>
-      <section>
-        <h2>Select the cohort you wish to join</h2>
-        <JoinCohort {...profileProps} />
-      </section>
+      {isNewWorkspace
+        ?
+        <section className="adminOnboard">
+          <h2>Create a new cohort</h2>
+          <CohortForm />
+        </section>
+        :
+        <section>
+          <h2>Select the cohort you wish to join</h2>
+          <JoinCohort {...profileProps} />
+        </section>
+      }
     </>
   )
 

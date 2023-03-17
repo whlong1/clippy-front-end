@@ -116,3 +116,19 @@
 .onboarding .shell  header h1 {
   margin: 0;
 }
+
+
+
+
+.adminOnboard form button {
+  width: 100%;
+}
+
+/* .onboardCohort h1 {
+  margin: 0;
+}
+
+.onboardCohort button {
+  padding: 0;
+  margin-left: auto;
+} */
