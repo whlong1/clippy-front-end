@@ -1,9 +1,8 @@
 import ProfilePicture from "../ProfilePicture/ProfilePicture"
 
 const ProfileInfo = ({ profile }) => {
+  console.log('prf', profile)
   const { preferredName, lastName, gitHubUserName } = profile
-
-  console.log('profile',profile)
 
   const getFullName = () => {
     // Check for users who have no finished onboarding:

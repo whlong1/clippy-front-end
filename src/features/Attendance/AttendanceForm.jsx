@@ -37,8 +37,6 @@ const AttendanceForm = ({ cohortId, profile, submitFn, prevAttendance, title }) 
     setAttendanceData({ ...attendanceData, [target.name]: target.value })
   }
 
-  console.log('student data',studentData)
-
   const handleSubmit = (e) => {
     e.preventDefault()
     const formData = {
@@ -54,7 +52,7 @@ const AttendanceForm = ({ cohortId, profile, submitFn, prevAttendance, title }) 
     <form onSubmit={handleSubmit}>
       <header className="header">
         <h1>{title}</h1>
-        <button type="submit">Submit</button>
+        <button type="submit">SUBMIT</button>
       </header>
       <label htmlFor="date">Date</label>
       <input

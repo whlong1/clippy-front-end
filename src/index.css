@@ -99,7 +99,7 @@ main {
 
 main>nav,
 main>section {
-  min-height: 100vh; /* old: height: 100vh; */
+  height: 100%;
   display: flex;
   overflow-y: scroll;
   flex-direction: column;
@@ -109,6 +109,12 @@ main>section {
 main>section  {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide default scrollbar */
+::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
 }
 
 main>section {
@@ -147,12 +153,6 @@ a {
   align-items: center;
   text-decoration: none;
   justify-content: space-between;
-}
-
-/* Hide default scrollbar */
-::-webkit-scrollbar {
-  width: 0;
-  background-color: transparent;
 }
 
 /* Fix cursor on text */

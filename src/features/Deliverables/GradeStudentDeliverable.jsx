@@ -6,6 +6,7 @@ import GradingNotes from "./GradingNotes"
 import CodeEditor from "./CodeEditor/CodeEditor"
 import GradeDeliverableHeader from "./GradeDeliverableHeader"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
+import SubmisionAndFeedback from "./StudentView/SubmissionAndFeedback"
 
 // Hooks
 import { useDeliverablesManager } from "../../hooks/useDeliverablesManager"
@@ -34,7 +35,7 @@ const GradeStudentDeliverable = (props) => {
   const handleGrade = () => {
     mutation.mutate({
       type: 'grade',
-      payload: { ...formData, gradedBy: props.profile.name }
+      payload: { ...formData, gradedBy: props.profile.firstName }
     })
     navigate(`/deliverables/${deliverableId}`)
   }
@@ -47,6 +48,10 @@ const GradeStudentDeliverable = (props) => {
         handleChange={handleChange}
         title={`Grade ${formData.name}`}
         deliverable={studentDeliverable}
+      />
+      <SubmisionAndFeedback
+        cohortId={cohortId}
+        studentDeliverable={studentDeliverable}
       />
       <GradingNotes
         instructorView={true}

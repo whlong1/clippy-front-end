@@ -15,7 +15,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 <!-- • Attendance form takenBy: profile.name, // <== -->
 
-• names don't show up on attendance studentStatusrow
+<!-- • names don't show up on attendance studentStatusrow -->
 
 • show grading notes and code block for student quiz
 

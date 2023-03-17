@@ -66,7 +66,7 @@ const SubmisionAndFeedback = ({ cohortId, studentDeliverable }) => {
         </header>
       }
 
-      {studentDeliverable.gradedBy &&
+      {/* {studentDeliverable.gradedBy && */}
         <header>
           <span>
             <h2>Feedback</h2>
@@ -76,7 +76,7 @@ const SubmisionAndFeedback = ({ cohortId, studentDeliverable }) => {
             <button onClick={markFeedbackAsRead}>MARK READ</button>
           }
         </header>
-      }
+      {/* } */}
       <Feedback studentDeliverable={studentDeliverable} />
     </section>
   )
