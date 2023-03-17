@@ -55,9 +55,9 @@ export const useDeliverablesManager = (cohortId) => {
         const listQueryKey = ['studentDeliverables', cohortId]
         const detailsQueryKey = ['studentDeliverable', res._id]
 
-        const updateListState = (prev) => prev.map((sd) => {
-          return sd._id === res._id ? { ...sd, ...res } : sd
-        })
+        // const updateListState = (prev) => prev.map((sd) => {
+        //   return sd._id === res._id ? { ...sd, ...res } : sd
+        // })
 
         //1
         // queryClient.setQueryData(listQueryKey, updateListState)

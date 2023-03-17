@@ -14,7 +14,6 @@ import { useShowStudentDeliverable } from '../../hooks/useShowStudentDeliverable
 
 const GradeStudentDeliverable = (props) => {
   const { cohortId } = props
-  console.log(props)
   const navigate = useNavigate()
   const [formData, setFormData] = useState(null)
   const mutation = useDeliverablesManager(cohortId)

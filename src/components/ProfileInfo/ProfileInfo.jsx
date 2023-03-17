@@ -1,7 +1,6 @@
 import ProfilePicture from "../ProfilePicture/ProfilePicture"
 
 const ProfileInfo = ({ profile }) => {
-  console.log('prf', profile)
   const { preferredName, lastName, gitHubUserName } = profile
 
   const getFullName = () => {
