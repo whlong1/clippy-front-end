@@ -23,8 +23,9 @@ const DeliverablesMenu = (props) => {
         </Link>
       </span>
 
-
-      <DeliverablesList deliverables={deliverables} />
+      {deliverables.length &&
+        <DeliverablesList deliverables={deliverables} />
+      }
 
     </MenuLayout>
   )

@@ -62,7 +62,9 @@ const StudentAttendanceMenu = (props) => {
         <header>
           <h2>Attendance By Month</h2>
         </header>
-        <AttendanceList attendance={attendance} />
+        {attendance.length &&
+          <AttendanceList attendance={attendance} />
+        }
       </section>
     </MenuLayout>
   )
