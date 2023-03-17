@@ -7,6 +7,24 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
+• daylight savings issue in new deliverable
+
+• set default cohort in my profile
+
+• Attendance form takenBy: profile.name, // <==
+
+• names don't show up on attendance studentStatusrow
+
+• show grading notes and code block for student quiz
+
+• remove from cohort button issue - could just use change role
+
+• give the onboarding container main a min height
+
+• preferred first name
+
+
+
 • is_new prop on user (auth 0) Onboarding Redirect rule should be camelcased
   update condition in app
 

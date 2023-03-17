@@ -33,6 +33,10 @@ const App = () => {
     return <Onboarding user={user} profile={profile} setProfile={setProfile} />
   }
 
+  // if (profile.isInitialUser || !profile?.isOnboarded) {
+  //   return <Onboarding user={user} profile={profile} setProfile={setProfile} />
+  // }
+
   return (
     <AppLayout {...authProps}>
       <AppRouter {...authProps} />

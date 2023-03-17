@@ -43,7 +43,7 @@ const AttendanceForm = ({ cohortId, profile, submitFn, prevAttendance, title }) 
       ...attendanceData,
       cohort: cohortId,
       students: studentData,
-      takenBy: profile.name,
+      takenBy: profile.name, // <==
     }
     submitFn(formData)
   }
