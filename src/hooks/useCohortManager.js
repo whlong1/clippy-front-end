@@ -1,5 +1,4 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import * as adminService from '../services/adminService'
 import * as cohortService from '../services/cohortService'
 
 export const useCohortManager = () => {
@@ -20,14 +19,6 @@ export const useCohortManager = () => {
         queryClient.invalidateQueries({ queryKey: queryKey, type: 'all' })
       }
     },
-    initial: {
-      service: adminService.createCohortAndOnboardAdmin,
-      handleCache: (res, payload) => {
-        // const queryKey = ['cohorts']
-        // queryClient.invalidateQueries({ queryKey: queryKey, type: 'all' })
-      }
-    }
-
   }
 
   return useMutation({

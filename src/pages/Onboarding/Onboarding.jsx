@@ -7,6 +7,7 @@ import JoinCohort from '../../components/JoinCohort/JoinCohort'
 import ProfileForm from "../../components/ProfileForm/ProfileForm"
 
 // Services
+import * as adminService from '../../services/adminService'
 import * as cohortService from '../../services/cohortService'
 
 // Styles
@@ -20,11 +21,17 @@ const Onboarding = (props) => {
   const [isEditOpen, setIsEditOpen] = useState(false)
   const [isNewWorkspace, setIsNewWorkspace] = useState(false)
 
+  const createInitialCohort = async (formData) => {
+    const data = { ...formData, profileId: profile._id }
+    const res = await adminService.createCohortAndOnboardAdmin(data)
+    res.isInitialUser = true
+    res.isApprovalPending = true
+    setProfile(res)
+  }
+
   const isStepOne = profile && !profile.isProfileComplete
   const isStepTwo = profile?.isProfileComplete && !profile.isApprovalPending
   const isStepThree = profile?.isApprovalPending
-
-  console.log('user', user, 'profile:', profile)
 
   useEffect(() => {
     const fetchCohorts = async () => {
@@ -53,7 +60,7 @@ const Onboarding = (props) => {
         ?
         <section className="adminOnboard">
           <h2>Create a new cohort</h2>
-          <CohortForm />
+          <CohortForm createInitialCohort={createInitialCohort} />
         </section>
         :
         <section>
@@ -68,17 +75,25 @@ const Onboarding = (props) => {
   const stepThree = (
     isStepThree &&
     <>
-      <h2>Awaiting instructor approval.</h2>
+      <h2>{profile.isInitialUser ? 'Congratulations' : 'Awaiting instructor approval.'}</h2>
 
-      <div className="message">
-        <p>After being admitted into a cohort, you'll need to refresh your browser.</p>
-        <p>Feel free to make any changes to your profile or select a different cohort.</p>
-      </div>
+      {profile.isInitialUser
+        ? <div className="message">
+          <p>Cohort created successfully!</p>
+          <p>Please refresh your browser to start using the site.</p>
+        </div>
+        : <div className="message">
+          <p>After being admitted into a cohort, you'll need to refresh your browser.</p>
+          <p>Feel free to make any changes to your profile or select a different cohort.</p>
+        </div>
+      }
 
-      <div className="options" >
-        <button onClick={() => setIsEditOpen(true)}>EDIT PROFILE</button>
-        <button onClick={() => setIsJoinOpen(true)}>SELECT NEW COHORT</button>
-      </div>
+      {!profile.isInitialUser &&
+        <div className="options" >
+          <button onClick={() => setIsEditOpen(true)}>EDIT PROFILE</button>
+          <button onClick={() => setIsJoinOpen(true)}>SELECT NEW COHORT</button>
+        </div>
+      }
 
       <section>
         <Popup isOpen={isJoinOpen}>
@@ -104,8 +119,6 @@ const Onboarding = (props) => {
       </section>
     </>
   )
-
-  // ProfileForm needs to setProfile
 
   return (
     <main className="onboarding" style={{ position: 'relative' }}>

@@ -7,6 +7,9 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
+• is_new prop on user (auth 0) Onboarding Redirect rule should be camelcased
+  update condition in app
+
 • join cohorts should use indexCohorts hook
 
 • weird loading is caused by key on popup, see if a useeffect will work instead

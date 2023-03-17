@@ -59,6 +59,7 @@ const deleteUser = async (token, userId) => {
 }
 
 const createCohortAndOnboardAdmin = async (data) => {
+  console.log(data)
   try {
     const res = await fetch(`${BASE_URL}/cohorts/first-time-signup`,
       {

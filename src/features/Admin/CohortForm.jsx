@@ -7,7 +7,7 @@ import CohortFormInputs from './CohortFormInputs'
 // Hooks
 import { useCohortManager } from '../../hooks/useCohortManager'
 
-const CohortForm = () => {
+const CohortForm = ({ createInitialCohort }) => {
   const navigate = useNavigate()
   const location = useLocation()
   const mutation = useCohortManager()
@@ -18,9 +18,7 @@ const CohortForm = () => {
     endDate: '',
   })
 
-  const title = location.pathname === '/'
-    ? 'create'
-    : location.pathname.replace('/admin/cohorts/', '')
+  const title = location.pathname.replace('/admin/cohorts/', '')
 
   const formattedTitle = title[0].toUpperCase() + title.slice(1)
 
@@ -41,7 +39,6 @@ const CohortForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
     title === 'new'
       ? mutation.mutate({ type: 'create', payload: { ...formData } })
       : mutation.mutate({ type: 'update', payload: { ...formData, cohortId: location.state._id } })
@@ -49,15 +46,10 @@ const CohortForm = () => {
     navigate('/admin/cohorts')
   }
 
-  const handleInitialCohort = (e) => {
-    e.preventDefault()
-    console.log('initial')
-  }
-
   // Display for the onboarding of initial admin
-  if (formattedTitle === 'Create') return (
+  if (createInitialCohort) return (
     <section className="formContainer">
-      <form onSubmit={handleInitialCohort}>
+      <form onSubmit={(e) => { e.preventDefault(); createInitialCohort(formData) }}>
         <CohortFormInputs formData={formData} handleChange={handleChange} />
         <button type="submit">SUBMIT</button>
       </form>
