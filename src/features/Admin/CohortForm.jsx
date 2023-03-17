@@ -49,20 +49,32 @@ const CohortForm = () => {
     navigate('/admin/cohorts')
   }
 
+  const handleInitialCohort = (e) => {
+    e.preventDefault()
+    console.log('initial')
+  }
+
+  // Display for the onboarding of initial admin
+  if (formattedTitle === 'Create') return (
+    <section className="formContainer">
+      <form onSubmit={handleInitialCohort}>
+        <CohortFormInputs formData={formData} handleChange={handleChange} />
+        <button type="submit">SUBMIT</button>
+      </form>
+    </section>
+  )
+
+  // Display for creating or editing cohorts
   return (
     <section className="formContainer">
       <form onSubmit={handleSubmit}>
-        {!formattedTitle === 'Create' &&
-          <header className="header">
-            <h1>{formattedTitle} Cohort</h1>
-            <button type="submit">
-              SUBMIT
-            </button>
-          </header>
-        }
+        <header className="header">
+          <h1>{formattedTitle} Cohort</h1>
+          <button type="submit">
+            SUBMIT
+          </button>
+        </header>
         <CohortFormInputs formData={formData} handleChange={handleChange} />
-
-        {formattedTitle === 'Create' && <button type="submit">SUBMIT</button>}
       </form>
     </section>
   )

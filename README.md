@@ -7,6 +7,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
+• join cohorts should use indexCohorts hook
+
 • weird loading is caused by key on popup, see if a useeffect will work instead
 
 • add start time to cohort model and form

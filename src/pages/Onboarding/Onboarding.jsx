@@ -6,7 +6,6 @@ import CohortForm from "../../features/Admin/CohortForm.jsx"
 import JoinCohort from '../../components/JoinCohort/JoinCohort'
 import ProfileForm from "../../components/ProfileForm/ProfileForm"
 
-
 // Services
 import * as cohortService from '../../services/cohortService'
 
@@ -25,7 +24,7 @@ const Onboarding = (props) => {
   const isStepTwo = profile?.isProfileComplete && !profile.isApprovalPending
   const isStepThree = profile?.isApprovalPending
 
-  console.log(user, profile)
+  console.log('user', user, 'profile:', profile)
 
   useEffect(() => {
     const fetchCohorts = async () => {
@@ -34,7 +33,6 @@ const Onboarding = (props) => {
     }
     fetchCohorts()
   }, [])
-
 
   // Onboarding Stages
 
@@ -51,7 +49,7 @@ const Onboarding = (props) => {
   const stepTwo = (
     isStepTwo &&
     <>
-      {isNewWorkspace
+      {isNewWorkspace && user.isAdmin
         ?
         <section className="adminOnboard">
           <h2>Create a new cohort</h2>
@@ -106,6 +104,8 @@ const Onboarding = (props) => {
       </section>
     </>
   )
+
+  // ProfileForm needs to setProfile
 
   return (
     <main className="onboarding" style={{ position: 'relative' }}>
