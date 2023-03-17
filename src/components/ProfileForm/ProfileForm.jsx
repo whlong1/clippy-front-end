@@ -2,7 +2,15 @@ import { useState } from 'react'
 import * as profileService from '../../services/profileService'
 
 const ProfileForm = ({ profile, setProfile, setIsEditOpen }) => {
-  const [formData, setFormData] = useState(profile)
+  const [formData, setFormData] = useState({
+    firstName: profile.firstName,
+    lastName: profile.lastName,
+    preferredName: profile.preferredName,
+    preferredPronouns: profile.preferredPronouns,
+    gitHubUserName: profile.gitHubUserName,
+    linkedInUserName: profile.linkedInUserName,
+    codeWarsUserName: profile.codeWarsUserName,
+  })
 
   const handleSubmit = async (e) => {
     e.preventDefault()

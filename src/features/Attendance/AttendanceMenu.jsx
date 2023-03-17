@@ -20,12 +20,10 @@ const AttendanceMenu = (props) => {
         <h1>Attendance</h1>
         <Link to='/attendance/new'><button>NEW</button></Link>
       </span>
-      {attendance.length &&
-        <AttendanceList
-          attendance={attendance}
-          isAdmin={props.user.isAdmin}
-        />
-      }
+      <AttendanceList
+        attendance={attendance}
+        isAdmin={props.user.isAdmin}
+      />
     </MenuLayout>
   )
 }

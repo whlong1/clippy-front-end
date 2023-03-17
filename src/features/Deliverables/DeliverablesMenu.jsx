@@ -22,11 +22,7 @@ const DeliverablesMenu = (props) => {
           <button>NEW</button>
         </Link>
       </span>
-
-      {deliverables.length &&
-        <DeliverablesList deliverables={deliverables} />
-      }
-
+      <DeliverablesList deliverables={deliverables} />
     </MenuLayout>
   )
 }

@@ -19,9 +19,11 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • remove from cohort button issue - could just use change role
 
-• give the onboarding container main a min height
+• scroll issue on edit profile onboarding
 
-• preferred first name
+<!-- • give the onboarding container main a min height -->
+
+<!-- • preferred first name -->
 
 
 
