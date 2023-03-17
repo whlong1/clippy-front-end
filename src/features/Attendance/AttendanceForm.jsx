@@ -37,6 +37,8 @@ const AttendanceForm = ({ cohortId, profile, submitFn, prevAttendance, title }) 
     setAttendanceData({ ...attendanceData, [target.name]: target.value })
   }
 
+  console.log('student data',studentData)
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const formData = {
