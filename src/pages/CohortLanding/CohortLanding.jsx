@@ -1,4 +1,8 @@
+// Components
 import SelectCohort from "../../components/SelectCohort/SelectCohort"
+
+// Assets
+
 
 const CohortLanding = (props) => {
   // Could include MenuLayout in here if we like the way that looks.

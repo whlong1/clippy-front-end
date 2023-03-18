@@ -6,7 +6,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
-• Edit profile on onboarding should just replace the screen, no popup
+• Edit profile cannot be used as a popup, scroll issue
 
 • check math on deliverable and attendance percentages
 
