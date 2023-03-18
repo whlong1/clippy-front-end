@@ -6,6 +6,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
+• Favicon
+
 • Students should not see waitlist or inactive!
 
 • Edit profile cannot be used as a popup, scroll issue
