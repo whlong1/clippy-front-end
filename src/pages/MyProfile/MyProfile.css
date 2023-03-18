@@ -1,0 +1,91 @@
+.myProfile {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.myProfile > section {
+  padding: 24px 0;
+}
+
+.myProfile .confirmation {
+  display: flex;
+  overflow-y: scroll;
+  align-items: center;
+}
+
+.myProfile .header {
+  width: 100%;
+}
+
+.myProfile .header button {
+  width: auto;
+  padding: 0px 16px;
+}
+
+.myProfile input {
+  width: 100%;
+  padding: 8px;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border-color);
+  background-color: var(--input-background);
+}
+
+.myProfile .confirmation header {
+  margin-bottom: 16px;
+}
+
+.myProfile .confirmation section,
+.myProfile .confirmation form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.myProfile .confirmation form label {
+  width: 100%;
+  text-align: left;
+}
+
+.myProfile .confirmation button {
+  margin: 0;
+  width: 100%;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 5px;
+  margin-top: 16px;
+}
+
+.myProfile .confirmation select {
+  width: 100%;
+  display: flex;
+  appearance: none;
+  border-radius: 5px;
+  background-size: 12px;
+  align-items: flex-start;
+  background: var(--nav-background);
+  background-size: 12px;
+  background-position: right 5px center;
+  background-image: url("../../assets/icons/arrow.svg");
+  background-repeat: no-repeat;
+
+  width: 100%;
+  opacity: .5;
+  display: flex;
+  font-size: 14px;
+  appearance: none;
+  padding: 5px 8px;
+}
+
+.myProfile .confirmation h1 {
+  text-align: center;
+}
+
+.myProfile div {
+  display: flex;
+  flex-direction: column;
+}

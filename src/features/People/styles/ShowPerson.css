@@ -1,10 +1,7 @@
-/* SHOW PERSON */
-
 .person {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
 }
 
 .person span {
@@ -22,14 +19,7 @@
   justify-content: flex-start;
 }
 
-.person section:first-child {
-  padding-left: 12px;
-  padding-right: 32px;
-  width: 280px;
-  border-right: .5px solid var(--border-color);
-}
-
-.person h1,
+.person section span h1,
 .person h3 {
   margin: 0;
   margin-bottom: 10px;
@@ -40,22 +30,8 @@
   align-items: flex-start;
 }
 
-.person section:nth-child(2)>* {
-  margin-bottom: 32px;
-}
-
 .person p {
   line-height: 1;
-}
-
-.person div {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-}
-
-.person div h3 {
-  margin-bottom: 14px;
 }
 
 .person button {
@@ -69,21 +45,8 @@
 }
 
 .person img {
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   border: 1px solid var(--border-color);
-}
-
-.person h3 {
-  display: flex;
-  align-items: center;
-}
-
-.person h3 img {
-  margin: 0;
-  width: 16px;
-  border: none;
-  border-radius: 0;
-  margin-right: 8px;
 }
 
 .personLinks {
@@ -92,6 +55,7 @@
   align-items: center;
   justify-content: space-around;
   flex-direction: row !important;
+  margin-top: 40px;
 }
 
 .personLinks img {
