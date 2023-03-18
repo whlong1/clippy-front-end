@@ -4,14 +4,14 @@ import "./CohortLanding.css"
 import SelectCohort from "../../components/SelectCohort/SelectCohort"
 
 // Assets
-import PinkOnWhiteSq from "../../assets/logos/logotype-sq-p.svg"
-import WhiteOnPinkSq from "../../assets/logos/logotype-sq-w.svg"
-import WhiteOnPinkCirc from "../../assets/logos/logotype-ci-w.svg"
-import PinkOnWhiteCirc from "../../assets/logos/logotype-ci-p.svg"
-import BlueOnBlackSq from "../../assets/logos/logotype-sq-b-dark.svg"
-import BlueOnWhiteSq from "../../assets/logos/logotype-sq-b-light.svg"
-import BlueOnBlackCirc from "../../assets/logos/logotype-ci-b-dark.svg"
-import BlueOnWhiteCirc from "../../assets/logos/logotype-ci-b-light.svg"
+import PinkOnWhiteSq from "../../assets/logos/logotypes/logotype-sq-p.svg"
+import WhiteOnPinkSq from "../../assets/logos/logotypes/logotype-sq-w.svg"
+import WhiteOnPinkCirc from "../../assets/logos/logotypes/logotype-ci-w.svg"
+import PinkOnWhiteCirc from "../../assets/logos/logotypes/logotype-ci-p.svg"
+import BlueOnBlackSq from "../../assets/logos/logotypes/logotype-sq-b-dark.svg"
+import BlueOnWhiteSq from "../../assets/logos/logotypes/logotype-sq-b-light.svg"
+import BlueOnBlackCirc from "../../assets/logos/logotypes/logotype-ci-b-dark.svg"
+import BlueOnWhiteCirc from "../../assets/logos/logotypes/logotype-ci-b-light.svg"
 
 const CohortLanding = (props) => {
 
