@@ -1,21 +1,20 @@
 import './ContactInformation.css'
 
+// Components
+import IdentityHeader from '../IdentityHeader/IdentityHeader'
+
 // Assets
 import email from '../../assets/icons/profile/email.svg'
 import github from '../../assets/icons/profile/github.svg'
 import linkedin from '../../assets/icons/profile/linkedin.svg'
 import codewars from '../../assets/icons/profile/codewars.svg'
 
-
 const ContactInformation = ({ person }) => {
-
   const checkProp = (prop) => prop ? prop : 'Not Available'
-
-
 
   return (
     <section className="contactInformation">
-      <h1>Contact Information</h1>
+      <IdentityHeader person={person} textAlign="left" />
       <div>
         <h3>
           <img src={email} alt="email" />

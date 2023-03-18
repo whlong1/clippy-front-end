@@ -1,10 +1,7 @@
-/* SHOW PERSON */
-
 .person {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
 }
 
 .person span {
@@ -48,7 +45,7 @@
 }
 
 .person img {
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   border: 1px solid var(--border-color);
 }
 
@@ -58,6 +55,7 @@
   align-items: center;
   justify-content: space-around;
   flex-direction: row !important;
+  margin-top: 40px;
 }
 
 .personLinks img {

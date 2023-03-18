@@ -5,6 +5,10 @@
   flex-direction: column;
 }
 
+.myProfile > section {
+  padding: 24px 0;
+}
+
 .myProfile .confirmation {
   display: flex;
   overflow-y: scroll;

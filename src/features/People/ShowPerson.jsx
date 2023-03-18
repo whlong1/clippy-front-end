@@ -7,7 +7,7 @@ import RolePanel from "./RolePanel"
 import ExternalLink from "../../components/ExternalLink/ExternalLink"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
 import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
-import ContactInformation from "../../components/ContactInformation/ContactInformation"
+import IdentityHeader from "../../components/IdentityHeader/IdentityHeader"
 
 // Assets
 import github from '../../assets/icons/profile/github.svg'
@@ -28,24 +28,11 @@ const ShowPerson = ({ user, cohortId }) => {
   // If no role is present, the redirect should occur. If there is a role, we might be looking 
   // at someone in multiple cohorts (instructor, ta), in which case the redirect should not occur.
 
-  const formattedRole = !person.role ? 'Pending' : person.role[person.role.length - 1] === 's'
-    ? person.role[0].toUpperCase() + person.role.slice(1, -1)
-    : person.role[0].toUpperCase() + person.role.slice(1)
-
-  const last = person.lastName[0].toUpperCase() + person.lastName.slice(1)
-  const first = person.preferredName[0].toUpperCase() + person.preferredName.slice(1)
-  const fullName = first + " " + last
-
   return (
     <section className="person" style={{ position: 'relative' }}>
-
       <section>
         <ProfilePicture gitHubUserName={person.gitHubUserName} size="128px" />
-        <span>
-          <h3>{formattedRole}</h3>
-          <h1>{fullName}</h1>
-          <p>{person.preferredPronouns}</p>
-        </span>
+        <IdentityHeader person={person} textAlign="center" />
         <span className="personLinks">
           <ExternalLink urlString={`https://github.com/${person.gitHubUserName}`}>
             <img src={github} alt="github" />
@@ -59,9 +46,6 @@ const ShowPerson = ({ user, cohortId }) => {
         </span>
         {user.isAdmin && <RolePanel person={person} cohortId={cohortId} />}
       </section>
-
-      <ContactInformation person={person} />
-
     </section>
   )
 }

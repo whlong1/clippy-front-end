@@ -7,6 +7,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 ## Issues
 
 • join cohort won't work for admins setting default, need new functions.
+  admin will need to select their desired role for the cohort as well.
 
 • if github username is missing, other users photo appears in show person
 
@@ -28,8 +29,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • weird loading is caused by key on popup, see if a useeffect will work instead
 
-• add start time to cohort model and form
-
 • style my profile page
 
 • order deliverables correctly
@@ -40,7 +39,7 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • on hover effect for links
 
-• when awaiting instructor approval during onboarding, should have message that says waiting to join x cohort
+• When awaiting instructor approval during onboarding, should have message that says waiting to join x cohort
 
 • make sure date issues from previous iteration are resolved on deploy
 
@@ -61,6 +60,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 
 ## Stretch Goals
+
+• Add start time to cohort model and form
 
 • could add icons to forms
 

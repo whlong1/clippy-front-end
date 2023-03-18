@@ -6,30 +6,26 @@ import Popup from "../../layouts/Popup"
 import JoinCohort from "../../components/JoinCohort/JoinCohort"
 import ProfileForm from "../../components/ProfileForm/ProfileForm"
 import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
+import ContactInformation from "../../components/ContactInformation/ContactInformation"
 
 const MyProfile = (props) => {
   const { profile, setProfile } = props
   const [isEditOpen, setIsEditOpen] = useState(false)
   const [isJoinOpen, setIsJoinOpen] = useState(false)
 
-  const getFullName = () => {
-    if (!profile.firstName || !profile.lastName) return profile.email
-    const last = profile.lastName[0].toUpperCase() + profile.lastName.slice(1)
-    const first = profile.preferredName[0].toUpperCase() + profile.preferredName.slice(1)
-    return first + " " + last
-  }
+  // const getFullName = () => {
+  //   if (!profile.firstName || !profile.lastName) return profile.email
+  //   const last = profile.lastName[0].toUpperCase() + profile.lastName.slice(1)
+  //   const first = profile.preferredName[0].toUpperCase() + profile.preferredName.slice(1)
+  //   return first + " " + last
+  // }
 
-  const myInfo = (
-    <div>
-      <h1>{getFullName()}</h1>
-      {profile?.preferredPronouns}
-      {profile?.email}
-      {profile?.firstName}
-      {profile?.gitHubUserName}
-      {profile?.linkedInUserName}
-      {profile?.codeWarsUserName}
-    </div>
-  )
+  // const myInfo = (
+  //   <div>
+  //     <h1>{getFullName()}</h1>
+  //     {profile?.preferredPronouns}
+  //   </div>
+  // )
 
   return (
     <main className="myProfile" style={{ position: 'relative' }}>
@@ -71,8 +67,8 @@ const MyProfile = (props) => {
       </header>
 
       <section>
-        <ProfilePicture gitHubUserName={profile.gitHubUserName} size="200px" />
-        {myInfo}
+        <ProfilePicture gitHubUserName={profile.gitHubUserName} size="120px" />
+        <ContactInformation person={profile} />
       </section>
 
     </main>
