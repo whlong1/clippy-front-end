@@ -14,6 +14,7 @@ import deliverables from '../../assets/icons/nav/deliverables.svg'
 // Logo Marks
 import MarkB from '../../assets/logos/logomarks/mark-b.svg'
 import MarkP from '../../assets/logos/logomarks/mark-p.svg'
+import MarkW from '../../assets/logos/logomarks/mark-w.svg'
 
 //? Users can only access this nav after logging in.
 //? The only conditional rendering we need here is for admin access.
@@ -29,6 +30,7 @@ const Nav = (props) => {
           <NavLink to="/">
             {markSelect === 1 && <img src={MarkB} alt="Abstract flamingo" />}
             {markSelect === 2 && <img src={MarkP} alt="Abstract flamingo" />}
+            {markSelect === 3 && <img src={MarkW} alt="Abstract flamingo" />}
           </NavLink>
         </li>
 

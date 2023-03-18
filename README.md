@@ -6,6 +6,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
+• Students should not see waitlist or inactive!
+
 • Edit profile cannot be used as a popup, scroll issue
 
 • check math on deliverable and attendance percentages
@@ -13,23 +15,24 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • join cohort won't work for admins setting default, need new functions.
   admin will need to select their desired role for the cohort as well.
 
-• if github username is missing, other users photo appears in show person
-
 • fix styling on delete deliverable popup - make consistent popup styling
 
 • scroll issue on edit profile onboarding
 
 • width of subheader class should scale based on content.
 
-• Issue appears to be resolved but double check on deploy:
-  on new attendance, if no date is selected manually and the default is used, the date is one day behind
-  works if the date is selected manually. Default date works with new deliverable
-
 • join cohorts should use indexCohorts hook
 
 • weird loading is caused by key on popup, see if a useeffect will work instead
 
 • on hover effect for links
+
+• Issue appears to be resolved:
+  if github username is missing, other users photo appears in show person
+
+• Issue appears to be resolved:
+  on new attendance, if no date is selected manually and the default is used, the date is one day behind
+  works if the date is selected manually. Default date works with new deliverable
 
 ## Notes
 
