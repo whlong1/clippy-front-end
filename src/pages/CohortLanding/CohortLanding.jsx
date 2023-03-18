@@ -15,6 +15,7 @@ import BlueOnWhiteCirc from "../../assets/logos/logotypes/logotype-ci-b-light.sv
 
 const CohortLanding = (props) => {
 
+  // When changing logo here, remember to change it in AppLanding and Nav
   const picklogo = (num) => {
     switch (num) {
       case 1:
@@ -39,7 +40,7 @@ const CohortLanding = (props) => {
   }
 
   return (
-    <main className="landing">
+    <main className="cohortLanding">
       <header>
         <h1>Welcome back to</h1>
         <SelectCohort {...props} />

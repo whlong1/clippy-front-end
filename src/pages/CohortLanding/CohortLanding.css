@@ -1,22 +1,22 @@
-.landing {
+.cohortLanding {
   padding: 24px;
   display: flex;
   flex-direction: column;
 }
 
-.landing section {
+.cohortLanding section {
   align-items: center;
   flex-direction: column;
   justify-content: center;
 }
 
-.landing img {
+.cohortLanding img {
   width: 480px;
   border-radius: 0;
   margin-bottom: 32px;
 }
 
-.landing header {
+.cohortLanding header {
   margin: 0px;
   width: 100%;
   display: flex;
@@ -24,7 +24,7 @@
   justify-content: flex-end;
 }
 
-.landing header * {
+.cohortLanding header * {
   margin: 0;
   opacity: .35;
   font-size: 16px;
@@ -32,11 +32,11 @@
   letter-spacing: .3px;
 }
 
-.landing header h1 {
+.cohortLanding header h1 {
   line-height: 1.32;
 }
 
-.landing header select {
+.cohortLanding header select {
   line-height: .9;
   font-size: 14px;
   margin-left: 3px;
