@@ -1,5 +1,9 @@
 import "./IdentityHeader.css"
 
+// If the IdentityHeader is used in ShowPerson, we display the current role,
+// as this is relevant to a given cohort. If the header is used in MyProfile,
+// no role is displayed, as this is dependent on the selected cohort.
+
 const IdentityHeader = ({ person, textAlign, displayRole }) => {
 
   const textAlignment = { textAlign: textAlign }
