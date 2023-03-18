@@ -1,0 +1,48 @@
+.landing {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing header {
+  margin-left: auto;
+}
+
+.landing section {
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.landing img {
+  width: 480px;
+  border-radius: 0;
+  margin-bottom: 32px;
+}
+
+.landing header {
+  margin: 0px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.landing header * {
+  margin: 0;
+  opacity: .35;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: .3px;
+}
+
+.landing header h1 {
+  line-height: 2;
+}
+
+.landing header select {
+  line-height: .9;
+  font-size: 14px;
+  margin-left: 3px;
+  background: none;
+}
