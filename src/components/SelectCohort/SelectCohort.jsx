@@ -12,10 +12,10 @@ const SelectCohort = (props) => {
   const { user, cohortId, setCohortId } = props
   const menuStyleClass = user.isAdmin ? 'cohortSelect' : 'cohortDisplay'
 
-  if (status === 'error') return <h1>Error</h1>
-  if (status === 'loading') return <h1>Loading...</h1>
+  if (status === 'error') return <p className='cohortSelectStatus'>Error</p>
+  if (status === 'loading') return <p className='cohortSelectStatus'>Loading...</p>
   if (!cohorts.length) return (
-    <select className={menuStyleClass} disabled={true}>
+    <select className='cohortDisplay' disabled={true}>
       <option>No Cohorts</option>
     </select>
   )

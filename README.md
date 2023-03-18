@@ -6,6 +6,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
+• Animation to StatusPage + ContentStatus
+
 • Favicon
 
 • Students should not see waitlist or inactive!
