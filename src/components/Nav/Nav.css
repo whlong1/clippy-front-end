@@ -12,7 +12,7 @@ li {
   height: 24px;
   margin-bottom: 48px;
   border-radius: 100px;
-  background-color: #2f2e37;
+  background-color: var(--icon-background);
 }
 
 .appNav a img {
@@ -28,7 +28,7 @@ li {
   align-items: center;
   margin-bottom: 48px;
   border-radius: 100px;
-  background-color: #2f2e37;
+  background-color: var(--icon-background);
 }
 
 .appNav ul > button img {
