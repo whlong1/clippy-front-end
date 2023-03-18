@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "./MyProfile.css"
 
 // Components
 import Popup from "../../layouts/Popup"
@@ -19,7 +20,7 @@ const MyProfile = (props) => {
   }
 
   const myInfo = (
-    <>
+    <div>
       <h1>{getFullName()}</h1>
       {profile?.preferredPronouns}
       {profile?.email}
@@ -27,40 +28,52 @@ const MyProfile = (props) => {
       {profile?.gitHubUserName}
       {profile?.linkedInUserName}
       {profile?.codeWarsUserName}
-    </>
+    </div>
   )
 
   return (
-    <main className="page" style={{ position: 'relative' }}>
+    <main className="myProfile" style={{ position: 'relative' }}>
 
       <Popup isOpen={isJoinOpen}>
-        <>
-          <h1>Set Default Cohort</h1>
-          <p>After joining, you will need to admit yourself to the cohort.</p>
-          <p>Be sure to refresh your browser to update the default cohort selection.</p>
-          <button onClick={() => setIsJoinOpen(false)}>CANCEL</button>
+        <div className="confirmation">
+          <header>
+            <h1>Set Default Cohort</h1>
+            <p>After joining, you will need to admit yourself to the cohort.</p>
+            <p>Be sure to refresh your browser to update the default cohort selection.</p>
+          </header>
           <JoinCohort
             profile={profile}
             setProfile={setProfile}
             setIsJoinOpen={setIsJoinOpen}
           />
-        </>
+          <button onClick={() => setIsJoinOpen(false)}>CANCEL</button>
+        </div>
       </Popup>
 
       <Popup isOpen={isEditOpen}>
-        <>
-          <h1>Edit Profile</h1>
-          <button onClick={() => setIsEditOpen(false)}>CANCEL</button>
-          <ProfileForm profile={profile} setProfile={setProfile} />
-        </>
+        <div className="confirmation">
+          <header>
+            <h1>Edit Profile</h1>
+          </header>
+          <section>
+            <ProfileForm profile={profile} setProfile={setProfile} />
+            <button onClick={() => setIsEditOpen(false)}>CANCEL</button>
+          </section>
+        </div>
       </Popup>
 
-      <h1>My Profile</h1>
-      <ProfilePicture gitHubUserName={profile.gitHubUserName} size="100px" />
-      {myInfo}
+      <header className="header">
+        <section>
+          <h1>Profile</h1>
+          <button onClick={() => setIsEditOpen(true)}>EDIT PROFILE</button>
+          {props.user.isAdmin && <button onClick={() => setIsJoinOpen(true)}>CHANGE DEFAULT COHORT</button>}
+        </section>
+      </header>
 
-      <button onClick={() => setIsEditOpen(true)}>EDIT PROFILE</button>
-      {props.user.isAdmin && <button onClick={() => setIsJoinOpen(true)}>CHANGE DEFAULT COHORT</button>}
+      <section>
+        <ProfilePicture gitHubUserName={profile.gitHubUserName} size="200px" />
+        {myInfo}
+      </section>
 
     </main>
   )

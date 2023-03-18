@@ -7,9 +7,9 @@ import RolePanel from "./RolePanel"
 import ExternalLink from "../../components/ExternalLink/ExternalLink"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
 import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
+import ContactInformation from "../../components/ContactInformation/ContactInformation"
 
 // Assets
-import email from '../../assets/icons/profile/email.svg'
 import github from '../../assets/icons/profile/github.svg'
 import linkedin from '../../assets/icons/profile/linkedin.svg'
 import codewars from '../../assets/icons/profile/codewars.svg'
@@ -17,7 +17,6 @@ import codewars from '../../assets/icons/profile/codewars.svg'
 const ShowPerson = ({ user, cohortId }) => {
   const { profileId } = useParams()
   const { person, status } = useShowPerson(cohortId, profileId)
-
 
   if (status === 'error') return <ContentStatus status={status} />
   if (status === 'loading') return <ContentStatus status={status} />
@@ -36,8 +35,6 @@ const ShowPerson = ({ user, cohortId }) => {
   const last = person.lastName[0].toUpperCase() + person.lastName.slice(1)
   const first = person.preferredName[0].toUpperCase() + person.preferredName.slice(1)
   const fullName = first + " " + last
-
-  const checkProp = (prop) => prop ? prop : 'Not Available'
 
   return (
     <section className="person" style={{ position: 'relative' }}>
@@ -63,37 +60,7 @@ const ShowPerson = ({ user, cohortId }) => {
         {user.isAdmin && <RolePanel person={person} cohortId={cohortId} />}
       </section>
 
-      <section>
-        <h1>Contact Information</h1>
-        <div>
-          <h3>
-            <img src={email} alt="email" />
-            Email
-          </h3>
-          <p>{checkProp(person.email)}</p>
-        </div>
-        <div>
-          <h3>
-            <img src={github} alt="github" />
-            Github
-          </h3>
-          <p>{checkProp(person.gitHubUserName)}</p>
-        </div>
-        <div>
-          <h3>
-            <img src={linkedin} alt="linkedin" />
-            LinkedIn
-          </h3>
-          <p>{checkProp(person.linkedInUserName)}</p>
-        </div>
-        <div>
-          <h3>
-            <img src={codewars} alt="codewars" />
-            Codewars
-          </h3>
-          <p>{checkProp(person.codeWarsUserName)}</p>
-        </div>
-      </section>
+      <ContactInformation person={person} />
 
     </section>
   )

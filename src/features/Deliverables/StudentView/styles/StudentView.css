@@ -63,7 +63,7 @@
 
 .confirmation header {
   flex-direction: column;
-  margin-bottom: 24px !important;
+  /* margin-bottom: 16px !important; */
 }
 
 .confirmation div {

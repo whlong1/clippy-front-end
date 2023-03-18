@@ -1,0 +1,30 @@
+.contactInformation>* {
+  margin-bottom: 32px;
+}
+
+.contactInformation div {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.contactInformation div h3 {
+  margin-bottom: 14px;
+}
+
+.contactInformation p {
+  line-height: 1;
+}
+
+.contactInformation h3 {
+  display: flex;
+  align-items: center;
+}
+
+.contactInformation h3 img {
+  margin: 0;
+  width: 16px;
+  border: none;
+  border-radius: 0;
+  margin-right: 8px;
+}
