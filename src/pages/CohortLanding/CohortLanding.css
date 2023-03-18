@@ -4,10 +4,6 @@
   flex-direction: column;
 }
 
-.landing header {
-  margin-left: auto;
-}
-
 .landing section {
   align-items: center;
   flex-direction: column;
@@ -24,7 +20,7 @@
   margin: 0px;
   width: 100%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-end;
 }
 
@@ -37,7 +33,7 @@
 }
 
 .landing header h1 {
-  line-height: 2;
+  line-height: 1.32;
 }
 
 .landing header select {
