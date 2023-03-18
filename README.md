@@ -4,9 +4,11 @@ https://tanstack.com/
 
 https://auth0.com/docs/quickstart/spa/react/interactive
 
-## Issues
+## Todos
 
-• order deliverables for students - fix daylight savings issue in new deliverable + d header
+• Edit profile on onboarding should just replace the screen, no popup
+
+• check math on deliverable and attendance percentages
 
 • join cohort won't work for admins setting default, need new functions.
   admin will need to select their desired role for the cohort as well.
@@ -19,24 +21,15 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • width of subheader class should scale based on content.
 
-• on new attendance, if no date is selected manually and the default is used, the date is one day behind
-  works if the date is selected manually.
-  Default date works with new deliverable!
-
-
-## Todos
+• Issue appears to be resolved but double check on deploy:
+  on new attendance, if no date is selected manually and the default is used, the date is one day behind
+  works if the date is selected manually. Default date works with new deliverable
 
 • join cohorts should use indexCohorts hook
 
 • weird loading is caused by key on popup, see if a useeffect will work instead
 
-• move contact information into left column on show person
-
 • on hover effect for links
-
-• When awaiting instructor approval during onboarding, should have message that says waiting to join x cohort
-
-• make sure date issues from previous iteration are resolved on deploy
 
 ## Notes
 
@@ -56,6 +49,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Stretch Goals
 
+• When awaiting instructor approval during onboarding, should have message that says waiting to join x cohort
+
 • If a student wants to change cohorts, better to create separate functionality
   only allow student to access current cohort. archive should be available through some other means
 
@@ -72,6 +67,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
 
 
-## Icebox
+## Issues
 
-• Issue with ```getDefaultDate``` helper function in ```src/features/Deliverables/helpers/helpers.js getDefaultDate```
+•  Temporary fix added to ```getDefaultDate``` helper function in ```src/features/Deliverables/helpers/helpers.js getDefaultDate```
