@@ -3,7 +3,7 @@ import './DeleteConfirmation.css'
 const DeleteConfirmation = ({ title, setIsOpen, handleDelete }) => {
 
   return (
-    <div className="confirmation">
+    <div className="deleteConfirmation">
       <header>
         <h1>{title}</h1>
         <p>
