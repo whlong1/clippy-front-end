@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import { Link } from "react-router-dom"
 
-// Assets
-import arrow from '../../assets/icons/arrow.svg'
-import downArrow from '../../assets/icons/downArrow.svg'
+// Components
+import ToggleArrow from '../../components/ToggleArrow/ToggleArrow'
 
 const AttendanceList = ({ attendance, isAdmin }) => {
   const [selectedMonth, setSelectedMonth] = useState("")
@@ -69,12 +68,7 @@ const AttendanceList = ({ attendance, isAdmin }) => {
           <Link state={monthlyAttendance[month.num]} to={`/attendance/${month.long.toLocaleLowerCase()}`}>
             <header>
               <h2>{month.long}</h2>
-              <button>
-                <img
-                  src={selectedMonth === month.num ? downArrow : arrow}
-                  alt="An arrow"
-                />
-              </button>
+              <ToggleArrow />
             </header>
           </Link>
         </section>
@@ -88,14 +82,9 @@ const AttendanceList = ({ attendance, isAdmin }) => {
       <section key={month.num}>
 
         {monthlyAttendance[month.num]?.length > 0 &&
-          <header key={month.num}>
+          <header key={month.num} onClick={() => handleSelect(month)}>
             <h2>{month.long}</h2>
-            <button onClick={() => handleSelect(month)}>
-              <img
-                src={selectedMonth === month.num ? downArrow : arrow}
-                alt="An arrow"
-              />
-            </button>
+            <ToggleArrow isOpen={selectedMonth === month.num} />
           </header>
         }
 

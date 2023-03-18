@@ -1,0 +1,5 @@
+.toggleArrow img {
+  width: 12px;
+  overflow: clip;
+  border-radius: 50%;
+}

@@ -2,10 +2,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './styles/StudentView.css'
 
-// Assets
-import arrow from '../../../assets/icons/arrow.svg'
-import downArrow from '../../../assets/icons/downArrow.svg'
-
 // Helpers
 import { getLocaleDateString } from '../helpers/helpers'
 
@@ -13,6 +9,7 @@ import { getLocaleDateString } from '../helpers/helpers'
 import MenuLayout from '../../../layouts/MenuLayout'
 import CompletionTracker from './CompletionTracker'
 import MenuStatus from '../../../components/MenuStatus/MenuStatus'
+import ToggleArrow from '../../../components/ToggleArrow/ToggleArrow'
 import StatusIndicator from '../../../components/StatusIndicator/StatusIndicator'
 import { useIndexStudentDeliverables } from '../../../hooks/useIndexStudentDeliverables'
 
@@ -50,11 +47,9 @@ const StudentDeliverablesMenu = (props) => {
 
       {!!newFeedback.length &&
         <section>
-          <header>
+          <header onClick={() => setIsOpen(!isOpen)}>
             <h2>New Feedback</h2>
-            <button onClick={() => setIsOpen(!isOpen)}>
-              <img src={isOpen ? downArrow : arrow} alt="An arrow" />
-            </button>
+            <ToggleArrow isOpen={isOpen}/>
           </header>
           {isOpen && newFeedback.map((sd) => (
             <Link className='sdRow' key={sd._id} to={`/deliverables/${sd._id}`}>

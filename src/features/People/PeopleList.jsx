@@ -3,11 +3,8 @@ import { Link } from "react-router-dom"
 
 // Components
 import Counter from "../../components/Counter/Counter"
+import ToggleArrow from "../../components/ToggleArrow/ToggleArrow"
 import ProfileInfo from '../../components/ProfileInfo/ProfileInfo'
-
-// Assets
-import arrow from '../../assets/icons/arrow.svg'
-import downArrow from '../../assets/icons/downArrow.svg'
 
 const PeopleList = (props) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -23,7 +20,7 @@ const PeopleList = (props) => {
       <header onClick={() => setIsOpen(!isOpen)}>
         <h2>{roleHeader}</h2>
         <Counter num={sortedByNormalizedName.length} />
-        <button><img src={isOpen ? downArrow : arrow} alt="An arrow" /></button>
+        <ToggleArrow isOpen={isOpen} />
       </header>
 
       {isOpen && sortedByNormalizedName.map((profile) => (
