@@ -4,24 +4,31 @@ import './Nav.css'
 // Components
 import LogoutButton from '../LogoutButton/LogoutButton'
 
-// Assets
+// Icons
 import admin from '../../assets/icons/nav/admin.svg'
 import people from '../../assets/icons/nav/people.svg'
 import profile from '../../assets/icons/nav/profile.svg'
 import attendance from '../../assets/icons/nav/attendance.svg'
 import deliverables from '../../assets/icons/nav/deliverables.svg'
 
-// Users can only access this nav after logging in.
-// The only conditional rendering we need here is for admin access.
+// Logo Marks
+import MarkB from '../../assets/logos/logomarks/mark-b.svg'
+import MarkP from '../../assets/logos/logomarks/mark-p.svg'
+
+//? Users can only access this nav after logging in.
+//? The only conditional rendering we need here is for admin access.
 
 const Nav = (props) => {
   const { isAdmin } = props.user
+  const markSelect = 1
+
   return (
     <nav className='appNav'>
       <ul>
         <li>
           <NavLink to="/">
-            <img src="" alt="" />
+            {markSelect === 1 && <img src={MarkB} alt="Abstract flamingo" />}
+            {markSelect === 2 && <img src={MarkP} alt="Abstract flamingo" />}
           </NavLink>
         </li>
 
