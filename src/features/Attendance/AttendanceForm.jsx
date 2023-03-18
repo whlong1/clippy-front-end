@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 
 // Components
 import StudentStatusSelect from "./StudentStatusSelect"
-
+import ContentStatus from "../../components/ContentStatus/ContentStatus"
 // Hooks
 import { useIndexPeople } from "../../hooks/useIndexPeople"
 
@@ -28,10 +28,8 @@ const AttendanceForm = ({ cohortId, profile, submitFn, prevAttendance, title }) 
     }
   }, [cohortId, attendanceId, people, prevAttendance])
 
-  // No need for ContentStatus component here
-  // Form is already wrapped with a <section> tag through New/EditAttendance
-  if (status === 'error') return <h1>Error</h1>
-  if (status === 'loading') return <h1>Loading...</h1>
+  if (status === 'error') return <ContentStatus status={status} />
+  if (status === 'loading') return <ContentStatus status={status} />
 
   const handleChange = ({ target }) => {
     setAttendanceData({ ...attendanceData, [target.name]: target.value })
