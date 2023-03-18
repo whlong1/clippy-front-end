@@ -19,12 +19,16 @@ const getDefaultDate = () => {
   date.setMilliseconds(0)
   date.setDate(date.getDate() + 2)
 
-  const difference = new Date().getUTCHours() - new Date().getHours() - 5
+  // Subtracting 4 will cause an issue during daylight savings fall back 
+  // Should be -5 in that scenario. Implement moment.js to resolve.
+  const difference = new Date().getUTCHours() - new Date().getHours() - 4
+
   date.setHours(date.getHours() + difference)
   const tzoffset = (new Date()).getTimezoneOffset() * 60000
   const formattedTime = (new Date(date - tzoffset)).toISOString().slice(0, 16)
   return formattedTime
 }
+
 
 const dateOptions = {
   hour12: true,

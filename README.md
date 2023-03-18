@@ -70,3 +70,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • For security, might be worth refactoring how admin and student routes are handled
 
 • REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
+
+
+## Icebox
+
+• Issue with ```getDefaultDate``` helper function in ```src/features/Deliverables/helpers/helpers.js getDefaultDate```
