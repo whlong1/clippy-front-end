@@ -6,6 +6,8 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Issues
 
+• order deliverables for students - fix daylight savings issue in new deliverable + d header
+
 • join cohort won't work for admins setting default, need new functions.
   admin will need to select their desired role for the cohort as well.
 
@@ -21,19 +23,12 @@ https://auth0.com/docs/quickstart/spa/react/interactive
   works if the date is selected manually.
   Default date works with new deliverable!
 
-• daylight savings issue in new deliverable
 
 ## Todos
 
 • join cohorts should use indexCohorts hook
 
 • weird loading is caused by key on popup, see if a useeffect will work instead
-
-• style my profile page
-
-• order deliverables correctly
-
-• need to require requirement select on new deliverable
 
 • move contact information into left column on show person
 
@@ -60,6 +55,9 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 
 ## Stretch Goals
+
+• If a student wants to change cohorts, better to create separate functionality
+  only allow student to access current cohort. archive should be available through some other means
 
 • Add start time to cohort model and form
 

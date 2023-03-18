@@ -2,10 +2,10 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 
 // Components
 import ContentLayout from '../layouts/ContentLayout.jsx'
-import NewDeliverable from '../features/Deliverables/NewDeliverable'
 import ShowDeliverable from '../features/Deliverables/ShowDeliverable.jsx'
 import DeliverablesMenu from '../features/Deliverables/DeliverablesMenu.jsx'
 import FeatureLanding from '../components/FeatureLanding/FeatureLanding.jsx'
+import NewDeliverable from '../features/Deliverables/InstructorView/NewDeliverable'
 import ShowStudentDeliverable from '../features/Deliverables/ShowStudentDeliverable.jsx'
 import GradeStudentDeliverable from '../features/Deliverables/GradeStudentDeliverable.jsx'
 import StudentDeliverablesMenu from '../features/Deliverables/StudentView/StudentDeliverablesMenu.jsx'
