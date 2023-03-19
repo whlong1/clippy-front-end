@@ -2,6 +2,8 @@
 
 ## Todos
 
+• Figure out page not found
+
 • Style feature landing pages
 
 • Favicon
@@ -12,13 +14,13 @@
 
 • crop deliverable name for long deliverables
 
+• width of subheader class should scale based on content.
+
 • Edit profile cannot be used as a popup, scroll issue
 
 • check math on deliverable and attendance percentages
 
 • scroll issue on edit profile onboarding
-
-• width of subheader class should scale based on content.
 
 • on hover effect for links
 

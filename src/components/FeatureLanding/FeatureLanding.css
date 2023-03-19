@@ -1,0 +1,28 @@
+.featureLanding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featureLanding div {
+  opacity: .2;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featureLanding h1 {
+  margin: 0;
+  height: initial;
+  font-size: 36px;
+  text-align: center;
+  line-height: normal;
+}
+
+.featureLanding img {
+  margin: 0;
+  width: 60px;
+  border-radius: 0;
+}
