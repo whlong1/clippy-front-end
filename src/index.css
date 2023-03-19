@@ -233,7 +233,6 @@ div>img {
   font-weight: 600;
   margin-left: 24px;
   border-radius: 5px;
-  padding: 5px 0px 18px;
 }
 
 .header section h1 {
@@ -399,12 +398,13 @@ div {
 }
 
 .studentDeliverable select {
+  height: 24px;
   display: flex;
   appearance: none;
   border-radius: 5px;
   background-size: 12px;
   align-items: flex-start;
-  padding: 5.5px 28px 0px 14px;
+  padding: 4px 28px 0px 14px;
   background-repeat: no-repeat;
   background-position: right 6px center;
   background-image: url("assets/icons/arrow.svg");

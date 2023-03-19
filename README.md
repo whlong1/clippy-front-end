@@ -6,23 +6,18 @@
 
 • check date issues
 
-• create test users and data
-
 • profile pic issue loading
 
-• hide deliverable view button for withdrawn students
-
-• Bulk update marks withdrawn students as complete
-
-• Completed Deliverables should be a toggle
-
-• Subission panel is a bit messy
 
 ## Stretch Goals
+
+• Completed Deliverables should be a toggle
 
 • Add icons to attendance rows
 
 • JoinCohorts should use indexCohorts hook.
+
+• Subission panel is a bit messy, could fix up directory structure
 
 • Animation to StatusPage + ContentStatus
 
@@ -46,6 +41,8 @@
 
 
 ## Issues
+
+• Bulk update marks withdrawn students as complete
 
 • Temporary fix added to ```getDefaultDate``` helper function in ```src/features/Deliverables/helpers/helpers.js getDefaultDate```
 

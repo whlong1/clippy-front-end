@@ -12,10 +12,8 @@ const PeopleRouter = (props) => {
   return (
     <Routes>
       <Route element={<ContentLayout menu={<PeopleMenu {...props} />} />}>
-
         <Route index element={<FeatureLanding title="People" />} />
         <Route path=':profileId' element={<ShowPerson user={user} cohortId={cohortId} />} />
-
       </Route>
     </Routes>
   )

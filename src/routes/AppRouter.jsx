@@ -13,7 +13,7 @@ import PageNotFound from '../pages/PageNotFound/PageNotFound'
 import CohortLanding from '../pages/CohortLanding/CohortLanding'
 
 const AppRouter = (props) => {
-  const { user, profile } = props
+  const { profile } = props
   const [cohortId, setCohortId] = useState(profile.cohort)
 
   const appProps = {
@@ -22,8 +22,9 @@ const AppRouter = (props) => {
     setCohortId,
   }
 
-  console.log('Current Cohort:', cohortId)
-  console.log('Auth:', user.name, profile.email)
+  // Use for testing
+  // console.log('Current Cohort:', cohortId)
+  // console.log('Auth:', user.name, profile.email)
 
   return (
     <Routes>
