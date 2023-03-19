@@ -31,13 +31,7 @@ const StudentAttendanceMenu = (props) => {
 
   const lateScore = attendanceTable.l * 0.33
   const absentScore = attendanceTable.a * 0.5
-
-  const totalDays = attendance.length
   const totalAbsences = (absentScore + lateScore)
-  const daysAttended = totalDays - absentScore - lateScore
-  const percentage = (daysAttended / totalDays) * 100
-  const attendanceRate = !isNaN(percentage) ? percentage.toFixed(2) : 0
-
 
   return (
     <MenuLayout {...props}>
@@ -47,10 +41,6 @@ const StudentAttendanceMenu = (props) => {
 
       <section className='attendanceStats'>
         <header>
-          <div>
-            <h2>Attendance Rate</h2>
-            <p>{attendanceRate}%</p>
-          </div>
           <div>
             <h2>Total Absences</h2>
             <p>{totalAbsences.toFixed(2)}</p>

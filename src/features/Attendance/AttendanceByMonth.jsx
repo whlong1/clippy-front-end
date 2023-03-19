@@ -1,8 +1,5 @@
 import { useLocation, Navigate } from 'react-router-dom'
 
-// Assets 
-import completionIcon from '../../assets/icons/headers/completion.svg'
-
 const AttendanceByMonth = () => {
   const { state } = useLocation()
 
@@ -14,34 +11,16 @@ const AttendanceByMonth = () => {
     A: 'Absent',
     H: 'Holiday',
     P: 'Present',
+    W: 'Withdrawn',
     EC: 'Exception',
     SC: 'School Closed',
   }
-
-  const totalDays = state.length
-  const presentCount = state.reduce((acc, day) => {
-    const studentStatus = day.students[0].status
-    if (studentStatus === 'A') acc = acc - 1
-    if (studentStatus === 'L') acc = acc - .5
-    return acc
-  }, totalDays)
-
-  const attendanceRate = totalDays ? (presentCount / totalDays) * 100 : 0
 
   return (
     <section>
       <header className='header'>
         <section>
           <h1>Month</h1>
-        </section>
-        <section>
-          <div className="subheader">
-            <h3>
-              <img src={completionIcon} alt="completion circle" />
-              Attendance Rate
-            </h3>
-            <p>{attendanceRate.toFixed()}% Attendance</p>
-          </div>
         </section>
       </header>
 

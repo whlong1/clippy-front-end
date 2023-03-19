@@ -42,7 +42,7 @@ const AttendanceHeader = (props) => {
             <img src={completionIcon} alt="completion circle" />
             Attendance Rate
           </h3>
-          <p>{attendanceRate}% Attendance</p>
+          <p>{attendanceRate.toFixed()}% Attendance</p>
         </div>
         <div className="subheader">
           <h3>

@@ -13,6 +13,8 @@
 
 • Completed Deliverables should be a toggle
 
+• Randomize logo selection
+
 • Add icons to attendance rows
 
 • JoinCohorts should use indexCohorts hook.
@@ -48,12 +50,11 @@
 
 • Issue appears to be resolved: If github username is missing, other users photo appears in show person
 
-• Issue appears to be resolved: On new attendance, if no date is selected manually and the default is used, the date is one day behind
-  works if the date is selected manually. Default date works with new deliverable
+• Issue appears to be resolved: On new attendance, if no date is selected manually and the default is used, the date is one day behind works if the date is selected manually. Default date works with new deliverable
 
-• REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
+• REFRESH TOKEN ISSUE SAFARI+FIREFOX : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
 
-  ## Notes
+## Notes
 
 • React Query Keys: https://tkdodo.eu/blog/effective-react-query-keys
 
