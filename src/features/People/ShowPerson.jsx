@@ -31,7 +31,7 @@ const ShowPerson = ({ user, cohortId }) => {
   return (
     <section className="person" style={{ position: 'relative' }}>
       <section>
-        <ProfilePicture gitHubUserName={person.gitHubUserName} size="128px" />
+        <ProfilePicture key={person._id} gitHubUserName={person.gitHubUserName} size="128px" />
         <IdentityHeader person={person} textAlign="center" displayRole={true} />
         <span className="personLinks">
           <ExternalLink urlString={`https://github.com/${person.gitHubUserName}`}>

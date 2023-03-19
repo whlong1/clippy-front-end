@@ -6,8 +6,6 @@
 
 • Favicon
 
-• ShowPerson profile pic loading
-
 • Fix directory structure
 
 • crop deliverable name for long deliverables
