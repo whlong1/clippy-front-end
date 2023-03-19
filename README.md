@@ -4,8 +4,18 @@
 
 • check date issues
 
+• Oopsie daisies message too big on no students attendance
+
+• side menu has scroll bar
+
+• capitalize ta and ia on show person
+
+• useAttendanceManager create cache ordering (invalidate)
+
 
 ## Stretch Goals
+
+• Default time for new deliverables (timezone issues)
 
 • Completed Deliverables should be a toggle
 

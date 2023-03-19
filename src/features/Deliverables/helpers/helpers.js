@@ -26,6 +26,7 @@ const getDefaultDate = () => {
   date.setHours(date.getHours() + difference)
   const tzoffset = (new Date()).getTimezoneOffset() * 60000
   const formattedTime = (new Date(date - tzoffset)).toISOString().slice(0, 16)
+
   return formattedTime
 }
 
@@ -36,12 +37,12 @@ const dateOptions = {
   day: 'numeric',
   hour: 'numeric',
   minute: 'numeric',
-  timeZone: 'America/New_York'
+  // timeZone: 'America/New_York'
   // year: 'numeric', Is the year value necessary?
-
 }
 
 const getLocaleDateString = (date) => {
+  console.log('helper',date) // 2023-03-20T16:59:00.000Z
   const dateObj = new Date(date)
   return dateObj.toLocaleDateString('en-US', dateOptions)
 }
