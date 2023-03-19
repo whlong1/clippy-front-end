@@ -1,9 +1,5 @@
 # clippy-front-end
 
-https://tanstack.com/
-
-https://auth0.com/docs/quickstart/spa/react/interactive
-
 ## Todos
 
 • Style feature landing pages
@@ -25,21 +21,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • width of subheader class should scale based on content.
 
 • on hover effect for links
-
-## Notes
-
-• React Query Keys: https://tkdodo.eu/blog/effective-react-query-keys
-
-• Optimistic Updates: https://tanstack.com/query/v4/docs/react/guides/optimistic-updates
-
-• Invalidating Queries: https://www.codemzy.com/blog/invalidatequeries-react-query
-
-• Querey Key Factories: https://tkdodo.eu/blog/effective-react-query-keys#use-query-key-factories
-
-## Tech
-
-• https://github.com/uiwjs/react-codemirror
-
 
 ## Stretch Goals
 
@@ -83,3 +64,22 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • Issue appears to be resolved:
   on new attendance, if no date is selected manually and the default is used, the date is one day behind
   works if the date is selected manually. Default date works with new deliverable
+
+
+  ## Notes
+
+• React Query Keys: https://tkdodo.eu/blog/effective-react-query-keys
+
+• Optimistic Updates: https://tanstack.com/query/v4/docs/react/guides/optimistic-updates
+
+• Invalidating Queries: https://www.codemzy.com/blog/invalidatequeries-react-query
+
+• Querey Key Factories: https://tkdodo.eu/blog/effective-react-query-keys#use-query-key-factories
+
+## Tech
+
+• https://github.com/uiwjs/react-codemirror
+
+• https://tanstack.com/
+
+• https://auth0.com/docs/quickstart/spa/react/interactive

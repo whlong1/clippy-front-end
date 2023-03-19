@@ -23,14 +23,16 @@ const Nav = (props) => {
   const { isAdmin } = props.user
   const markSelect = 1
 
+  const logoStyle = { opacity: '.85' }
+
   return (
     <nav className='appNav'>
       <ul>
         <li>
           <NavLink to="/">
-            {markSelect === 1 && <img src={MarkB} alt="Abstract flamingo" />}
-            {markSelect === 2 && <img src={MarkP} alt="Abstract flamingo" />}
-            {markSelect === 3 && <img src={MarkW} alt="Abstract flamingo" />}
+            {markSelect === 1 && <img style={logoStyle} src={MarkB} alt="Abstract flamingo" />}
+            {markSelect === 2 && <img style={logoStyle} src={MarkP} alt="Abstract flamingo" />}
+            {markSelect === 3 && <img style={logoStyle} src={MarkW} alt="Abstract flamingo" />}
           </NavLink>
         </li>
 

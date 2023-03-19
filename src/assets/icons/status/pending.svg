@@ -2,7 +2,8 @@
   <defs>
     <style>
       .cls-1 {
-        fill: #fff;
+        <!-- fill: #fff; -->
+         fill="current"
       }
     </style>
   </defs>
