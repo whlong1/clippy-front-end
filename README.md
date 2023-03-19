@@ -6,20 +6,19 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 ## Todos
 
+• Style feature landing pages
+
 • Favicon
 
-• Fix directory structure
+• ShowPerson profile pic loading
 
-• Students should not see waitlist or inactive!
+• Fix directory structure
 
 • crop deliverable name for long deliverables
 
 • Edit profile cannot be used as a popup, scroll issue
 
 • check math on deliverable and attendance percentages
-
-• join cohort won't work for admins setting default, need new functions.
-  admin will need to select their desired role for the cohort as well.
 
 • scroll issue on edit profile onboarding
 
@@ -36,7 +35,6 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 • Invalidating Queries: https://www.codemzy.com/blog/invalidatequeries-react-query
 
 • Querey Key Factories: https://tkdodo.eu/blog/effective-react-query-keys#use-query-key-factories
-
 
 ## Tech
 
@@ -55,14 +53,18 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • When awaiting instructor approval during onboarding, should have message that says waiting to join x cohort
 
-• If a student wants to change cohorts, better to create separate functionality
-  only allow student to access current cohort. archive should be available through some other means
+• If a student wants to change cohorts, better to create separate functionality.
+  Only allow student to access current cohort. Archive should be available through some other means
 
-• Add start time to cohort model and form
+• Add start time to Cohort model and form
 
-• could add icons to forms
+• Consider adding icons to forms
 
 • Students should see there stats on MyProfile page
+
+• From MyProfile, allow admins join to set a new default cohort (need to add them to cohort model, skip approval stage). 
+  Also, allow admins to join a cohort without updating their default cohort.
+  At the moment, multiple cohorts can be joined during onboarding, but only the most recent will be set as the user's default.
 
 • Audit keys (need consistent key pattern for all resources)
 

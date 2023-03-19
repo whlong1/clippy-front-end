@@ -1,5 +1,3 @@
-import './App.css'
-
 // Components
 import AppLayout from './layouts/AppLayout'
 import AppRouter from './routes/AppRouter'
