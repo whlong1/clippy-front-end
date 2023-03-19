@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { getDefaultDate } from '../helpers/helpers'
+import { formatDate } from '../helpers/helpers'
 
 // Styles
 import './styles/NewDeliverable.css'
@@ -17,7 +17,7 @@ const NewDeliverable = ({ cohortId }) => {
   const [msg, setMsg] = useState('')
   const [deliverableData, setDeliverableData] = useState({
     name: '',
-    dueDate: getDefaultDate(),
+    dueDate: '',
     notionUrl: '',
 
     hasQuiz: '',
@@ -39,7 +39,8 @@ const NewDeliverable = ({ cohortId }) => {
         cohort: cohortId,
         ...deliverableData,
         // Might need to adjust this after deployment:
-        dueDate: deliverableData.dueDate
+        // dueDate: deliverableData.dueDate // old
+        dueDate: formatDate(deliverableData.dueDate)
       }
       mutation.mutate({ type: 'create', payload: formData })
       navigate('/deliverables')
