@@ -1,5 +1,5 @@
 // Assets
-import pendingAudit from '../../assets/icons/status/pending.svg'
+import { ReactComponent as PendingAuditIcon } from '../../assets/icons/status/pending.svg'
 
 const StudentStatus = ({ status }) => {
 
@@ -10,7 +10,7 @@ const StudentStatus = ({ status }) => {
   return (
     <div className="subheader">
       <h3>
-        <img src={pendingAudit} alt="status" />
+        <PendingAuditIcon fill="#FFFF" />
         Status
       </h3>
       <p style={{ marginTop: '2px' }}>{formattedStatus}</p>

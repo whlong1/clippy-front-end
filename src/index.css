@@ -266,7 +266,8 @@ div>img {
   align-items: center;
 }
 
-.header h3 img {
+.header h3 img,
+.header h3 svg {
   width: 12px;
   height: 16px;
   border-radius: 0;
@@ -542,11 +543,22 @@ button:disabled {
 }
 
 /* APP NAV LINKS & BUTTONS */
-li a img:hover, #logout img:hover {
-  opacity: 1;
+li a img:hover,
+#logout img:hover {
+  opacity: .85;
 }
 
 /* ROWS */
-a:hover p {
-  opacity: 1;
+a:hover p,
+a:hover h2 {
+  opacity: .85;
+}
+
+a header:hover h2 {
+  opacity: .85;
+}
+
+/* SELECT */
+select:hover {
+  opacity: .85;
 }

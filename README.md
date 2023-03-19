@@ -2,6 +2,8 @@
 
 ## Todos
 
+• add icons to attendance rows
+
 • Figure out page not found
 
 • Favicon
@@ -18,8 +20,6 @@
 
 • scroll issue on edit profile onboarding
 
-• on hover effect for links
-
 ## Stretch Goals
 
 • JoinCohorts should use indexCohorts hook.
@@ -32,8 +32,7 @@
 
 • When awaiting instructor approval during onboarding, should have message that says waiting to join x cohort
 
-• If a student wants to change cohorts, better to create separate functionality.
-  Only allow student to access current cohort. Archive should be available through some other means
+• If a student wants to change cohorts, better to create separate functionality. Only allow student to access current cohort. Archive should be available through some other means
 
 • Add start time to Cohort model and form
 
@@ -41,9 +40,7 @@
 
 • Students should see there stats on MyProfile page
 
-• From MyProfile, allow admins join to set a new default cohort (need to add them to cohort model, skip approval stage). 
-  Also, allow admins to join a cohort without updating their default cohort.
-  At the moment, multiple cohorts can be joined during onboarding, but only the most recent will be set as the user's default.
+• From MyProfile, allow admins join to set a new default cohort (need to add them to cohort model, skip approval stage). Also, allow admins to join a cohort without updating their default cohort. At the moment, multiple cohorts can be joined during onboarding, but only the most recent will be set as the user's default.
 
 • Audit keys (need consistent key pattern for all resources)
 
@@ -56,11 +53,9 @@
 
 •  Temporary fix added to ```getDefaultDate``` helper function in ```src/features/Deliverables/helpers/helpers.js getDefaultDate```
 
-• Issue appears to be resolved:
-  if github username is missing, other users photo appears in show person
+• Issue appears to be resolved: If github username is missing, other users photo appears in show person
 
-• Issue appears to be resolved:
-  on new attendance, if no date is selected manually and the default is used, the date is one day behind
+• Issue appears to be resolved: On new attendance, if no date is selected manually and the default is used, the date is one day behind
   works if the date is selected manually. Default date works with new deliverable
 
 
