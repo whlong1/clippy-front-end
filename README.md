@@ -2,11 +2,9 @@
 
 ## Todos
 
-• Edit profile cannot be used as a popup, scroll issue
-
 • check math on deliverable and attendance percentages
 
-• scroll issue on edit profile onboarding
+• edit profile cannot be used as a popup, scroll issue
 
 ## Stretch Goals
 
