@@ -1,3 +1,19 @@
 .pageNotFound {
+  padding: 24px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pageNotFound h1 {
+  margin-bottom: 24px;
+}
+
+.pageNotFound button {
+  height: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0px 32px;
+  border-radius: 5px;
+  margin-bottom: 14px;
 }

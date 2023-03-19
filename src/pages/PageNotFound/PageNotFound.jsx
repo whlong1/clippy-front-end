@@ -6,7 +6,7 @@ const PageNotFound = (props) => {
   return (
     <main className="pageNotFound">
       <h1>Page not found</h1>
-      <button onClick={() => navigate(-1)}>Go Back</button>
+      <button onClick={() => navigate(-1)}>GO BACK</button>
     </main>
   )
 }

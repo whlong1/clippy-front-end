@@ -2,12 +2,6 @@
 
 ## Todos
 
-• add icons to attendance rows
-
-• Figure out page not found
-
-• Favicon
-
 • Fix directory structure
 
 • crop deliverable name for long deliverables
@@ -21,6 +15,8 @@
 • scroll issue on edit profile onboarding
 
 ## Stretch Goals
+
+• Add icons to attendance rows
 
 • JoinCohorts should use indexCohorts hook.
 
