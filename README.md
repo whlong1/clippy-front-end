@@ -4,8 +4,6 @@
 
 • Figure out page not found
 
-• Style feature landing pages
-
 • Favicon
 
 • ShowPerson profile pic loading

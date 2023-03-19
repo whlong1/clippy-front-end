@@ -1,10 +1,10 @@
 import "./FeatureLanding.css"
 
 // Assets
-import AttendanceIcon from "../../assets/icons/nav/attendance.svg"
-import PeopleIcon from "../../assets/icons/nav/people.svg"
-import CompletionIcon from "../../assets/icons/headers/completion.svg"
 import AdminIcon from "../../assets/icons/nav/admin.svg"
+import PeopleIcon from "../../assets/icons/nav/people.svg"
+import AttendanceIcon from "../../assets/icons/nav/attendance.svg"
+import CompletionIcon from "../../assets/icons/headers/completion.svg"
 import DeliverablesIcon from "../../assets/icons/nav/deliverables.svg"
 
 const FeatureLanding = ({ title }) => {
