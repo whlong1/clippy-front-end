@@ -11,7 +11,7 @@ const GradeDeliverableHeader = (props) => {
   return (
     <header className="header">
       <section>
-        <h1>{title}</h1>
+        <h1 className="deliverableTitle">{title}</h1>
         <DeliverableStatusSelect
           formData={formData}
           handleChange={handleChange}
@@ -23,9 +23,9 @@ const GradeDeliverableHeader = (props) => {
         <StudentDisplay profile={deliverable.profile} />
         <DueDate date={deliverable.dueDate} />
         <RequirementTags deliverable={deliverable} />
-        <SubmittedMaterials deliverable={deliverable}/>
+        <SubmittedMaterials deliverable={deliverable} />
       </section>
-      
+
     </header>
   )
 }

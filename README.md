@@ -4,10 +4,6 @@
 
 • Fix directory structure
 
-• crop deliverable name for long deliverables
-
-• width of subheader class should scale based on content.
-
 • Edit profile cannot be used as a popup, scroll issue
 
 • check math on deliverable and attendance percentages

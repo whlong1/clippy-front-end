@@ -213,10 +213,9 @@ div>img {
   padding-top: 4px;
 }
 
+/* subheaders in show views */
 .header section>div>* {
-  /* subheaders in show views */
   margin: 0;
-  width: 140px;
   margin-right: 32px;
 }
 
@@ -312,6 +311,7 @@ div>img {
 }
 
 .menu a p:first-child {
+  max-width: 260px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -362,6 +362,17 @@ div {
 .externalUrlsContainer .externalLink {
   font-size: 14px;
   margin-left: 24px !important;
+}
+
+/* Crop long deliverable titles */
+.deliverableTitle {
+  height: 26px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
 }
 
 .externalLink img {
