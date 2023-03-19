@@ -1,9 +1,9 @@
 // Assets
-import submittedIcon from '../../assets/icons/headers/submitted.svg'
-import share from '../../assets/icons/share.svg'
+import share from '../../../assets/icons/share.svg'
+import submittedIcon from '../../../assets/icons/headers/submitted.svg'
 
 // Components
-import ExternalLink from '../../components/ExternalLink/ExternalLink'
+import ExternalLink from '../../../components/ExternalLink/ExternalLink'
 
 const SubmittedMaterials = ({ deliverable }) => {
   // Reused in ExternalUrls, would be nice to make this a helper

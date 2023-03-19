@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 
 // Components
-import DueDate from './DueDate'
+import DueDate from '../components/DueDate/DueDate'
 import SubmissionTracker from './SubmissionTracker'
-import RequirementTags from './RequirementTags/RequirementTags'
-import ExternalLink from '../../components/ExternalLink/ExternalLink'
+import RequirementTags from '../components/RequirementTags/RequirementTags'
+import ExternalLink from '../../../components/ExternalLink/ExternalLink'
 
 // Assets
-import share from '../../assets/icons/share.svg'
+import share from '../../../assets/icons/share.svg'
 
 const DeliverableHeader = (props) => {
   const {

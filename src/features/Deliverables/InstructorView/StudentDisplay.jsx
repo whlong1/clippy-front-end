@@ -1,8 +1,8 @@
 // Assets
-import studentIcon from '../../assets/icons/headers/student.svg'
+import studentIcon from '../../../assets/icons/headers/student.svg'
 
 // Components
-import ProfileInfo from '../../components/ProfileInfo/ProfileInfo'
+import ProfileInfo from '../../../components/ProfileInfo/ProfileInfo'
 
 const StudentDisplay = ({ profile }) => {
   return (

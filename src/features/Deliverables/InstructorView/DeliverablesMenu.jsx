@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 
 // Components
-import MenuLayout from '../../layouts/MenuLayout'
+import MenuLayout from '../../../layouts/MenuLayout'
+import MenuStatus from '../../../components/MenuStatus/MenuStatus'
 import DeliverablesList from './DeliverablesList'
-import MenuStatus from '../../components/MenuStatus/MenuStatus'
 
 // Hooks 
-import { useIndexDeliverables } from '../../hooks/useIndexDeliverables'
+import { useIndexDeliverables } from '../../../hooks/useIndexDeliverables'
 
 const DeliverablesMenu = (props) => {
   const { deliverables, status } = useIndexDeliverables(props.cohortId)

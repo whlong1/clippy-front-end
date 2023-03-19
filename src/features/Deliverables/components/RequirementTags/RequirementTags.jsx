@@ -1,7 +1,7 @@
 import './RequirementTags.css'
 
 // Assets
-import tag from '../../../assets/icons/headers/tag.svg'
+import tag from '../../../../assets/icons/headers/tag.svg'
 
 const RequirementTags = ({ deliverable }) => {
   const requirements = {

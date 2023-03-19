@@ -1,5 +1,5 @@
 // Assets
-import { ReactComponent as PendingAuditIcon } from '../../assets/icons/status/pending.svg'
+import { ReactComponent as PendingAuditIcon } from '../../../assets/icons/status/pending.svg'
 
 const StudentStatus = ({ status }) => {
 

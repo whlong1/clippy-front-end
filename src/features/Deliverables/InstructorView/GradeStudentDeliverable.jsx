@@ -2,15 +2,15 @@ import { useState, useEffect } from "react"
 import { useParams, useNavigate, Navigate } from "react-router-dom"
 
 // Components
-import GradingNotes from "./GradingNotes"
-import CodeEditor from "./CodeEditor/CodeEditor"
+import GradingNotes from "../components/GradingNotes/GradingNotes"
+import CodeEditor from "../components/CodeEditor/CodeEditor"
 import GradeDeliverableHeader from "./GradeDeliverableHeader"
-import ContentStatus from "../../components/ContentStatus/ContentStatus"
-import SubmisionAndFeedback from "./StudentView/SubmissionAndFeedback"
+import ContentStatus from "../../../components/ContentStatus/ContentStatus"
+import SubmisionAndFeedback from "../StudentView/SubmissionAndFeedback"
 
 // Hooks
-import { useDeliverablesManager } from "../../hooks/useDeliverablesManager"
-import { useShowStudentDeliverable } from '../../hooks/useShowStudentDeliverable'
+import { useDeliverablesManager } from "../../../hooks/useDeliverablesManager"
+import { useShowStudentDeliverable } from '../../../hooks/useShowStudentDeliverable'
 
 const GradeStudentDeliverable = (props) => {
   const { cohortId } = props
@@ -55,7 +55,6 @@ const GradeStudentDeliverable = (props) => {
         studentDeliverable={studentDeliverable}
       />
       <GradingNotes
-        instructorView={true}
         handleChange={handleChange}
         gradingNotes={formData.gradingNotes}
       />

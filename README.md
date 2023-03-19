@@ -2,8 +2,6 @@
 
 ## Todos
 
-• Fix directory structure
-
 • Edit profile cannot be used as a popup, scroll issue
 
 • check math on deliverable and attendance percentages

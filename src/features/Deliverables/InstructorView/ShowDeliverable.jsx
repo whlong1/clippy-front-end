@@ -2,15 +2,15 @@ import { useState } from 'react'
 import { useParams, useNavigate, Navigate } from 'react-router-dom'
 
 // Hooks
-import { useShowDeliverable } from '../../hooks/useShowDeliverable'
-import { useDeliverablesManager } from '../../hooks/useDeliverablesManager'
+import { useShowDeliverable } from '../../../hooks/useShowDeliverable'
+import { useDeliverablesManager } from '../../../hooks/useDeliverablesManager'
 
 // Components
-import Popup from '../../layouts/Popup'
+import Popup from '../../../layouts/Popup'
 import DeliverableHeader from './DeliverableHeader'
 import StudentDeliverableRow from './StudentDeliverableRow'
-import ContentStatus from '../../components/ContentStatus/ContentStatus'
-import DeleteConfirmation from '../../components/DeleteConfirmation/DeleteConfirmation'
+import ContentStatus from '../../../components/ContentStatus/ContentStatus'
+import DeleteConfirmation from '../../../components/DeleteConfirmation/DeleteConfirmation'
 
 const ShowDeliverable = (props) => {
   const { cohortId } = props

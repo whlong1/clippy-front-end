@@ -1,5 +1,5 @@
 // Assets
-import completionIcon from '../../assets/icons/headers/completion.svg'
+import completionIcon from '../../../assets/icons/headers/completion.svg'
 
 const SubmissionTracker = ({ deliverable }) => {
   const deliverableCount = deliverable.students.length

@@ -1,18 +1,18 @@
 import { useParams } from "react-router-dom"
 
 // Assets
-import share from '../../assets/icons/share.svg'
+import share from '../../../assets/icons/share.svg'
 
 // Components
-import DueDate from './DueDate'
+import DueDate from '../components/DueDate/DueDate'
 import StudentStatus from "./StudentStatus"
-import SubmisionAndFeedback from "./StudentView/SubmissionAndFeedback"
-import RequirementTags from "./RequirementTags/RequirementTags"
-import ExternalLink from "../../components/ExternalLink/ExternalLink"
-import ContentStatus from "../../components/ContentStatus/ContentStatus"
+import SubmisionAndFeedback from "./SubmissionAndFeedback"
+import RequirementTags from "../components/RequirementTags/RequirementTags"
+import ExternalLink from "../../../components/ExternalLink/ExternalLink"
+import ContentStatus from "../../../components/ContentStatus/ContentStatus"
 
 // Hooks 
-import { useShowStudentDeliverable } from "../../hooks/useShowStudentDeliverable"
+import { useShowStudentDeliverable } from "../../../hooks/useShowStudentDeliverable"
 
 // Student Only View
 const ShowStudentDeliverable = ({ cohortId }) => {

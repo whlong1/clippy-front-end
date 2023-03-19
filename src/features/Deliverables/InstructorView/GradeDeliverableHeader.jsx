@@ -1,7 +1,7 @@
 // Components
-import DueDate from './DueDate'
+import DueDate from '../components/DueDate/DueDate'
 import StudentDisplay from './StudentDisplay'
-import RequirementTags from './RequirementTags/RequirementTags'
+import RequirementTags from '../components/RequirementTags/RequirementTags'
 import SubmittedMaterials from './SubmittedMaterials'
 import DeliverableStatusSelect from './DeliverableStatusSelect'
 

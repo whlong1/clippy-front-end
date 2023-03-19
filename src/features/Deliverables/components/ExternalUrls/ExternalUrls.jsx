@@ -1,8 +1,10 @@
+import './ExternalUrls.css'
+
 // Assets
-import share from '../../assets/icons/share.svg'
+import share from '../../../../assets/icons/share.svg'
 
 // Components
-import ExternalLink from '../../components/ExternalLink/ExternalLink'
+import ExternalLink from '../../../../components/ExternalLink/ExternalLink'
 
 const ExternalUrls = ({ student }) => {
   const urlTable = {
@@ -20,7 +22,7 @@ const ExternalUrls = ({ student }) => {
   //   const regex = /^(http|https):\/\//
   //   return regex.test(url)
   // }
-  
+
   const urlLinks = filteredUrls.map((url, idx) => (
     <ExternalLink key={idx} urlString={urlTable[url].link}>
       {urlTable[url].text} <img src={share} alt="share" />
@@ -29,7 +31,7 @@ const ExternalUrls = ({ student }) => {
 
   return (
     <div className="externalUrlsContainer">
-      {filteredUrls.length ? urlLinks : <p style={{fontSize: '14px'}}>Not Available</p>}
+      {filteredUrls.length ? urlLinks : <p style={{ fontSize: '14px' }}>Not Available</p>}
     </div>
   )
 }

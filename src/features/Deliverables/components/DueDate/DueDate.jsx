@@ -1,8 +1,10 @@
+import './DueDate.css'
+
 // Helpers
-import { getLocaleDateString } from './helpers/helpers'
+import { getLocaleDateString } from '../../helpers/helpers'
 
 // Assets
-import dateIcon from '../../assets/icons/headers/date.svg'
+import dateIcon from '../../../../assets/icons/headers/date.svg'
 
 const DueDate = ({ date }) => {
   const formattedDate = getLocaleDateString(date)
