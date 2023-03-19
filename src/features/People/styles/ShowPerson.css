@@ -44,9 +44,13 @@
   padding: 5px 0px 18px;
 }
 
-.person img {
-  margin-bottom: 24px;
+.person .pictureContainer img {
+  margin: 0;
   border: 1px solid var(--border-color);
+}
+
+.person .pictureContainer {
+  margin-bottom: 24px;
 }
 
 .personLinks {

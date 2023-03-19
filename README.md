@@ -2,11 +2,7 @@
 
 ## Todos
 
-• check math on deliverable and attendance percentages
-
 • check date issues
-
-• profile pic issue loading
 
 
 ## Stretch Goals
