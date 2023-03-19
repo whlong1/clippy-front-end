@@ -8,6 +8,3 @@ export const useIndexPeople = (cohortId) => {
   })
   return { people, status }
 }
-
-// Assuming the following is applicable here:
-// https://tanstack.com/query/v4/docs/react/guides/query-keys

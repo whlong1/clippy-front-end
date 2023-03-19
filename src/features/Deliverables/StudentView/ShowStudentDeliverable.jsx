@@ -6,7 +6,7 @@ import share from '../../../assets/icons/share.svg'
 // Components
 import DueDate from '../components/DueDate/DueDate'
 import StudentStatus from "./StudentStatus"
-import SubmisionAndFeedback from "./SubmissionAndFeedback"
+import SubmisionAndFeedback from "../components/SubmissionAndFeedback/SubmissionAndFeedback"
 import RequirementTags from "../components/RequirementTags/RequirementTags"
 import ExternalLink from "../../../components/ExternalLink/ExternalLink"
 import ContentStatus from "../../../components/ContentStatus/ContentStatus"

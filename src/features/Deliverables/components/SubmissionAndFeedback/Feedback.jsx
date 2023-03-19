@@ -1,5 +1,5 @@
-import GradingNotes from "../components/GradingNotes/GradingNotes"
-import CodeEditor from "../components/CodeEditor/CodeEditor"
+import GradingNotes from "../GradingNotes/GradingNotes"
+import CodeEditor from "../CodeEditor/CodeEditor"
 
 const Feedback = ({ studentDeliverable }) => {
   return (

@@ -10,6 +10,14 @@
 
 • profile pic issue loading
 
+• hide deliverable view button for withdrawn students
+
+• Bulk update marks withdrawn students as complete
+
+• Completed Deliverables should be a toggle
+
+• Subission panel is a bit messy
+
 ## Stretch Goals
 
 • Add icons to attendance rows

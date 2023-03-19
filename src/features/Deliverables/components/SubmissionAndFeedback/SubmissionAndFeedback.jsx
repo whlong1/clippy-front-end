@@ -1,15 +1,15 @@
 import { useState } from "react"
-import { useDeliverablesManager } from "../../../hooks/useDeliverablesManager"
-import "./styles/StudentView.css"
+import { useDeliverablesManager } from "../../../../hooks/useDeliverablesManager"
+import './styles/SubmissionAndFeedback.css'
 
 // Assets
-import share from '../../../assets/icons/share.svg'
+import share from '../../../../assets/icons/share.svg'
 
 // Components
-import Popup from '../../../layouts/Popup'
+import Popup from '../../../../layouts/Popup'
 import Feedback from "./Feedback"
 import SubmissionPanel from './SubmissionPanel'
-import ExternalLink from "../../../components/ExternalLink/ExternalLink"
+import ExternalLink from "../../../../components/ExternalLink/ExternalLink"
 
 const SubmisionAndFeedback = ({ cohortId, studentDeliverable, adminView }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -71,10 +71,10 @@ const SubmisionAndFeedback = ({ cohortId, studentDeliverable, adminView }) => {
           <h2>Feedback</h2>
           {studentDeliverable.gradedBy ? <h3>Graded by {studentDeliverable.gradedBy}</h3> : <h3>Pending</h3>}
         </span>
-        {studentDeliverable.hasNewStatus && <button onClick={markFeedbackAsRead}>MARK READ</button>}
+        {studentDeliverable.hasNewStatus && !adminView && <button onClick={markFeedbackAsRead}>MARK READ</button>}
       </header>
 
-       {!adminView && <Feedback studentDeliverable={studentDeliverable} /> } 
+      {!adminView && <Feedback studentDeliverable={studentDeliverable} />}
 
     </section>
   )

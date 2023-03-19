@@ -25,7 +25,7 @@ const SubmissionPanel = (props) => {
     .filter((obj) => studentDeliverable[obj[0]]).map((obj) => obj[1])
 
   return (
-    <div className="confirmation">
+    <div className="submissionPanel">
       <header>
         <h1>Submit Materials</h1>
         <p>Please include any required links below.</p>

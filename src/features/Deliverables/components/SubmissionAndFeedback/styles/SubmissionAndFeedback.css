@@ -1,0 +1,109 @@
+.submissionAndFeedback header {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 16px;
+  align-items: center;
+}
+
+.submissionAndFeedback header:nth-of-type(1) {
+  margin-bottom: 32px;
+}
+
+.submissionAndFeedback header button {
+  height: 32px;
+  /* ALT HEIGHT 24px */
+  margin-top: 0;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0px 24px;
+  margin-left: auto;
+  border-radius: 5px;
+}
+
+.submissionAndFeedback h2,
+.submissionAndFeedback h3 {
+  margin: 0;
+}
+
+.submissionAndFeedback h2 {
+  margin-bottom: 8px;
+}
+
+.submissionAndFeedback textarea {
+  margin-bottom: 8px;
+}
+
+.submissionAndFeedback a {
+  line-height: 1;
+  height: 14px;
+}
+
+/* POPUP */
+
+.submissionPanel {
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  padding: 24px;
+  display: flex;
+  min-width: 420px;
+  position: absolute;
+  border-radius: 5px;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--border-color);
+  background-color: var(--content-background);
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.75);
+}
+
+.submissionPanel * {
+  margin: 0;
+  line-height: 1;
+}
+
+.submissionPanel header {
+  flex-direction: column;
+}
+
+.submissionPanel div {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.submissionPanel div:first-of-type {
+  margin-bottom: 16px;
+}
+
+.submissionPanel input {
+  margin: 0;
+}
+
+.submissionPanel label {
+  opacity: .5;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.submissionPanel h1 {
+  margin-bottom: 14px;
+}
+
+.submissionPanel p {
+  font-weight: 300;
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: .75px;
+}
+
+.submissionPanel button {
+  width: 80px;
+  height: 24px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 5px;
+  margin: 24px 8px 0px;
+  padding: 6px 0px 18px;
+}

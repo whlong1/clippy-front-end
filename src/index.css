@@ -311,6 +311,7 @@ div>img {
 }
 
 .menu a p:first-child {
+  text-align: left;
   max-width: 260px;
   overflow: hidden;
   display: -webkit-box;
@@ -366,7 +367,8 @@ div {
 
 /* Crop long deliverable titles */
 .deliverableTitle {
-  height: 26px;
+  min-height: 27.5px;
+  line-height: 24px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -402,7 +404,7 @@ div {
   border-radius: 5px;
   background-size: 12px;
   align-items: flex-start;
-  padding: 4px 28px 0px 14px;
+  padding: 5.5px 28px 0px 14px;
   background-repeat: no-repeat;
   background-position: right 6px center;
   background-image: url("assets/icons/arrow.svg");
