@@ -44,7 +44,7 @@ const DeliverableHeader = (props) => {
 
       <section>
         <h1>
-          <ExternalLink urlString={deliverable.notionUrl}>
+          <ExternalLink urlString={deliverable.notionUrl} isTitle={true}>
             {deliverable.name}
             <img src={share} alt="share icon" />
           </ExternalLink>

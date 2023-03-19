@@ -27,7 +27,7 @@ const ShowStudentDeliverable = ({ cohortId }) => {
       <header className="header">
         <section>
           <h1>
-            <ExternalLink urlString={studentDeliverable.notionUrl}>
+            <ExternalLink urlString={studentDeliverable.notionUrl} isTitle={true}>
               {studentDeliverable.name}
               <img src={share} alt="share icon" />
             </ExternalLink>
