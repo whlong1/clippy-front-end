@@ -1,6 +1,7 @@
 import Select from 'react-select'
 
 const GroupSelect = ({ student, handleSquad }) => {
+  const studentSquad = student.squad ? student.squad : 'black'
 
   // eslint-disable-next-line
   const ikea = [
@@ -103,10 +104,9 @@ const GroupSelect = ({ student, handleSquad }) => {
       unstyled={true}
       styles={styles}
       options={options}
-      // menuIsOpen={true}
       isSearchable={false}
       onChange={handleChange}
-      defaultValue={options.find((o) => o.label === student.squad)}
+      defaultValue={options.find((o) => o.label === studentSquad)}
     />
   )
 }
