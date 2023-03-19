@@ -11,7 +11,7 @@
   max-width: 600px;
 }
 
-.onboarding header {
+.onboarding>section>header {
   display: flex;
   flex-direction: row;
   padding: 0px 0px 32px;
@@ -55,7 +55,6 @@
   border-radius: 5px;
 }
 
-
 .onboarding select {
   width: 100%;
   opacity: .5;
@@ -92,29 +91,6 @@
   margin-right: 16px;
   padding-left: 16px;
   padding-right: 16px;
-}
-
-.onboarding .shell {
-  width: 100%;
-  padding-top: 24px;
-  border-radius: 5px;
-  background: #101115;
-  padding: 24px 16px 16px;
-  border: 1px solid var(--border-color);
-}
-
-.onboarding .shell  header button {
-  margin-left: auto;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.onboarding .shell  header {
-  align-items: center;
-}
-
-.onboarding .shell  header h1 {
-  margin: 0;
 }
 
 .adminOnboard form button {

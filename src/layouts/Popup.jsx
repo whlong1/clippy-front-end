@@ -8,12 +8,16 @@ const Popup = ({ isOpen, children }) => {
     right: '0',
     bottom: '0',
     zIndex: '1',
+    width: '100%',
+    height: '100vh',
+    padding: '24px',
+    overflowY: 'auto',
+    maxHeight: '100vh',
     position: 'absolute',
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    display: isOpen ? 'flex' : 'none',
     alignItems: 'center',
     justifyContent: 'center',
-    overflowY: 'scroll',
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    display: isOpen ? 'flex' : 'none',
   }
 
   return (

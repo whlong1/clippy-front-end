@@ -1,0 +1,50 @@
+.selectCohortPopup {
+  width: 460px;
+  display: flex;
+  padding-top: 24px;
+  border-radius: 5px;
+  background: #101115;
+  flex-direction: column;
+  padding: 24px 16px 16px;
+  border: 1px solid var(--border-color);
+}
+
+.selectCohortPopup header {
+  align-items: center;
+}
+
+.selectCohortPopup header h1 {
+  margin: 0;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.selectCohortPopup form {
+  width: 100%;
+}
+
+.selectCohortPopup button {
+  width: 100%;
+}
+
+.selectCohortPopup form button {
+  margin-bottom: 16px;
+}
+
+.selectCohortPopup form select {
+  width: 100%;
+  opacity: .5;
+  padding: 8px;
+  display: flex;
+  margin: 24px 0;
+  font-size: 14px;
+  appearance: none;
+  border-radius: 5px;
+  background: var(--input-background);
+  border: 1px solid var(--border-color);
+  
+  background-size: 12px;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-image: url("../../assets/icons/arrow.svg");
+}

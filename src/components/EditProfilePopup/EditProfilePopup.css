@@ -1,0 +1,54 @@
+.editProfile {
+  outline: none;
+  width: 400px;
+  padding: 24px;
+  display: flex;
+  overflow-y: auto;
+  position: relative;
+  border-radius: 5px;
+  align-items: center;
+  flex-direction: column;
+  max-width: calc(100vw - 2rem);
+  max-height: calc(100vh - 2rem);
+  border: 1px solid var(--border-color);
+  background-color: var(--content-background);
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.75);
+}
+
+.editProfile header {
+  width: 100%;
+  display: flex;
+}
+
+.editProfile button {
+  margin: 0;
+  width: 100%;
+  padding: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.editProfile section form button {
+  margin-bottom: 16px;
+}
+
+.editProfile form label {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.editProfile section,
+.editProfile form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.editProfile header {
+  margin-bottom: 16px;
+}

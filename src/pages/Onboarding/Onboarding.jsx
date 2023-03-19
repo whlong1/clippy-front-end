@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react"
 
 // Components
-import Popup from '../../layouts/Popup.jsx'
 import CohortForm from "../../features/Admin/CohortForm.jsx"
 import JoinCohort from '../../components/JoinCohort/JoinCohort'
 import ProfileForm from "../../components/ProfileForm/ProfileForm"
+import EditProfilePopup from "../../components/EditProfilePopup/EditProfilePopup.jsx"
+import SelectCohortPopup from "../../components/SelectCohortPopup/SelectCohortPopup.jsx"
 
 // Services
 import * as adminService from '../../services/adminService'
@@ -95,28 +96,19 @@ const Onboarding = (props) => {
         </div>
       }
 
-      <section>
-        <Popup isOpen={isJoinOpen}>
-          <section className="shell">
-            <header>
-              <h1>Select A Cohort</h1>
-              <button onClick={() => setIsJoinOpen(false)}>CANCEL</button>
-            </header>
-            <h2>Select the cohort you wish to join</h2>
-            <JoinCohort {...profileProps} setIsJoinOpen={setIsJoinOpen} />
-          </section>
-        </Popup>
-        <Popup isOpen={isEditOpen}>
-          <section className="shell">
-            <header>
-              <h1>Edit Profile</h1>
-              <button onClick={() => setIsEditOpen(false)}>CANCEL</button>
-            </header>
-            <h2>Please enter your profile information below</h2>
-            <ProfileForm {...profileProps} setIsEditOpen={setIsEditOpen} />
-          </section>
-        </Popup>
-      </section>
+      <EditProfilePopup
+        profile={profile}
+        isOpen={isEditOpen}
+        setProfile={setProfile}
+        setIsOpen={setIsEditOpen}
+      />
+
+      <SelectCohortPopup
+        profile={profile}
+        isOpen={isJoinOpen}
+        setProfile={setProfile}
+        setIsOpen={setIsJoinOpen}
+      />
     </>
   )
 

@@ -4,8 +4,6 @@
 
 • check math on deliverable and attendance percentages
 
-• edit profile cannot be used as a popup, scroll issue
-
 ## Stretch Goals
 
 • Add icons to attendance rows

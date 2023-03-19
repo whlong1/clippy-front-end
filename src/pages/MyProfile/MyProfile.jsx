@@ -2,10 +2,9 @@ import { useState } from "react"
 import "./MyProfile.css"
 
 // Components
-import Popup from "../../layouts/Popup"
-import SetCohortPopup from "../../components/SetCohortPopup/SetCohortPopup"
-import ProfileForm from "../../components/ProfileForm/ProfileForm"
 import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
+import SetCohortPopup from "../../components/SelectCohortPopup/SelectCohortPopup"
+import EditProfilePopup from "../../components/EditProfilePopup/EditProfilePopup"
 import ContactInformation from "../../components/ContactInformation/ContactInformation"
 
 const MyProfile = (props) => {
@@ -22,18 +21,12 @@ const MyProfile = (props) => {
         setProfile={setProfile}
         setIsJoinOpen={setIsJoinOpen}
       />
-      <Popup isOpen={isEditOpen}>
-        <div className="confirmation">
-          <header>
-            <h1>Edit Profile</h1>
-          </header>
-          <section>
-            <ProfileForm profile={profile} setProfile={setProfile} />
-            <button onClick={() => setIsEditOpen(false)}>CANCEL</button>
-          </section>
-        </div>
-      </Popup>
-
+      <EditProfilePopup
+        profile={profile}
+        isOpen={isEditOpen}
+        setProfile={setProfile}
+        setIsOpen={setIsEditOpen}
+      />
       <header className="header">
         <section>
           <h1>Profile</h1>

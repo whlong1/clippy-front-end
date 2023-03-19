@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 // Services
 import * as cohortService from '../../services/cohortService'
 
-const JoinCohort = ({ profile, setProfile, setIsJoinOpen }) => {
+const JoinCohort = ({ profile, setProfile, setIsOpen }) => {
   const [cohorts, setCohorts] = useState([])
   const [errorMsg, setErrorMsg] = useState('')
   const [selectedCohortId, setSelectedCohortId] = useState('')
@@ -13,7 +13,7 @@ const JoinCohort = ({ profile, setProfile, setIsJoinOpen }) => {
     try {
       setErrorMsg('')
       const res = await cohortService.addProfileToWaitlist(selectedCohortId, profile._id)
-      if (setIsJoinOpen) setIsJoinOpen(false)
+      if (setIsOpen) setIsOpen(false)
       setProfile(res)
     } catch (err) {
       setErrorMsg(err.message)
