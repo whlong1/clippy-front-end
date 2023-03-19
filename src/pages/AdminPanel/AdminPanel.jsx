@@ -25,13 +25,11 @@ const AdminPanel = () => {
     const token = await getAccessTokenSilently()
     const data = { user_metadata: { linkedin: "william-hunter-long" } }
     const res = await adminService.updateUser(token, userId, data)
-    console.log('User Update:', res)
   }
 
   const handleGetUser = async (userId) => {
     const token = await getAccessTokenSilently()
     const res = await adminService.getUser(token, userId)
-    console.log(res)
   }
 
   const handleDeleteUser = async (userId) => {
@@ -39,8 +37,6 @@ const AdminPanel = () => {
     await adminService.deleteUser(token, userId)
     setUsers(users.filter((u) => u.user_id !== userId))
   }
-
-  console.log('Users Array:', users)
 
   return (
     <main>

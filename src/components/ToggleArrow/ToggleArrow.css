@@ -1,0 +1,10 @@
+.toggleArrow img {
+  width: 12px;
+  overflow: clip;
+  border-radius: 50%;
+}
+
+.toggleArrow:hover {
+  background: none !important;
+  background-color: none !important;
+}

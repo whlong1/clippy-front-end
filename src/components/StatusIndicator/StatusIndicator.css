@@ -9,9 +9,9 @@
   margin: 3px 32px 3px 0px;
 }
 
-.status img {
+.status div {
   margin: 0;
-  opacity: .5;
-  width: 16px;
+  width: 18px;
+  opacity: .65;
   border-radius: 0;
 }

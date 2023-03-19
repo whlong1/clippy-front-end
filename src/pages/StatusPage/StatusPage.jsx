@@ -1,18 +1,18 @@
-const StatusPage = (props) => {
-  // This is a 'page' component.
-  // Only use this component outside of AppRouter
+import "./StatusPage.css"
 
-  // Need additional error handling
+const StatusPage = (props) => {
   const { error, status } = props
 
+  // Animation would work well here.
+
   if (error) return (
-    <main className="page">
+    <main className="statusPage">
       <h1>Oopsy Daisy! {error.message}</h1>
     </main>
   )
 
   return (
-    <main className="page">
+    <main className="statusPage">
       <h1>{status}</h1>
     </main>
   )

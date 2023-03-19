@@ -1,49 +1,50 @@
 # clippy-front-end
 
-https://tanstack.com/
-
-https://auth0.com/docs/quickstart/spa/react/interactive
-
-## Issues
-
-• join cohort won't work for admins setting default, need new functions.
-  admin will need to select their desired role for the cohort as well.
-
-• if github username is missing, other users photo appears in show person
-
-• fix styling on delete deliverable popup - make consistent popup styling
-
-• scroll issue on edit profile onboarding
-
-• width of subheader class should scale based on content.
-
-• on new attendance, if no date is selected manually and the default is used, the date is one day behind
-  works if the date is selected manually.
-  Default date works with new deliverable!
-
-• daylight savings issue in new deliverable
-
 ## Todos
 
-• join cohorts should use indexCohorts hook
+• check math on deliverable and attendance percentages
 
-• weird loading is caused by key on popup, see if a useeffect will work instead
+• edit profile cannot be used as a popup, scroll issue
 
-• style my profile page
+## Stretch Goals
 
-• order deliverables correctly
+• Add icons to attendance rows
 
-• need to require requirement select on new deliverable
+• JoinCohorts should use indexCohorts hook.
 
-• move contact information into left column on show person
+• Animation to StatusPage + ContentStatus
 
-• on hover effect for links
+• Audit popup styling. Use single stylesheet for consistency.
 
 • When awaiting instructor approval during onboarding, should have message that says waiting to join x cohort
 
-• make sure date issues from previous iteration are resolved on deploy
+• If a student wants to change cohorts, better to create separate functionality. Only allow student to access current cohort. Archive should be available through some other means
 
-## Notes
+• Add start time to Cohort model and form
+
+• Consider adding icons to forms
+
+• Students should see there stats on MyProfile page
+
+• From MyProfile, allow admins join to set a new default cohort (need to add them to cohort model, skip approval stage). Also, allow admins to join a cohort without updating their default cohort. At the moment, multiple cohorts can be joined during onboarding, but only the most recent will be set as the user's default.
+
+• Audit keys (need consistent key pattern for all resources)
+
+• For security, might be worth refactoring how admin and student routes are handled
+
+
+## Issues
+
+• Temporary fix added to ```getDefaultDate``` helper function in ```src/features/Deliverables/helpers/helpers.js getDefaultDate```
+
+• Issue appears to be resolved: If github username is missing, other users photo appears in show person
+
+• Issue appears to be resolved: On new attendance, if no date is selected manually and the default is used, the date is one day behind
+  works if the date is selected manually. Default date works with new deliverable
+
+• REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
+
+  ## Notes
 
 • React Query Keys: https://tkdodo.eu/blog/effective-react-query-keys
 
@@ -53,22 +54,10 @@ https://auth0.com/docs/quickstart/spa/react/interactive
 
 • Querey Key Factories: https://tkdodo.eu/blog/effective-react-query-keys#use-query-key-factories
 
-
 ## Tech
 
 • https://github.com/uiwjs/react-codemirror
 
+• https://tanstack.com/
 
-## Stretch Goals
-
-• Add start time to cohort model and form
-
-• could add icons to forms
-
-• Students should see there stats on MyProfile page
-
-• Audit keys (need consistent key pattern for all resources)
-
-• For security, might be worth refactoring how admin and student routes are handled
-
-• REFRESH TOKEN ISSUE SAFARI : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
+• https://auth0.com/docs/quickstart/spa/react/interactive

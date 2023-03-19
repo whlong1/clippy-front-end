@@ -1,0 +1,18 @@
+.counter {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  margin-left: auto;
+  margin-right: 12px;
+  border-radius: 50%;
+  background: var(--icon-background);
+}
+
+.counter p {
+  margin: 0;
+  width: 100%;
+  opacity: .5;
+  font-size: 10px;
+  text-align: center;
+  padding-bottom: 1px;
+}

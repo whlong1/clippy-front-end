@@ -35,7 +35,14 @@
 }
 
 .attendanceByMonth section  {
-  opacity: .7;
   height: 24px;
   margin-bottom: 16px;
+}
+
+.attendanceByMonth section a header h2 {
+  opacity: .7;
+}
+
+.attendanceByMonth section a header:hover h2 {
+  opacity: 1;
 }

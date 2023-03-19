@@ -1,19 +1,15 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import defaultPhoto from '../../assets/icons/defaultPhoto.svg'
 
 const ProfilePicture = ({ gitHubUserName, size }) => {
-  const [photo, setPhoto] = useState(defaultPhoto)
-
-  useEffect(() => {
-    if (gitHubUserName) setPhoto(`https://github.com/${gitHubUserName}.png`)
-  }, [gitHubUserName])
+  const [urlError, setUrlError] = useState(false)
 
   return (
     <img
-      src={photo}
       alt="github-profile"
-      onError={() => setPhoto(defaultPhoto)}
+      onError={() => setUrlError(true)}
       style={{ width: size, height: size }}
+      src={urlError ? defaultPhoto : `https://github.com/${gitHubUserName}.png`}
     />
   )
 }

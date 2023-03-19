@@ -28,7 +28,11 @@ body {
   --subheader-text-color: white;
   --content-background: #101115;
   --input-background: #080b0d;
-  /* --body-text-color: #a0a0a0; */
+  --icon-background: #2F2E37;
+
+  --btn-hover-background: #2c2c2c;
+  --btn-active-background: #1a1a1f;
+
 
   --font-l: 24px;
   --font-reg: 16px;
@@ -106,9 +110,11 @@ main>section {
 }
 
 /* https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
-main>section  {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+main>section {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 /* Hide default scrollbar */
@@ -185,9 +191,6 @@ nav section header button {
   border: none;
 }
 
-nav section header button img {
-  width: 12px;
-}
 
 /* ProfileInfo CSS */
 div>img {
@@ -210,10 +213,9 @@ div>img {
   padding-top: 4px;
 }
 
+/* subheaders in show views */
 .header section>div>* {
-  /* subheaders in show views */
   margin: 0;
-  width: 140px;
   margin-right: 32px;
 }
 
@@ -263,7 +265,8 @@ div>img {
   align-items: center;
 }
 
-.header h3 img {
+.header h3 img,
+.header h3 svg {
   width: 12px;
   height: 16px;
   border-radius: 0;
@@ -308,6 +311,7 @@ div>img {
 }
 
 .menu a p:first-child {
+  max-width: 260px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 1;
@@ -358,6 +362,17 @@ div {
 .externalUrlsContainer .externalLink {
   font-size: 14px;
   margin-left: 24px !important;
+}
+
+/* Crop long deliverable titles */
+.deliverableTitle {
+  height: 26px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
 }
 
 .externalLink img {
@@ -427,7 +442,7 @@ div {
   align-items: center;
 }
 
-.submissionPanel button{
+.submissionPanel button {
   height: 24px;
   font-size: 12px;
   font-weight: 600;
@@ -524,3 +539,37 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 }
 
 
+/* HOVER AND ACTIVE */
+button:hover {
+  background-color: var(--btn-hover-background);
+}
+
+button:active {
+  background-color: var(--btn-active-background);
+}
+
+button:disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* APP NAV LINKS & BUTTONS */
+li a img:hover,
+#logout img:hover {
+  opacity: .85;
+}
+
+/* ROWS */
+a:hover p,
+a:hover h2 {
+  opacity: .85;
+}
+
+a header:hover h2 {
+  opacity: .85;
+}
+
+/* SELECT */
+select:hover {
+  opacity: .85;
+}

@@ -27,3 +27,18 @@
   background-repeat: no-repeat;
   background-position: right 0px center;
 }
+
+.cohortSelectStatus {
+  padding: 0;
+  width: 100%;
+  opacity: .5;
+  border: none;
+  display: flex;
+  height: 15.5px;
+  margin-top: 5px;
+  font-size: 14px;
+  appearance: none;
+  line-height: 1.05;
+  margin-bottom: 28px;
+  background-size: 12px;
+}

@@ -1,44 +1,42 @@
 import './StatusIndicator.css'
 
 // Assets
-import missing from '../../assets/icons/status/missing.svg'
-import assigned from '../../assets/icons/status/assigned.svg'
-import complete from '../../assets/icons/status/complete.svg'
-import pendingAudit from '../../assets/icons/status/pending.svg'
-import incomplete from '../../assets/icons/status/incomplete.svg'
+import { ReactComponent as MissingIcon } from '../../assets/icons/status/missing.svg'
+import { ReactComponent as CompleteIcon } from '../../assets/icons/status/complete.svg'
+import { ReactComponent as AssignedIcon } from '../../assets/icons/status/assigned.svg'
+import { ReactComponent as PendingAuditIcon } from '../../assets/icons/status/pending.svg'
+import { ReactComponent as IncompleteIcon } from '../../assets/icons/status/incomplete.svg'
 
-import late from '../../assets/icons/attendance/late.svg'
-import absent from '../../assets/icons/attendance/absent.svg'
-import closed from '../../assets/icons/attendance/closed.svg'
-import present from '../../assets/icons/attendance/present.svg'
-import holiday from '../../assets/icons/attendance/holiday.svg'
-import exception from '../../assets/icons/attendance/exception.svg'
-import withdrawn from '../../assets/icons/attendance/withdrawn.svg'
+import { ReactComponent as LateIcon } from '../../assets/icons/attendance/late.svg'
+import { ReactComponent as AbsentIcon } from '../../assets/icons/attendance/absent.svg'
+import { ReactComponent as ClosedIcon } from '../../assets/icons/attendance/closed.svg'
+import { ReactComponent as PresentIcon } from '../../assets/icons/attendance/present.svg'
+import { ReactComponent as HolidayIcon } from '../../assets/icons/attendance/holiday.svg'
+import { ReactComponent as ExceptionIcon } from '../../assets/icons/attendance/exception.svg'
+import { ReactComponent as WithdrawnIcon } from '../../assets/icons/attendance/withdrawn.svg'
 
 const StatusIndicator = ({ status }) => {
   const lookup = {
-    // Deliverable
-    missing,
-    assigned,
-    complete,
-    incomplete,
-    pendingAudit,
+    // Deliverable:
+    missing: <div><MissingIcon fill="#DB4C4C" /></div>, // Red
+    assigned: <div><AssignedIcon fill="#5B8FD8" /></div>, // Blue
+    complete: <div><CompleteIcon fill="#70C760" /></div>, // Green
+    incomplete: <div><IncompleteIcon fill="#FFB158" /></div>, // Orange
+    pendingAudit: <div><PendingAuditIcon fill="#5E5E5E" /></div>, // Grey
 
-    // Attendance
-    L: late,
-    A: absent,
-    SC: closed,
-    P: present,
-    H: holiday,
-    W: withdrawn,
-    EC: exception,
+    // Attendance:
+    L: <div><LateIcon fill="#FFB158" /></div>, // Orange
+    A: <div><AbsentIcon fill="#DB4C4C" /></div>, // Red
+    SC: <div><ClosedIcon fill="#5B8FD8" /></div>, // Blue
+    P: <div><PresentIcon fill="#70C760" /></div>, // Green
+    H: <div><HolidayIcon fill="#5B8FD8" /></div>, // Blue
+    W: <div><WithdrawnIcon fill="#5E5E5E" /></div>, // Grey
+    EC: <div><ExceptionIcon fill="#5B8FD8" /></div>, // Blue
   }
-
-  // Add style lookup object
 
   return (
     <div className="status" >
-      <img src={lookup[status]} alt="status" />
+      {lookup[status]}
     </div>
   )
 }

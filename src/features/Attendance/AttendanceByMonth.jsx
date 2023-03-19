@@ -40,7 +40,7 @@ const AttendanceByMonth = () => {
               <img src={completionIcon} alt="completion circle" />
               Attendance Rate
             </h3>
-            <p>{attendanceRate.toFixed(2)} % Attendance</p>
+            <p>{attendanceRate.toFixed()}% Attendance</p>
           </div>
         </section>
       </header>

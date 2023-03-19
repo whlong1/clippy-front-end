@@ -1,5 +1,4 @@
 const buildStatusArray = (arr) => {
-  console.log('arr',arr)
   if (!arr) return []
 
   const { students, inactive } = arr

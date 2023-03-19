@@ -2,10 +2,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './styles/StudentView.css'
 
-// Assets
-import arrow from '../../../assets/icons/arrow.svg'
-import downArrow from '../../../assets/icons/downArrow.svg'
-
 // Helpers
 import { getLocaleDateString } from '../helpers/helpers'
 
@@ -13,6 +9,7 @@ import { getLocaleDateString } from '../helpers/helpers'
 import MenuLayout from '../../../layouts/MenuLayout'
 import CompletionTracker from './CompletionTracker'
 import MenuStatus from '../../../components/MenuStatus/MenuStatus'
+import ToggleArrow from '../../../components/ToggleArrow/ToggleArrow'
 import StatusIndicator from '../../../components/StatusIndicator/StatusIndicator'
 import { useIndexStudentDeliverables } from '../../../hooks/useIndexStudentDeliverables'
 
@@ -27,6 +24,24 @@ const StudentDeliverablesMenu = (props) => {
   const newFeedback = studentDeliverables.length
     ? studentDeliverables.filter((sd) => sd.hasNewStatus) : []
 
+
+  const sortDeliverables = (d) => d.sort((a, b) => (
+    new Date(a.dueDate) - new Date(b.dueDate))
+  )
+
+  const upcomingDeliverables = sortDeliverables(
+    studentDeliverables.length
+      ? studentDeliverables.filter((sd) => sd.status !== 'complete')
+      : []
+  )
+
+  const completedDeliverables = sortDeliverables(
+    studentDeliverables.length
+      ? studentDeliverables.filter((sd) => sd.status === 'complete')
+      : []
+  )
+
+
   return (
     <MenuLayout {...props}>
       <span>
@@ -37,9 +52,12 @@ const StudentDeliverablesMenu = (props) => {
 
       <section>
         <header>
-          <h2>{studentDeliverables.length ? 'Deliverables' : 'No Deliverables Assigned'}</h2>
+          <h2>{upcomingDeliverables.length
+            ? 'Assigned Deliverables'
+            : 'No Deliverables Assigned'
+          }</h2>
         </header>
-        {studentDeliverables.length && studentDeliverables.map((sd) => (
+        {upcomingDeliverables.map((sd) => (
           <Link className='sdRow' key={sd._id} to={`/deliverables/${sd._id}`}>
             <StatusIndicator status={sd.status} />
             <h2>{sd.name}</h2>
@@ -48,13 +66,26 @@ const StudentDeliverablesMenu = (props) => {
         ))}
       </section>
 
-      {!!newFeedback.length &&
+      {!!completedDeliverables.length &&
         <section>
           <header>
+            <h2>Completed Deliverables</h2>
+          </header>
+          {completedDeliverables.map((sd) => (
+            <Link className='sdRow' key={sd._id} to={`/deliverables/${sd._id}`}>
+              <StatusIndicator status={sd.status} />
+              <h2>{sd.name}</h2>
+              <p>{getLocaleDateString(sd.dueDate)}</p>
+            </Link>
+          ))}
+        </section>
+      }
+
+      {!!newFeedback.length &&
+        <section>
+          <header onClick={() => setIsOpen(!isOpen)}>
             <h2>New Feedback</h2>
-            <button onClick={() => setIsOpen(!isOpen)}>
-              <img src={isOpen ? downArrow : arrow} alt="An arrow" />
-            </button>
+            <ToggleArrow isOpen={isOpen} />
           </header>
           {isOpen && newFeedback.map((sd) => (
             <Link className='sdRow' key={sd._id} to={`/deliverables/${sd._id}`}>

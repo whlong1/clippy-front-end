@@ -1,8 +1,13 @@
 import "./IdentityHeader.css"
 
-const IdentityHeader = ({ person, textAlign }) => {
+// If the IdentityHeader is used in ShowPerson, we display the current role,
+// as this is relevant to a given cohort. If the header is used in MyProfile,
+// no role is displayed, as this is dependent on the selected cohort.
+
+const IdentityHeader = ({ person, textAlign, displayRole }) => {
 
   const textAlignment = { textAlign: textAlign }
+  const conditionalMargin = displayRole ? {} : { marginTop: '32px' }
 
   const formattedRole = !person.role ? 'Pending' : person.role[person.role.length - 1] === 's'
     ? person.role[0].toUpperCase() + person.role.slice(1, -1)
@@ -14,8 +19,8 @@ const IdentityHeader = ({ person, textAlign }) => {
 
   return (
     <header className="identityHeader">
-      <h3 style={textAlignment}>{formattedRole}</h3>
-      <h1 style={textAlignment}>{fullName}</h1>
+      {displayRole && <h3 style={textAlignment}>{formattedRole}</h3>}
+      <h1 style={{...textAlignment, ...conditionalMargin}}>{fullName}</h1>
       <p style={textAlignment}>{person.preferredPronouns}</p>
     </header>
   )
