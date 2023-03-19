@@ -5,9 +5,8 @@ import { useRoleManager } from "../../hooks/useRoleManager"
 import { useIndexCohorts } from "../../hooks/useIndexCohorts"
 
 // Components
-import SelectRole from './SelectRole'
-import Popup from "../../layouts/Popup"
 import ContentStatus from "../../components/ContentStatus/ContentStatus"
+import ChangeRolePopup from "./components/ChangeRolePopup/ChangeRolePopup"
 
 const RolePanel = ({ person, cohortId }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -41,19 +40,18 @@ const RolePanel = ({ person, cohortId }) => {
         </button>
       }
 
-      {!isWaitlisted && !isOpen &&
+      {!isWaitlisted &&
         <button onClick={() => setIsOpen(!isOpen)}>
           CHANGE ROLE
         </button>
       }
 
-      <Popup key={person._id} isOpen={isOpen}>
-        <SelectRole
-          person={person}
-          setIsOpen={setIsOpen}
-          handleMutate={handleMutate}
-        />
-      </Popup>
+      <ChangeRolePopup
+        person={person}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        handleMutate={handleMutate}
+      />
       
     </section>
   )

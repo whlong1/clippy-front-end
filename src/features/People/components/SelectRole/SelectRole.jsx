@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import "./SelectRole.css"
 
 const SelectRole = ({ person, setIsOpen, handleMutate }) => {
   const [changeRoleData, setChangeRoleData] = useState({})
@@ -16,7 +17,7 @@ const SelectRole = ({ person, setIsOpen, handleMutate }) => {
   }, [person])
 
   return (
-    <div className="roleConfirmation">
+    <div className="selectRole">
       <header>
         <h1>Change Role</h1>
         <p>Please select a role from the menu below.</p>

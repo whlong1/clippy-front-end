@@ -4,6 +4,12 @@
 
 • check math on deliverable and attendance percentages
 
+• check date issues
+
+• create test users and data
+
+• profile pic issue loading
+
 ## Stretch Goals
 
 • Add icons to attendance rows
