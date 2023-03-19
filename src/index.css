@@ -30,6 +30,10 @@ body {
   --input-background: #080b0d;
   --icon-background: #2F2E37;
 
+  --btn-hover-background: #2c2c2c;
+  --btn-active-background: #1a1a1f;
+
+
   --font-l: 24px;
   --font-reg: 16px;
   --font-subheader: 14px;
@@ -106,9 +110,11 @@ main>section {
 }
 
 /* https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
-main>section  {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+main>section {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 /* Hide default scrollbar */
@@ -424,7 +430,7 @@ div {
   align-items: center;
 }
 
-.submissionPanel button{
+.submissionPanel button {
   height: 24px;
   font-size: 12px;
   font-weight: 600;
@@ -521,3 +527,26 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 }
 
 
+/* HOVER AND ACTIVE */
+button:hover {
+  background-color: var(--btn-hover-background);
+}
+
+button:active {
+  background-color: var(--btn-active-background);
+}
+
+button:disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* APP NAV LINKS & BUTTONS */
+li a img:hover, #logout img:hover {
+  opacity: 1;
+}
+
+/* ROWS */
+a:hover p {
+  opacity: 1;
+}
