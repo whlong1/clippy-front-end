@@ -19,10 +19,10 @@ const StatusIndicator = ({ status }) => {
   const lookup = {
     // Deliverable:
     missing: <div><MissingIcon fill="#DB4C4C" /></div>, // Red
-    assigned: <div><AssignedIcon fill="#5B8FD8" /></div>, // Blue
+    assigned: <div><AssignedIcon fill="#888888" /></div>, // Grey
     complete: <div><CompleteIcon fill="#70C760" /></div>, // Green
     incomplete: <div><IncompleteIcon fill="#FFB158" /></div>, // Orange
-    pendingAudit: <div><PendingAuditIcon fill="#5E5E5E" /></div>, // Grey
+    pendingAudit: <div><PendingAuditIcon fill="#5B8FD8" /></div>, // Blue
 
     // Attendance:
     L: <div><LateIcon fill="#FFB158" /></div>, // Orange
@@ -30,7 +30,7 @@ const StatusIndicator = ({ status }) => {
     SC: <div><ClosedIcon fill="#5B8FD8" /></div>, // Blue
     P: <div><PresentIcon fill="#70C760" /></div>, // Green
     H: <div><HolidayIcon fill="#5B8FD8" /></div>, // Blue
-    W: <div><WithdrawnIcon fill="#5E5E5E" /></div>, // Grey
+    W: <div><WithdrawnIcon fill="#888888" /></div>, // Grey
     EC: <div><ExceptionIcon fill="#5B8FD8" /></div>, // Blue
   }
 
