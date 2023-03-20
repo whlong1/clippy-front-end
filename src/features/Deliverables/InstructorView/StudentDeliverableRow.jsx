@@ -9,11 +9,8 @@ import StatusIndicator from "../../../components/StatusIndicator/StatusIndicator
 const StudentDeliverableRow = ({ deliverableId, student, handleSquad }) => {
   const { _id: studentDeliverableId, isWithdrawn } = student
   const path = `/deliverables/${deliverableId}/students/${studentDeliverableId}/grade`
-  
-  const studentDeliverableStatus = isWithdrawn && student.status === 'missing'
-    ? 'W'
-    : student.status
 
+  const studentDeliverableStatus = isWithdrawn ? 'W' : student.status
 
   return (
     <div className="row">
