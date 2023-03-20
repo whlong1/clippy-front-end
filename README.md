@@ -4,10 +4,6 @@
 
 • side menu has scroll bar
 
-• capitalize ta and ia on show person
-
-• useAttendanceManager create cache ordering (invalidate)
-
 • add join cohort back to myprofile page
 
 • width of person name cell on show deliverable

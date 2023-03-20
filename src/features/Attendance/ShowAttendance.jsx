@@ -61,7 +61,7 @@ const ShowAttendance = ({ user, cohortId }) => {
         handleRedirect={handleRedirect}
       />
       
-      {attendance.students.map((student) => (
+      {attendance?.students.map((student) => (
         <StudentStatusRow key={student._id} student={student} />
       ))}
     </section>
