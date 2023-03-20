@@ -2,8 +2,6 @@
 
 ## Todos
 
-• add join cohort back to myprofile page
-
 • side menu has scroll bar
 
 • width of person name cell on show deliverable

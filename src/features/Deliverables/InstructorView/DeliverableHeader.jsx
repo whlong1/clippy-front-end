@@ -13,7 +13,7 @@ const DeliverableHeader = (props) => {
   const {
     setIsOpen,
     deliverable,
-    markAllComplete
+    markAllComplete,
   } = props
 
   const [copied, setCopied] = useState(false)
@@ -41,7 +41,6 @@ const DeliverableHeader = (props) => {
 
   return (
     <header className="header">
-
       <section>
         <h1>
           <ExternalLink urlString={deliverable.notionUrl} isTitle={true}>
@@ -49,7 +48,6 @@ const DeliverableHeader = (props) => {
             <img src={share} alt="share icon" />
           </ExternalLink>
         </h1>
-
         <button onClick={markAllComplete}>
           RESOLVE
         </button>
@@ -59,7 +57,6 @@ const DeliverableHeader = (props) => {
         <button onClick={handleCopy}>
           {copied ? "COPIED" : "COPY"}
         </button>
-
       </section>
 
       <section>
@@ -67,7 +64,6 @@ const DeliverableHeader = (props) => {
         <RequirementTags deliverable={deliverable} />
         <SubmissionTracker deliverable={deliverable} />
       </section>
-
     </header>
   )
 }

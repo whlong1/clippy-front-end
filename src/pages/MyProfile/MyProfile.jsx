@@ -36,12 +36,10 @@ const MyProfile = (props) => {
           </button>}
         </section>
       </header>
-
       <section>
         <ProfilePicture gitHubUserName={profile.gitHubUserName} size="120px" />
         <ContactInformation person={profile} />
       </section>
-
     </main>
   )
 }

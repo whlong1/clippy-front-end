@@ -7,10 +7,10 @@ import ProfileInfo from "../../../components/ProfileInfo/ProfileInfo"
 import StatusIndicator from "../../../components/StatusIndicator/StatusIndicator"
 
 const StudentDeliverableRow = ({ deliverableId, student, handleSquad }) => {
-  const { _id: studentDeliverableId, hasStudentWithdrawn } = student
+  const { _id: studentDeliverableId, isWithdrawn } = student
   const path = `/deliverables/${deliverableId}/students/${studentDeliverableId}/grade`
-
-  const studentDeliverableStatus = hasStudentWithdrawn && student.status === 'missing'
+  
+  const studentDeliverableStatus = isWithdrawn && student.status === 'missing'
     ? 'W'
     : student.status
 
