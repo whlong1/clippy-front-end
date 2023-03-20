@@ -19,12 +19,21 @@
   margin-bottom: 16px;
 }
 
+.selectCohortPopup p {
+  font-size: 14px;
+}
+
 .selectCohortPopup form {
   width: 100%;
 }
 
 .selectCohortPopup button {
   width: 100%;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 5px;
+  margin-bottom: 4px;
 }
 
 .selectCohortPopup form button {

@@ -3,23 +3,25 @@ import "./MyProfile.css"
 
 // Components
 import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
-import SetCohortPopup from "../../components/SelectCohortPopup/SelectCohortPopup"
 import EditProfilePopup from "../../components/EditProfilePopup/EditProfilePopup"
+import SelectCohortPopup from "../../components/SelectCohortPopup/SelectCohortPopup"
 import ContactInformation from "../../components/ContactInformation/ContactInformation"
 
 const MyProfile = (props) => {
-  const { profile, setProfile } = props
+  const { user, profile, setProfile } = props
   const [isEditOpen, setIsEditOpen] = useState(false)
   const [isJoinOpen, setIsJoinOpen] = useState(false)
-  const featureReady = false
+
+  // conditionally render change cohort only if student is withdrawn?
 
   return (
     <main className="myProfile" style={{ position: 'relative' }}>
-      <SetCohortPopup
+      <SelectCohortPopup
         profile={profile}
-        isJoinOpen={isJoinOpen}
+        isOpen={isJoinOpen}
         setProfile={setProfile}
-        setIsJoinOpen={setIsJoinOpen}
+        setIsOpen={setIsJoinOpen}
+        notifyAdmin={user.isAdmin}
       />
       <EditProfilePopup
         profile={profile}
@@ -31,10 +33,7 @@ const MyProfile = (props) => {
         <section>
           <h1>Profile</h1>
           <button onClick={() => setIsEditOpen(true)}>EDIT PROFILE</button>
-
-          {featureReady && props.user.isAdmin &&
-            <button onClick={() => setIsJoinOpen(true)}>CHANGE DEFAULT COHORT</button>
-          }
+          <button onClick={() => setIsJoinOpen(true)}>CHANGE COHORT</button>
         </section>
       </header>
 
