@@ -1,3 +1,6 @@
+import "./ProfileInfo.css"
+
+// Components
 import ProfilePicture from "../ProfilePicture/ProfilePicture"
 
 const ProfileInfo = ({ profile }) => {
@@ -14,7 +17,8 @@ const ProfileInfo = ({ profile }) => {
   }
 
   return (
-    <div style={{ flexDirection: 'row', alignItems: 'center' }}>
+    // <div style={{ flexDirection: 'row', alignItems: 'center' }}>
+    <div className="profileInfo">
       <ProfilePicture gitHubUserName={gitHubUserName} size='24px' />
       <p>{getFullName()}</p>
     </div>

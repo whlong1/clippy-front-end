@@ -1,0 +1,14 @@
+.profileInfo {
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
+.profileInfo p {
+  text-align: left;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+}
