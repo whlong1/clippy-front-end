@@ -14,6 +14,8 @@ const MyProfile = (props) => {
 
   // conditionally render change cohort only if student is withdrawn?
 
+  console.log(profile)
+
   return (
     <main className="myProfile" style={{ position: 'relative' }}>
       <SelectCohortPopup
