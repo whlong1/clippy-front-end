@@ -2,7 +2,7 @@
 
 ## Todos
 
-• check date issues
+• landing page welcome back option bug
 
 • Oopsie daisies message too big on no students attendance
 
@@ -11,6 +11,10 @@
 • capitalize ta and ia on show person
 
 • useAttendanceManager create cache ordering (invalidate)
+
+• add join cohort back to myprofile page
+
+• remove date console logs
 
 
 ## Stretch Goals
