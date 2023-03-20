@@ -9,9 +9,14 @@ const IdentityHeader = ({ person, textAlign, displayRole }) => {
   const textAlignment = { textAlign: textAlign }
   const conditionalMargin = displayRole ? {} : { marginTop: '32px' }
 
-  const formattedRole = !person.role ? 'Pending' : person.role[person.role.length - 1] === 's'
-    ? person.role[0].toUpperCase() + person.role.slice(1, -1)
-    : person.role[0].toUpperCase() + person.role.slice(1)
+  const roleLookup = {
+    ias: 'IA',
+    tas: 'TA',
+    students: 'Student',
+    waitlist: 'Waitlist',
+    inactive: 'Inactive',
+    instructors: 'Instructor',
+  }
 
   const last = person.lastName[0].toUpperCase() + person.lastName.slice(1)
   const first = person.preferredName[0].toUpperCase() + person.preferredName.slice(1)
@@ -19,8 +24,8 @@ const IdentityHeader = ({ person, textAlign, displayRole }) => {
 
   return (
     <header className="identityHeader">
-      {displayRole && <h3 style={textAlignment}>{formattedRole}</h3>}
-      <h1 style={{...textAlignment, ...conditionalMargin}}>{fullName}</h1>
+      {displayRole && <h3 style={textAlignment}>{roleLookup[person.role]}</h3>}
+      <h1 style={{ ...textAlignment, ...conditionalMargin }}>{fullName}</h1>
       <p style={textAlignment}>{person.preferredPronouns}</p>
     </header>
   )

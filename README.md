@@ -2,10 +2,6 @@
 
 ## Todos
 
-• landing page welcome back option bug
-
-• Oopsie daisies message too big on no students attendance
-
 • side menu has scroll bar
 
 • capitalize ta and ia on show person
@@ -14,7 +10,7 @@
 
 • add join cohort back to myprofile page
 
-• remove date console logs
+• width of person name cell on show deliverable
 
 
 ## Stretch Goals
