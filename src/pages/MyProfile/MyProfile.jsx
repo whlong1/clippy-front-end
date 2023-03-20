@@ -12,10 +12,6 @@ const MyProfile = (props) => {
   const [isEditOpen, setIsEditOpen] = useState(false)
   const [isJoinOpen, setIsJoinOpen] = useState(false)
 
-  // conditionally render change cohort only if student is withdrawn?
-
-  console.log(profile)
-
   return (
     <main className="myProfile" style={{ position: 'relative' }}>
       <SelectCohortPopup
@@ -35,7 +31,9 @@ const MyProfile = (props) => {
         <section>
           <h1>Profile</h1>
           <button onClick={() => setIsEditOpen(true)}>EDIT PROFILE</button>
-          <button onClick={() => setIsJoinOpen(true)}>CHANGE COHORT</button>
+          {(user.isAdmin || profile.isWithdrawn) && <button onClick={() => setIsJoinOpen(true)}>
+            CHANGE COHORT
+          </button>}
         </section>
       </header>
 

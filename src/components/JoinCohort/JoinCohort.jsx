@@ -31,7 +31,7 @@ const JoinCohort = ({ profile, setProfile, setIsOpen }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      {errorMsg && <p>{errorMsg}</p>}
+      {errorMsg && <p style={{marginTop: '8px'}}>{errorMsg}</p>}
       <select onChange={({ target }) => setSelectedCohortId(target.value)}>
         {cohorts.map((c) => (
           <option key={c._id} value={c._id}>{c.name}</option>
