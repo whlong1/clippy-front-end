@@ -42,7 +42,6 @@ const dateOptions = {
 }
 
 const getLocaleDateString = (date) => {
-  console.log('helper',date) // 2023-03-20T16:59:00.000Z
   const dateObj = new Date(date)
   return dateObj.toLocaleDateString('en-US', dateOptions)
 }
