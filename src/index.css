@@ -352,18 +352,6 @@ div {
   margin: 0;
 }
 
-.externalUrlsContainer {
-  margin: 0;
-  opacity: .5;
-  margin-left: auto;
-  margin-right: 32px;
-}
-
-.externalUrlsContainer .externalLink {
-  font-size: 14px;
-  margin-left: 24px !important;
-}
-
 /* Crop long deliverable titles */
 .deliverableTitle {
   min-height: 27.5px;
