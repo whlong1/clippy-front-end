@@ -11,7 +11,8 @@ export const useRoleManager = (cohortId, personId) => {
         const queryKey = ['people', cohortId]
         queryClient.invalidateQueries({ queryKey: queryKey, type: 'all' })
         queryClient.invalidateQueries({ queryKey: ['cohorts'], type: 'all' })
-        queryClient.invalidateQueries({ queryKey: ['person', personId], type: 'all' })
+        // queryClient.invalidateQueries({ queryKey: ['person', personId], type: 'all' })
+        queryClient.invalidateQueries({ queryKey: ['person', personId, cohortId], type: 'all' })
       },
     },
     approve: {
@@ -21,7 +22,8 @@ export const useRoleManager = (cohortId, personId) => {
         const { person } = payload
         queryClient.invalidateQueries({ queryKey: queryKey, type: 'all' })
         queryClient.invalidateQueries({ queryKey: ['cohorts'], type: 'all' })
-        queryClient.invalidateQueries({ queryKey: ['person', person._id], type: 'all' })
+        // queryClient.invalidateQueries({ queryKey: ['person', person._id], type: 'all' })
+        queryClient.invalidateQueries({ queryKey: ['person', person._id, cohortId], type: 'all' })
       }
     },
     change: {
@@ -30,7 +32,8 @@ export const useRoleManager = (cohortId, personId) => {
         const queryKey = ['people', cohortId]
         const { person, newRole } = payload
         queryClient.invalidateQueries({ queryKey: queryKey, type: 'all' })
-        queryClient.setQueryData(['person', person._id], (state) => ({ ...state, role: newRole }))
+        // queryClient.setQueryData(['person', person._id], (state) => ({ ...state, role: newRole }))
+        queryClient.setQueryData(['person', person._id, cohortId], (state) => ({ ...state, role: newRole }))
       }
     },
   }

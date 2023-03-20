@@ -1,10 +1,7 @@
 # clippy-front-end
 
-## Todos
+## Checks
 
-• side menu has scroll bar
-
-• width of person name cell on show deliverable
 
 
 ## Stretch Goals
@@ -12,8 +9,6 @@
 • Default time for new deliverables (timezone issues)
 
 • Completed Deliverables should be a toggle
-
-• Randomize logo selection
 
 • Add icons to attendance rows
 

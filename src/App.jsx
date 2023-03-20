@@ -31,7 +31,6 @@ const App = () => {
   // if (profile.isInitialUser || (user?.is_new && !profile?.isOnboarded)) {
   //   return <Onboarding user={user} profile={profile} setProfile={setProfile} />
   // }
-  console.log('Profile check', profile)
 
   if (profile.isInitialUser || !profile?.isOnboarded) {
     return <Onboarding user={user} profile={profile} setProfile={setProfile} />
