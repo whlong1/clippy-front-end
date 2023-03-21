@@ -4,12 +4,13 @@ import './Nav.css'
 // Components
 import LogoutButton from '../LogoutButton/LogoutButton'
 
-// Icons
+// Icons & Audio
 import admin from '../../assets/icons/nav/admin.svg'
 import people from '../../assets/icons/nav/people.svg'
 import profile from '../../assets/icons/nav/profile.svg'
 import attendance from '../../assets/icons/nav/attendance.svg'
 import deliverables from '../../assets/icons/nav/deliverables.svg'
+import quackSound from '../../assets/audio/quack.mp3'
 
 // Logo Marks
 import MarkB from '../../assets/logos/logomarks/mark-b.svg'
@@ -25,11 +26,17 @@ const Nav = (props) => {
 
   const logoStyle = { opacity: '.85' }
 
+  const quack = new Audio(quackSound)
+
+  const makeItQuack = () => {
+    quack.play()
+  }
+
   return (
     <nav className='appNav'>
       <ul>
         <li>
-          <NavLink to="/">
+          <NavLink to="/" onClick={makeItQuack}>
             {markSelect === 1 && <img style={logoStyle} src={MarkB} alt="Abstract flamingo" />}
             {markSelect === 2 && <img style={logoStyle} src={MarkP} alt="Abstract flamingo" />}
             {markSelect === 3 && <img style={logoStyle} src={MarkW} alt="Abstract flamingo" />}
