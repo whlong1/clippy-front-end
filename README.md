@@ -2,9 +2,9 @@
 
 ## Checks
 
-• check select cohort popup for admin and student
-
 • run through onboarding for admin and student
+
+• check select cohort popup for admin and student
 
 • double check changes on show person
 
