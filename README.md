@@ -1,13 +1,5 @@
 # clippy-front-end
 
-## Checks
-
-• run through onboarding for admin and student
-
-• check select cohort popup for admin and student
-
-• double check changes on show person
-
 ## Stretch Goals
 
 • Changing cohorts should potentially remove students from existing cohorts.
