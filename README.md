@@ -2,19 +2,17 @@
 
 ## Stretch Goals
 
+• metadata
+
 • Changing cohorts should potentially remove students from existing cohorts.
   isWithdrawn boolean on profile causes issues with conditional rendering on instructor view.
   Multi cohort association does not impact student facing view if isWithdrawn is false.
-
-• Condition to redirect if no lab exists (only an issue if student is viewing while deliverable is deleted)
 
 • Check for bad external links on myprofile
 
 • Display cohorts a student is in on my profile
 
 • Default time for new deliverables (timezone issues)
-
-• Completed Deliverables should be a toggle
 
 • Add icons to attendance rows
 
@@ -47,11 +45,7 @@
 
 • Bulk update marks withdrawn students as complete
 
-• Temporary fix added to ```getDefaultDate``` helper function in ```src/features/Deliverables/helpers/helpers.js getDefaultDate```
-
-• Issue appears to be resolved: If github username is missing, other users photo appears in show person
-
-• Issue appears to be resolved: On new attendance, if no date is selected manually and the default is used, the date is one day behind works if the date is selected manually. Default date works with new deliverable
+• Condition to redirect if no lab exists (only an issue if student is viewing while deliverable is deleted)
 
 • REFRESH TOKEN ISSUE SAFARI+FIREFOX : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
 
