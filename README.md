@@ -10,6 +10,12 @@
 
 ## Stretch Goals
 
+• Changing cohorts should potentially remove students from existing cohorts.
+  isWithdrawn boolean on profile causes issues with conditional rendering on instructor view.
+  Multi cohort association does not impact student facing view if isWithdrawn is false.
+
+• Condition to redirect if no lab exists (only an issue if student is viewing while deliverable is deleted)
+
 • Check for bad external links on myprofile
 
 • Display cohorts a student is in on my profile

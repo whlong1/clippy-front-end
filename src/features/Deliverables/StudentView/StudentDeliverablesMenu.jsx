@@ -22,22 +22,25 @@ const StudentDeliverablesMenu = (props) => {
   if (status === 'error') return <MenuStatus {...props} status={status} />
   if (status === 'loading') return <MenuStatus {...props} status={status} />
 
-  const newFeedback = studentDeliverables.length
-    ? studentDeliverables.filter((sd) => sd.hasNewStatus) : []
+  const filteredByCohort = studentDeliverables.length
+    ? studentDeliverables.filter((sd) => sd.cohort === cohortId) : []
+
+  const newFeedback = filteredByCohort.length
+    ? filteredByCohort.filter((sd) => sd.hasNewStatus) : []
 
   const sortDeliverables = (d) => d.sort((a, b) => (
     new Date(a.dueDate) - new Date(b.dueDate))
   )
 
   const upcomingDeliverables = sortDeliverables(
-    studentDeliverables.length
-      ? studentDeliverables.filter((sd) => sd.status !== 'complete')
+    filteredByCohort.length
+      ? filteredByCohort.filter((sd) => sd.status !== 'complete')
       : []
   )
 
   const completedDeliverables = sortDeliverables(
-    studentDeliverables.length
-      ? studentDeliverables.filter((sd) => sd.status === 'complete')
+    filteredByCohort.length
+      ? filteredByCohort.filter((sd) => sd.status === 'complete')
       : []
   )
 
@@ -47,7 +50,7 @@ const StudentDeliverablesMenu = (props) => {
         <h1>My Deliverables</h1>
       </span>
 
-      <CompletionTracker studentDeliverables={studentDeliverables} />
+      <CompletionTracker studentDeliverables={filteredByCohort} />
 
       <section>
         <header>
