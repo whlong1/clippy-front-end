@@ -1,52 +1,30 @@
 import "./CohortLanding.css"
 
 // Components
-import SelectCohort from "../../components/SelectCohort/SelectCohort"
+import ContentStatus from "../../components/ContentStatus/ContentStatus"
+
+// Hooks
+import { useIndexCohorts } from "../../hooks/useIndexCohorts"
 
 // Assets
-import PinkOnWhiteSq from "../../assets/logos/logotypes/logotype-sq-p.svg"
-import WhiteOnPinkSq from "../../assets/logos/logotypes/logotype-sq-w.svg"
-import WhiteOnPinkCirc from "../../assets/logos/logotypes/logotype-ci-w.svg"
-import PinkOnWhiteCirc from "../../assets/logos/logotypes/logotype-ci-p.svg"
 import BlueOnBlackSq from "../../assets/logos/logotypes/logotype-sq-b-dark.svg"
-import BlueOnWhiteSq from "../../assets/logos/logotypes/logotype-sq-b-light.svg"
-import BlueOnBlackCirc from "../../assets/logos/logotypes/logotype-ci-b-dark.svg"
-import BlueOnWhiteCirc from "../../assets/logos/logotypes/logotype-ci-b-light.svg"
 
 const CohortLanding = (props) => {
+  const { profile } = props
+  const { cohorts, status } = useIndexCohorts()
 
-  // When changing logo here, remember to change it in AppLanding and Nav
-  const picklogo = (num) => {
-    switch (num) {
-      case 1:
-        return <img src={PinkOnWhiteSq} alt="Abstract flamingo" />
-      case 2:
-        return <img src={WhiteOnPinkSq} alt="Abstract flamingo" />
-      case 3:
-        return <img src={BlueOnWhiteSq} alt="Abstract flamingo" />
-      case 4:
-        return <img src={BlueOnBlackSq} alt="Abstract flamingo" />
-      case 5:
-        return <img src={WhiteOnPinkCirc} alt="Abstract flamingo" />
-      case 6:
-        return <img src={PinkOnWhiteCirc} alt="Abstract flamingo" />
-      case 7:
-        return <img src={BlueOnWhiteCirc} alt="Abstract flamingo" />
-      case 8:
-        return <img src={BlueOnBlackCirc} alt="Abstract flamingo" />
-      default:
-        return <img src={PinkOnWhiteSq} alt="Abstract flamingo" />
-    }
-  }
+  if (status === 'error') return <ContentStatus status={status} />
+  if (status === 'loading') return <ContentStatus status={status} />
+
+  const currentCohort = cohorts.find((c) => c._id === profile.cohort)
 
   return (
     <main className="cohortLanding">
       <header>
-        <h1>Welcome back to</h1>
-        <SelectCohort {...props} />
+        <h1>Welcome back to {currentCohort.name}</h1>
       </header>
       <section>
-        {picklogo(4)}
+        <img src={BlueOnBlackSq} alt="Abstract flamingo" />
       </section>
     </main>
   )

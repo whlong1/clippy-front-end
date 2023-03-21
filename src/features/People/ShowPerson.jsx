@@ -20,7 +20,7 @@ const ShowPerson = ({ user, cohortId }) => {
 
   if (status === 'error') return <ContentStatus status={status} />
   if (status === 'loading') return <ContentStatus status={status} />
-  if (person.cohort !== cohortId && !person.role) return <Navigate to='/people' />
+  if (!person.role) return <Navigate to='/people' />
   // ^^ When viewing a person, if we refresh the page, the cohortId defaults
   // to our current cohort, but the person we were viewing will still be displayed,
   // even if they are not in that cohort. This check will catch that, and redirect.

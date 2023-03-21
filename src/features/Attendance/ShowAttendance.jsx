@@ -23,7 +23,6 @@ const ShowAttendance = ({ user, cohortId }) => {
   if (status === 'loading') return <ContentStatus status={status} />
   if (attendance.cohort !== cohortId) return <Navigate to="/attendance" />
 
-  // ==== Move to helper ====
   const options = {
     hour12: true,
     month: 'short',
@@ -35,7 +34,6 @@ const ShowAttendance = ({ user, cohortId }) => {
   const timeDifference = new Date().getTimezoneOffset() * 60000
   const date = new Date(time + timeDifference)
   const formattedDate = date.toLocaleString("en-us", options)
-  // ====                 ====
 
   const handleRedirect = () => navigate(`/attendance/${attendanceId}/edit`)
 
@@ -63,7 +61,7 @@ const ShowAttendance = ({ user, cohortId }) => {
         handleRedirect={handleRedirect}
       />
       
-      {attendance.students.map((student) => (
+      {attendance?.students.map((student) => (
         <StudentStatusRow key={student._id} student={student} />
       ))}
     </section>

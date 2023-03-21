@@ -7,7 +7,6 @@ import { getLocaleDateString } from '../../helpers/helpers'
 import dateIcon from '../../../../assets/icons/headers/date.svg'
 
 const DueDate = ({ date }) => {
-  console.log(date) // 2023-03-20T16:59:00.000Z
   const formattedDate = getLocaleDateString(date)
 
   return (

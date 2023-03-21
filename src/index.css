@@ -22,27 +22,25 @@ body {
 
   /* CSS VARIABLES */
   --border-color: #3a3a3a;
-  --nav-background: #1a1a1f;
   --body-text-color: white;
   --header-text-color: white;
   --subheader-text-color: white;
   --content-background: #101115;
   --input-background: #080b0d;
   --icon-background: #2F2E37;
-
+  
   --btn-hover-background: #2c2c2c;
   --btn-active-background: #1a1a1f;
-
+  
+  --nav-background: #17171b;
+  --btn-background: #1a1a1f;
 
   --font-l: 24px;
   --font-reg: 16px;
   --font-subheader: 14px;
-
   font-style: normal;
   font-family: halyard-display, sans-serif;
-
-  background-color: var(--content-background);
-
+  background: var(--content-background);
 }
 
 h1 {
@@ -126,15 +124,13 @@ main>section {
 main>section {
   width: 100%;
   padding: 24px;
-  background: #101115;
+  background: var(--content-background);
 }
 
 main>nav {
   min-width: 300px;
   min-width: 360px;
 }
-
-/* .page { } */
 
 form {
   display: flex;
@@ -352,18 +348,6 @@ div {
   margin: 0;
 }
 
-.externalUrlsContainer {
-  margin: 0;
-  opacity: .5;
-  margin-left: auto;
-  margin-right: 32px;
-}
-
-.externalUrlsContainer .externalLink {
-  font-size: 14px;
-  margin-left: 24px !important;
-}
-
 /* Crop long deliverable titles */
 .deliverableTitle {
   min-height: 27.5px;
@@ -381,6 +365,10 @@ div {
   border-radius: 0;
   padding-top: 1px;
   margin-left: 4px;
+}
+
+.row .externalLink + .externalLink  {
+  margin-left: 12px;
 }
 
 .externalLink p img {
@@ -541,7 +529,11 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 }
 
 
-/* HOVER AND ACTIVE */
+/* BUTTON */
+button {
+  background: var(--btn-background);
+}
+
 button:hover {
   background-color: var(--btn-hover-background);
 }

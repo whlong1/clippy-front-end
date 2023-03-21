@@ -24,22 +24,8 @@
   justify-content: flex-end !important;
 }
 
-.cohortLanding header * {
-  margin: 0;
+.cohortLanding header h1 {
   opacity: .35;
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: .3px;
-}
-
-.cohortLanding header h1 {
-  line-height: 1.32;
-}
-
-.cohortLanding header select {
-  width: auto;
-  line-height: .9;
-  font-size: 14px;
-  margin-left: 3px;
-  background: none;
 }

@@ -1,25 +1,22 @@
 # clippy-front-end
 
-## Todos
+## Checks
 
-• check date issues
+• run through onboarding for admin and student
 
-• Oopsie daisies message too big on no students attendance
+• check select cohort popup for admin and student
 
-• side menu has scroll bar
-
-• capitalize ta and ia on show person
-
-• useAttendanceManager create cache ordering (invalidate)
-
+• double check changes on show person
 
 ## Stretch Goals
+
+• Check for bad external links on myprofile
+
+• Display cohorts a student is in on my profile
 
 • Default time for new deliverables (timezone issues)
 
 • Completed Deliverables should be a toggle
-
-• Randomize logo selection
 
 • Add icons to attendance rows
 

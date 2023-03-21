@@ -22,21 +22,15 @@ const AppRouter = (props) => {
     setCohortId,
   }
 
-  // Use for testing
-  // console.log('Current Cohort:', cohortId)
-  // console.log('Auth:', user.name, profile.email)
-
   return (
     <Routes>
       <Route path="/*" element={<PageNotFound />} />
       <Route path="/" element={<CohortLanding {...appProps} />} />
       <Route path='/profile' element={<MyProfile {...appProps} />} />
-
       <Route path='/admin/*' element={<AdminRouter {...appProps} />} />
       <Route path='/people/*' element={<PeopleRouter {...appProps} />} />
       <Route path='/attendance/*' element={<AttendanceRouter  {...appProps} />} />
       <Route path='/deliverables/*' element={<DeliverablesRouter  {...appProps} />} />
-
     </Routes>
   )
 }

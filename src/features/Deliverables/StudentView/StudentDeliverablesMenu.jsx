@@ -15,7 +15,8 @@ import { useIndexStudentDeliverables } from '../../../hooks/useIndexStudentDeliv
 
 const StudentDeliverablesMenu = (props) => {
   const { cohortId, profile } = props
-  const [isOpen, setIsOpen] = useState(false)
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false)
+  const [isCompletedOpen, setIsCompletedOpen] = useState(false)
   const { studentDeliverables, status } = useIndexStudentDeliverables(cohortId, profile._id)
 
   if (status === 'error') return <MenuStatus {...props} status={status} />
@@ -23,7 +24,6 @@ const StudentDeliverablesMenu = (props) => {
 
   const newFeedback = studentDeliverables.length
     ? studentDeliverables.filter((sd) => sd.hasNewStatus) : []
-
 
   const sortDeliverables = (d) => d.sort((a, b) => (
     new Date(a.dueDate) - new Date(b.dueDate))
@@ -40,7 +40,6 @@ const StudentDeliverablesMenu = (props) => {
       ? studentDeliverables.filter((sd) => sd.status === 'complete')
       : []
   )
-
 
   return (
     <MenuLayout {...props}>
@@ -68,10 +67,11 @@ const StudentDeliverablesMenu = (props) => {
 
       {!!completedDeliverables.length &&
         <section>
-          <header>
+          <header onClick={() => setIsCompletedOpen(!isCompletedOpen)}>
             <h2>Completed Deliverables</h2>
+            <ToggleArrow isOpen={isCompletedOpen} />
           </header>
-          {completedDeliverables.map((sd) => (
+          {isCompletedOpen && completedDeliverables.map((sd) => (
             <Link className='sdRow' key={sd._id} to={`/deliverables/${sd._id}`}>
               <StatusIndicator status={sd.status} />
               <h2>{sd.name}</h2>
@@ -83,11 +83,11 @@ const StudentDeliverablesMenu = (props) => {
 
       {!!newFeedback.length &&
         <section>
-          <header onClick={() => setIsOpen(!isOpen)}>
+          <header onClick={() => setIsFeedbackOpen(!isFeedbackOpen)}>
             <h2>New Feedback</h2>
-            <ToggleArrow isOpen={isOpen} />
+            <ToggleArrow isOpen={isFeedbackOpen} />
           </header>
-          {isOpen && newFeedback.map((sd) => (
+          {isFeedbackOpen && newFeedback.map((sd) => (
             <Link className='sdRow' key={sd._id} to={`/deliverables/${sd._id}`}>
               <StatusIndicator status={sd.status} />
               <h2>{sd.name}</h2>

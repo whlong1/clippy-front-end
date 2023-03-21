@@ -8,15 +8,14 @@ export const useAttendanceManager = (cohortId) => {
       service: attendanceService.createAttendance,
       handleCache: (res, payload) => {
         const queryKey = ['attendance', cohortId]
-        queryClient.setQueryData(queryKey, (state) => [res, ...state])
+        queryClient.invalidateQueries({ queryKey: queryKey, type: 'all' })
       }
     },
     update: {
       service: attendanceService.updateAttendance,
       handleCache: (res, payload) => {
         const queryKey = ['attendance', cohortId]
-        // No direct cache handling necessary at the moment
-        queryClient.setQueryData(queryKey, state => state)
+        queryClient.invalidateQueries({ queryKey: queryKey, type: 'all' })
       }
     },
     remove: {
