@@ -10,6 +10,8 @@
 
 ## Stretch Goals
 
+• Check for bad external links on myprofile
+
 • Display cohorts a student is in on my profile
 
 • Default time for new deliverables (timezone issues)
