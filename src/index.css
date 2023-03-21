@@ -367,6 +367,10 @@ div {
   margin-left: 4px;
 }
 
+.row .externalLink + .externalLink  {
+  margin-left: 12px;
+}
+
 .externalLink p img {
   width: 12px;
   opacity: .75;
