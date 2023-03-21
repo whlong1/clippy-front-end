@@ -2,8 +2,6 @@
 
 ## Checks
 
-• gradient test
-
 • check select cohort popup for admin and student
 
 • run through onboarding for admin and student
@@ -11,6 +9,8 @@
 • double check changes on show person
 
 ## Stretch Goals
+
+• Display cohorts a student is in on my profile
 
 • Default time for new deliverables (timezone issues)
 

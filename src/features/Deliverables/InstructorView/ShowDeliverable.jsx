@@ -35,7 +35,7 @@ const ShowDeliverable = (props) => {
   // Bulk update on associated studentDeliverables:
   const markAllComplete = () => {
     const formData = {
-      status: "complete", gradedBy: props.profile.name,
+      status: "complete", gradedBy: props.profile.firstName,
     }
     mutation.mutate({
       type: 'markAllComplete', payload: { deliverableId, formData }
