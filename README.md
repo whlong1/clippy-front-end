@@ -1,4 +1,4 @@
-# <img src="src/assets/logos/logotypes/logotype-sq-b-dark.svg"/>
+<img src="src/assets/logos/logotypes/logotype-sq-b-dark.svg"/>
 
 ## Clippy Front-end
 
