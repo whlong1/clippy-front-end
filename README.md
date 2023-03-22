@@ -55,9 +55,10 @@ We're currently working on creating a video demo of our application, which will 
 
 - HTML
 - CSS
-- JavaScript (ES6)
-- React
+- JavaScript
 - Node
+- React
+- React Router
 - Express
 - MongoDB
 - Mongoose
