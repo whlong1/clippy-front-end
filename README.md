@@ -1,68 +1,122 @@
-# clippy-front-end
+# <img src="src/assets/logos/logotypes/logotype-sq-b-dark.svg"/>
 
-## Stretch Goals
+## Clippy Front-end
 
-• metadata
+Clippy is a web application designed to simplify the management of online courses. With Clippy, instructors can easily manage coursework, give feedback to students, take attendance, grade deliverables, and track student progress. Students can join cohorts, submit homework, receive feedback, and view their standing in the course. Auth0 is used for user authentication and authorization.
 
-• Changing cohorts should potentially remove students from existing cohorts.
-  isWithdrawn boolean on profile causes issues with conditional rendering on instructor view.
-  Multi cohort association does not impact student facing view if isWithdrawn is false.
+>**Note** This is the front-end repository for Clippy. To run the backend server, please visit the [clippy-back-end](https://github.com/whlong1/clippy-back-end) for instructions.
 
-• Check for bad external links on myprofile
+## Getting Started
 
-• Display cohorts a student is in on my profile
+To run the Clippy Front-end on your local machine, follow these steps:
 
-• Default time for new deliverables (timezone issues)
+1. Clone this repository:
 
-• Add icons to attendance rows
+```
+git clone https://github.com/[username]/clippy-front-end.git
+```
 
-• JoinCohorts should use indexCohorts hook.
+2. Navigate to the project directory:
 
-• Subission panel is a bit messy, could fix up directory structure
+```
+cd clippy-front-end
+```
 
-• Animation to StatusPage + ContentStatus
+3. Install the required dependencies:
 
-• Audit popup styling. Use single stylesheet for consistency.
+```
+npm install
+```
 
-• When awaiting instructor approval during onboarding, should have message that says waiting to join x cohort
+4. Create a .env file in the root directory with the following variables:
 
-• If a student wants to change cohorts, better to create separate functionality. Only allow student to access current cohort. Archive should be available through some other means
+```
+REACT_APP_AUTH0_DOMAIN=[Auth0 domain]
+REACT_APP_AUTH0_AUDIENCE=[Auth0 audience]
+REACT_APP_AUTH0_CLIENT_ID=[Auth0 Client Id]
+REACT_APP_AUTH0_CALLBACK_URL=http://localhost:3000
+REACT_APP_BACK_END_SERVER_URL=http://localhost:3001
+```
 
-• Add start time to Cohort model and form
+5. Start the development server:
 
-• Consider adding icons to forms
+```
+npm start
+```
 
-• Students should see there stats on MyProfile page
-
-• From MyProfile, allow admins join to set a new default cohort (need to add them to cohort model, skip approval stage). Also, allow admins to join a cohort without updating their default cohort. At the moment, multiple cohorts can be joined during onboarding, but only the most recent will be set as the user's default.
-
-• Audit keys (need consistent key pattern for all resources)
-
-• For security, might be worth refactoring how admin and student routes are handled
+6. Open your web browser and navigate to http://localhost:3000 to access the Clippy web application.
 
 
-## Issues
+## Video Demo (Coming Soon)
 
-• Bulk update marks withdrawn students as complete
+We're currently working on creating a video demo of our application, which will showcase its key features and functionality.
 
-• Condition to redirect if no lab exists (only an issue if student is viewing while deliverable is deleted)
+## Technologies Used
 
-• REFRESH TOKEN ISSUE SAFARI+FIREFOX : https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation
+- HTML
+- CSS
+- JavaScript (ES6)
+- React
+- Node
+- Express
+- MongoDB
+- Mongoose
+- Auth0
+- React Query
+- React CodeMirror
 
-## Notes
+## Todos
 
-• React Query Keys: https://tkdodo.eu/blog/effective-react-query-keys
+- [x] Add quack sound effect to home page link.
 
-• Optimistic Updates: https://tanstack.com/query/v4/docs/react/guides/optimistic-updates
+- [ ] Add meta tags.
 
-• Invalidating Queries: https://www.codemzy.com/blog/invalidatequeries-react-query
+- [ ] Add support for mobile devices.
 
-• Querey Key Factories: https://tkdodo.eu/blog/effective-react-query-keys#use-query-key-factories
+- [ ] Add validation for external links.
 
-## Tech
+- [ ] Display data metrics for instructors.
 
-• https://github.com/uiwjs/react-codemirror
+- [ ] Add student stats to the My Profile page.
 
-• https://tanstack.com/
+- [ ] Research applicability of Query Key Factories.
 
-• https://auth0.com/docs/quickstart/spa/react/interactive
+- [ ] Audit the styling of popup components for consistency.
+
+- [ ] Review the directory structure of the Submission Panel.
+
+- [ ] Add default start time to Cohort model and associated forms.
+
+- [ ] The JoinCohorts component should make use of the indexCohorts hook.
+
+- [ ] Add a conditional redirect to deliverable detail views if no lab exists.
+
+- [ ] Audit query keys. A more consistent pattern will be desirable as we scale.
+
+- [ ] Allow site admin to grant admin access within the app, as opposed to the Auth0 dashboard.
+
+- [ ] Prevent the resolve functionality from marking a withdrawn student's deliverables as complete.
+
+- [ ] Add a message to the onboarding stage that indicates which cohort a user has requested access to.
+
+- [ ] Display default time for the Due Date property of new deliverables. Currently facing timezone issues.
+
+- [ ] Make it easier for students and instructors to switch cohorts, and correctly set their default cohort.
+
+- [ ] Address multicohort membership issues. The isWithdrawn boolean on Profile could potentially cause issues with the rendering of deliverable status if a user is in multiple cohorts.
+
+- [ ] Address the refresh token rotation issue in Safari and Firefox. Visit the [Auth0 documentation on token rotation for more information.](https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation)
+
+
+## Credits
+This project was made possible thanks to the following technologies:
+
+- React Query - A data-fetching library for React. Visit the [React Query GitHub page](https://github.com/tannerlinsley/react-query) for more information.
+
+- React CodeMirror - A code editor for React apps. Visit the [React CodeMirror GitHub page](https://uiwjs.github.io/react-codemirror) for more information.
+
+- Auth0 - A platform for authentication and authorization. Visit the [Auth0 website](https://auth0.com/) for more information.
+
+
+
+
