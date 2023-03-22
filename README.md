@@ -70,6 +70,10 @@ We're currently working on creating a video demo of our application, which will 
 
 - [x] Add quack sound effect to home page link.
 
+- [x] Add min-height (40-44 px) to row components.
+
+- [ ] Add hover tooltips for app nav.
+
 - [ ] Add meta tags.
 
 - [ ] Add support for mobile devices.

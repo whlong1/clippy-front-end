@@ -335,8 +335,9 @@ div {
 }
 
 .row {
-  padding: 0px 14px;
   height: 48px;
+  min-height: 40px;
+  padding: 0px 14px;
   border-bottom: 1px solid var(--border-color);
 }
 
