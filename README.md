@@ -79,6 +79,8 @@ We're currently working on creating a video demo of our application, which will 
 
 - [ ] Add student stats to the My Profile page.
 
+- [ ] Add guide in Getting Started for Auth0 setup.
+
 - [ ] Research applicability of Query Key Factories.
 
 - [ ] Audit the styling of popup components for consistency.
