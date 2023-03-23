@@ -30,7 +30,6 @@ const getDefaultDate = () => {
   return formattedTime
 }
 
-
 const dateOptions = {
   hour12: true,
   month: 'short',

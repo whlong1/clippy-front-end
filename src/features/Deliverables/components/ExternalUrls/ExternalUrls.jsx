@@ -7,7 +7,6 @@ import { filterDeliverableUrls } from '../../helpers/helpers'
 import SubmittedLink from '../SubmittedLink/SubmittedLink'
 
 const ExternalUrls = ({ student }) => {
-  
   const filteredUrls = filterDeliverableUrls(student)
   const urlLinks = filteredUrls.map((url, idx) => (
     <SubmittedLink
