@@ -3,12 +3,13 @@ import "./MyProfile.css"
 
 // Components
 import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
+import StudentDashboard from "../../components/StudentDashboard/StudentDashboard"
 import EditProfilePopup from "../../components/EditProfilePopup/EditProfilePopup"
 import SelectCohortPopup from "../../components/SelectCohortPopup/SelectCohortPopup"
 import ContactInformation from "../../components/ContactInformation/ContactInformation"
 
 const MyProfile = (props) => {
-  const { user, profile, setProfile } = props
+  const { user, cohortId, profile, setProfile } = props
   const [isEditOpen, setIsEditOpen] = useState(false)
   const [isJoinOpen, setIsJoinOpen] = useState(false)
 
@@ -40,6 +41,10 @@ const MyProfile = (props) => {
         <ProfilePicture gitHubUserName={profile.gitHubUserName} size="120px" />
         <ContactInformation person={profile} />
       </section>
+      <StudentDashboard
+        profile={profile}
+        cohortId={cohortId}
+      />
     </main>
   )
 }

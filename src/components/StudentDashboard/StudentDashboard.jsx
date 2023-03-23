@@ -1,8 +1,14 @@
-const StudentDashboard = () => {
-  return (
-    <section>
+import "./StudentDashboard.css"
 
-    </section>
+// Hooks
+import { useIndexStudentAttendance } from "../../hooks/useIndexStudentAttendance"
+import { useIndexStudentDeliverables } from "../../hooks/useIndexStudentDeliverables"
+
+const StudentDashboard = ({ cohortId, profile }) => {
+  return (
+    <div className="studentDashboard">
+
+    </div>
   )
 }
 
