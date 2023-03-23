@@ -72,6 +72,8 @@ We're currently working on creating a video demo of our application, which will 
 
 - [x] Add validation indicator for external links.
 
+- [x] Add copy attendance functionality.
+
 - [ ] Add hover highlight to deliverable rows.
 
 - [ ] Toggle button for feedback and code block text areas on.
