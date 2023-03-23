@@ -4,7 +4,7 @@
 
 Clippy is a web application designed to simplify the management of online courses. With Clippy, instructors can easily manage coursework, give feedback to students, take attendance, grade deliverables, and track student progress. Students can join cohorts, submit homework, receive feedback, and view their standing in the course. Auth0 is used for user authentication and authorization.
 
-> Please note, this is the client app for Clippy. To run the backend server, please visit the [clippy-back-end](https://github.com/whlong1/clippy-back-end) for instructions.
+> Please note, this is the client app for Clippy. To run the backend server, please visit the [clippy-back-end](https://github.com/whlong1/clippy-back-end) repository for instructions.
 
 ## Getting Started
 
@@ -73,6 +73,10 @@ We're currently working on creating a video demo of our application, which will 
 - [ ] Add hover highlight to deliverable rows.
 
 - [ ] Toggle button for feedback and code block text areas on.
+
+- [ ] Display profile count in admin portal.
+
+- [ ] Display order that deliverables were completed in admin portal.
 
 - [ ] Add hover tooltips for app nav.
 
