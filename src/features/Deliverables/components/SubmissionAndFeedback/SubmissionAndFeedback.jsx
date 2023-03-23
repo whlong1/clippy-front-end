@@ -8,6 +8,9 @@ import Feedback from "./Feedback"
 import SubmissionPanel from './SubmissionPanel'
 import SubmittedLink from "../SubmittedLink/SubmittedLink"
 
+// Helpers
+import { filterDeliverableUrls } from "../../helpers/helpers"
+
 const SubmisionAndFeedback = ({ cohortId, studentDeliverable, adminView }) => {
   const [isOpen, setIsOpen] = useState(false)
   const mutation = useDeliverablesManager(cohortId)
@@ -21,9 +24,8 @@ const SubmisionAndFeedback = ({ cohortId, studentDeliverable, adminView }) => {
     mutation.mutate({ type: 'submit', payload: { ...studentDeliverable, hasNewStatus: false } })
   }
 
-  const urlTypes = ['miscUrl', 'trelloUrl', 'gitHubUrl', 'deploymentUrl', 'codeSandboxUrl']
-  const filteredUrls = urlTypes.filter((url) => studentDeliverable.hasOwnProperty(url))
-
+  const filteredUrls = filterDeliverableUrls(studentDeliverable)
+  
   const urlLinks = (
     <div>
       {filteredUrls.map((url, idx) => (

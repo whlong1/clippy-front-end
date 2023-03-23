@@ -54,9 +54,15 @@ const isValidUrl = (url) => {
   return regex.test(url)
 }
 
+const filterDeliverableUrls = (deliverableData) => {
+  const urlTypes = ['miscUrl', 'trelloUrl', 'gitHubUrl', 'deploymentUrl', 'codeSandboxUrl']
+  return urlTypes.filter((url) => deliverableData.hasOwnProperty(url))
+}
+
 export {
   formatDate,
   isValidUrl,
   getDefaultDate,
   getLocaleDateString,
+  filterDeliverableUrls,
 }

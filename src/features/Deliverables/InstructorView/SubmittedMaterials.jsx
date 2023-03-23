@@ -4,9 +4,11 @@ import submittedIcon from '../../../assets/icons/headers/submitted.svg'
 // Components
 import SubmittedLink from '../components/SubmittedLink/SubmittedLink'
 
+// Helpers
+import { filterDeliverableUrls } from '../helpers/helpers'
+
 const SubmittedMaterials = ({ deliverable }) => {
-  const urlTypes = ['miscUrl', 'trelloUrl', 'gitHubUrl', 'deploymentUrl', 'codeSandboxUrl']
-  const filteredUrls = urlTypes.filter((url) => deliverable.hasOwnProperty(url))
+  const filteredUrls = filterDeliverableUrls(deliverable)
 
   const urlLinks = filteredUrls.map((url, idx) => (
     <SubmittedLink

@@ -1,12 +1,14 @@
 import './ExternalUrls.css'
 
+// Helpers
+import { filterDeliverableUrls } from '../../helpers/helpers'
+
 // Components
 import SubmittedLink from '../SubmittedLink/SubmittedLink'
 
 const ExternalUrls = ({ student }) => {
-  const urlTypes = ['miscUrl', 'trelloUrl', 'gitHubUrl', 'deploymentUrl', 'codeSandboxUrl']
-  const filteredUrls = urlTypes.filter((url) => student.hasOwnProperty(url))
-
+  
+  const filteredUrls = filterDeliverableUrls(student)
   const urlLinks = filteredUrls.map((url, idx) => (
     <SubmittedLink
       key={idx}
