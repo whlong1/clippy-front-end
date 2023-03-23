@@ -25,7 +25,7 @@ const SubmisionAndFeedback = ({ cohortId, studentDeliverable, adminView }) => {
   }
 
   const filteredUrls = filterDeliverableUrls(studentDeliverable)
-  
+
   const urlLinks = (
     <div>
       {filteredUrls.map((url, idx) => (
