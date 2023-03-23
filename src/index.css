@@ -350,7 +350,7 @@ div {
 }
 
 /* Crop long deliverable titles */
-.deliverableTitle {
+/* .deliverableTitle {
   min-height: 27.5px;
   line-height: 24px;
   overflow: hidden;
@@ -359,23 +359,18 @@ div {
   word-break: break-all;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
-}
+} */
 
-.externalLink img {
+/* .externalLink img {
   width: 12px;
   border-radius: 0;
   padding-top: 1px;
   margin-left: 4px;
-}
+} */
 
-.row .externalLink + .externalLink  {
+/* .row .externalLink + .externalLink  {
   margin-left: 12px;
-}
-
-.externalLink p img {
-  width: 12px;
-  opacity: .75;
-}
+} */
 
 /* GRADE AND VIEW STUDENT DELIVERABLE */
 .studentDeliverable header {

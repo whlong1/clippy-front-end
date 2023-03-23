@@ -19,7 +19,7 @@ const SubmittedLink = ({ studentDeliverable, url, styleProp }) => {
   }
 
   return (
-    <ExternalLink key={idx} urlString={urlTable[url].link}>
+    <ExternalLink urlString={urlTable[url].link}>
       <p style={styleProp}>
         {urlTable[url].text}
         <img src={isValidUrl(urlTable[url].link) ? share : broken} alt="share" />
