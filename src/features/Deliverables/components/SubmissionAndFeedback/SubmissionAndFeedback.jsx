@@ -36,6 +36,7 @@ const SubmisionAndFeedback = ({ cohortId, studentDeliverable, adminView }) => {
   const urlLinks = (
     <div>
       {filteredUrls.map((url, idx) => (
+        // <SubmittedLink studentDeliverable={studentDeliverable} url={url} />
         <ExternalLink key={idx} urlString={urlTable[url].link}>
           <p style={{ fontSize: '14px', marginRight: '8px' }}>
             {urlTable[url].text}
