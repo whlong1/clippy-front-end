@@ -12,3 +12,7 @@
 .externalUrlsContainer .externalLink {
   font-size: 14px;
 }
+
+.externalUrlsContainer .externalLink + .externalLink  {
+  margin-left: 12px;
+}

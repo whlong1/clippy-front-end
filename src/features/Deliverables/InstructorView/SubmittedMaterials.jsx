@@ -1,29 +1,22 @@
 // Assets
-import share from '../../../assets/icons/share.svg'
 import submittedIcon from '../../../assets/icons/headers/submitted.svg'
 
 // Components
-import ExternalLink from '../../../components/ExternalLink/ExternalLink'
+import SubmittedLink from '../components/SubmittedLink/SubmittedLink'
+
+// Helpers
+import { filterDeliverableUrls } from '../helpers/helpers'
 
 const SubmittedMaterials = ({ deliverable }) => {
-  // Reused in ExternalUrls, would be nice to make this a helper
-  const urlTable = {
-    miscUrl: { text: 'Misc URL', link: deliverable.miscUrl },
-    trelloUrl: { text: 'Trello', link: deliverable.trelloUrl },
-    gitHubUrl: { text: 'GitHub', link: deliverable.gitHubUrl },
-    deploymentUrl: { text: 'Deployment', link: deliverable.deploymentUrl },
-    codeSandboxUrl: { text: 'Code Sandbox', link: deliverable.codeSandboxUrl },
-  }
-
-  const filteredUrls = Object.keys(urlTable).filter((url) => deliverable.hasOwnProperty(url))
+  const filteredUrls = filterDeliverableUrls(deliverable)
 
   const urlLinks = filteredUrls.map((url, idx) => (
-    <ExternalLink key={idx} urlString={urlTable[url].link}>
-      <p style={{ marginRight: '12px' }}>
-        {urlTable[url].text}
-        <img src={share} alt="share" />
-      </p>
-    </ExternalLink>
+    <SubmittedLink
+      key={idx}
+      url={url}
+      studentDeliverable={deliverable}
+      styleProp={{ marginRight: '12px' }}
+    />
   ))
 
   return (
