@@ -1,6 +1,10 @@
 // Assets
 import share from '../../../assets/icons/share.svg'
+import broken from '../../../assets/icons/broken.svg'
 import submittedIcon from '../../../assets/icons/headers/submitted.svg'
+
+// Helpers
+import { isValidUrl } from '../helpers/helpers'
 
 // Components
 import ExternalLink from '../../../components/ExternalLink/ExternalLink'
@@ -21,7 +25,7 @@ const SubmittedMaterials = ({ deliverable }) => {
     <ExternalLink key={idx} urlString={urlTable[url].link}>
       <p style={{ marginRight: '12px' }}>
         {urlTable[url].text}
-        <img src={share} alt="share" />
+        <img src={isValidUrl(urlTable[url].link) ? share : broken} alt="share" />
       </p>
     </ExternalLink>
   ))

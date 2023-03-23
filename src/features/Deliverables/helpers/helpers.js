@@ -46,10 +46,17 @@ const getLocaleDateString = (date) => {
   return dateObj.toLocaleDateString('en-US', dateOptions)
 }
 
-
+const isValidUrl = (url) => {
+  const regex = /^(http|https):\/\//
+  if (!url) return false
+  if (url.includes('localhost:300')) return false
+  if (url.includes('127.0.0.1:5501')) return false
+  return regex.test(url)
+}
 
 export {
   formatDate,
+  isValidUrl,
   getDefaultDate,
   getLocaleDateString,
 }
