@@ -70,6 +70,10 @@ We're currently working on creating a video demo of our application, which will 
 
 - [x] Add quack sound effect to home page link.
 
+- [x] Add validation indicator for external links.
+
+- [x] Add copy attendance functionality.
+
 - [ ] Add hover highlight to deliverable rows.
 
 - [ ] Toggle button for feedback and code block text areas on.
@@ -83,8 +87,6 @@ We're currently working on creating a video demo of our application, which will 
 - [ ] Add meta tags.
 
 - [ ] Add support for mobile devices.
-
-- [ ] Add validation for external links.
 
 - [ ] Display data metrics for instructors.
 

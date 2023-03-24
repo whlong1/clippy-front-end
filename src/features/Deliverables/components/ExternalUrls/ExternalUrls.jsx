@@ -1,32 +1,20 @@
 import './ExternalUrls.css'
 
-// Assets
-import share from '../../../../assets/icons/share.svg'
+// Helpers
+import { filterDeliverableUrls } from '../../helpers/helpers'
 
 // Components
-import ExternalLink from '../../../../components/ExternalLink/ExternalLink'
+import SubmittedLink from '../SubmittedLink/SubmittedLink'
 
 const ExternalUrls = ({ student }) => {
-  const urlTable = {
-    miscUrl: { text: 'Misc URL', link: student.miscUrl },
-    trelloUrl: { text: 'Trello', link: student.trelloUrl },
-    gitHubUrl: { text: 'GitHub', link: student.gitHubUrl },
-    deploymentUrl: { text: 'Deployment', link: student.deploymentUrl },
-    codeSandboxUrl: { text: 'Code Sandbox', link: student.codeSandboxUrl },
-  }
-
-  const filteredUrls = Object.keys(urlTable).filter((url) => student.hasOwnProperty(url))
-
-  // Add visual indicator to link if URL is invalid?
-  // const isValidUrl = (url) => {
-  //   const regex = /^(http|https):\/\//
-  //   return regex.test(url)
-  // }
-
+  const filteredUrls = filterDeliverableUrls(student)
   const urlLinks = filteredUrls.map((url, idx) => (
-    <ExternalLink key={idx} urlString={urlTable[url].link}>
-      {urlTable[url].text} <img src={share} alt="share" />
-    </ExternalLink>
+    <SubmittedLink
+      key={idx}
+      url={url}
+      studentDeliverable={student}
+      styleProp={{ fontSize: '14px', opacity: '1', marginLeft: '12px' }}
+    />
   ))
 
   return (

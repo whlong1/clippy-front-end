@@ -30,7 +30,6 @@ const getDefaultDate = () => {
   return formattedTime
 }
 
-
 const dateOptions = {
   hour12: true,
   month: 'short',
@@ -46,10 +45,23 @@ const getLocaleDateString = (date) => {
   return dateObj.toLocaleDateString('en-US', dateOptions)
 }
 
+const isValidUrl = (url) => {
+  const regex = /^(http|https):\/\//
+  if (!url) return false
+  if (url.includes('localhost:300')) return false
+  if (url.includes('127.0.0.1:5501')) return false
+  return regex.test(url)
+}
 
+const filterDeliverableUrls = (deliverableData) => {
+  const urlTypes = ['miscUrl', 'trelloUrl', 'gitHubUrl', 'deploymentUrl', 'codeSandboxUrl']
+  return urlTypes.filter((url) => deliverableData.hasOwnProperty(url))
+}
 
 export {
   formatDate,
+  isValidUrl,
   getDefaultDate,
   getLocaleDateString,
+  filterDeliverableUrls,
 }

@@ -1,0 +1,17 @@
+.externalLink img {
+  width: 12px;
+  border-radius: 0;
+  padding-top: 1px;
+  margin-left: 4px;
+}
+
+.deliverableTitle {
+  min-height: 27.5px;
+  line-height: 24px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+}

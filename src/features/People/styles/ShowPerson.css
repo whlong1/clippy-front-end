@@ -63,9 +63,9 @@
 }
 
 .personLinks img {
-  width: 20px;
   margin: 0;
   opacity: .7;
-  border-radius: 0;
   border: none;
+  border-radius: 0;
+  width: 20px !important;
 }
