@@ -24,45 +24,83 @@ const StudentDashboard = ({ cohortId, profile }) => {
   console.log('d', studentDeliverables)
 
   // enum: ['assigned', 'complete', 'incomplete', 'missing', 'pendingAudit'],
+  // Move attendance and deliverables into separate components
+  // display completion rate inside circle
+
+  const missing = studentDeliverables.filter((d) => d.status === 'missing').length
+  const complete = studentDeliverables.filter((d) => d.status === 'complete').length
+  const incomplete = studentDeliverables.filter((d) => d.status === 'incomplete').length
+  const pending = studentDeliverables.filter((d) => d.status === 'pendingAudit' || d.status === 'assigned').length
+
+  const percentComplete = (complete / studentDeliverables.length * 100).toFixed()
+
+  const labels = [
+    `Missing ${missing}`,
+    `Pending ${pending}`,
+    `Complete ${complete}`,
+    `Incomplete ${incomplete}`,
+  ]
 
   const data = {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
+    labels: labels,
     datasets: [
       {
         label: '# of Votes',
-        data: [12, 19, 3, 5, 2],
+        data: [missing, pending, incomplete, complete],
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
           'rgba(255, 206, 86, 0.2)',
           'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
         ],
         borderColor: [
           'rgba(255, 99, 132, 1)',
           'rgba(54, 162, 235, 1)',
           'rgba(255, 206, 86, 1)',
           'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
         ],
         borderWidth: 1,
+        cutout: '90%',
       },
     ],
   }
 
+  const test = {
+    id: 'textCenter',
+    beforeDatasetDraw(chart) {
+      const { ctx } = chart
+      ctx.save()
+      ctx.fillStyle = 'white'
+      ctx.textAlign = 'center'
+      ctx.textBaseline = 'middle'
+      ctx.font = 'bolder 20px sans-serif'
+      ctx.fillText(`${percentComplete}%`, chart.getDatasetMeta(0).data[0].x, chart.getDatasetMeta(0).data[0].y)
+    }
+  }
+
   const options = {
-    responsive: true,
+    responsive: false,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         display: true,
-        position: "left"
+        position: "right",
+        labels: {
+          boxWidth: 10,
+          boxHeight: 10,
+        }
       },
+
     },
   }
 
   return (
     <section className="studentDashboard">
-      <Doughnut data={data} options={options} />
+      <Doughnut
+        height="160"
+        width="190"
+
+        data={data} options={options} plugins={[test]} />
     </section>
   )
 }
