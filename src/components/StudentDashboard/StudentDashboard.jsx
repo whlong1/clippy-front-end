@@ -65,7 +65,7 @@ const StudentDashboard = ({ cohortId, profile }) => {
     ],
   }
 
-  const test = {
+  const percentageText = {
     id: 'textCenter',
     beforeDatasetDraw(chart) {
       const { ctx } = chart
@@ -81,6 +81,7 @@ const StudentDashboard = ({ cohortId, profile }) => {
   const options = {
     responsive: false,
     maintainAspectRatio: false,
+    layout: {},
     plugins: {
       legend: {
         display: true,
@@ -88,9 +89,11 @@ const StudentDashboard = ({ cohortId, profile }) => {
         labels: {
           boxWidth: 10,
           boxHeight: 10,
+          padding: 18,
+          paddingRight: 100,
+          border: '1px solid red'
         }
       },
-
     },
   }
 
@@ -98,9 +101,9 @@ const StudentDashboard = ({ cohortId, profile }) => {
     <section className="studentDashboard">
       <Doughnut
         height="160"
-        width="190"
-
-        data={data} options={options} plugins={[test]} />
+        width="220"
+        data={data} options={options} plugins={[percentageText]}
+      />
     </section>
   )
 }
