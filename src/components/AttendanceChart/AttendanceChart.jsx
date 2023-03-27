@@ -92,7 +92,7 @@ const AttendanceChart = ({ cohortId, profile }) => {
       <div className="chartAndLegend">
         <div className="legend">
           {attendanceData.map((a) => (
-            <p>
+            <p key={a.label}>
               <span
                 style={{
                   border: `1px solid ${a.borderColor}`,

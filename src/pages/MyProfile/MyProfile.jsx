@@ -3,7 +3,6 @@ import "./MyProfile.css"
 
 // Components
 import ProfileSection from "../../components/ProfileSection/ProfileSection"
-import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
 import AttendanceChart from "../../components/AttendanceChart/AttendanceChart"
 import DeliverableChart from "../../components/DeliverableChart/DeliverableChart"
 import EditProfilePopup from "../../components/EditProfilePopup/EditProfilePopup"
@@ -14,6 +13,8 @@ const MyProfile = (props) => {
   const { user, cohortId, profile, setProfile } = props
   const [isEditOpen, setIsEditOpen] = useState(false)
   const [isJoinOpen, setIsJoinOpen] = useState(false)
+
+  console.log(profile)
 
   return (
     <main className="myProfile" style={{ position: 'relative' }}>
@@ -42,24 +43,25 @@ const MyProfile = (props) => {
         </section>
       </header>
 
-      {/* <section> */}
-        {/* <ContactInformation person={profile} /> */}
 
-        <ProfileSection person={profile}/>
+      <section className="profileContent">
+        <ProfileSection person={profile} />
+        <ContactInformation person={profile} />
 
-        <DeliverableChart
-          profile={profile}
-          cohortId={cohortId}
-        />
+        {!user.isAdmin &&
+          <div className="chartColumn">
+            <DeliverableChart
+              profile={profile}
+              cohortId={cohortId}
+            />
 
-        <AttendanceChart
-          profile={profile}
-          cohortId={cohortId}
-        />
-      {/* </section> */}
-      {/* <ProfilePicture gitHubUserName={profile.gitHubUserName} size="120px" /> */}
-
-
+            <AttendanceChart
+              profile={profile}
+              cohortId={cohortId}
+            />
+          </div>
+        }
+      </section>
 
     </main>
   )

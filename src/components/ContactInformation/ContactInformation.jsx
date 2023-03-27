@@ -1,8 +1,5 @@
 import './ContactInformation.css'
 
-// Components
-import IdentityHeader from '../IdentityHeader/IdentityHeader'
-
 // Assets
 import email from '../../assets/icons/profile/email.svg'
 import github from '../../assets/icons/profile/github.svg'
@@ -14,7 +11,7 @@ const ContactInformation = ({ person }) => {
 
   return (
     <section className="contactInformation">
-      <IdentityHeader person={person} textAlign="left" />
+      <h1>Contact Information</h1>
       <div>
         <h3>
           <img src={email} alt="email" />

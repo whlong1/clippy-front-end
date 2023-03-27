@@ -5,10 +5,6 @@
   flex-direction: column;
 }
 
-.myProfile > section {
-  padding: 24px 0;
-}
-
 .myProfile .header {
   width: 100%;
 }
@@ -26,4 +22,88 @@
   margin-bottom: 24px;
   border: 1px solid var(--border-color);
   background-color: var(--input-background);
+}
+
+.profileContent {
+  display: flex;
+  padding: 0;
+  padding-top: 24px;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.chartColumn {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.chartContainer {
+  display: flex;
+  width: 100%;
+  border-radius: 5px;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 180px !important;
+  justify-content: flex-start;
+  border: 1px solid var(--border-color);
+
+  margin-bottom: 24px;
+  padding: 0 !important;
+  padding: 18px 18px 0px 18px !important;
+}
+
+.chartContainer h2 {
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+
+.chartContainer div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.chartAndLegend {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row !important;
+}
+
+.legend {
+  width: 100px;
+  padding-top: 20px;
+}
+
+.legend p {
+  display: flex;
+  line-height: .7;
+  text-align: left;
+  font-size:  13px;
+  color: #8a8a8a;
+  align-items: center;
+  margin-bottom: 18px;
+  justify-content: center;
+}
+
+.legend p span {
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+}
+
+.chart {
+  width: 50%;
+  display: flex;
+  height: 110px;
+  margin-left: auto;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.chartColumn .chartContainer:last-child {
+  margin-bottom: 0;
 }

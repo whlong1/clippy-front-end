@@ -1,4 +1,6 @@
 .profileSection {
+  min-width: 33%;
+
   height: 100%;
   display: flex;
   align-items: center;
@@ -28,6 +30,7 @@
   justify-content: space-around;
   flex-direction: row !important;
   margin-top: 40px;
+  max-width: 128px;
 }
 
 .personLinks img {
