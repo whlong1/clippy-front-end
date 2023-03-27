@@ -1,18 +1,20 @@
+import "./ProfileSection.css"
+
 // Components
 import ExternalLink from "../../components/ExternalLink/ExternalLink"
 import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
 import IdentityHeader from "../../components/IdentityHeader/IdentityHeader"
 
 // Assets
-import github from '../../assets/icons/profile/github.svg'
-import linkedin from '../../assets/icons/profile/linkedin.svg'
-import codewars from '../../assets/icons/profile/codewars.svg'
+import github from "../../assets/icons/profile/github.svg"
+import linkedin from "../../assets/icons/profile/linkedin.svg"
+import codewars from "../../assets/icons/profile/codewars.svg"
 
-const ProfileSection = ({ person }) => {
+const ProfileSection = ({ person, displayRole }) => {
   return (
-    <section>
+    <section className="profileSection">
       <ProfilePicture key={person._id} gitHubUserName={person.gitHubUserName} size="128px" />
-      <IdentityHeader person={person} textAlign="center" displayRole={true} />
+      <IdentityHeader person={person} textAlign="center" displayRole={displayRole} />
       <span className="personLinks">
         <ExternalLink urlString={`https://github.com/${person.gitHubUserName}`}>
           <img src={github} alt="github" />

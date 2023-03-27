@@ -2,6 +2,7 @@ import { useState } from "react"
 import "./MyProfile.css"
 
 // Components
+import ProfileSection from "../../components/ProfileSection/ProfileSection"
 import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
 import AttendanceChart from "../../components/AttendanceChart/AttendanceChart"
 import DeliverableChart from "../../components/DeliverableChart/DeliverableChart"
@@ -41,8 +42,11 @@ const MyProfile = (props) => {
         </section>
       </header>
 
-      <section>
-        <ContactInformation person={profile} />
+      {/* <section> */}
+        {/* <ContactInformation person={profile} /> */}
+
+        <ProfileSection person={profile}/>
+
         <DeliverableChart
           profile={profile}
           cohortId={cohortId}
@@ -52,7 +56,7 @@ const MyProfile = (props) => {
           profile={profile}
           cohortId={cohortId}
         />
-      </section>
+      {/* </section> */}
       {/* <ProfilePicture gitHubUserName={profile.gitHubUserName} size="120px" /> */}
 
 

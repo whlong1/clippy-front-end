@@ -24,7 +24,7 @@ const ShowPerson = ({ user, cohortId }) => {
   return (
     <section className="person" style={{ position: 'relative' }}>
       <section>
-        <ProfileSection person={person} />
+        <ProfileSection person={person} displayRole={true} />
         {user.isAdmin && <RolePanel person={person} cohortId={cohortId} />}
       </section>
     </section>
