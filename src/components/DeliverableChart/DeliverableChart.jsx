@@ -92,8 +92,8 @@ const DeliverableChart = ({ cohortId, profile }) => {
       <div className="chartAndLegend">
         <div className="legend">
           {deliverableData.map((d) => (
-            <p>
-              <div
+            <p key={d.label}>
+              <span
                 style={{
                   border: `1px solid ${d.borderColor}`,
                   backgroundColor: d.backgroundColor,

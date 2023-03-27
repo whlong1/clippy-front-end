@@ -41,10 +41,10 @@ const MyProfile = (props) => {
         </section>
       </header>
 
-      <section>
+      {/* <section>
         <ProfilePicture gitHubUserName={profile.gitHubUserName} size="120px" />
         <ContactInformation person={profile} />
-      </section>
+      </section> */}
 
       <DeliverableChart
         profile={profile}

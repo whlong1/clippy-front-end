@@ -23,65 +23,65 @@ const AttendanceChart = ({ cohortId, profile }) => {
     plugins: { legend: { display: false } },
   }
 
-  // const attendanceData = [
-  //   {
-  //     label: 'Missing:',
-  //     borderColor: 'rgba(219, 76, 76, 0.6)',
-  //     backgroundColor: 'rgba(219, 76, 76, 0.15)',
-  //     data: studentDeliverables.filter((d) => d.status === 'missing').length,
-  //   },
-  //   {
-  //     label: 'Pending:',
-  //     borderColor: 'rgba(91, 143, 216, .6)',
-  //     backgroundColor: 'rgba(91, 143, 216, .15)',
-  //     data: studentDeliverables.filter((d) => d.status === 'pendingAudit' || d.status === 'assigned').length,
-  //   },
-  //   {
-  //     label: 'Complete:',
-  //     borderColor: 'rgba(112, 199, 96, .6)',
-  //     backgroundColor: 'rgba(112, 199, 96, .15)',
-  //     data: studentDeliverables.filter((d) => d.status === 'complete').length,
-  //   },
-  //   {
-  //     label: 'Incomplete:',
-  //     borderColor: 'rgba(255, 177, 88, 0.6)',
-  //     backgroundColor: 'rgba(255, 177, 88, 0.15)',
-  //     data: studentDeliverables.filter((d) => d.status === 'incomplete').length,
-  //   },
-  // ]
+  const attendanceData = [
+    {
+      label: 'Absent:',
+      borderColor: 'rgba(219, 76, 76, 0.6)',
+      backgroundColor: 'rgba(219, 76, 76, 0.15)',
+      data: attendance.filter((a) => a.students[0].status === 'A').length,
+    },
+    {
+      label: 'Exception:',
+      borderColor: 'rgba(91, 143, 216, .6)',
+      backgroundColor: 'rgba(91, 143, 216, .15)',
+      data: attendance.filter((a) => a.students[0].status === 'EC').length,
+    },
+    {
+      label: 'Present:',
+      borderColor: 'rgba(112, 199, 96, .6)',
+      backgroundColor: 'rgba(112, 199, 96, .15)',
+      data: attendance.filter((a) => a.students[0].status === 'P').length,
+    },
+    {
+      label: 'Late:',
+      borderColor: 'rgba(255, 177, 88, 0.6)',
+      backgroundColor: 'rgba(255, 177, 88, 0.15)',
+      data: attendance.filter((a) => a.students[0].status === 'L').length,
+    },
+  ]
 
-  // const chartData = {
-  //   labels: deliverableData.map((d) => `${d.label} ${d.data}`),
-  //   datasets: [
-  //     {
-  //       cutout: '90%',
-  //       borderWidth: 1,
-  //       label: 'Deliverables',
-  //       data: deliverableData.map((d) => d.data),
-  //       borderColor: deliverableData.map((d) => d.borderColor),
-  //       backgroundColor: deliverableData.map((d) => d.backgroundColor),
-  //     },
-  //   ],
-  // }
+  const chartData = {
+    labels: attendanceData.map((a) => `${a.label} ${a.data}`),
+    datasets: [
+      {
+        cutout: '90%',
+        borderWidth: 1,
+        label: 'Deliverables',
+        data: attendanceData.map((a) => a.data),
+        borderColor: attendanceData.map((a) => a.borderColor),
+        backgroundColor: attendanceData.map((a) => a.backgroundColor),
+      },
+    ],
+  }
 
-  // const complete = deliverableData[2].data
-  // const total = studentDeliverables.length
-  // const percentageText = {
-  //   id: 'textCenter',
-  //   beforeDatasetDraw(chart) {
-  //     const { ctx } = chart
-  //     ctx.save()
-  //     ctx.fillStyle = 'white'
-  //     ctx.textAlign = 'center'
-  //     ctx.textBaseline = 'middle'
-  //     ctx.font = 'bolder 20px sans-serif'
-  //     ctx.fillText(
-  //       `${(complete / total * 100).toFixed()}%`,
-  //       chart.getDatasetMeta(0).data[0].x,
-  //       chart.getDatasetMeta(0).data[0].y,
-  //     )
-  //   }
-  // }
+  const present = attendanceData[2].data
+  const total = attendance.length
+  const percentageText = {
+    id: 'textCenter',
+    beforeDatasetDraw(chart) {
+      const { ctx } = chart
+      ctx.save()
+      ctx.fillStyle = 'white'
+      ctx.textAlign = 'center'
+      ctx.textBaseline = 'middle'
+      ctx.font = 'bolder 20px sans-serif'
+      ctx.fillText(
+        `${(present / total * 100).toFixed()}%`,
+        chart.getDatasetMeta(0).data[0].x,
+        chart.getDatasetMeta(0).data[0].y,
+      )
+    }
+  }
 
   return (
     <section className="chartContainer">
@@ -91,24 +91,24 @@ const AttendanceChart = ({ cohortId, profile }) => {
 
       <div className="chartAndLegend">
         <div className="legend">
-          {/* {deliverableData.map((d) => (
+          {attendanceData.map((a) => (
             <p>
-              <div
+              <span
                 style={{
-                  border: `1px solid ${d.borderColor}`,
-                  backgroundColor: d.backgroundColor,
+                  border: `1px solid ${a.borderColor}`,
+                  backgroundColor: a.backgroundColor,
                 }}
               />
-              {d.label} {d.data}
+              {a.label} {a.data}
             </p>
-          ))} */}
+          ))}
         </div>
         <div className="chart">
-          {/* <Doughnut
+          <Doughnut
             data={chartData}
             options={chartOptions}
             plugins={[percentageText]}
-          /> */}
+          />
         </div>
       </div>
 
