@@ -16,67 +16,56 @@ const DeliverableChart = ({ cohortId, profile }) => {
   if (status === 'error') return <ContentStatus status={status} />
   if (status === 'loading') return <ContentStatus status={status} />
 
-  const missing = studentDeliverables.filter((d) => d.status === 'missing').length
-  const complete = studentDeliverables.filter((d) => d.status === 'complete').length
-  const incomplete = studentDeliverables.filter((d) => d.status === 'incomplete').length
-  const pending = studentDeliverables.filter((d) => d.status === 'pendingAudit' || d.status === 'assigned').length
-  const percentComplete = (complete / studentDeliverables.length * 100).toFixed()
-
-  const labels = [
-    `Missing: ${missing}`,
-    `Pending: ${pending}`,
-    `Complete: ${complete}`,
-    `Incomplete: ${incomplete}`,
-  ]
-
   const chartOptions = {
-    // responsive: false,
-    // maintainAspectRatio: true,
+    layout: {},
     responsive: true,
     maintainAspectRatio: false,
-    layout: {},
-    plugins: {
-      legend: {
-        display: true,
-        position: "left",
-        labels: {
-          boxWidth: 10,
-          boxHeight: 10,
-          padding: 18,
-          paddingRight: 100,
-          border: '1px solid red'
-        }
-      },
-      legendDistance: {
-        padding: 70
-      },
-    },
+    plugins: { legend: { display: false } },
   }
 
+  const deliverableData = [
+    {
+      label: 'Missing:',
+      borderColor: 'rgba(255, 99, 132, 1)',
+      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      data: studentDeliverables.filter((d) => d.status === 'missing').length,
+    },
+    {
+      label: 'Pending:',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      data: studentDeliverables.filter((d) => d.status === 'pendingAudit' || d.status === 'assigned').length,
+    },
+    {
+      label: 'Complete:',
+      borderColor: 'rgba(75, 192, 192, 1)',
+      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      data: studentDeliverables.filter((d) => d.status === 'complete').length,
+    },
+    {
+      label: 'Incomplete:',
+      borderColor: 'rgba(255, 206, 86, 1)',
+      backgroundColor: 'rgba(255, 206, 86, 0.2)',
+      data: studentDeliverables.filter((d) => d.status === 'incomplete').length,
+    },
+  ]
+
   const chartData = {
-    labels: labels,
+    labels: deliverableData.map((d) => `${d.label} ${d.data}`),
     datasets: [
       {
-        label: '# of Votes',
-        data: [missing, pending, complete, incomplete],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(255, 206, 86, 1)',
-        ],
-        borderWidth: 1,
         cutout: '90%',
+        borderWidth: 1,
+        label: 'Deliverables',
+        data: deliverableData.map((d) => d.data),
+        borderColor: deliverableData.map((d) => d.borderColor),
+        backgroundColor: deliverableData.map((d) => d.backgroundColor),
       },
     ],
   }
 
+  const complete = deliverableData[2].data
+  const total = studentDeliverables.length
   const percentageText = {
     id: 'textCenter',
     beforeDatasetDraw(chart) {
@@ -87,35 +76,37 @@ const DeliverableChart = ({ cohortId, profile }) => {
       ctx.textBaseline = 'middle'
       ctx.font = 'bolder 20px sans-serif'
       ctx.fillText(
-        `${percentComplete}%`,
+        `${(complete / total * 100).toFixed()}%`,
         chart.getDatasetMeta(0).data[0].x,
         chart.getDatasetMeta(0).data[0].y,
       )
     }
   }
 
-  // Source: https://stackoverflow.com/a/68811704
-  const legendDistance = {
-    id: 'legendDistance',
-    beforeInit(chart, args, opts) {
-      const originalFit = chart.legend.fit
-      chart.legend.fit = function fit() {
-        originalFit.bind(chart.legend)()
-        this.width += opts.padding || 0
-      }
-    }
-  }
-
   return (
     <section className="chartContainer">
-      <h2>Deliverables</h2>
-      <div className="doughnut">
-        <Doughnut
-          data={chartData}
-          options={chartOptions}
-          plugins={[percentageText, legendDistance]}
-        />
+      <header>
+        <h2>Deliverables</h2>
+      </header>
+
+      <div className="chartAndLegend">
+        <div className="legend">
+          {deliverableData.map((d) => (
+            <p>
+              <div style={{ border: `1px solid ${d.borderColor}` }} />
+              {d.label} {d.data}
+            </p>
+          ))}
+        </div>
+        <div className="chart">
+          <Doughnut
+            data={chartData}
+            options={chartOptions}
+            plugins={[percentageText]}
+          />
+        </div>
       </div>
+
     </section>
   )
 }

@@ -1,19 +1,64 @@
 .chartContainer {
   display: flex;
   width: 330px;
-  height: 300px;
+  height: 265px;
+  border-radius: 5px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   border: 1px solid var(--border-color);
-  border-radius: 5px;
-  padding-top: 18px !important;
+
+  padding: 0 !important;
+  padding: 18px 18px 0px 18px !important;
 }
 
 .chartContainer h2 {
-  padding-left: 16px;
   font-weight: 600;
-  /* border: 1px solid red; */
-  /* margin-bottom: 5px; */
   letter-spacing: .5px;
+}
+
+.chartContainer div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.chartAndLegend {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row !important;
+}
+
+.legend {
+  width: 100px;
+  padding-top: 20px;
+}
+
+.legend p {
+  display: flex;
+  line-height: .7;
+  text-align: left;
+  font-size:  13px;
+  color: #808080;
+  align-items: center;
+  margin-bottom: 16px;
+  justify-content: center;
+}
+
+.legend p div {
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+}
+
+.chart {
+  width: 50%;
+
+  display: flex;
+  height: 110px;
+  margin-left: auto;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
