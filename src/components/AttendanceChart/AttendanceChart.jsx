@@ -11,7 +11,7 @@ import ContentStatus from "../ContentStatus/ContentStatus"
 
 const AttendanceChart = ({ cohortId, profile }) => {
   ChartJS.register(ArcElement, Tooltip, Legend)
-  const { attendance, status: status } = useIndexStudentAttendance(cohortId, profile._id)
+  const { attendance, status } = useIndexStudentAttendance(cohortId, profile._id)
 
   if (status === 'error') return <ContentStatus status={status} />
   if (status === 'loading') return <ContentStatus status={status} />
