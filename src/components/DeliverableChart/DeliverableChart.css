@@ -1,0 +1,19 @@
+.chartContainer {
+  display: flex;
+  width: 330px;
+  height: 300px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding-top: 18px !important;
+}
+
+.chartContainer h2 {
+  padding-left: 16px;
+  font-weight: 600;
+  /* border: 1px solid red; */
+  /* margin-bottom: 5px; */
+  letter-spacing: .5px;
+}

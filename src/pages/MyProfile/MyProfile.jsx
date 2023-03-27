@@ -3,7 +3,7 @@ import "./MyProfile.css"
 
 // Components
 import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
-import StudentDashboard from "../../components/StudentDashboard/StudentDashboard"
+import DeliverableChart from "../../components/DeliverableChart/DeliverableChart"
 import EditProfilePopup from "../../components/EditProfilePopup/EditProfilePopup"
 import SelectCohortPopup from "../../components/SelectCohortPopup/SelectCohortPopup"
 import ContactInformation from "../../components/ContactInformation/ContactInformation"
@@ -28,6 +28,8 @@ const MyProfile = (props) => {
         setProfile={setProfile}
         setIsOpen={setIsEditOpen}
       />
+
+
       <header className="header">
         <section>
           <h1>Profile</h1>
@@ -37,14 +39,18 @@ const MyProfile = (props) => {
           </button>}
         </section>
       </header>
+      
       <section>
         <ProfilePicture gitHubUserName={profile.gitHubUserName} size="120px" />
         <ContactInformation person={profile} />
       </section>
-      <StudentDashboard
+
+      <DeliverableChart
         profile={profile}
         cohortId={cohortId}
       />
+
+
     </main>
   )
 }

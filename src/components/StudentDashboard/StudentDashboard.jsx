@@ -2,18 +2,17 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import "./StudentDashboard.css"
 
 // Components
-import { Doughnut } from 'react-chartjs-2'
+
 import ContentStatus from "../ContentStatus/ContentStatus"
 
 
 // Hooks
 import { useIndexStudentAttendance } from "../../hooks/useIndexStudentAttendance"
-import { useIndexStudentDeliverables } from "../../hooks/useIndexStudentDeliverables"
 
 const StudentDashboard = ({ cohortId, profile }) => {
   ChartJS.register(ArcElement, Tooltip, Legend)
   const { attendance, status: attendanceStatus } = useIndexStudentAttendance(cohortId, profile._id)
-  const { studentDeliverables, status: deliverableStatus } = useIndexStudentDeliverables(cohortId, profile._id)
+
 
   if (attendanceStatus === 'error') return <ContentStatus status={attendanceStatus} />
   if (attendanceStatus === 'loading') return <ContentStatus status={attendanceStatus} />
@@ -29,11 +28,7 @@ const StudentDashboard = ({ cohortId, profile }) => {
 
   return (
     <section className="studentDashboard">
-      {/* <Doughnut
-        height="160"
-        width="220"
-        data={data} options={options} plugins={[percentageText]}
-      /> */}
+ 
     </section>
   )
 }
