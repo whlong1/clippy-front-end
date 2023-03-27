@@ -3,6 +3,7 @@ import "./MyProfile.css"
 
 // Components
 import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
+import AttendanceChart from "../../components/AttendanceChart/AttendanceChart"
 import DeliverableChart from "../../components/DeliverableChart/DeliverableChart"
 import EditProfilePopup from "../../components/EditProfilePopup/EditProfilePopup"
 import SelectCohortPopup from "../../components/SelectCohortPopup/SelectCohortPopup"
@@ -39,13 +40,18 @@ const MyProfile = (props) => {
           </button>}
         </section>
       </header>
-      
+
       <section>
         <ProfilePicture gitHubUserName={profile.gitHubUserName} size="120px" />
         <ContactInformation person={profile} />
       </section>
 
       <DeliverableChart
+        profile={profile}
+        cohortId={cohortId}
+      />
+
+      <AttendanceChart
         profile={profile}
         cohortId={cohortId}
       />

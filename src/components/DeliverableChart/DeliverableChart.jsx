@@ -26,26 +26,26 @@ const DeliverableChart = ({ cohortId, profile }) => {
   const deliverableData = [
     {
       label: 'Missing:',
-      borderColor: 'rgba(255, 99, 132, 1)',
-      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      borderColor: 'rgba(219, 76, 76, 0.6)',
+      backgroundColor: 'rgba(219, 76, 76, 0.15)',
       data: studentDeliverables.filter((d) => d.status === 'missing').length,
     },
     {
       label: 'Pending:',
-      borderColor: 'rgba(54, 162, 235, 1)',
-      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgba(91, 143, 216, .6)',
+      backgroundColor: 'rgba(91, 143, 216, .15)',
       data: studentDeliverables.filter((d) => d.status === 'pendingAudit' || d.status === 'assigned').length,
     },
     {
       label: 'Complete:',
-      borderColor: 'rgba(75, 192, 192, 1)',
-      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      borderColor: 'rgba(112, 199, 96, .6)',
+      backgroundColor: 'rgba(112, 199, 96, .15)',
       data: studentDeliverables.filter((d) => d.status === 'complete').length,
     },
     {
       label: 'Incomplete:',
-      borderColor: 'rgba(255, 206, 86, 1)',
-      backgroundColor: 'rgba(255, 206, 86, 0.2)',
+      borderColor: 'rgba(255, 177, 88, 0.6)',
+      backgroundColor: 'rgba(255, 177, 88, 0.15)',
       data: studentDeliverables.filter((d) => d.status === 'incomplete').length,
     },
   ]
@@ -93,7 +93,12 @@ const DeliverableChart = ({ cohortId, profile }) => {
         <div className="legend">
           {deliverableData.map((d) => (
             <p>
-              <div style={{ border: `1px solid ${d.borderColor}` }} />
+              <div
+                style={{
+                  border: `1px solid ${d.borderColor}`,
+                  backgroundColor: d.backgroundColor,
+                }}
+              />
               {d.label} {d.data}
             </p>
           ))}
