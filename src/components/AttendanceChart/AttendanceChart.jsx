@@ -26,26 +26,26 @@ const AttendanceChart = ({ cohortId, profile }) => {
   const attendanceData = [
     {
       label: 'Absent:',
-      borderColor: 'rgba(219, 76, 76, 0.6)',
-      backgroundColor: 'rgba(219, 76, 76, 0.15)',
+      borderColor: 'rgba(134, 65, 83, .85)',
+      backgroundColor: 'rgba(134, 65, 83, .25)',
       data: attendance.filter((a) => a.students[0].status === 'A').length,
     },
     {
       label: 'Exception:',
-      borderColor: 'rgba(91, 143, 216, .6)',
-      backgroundColor: 'rgba(91, 143, 216, .15)',
+      borderColor: 'rgba(85, 130, 188, .85)',
+      backgroundColor: 'rgba(85, 130, 188, .25)',
       data: attendance.filter((a) => a.students[0].status === 'EC').length,
     },
     {
       label: 'Present:',
-      borderColor: 'rgba(112, 199, 96, .6)',
-      backgroundColor: 'rgba(112, 199, 96, .15)',
+      borderColor: 'rgba(101, 156, 119, .85)',
+      backgroundColor: 'rgba(101, 156, 119, .25)',
       data: attendance.filter((a) => a.students[0].status === 'P').length,
     },
     {
       label: 'Late:',
-      borderColor: 'rgba(255, 177, 88, 0.6)',
-      backgroundColor: 'rgba(255, 177, 88, 0.15)',
+      borderColor: 'rgba(162, 139, 96, .85)',
+      backgroundColor: 'rgba(162, 139, 96, .25)',
       data: attendance.filter((a) => a.students[0].status === 'L').length,
     },
   ]
@@ -95,7 +95,7 @@ const AttendanceChart = ({ cohortId, profile }) => {
             <p key={a.label}>
               <span
                 style={{
-                  border: `1px solid ${a.borderColor}`,
+                  border: `1.25px solid ${a.borderColor}`,
                   backgroundColor: a.backgroundColor,
                 }}
               />
