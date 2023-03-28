@@ -16,6 +16,8 @@ const AttendanceChart = ({ cohortId, profile }) => {
   if (status === 'error') return <ContentStatus status={status} />
   if (status === 'loading') return <ContentStatus status={status} />
 
+  console.log('a',attendance)
+
   const chartOptions = {
     layout: {},
     responsive: true,
@@ -64,8 +66,10 @@ const AttendanceChart = ({ cohortId, profile }) => {
     ],
   }
 
-  const present = attendanceData[2].data
   const total = attendance.length
+  const present = attendanceData[2].data
+  const fillText = total ? `${(present / total * 100).toFixed()}%` : ''
+
   const percentageText = {
     id: 'textCenter',
     beforeDatasetDraw(chart) {
@@ -76,7 +80,7 @@ const AttendanceChart = ({ cohortId, profile }) => {
       ctx.textBaseline = 'middle'
       ctx.font = 'bolder 20px sans-serif'
       ctx.fillText(
-        `${(present / total * 100).toFixed()}%`,
+        fillText,
         chart.getDatasetMeta(0).data[0].x,
         chart.getDatasetMeta(0).data[0].y,
       )

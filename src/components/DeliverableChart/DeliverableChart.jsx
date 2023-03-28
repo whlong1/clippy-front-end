@@ -16,6 +16,9 @@ const DeliverableChart = ({ cohortId, profile }) => {
   if (status === 'error') return <ContentStatus status={status} />
   if (status === 'loading') return <ContentStatus status={status} />
 
+  const filteredByCohort = studentDeliverables.length
+    ? studentDeliverables.filter((sd) => sd.cohort === cohortId) : []
+
   const chartOptions = {
     layout: {},
     responsive: true,
@@ -25,32 +28,32 @@ const DeliverableChart = ({ cohortId, profile }) => {
 
   const deliverableData = [
     {
-      
+
       label: 'Missing:',
       borderColor: 'rgba(134, 65, 83, .85)',
       backgroundColor: 'rgba(134, 65, 83, .25)',
-      data: studentDeliverables.filter((d) => d.status === 'missing').length,
+      data: filteredByCohort.filter((d) => d.status === 'missing').length,
     },
     {
       label: 'Pending:',
       borderColor: 'rgba(85, 130, 188, .85)',
       backgroundColor: 'rgba(85, 130, 188, .25)',
-      data: studentDeliverables.filter((d) => d.status === 'pendingAudit' || d.status === 'assigned').length,
+      data: filteredByCohort.filter((d) => d.status === 'pendingAudit' || d.status === 'assigned').length,
     },
     {
       label: 'Complete:',
       borderColor: 'rgba(101, 156, 119, .85)',
       backgroundColor: 'rgba(101, 156, 119, .25)',
-      data: studentDeliverables.filter((d) => d.status === 'complete').length,
+      data: filteredByCohort.filter((d) => d.status === 'complete').length,
     },
     {
       label: 'Incomplete:',
       borderColor: 'rgba(162, 139, 96, .85)',
       backgroundColor: 'rgba(162, 139, 96, .25)',
-      data: studentDeliverables.filter((d) => d.status === 'incomplete').length,
+      data: filteredByCohort.filter((d) => d.status === 'incomplete').length,
     },
   ]
-  
+
   const chartData = {
     labels: deliverableData.map((d) => `${d.label} ${d.data}`),
     datasets: [
@@ -65,8 +68,10 @@ const DeliverableChart = ({ cohortId, profile }) => {
     ],
   }
 
+  const total = filteredByCohort.length
   const complete = deliverableData[2].data
-  const total = studentDeliverables.length
+  const fillText = total ? `${(complete / total * 100).toFixed()}%` : ''
+
   const percentageText = {
     id: 'textCenter',
     beforeDatasetDraw(chart) {
@@ -77,7 +82,7 @@ const DeliverableChart = ({ cohortId, profile }) => {
       ctx.textBaseline = 'middle'
       ctx.font = 'bolder 20px sans-serif'
       ctx.fillText(
-        `${(complete / total * 100).toFixed()}%`,
+        fillText,
         chart.getDatasetMeta(0).data[0].x,
         chart.getDatasetMeta(0).data[0].y,
       )
