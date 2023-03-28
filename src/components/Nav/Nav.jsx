@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom'
 import './Nav.css'
 
 // Components
+import Tooltip from '../Tooltip/Tooltip'
 import LogoutButton from '../LogoutButton/LogoutButton'
 
 // Icons & Audio
@@ -43,40 +44,53 @@ const Nav = (props) => {
           </NavLink>
         </li>
 
-        <li>
-          <NavLink to="/people">
-            <img src={people} alt="people" />
-          </NavLink>
-        </li>
-
-        <li>
-          <NavLink to="/attendance">
-            <img src={attendance} alt="attendance" />
-          </NavLink>
-        </li>
-
-
-        <li>
-          <NavLink to="/deliverables">
-            <img src={deliverables} alt="deliverables" />
-          </NavLink>
-        </li>
-
-        {isAdmin &&
+        <Tooltip text="People">
           <li>
-            <NavLink to="/admin">
-              <img src={admin} alt="admin" />
+            <NavLink to="/people">
+              <img src={people} alt="people" />
             </NavLink>
           </li>
+        </Tooltip>
+
+        <Tooltip>
+          <li>
+            <NavLink to="/attendance">
+              <img src={attendance} alt="attendance" />
+            </NavLink>
+          </li>
+        </Tooltip>
+
+
+        <Tooltip>
+          <li>
+            <NavLink to="/deliverables">
+              <img src={deliverables} alt="deliverables" />
+            </NavLink>
+          </li>
+        </Tooltip>
+
+        {isAdmin &&
+          <Tooltip>
+            <li>
+              <NavLink to="/admin">
+                <img src={admin} alt="admin" />
+              </NavLink>
+            </li>
+          </Tooltip>
         }
 
-        <li>
-          <NavLink to="/profile">
-            <img src={profile} alt="profile" />
-          </NavLink>
-        </li>
+        <Tooltip>
+          <li>
+            <NavLink to="/profile">
+              <img src={profile} alt="profile" />
+            </NavLink>
+          </li>
+        </Tooltip>
 
-        <LogoutButton />
+        <Tooltip>
+          <LogoutButton />
+        </Tooltip>
+
       </ul>
     </nav>
   )

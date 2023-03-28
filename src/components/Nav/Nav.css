@@ -20,7 +20,7 @@ li {
   opacity: .6;
 }
 
-.appNav ul > button {
+.appNav ul > div button {
   width: 24px;
   height: 24px;
   display: flex;
@@ -31,7 +31,7 @@ li {
   background-color: var(--icon-background);
 }
 
-.appNav ul > button img {
+.appNav ul > div button img {
   width: 22px;
   opacity: .6;
 }
