@@ -1,0 +1,51 @@
+.profileSection {
+  min-width: 33%;
+
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.profileSection p {
+  line-height: 1;
+}
+
+.profileSection span h1,
+.profileSection h3 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.profileSection:nth-child(2) {
+  padding-left: 24px;
+  align-items: flex-start;
+}
+
+.personLinks {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row !important;
+  margin-top: 40px;
+  max-width: 128px;
+}
+
+.personLinks img {
+  margin: 0;
+  opacity: .7;
+  border: none;
+  border-radius: 0;
+  width: 20px !important;
+}
+
+.profileSection .pictureContainer {
+  margin-bottom: 24px;
+}
+
+.profileSection .pictureContainer img {
+  margin: 0;
+  border: 1px solid var(--border-color);
+}

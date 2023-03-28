@@ -26,7 +26,7 @@ const RolePanel = ({ person, cohortId }) => {
   const isWaitlisted = cohorts.find((c) => c._id === cohortId).waitlist.includes(person._id)
 
   return (
-    <section>
+    <section className="rolePanel">
 
       {isWaitlisted &&
         <button onClick={() => mutation.mutate({ type: 'approve', payload: approvalData })}>

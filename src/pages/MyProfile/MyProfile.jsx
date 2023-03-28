@@ -2,13 +2,14 @@ import { useState } from "react"
 import "./MyProfile.css"
 
 // Components
-import ProfilePicture from "../../components/ProfilePicture/ProfilePicture"
+import ProfileSection from "../../components/ProfileSection/ProfileSection"
 import EditProfilePopup from "../../components/EditProfilePopup/EditProfilePopup"
 import SelectCohortPopup from "../../components/SelectCohortPopup/SelectCohortPopup"
+import StudentChartColumn from "../../components/StudentChartColumn/StudentChartColumn"
 import ContactInformation from "../../components/ContactInformation/ContactInformation"
 
 const MyProfile = (props) => {
-  const { user, profile, setProfile } = props
+  const { user, cohortId, profile, setProfile } = props
   const [isEditOpen, setIsEditOpen] = useState(false)
   const [isJoinOpen, setIsJoinOpen] = useState(false)
 
@@ -27,6 +28,7 @@ const MyProfile = (props) => {
         setProfile={setProfile}
         setIsOpen={setIsEditOpen}
       />
+
       <header className="header">
         <section>
           <h1>Profile</h1>
@@ -36,9 +38,11 @@ const MyProfile = (props) => {
           </button>}
         </section>
       </header>
-      <section>
-        <ProfilePicture gitHubUserName={profile.gitHubUserName} size="120px" />
+      
+      <section className={!user.isAdmin ? "profileContent" : "adminView"} >
+        <ProfileSection person={profile} />
         <ContactInformation person={profile} />
+        <StudentChartColumn user={user} profile={profile} cohortId={cohortId} />
       </section>
     </main>
   )
