@@ -4,8 +4,8 @@
   border: 1px solid var(--border-color);
 
   width: 100%;
-  margin: 0 24px 0;
   height: 384px;
+  margin: 0 24px 0;
 }
 
 .contactInformation>* {

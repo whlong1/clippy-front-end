@@ -107,3 +107,22 @@
 .chartColumn .chartContainer:last-child {
   margin-bottom: 0;
 }
+
+.adminView {
+  display: flex;
+  padding: 0;
+  padding-top: 24px;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.adminView .profileSection {
+  width: 150%;
+}
+
+.adminView .contactInformation {
+  height: 100%;
+  display: none;
+  margin-right: 0;
+}
