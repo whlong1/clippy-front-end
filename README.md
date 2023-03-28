@@ -74,6 +74,8 @@ We're currently working on creating a video demo of our application, which will 
 
 - [x] Add copy attendance functionality.
 
+- [x] Add student stats to the My Profile page.
+
 - [ ] Add hover highlight to deliverable rows.
 
 - [ ] Toggle button for feedback and code block text areas on.
@@ -90,7 +92,6 @@ We're currently working on creating a video demo of our application, which will 
 
 - [ ] Display data metrics for instructors.
 
-- [ ] Add student stats to the My Profile page.
 
 - [ ] Add guide in Getting Started for Auth0 setup.
 
