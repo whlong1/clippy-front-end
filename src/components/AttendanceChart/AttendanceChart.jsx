@@ -16,8 +16,6 @@ const AttendanceChart = ({ cohortId, profile }) => {
   if (status === 'error') return <ContentStatus status={status} />
   if (status === 'loading') return <ContentStatus status={status} />
 
-  console.log('a',attendance)
-
   const chartOptions = {
     layout: {},
     responsive: true,

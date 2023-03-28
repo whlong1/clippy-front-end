@@ -38,7 +38,7 @@ const MyProfile = (props) => {
           </button>}
         </section>
       </header>
-
+      
       <section className={!user.isAdmin ? "profileContent" : "adminView"} >
         <ProfileSection person={profile} />
         <ContactInformation person={profile} />
