@@ -65,6 +65,7 @@ We're currently working on creating a video demo of our application, which will 
 - Auth0
 - React Query
 - React CodeMirror
+- Chart.js
 
 ## Todos
 
@@ -132,6 +133,8 @@ This project was made possible thanks to the following technologies:
 - React CodeMirror - A code editor for React apps. Visit the [React CodeMirror GitHub page](https://uiwjs.github.io/react-codemirror) for more information.
 
 - Auth0 - A platform for authentication and authorization. Visit the [Auth0 website](https://auth0.com/) for more information.
+
+- Chart.js - A chart library for JavasSript. Visit the [Chart.js website](https://www.chartjs.org/) for more information.
 
 
 
