@@ -1,0 +1,15 @@
+.tooltip {
+  z-index: 1;
+  border-radius: 5px;
+  padding: 12px 16px 16px 16px;
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.75);
+}
+
+.tooltip p {
+  line-height: 1px;
+  font-size: 14px;
+  color: rgb(170, 170, 170);
+}

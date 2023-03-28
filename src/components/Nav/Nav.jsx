@@ -36,13 +36,15 @@ const Nav = (props) => {
   return (
     <nav className='appNav'>
       <ul>
-        <li>
-          <NavLink to="/" onClick={makeItQuack}>
-            {markSelect === 1 && <img style={logoStyle} src={MarkB} alt="Abstract flamingo" />}
-            {markSelect === 2 && <img style={logoStyle} src={MarkP} alt="Abstract flamingo" />}
-            {markSelect === 3 && <img style={logoStyle} src={MarkW} alt="Abstract flamingo" />}
-          </NavLink>
-        </li>
+        <Tooltip text="Home">
+          <li>
+            <NavLink to="/" onClick={makeItQuack}>
+              {markSelect === 1 && <img style={logoStyle} src={MarkB} alt="Abstract flamingo" />}
+              {markSelect === 2 && <img style={logoStyle} src={MarkP} alt="Abstract flamingo" />}
+              {markSelect === 3 && <img style={logoStyle} src={MarkW} alt="Abstract flamingo" />}
+            </NavLink>
+          </li>
+        </Tooltip>
 
         <Tooltip text="People">
           <li>
@@ -52,7 +54,7 @@ const Nav = (props) => {
           </li>
         </Tooltip>
 
-        <Tooltip>
+        <Tooltip text="Attendance">
           <li>
             <NavLink to="/attendance">
               <img src={attendance} alt="attendance" />
@@ -61,7 +63,7 @@ const Nav = (props) => {
         </Tooltip>
 
 
-        <Tooltip>
+        <Tooltip text="Deliverables">
           <li>
             <NavLink to="/deliverables">
               <img src={deliverables} alt="deliverables" />
@@ -70,7 +72,7 @@ const Nav = (props) => {
         </Tooltip>
 
         {isAdmin &&
-          <Tooltip>
+          <Tooltip text="Admin">
             <li>
               <NavLink to="/admin">
                 <img src={admin} alt="admin" />
@@ -79,7 +81,7 @@ const Nav = (props) => {
           </Tooltip>
         }
 
-        <Tooltip>
+        <Tooltip text="Profile">
           <li>
             <NavLink to="/profile">
               <img src={profile} alt="profile" />
@@ -87,7 +89,7 @@ const Nav = (props) => {
           </li>
         </Tooltip>
 
-        <Tooltip>
+        <Tooltip text="Logout">
           <LogoutButton />
         </Tooltip>
 
