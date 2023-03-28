@@ -79,6 +79,8 @@ We're currently working on creating a video demo of our application, which will 
 
 - [ ] Add hover highlight to deliverable rows.
 
+- [ ] Autosave grading writeups.
+
 - [ ] Toggle button for feedback and code block text areas on.
 
 - [ ] Display profile count in admin portal.
@@ -92,7 +94,6 @@ We're currently working on creating a video demo of our application, which will 
 - [ ] Add support for mobile devices.
 
 - [ ] Display data metrics for instructors.
-
 
 - [ ] Add guide in Getting Started for Auth0 setup.
 
