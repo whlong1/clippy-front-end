@@ -36,7 +36,7 @@ const Nav = (props) => {
   return (
     <nav className='appNav'>
       <ul>
-        <Tooltip text="Home">
+        <Tooltip>
           <li>
             <NavLink to="/" onClick={makeItQuack}>
               {markSelect === 1 && <img style={logoStyle} src={MarkB} alt="Abstract flamingo" />}
