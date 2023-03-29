@@ -41,7 +41,7 @@ const SubmisionAndFeedback = ({ cohortId, studentDeliverable, adminView }) => {
 
   return (
     <section className="submissionAndFeedback">
-      <Popup isOpen={isOpen}>
+      <Popup isOpen={isOpen} key={studentDeliverable._id}>
         <SubmissionPanel
           setIsOpen={setIsOpen}
           submitDeliverable={submitDeliverable}
