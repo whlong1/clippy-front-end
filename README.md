@@ -79,7 +79,7 @@ We're currently working on creating a video demo of our application, which will 
 
 - [x] Add hover tooltips for app nav.
 
-- [ ] Add hover highlight to deliverable rows.
+- [x] Add hover highlight to deliverable rows.
 
 - [ ] Autosave grading writeups.
 
