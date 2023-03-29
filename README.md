@@ -89,7 +89,6 @@ We're currently working on creating a video demo of our application, which will 
 
 - [ ] Display order that deliverables were completed in admin portal.
 
-
 - [ ] Add meta tags.
 
 - [ ] Add support for mobile devices.

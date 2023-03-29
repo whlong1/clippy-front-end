@@ -71,7 +71,7 @@ const Nav = (props) => {
         </Tooltip>
 
         {isAdmin &&
-          <Tooltip text="Admin">
+          <Tooltip text="Admin Panel">
             <li>
               <NavLink to="/admin">
                 <img src={admin} alt="admin" />
