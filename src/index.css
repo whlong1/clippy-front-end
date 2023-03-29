@@ -28,10 +28,11 @@ body {
   --content-background: #101115;
   --input-background: #080b0d;
   --icon-background: #2F2E37;
-  
+
   --btn-hover-background: #2c2c2c;
   --btn-active-background: #1a1a1f;
-  
+  --row-hover-background: rgba(35, 35, 35, .2);
+
   --nav-background: #17171b;
   --btn-background: #1a1a1f;
 
@@ -349,28 +350,10 @@ div {
   margin: 0;
 }
 
-/* Crop long deliverable titles */
-/* .deliverableTitle {
-  min-height: 27.5px;
-  line-height: 24px;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  word-break: break-all;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-} */
+.row:hover {
+  background: var(--row-hover-background);
+}
 
-/* .externalLink img {
-  width: 12px;
-  border-radius: 0;
-  padding-top: 1px;
-  margin-left: 4px;
-} */
-
-/* .row .externalLink + .externalLink  {
-  margin-left: 12px;
-} */
 
 /* GRADE AND VIEW STUDENT DELIVERABLE */
 .studentDeliverable header {
