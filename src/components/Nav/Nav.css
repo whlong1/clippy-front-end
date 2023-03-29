@@ -10,7 +10,6 @@ ul {
 li {
   width: 24px;
   height: 24px;
-  margin-bottom: 48px;
   border-radius: 100px;
   background-color: var(--icon-background);
 }
@@ -20,18 +19,21 @@ li {
   opacity: .6;
 }
 
-.appNav ul > button {
+.appNav ul > div button {
   width: 24px;
   height: 24px;
   display: flex;
   padding-top: 2px;
   align-items: center;
-  margin-bottom: 48px;
   border-radius: 100px;
   background-color: var(--icon-background);
 }
 
-.appNav ul > button img {
+.appNav ul > div button img {
   width: 22px;
   opacity: .6;
+}
+
+.tooltipContainer {
+  margin-bottom: 48px;
 }

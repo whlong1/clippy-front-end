@@ -1,0 +1,16 @@
+.tooltip {
+  z-index: 1;
+  opacity: 0;
+  width: 72px;
+  border-radius: 5px;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.tooltip p {
+  width: 100%;
+  font-size: 11px;
+  line-height: 1px;
+  text-align: center;
+  color: rgb(110, 110, 110);
+}

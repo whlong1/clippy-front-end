@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom'
 import './Nav.css'
 
 // Components
+import Tooltip from '../Tooltip/Tooltip'
 import LogoutButton from '../LogoutButton/LogoutButton'
 
 // Icons & Audio
@@ -35,48 +36,62 @@ const Nav = (props) => {
   return (
     <nav className='appNav'>
       <ul>
-        <li>
-          <NavLink to="/" onClick={makeItQuack}>
-            {markSelect === 1 && <img style={logoStyle} src={MarkB} alt="Abstract flamingo" />}
-            {markSelect === 2 && <img style={logoStyle} src={MarkP} alt="Abstract flamingo" />}
-            {markSelect === 3 && <img style={logoStyle} src={MarkW} alt="Abstract flamingo" />}
-          </NavLink>
-        </li>
-
-        <li>
-          <NavLink to="/people">
-            <img src={people} alt="people" />
-          </NavLink>
-        </li>
-
-        <li>
-          <NavLink to="/attendance">
-            <img src={attendance} alt="attendance" />
-          </NavLink>
-        </li>
-
-
-        <li>
-          <NavLink to="/deliverables">
-            <img src={deliverables} alt="deliverables" />
-          </NavLink>
-        </li>
-
-        {isAdmin &&
+        <Tooltip>
           <li>
-            <NavLink to="/admin">
-              <img src={admin} alt="admin" />
+            <NavLink to="/" onClick={makeItQuack}>
+              {markSelect === 1 && <img style={logoStyle} src={MarkB} alt="Abstract flamingo" />}
+              {markSelect === 2 && <img style={logoStyle} src={MarkP} alt="Abstract flamingo" />}
+              {markSelect === 3 && <img style={logoStyle} src={MarkW} alt="Abstract flamingo" />}
             </NavLink>
           </li>
+        </Tooltip>
+
+        <Tooltip text="People">
+          <li>
+            <NavLink to="/people">
+              <img src={people} alt="people" />
+            </NavLink>
+          </li>
+        </Tooltip>
+
+        <Tooltip text="Attendance">
+          <li>
+            <NavLink to="/attendance">
+              <img src={attendance} alt="attendance" />
+            </NavLink>
+          </li>
+        </Tooltip>
+
+        <Tooltip text="Deliverables">
+          <li>
+            <NavLink to="/deliverables">
+              <img src={deliverables} alt="deliverables" />
+            </NavLink>
+          </li>
+        </Tooltip>
+
+        {isAdmin &&
+          <Tooltip text="Admin">
+            <li>
+              <NavLink to="/admin">
+                <img src={admin} alt="admin" />
+              </NavLink>
+            </li>
+          </Tooltip>
         }
 
-        <li>
-          <NavLink to="/profile">
-            <img src={profile} alt="profile" />
-          </NavLink>
-        </li>
+        <Tooltip text="Profile">
+          <li>
+            <NavLink to="/profile">
+              <img src={profile} alt="profile" />
+            </NavLink>
+          </li>
+        </Tooltip>
 
-        <LogoutButton />
+        <Tooltip text="Logout">
+          <LogoutButton />
+        </Tooltip>
+
       </ul>
     </nav>
   )
