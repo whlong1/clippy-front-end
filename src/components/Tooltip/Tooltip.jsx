@@ -17,9 +17,9 @@ const Tooltip = ({ children, text }) => {
 
   const handleHover = (e) => {
     if (e.type === "mouseenter") {
-      setTimeout(() => setShow(true), 100);
+      setTimeout(() => setShow(true), 100)
     } else if (e.type === "mouseleave") {
-      setTimeout(() => setShow(false), 100);
+      setTimeout(() => setShow(false), 100)
     }
   }
 

@@ -77,6 +77,8 @@ We're currently working on creating a video demo of our application, which will 
 
 - [x] Add student stats to the My Profile page.
 
+- [x] Add hover tooltips for app nav.
+
 - [ ] Add hover highlight to deliverable rows.
 
 - [ ] Autosave grading writeups.
@@ -87,7 +89,6 @@ We're currently working on creating a video demo of our application, which will 
 
 - [ ] Display order that deliverables were completed in admin portal.
 
-- [ ] Add hover tooltips for app nav.
 
 - [ ] Add meta tags.
 

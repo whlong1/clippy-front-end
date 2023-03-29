@@ -10,7 +10,6 @@ ul {
 li {
   width: 24px;
   height: 24px;
-  /* margin-bottom: 48px; */
   border-radius: 100px;
   background-color: var(--icon-background);
 }
@@ -26,7 +25,6 @@ li {
   display: flex;
   padding-top: 2px;
   align-items: center;
-  /* margin-bottom: 48px; */
   border-radius: 100px;
   background-color: var(--icon-background);
 }

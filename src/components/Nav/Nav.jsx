@@ -62,7 +62,6 @@ const Nav = (props) => {
           </li>
         </Tooltip>
 
-
         <Tooltip text="Deliverables">
           <li>
             <NavLink to="/deliverables">
