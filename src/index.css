@@ -28,10 +28,11 @@ body {
   --content-background: #101115;
   --input-background: #080b0d;
   --icon-background: #2F2E37;
-  
+
   --btn-hover-background: #2c2c2c;
   --btn-active-background: #1a1a1f;
-  
+  --row-hover-background: rgba(35, 35, 35, .2);
+
   --nav-background: #17171b;
   --btn-background: #1a1a1f;
 
@@ -350,7 +351,7 @@ div {
 }
 
 .row:hover {
-  background: rgba(35, 35, 35, .2);
+  background: var(--row-hover-background);
 }
 
 
