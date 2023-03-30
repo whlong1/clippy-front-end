@@ -28,28 +28,27 @@ const DeliverableChart = ({ cohortId, profile }) => {
 
   const deliverableData = [
     {
-
       label: 'Missing:',
-      borderColor: 'rgba(134, 65, 83, .85)',
-      backgroundColor: 'rgba(134, 65, 83, .25)',
+      borderColor: 'rgba(221, 33, 24, 1)',
+      backgroundColor: 'rgba(196, 7, 6, .35)',
       data: filteredByCohort.filter((d) => d.status === 'missing').length,
     },
     {
       label: 'Pending:',
-      borderColor: 'rgba(85, 130, 188, .85)',
-      backgroundColor: 'rgba(85, 130, 188, .25)',
+      borderColor: 'rgba(29, 128, 245, 1)',
+      backgroundColor: 'rgba(3, 103, 224, .3)',
       data: filteredByCohort.filter((d) => d.status === 'pendingAudit' || d.status === 'assigned').length,
     },
     {
       label: 'Complete:',
-      borderColor: 'rgba(101, 156, 119, .85)',
-      backgroundColor: 'rgba(101, 156, 119, .25)',
+      borderColor: 'rgba(0, 151, 20, 1)',
+      backgroundColor: 'rgba(0, 113, 15, .35)',
       data: filteredByCohort.filter((d) => d.status === 'complete').length,
     },
     {
       label: 'Incomplete:',
-      borderColor: 'rgba(162, 139, 96, .85)',
-      backgroundColor: 'rgba(162, 139, 96, .25)',
+      borderColor: 'rgba(233, 199, 0, 1)',
+      backgroundColor: 'rgba(161, 126, 0, .35)',
       data: filteredByCohort.filter((d) => d.status === 'incomplete').length,
     },
   ]
