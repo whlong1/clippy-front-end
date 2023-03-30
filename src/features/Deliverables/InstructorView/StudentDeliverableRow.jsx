@@ -16,9 +16,11 @@ const StudentDeliverableRow = ({ deliverableId, student, handleSquad }) => {
     <div className="row">
       <StatusIndicator status={studentDeliverableStatus} />
       <GroupSelect student={student} handleSquad={handleSquad} />
-      <ProfileInfo profile={student} />
+      <Link style={{ fontSize: '14px' }} to={path}>
+        <ProfileInfo profile={student} />
+      </Link>
       <ExternalUrls student={student} />
-      <Link style={{ fontSize: '14px' }} to={path}>View</Link>
+      <button style={{ margin: 0 }}>•••</button>
     </div>
   )
 }
