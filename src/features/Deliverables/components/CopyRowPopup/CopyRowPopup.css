@@ -44,7 +44,13 @@
 
 .copyRow .linkSection {
   width: 100%;
-  padding-top: 30px;
+  padding-top: 24px;
+}
+
+.copyRow .linkSection h2 {
+  width: 100%;
+  opacity: .5;
+  text-align: center;
 }
 
 .copyRow .urlLink:first-child {
