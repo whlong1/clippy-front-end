@@ -3,15 +3,15 @@ import { Link } from "react-router-dom"
 
 // Components
 import GroupSelect from "./GroupSelect"
-import CopyRowPopup from "./CopyRowPopup"
+import CopyRowPopup from "../components/CopyRowPopup/CopyRowPopup"
 import ExternalUrls from "../components/ExternalUrls/ExternalUrls"
 import ProfileInfo from "../../../components/ProfileInfo/ProfileInfo"
 import StatusIndicator from "../../../components/StatusIndicator/StatusIndicator"
 
 const StudentDeliverableRow = ({ deliverableId, student, handleSquad }) => {
   const [isOpen, setIsOpen] = useState(false)
-
   const { _id: studentDeliverableId, isWithdrawn } = student
+
   const path = `/deliverables/${deliverableId}/students/${studentDeliverableId}/grade`
   const studentDeliverableStatus = isWithdrawn ? 'W' : student.status
 
