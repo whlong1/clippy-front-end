@@ -32,7 +32,7 @@ const CopyRowPopup = ({ student, isOpen, setIsOpen }) => {
     <Popup key={student._id} isOpen={isOpen}>
       <div className="copyRow">
         <header>
-          <h1>Student Links</h1>
+          <h1>{student.preferredName}'s' Links</h1>
           <p>
             {filteredUrls.length
               ? "Select the link you wish to copy below."
