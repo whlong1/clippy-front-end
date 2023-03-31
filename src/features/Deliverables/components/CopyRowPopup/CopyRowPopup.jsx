@@ -9,65 +9,42 @@ import SubmittedLink from "../SubmittedLink/SubmittedLink"
 import { filterDeliverableUrls } from "../../helpers/helpers"
 
 const CopyRowPopup = ({ student, isOpen, setIsOpen }) => {
-  const {
-    miscUrls,
-    gitHubUrl,
-    trelloUrl,
-    deploymentUrl,
-    preferredName,
-    codeSandboxUrl,
-  } = student
-
-  const [copied, setCopied] = useState(false)
-
-  console.log(miscUrls, gitHubUrl, trelloUrl, deploymentUrl, preferredName, codeSandboxUrl)
-
-  const handleCopy = () => {
-    setCopied(true)
-    setTimeout(() => { setCopied(false); setIsOpen(false) }, 800)
-  }
-
-  // copy url
-  const style = {
-    width: "100%",
-    border: "1px solid red",
-  }
-
-  const style2 = {
-    display: 'flex',
-  
-  }
-
   const filteredUrls = filterDeliverableUrls(student)
-  const urlLinks = filteredUrls.map((url, idx) => (
-    <div style={style2}>
-      <SubmittedLink
-        key={idx}
-        url={url}
-        studentDeliverable={student}
-        styleProp={{ fontSize: '14px', opacity: '1', marginLeft: '12px', border: '1px solid green' }}
-      />
-      <button onClick={handleCopy} style={{margin: "0"}}>
-        {copied ? "COPIED" : "COPY"}
-      </button>
-    </div>
-  ))
+  const initialState = filteredUrls.map((u) => false)
+  const [copied, setCopied] = useState(initialState)
+
+  const handleCopy = (idx) => {
+    setCopied((prev) => prev.map((u, i) => i === idx ? true : false))
+    setTimeout(() => setCopied(initialState), 800)
+  }
 
   return (
     <Popup key={student._id} isOpen={isOpen}>
       <div className="copyRow">
         <header>
-          <h1>Copy Options</h1>
-          <p>Lorem ipsum dolore ipsum dolore lorem.</p>
+          <h1>Student Links</h1>
+          <p>Select the link you wish to copy below.</p>
         </header>
-        <section style={style}>
-          {urlLinks}
+        <section className="linkSection">
+          {filteredUrls.map((url, idx) => (
+            <div className="urlLink" key={idx}>
+              <SubmittedLink
+                key={idx}
+                url={url}
+                studentDeliverable={student}
+                styleProp={{ fontSize: '16px', opacity: '1' }}
+              />
+              <button onClick={() => handleCopy(idx)} style={{ margin: "0" }}>
+                {copied[idx] ? "COPIED" : "COPY"}
+              </button>
+            </div>
+          ))}
         </section>
-        <section>
+        <footer>
           <button onClick={() => setIsOpen(false)}>
             CLOSE
           </button>
-        </section>
+        </footer>
       </div>
     </Popup>
   )

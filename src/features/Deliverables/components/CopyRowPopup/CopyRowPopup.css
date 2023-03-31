@@ -17,7 +17,6 @@
 }
 
 .copyRow * {
-  margin: 0;
   line-height: 1;
 }
 
@@ -41,4 +40,29 @@
   border-radius: 5px;
   margin: 24px 8px 0px;
   padding: 6px 0px 18px;
+}
+
+.copyRow .linkSection {
+  width: 100%;
+  padding-top: 30px;
+}
+
+.copyRow .urlLink:first-child {
+  margin-bottom: 12px;
+}
+
+.copyRow .urlLink button {
+  margin-left: auto !important;
+}
+
+.copyRow footer {
+  width: 100%;
+  display: flex;
+  padding-top: 24px;
+  justify-content: center;
+}
+
+.copyRow footer button {
+  margin: 0;
+  width: 100%;
 }
