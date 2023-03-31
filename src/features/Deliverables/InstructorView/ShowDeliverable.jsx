@@ -48,14 +48,14 @@ const ShowDeliverable = (props) => {
       payload: { profileId: profileId, squadData: squadData, deliverableId }
     })
   }
-  
+
   const sortedByNormalizedName = deliverable.students.sort((a, b) => {
     return a.normalizedName > b.normalizedName ? 1 : -1
   })
 
   return (
     <section style={{ position: 'relative' }}>
-      <Popup isOpen={isOpen}>
+      <Popup key={deliverableId} isOpen={isOpen}>
         <DeleteConfirmation
           setIsOpen={setIsOpen}
           title="Delete Deliverable"
