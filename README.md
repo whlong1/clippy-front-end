@@ -81,6 +81,8 @@ We're currently working on creating a video demo of our application, which will 
 
 - [x] Add hover highlight to deliverable rows.
 
+- [x] Expanded options for copying student deliverable rows
+
 - [ ] Expanded options for copying columns
 
 - [ ] Autosave grading writeups.
