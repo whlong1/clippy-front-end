@@ -6,8 +6,6 @@ import SubmissionTracker from './SubmissionTracker'
 import RequirementTags from '../components/RequirementTags/RequirementTags'
 import ExternalLink from '../../../components/ExternalLink/ExternalLink'
 
-import Popup from '../../../layouts/Popup'
-
 // Assets
 import share from '../../../assets/icons/share.svg'
 
@@ -60,10 +58,6 @@ const DeliverableHeader = (props) => {
         <button onClick={handleCopy} >
           {copied ? "COPIED" : "COPY"}
         </button>
-
-        <select>
-          <option value="">Copy</option>
-        </select>
 
       </section>
 

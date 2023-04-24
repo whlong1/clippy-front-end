@@ -6,7 +6,7 @@ import { useShowDeliverable } from '../../../hooks/useShowDeliverable'
 import { useDeliverablesManager } from '../../../hooks/useDeliverablesManager'
 
 // Components
-import Popup from '../../../layouts/Popup'
+// import Popup from '../../../layouts/Popup'
 import DeliverableHeader from './DeliverableHeader'
 import StudentDeliverableRow from './StudentDeliverableRow'
 import ContentStatus from '../../../components/ContentStatus/ContentStatus'
@@ -55,13 +55,13 @@ const ShowDeliverable = (props) => {
 
   return (
     <section style={{ position: 'relative' }}>
-      <Popup key={deliverableId} isOpen={isDeleteOpen}>
-        <DeleteConfirmation
-          setIsOpen={setIsDeleteOpen}
-          title="Delete Deliverable"
-          handleDelete={handleDelete}
-        />
-      </Popup>
+      <DeleteConfirmation
+        isOpen={isDeleteOpen}
+        title="Delete Deliverable"
+        setIsOpen={setIsDeleteOpen}
+        handleDelete={handleDelete}
+        deliverableId={deliverableId}
+      />
 
       <DeliverableHeader
         deliverable={deliverable}

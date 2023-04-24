@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useParams, useNavigate, Navigate } from 'react-router-dom'
 
 // Components
-import Popup from '../../layouts/Popup'
 import AttendanceHeader from './AttendanceHeader'
 import StudentStatusRow from './StudentStatusRow'
 import ContentStatus from '../../components/ContentStatus/ContentStatus'
@@ -44,13 +43,12 @@ const ShowAttendance = ({ user, cohortId }) => {
 
   return (
     <section style={{ position: 'relative' }}>
-      <Popup isOpen={isOpen}>
-        <DeleteConfirmation
-          setIsOpen={setIsOpen}
-          title="Delete Attendance"
-          handleDelete={handleDelete}
-        />
-      </Popup>
+      <DeleteConfirmation
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        title="Delete Attendance"
+        handleDelete={handleDelete}
+      />
 
       <AttendanceHeader
         user={user}
@@ -60,7 +58,7 @@ const ShowAttendance = ({ user, cohortId }) => {
         formattedDate={formattedDate}
         handleRedirect={handleRedirect}
       />
-      
+
       {attendance?.students.map((student) => (
         <StudentStatusRow key={student._id} student={student} />
       ))}
