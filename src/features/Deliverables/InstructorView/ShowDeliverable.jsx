@@ -16,7 +16,7 @@ const ShowDeliverable = (props) => {
   const { cohortId } = props
   const navigate = useNavigate()
   const { deliverableId } = useParams()
-  const [isOpen, setIsOpen] = useState(false)
+  const [isDeleteOpen, setIsDeleteOpen] = useState(false)
 
   const mutation = useDeliverablesManager(cohortId)
   const { deliverable, status } = useShowDeliverable(deliverableId)
@@ -55,17 +55,17 @@ const ShowDeliverable = (props) => {
 
   return (
     <section style={{ position: 'relative' }}>
-      <Popup key={deliverableId} isOpen={isOpen}>
+      <Popup key={deliverableId} isOpen={isDeleteOpen}>
         <DeleteConfirmation
-          setIsOpen={setIsOpen}
+          setIsOpen={setIsDeleteOpen}
           title="Delete Deliverable"
           handleDelete={handleDelete}
         />
       </Popup>
 
       <DeliverableHeader
-        setIsOpen={setIsOpen}
         deliverable={deliverable}
+        setIsOpen={setIsDeleteOpen}
         handleDelete={handleDelete}
         markAllComplete={markAllComplete}
       />
