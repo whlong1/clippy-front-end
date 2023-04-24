@@ -1,9 +1,11 @@
 import './DeleteConfirmation.css'
 import Popup from '../../layouts/Popup'
 
-const DeleteConfirmation = ({ title, isOpen, setIsOpen, handleDelete }) => {
+const DeleteConfirmation = (props) => {
+  const { id, title, isOpen, setIsOpen, handleDelete } = props
+
   return (
-    <Popup isOpen={isOpen}>
+    <Popup key={id} isOpen={isOpen}>
       <div className="deleteConfirmation">
         <header>
           <h1>{title}</h1>

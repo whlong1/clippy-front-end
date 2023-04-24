@@ -45,6 +45,7 @@ const ShowAttendance = ({ user, cohortId }) => {
     <section style={{ position: 'relative' }}>
       <DeleteConfirmation
         isOpen={isOpen}
+        id={attendanceId}
         setIsOpen={setIsOpen}
         title="Delete Attendance"
         handleDelete={handleDelete}
