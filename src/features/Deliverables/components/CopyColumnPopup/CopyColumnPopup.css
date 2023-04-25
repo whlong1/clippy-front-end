@@ -53,11 +53,11 @@
   text-align: center;
 }
 
-.copyColumn .urlLink:first-child {
+.copyColumn .urlColumn:first-child {
   margin-bottom: 12px;
 }
 
-.copyColumn .urlLink button {
+.copyColumn .urlColumn button {
   margin-left: auto !important;
 }
 

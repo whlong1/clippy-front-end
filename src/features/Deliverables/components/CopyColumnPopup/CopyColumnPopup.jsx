@@ -27,7 +27,6 @@ const CopyColumnPopup = (props) => {
     setCopied(true)
   }
 
-  
   const requirementTypes = [
     'hasQuiz',
     'hasMiscUrl',
@@ -36,14 +35,22 @@ const CopyColumnPopup = (props) => {
     'hasDeploymentUrl',
     'hasCodeSandboxUrl',
   ]
-  
+
   const filterRequirements = () => {
     return requirementTypes.filter((url) => deliverable[url])
   }
-  
+
+  const urlTypeLookup = {
+    hasQuiz: 'quiz',
+    hasMiscUrl: 'miscUrl',
+    hasTrelloUrl: 'trelloUrl',
+    hasGitHubUrl: 'gitHubUrl',
+    hasDeploymentUrl: 'deploymentUrl',
+    hasCodeSandboxUrl: 'codeSandboxUrl',
+  }
+
   console.log('del', deliverable)
   console.log('requirements', filterRequirements())
-
 
   return (
     <Popup key={id} isOpen={isOpen}>
@@ -67,19 +74,20 @@ const CopyColumnPopup = (props) => {
           </p>
         </header>
         <section className="linkSection">
-          {/* {filteredUrls.map((url, idx) => (
-            <div className="urlLink" key={idx}>
-              <SubmittedLink
+          {filterRequirements().map((url, idx) => (
+            <div className="urlColumn" key={idx}>
+              <p>{url}</p>
+              {/* <SubmittedLink
                 key={idx}
                 url={url}
                 studentDeliverable={student}
                 styleProp={{ fontSize: '16px', opacity: '1' }}
-              />
+              /> */}
               <button onClick={() => handleCopy(url, idx)} style={{ margin: "0" }}>
-                {copied[idx] ? "COPIED" : "COPY"}
+                {/* {copied[idx] ? "COPIED" : "COPY"} */}
               </button>
             </div>
-          ))} */}
+          ))}
         </section>
         <footer>
           <button onClick={() => setIsOpen(false)}>
