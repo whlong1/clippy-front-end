@@ -26,7 +26,16 @@
 }
 
 .copyColumn p {
+  opacity: .7;
   font-size: 14px;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: .75px;
+}
+
+.copyColumn .linkSection p {
+  opacity: 1;
+  font-size: 16px;
   font-weight: 300;
   text-align: center;
   letter-spacing: .75px;
@@ -53,8 +62,12 @@
   text-align: center;
 }
 
-.copyColumn .urlColumn:first-child {
+.copyColumn .urlColumn {
   margin-bottom: 12px;
+}
+
+.copyColumn .urlColumn:last-child {
+  margin-bottom: 0;
 }
 
 .copyColumn .urlColumn button {
