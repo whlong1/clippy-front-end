@@ -6,6 +6,7 @@ import { useShowDeliverable } from '../../../hooks/useShowDeliverable'
 import { useDeliverablesManager } from '../../../hooks/useDeliverablesManager'
 
 // Components
+import CopyColumnPopup from '../components/CopyColumnPopup/CopyColumnPopup'
 import DeliverableHeader from './DeliverableHeader'
 import StudentDeliverableRow from './StudentDeliverableRow'
 import ContentStatus from '../../../components/ContentStatus/ContentStatus'
@@ -13,8 +14,11 @@ import DeleteConfirmation from '../../../components/DeleteConfirmation/DeleteCon
 
 const ShowDeliverable = (props) => {
   const { cohortId } = props
+
   const navigate = useNavigate()
   const { deliverableId } = useParams()
+
+  const [isCopyOpen, setIsCopyOpen] = useState(false)
   const [isDeleteOpen, setIsDeleteOpen] = useState(false)
 
   const mutation = useDeliverablesManager(cohortId)
@@ -54,6 +58,13 @@ const ShowDeliverable = (props) => {
 
   return (
     <section style={{ position: 'relative' }}>
+      <CopyColumnPopup
+        id={deliverableId}
+        isOpen={isCopyOpen}
+        setIsOpen={setIsCopyOpen}
+        deliverable={deliverable}
+      />
+
       <DeleteConfirmation
         id={deliverableId}
         isOpen={isDeleteOpen}
@@ -64,8 +75,9 @@ const ShowDeliverable = (props) => {
 
       <DeliverableHeader
         deliverable={deliverable}
-        setIsOpen={setIsDeleteOpen}
         handleDelete={handleDelete}
+        setIsCopyOpen={setIsCopyOpen}
+        setIsDeleteOpen={setIsDeleteOpen}
         markAllComplete={markAllComplete}
       />
 
