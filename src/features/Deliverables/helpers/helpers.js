@@ -36,8 +36,6 @@ const dateOptions = {
   day: 'numeric',
   hour: 'numeric',
   minute: 'numeric',
-  // timeZone: 'America/New_York'
-  // year: 'numeric', Is the year value necessary?
 }
 
 const getLocaleDateString = (date) => {
