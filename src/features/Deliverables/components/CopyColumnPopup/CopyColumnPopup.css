@@ -1,0 +1,87 @@
+.copyColumn {
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  padding: 24px;
+  display: flex;
+  min-width: 380px;
+  position: absolute;
+  border-radius: 5px;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--border-color);
+  background-color: var(--content-background);
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.75);
+}
+
+.copyColumn * {
+  line-height: 1;
+}
+
+.copyColumn header h1 {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.copyColumn p {
+  opacity: .7;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: .75px;
+}
+
+.copyColumn .linkSection p {
+  opacity: 1;
+  font-size: 16px;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: .75px;
+}
+
+.copyColumn button {
+  height: 24px;
+  min-width: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 5px;
+  margin: 24px 8px 0px;
+  padding: 6px 0px 18px;
+}
+
+.copyColumn .linkSection {
+  width: 100%;
+  padding-top: 24px;
+}
+
+.copyColumn .linkSection h2 {
+  width: 100%;
+  opacity: .5;
+  text-align: center;
+}
+
+.copyColumn .urlColumn {
+  margin-bottom: 12px;
+}
+
+.copyColumn .urlColumn:last-child {
+  margin-bottom: 0;
+}
+
+.copyColumn .urlColumn button {
+  margin-left: auto !important;
+}
+
+.copyColumn footer {
+  width: 100%;
+  display: flex;
+  padding-top: 24px;
+  justify-content: center;
+}
+
+.copyColumn footer button {
+  margin: 0;
+  width: 100%;
+}

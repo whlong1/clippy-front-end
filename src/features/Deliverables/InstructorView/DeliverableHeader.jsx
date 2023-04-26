@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+// import { useState, useEffect } from 'react'
 
 // Components
 import DueDate from '../components/DueDate/DueDate'
@@ -11,33 +11,34 @@ import share from '../../../assets/icons/share.svg'
 
 const DeliverableHeader = (props) => {
   const {
-    setIsOpen,
     deliverable,
+    setIsCopyOpen,
+    setIsDeleteOpen,
     markAllComplete,
   } = props
 
-  const [copied, setCopied] = useState(false)
+  // const [copied, setCopied] = useState(false)
 
-  const statusTable = {
-    missing: "Missing",
-    complete: "Complete",
-    incomplete: "Incomplete",
-  }
+  // const statusTable = {
+  //   missing: "Missing",
+  //   complete: "Complete",
+  //   incomplete: "Incomplete",
+  // }
 
-  useEffect(() => {
-    const resetCopy = () => {
-      setTimeout(() => setCopied(false), 2000)
-    }
-    if (copied) resetCopy()
-  }, [copied])
+  // useEffect(() => {
+  //   const resetCopy = () => {
+  //     setTimeout(() => setCopied(false), 2000)
+  //   }
+  //   if (copied) resetCopy()
+  // }, [copied])
 
-  const handleCopy = () => {
-    const deliverableRecord = deliverable.students.map((s) =>
-      statusTable[s.status] ? statusTable[s.status] + "\n" : "\n"
-    )
-    navigator.clipboard.writeText(deliverableRecord.join(""))
-    setCopied(true)
-  }
+  // const handleCopy = () => {
+  //   const deliverableRecord = deliverable.students.map((s) =>
+  //     statusTable[s.status] ? statusTable[s.status] + "\n" : "\n"
+  //   )
+  //   navigator.clipboard.writeText(deliverableRecord.join(""))
+  //   setCopied(true)
+  // }
 
   return (
     <header className="header">
@@ -51,12 +52,17 @@ const DeliverableHeader = (props) => {
         <button onClick={markAllComplete}>
           RESOLVE
         </button>
-        <button onClick={() => setIsOpen((prev) => !prev)}>
+        <button onClick={() => setIsDeleteOpen((prev) => !prev)}>
           DELETE
         </button>
-        <button onClick={handleCopy}>
+
+        {/* <button onClick={handleCopy}>
           {copied ? "COPIED" : "COPY"}
+        </button> */}
+        <button onClick={() => setIsCopyOpen((prev) => !prev)}>
+          COPY
         </button>
+
       </section>
 
       <section>

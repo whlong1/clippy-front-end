@@ -36,8 +36,6 @@ const dateOptions = {
   day: 'numeric',
   hour: 'numeric',
   minute: 'numeric',
-  // timeZone: 'America/New_York'
-  // year: 'numeric', Is the year value necessary?
 }
 
 const getLocaleDateString = (date) => {
@@ -58,10 +56,28 @@ const filterDeliverableUrls = (deliverableData) => {
   return urlTypes.filter((url) => deliverableData.hasOwnProperty(url))
 }
 
+// Helpers for copying columns for spreadsheets
+const requirementTypes = ['hasMiscUrl', 'hasTrelloUrl', 'hasGitHubUrl', 'hasDeploymentUrl', 'hasCodeSandboxUrl']
+
+const typeLookup = {
+  status: { title: 'Status', key: 'status' },
+  hasMiscUrl: { title: 'Misc URL', key: 'miscUrl' },
+  hasTrelloUrl: { title: 'Trello URL', key: 'trelloUrl' },
+  hasGitHubUrl: { title: 'GitHub URL', key: 'gitHubUrl' },
+  hasDeploymentUrl: { title: 'Deployment URL', key: 'deploymentUrl' },
+  hasCodeSandboxUrl: { title: 'CodeSandbox URL', key: 'codeSandboxUrl' },
+}
+
+const filterAndFormatColumns = (d) => {
+  const columnNames = ['status', ...requirementTypes.filter((k) => d[k])]
+  return columnNames.map((n) => typeLookup[n])
+}
+
 export {
   formatDate,
   isValidUrl,
   getDefaultDate,
   getLocaleDateString,
   filterDeliverableUrls,
+  filterAndFormatColumns,
 }

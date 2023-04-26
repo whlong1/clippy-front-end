@@ -83,7 +83,7 @@ We're currently working on creating a video demo of our application, which will 
 
 - [x] Expanded options for copying student deliverable rows
 
-- [ ] Expanded options for copying columns
+- [x] Expanded options for copying columns
 
 - [ ] Autosave grading writeups.
 
