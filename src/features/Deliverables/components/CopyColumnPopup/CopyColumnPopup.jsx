@@ -15,16 +15,17 @@ const CopyColumnPopup = (props) => {
   const initialState = filteredColumns.map((c) => false)
   const [copied, setCopied] = useState(initialState)
 
-  const statusTable = {
-    missing: "Missing", complete: "Complete", incomplete: "Incomplete"
+  const getRecord = (key) => {
+    const statusTable = { missing: "Missing", complete: "Complete", incomplete: "Incomplete" }
+    return deliverable.students.map((s) =>
+      key === 'status'
+        ? statusTable[s[key]] ? statusTable[s[key]] + "\n" : "\n"
+        : s[key] ? s[key] + "\n" : "\n"
+    )
   }
 
-  const handleCopy = (col, idx) => {
-    const deliverableRecord = deliverable.students.map((s) =>
-      col === 'status'
-        ? statusTable[s[col]] ? statusTable[s[col]] + "\n" : "\n"
-        : s[col] ? s[col] + "\n" : "\n"
-    )
+  const handleCopy = (key, idx) => {
+    const deliverableRecord = getRecord(key)
     navigator.clipboard.writeText(deliverableRecord.join(""))
     setCopied((prev) => prev.map((u, i) => i === idx ? true : false))
     setTimeout(() => setCopied(initialState), 800)
@@ -46,14 +47,14 @@ const CopyColumnPopup = (props) => {
         <header>
           <h1>Copy Options</h1>
           <p>
-            Lorem
+            Select the deliverable column you wish to copy data from the list below.
           </p>
         </header>
         <section className="linkSection">
           {filteredColumns.map((col, idx) => (
             <div className="urlColumn" key={idx}>
               <p>{col.title} Column</p>
-              <button onClick={() => handleCopy(col.field, idx)} style={{ margin: "0" }}>
+              <button onClick={() => handleCopy(col.key, idx)} style={{ margin: "0" }}>
                 {copied[idx] ? "COPIED" : "COPY"}
               </button>
             </div>

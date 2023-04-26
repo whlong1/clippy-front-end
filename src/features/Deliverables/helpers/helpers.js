@@ -62,17 +62,17 @@ const filterDeliverableUrls = (deliverableData) => {
 const requirementTypes = ['hasMiscUrl', 'hasTrelloUrl', 'hasGitHubUrl', 'hasDeploymentUrl', 'hasCodeSandboxUrl']
 
 const typeLookup = {
-  status: { title: 'Status', field: 'status' },
-  hasMiscUrl: { title: 'Misc URL', field: 'miscUrl' },
-  hasTrelloUrl: { title: 'Trello URL', field: 'trelloUrl' },
-  hasGitHubUrl: { title: 'GitHub URL', field: 'gitHubUrl' },
-  hasDeploymentUrl: { title: 'Deployment URL', field: 'deploymentUrl' },
-  hasCodeSandboxUrl: { title: 'CodeSandbox URL', field: 'codeSandboxUrl' },
+  status: { title: 'Status', key: 'status' },
+  hasMiscUrl: { title: 'Misc URL', key: 'miscUrl' },
+  hasTrelloUrl: { title: 'Trello URL', key: 'trelloUrl' },
+  hasGitHubUrl: { title: 'GitHub URL', key: 'gitHubUrl' },
+  hasDeploymentUrl: { title: 'Deployment URL', key: 'deploymentUrl' },
+  hasCodeSandboxUrl: { title: 'CodeSandbox URL', key: 'codeSandboxUrl' },
 }
 
 const filterAndFormatColumns = (d) => {
   const columnNames = ['status', ...requirementTypes.filter((k) => d[k])]
-  return columnNames.map((r) => typeLookup[r])
+  return columnNames.map((n) => typeLookup[n])
 }
 
 export {
