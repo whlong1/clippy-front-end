@@ -58,10 +58,28 @@ const filterDeliverableUrls = (deliverableData) => {
   return urlTypes.filter((url) => deliverableData.hasOwnProperty(url))
 }
 
+// Helpers for copying columns for spreadsheets
+const requirementTypes = ['hasMiscUrl', 'hasTrelloUrl', 'hasGitHubUrl', 'hasDeploymentUrl', 'hasCodeSandboxUrl']
+
+const typeLookup = {
+  status: { title: 'Status', field: 'status' },
+  hasMiscUrl: { title: 'Misc URL', field: 'miscUrl' },
+  hasTrelloUrl: { title: 'Trello URL', field: 'trelloUrl' },
+  hasGitHubUrl: { title: 'GitHub URL', field: 'gitHubUrl' },
+  hasDeploymentUrl: { title: 'Deployment URL', field: 'deploymentUrl' },
+  hasCodeSandboxUrl: { title: 'CodeSandbox URL', field: 'codeSandboxUrl' },
+}
+
+const filterAndFormatColumns = (d) => {
+  const columnNames = ['status', ...requirementTypes.filter((k) => d[k])]
+  return columnNames.map((r) => typeLookup[r])
+}
+
 export {
   formatDate,
   isValidUrl,
   getDefaultDate,
   getLocaleDateString,
   filterDeliverableUrls,
+  filterAndFormatColumns,
 }
