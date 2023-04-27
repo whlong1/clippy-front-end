@@ -34,11 +34,17 @@ const CopyColumnPopup = (props) => {
   console.log(deliverable)
 
   // copy blue squad deliverables
-  const handleSquadDeliverables = (squad) => {
-    return deliverable.students.reduce((obj, s) => {
+  const copySquadDeliverable = (squad, link) => {
+    const squadAcc = deliverable.students.reduce((obj, s) => {
+      if (squad === s.squad) obj[squad] = s[link] ? s[link] : obj[link]
       return obj
     }, {})
+
+    navigator.clipboard.writeText(squadAcc[squad])
+    return squadAcc[squad]
   }
+
+  console.log(copySquadDeliverable('blue', 'trelloUrl'))
 
   return (
     <Popup key={id} isOpen={isOpen}>
