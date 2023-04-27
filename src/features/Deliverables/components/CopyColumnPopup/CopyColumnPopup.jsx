@@ -31,6 +31,15 @@ const CopyColumnPopup = (props) => {
     setTimeout(() => setCopied(initialState), 800)
   }
 
+  console.log(deliverable)
+
+  // copy blue squad deliverables
+  const handleSquadDeliverables = (squad) => {
+    return deliverable.students.reduce((obj, s) => {
+      return obj
+    }, {})
+  }
+
   return (
     <Popup key={id} isOpen={isOpen}>
       <div className="copyColumn">
@@ -47,7 +56,7 @@ const CopyColumnPopup = (props) => {
         <header>
           <h1>Copy Options</h1>
           <p>
-            Select the deliverable column you wish to copy data from the list below.
+            Select the deliverable column you wish to copy data from.
           </p>
         </header>
         <section className="linkSection">
