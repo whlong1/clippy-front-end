@@ -85,3 +85,18 @@
   margin: 0;
   width: 100%;
 }
+
+header .tab {
+  border: none;
+  opacity: .5;
+  background: none;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-size: 14px;
+  margin: 0;
+}
+
+header .highlight {
+  opacity: 1;
+}

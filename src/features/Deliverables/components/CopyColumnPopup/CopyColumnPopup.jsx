@@ -72,6 +72,7 @@ const CopyColumnPopup = (props) => {
   )
 
   console.log(copySquadDeliverable('blue', 'trelloUrl'))
+  //currentTab
 
   return (
     <Popup key={id} isOpen={isOpen}>
@@ -79,8 +80,8 @@ const CopyColumnPopup = (props) => {
         <header>
           <h1>Copy Options</h1>
           {/* <p>Select the deliverable column you wish to copy data from.</p> */}
-          <button onClick={() => setView('columns')}>Columns</button>
-          <button onClick={() => setView('squads')}>Squads</button>
+          <button className={`tab ${view === 'columns' && 'highlight'}`} onClick={() => setView('columns')}>Columns</button>
+          <button className={`tab ${view === 'squads' && 'highlight'}`} onClick={() => setView('squads')}>Squads</button>
         </header>
 
         {view === 'columns' ? columnView : squadView}
