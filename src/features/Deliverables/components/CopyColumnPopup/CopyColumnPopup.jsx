@@ -14,6 +14,7 @@ const CopyColumnPopup = (props) => {
   const filteredColumns = filterAndFormatColumns(deliverable)
   const initialState = filteredColumns.map((c) => false)
   const [copied, setCopied] = useState(initialState)
+  const [view, setView] = useState('columns')
 
   const getRecord = (key) => {
     const statusTable = { missing: "Missing", complete: "Complete", incomplete: "Incomplete" }
@@ -40,9 +41,35 @@ const CopyColumnPopup = (props) => {
       return obj
     }, {})
 
-    navigator.clipboard.writeText(squadAcc[squad])
+    // navigator.clipboard.writeText(squadAcc[squad])
     return squadAcc[squad]
   }
+
+  const columnView = (
+    <section className="linkSection">
+      {filteredColumns.map((col, idx) => (
+        <div className="urlColumn" key={idx}>
+          <p>{col.title} Column</p>
+          <button onClick={() => handleCopy(col.key, idx)} style={{ margin: "0" }}>
+            {copied[idx] ? "COPIED" : "COPY"}
+          </button>
+        </div>
+      ))}
+    </section>
+  )
+
+  const squadView = (
+    <section className="linkSection">
+      {/* {filteredColumns.map((col, idx) => (
+        <div className="urlColumn" key={idx}>
+          <p>{col.title} Column</p>
+          <button onClick={() => copySquadDeliverable()} style={{ margin: "0" }}>
+            {copied[idx] ? "COPIED" : "COPY"}
+          </button>
+        </div>
+      ))} */}
+    </section>
+  )
 
   console.log(copySquadDeliverable('blue', 'trelloUrl'))
 
@@ -51,34 +78,15 @@ const CopyColumnPopup = (props) => {
       <div className="copyColumn">
         <header>
           <h1>Copy Options</h1>
+          {/* <p>Select the deliverable column you wish to copy data from.</p> */}
+          <button onClick={() => setView('columns')}>Columns</button>
+          <button onClick={() => setView('squads')}>Squads</button>
         </header>
-        <section>
-          <button onClick={() => setIsOpen((prev) => !prev)}>
-            CLOSE
-          </button>
-        </section>
-      </div>
-      <div className="copyColumn">
-        <header>
-          <h1>Copy Options</h1>
-          <p>
-            Select the deliverable column you wish to copy data from.
-          </p>
-        </header>
-        <section className="linkSection">
-          {filteredColumns.map((col, idx) => (
-            <div className="urlColumn" key={idx}>
-              <p>{col.title} Column</p>
-              <button onClick={() => handleCopy(col.key, idx)} style={{ margin: "0" }}>
-                {copied[idx] ? "COPIED" : "COPY"}
-              </button>
-            </div>
-          ))}
-        </section>
+
+        {view === 'columns' ? columnView : squadView}
+
         <footer>
-          <button onClick={() => setIsOpen(false)}>
-            CLOSE
-          </button>
+          <button onClick={() => setIsOpen(false)}>CLOSE</button>
         </footer>
       </div>
     </Popup>
