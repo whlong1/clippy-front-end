@@ -7,14 +7,22 @@ import './CopyColumnPopup.css'
 import Popup from '../../../../layouts/Popup'
 
 // Helpers
-import { filterAndFormatColumns } from '../../helpers/helpers'
+import { filterAndFormatColumns, filterRequirements } from '../../helpers/helpers'
 
 const CopyColumnPopup = (props) => {
   const { id, isOpen, setIsOpen, deliverable } = props
+
+  const requirement = filterRequirements(deliverable)
   const filteredColumns = filterAndFormatColumns(deliverable)
-  const initialState = filteredColumns.map((c) => false)
-  const [copied, setCopied] = useState(initialState)
+  const initialCopiedState = filteredColumns.map((c) => false)
+  const squadList = [
+    ...new Set(deliverable.students.map((s) => (
+      s.squad[0].toUpperCase() + s.squad.slice(1)
+    )))
+  ]
+
   const [view, setView] = useState('columns')
+  const [copied, setCopied] = useState(initialCopiedState)
 
   const getRecord = (key) => {
     const statusTable = { missing: "Missing", complete: "Complete", incomplete: "Incomplete" }
@@ -29,20 +37,18 @@ const CopyColumnPopup = (props) => {
     const deliverableRecord = getRecord(key)
     navigator.clipboard.writeText(deliverableRecord.join(""))
     setCopied((prev) => prev.map((u, i) => i === idx ? true : false))
-    setTimeout(() => setCopied(initialState), 800)
+    setTimeout(() => setCopied(initialCopiedState), 800)
   }
 
-  console.log(deliverable)
-
-  // copy blue squad deliverables
-  const copySquadDeliverable = (squad, link) => {
+  const copySquadDeliverable = (squad) => {
+    squad = squad.toLowerCase()
     const squadAcc = deliverable.students.reduce((obj, s) => {
-      if (squad === s.squad) obj[squad] = s[link] ? s[link] : obj[link]
+      if (squad === s.squad) {
+        obj[squad] = s[requirement] ? s[requirement] : obj[requirement]
+      }
       return obj
     }, {})
-
-    // navigator.clipboard.writeText(squadAcc[squad])
-    return squadAcc[squad]
+    navigator.clipboard.writeText(squadAcc[squad])
   }
 
   const columnView = (
@@ -60,18 +66,17 @@ const CopyColumnPopup = (props) => {
 
   const squadView = (
     <section className="linkSection">
-      {/* {filteredColumns.map((col, idx) => (
+      {squadList.map((squad, idx) => (
         <div className="urlColumn" key={idx}>
-          <p>{col.title} Column</p>
-          <button onClick={() => copySquadDeliverable()} style={{ margin: "0" }}>
+          <p>{squad} Squad</p>
+          <button onClick={() => copySquadDeliverable(squad)} style={{ margin: "0" }}>
             {copied[idx] ? "COPIED" : "COPY"}
           </button>
         </div>
-      ))} */}
+      ))}
     </section>
   )
 
-  console.log(copySquadDeliverable('blue', 'trelloUrl'))
   //currentTab
 
   return (

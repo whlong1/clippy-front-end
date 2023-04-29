@@ -51,14 +51,8 @@ const isValidUrl = (url) => {
   return regex.test(url)
 }
 
-const filterDeliverableUrls = (deliverableData) => {
-  const urlTypes = ['miscUrl', 'trelloUrl', 'gitHubUrl', 'deploymentUrl', 'codeSandboxUrl']
-  return urlTypes.filter((url) => deliverableData.hasOwnProperty(url))
-}
-
-// Helpers for copying columns for spreadsheets
+const urlTypes = ['miscUrl', 'trelloUrl', 'gitHubUrl', 'deploymentUrl', 'codeSandboxUrl']
 const requirementTypes = ['hasMiscUrl', 'hasTrelloUrl', 'hasGitHubUrl', 'hasDeploymentUrl', 'hasCodeSandboxUrl']
-
 const typeLookup = {
   status: { title: 'Status', key: 'status' },
   hasMiscUrl: { title: 'Misc URL', key: 'miscUrl' },
@@ -68,15 +62,26 @@ const typeLookup = {
   hasCodeSandboxUrl: { title: 'CodeSandbox URL', key: 'codeSandboxUrl' },
 }
 
+const filterDeliverableUrls = (deliverableData) => {
+  return urlTypes.filter((url) => deliverableData.hasOwnProperty(url))
+}
+
+
 const filterAndFormatColumns = (d) => {
   const columnNames = ['status', ...requirementTypes.filter((k) => d[k])]
   return columnNames.map((n) => typeLookup[n])
+}
+
+const filterRequirements = (d) => {
+  const filteredTypes = requirementTypes.filter((t) => d[t])
+  return filteredTypes.map((t) => typeLookup[t].key)[0]
 }
 
 export {
   formatDate,
   isValidUrl,
   getDefaultDate,
+  filterRequirements,
   getLocaleDateString,
   filterDeliverableUrls,
   filterAndFormatColumns,
