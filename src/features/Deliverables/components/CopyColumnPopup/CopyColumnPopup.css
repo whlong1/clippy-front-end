@@ -87,14 +87,21 @@
 }
 
 header .tab {
-  border: none;
+  margin: 0;
+  padding: 0;
   opacity: .5;
+  min-width: 0;
+  border: none;
+  margin: 0 10px;
+  font-size: 14px;
   background: none;
   font-weight: 500;
   text-decoration: underline;
   text-underline-offset: 4px;
-  font-size: 14px;
-  margin: 0;
+}
+
+header .tab:hover {
+  cursor: pointer;
 }
 
 header .highlight {

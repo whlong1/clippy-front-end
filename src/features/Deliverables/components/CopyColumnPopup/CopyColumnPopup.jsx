@@ -12,8 +12,8 @@ const CopyColumnPopup = (props) => {
   const { id, isOpen, setIsOpen, deliverable } = props
   const [currentTab, setCurrentTab] = useState('columnTab')
 
-  const columnClassName = `tab ${currentTab === 'columns' && 'highlight'}`
-  const squadClassName = `tab ${currentTab === 'squads' && 'highlight'}`
+  const columnClassName = `tab ${currentTab === 'columnTab' && 'highlight'}`
+  const squadClassName = `tab ${currentTab === 'squadTab' && 'highlight'}`
 
   return (
     <Popup key={id} isOpen={isOpen}>
