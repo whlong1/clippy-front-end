@@ -33,7 +33,7 @@
   letter-spacing: .75px;
 }
 
-.copyColumn .linkSection p {
+.copyColumn .tabSection p {
   opacity: 1;
   font-size: 16px;
   font-weight: 300;
@@ -51,12 +51,12 @@
   padding: 6px 0px 18px;
 }
 
-.copyColumn .linkSection {
+.copyColumn .tabSection {
   width: 100%;
   padding-top: 24px;
 }
 
-.copyColumn .linkSection h2 {
+.copyColumn .tabSection h2 {
   width: 100%;
   opacity: .5;
   text-align: center;
@@ -84,4 +84,26 @@
 .copyColumn footer button {
   margin: 0;
   width: 100%;
+}
+
+header .tab {
+  margin: 0;
+  padding: 0;
+  opacity: .5;
+  min-width: 0;
+  border: none;
+  margin: 0 10px;
+  font-size: 14px;
+  background: none;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+header .tab:hover {
+  cursor: pointer;
+}
+
+header .highlight {
+  opacity: 1;
 }

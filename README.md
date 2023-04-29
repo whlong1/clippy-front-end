@@ -85,6 +85,8 @@ We're currently working on creating a video demo of our application, which will 
 
 - [x] Expanded options for copying columns.
 
+- [x] Copy columns by squad
+
 - [ ] Add AM/PM tags to Attendance menu.
 
 - [ ] Autosave grading writeups.
