@@ -33,7 +33,7 @@
   letter-spacing: .75px;
 }
 
-.copyColumn .linkSection p {
+.copyColumn .tabSection p {
   opacity: 1;
   font-size: 16px;
   font-weight: 300;
@@ -51,12 +51,12 @@
   padding: 6px 0px 18px;
 }
 
-.copyColumn .linkSection {
+.copyColumn .tabSection {
   width: 100%;
   padding-top: 24px;
 }
 
-.copyColumn .linkSection h2 {
+.copyColumn .tabSection h2 {
   width: 100%;
   opacity: .5;
   text-align: center;
