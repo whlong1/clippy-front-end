@@ -12,39 +12,39 @@ To run the Clippy Front-end on your local machine, follow these steps:
 
 1. Clone this repository:
 
-```
-git clone https://github.com/[username]/clippy-front-end.git
-```
+    ```bash
+    git clone https://github.com/[username]/clippy-front-end.git
+    ```
 
 2. Navigate to the project directory:
 
-```
-cd clippy-front-end
-```
+    ```bash
+    cd clippy-front-end
+    ```
 
 3. Install the required dependencies:
 
-```
-npm install
-```
+    ```bash
+    npm install
+    ```
 
 4. Create a .env file in the root directory with the following variables:
 
-```
-REACT_APP_AUTH0_DOMAIN=[Auth0 domain]
-REACT_APP_AUTH0_AUDIENCE=[Auth0 audience]
-REACT_APP_AUTH0_CLIENT_ID=[Auth0 Client Id]
-REACT_APP_AUTH0_CALLBACK_URL=http://localhost:3000
-REACT_APP_BACK_END_SERVER_URL=http://localhost:3001
-```
+    ```
+    REACT_APP_AUTH0_DOMAIN=[Auth0 domain]
+    REACT_APP_AUTH0_AUDIENCE=[Auth0 audience]
+    REACT_APP_AUTH0_CLIENT_ID=[Auth0 Client Id]
+    REACT_APP_AUTH0_CALLBACK_URL=http://localhost:3000
+    REACT_APP_BACK_END_SERVER_URL=http://localhost:3001
+    ```
 
 5. Start the development server:
 
-```
-npm start
-```
+    ```bash
+    npm start
+    ```
 
-6. Open your web browser and navigate to http://localhost:3000 to access the Clippy web application.
+6. Open your web browser and navigate to `http://localhost:3000` to access the Clippy web application.
 
 
 ## Video Demo (Coming Soon)
@@ -144,7 +144,3 @@ This project was made possible thanks to the following technologies:
 - Auth0 - A platform for authentication and authorization. Visit the [Auth0 website](https://auth0.com/) for more information.
 
 - Chart.js - A chart library for JavasSript. Visit the [Chart.js website](https://www.chartjs.org/) for more information.
-
-
-
-
